@@ -89,4 +89,5 @@ page_formating_current = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Wiki
 page_formating_deprecated = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Wiki-Editing\Drafts\Lua events\deprecated_formating.wt"
 file_path = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Wiki-Editing\Drafts\Lua events\events"
 
-format_event_page(current_events, page_formating_current,file_path)
+format_event_page(current_events,page_formating_current,file_path)
+format_event_page(deprecated_events,page_formating_deprecated,file_path)
