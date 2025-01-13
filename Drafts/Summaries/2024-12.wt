@@ -1,0 +1,48 @@
+Hello everyone, Sir Doggy Jvla here! For those who don't know me yet, I'm the new leader of Project Modding, focused on documenting and creating modding resources to make modding more accessible for newcomers. Over the past year, I've learned modding, released decently successful mods, and experimented with the tools available.
+
+As a new modder, I found starting difficult due to the lack of clear documentation or guides. Asking questions helped but didn't always provide complete answers. My goal is to improve this by using the Wiki as a centralized, open space for modding information.
+
+Goals for the Modding Wiki:
+
+*Be informative for beginners and useful for experienced modders.
+*Update and expand existing documentation (e.g., Lua Events).
+*Organize external resources effectively.
+*The Modding Wiki will focus solely on modding—not specific mods. Pages on mods like Hydrocraft should go in a "Project History" section instead.
+
+What's New:
+*[[Modding]] was restructured into a resource hub, though external links need further cleanup.
+*[[PZwiki:Project Modding]] was updated with current tasks and clear goals.
+
+The Wiki will be divided into five main sections:
+*[[Scripts]]
+*[[Lua (API)]] (not [[Lua (language)]]!)
+*Modeling and texturing
+*Mapping and tiles
+*Other
+Each section will have subcategories for detailed resources. For example:
+
+*Lua (API) now has pages like [[Keyboard]] and [[PersistentOutfitID]].
+*Subpages for [[Lua objects]] and [[Java objects]] will explain their uses and capabilities. For example: [[Mod Options]] and [[ISRichTextPanel]].
+
+My innitiative to start utilizing the Wiki already kickstarted some other modders to write their guides on the plateform:
+*[[How to make a flier mod]] by Deon previously as a Steam guide
+*[[How to make a hair mod]] by spongie previously as a Steam guide
+*[[Animation guide]] by ChristalChris previously as a Google Doc
+*[[How to make custom voices]] by spongie
+*[[Mod optimization]] by me previously as guide in the Modding Discord, retaking some bits by albion from her Github guide too
+
+Some resources already exist on the Modding Discord as forum threads, and I plan to move suitable ones to the Wiki, such as I did with mod optimization above.
+
+Examples of resources for both beginner and experienced modders:
+*[[Mod optimization]]
+*[[Lua Events]]
+*[[Folders structure]]
+*[[Visual Studio Code]]
+
+One major challenge will be encouraging Mapping modders to document their work on the Wiki. While I understand a bit how [[Scripts]] work, [[Mapping]] is entirely unfamiliar territory for me and I will probably never do anything with it. As such there's a need for specialists on the subject.
+
+Additionally, there's significant organizational work needed to update pages with accurate and clear information.
+
+While it may seem like I'm working alone on these pages (which is partly true), I actively seek input from the Modding Discord for areas I'm less familiar with. Much of the information on new pages and edits already reflects other modders' perspectives.
+
+That said, it's not perfect. I encourage specialists in specific fields to share their thoughts, provide feedback, and openly critique anything I've added.

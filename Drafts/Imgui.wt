@@ -1,0 +1,13 @@
+{{Header|Modding|Debug tools}}
+{{Page version|42.0.2}}
+{{Stub}}
+[https://github.com/SpaiR/imgui-java '''Imgui'''] is a tool which can be activated with the launch command <code>-imgui</code> which allows for easier debuging of the game or mods.
+
+[[File:imgui_exampleUI.png|1000px|center]]
+
+==How to activate Imgui==
+Like for activating [[Debug mode]], you can activate Imgui by adding <code>-imgui</code> in the launch options of the game in Steam. This will open a new window with various tools to debug the game.
+
+When imgui is activated, [[Debug mode]] is also activated by default, so no need to have <code>-debug</code>.
+
+Alternatively you can also activate <code>-imguidebugviewports</code> which will make the game and imgui window to be in separate windows, which is useful when you have multiple monitors.

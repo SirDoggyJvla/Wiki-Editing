@@ -1,0 +1,397 @@
+{{Header|Modding}}
+{{Page version|41.78.16}}
+{{About|translating the game or a mod|a guide to translating the wiki|Help:Translations}}
+
+Official translations used to be done on [https://github.com/TheIndieStone/ProjectZomboidTranslations ProjectZomboidTranslations GitHub], however starting with [[build 42]] a professional studio was hired for translations.
+
+Information about the game's translation system. Translations need to be saved in the encoding of the language used by the game. Files also need to follow the naming conventions and format of the translation types.
+
+==Translation files==
+Translation files are simple [[File formats#Text files|text files]] which are placed in the following folder:
+{{CodeSnip
+| code =
+media/
+└── lua/
+    └── shared/
+        └── Translate/
+            └── <language code>/
+                └── ...
+}}
+
+<code><language code></code> needs to be replaced with code of the language you want to make a translation for which can be found in the [[#Languages]] section. Each files need to be named accordingly to the type of translation you are making and the language code: <code>{File}_{language code}.txt</code>. Each file types are defined below in the [[#Translation types]] section.
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> to get more informations on the modding folder structure and the media folder, see the [[Folders structure]] page.
+
+==Translation types==
+===Commonly used files===
+{| class="wikitable theme-blue sortable"
+|- style="font-weight:bold;"
+! File
+! Prefix
+! function
+! Notes
+|-
+| Challenge
+| Challenge_
+| getText
+| challenges
+|-
+| ContextMenu
+| ContextMenu_
+| getText
+| context menus
+|-
+| DynamicRadio
+| AEBS_ (optional)
+| getRadioText
+| dynamic radio, e.g. weather and helicopter
+|-
+| EvolvedRecipeName
+| EvolvedRecipeName_ (optional)
+| Translator.getItemEvolvedRecipeName
+|
+|-
+| Farming
+| Farming_
+| getText
+|
+|-
+| GameSound
+| GameSound_
+| getText
+| sound names
+|-
+| IG_UI
+| IGUI_
+| getText
+| in-game UI
+|-
+| Items
+| DisplayName, DisplayName_ (optional)
+| Translator.getDisplayItemName
+| OUTDATED
+|-
+| ItemName
+| ItemName_ (optional)
+| getItemNameFromFullType
+| Item display names
+|-
+| MakeUp
+| MakeUp
+| getText
+|
+|-
+| Moodles
+| Moodles_
+| getText
+|
+|-
+| Moveables
+|
+| Translator.getMoveableDisplayName
+| Names of tiles - sprites
+|-
+| MultiStageBuild
+| MultiStageBuild_
+| Translator.getMultiStageBuild
+| automatically appends the prefix when you get the translation
+|-
+| Recipes
+| Recipe_ (optional)
+| getRecipeDisplayName
+|
+|-
+| RecordedMedia
+| RM_
+| getText
+| keys are commonly prefix + GUID
+|-
+| Sandbox
+| Sandbox_
+| getText
+|
+|-
+| Stash
+| Stash_
+| getText
+| Stash houses, maps with annotations
+|-
+| SurvivalGuide
+| SurvivalGuide_
+| getText
+| guides
+|-
+| Tooltip
+| Tooltip_
+| getText
+|
+|-
+| UI
+| UI_
+| getText
+| Main menu UI
+|}
+*Prefixes can be handled differently; they can be optional, removed from key maps or not used at all.
+*Use the full type where type is used as key.
+*Moveables use *Group Name Custom Name* for names and keys. These characters ` `, `-`, `'`, `.` are converted.
+
+====Examples====
+Example of ContextMenu, file: ''Translate/EN/ContextMenu_EN.txt''
+<pre>
+ContextMenu_EN = {
+    ContextMenu_Destroy = "Destroy ",
+}
+</pre>
+Example of text split in multiple lines.
+<pre>
+SurvivalGuide_EN = {
+    SurvivalGuide_entrie11moreinfo = " <H1> FORAGING / SEARCH SYSTEM <BR> " ..
+                                     " ..." ..
+                                     " For example, trash can be found in trash piles, chipped stones are often found in cracks and potholes on roads. <LINE> <LINE> ",
+}
+</pre>
+: Note: the translation parser skips the first line, then breaks the line into key - text format. Required characters: (=) ("). This means the next format is valid in v.41.78. The parser has other nuances, but they are not neccessary to know to make translations.
+<pre>
+line 1: skipped
+key = "text"
+</pre>
+
+====Recipes====
+Script parser uses `replace("recipe","")` to make original name, sets translated recipe name. Translator populates recipe maps (normal and 'dot' maps) and uses *replace("Recipe_","")*, *replace("_"," ")* for the keys.
+
+<pre>
+Examples A, both translation lines work.
+
+script: 'recipe Convert A B {...}'
+original name: 'Convert A B'
+translation line: 'Recipe_Convert_A_B = "Convert Item to Weapon"'
+translation line: 'Convert A B = "Convert Item to Weapon"'
+translation key: 'Convert A B'
+
+Example B, no match for translation, do not use `_` in recipe scripts
+
+script: 'recipe Convert_A_B'
+original name: 'Convert_A_B'
+translation key: 'Convert A B'
+</pre>
+
+===News===
+The news file uses separate format.
+
+===Map information===
+Translations for map titles and descriptions.
+<pre>
+source: media/maps/{Map}/map.info
+title: Translate/{Language}/{Map}/title.txt
+description: Translate/{Language}/{Map}/description.txt
+</pre>
+
+Example Riverside description, file: ''Translate\EN\Riverside, KY\description.txt''
+<pre>
+Riverside
+ <LINE> <LINE>
+ A colorful town tightly hugging the banks of the mighty Ohio: exploring Riverside is a rich and diverse experience!
+...
+</pre>
+Translation files need to follow the folder structure of the map. e.g. ''Translate/challengemaps/Kingsmouth/title.txt''
+
+===Radio data===
+Radio Data is read from ''media/radio/''. Radio sources are ''xml'' files, translations are ''txt'' files. The recommended way to translate these can be found on the translation GitHub, however you can also edit them just like any other txt file.
+
+==Languages==
+The game uses languages added to the ''media/lua/shared/Translate'' folder, information about the language is stored in the the ''language.txt'' file of each language directory.
+{| class="wikitable theme-blue sortable"
+|+ Languages in game
+|- style="font-weight:bold;"
+! Code
+! Language
+! Encoding
+! Category
+|-
+| AR
+| Espanol (AR) - Argentina Spanish
+| Cp1252
+| Western
+|-
+| CA
+| Catalan
+| ISO-8859-15
+| Western
+|-
+| CH
+| Traditional Chinese
+| UTF-8
+|
+|-
+| CN
+| Simplified Chinese
+| UTF-8
+|
+|-
+| CS
+| Czech
+| Cp1250
+| Central European
+|-
+| DA
+| Danish
+| Cp1252
+| Western
+|-
+| DE
+| Deutsch - German
+| Cp1252
+| Western
+|-
+| EN
+| English
+| UTF-8
+|
+|-
+| ES
+| Espanol (ES) - Spanish
+| Cp1252
+| Western
+|-
+| FI
+| Finnish
+| Cp1252
+| Western
+|-
+| FR
+| Francais - French
+| Cp1252
+| Western
+|-
+| HU
+| Hungarian
+| Cp1250
+| Central European
+|-
+| ID
+| Indonesia
+| UTF-8
+|
+|-
+| IT
+| Italiano
+| Cp1252
+| Western
+|-
+| JP
+| Japanese
+| UTF-8
+|
+|-
+| KO
+| Korean
+| UTF-16
+|
+|-
+| NL
+| Nederlands - Dutch
+| Cp1252
+| Western
+|-
+| NO
+| Norsk - Norwegian
+| Cp1252
+| Western
+|-
+| PH
+| Tagalog - Filipino
+| UTF-8
+|
+|-
+| PL
+| Polish
+| Cp1250
+| Central European
+|-
+| PT
+| Portuguese
+| Cp1252
+| Western
+|-
+| PTBR
+| Brazilian Portuguese
+| Cp1252
+| Western
+|-
+| RO
+| Romanian
+| UTF-8
+|
+|-
+| RU
+| Russian (Build 41)
+| Cp1251
+| Cyrilic
+|-
+| RU
+| Russian (Build 42)
+| UTF-8
+|
+|-
+| TH
+| Thai
+| UTF-8
+|
+|-
+| TR
+| Turkish
+| Cp1254
+| Turkish
+|-
+| UA
+| Ukrainian (Build 41)
+| Cp1251
+| Cyrilic
+|-
+| UA
+| Ukrainian (Build 42)
+| UTF-8
+|
+|}
+
+===Adding new languages===
+*Create a new folder with the id of the language
+*Add the ''language.txt'' file
+*Add fonts if neccessary
+*Add translations
+
+The ''language.txt'' file must have VERSION, text and charset values, the rest are optional. It uses the scriptblock format.
+{| class="wikitable theme-blue sortable"
+|- style="font-weight:bold;"
+! key
+! example
+! notes
+|-
+| VERSION
+| 1
+|
+|-
+| text
+| English
+| the name of the language
+|-
+| charset
+| UTF-8
+| encoding used by the language
+|-
+| azerty
+| true
+|
+|-
+| base
+| PT
+| not used, might have limited support
+|}
+
+==See also==
+*[https://github.com/TheIndieStone/ProjectZomboidTranslations GitHub repository for the game translations]
+*[https://github.com/timbaker/translatoid/releases Releases of TranslationZed tool]
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=3006690572 Steam guide by '''''Matrioshka''''', '''''Riko Prushka''''']
+*[https://github.com/Poltergeist-PZ-Modding/pz-translator Scripts to automatically update your mod translations]
+
+{{Navbox modding}}

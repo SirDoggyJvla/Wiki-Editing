@@ -1,0 +1,21 @@
+{{Header|Modding|Lua (API)}}
+{{Page version|42.0.2}}
+{{Stub}}
+'''Java objects''' refer to the various classes which are exposed to the [[Lua (API)]]. This page will list most of the Java objects which can be utilized with the Project Zomboid API to program new features in the game.
+
+==Java objects==
+*[[IsoMovingObject]]
+*[[IsoGameCharacter]]
+*[[IsoPlayer]]
+*[[IsoZombie]]
+*[[IsoAnimal]]
+*[[IsoDeadBody]]
+*[[InventoryItem]]
+*[[IsoGridSquare]]
+*[[IsoCell]]
+*[[IsoChunk]]
+*[[IsoBuilding]]
+*[[IsoRoom]]
+*[[IsoLightSource]]
+
+{{Navbox modding}}

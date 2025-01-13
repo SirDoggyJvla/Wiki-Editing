@@ -1,0 +1,139 @@
+{{Header|Modding|Lua (API)}}
+{{Page version|41.78.16}}
+
+The '''PersistentOutfitID''' of a zombie (or pID) is a binary number which is retrieved in the form of a decimal number. It allows identification of various aspects of zombies, such as male or female or if the zombie losts its hat, and is mostly related to the outfit of zombies. It can be used for partial identification of zombies by making sure the <code>fallenHat</code> bit (bit 16) is normalized when using the pID for identification (we use the term '''trueID''' for the pID with a forced bit 16 to 0).
+
+The problem is that this ID is non-unique, meaning various zombies can share the same pID. It is however the closest way found to storing persistent data related to zombies, with the cons of this non-unicity.
+
+Also see [[Mod Data]] to understand the problems with persistent data for zombies.
+
+==Retrieving the PersistentOutfitID==
+It's possible to access the pID of an [[IsoZombie]] object. Simply use <code>IsoZombie:getPersistentOutfitID()</code> with <code>IsoZombie</code> your zombie. This will output a decimal number, positive or negative.
+{{CodeSnip
+| lang = lua
+| code =
+local function OnZombieUpdate(zombie)
+    local pID = zombie:getPersistentOutfitID()
+    -- continue from this
+end
+
+Events.OnZombieUpdate.Add(OnZombieUpdate)
+}}
+
+The problem with this pID is that it can change whenever a zombie loses its hat due to a specific bit. This can be countered with the [[#Tool to retrieve the trueID of a zombie|trueID]].
+
+==Tool to retrieve the trueID of a zombie==
+[[Mod optimization|Performance optimizations]] were done by caching the trueID linked to both pID forms. The transformation of the pID into a bit form then back into a decimal form is the source of performance drops which are significant when running such a code for every zombies.
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 1
+| code =
+-- tables for caching
+local trueID_module = {
+    TrueID = {}, 
+    HatFallen = {},
+}
+
+-- By SirDoggyJvla
+-- Based on Chuck's work. Outputs the `trueID` of a `Zombie`.
+-- Thx to the help of Shurutsue, Albion and possibly others.
+--
+-- When hat of a zombie falls off, it changes it's `persistentOutfitID` but those two `pIDs` are linked.
+-- This allows to access the trueID of a `Zombie` (the original pID with hat) from both pIDs.
+-- The trueID is stored to improve performances and is accessed from the fallen hat pID and the pID sent
+-- through this function detects if it's the trueID.
+---@param zombie IsoZombie
+---@return integer trueID
+trueID_module.pID = function(zombie)
+    -- retrieve zombie pID
+    local pID = zombie:getPersistentOutfitID()
+
+    -- if zombie is not yet initialized by the game, force it to be initialized so no issues can arise from unset zombies
+    if pID == 0 then
+        zombie:dressInRandomOutfit()
+        pID = zombie:getPersistentOutfitID()
+    end
+
+    -- verify if trueID is cached
+    local found = trueID_module.TrueID[pID] and pID or trueID_module.HatFallen[pID]
+    if found then
+        return found
+    end
+
+    -- transform the pID into bits
+    local bits = string.split(string.reverse(Long.toUnsignedString(pID, 2)), "")
+    while #bits < 16 do bits[#bits+1] = "0" end
+
+    -- trueID
+    bits[16] = "0"
+    local trueID = Long.parseUnsignedLong(string.reverse(table.concat(bits, "")), 2)
+    trueID_module.TrueID[trueID] = true
+
+    -- hatFallenID
+    bits[16] = "1"
+    trueID_module.HatFallen[Long.parseUnsignedLong(string.reverse(table.concat(bits, "")), 2)] = trueID
+
+    return trueID
+end
+}}
+
+==PersistentOutfitID bit swapping==
+Using the code below, swapping each bits was tested to see the impact on the zombie.
+{{CodeSnip
+| lang = lua
+| code =
+-- retrieve pID and transform it into binary
+local pID = zombie:getPersistentOutfitID()
+local bits = string.split(string.reverse(Long.toUnsignedString(pID, 2)), "")
+while #bits < 16 do
+    print("pass")
+    bits[#bits+1] = "0"
+end
+
+-- show binary pID above head of zombie
+local copyBits = table.newarray(bits)
+-- trim 32 last bits (always 1)
+for i = 33, 64 do
+    copyBits[i] = nil
+end
+local ID = table.concat(copyBits, "")
+zombie:addLineChatElement(ID)
+
+-- swap a bit
+local n = 10
+bits[n] = "1"
+
+-- transform new pID back into decimales
+local new_pID = Long.parseUnsignedLong(string.reverse(table.concat(bits, "")), 2)
+zombie:setPersistentOutfitID(new_pID)
+}}
+
+The results are as follows:
+
+Bits 1 to 9:
+*changes outfit of the zombie to a specific other outfit
+
+Bit 10 to 15:
+*appearance of zombie gets shuffled everytime one of these bits is not 0
+*Seems to break the pID and even if you set it to the same pID it will still change the outfit of the zombie, when the precedent bits it would only change to a specific outfit
+
+Bit 16:
+*hat fallen bit (1 is hatfallen, 0 is trueID)
+
+Bit 17 to 19:
+*changes outfit, fixed, not shuffle
+
+Bit 20:
+*changes outfit, not shuffle, but does not change zombie appearance
+
+Bit 21 to 25:
+*changes outfit, fixed, not shuffle
+
+Bit 26 to 31:
+*if set to 1, changes outfit and appearance, shuffles
+
+Bit 32 to probably end:
+*changing it breaks the pID, setting every bits to 0 but the last one, creating a perma shuffle bcs of the bits that shuffle
+
+{{Navbox modding}}

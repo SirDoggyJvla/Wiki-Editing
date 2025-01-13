@@ -1,0 +1,14 @@
+{{Header|Modding|Debug tools}}
+{{Page version|42.0.2}}
+'''LootZed''' is a debug tool used to analyse [[Procedural distributions|loot distribution]] in containers.
+
+The tool can be accessed by activating the [[debug mode]] then activating it in the [[cheat menu]].
+
+==Using LootZed==
+By activating LootZed, you get new options which allow you to right click containers in the inventory pannel and have two options appear:
+*'''Refill container''' - allows you to reload loot inside a container, respawning it and replacing precedent loot inside the container.
+*'''Open LootZed''' - opens a pannel which can be used to check loot possibilities.
+
+The LootZed pannel will show a table with the item type ([[Scripts]] item ID), it's name (DisplayName) and the chance for it to appear in the container. At the bottom it shows the room name (which impacts distribution) as well as the currently selected distribution for this container.
+
+If you click this last option, all the possible distributions for this container in this room will be shown. Selecting a different distribution shows its items in the item list. Reloading the loot inside the container will use the selected distribution.

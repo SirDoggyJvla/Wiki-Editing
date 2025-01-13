@@ -1,0 +1,66 @@
+{{Header|Modding}}
+{{Page version|42.0.2}}
+'''Decompiling the game code'''  is a common practice among modders, as it provides access to the various Java classes and methods used within the game. This process offers deeper insights into different aspects of the game and is often a crucial step in understanding its inner workings. This goes well in pair with the [https://projectzomboid.com/modding/ Project Zomboid Java Doc]. You can open the whole decompiled code as a Workspace in [[Visual Studio Code]] for example to be able to access any files and [[Visual Studio Code#Searching in a folder|search in every folders]] and files for specific code.
+
+==Decompiling with Beautiful Java==
+[https://github.com/quarantin/beautiful-java Beautiful Java] is a decompiling tool developped by quarantin which is specifically designed to decompile Project Zomboid. It can be used to decompile both [[Build 41]] and [[Build 42]] game code.
+
+It is a great decompiler for Project Zomboid because it will format variables with their type names, allowing you more easily read the game code. To use it you will need:
+*A Bash interpreter - for Windows and MacOS you can use [https://git-scm.com/downloads Git Bash].
+*[https://www.jetbrains.com/idea/download/ IntelliJ] - will be used by the script as the decompilation tool. You will need the path to it after downloading it.
+
+Once these are installed, you need to clone the Beautiul Java repository. To do that, you need to open the Bash interpreter:
+*You need to place yourself in the folder you want to install Beautiful Java. To do that you can use the command <code>cd "path"</code> to change the path you're in. By default you should be in the folder <code>~</code> which is your <code>$HOME$</code> folder (you can print the exact path by using <code>echo $HOME$</code> to locate it) and you can install Beautiful Java here.
+*Once in the folder you want to install Beautiful Java, type <code>git clone ""https://github.com/quarantin/beautiful-java"</code> which will copy the Github files of Beautiful Java in the folder <code>beautiful-java/</code>.
+*Move in this new folder by typing <code>cd beautiful-java/</code>.
+*Type the command <code>cp resources/config.txt.example config.txt</code> which will create a copy of the example config file with the name "config.txt" in the <code>beautiful-java/</code> folder.
+*Open this configuration file with a text editor and you will need to set up the different paths to IntelliJ and Project Zomboid files for your OS (Linux, MacOS or Windows):
+**The IntelliJ folder should look something like <code>C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4</code>.
+**The Project Zomboid folder should be something like <code>C:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid\</code>.
+*Save the configuration file and run the decompilation with <code>./BeautifulJava</code>.
+*The decompiled code with be found in the folder <code>beautiful-java/pz/</code>.
+
+Files of the decompiled game code can be found in the folder <code>beautiful-java/pz/<gameversion>/sources</code>.
+
+==Decompiling with Vineflower==
+A way to decompile the java is to use [https://github.com/Vineflower/vineflower Vineflower]. Its advantage is that it is fully standalone from any software and simply requires java installed on your computer alongside Project Zomboid files and Vineflower itself.
+
+Project Zomboid runs on Java 17, meaning you need a version of Java installed which is equal or higher to it to be able to decompile the game code. You can download the last version on [https://www.oracle.com/fr/java/technologies/downloads/ Oracle's website]. Make sure to restart your terminal after downloading a new java version.
+
+*Download the [https://github.com/Vineflower/vineflower/releases latest release] of Vineflower (specifically the <code>.jar</code> file, like <code>vineflower-1.10.1.jar</code>, by clicking on it). Store the file in a folder of your choice.
+*Create a folder to contain the decompiled code.
+*You will have to copy the path to the files to decompile. Go in your game files and find the folder <code>ProjectZomboid/zombie</code> (for example: <code>C:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid\zombie</code>).
+*Open a terminal and type the following commands (make sure to set the correct paths):
+{{CodeSnip
+| lang = bash
+| code = 
+cd <path/to/your/vineflower.jar/folder>
+java -jar vineflower-1.10.1.jar <path/to/files/to/decompile> <path/to/folder/for/export>
+}}
+
+Here's an example:
+{{CodeSnip
+| lang = bash
+| code = 
+java -jar vineflower-1.10.1.jar "C:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid\zombie" "C:\DecompiledPZ"
+}}
+
+==Decompiling with CFR==
+[https://www.benf.org/other/cfr/ CFR] is another Java decompiler, working on Linux.
+*Install <code>cfr</code> (and any <code>jdk17</code> as dependency) using your package manager.
+*Open terminal in the main folder of the game (next to the <code>zombie</code> folder).
+*Run the following command:
+{{CodeSnip
+| lang = bash
+| code =
+find . -name "*.class" -exec cfr --outputdir ./decompiled {} \;
+}}
+
+This will create a <code>decompiled</code> directory in the same folder, which will be populated with decompiled <code>java</code> files with same folder structure as their source <code>class</code> files.
+
+==External resources==
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=2748451514 How to decompile Project Zomboid Java code] by Tchernobill - old but with a few changes it can work.
+
+{{Navbox modding}}
+
+{{ll|Category:Guides}}

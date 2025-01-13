@@ -1,0 +1,298 @@
+{{Header|Modding}}
+{{Page version|42.0.2}}
+{{About|an overview about modding|PZwiki project|PZwiki:Project Modding}}
+[[File:SpiffosWorkshop.png|link=https://steamcommunity.com/app/108600/workshop/|frame|right|Spiffo's Workshop is the home of [[Project Zomboid]] mods on [[Steam]]]]
+
+=='''Terms & Conditions'''==
+By playing Project Zomboid, you agree to the '''[https://projectzomboid.com/blog/support/terms-conditions/ Terms & Conditions]'''.
+
+By modding Project Zomboid, you also agree with the '''[https://projectzomboid.com/blog/modding-policy/ Modding Policy]'''.
+
+===Key restrictions===
+*The Indie Stone reserves the right to implement any features in the game, irrespective of whether mods exist that accomplish the same goal.
+*Modders are solely responsible for their mod, including (but not limited to compliance with any hosting platforms (such as Steam Workshop). They are also responsible for obtaining third party consents for any third party materials in the mod. Legally, we have to ask that modders to ‘represent and warrant’ (i.e., promise legally) that their mod is their own original work and any third party contents are fully and properly licensed by the modder.
+*Creation of mods is subject to our [https://projectzomboid.com/blog/modding-policy/ modding policy], which may be updated from time to time with any technical requirements regarding how PZ mods must work.
+*Project Zomboid modders are free to receive monetary/gift donations from the players who use their releases, and appreciate the time and effort put into them. However, having mods created exclusively for those who choose to donate (or separate ‘in-mod’ content and bonuses) is not allowed. Mod creators cannot sell modifications to Project Zomboid.
+
+==Communities==
+Different communities exist to get help with modding, be it installing or debugging mod problems or creating mods, maps, tiles etc :
+*[https://discord.gg/theindiestone Official Discord]: Check out the '''Workshop''' category to get help on installing mods, problems with mods or developing mods.
+*[https://discord.gg/ghRTHUTc94 Unofficial Modding Discord]: The unofficial Modding Discord provides help on coding, modeling, animating…
+*[https://discord.gg/CFuNM8rtCp Unofficial Mapping Discord]: The unofficial Mapping Discord provides help on mapping and tile making.
+
+==Installing and using mods==
+*[[Installing mods]] – how to install mods for [[Steam]] or [[GOG]] version of the game.
+*[[Using mods]] – how to enable and configure mods.
+*[[Mod problems solution]] – what to do if mods do not work well or break the game.
+*[[Testing mods in multiplayer]] – guide about setting up the mod to work on the server.
+
+==Current mods==
+{{Main|Mods}}
+*[https://steamcommunity.com/app/108600/workshop/ Spiffo's Workshop]
+*[https://theindiestone.com/forums/index.php?/forum/58-mods/ Completed mods]
+*[https://theindiestone.com/forums/index.php?/forum/59-wip/ Work-in-Progress mods]
+
+==Community Modding Projects==
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=2909488957 Community Modding Projects] - this mod adds 3 major mods which are created and handled by the community, with anyone being able to add to it:
+**DebugTools - adds a lot of neat tools for debuging and creating mods.
+**Frameworks - tools modders can use in their mods.
+**Patch - community patch to recuring problems in the game.
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> the first one is used only to create and debug mods and is useless to most players.
+
+The debug tools are developed by and for modders and is automatically updated every Friday at midnight UTC. You can add to the modding projects yourself with pull requests to the [https://github.com/Project-Zomboid-Community-Modding/pz-community-modding project Github].
+
+==How to get started==
+Making mods might feel challenging at first because of the lack of knowledge of modding. The best tip is to start small and while you might have a mod idea which is big, it's not a good idea to get started. You have to get used to your environment, learn the various tools available and how modding works.
+
+Go step by step but the great part is that the limitations aren't too big in the case of Project Zomboid and usually if you have an idea, the limitations might not be the game but knowing how to do it and having the time to do so. As such test some bits, don't discourage if your first mod doesn't do great or doesn't work well because you will learn from it.
+
+If you don't know what is doable, you can either check how other mods do it by [[Folders structure#Online workshop folders|accessing their files]]. Asking in the various modding [[#Communities]] is also a good idea in getting some help or finding out what you could possibly achieve with modding.
+
+Depending on the type of modding you are interested in, the [[#Modding Resource Hub]] will provide you with the necessary resources to get started as well as links to some important pages per modding fields.
+
+===Modding fields===
+*'''Scripts''' - allow to add items in the game with simple parameters which can be edited in any text editor. No programming knowledge is needed.
+*'''Lua API''' - Project Zomboid is coded in both Java and Lua but utilizing a link in-between. This part involves programming codes to create or modify features by using [[Lua (language)]].
+*'''Modeling and texturing''' - creating models is used when creating items. Texturing goes with it to put proper textures on your items.
+*'''Pictures and icons''' - needed to create items, but can also be used to make various images for the game such as fliers, moodles or UI elements.
+*'''Animating''' - used to create new animations for characters to visually do certain actions. It involves knowledge of 3D softwares for animating but also a small bit of XML programming required to get your animation in-game.
+*'''Mapping''' - tools exist to create new locations, buildings and general environments for the game. 
+*'''Translations''' – translating the game or mods to various languages.
+
+===Working tools===
+Various tools might be needed depending on the type of modding you do:
+*'''Text editor''' – used to edit scripts and write code.
+**[https://code.visualstudio.com/ VS Code] - '''HIGHLY SUGGESTED''', a community addon for Project Zomboid typing exists for it. See [[Visual Studio Code]].
+**[https://notepad-plus-plus.org Notepad++]
+*'''Image editor''' – used to create icons, textures for items and tiles.
+**[https://www.gimp.org/ GIMP]
+**Any tool for editing images.
+*'''3D modeling''' and '''Animating''' – used to work on 3D models.
+**[https://store.steampowered.com/app/365670/Blender Blender] - the most used by the community.
+*'''Mapping and tilemaking''' - [https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ TileZed, WorldEd, and tilesets] – TileZed can also be downloaded and compiled from [https://github.com/timbaker/tiled the source code on GitHub], or they can be installed (currently only for Windows), as [https://steamdb.info/app/380880/ Project Zomboid Modding Tools] if the game is owned on Steam.
+
+===Other Modding tools===
+*[https://www.guidgenerator.com/ Free Online GUID Generator] - for making GUIDs for modded clothing and outfits.
+
+==Modding Resource Hub==
+Modding has different fields of modding, each with their own rules and tools which will be summed up the lists below.
+
+For a few generic resources on the subject:
+*[[Folders structure]] to understand Project Zomboid's folder structure, such as mod structure.
+*[[Debug mode]] - Explanations of how to run the game in the debug (developer) mode and how to use it.
+*[[Startup parameters]] - Startup parameters to launch the game with.
+*[[Mod optimization]] to learn various tips and tricks and good habits that will improve your mods performances.
+*[[File formats]] - Documentation of file formats used by game.
+*[[Procedural distributions]] - List of procedural distributions.
+
+===Lua (API)===
+{{Main|Lua (API)}}
+Project Zomboid allows modders to program functionalities via a Java implementation of Lua called Kahlua which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and allows the use of exposed Java class and methods from Lua scripts.
+
+To learn how to use Project Zomboid's API, you can refer to [[Lua (API)]].
+
+====Javadoc====
+The Javadoc is necessary to get the full list of exposed class and methods which can be used from the [[Lua (API)]].
+*[https://projectzomboid.com/modding/ Project Zomboid Java documentation build 41.77]
+*[https://zomboid-javadoc.com/41.78/ Project Zomboid Java documentation build 41.78 (Unofficial)]
+*[https://demiurgequantified.github.io/ProjectZomboidJavaDocs/ Project Zomboid Java documentation build 42.0.1-25246 (Unofficial)]
+
+[[Decompiling game code]] teaches how to decompile Project Zomboid's Java to more easily understand how the game works internally and what the methods and classes in the Java doc do.
+
+====Resources on the subject====
+*[[Lua (language)]] to learn how to code with the Lua programming language.
+*[[Lua object]] – a full list of available Lua Objects to be used by modders.
+*[[Lua event]] – a full list of available Events to hook on.
+*[[Java object]] – a list of informations about some Java objects which can be used with the Lua API.
+
+''See [[:Category:Lua (API)]] for a list of all Lua API pages.''
+
+===Scripts===
+{{Main|Scripts}}
+
+Scripts are a required step in making any type of item such as weapons, clothings or food, or to define sounds and models to be usable in the game.
+
+====Types of scripts====
+*[[Item scripts]] - Each item in the game is set by a script, which determines the parameters of the item. Depending on the type of item, different parameters will be used.
+*[[Fixing scripts]] - Fixing blocks are used to fix items in Project Zomboid. For example, repairing Wood Axe with different materials such as tape, glue or custom items.
+*[[Recipe scripts]] - Recipes are a description of the ingredients for crafting an item and a description of the item that will result from crafting.
+*[[Evolved recipe scripts]] - This type of recipe is used to easily create food recipes that can be filled with many ingredients.
+*[[Sound scripts]] - The block sets the sound parameters, which can then be used in the game.
+*[[Model scripts]] - The block describes the parameters of the model that will be used.
+*[[Vehicle scripts]] - The block describes the parameters of the vehicle.
+*[[Multistage build scripts]] - The block describes an option to improve/create a multistage building.
+
+===Modeling and texturing===
+*[[Animation guide]]
+*[[How to make a hair mod]]
+*[[How to make a clothing mod]]
+
+====External resources====
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003 How To Create an Animation]
+
+===Mapping and tiles===
+{{Main|Mapping}}
+
+====Mapping pages====
+*[[Tiledefs used by mods]] - List of tiledef IDs which are already used.
+*[[Adding new tiles]] - Guide to adding new tiles.
+*[[Tile properties]] - Explanation of [[tile]] properties.
+*[[Room definitions and item spawns]] - Explanation of room definitions, used mainly for loot distribution.
+*[[Vehicle zones]] - Explanation of vehicle zones.
+
+====External resources====
+*[https://www.pztiles.com/home PZ Tiles and a comprehensive selection of other mapping and tile making resources.]
+*[https://drive.google.com/drive/folders/12jQxlDlyC-fACV45oCWshZb60QHoQ6kf The build 41 base and vegetation maps for PZ.]
+*[https://theindiestone.com/forums/index.php?/topic/25742-project-zomboid-basemap/ The build 40 base and vegetation maps for PZ.]
+*[https://drive.google.com/file/d/1zvjxsjLi2KGwU7SVbLoH2m32UuSgCxcw/view?usp=sharing An app for replacing the zombie layers on cells.]
+*[https://drive.google.com/file/d/1PRsZfmE3Ov7U9Nc_mSBv62fMFROpIIct/view?usp=sharing An app for moving the cells in maps.]
+*[https://discord.com/channels/136501320340209664/279303619277488128/946017802647658586 A more recent base map for PZ.]
+*[https://github.com/geromet/PZTools Distribution Explorer. Super "early access"]
+
+====Tutorials====
+{| class="wikitable theme-blue sortable" 
+! Tutorial
+! Author
+! Last updated
+|-
+| [https://theindiestone.com/forums/index.php?/topic/21951-the-one-stop-tilezed-mapping-shop/&tab=comments#comment-251715 The One Stop TileZed Mapping Shop]
+| RingoD123
+| {{#dateformat:2017-01-30|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/22576-how-to-combine-map-mods/&tab=comments#comment-257834 How to Combine Map Mods]
+| RingoD123
+| {{#dateformat:2017-06-11|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/5461-full-list-of-current-room-definitions/&tab=comments#comment-73574 Full list of current Room Definitions]
+| RingoD123
+| {{#dateformat:2014-02-07|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/5461-full-list-of-current-room-definitions/&page=3&tab=comments#comment-257787 Making new room definitions]
+| RingoD123
+| {{#dateformat:2017-06-10|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/14109-thuztors-mapping-tutorial-videos/&tab=comments#comment-176301 Mapping Tutorial's and Videos]
+| Thuztor
+| {{#dateformat:2015-04-20|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/14109-thuztors-mapping-tutorial-videos/&tab=comments#comment-176301 Mapping Tutorial's and Videos] <small>(Outdated)</small>
+| Thuztor
+| {{#dateformat:2017-09-12|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/21932-project-zomboid-mapping-instructions-vegmap-to-testing-custom-map/&tab=comments#comment-251579 VegMap to Testing Custom Map]
+| Cpt_Paradox
+| {{#dateformat:2017-01-28|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/23264-making-rooms-with-the-place-wall-tool-item-spawns-ortho-and-more/&tab=comments#comment-265065 Making rooms with the place wall tool, item spawns, ortho and more!]
+| Cpt_Paradox
+| {{#dateformat:2017-11-30|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/23263-sliding-glass-doors-new-textures-heres-how/&tab=comments#comment-265063 Sliding Glass Doors, New Textures, Here's How!]
+| Cpt_Paradox
+| {{#dateformat:2017-11-30|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/21943-how-to-make-a-map-start-to-finish-full-video-tutorial/&tab=comments#comment-251657 How to make a map Start to Finish Full Video Tutorial]
+| BlackBeard
+| {{#dateformat:2017-01-30|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/22018-all-player-made-building-archives-verison-2-532019/&tab=comments#comment-252207 All player made Building Archives]
+| BlackBeard
+| {{#dateformat:2019-05-31|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/8790-custom-texture-packs-and-tile-definitions/&tab=comments#comment-113526 Custom texture packs and tile definitions]
+| EasyPickins
+| {{#dateformat:2014-06-05|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/22127-cards-tutorial-for-terrain-generation/&tab=comments#comment-252998 Card's Tutorial for Terrain Generation]
+| Cardenaglo
+| {{#dateformat:2017-02-22|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/18084-video-tutorials-mapping-atox-warrior/&tab=comments#comment-221862 Video Tutorials mapping]
+| Atoxwarrior
+| {{#dateformat:2016-06-26|mdy}}
+|-
+|}
+
+===Others===
+*[[How to make a flier mod]]
+*[[Creating dynamic radio channels]]
+*[[How to make custom voices]]
+
+==Notes==
+===A note regarding updating and/or changing mods===
+Removing .txt and .lua files from a mod before updating them to the steam workshop may result in file mismatch errors etc. on account of steam not automatically removing said files from clients and/or servers.
+One solution is manually deleting these files from the installation directories of the server and/or clients but the best solution is to unsubscribe from the mod, wait for the update then redownload it again.
+As well modders can avoid this issue by keeping those files, instead of removing them, but editing those files so they are empty instead of having any functional content. Including commented text explaining the reason for this in the files is also a good practice.
+
+==External resources==
+{| class="wikitable theme-blue sortable"
+! Tutorial
+! Author
+! Last updated
+|-
+| [https://github.com/FWolfe/Zomboid-Modding-Guide Project Zomboid Modding Guide] (WIP)
+| Fenris Wolf
+| {{#dateformat:2023-01-22|mdy}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/61-robomats-modding-tutorials-updated-12112013/ RoboMat's Tutorials]
+| RoboMat
+| {{#dateformat:2013-07-24|mdy}}
+|-
+| [https://discord.com/channels/136501320340209664/1070852229654917180 Mod Resources (Official Discord - Thread The Under Mod Development Channel)]
+|
+| {{#dateformat:2024-07-21|mdy}}
+|}
+
+===Older resources===
+*[https://github.com/MrBounty/PZ-Mod---Doc/blob/main/Items%20variables.md Variables to use when creating an item]
+*[https://github.com/MrBounty/PZ-Mod---Doc/blob/main/Make%20a%20custom%20skill%20or%20perk.md Guide for adding a new Skill/Perk, add XP and find all perks names]
+*[https://github.com/MrBounty/PZ-Mod---Doc/blob/main/How%20to%20make%20a%20custom%20trait.md Guide for adding a custom trait]
+
+===General additional modding resources===
+*[https://www.youtube.com/playlist?list=PLwV27NP3RkJl27tveCa9EMMvAdjmGXZsf A YouTube playlist with Blackbeard's modding tutorials]
+*[https://discord.com/channels/136501320340209664/279303619277488128/864229655867031572 Photoshop Masks used for making and editing tile sprites, a link to a post on TIS Discord with the file]
+*[https://github.com/MrBounty/PZ-Mod---Doc/blob/main/How%20to%20use%20global%20modData.md Global Mod Data: How to use this powerful tool for tracking global mod data]
+*[https://github.com/MrBounty/PZ-Mod---Doc/blob/main/How%20to%20make%20a%20custom%20timed%20actions.md Guide to make a custom timed action]
+*[https://github.com/MrBounty/PZ-Mod---Doc/blob/main/Animation%20list.md A list of all the animation variables used in timed actions]
+*[https://github.com/Poltergeistzx/Project-Zomboid/blob/main/docs/TimedActions%20Flow%20Chart.pdf A flow chart for the timed actions]
+*[https://github.com/Konijima/PZ-Community-API/tree/master/Contents/mods/CommunityAPI/media/lua/client/SpawnerAPI  SpawnerAPI: Allows for pending the spawns of vehicles, items, zombies in order to spawn things anywhere in the world. Upon loading the cell in question the item becomes spawned in]
+*[https://discord.com/channels/136501320340209664/232196827577974784/864843709900128278 Guide to how PZ loot distribution works on TIS Discord]
+*[https://discord.com/channels/136501320340209664/232196827577974784/899479292088569906 Spawning a tile from it's name: a link to a post on TIS Discord explaining how]
+*[https://discord.com/channels/136501320340209664/232196827577974784/891769429543759883 How to spawn loot on specific zombie outfit corpses: a link to a post on TIS Discord explaining how]
+*[https://discord.com/channels/136501320340209664/232196827577974784/890921284379246613 Item spawning examples that work: a link to a post on TIS Discord explaining how]
+*[https://discord.com/channels/136501320340209664/232196827577974784/887879308473933884 A tool for dumping distro table contents to console.txt: a lint to a post on TIS Discord with the code]
+*[https://discord.com/channels/136501320340209664/232196827577974784/931744932656451645 How to use read/write with files in mods, useful for server ini files: a link to a post on TIS Discord explaining how]
+*[https://discord.com/channels/136501320340209664/232196827577974784/940523841027964948 A post on TIS discord with code to serialize lua table into json and vice versa]
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=2474838710 A guide on how to change Zomboid's in-game music and sound effects]
+*[https://discord.com/channels/136501320340209664/232196827577974784/869049443117314128 Looking for Error messages in the console log, a short guide on TIS Discord]
+*[https://www.youtube.com/watch?v=iv7N7gmowWU WordZed tutorial on YouTube]
+*[https://theindiestone.com/forums/index.php?/topic/28633-complete-vehicle-modding-tutorial/  Complete Vehicle Modding Tutorial on TIS forum]
+*[https://github.com/MrBounty/PZ-Mod---Doc/blob/main/Useful%20links.md Useful links]
+*[https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ How To Mod The Loot Distribution System]
+*[https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/Events.md An up-to-date (41.78) reference to events and hooks]
+*[https://github.com/demiurgeQuantified/PZEventStubs PZEventStubs: Lua stubs for events and hooks]
+*[https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/SandboxOptions.md A reference for adding custom sandbox options]
+*[https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/GameTime.md GameTime and deltas: An explanation of time deltas and their applications in modding]
+*[https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/ScriptFunctions.md Documentation on functions linked to item/recipe/vehicle scripts]
+*[https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/ PZ Keycode references]
+
+===Clothing modding resources===
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=3025955520/ Guide for adding new clothing items with modding for build 41]
+*[https://discord.com/channels/136501320340209664/232196827577974784/945412454521913385 A list of Blood Locations used for Clothing Modding; a post on TIS Discord]
+*[https://discord.com/channels/136501320340209664/869327724504842330/931152156805955625 A list of Mask IDs used for Clothing Modding; a post on TIS Discord]
+*[https://discord.com/channels/136501320340209664/869327724504842330/954782177067937832 A Graphic to explain the masking system for clothing in PZ; a post on TIS Discord]
+
+===Old and more specific additional modding resources===
+*[https://github.com/Konijima/PZ-Community-API/blob/master/Contents/mods/CommunityAPI/media/lua/shared/CommunityAPI/IsoUtils.lua isoRangeScan: This is a utility function meant for large-scale scans of isoGridSquares around a given IsoObject. The scans are done fractally – that is to say, from a center (or centers) outward to fill a larger area.]
+*[https://theindiestone.com/forums/index.php?/topic/21923-itemzed-updated-11b/ ItemZed: for editing Item scripts and distribution files (out of date, needs to be updated to work properly with build 41)]
+
+===Typescript modding===
+You can now use Typescript language to write your mods, which are then compiled into Lua. However, it is not necessary to use Typescript to write mods.
+*[https://github.com/asledgehammer/PipeWrench/wiki PipeWrench - Wiki]
+*[https://github.com/asledgehammer/PipeWrench PipeWrench - Typing]
+*[https://github.com/Konijima/pzpw PZPW - NodeJS Command-line Tool]
+
+{{Navbox modding}}
+
+{{ll|Category:Modding|&#32;}}

@@ -1,0 +1,88 @@
+==Description==
+Main class for items in the game.
+
+==Java doc==
+[https://projectzomboid.com/modding/zombie/inventory/InventoryItem.html InventoryItem]
+
+==InventoryItem creation==
+The method differs between [[Build 41]] and [[Build 42]] but is based on the same principle.
+
+===[[Build 41]]===
+Utilizes [[InventoryItemFactory]]:
+{{CodeSnip
+| lang = lua
+| code =
+InventoryItemFactory.CreateItem(string itemType)
+}}
+
+''See [https://projectzomboid.com/modding/zombie/inventory/InventoryItemFactory.html InventoryItemFactory] for variations to the arguments of the function.''
+
+====Example====
+{{CodeSnip
+| lang = lua
+| code =
+local inventoryItem = InventoryItemFactory.CreateItem("Base.Battery")
+}}
+
+===[[Build 42]]===
+Utilizes [[LuaManager.GlobalObject]]:
+{{CodeSnip
+| lang = lua
+| code =
+instanceItem(string itemType)
+}}
+
+''See [https://projectzomboid.com/modding/zombie/inventory/InventoryItemFactory.html InventoryItemFactory] for variations to the arguments of the function.''
+
+====Example====
+{{CodeSnip
+| lang = lua
+| code =
+local inventoryItem = instanceItem("Base.Battery")
+}}
+
+===Adding the item to an inventory===
+Once the item was instantiated, it needs to be added to an inventory. A way to do that is with [https://projectzomboid.com/modding/zombie/inventory/ItemContainer.html#AddItem(zombie.inventory.InventoryItem) <code>AddItem</code>]:
+{{CodeSnip
+| lang = lua
+| code =
+-- itemContainer needs to be an ItemContainer
+itemContainer:AddItem(inventoryItem)
+}}
+
+====Example====
+Adding an half empty battery in the player's inventory:
+{{CodeSnip
+| lang = lua
+| code =
+-- instantiate the battery
+local battery = instanceItem("Base.Battery")
+
+-- set battery charge to half
+battery:setCurrentUsesFloat(0.5)
+
+-- add in the player inventory
+getPlayer():getContainer():AddItem(battery)
+}}
+
+You can spawn items on the floor ([[IsoGridSquare]]) with [https://projectzomboid.com/modding/zombie/iso/IsoGridSquare.html#AddWorldInventoryItem(zombie.inventory.InventoryItem,float,float,float) <code>AddWorldInventoryItem</code>]:
+{{CodeSnip
+| lang = lua
+| code =
+-- create a stone
+local stone = instanceItem("Base.Stone2")
+
+-- isoGridSquare needs to be an instance of IsoGridSquare
+isoGridSquare:AddWorldInventoryItem(item, 0, 0, 0)
+}}
+
+You can also spawn multiple item at once:
+{{CodeSnip
+| lang = lua
+| code =
+-- spawn 5 dirty leather strips on the floor
+for _ = 1,5 do
+    local item = InventoryItemFactory.CreateItem("Base.LeatherStripsDirty")
+    isoGridSquare:AddWorldInventoryItem(item, 0, 0, 0)
+end
+}}

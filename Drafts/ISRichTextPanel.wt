@@ -1,0 +1,122 @@
+{{Header|Modding|Lua objects}}
+{{Page version|41.78.16}}
+{{Underconstruction}}
+'''ISRichTextPanel''' are tags which can be used in various displayed string variables to format the string, show images etc. These can notably be used in Sandbox options like the example shown which adds images:
+
+[[File:ISRichTextPanel_exampleSandboxOptions1.png|400px]]
+[[File:ISRichTextPanel_exampleSandboxOptions2.png|400px]]
+
+==Available tags==
+*<code><LINE></code> - starts a new line, resetting the X position to 0 and moving the Y position down by one line height
+
+*<code>&lt;BR&gt;</code> - similar to <LINE>, but it creates a larger space between lines, effectively creating a double line break
+
+*<code><SPACE></code> - adds a space character's width to the current X position, used for inline spacing
+
+*<code>&lt;H1&gt;</code> - formats text with H1 properties, making it centered and setting the font to large
+
+*<code>&lt;H2&gt;</code> - formats text with H2 properties, aligning it to the left and setting the font to medium
+
+*<code><TEXT></code> - resets text properties to defaults for the body text, using a smaller font than headers
+
+*<code><CENTRE></code>, <code><LEFT></code>, <code><RIGHT></code> - aligns the text to the center, left, or right of the line respectively
+
+*<code><PUSHRGB:R,G,B></code> - saves the current color state onto a stack and sets the new text color according to the provided RGB values
+
+*<code><POPRGB></code> - restores the last text color from the stack, reversing the effect of the most recent <code><PUSHRGB></code>
+
+*<code><RGB:R,G,B></code> - sets the current text color to the specified RGB values without affecting the stack
+
+*<code><RED></code>, <code><ORANGE></code>, <code><GREEN></code> - sets the current text color to red, orange, or green respectively
+
+*<code><SIZE:small/medium/large></code> - changes the font size to small, medium, or large
+
+*<code><IMAGE:path/to/image,width,height></code> - inserts an image at the specified path with given width and height (width and height are optional)
+
+*<code><IMAGECENTRE:path/to/image,width,height></code> - inserts an image and centers it horizontally on the line, with specified width and height (width and height are optional)
+
+*<code><INDENT:int></code> - indents the current line by the specified number of pixels
+
+*<code><JOYPAD:key from Joypad.Texture,width,height></code> - inserts an image from the Joypad.Texture table with a specified key label and dimensions (see below)
+
+*<code><SETX:int></code> - sets the X position to a specific pixel position, overriding the text flow
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Any space in a tag will break it !
+
+===Examples for IMAGE===
+<code><IMAGE:media/ui/spiffo/packing.png></code>
+or texture name <code><IMAGE:Item_Plank></code>, <code><IMAGE:location_entertainment_gallery_01_8></code>
+
+'''width, height in pixels'''
+'''keys from Joypad.Texture''' {AButton, BButton, XButton, YButton, LBumper, RBumper, DPadLeft, DPadRight, DPadUp, DPadDown, DPad, LStick, RStick, LTrigger, RTrigger, Menu, View, Back, Start}
+
+==Make custom tags to use in <code>ISRichTextPanel</code>==
+This snipet is an example of custom tag you can create to add new options. It allows you to add images on top of text to have a nice effect of a bloody hand on top of a handwritten letter.
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> You are allowed to use these tags but adding the same tags as other modders can cause duplicates and create issues when PZ checks for tags. The best would be to name these tags with your own names even if you plan to use this snippet.
+
+{{CodeSnip
+| lang = Lua
+| code =
+--- Made by Arendameth
+
+require "ISUI/RichTextPanel"
+local originalProcessCommand = ISRichTextPanel.processCommand
+function ISRichTextPanel:processCommand(command, x, y, lineImageHeight, lineHeight)
+    if string.find(command, "IMAGEFLOW:") then
+        local w = 0
+        local h = 0
+        if string.find(command, ",") ~= nil then
+            local vs = string.split(command, ",")
+            command = string.trim(vs[1])
+            w = tonumber(string.trim(vs[2]))
+            h = tonumber(string.trim(vs[3]))
+        end
+        self.images[self.imageCount] = getTexture(string.sub(command, 11))
+        if w == 0 then
+            w = self.images[self.imageCount]:getWidth()
+            h = self.images[self.imageCount]:getHeight()
+        end
+        self.imageX[self.imageCount] = x + 2
+        self.imageY[self.imageCount] = y
+        self.imageW[self.imageCount] = w
+        self.imageH[self.imageCount] = h
+        self.imageCount = self.imageCount + 1
+    elseif string.find(command, "IMAGEFLOWCENTRE:") then
+        local w = 0
+        local h = 0
+        if string.find(command, ",") ~= nil then
+            local vs = string.split(command, ",")
+            command = string.trim(vs[1])
+            w = tonumber(string.trim(vs[2]))
+            h = tonumber(string.trim(vs[3]))
+        end
+        self.images[self.imageCount] = getTexture(string.sub(command, 17))
+        if w == 0 then
+            w = self.images[self.imageCount]:getWidth()
+            h = self.images[self.imageCount]:getHeight()
+        end
+        local mx = (self.width / 2) - self.marginLeft
+        self.imageX[self.imageCount] = mx - (w / 2)
+        self.imageY[self.imageCount] = y
+        self.imageW[self.imageCount] = w
+        self.imageH[self.imageCount] = h
+        self.imageCount = self.imageCount + 1
+
+        for c, v in ipairs(self.lines) do
+            if self.lineY[c] == y then
+                self.lineY[c] = self.lineY[c] + (h / 2)
+            end
+        end
+
+        y = y + (h / 2)
+    end
+
+    return originalProcessCommand(self, command, x, y, lineImageHeight, lineHeight)
+end
+}}
+
+===Example===
+[[File:ISRichTextPanel_exampleCustomRichTag.png|600px|center]]
+
+{{Navbox modding}}

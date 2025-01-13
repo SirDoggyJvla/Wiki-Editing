@@ -1,0 +1,540 @@
+{{Header|Modding|Lua objects}}
+{{Page version|42.0.2}}
+The <code>ModOptions</code> [[Lua objects|Lua object]] from [[PZAPI]] is a new tool since [[Build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc.
+
+This page will explain how to use this tool for your own mod, what's available and what's possible to do with its current features. When creating a new option section, it will appear in the category "MODS" in the game options.
+
+Currently the available types of options are:
+*Text entry - string option.
+*Tickbox - boolean option.
+*Multiple tickbox - multiple booleans for a single option.
+*Combobox (dropdown menu) - chose between multiple default choices.
+*Color picker - chose a color.
+*Keybind - chose a keybind.
+*Slider - chose a value in-between a minimum and maximum, with a step.
+*Button - the user can click on it to trigger a function.
+
+<code>PZAPI.ModOptions</code> location in game folder:
+{{CodeSnip
+| code =
+ProjectZomboid/
+└── media/
+    └── lua/
+        └── client/
+            └── PZAPI/
+                └── ModOptions.lua
+}}
+
+Mod Options are saved in a file at the following path:
+{{CodeSnip
+| code =
+%USERPROFILE%\Zomboid\Lua\modOptions.ini
+}}
+
+==External resources==
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=3386860561 ModOptions Example] - a small mod which modders can use as an example on how to add their own mod options.
+
+==Creating your option section==
+Creating your own mod option section involves the following function:
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 233
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function PZAPI.ModOptions:create(modOptionsID, name)
+    name = name or modOptionsID
+    local options = Options:new(modOptionsID, name)
+    table.insert(PZAPI.ModOptions.Data, options)
+    PZAPI.ModOptions.Dict[modOptionsID] = options
+    return options
+end
+}}
+
+To create a new mod option section in "MODS", simply do:
+{{CodeSnip
+| lang = lua
+| code =
+local myExampleOption = PZAPI.ModOptions:create("myExampleOptionID","Example options")
+}}
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> <code>"myExampleOptionID"</code> needs to be unique to your mod ! You should probably make the name unique too.
+
+[[Mod optimization#Caching|Caching]] the creation of the option allows for an easier access to it to continue below this code and add your own options. If at any moment you need to access your mod option section or to access another mod options, you can simply do:
+{{CodeSnip
+| lang = lua
+| code =
+local myExampleOption = PZAPI.ModOptions:getOptions("myExampleOptionID")
+}}
+
+This means you can also add options to another existing mods, if your mod is an addon to it. The object returned by <code>getOptions</code> will be refered as an '''option section''' (such as <code>myExampleOption</code> in the example above).
+
+==Creating options==
+Each option types will have at least 2 arguments:
+*<code>id</code> (<code>string</code>) - needs to be unique for each options within an option section. It should be able to have the same ID as another option in a different option section.
+*<code>name</code> (<code>string</code>) - the displayed name of the option. While it doesn't need to be unique, in most cases it should probably be unique to not confuse the users.
+*<code>_tooltip</code> (<code>string</code>) - tooltip which appears when hovering with the cursor above the option. Might be able to use [[ISRichTextPanel]] (need confirmation).
+
+Other arguments are available for each types of options which will be detailed in the following subsections.
+
+Options are added this way:
+{{CodeSnip
+| lang = lua
+| code =
+-- for addTextEntry, others use the same way
+local myTextEntryOption = myExampleOption:addTextEntry(id, name, value, _tooltip)
+}}
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> the returned value of <code>addTextEntry</code> is [[Mod optimization#Caching|cached]] in <code>myTextEntryOption</code> here. Its use is explained in (ADD SECTION LINK HERE).
+
+===Text entry===
+'''Text entry''' allows the user to write a string in a text box.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 40
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addTextEntry(id, name, value, _tooltip)
+}}
+
+*<code>value</code> (<code>string</code>) - default entry.
+
+Accessing value function: <code>option:getValue()</code>.
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Known problem (Build 42.0.2): </span> leaving the text entry to blank and saving the mod options will break your game. If that happens, you need to delete <code>%USERPROFILE%\Zomboid\Lua\modOptions.ini</code>.
+
+===Tickbox===
+'''Tickbox''' allows the user to chose a boolean value.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 62
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addTickBox(id, name, value, _tooltip)
+}}
+
+*<code>value</code> (<code>boolean</code>) - default entry.
+
+Accessing value function: <code>option:getValue()</code>.
+
+===Multiple tickbox===
+'''Multiple tickbox''' allows the user to chose multiple boolean value for a single option. All tickboxes in the option are unique, which means ticking one won't tick the others to false !
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 84
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addMultipleTickBox(id, name, _tooltip)
+}}
+
+To add a new tickbox for this option, you need to use <code>myMultiTickOption:addTickBox(name, value)</code>
+{{CodeSnip
+| lang = lua
+| code =
+local myMultiTickOption = myExampleOption:addMultipleTickBox("myMultiTickOption","Example multitick option")
+myMultiTickOption:addTickBox("tick1",true)
+myMultiTickOption:addTickBox("tick2",false)
+myMultiTickOption:addTickBox("tick3",true)
+myMultiTickOption:addTickBox("tick4",false)
+}}
+
+*<code>name</code> (<code>string</code>) - name of this tickbox entry.
+*<code>value</code> (<code>boolean</code>) - default value for this tickbox entry.
+
+Accessing value function: <code>option:getValue(index)</code> with <code>index</code> (<code>integer</code>) - order of tick box addition with <code>option:addTickBox(name,value)</code>.
+
+===Combobox===
+'''Combobox''' allows the user to chose an option between multiple choices by opening a dropdown menu.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 115
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addComboBox(id, name, _tooltip)
+}}
+
+To add a new entry for a combobox, you need to use <code>myMultiTickOption:addItem(name, _isSelected)</code>
+{{CodeSnip
+| lang = lua
+| code =
+local myComboOption = myExampleOption:addComboBox("myComboOption","Example combobox option")
+myComboOption:addItem("option1",true)
+myComboOption:addItem("option2",false)
+myComboOption:addItem("option3",false)
+myComboOption:addItem("option4",false)
+}}
+
+*<code>name</code> (<code>string</code>) - name of this combobox entry.
+*<code>_isSelected</code> (<code>boolean</code>, OPTIONAL) - defines which entry is the default one. You should chose only one but chosing multiple should not cause any problem.
+
+Accessing value function: the value given is the option order. When adding an option, it was added in a specific order and it's this order which is retrieved. As such having an array which allows you to easily access the option chosen is better, for example:
+{{CodeSnip
+| lang = lua
+| code =
+local FONT_LIST = {
+    "Small",
+    "Medium",
+    "Large",
+    "Massive",
+    "MainMenu1",
+    "MainMenu2",
+    "Cred1",
+}
+
+local comboBox = options:addComboBox("Font","Chose your font")
+comboBox:addItem(FONT_LIST[1],true) -- add first in the array as default
+for i = 2,#FONT_LIST do
+    comboBox:addItem(FONT_LIST[i]) -- add the other options
+end
+
+
+-- when accessing that value, you can access the exact font which was chosen by doing
+local fontIndex = comboBox:getValue()
+local fontName = FONT_LIST[fontIndex]
+}}
+
+===Color picker===
+'''Color picker''' allows the user to chose a color.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 150
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addColorPicker(id, name, r, g, b, a, _tooltip)
+}}
+
+*<code>r</code> (<code>float</code>, min: 0, max: 1) - color red default value.
+*<code>g</code> (<code>float</code>, min: 0, max: 1) - color green default value.
+*<code>b</code> (<code>float</code>, min: 0, max: 1) - color blue default value.
+*<code>a</code> (<code>float</code>, min: 0, max: 1) - color alpha (transparency) default value.
+
+Accessing value function: <code>option:getValue()</code>.
+
+===Keybind===
+'''Keybind''' allows the user to chose a keybind.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 172
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addKeyBind(id, name, key, _tooltip)
+}}
+
+*<code>key</code> (<code>integer</code>, see [[Keyboard]]) - default keybind.
+
+Accessing value function: <code>option:getValue()</code>.
+
+To detect when a keybind was pressed, see:
+*[[OnKeyKeepPressed]]
+*[[OnKeyPressed]]
+*[[OnKeyStartPressed]]
+
+===Slider===
+'''Slider''' allows the user to chose a value between a minimum and maximum. A step can be defined for the slider.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 194
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addSlider(id, name, min, max, step, value, _tooltip)
+}}
+
+*<code>min</code> (<code>float</code>) - slider minimum.
+*<code>max</code> (<code>float</code>) - slider maximum.
+*<code>step</code> (<code>float</code>) - slider step.
+*<code>value</code> (<code>float</code>) - default value.
+
+Accessing value function: <code>option:getValue()</code>.
+
+===Button===
+'''Button''' allows the user to trigger an action. This is more complex than the previous option types and its uses are way more niche.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 216
+| source = ModOptions.lua
+| path = ProjectZomboid\media\lua\client\PZAPI
+| retrieved = true
+| version = 42.0.2
+| code =
+function Options:addButton(id, name, tooltip, onclickfunc, target, arg1, arg2, arg3, arg4)
+}}
+
+*<code>onclickfunc</code> (<code>function</code>) - function which runs when clicking the button.
+*<code>target</code> (<code>any</code>) - argument sent to the function.
+*<code>arg1</code> (<code>any</code>) - argument sent to the function.
+*<code>arg2</code> (<code>any</code>) - argument sent to the function.
+*<code>arg3</code> (<code>any</code>) - argument sent to the function.
+*<code>arg4</code> (<code>any</code>) - argument sent to the function.
+
+The <code>onclickfunc</code> function receives the arguments this way:
+{{CodeSnip
+| lang = lua
+| code =
+function(target,buttonObject,args1,args2,args3,args4)
+}}
+
+<code>buttonObject</code> is the button informations, meaning you can change it when clicking on it, such as its color. You can access the UI the button is in for example, allowing you modify the UI when clicking the button.
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Known problem (Build 42.0.2): </span> the <code>onclickfunc</code> function currently has <code>args3</code> and <code>args4</code> equal to <code>arg3</code> in <code>Options:addButton(id, name, tooltip, onclickfunc, target, arg1, arg2, arg3, arg4)</code>, meaning <code>arg4</code> can't be accessed for now.
+
+==Visual presentation==
+Various functions can be used to visually organize your mod options:
+*<code>addTitle(<string>)</code> - adds a title.
+*<code>addDescription(<string>)</code> - adds a description.
+*<code>addSeparator()</code> - adds a horizontal separation bar.
+
+==Apply function==
+You can link various actions to settings for your mod options being changed. For that you can simply link yourself to the <code>apply</code> function of your option section.
+{{CodeSnip
+| lang = lua
+| code =
+local myExampleOption = PZAPI.ModOptions:create("myExampleOptionID","Example options")
+myExampleOption.apply = function(self)
+    -- do anything
+end
+}}
+
+This can be used to update some variables on your side after changing the mod options. This can also be utilized in a very smart way with the example in [[#Accessing option values]].
+
+==Example==
+This code snippet utilizes the different options in subsections of the mod options section.
+{{CodeBox
+| id = modOptions_bigExample
+| class = blue
+| {{CodeSnip
+| lang = lua
+| line = true
+| start = 1
+| version = 42.0.2
+| code =
+local myExampleOption = PZAPI.ModOptions:create("myExampleOptionID","Example options")
+myExampleOption:addDescription("This description explains what the mod does")
+
+-- text entry example
+myExampleOption:addSeparator()
+myExampleOption:addDescription("Write your name")
+myExampleOption:addTextEntry("yourName","Your name","") -- empty text entry
+
+-- tickbox example
+myExampleOption:addSeparator()
+myExampleOption:addDescription("Do you love Project Zomboid ?")
+myExampleOption:addTickBox("lovePZ","I love it !",true)
+
+-- multitick example
+myExampleOption:addSeparator()
+myExampleOption:addDescription("What fruit do you like ?")
+local myMultiTickOption = myExampleOption:addMultipleTickBox("likedFruits","Fruits")
+myMultiTickOption:addTickBox("orange",true)
+myMultiTickOption:addTickBox("apple",false)
+myMultiTickOption:addTickBox("cherry",true)
+myMultiTickOption:addTickBox("lemon",false)
+
+-- color picker example
+myExampleOption:addSeparator()
+myExampleOption:addDescription("What's the color of apples ?")
+myExampleOption:addColorPicker("appleColor","Color picker",1,1,1,1,"Example tooltip: this color picker is very useful !")
+
+-- keybind example
+myExampleOption:addSeparator()
+myExampleOption:addDescription("My keybinds for this mod")
+myExampleOption:addKeyBind("keybind_PZlove", "Do I like Project Zomboid ?", Keyboard.KEY_A)
+myExampleOption:addKeyBind("keybind_myName", "Say my name", Keyboard.KEY_NONE)
+
+-- slider example
+myExampleOption:addSeparator()
+myExampleOption:addDescription("Give a score to this wiki page")
+myExampleOption:addSlider("slider_scoreThis", "Score",0,1,0.1,5)
+
+-- button example
+myExampleOption:addSeparator()
+myExampleOption:addDescription("Swap the button color")
+
+-- swap the color of the button between green and red
+local swapColor = function(_,button)
+    if button.swap then
+        button.backgroundColor = {r = 0,g = 1,b = 0,a = 1}
+        button.swap = false
+    else
+        button.backgroundColor = {r = 1,g = 0,b = 0,a = 1}
+        button.swap = true
+    end
+end
+
+myExampleOption:addButton("button_colorSwap", "Change color !",nil,swapColor)
+
+-- apply function example
+local swapBoolean = true
+
+-- swaps the swapBoolean between true and false when applying changes to the mod options
+myExampleOption.apply = function(self)
+    if swapBoolean then
+        swapBoolean = false
+    else
+        swapBoolean = true
+    end
+end
+}}
+}}
+
+[[File:ModOptions_VisualPresentation.png|1000px|center]]
+
+==Accesing option values==
+After defining the options, you need to be able to access those. This can be done with the function <code>getValue</code> on most options. As in a few examples shown before, you need to access the option itself which is either done by [[Mod optimization#Caching|caching]] it in a variable or by accessing it with <code>function Options:getOption(id)</code>.
+
+The methods of accessing values for each types of options are defined in the sections detailing each option type.
+
+For example, using the options defined in [[#Example]]
+{{CodeSnip
+| lang = Lua
+| code =
+-- accessing with getOptions
+local myExampleOption = PZAPI.ModOptions:getOptions("myExampleOptionID")
+
+-- accesing the slider value
+local sliderOption = myExampleOption:getOption("slider_scoreThis")
+local sliderValue = sliderOption:getValue()
+
+-- accessing the fruit "orange" tickbox
+local likedFruits = myExampleOption:getOption("likedFruits")
+local orangeBoolean = likedFruits:getValue(1)
+
+-- checking the keybind pressed is ours
+local keybind_PZlove = myExampleOption:getOption("keybind_PZlove")
+local OnKeyPressed = function(keynum)
+    if keynum == keybind_PZlove:getValue() then
+        -- keybind "keybind_PZlove" was pressed
+    end
+end
+
+Events.OnKeyPressed.Add(OnKeyPressed)
+}}
+
+===Storing values===
+A way to not have to do all these steps is by using [[Modules]] to easily store and access each options values.
+
+The following code snippets allow exactly that:
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 1
+| source = ExampleModOptions.lua
+| path = media\lua\client
+| retrieved = true
+| version = 42.0.2
+| code =
+-- file ExampleModOptions.lua
+local config = {}
+
+--- "UNIQUEID" should be replaced with your own unique ID. Possibly best to just use your mod's ID
+local options = PZAPI.ModOptions:create("UNIQUEID", "Example option section")
+
+-- define your options here .....
+
+-- This is a helper function that will automatically populate the "config" table.
+--- Retrieve each option as: config."ID"
+options.apply = function(self)
+    for k,v in pairs(self.dict) do
+        if v.type == "multipletickbox" then
+            for i=1, #v.values do
+                config[(k.."_"..tostring(i))] = v:getValue(i)
+            end
+        elseif v.type == "button" then
+            -- do nothing
+        else
+            config[k] = v:getValue()
+        end
+    end
+end
+
+Events.OnMainMenuEnter.Add(function()
+    options:apply()
+end)
+
+-- We now return the `config` object, so it can be used as a module!
+return config
+}}
+
+And to access the values:
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 1
+| source = AnotherFile.lua
+| path = media\lua\client
+| retrieved = true
+| version = 42.0.2
+| code =
+local config = require("ExmampleModOptions")
+-- Then:
+local option = config.ID
+}}
+
+If we take our [[#Example|options example]] from before, we could simply access the values of each options by doing:
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 1
+| source = AnotherFile.lua
+| path = media\lua\client
+| retrieved = true
+| version = 42.0.2
+| code =
+local config = require("ExmampleModOptions")
+
+-- accesing the slider value
+local sliderValue = config["slider_scoreThis"] -- can also do config.slider_scoreThis
+
+-- accessing the fruit "orange" tickbox
+local orangeBoolean = config["likedFruits"][1]
+
+-- checking the keybind pressed is ours
+local OnKeyPressed = function(keynum)
+    if keynum == config["keybind_PZlove"] then
+        -- keybind "keybind_PZlove" was pressed
+    end
+end
+
+Events.OnKeyPressed.Add(OnKeyPressed)
+}}
+
+{{Navbox modding}}
