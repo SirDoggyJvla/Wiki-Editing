@@ -5,7 +5,7 @@ def load_json(file_path):
         data = json.load(file)
     return data
 
-file_path = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Drafts\Lua events\PZEventDoc\data.json"
+file_path = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Wiki-Editing\Drafts\Lua events\PZEventDoc\data.json"
 event_data = load_json(file_path)
 
 
@@ -27,7 +27,7 @@ def format_event_page(events, format_file_path,file_path):
         format_string = format_file.read()
 
     for eventName in events:
-        file_name = f"{file_path}\{eventName}.wt"
+        file_name = f"{file_path}\{eventName}.txt"
         
         this_event_data = event_data["events"][eventName]
         
@@ -85,8 +85,8 @@ def format_event_page(events, format_file_path,file_path):
                                             notes=notes)
                        )
 
-page_formating_current = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Drafts\Lua events\current_formating.wt"
-page_formating_deprecated = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Drafts\Lua events\deprecated_formating.wt"
-file_path = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Drafts\Lua events\events"
+page_formating_current = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Wiki-Editing\Drafts\Lua events\current_formating.wt"
+page_formating_deprecated = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Wiki-Editing\Drafts\Lua events\deprecated_formating.wt"
+file_path = r"C:\Users\simon\Documents\Perso\Jeux\Zomboid\Wiki\Wiki-Editing\Drafts\Lua events\events"
 
 format_event_page(current_events, page_formating_current,file_path)
