@@ -270,6 +270,18 @@ end
 For loops in Lua can be used to iterate over a range of values, with an optional step value. For loops can also be used to iterate over arrays, tables, and other sequences of values as seen in [[#Tables]]. For loops can be used to perform operations on each value in the sequence.
 
 <code>break</code> can be used to exit a loop early, while <code>continue</code> can be emulated by using [[#Repeat until]] blocks.
+{{CodeSnip
+| lang = lua
+| code =
+for i = 1, 5 do 
+    repeat
+        if i == 3 then
+            break
+        end
+        print(i) -- Output: 1, 2
+    until true 
+end
+}}
 
 ==While loops==
 While loops are used to repeat a block of code while a condition is true. While loops in Lua can be used to repeat a block of code until a condition is false. For example:
@@ -285,6 +297,22 @@ end
 
 While loops in Lua can be used to repeat a block of code until a condition is false. It is however '''not recommended''' to use while loops without properly knowing what you are doing as they can easily lead to infinite loops which will make the game stuck and crash.
 
+<code>break</code> can be used here too, as well as the continue trick used in [[#For loops]].
+{{CodeSnip
+| lang = lua
+| code =
+local i = 1
+while i <= 5 do
+    repeat
+        if i == 3 then
+            break
+        end
+        print(i) -- Output: 1, 2, 4, 5
+    until true 
+    i = i + 1
+end
+}}
+
 ==Repeat until==
 Repeat until loops are used to repeat a block of code until a condition is true. Repeat until loops in Lua can be used to repeat a block of code until a condition is true. For example:
 {{CodeSnip
@@ -298,6 +326,8 @@ until i > 5
 }}
 
 Repeat until loops in Lua can be used to repeat a block of code until a condition is true. It is recommended to use repeat until loops instead of while loops when you want to ensure that the block of code is executed at least once.
+
+<code>break</code> can be used to stop the loop early.
 
 ==Conditional statements (if)==
 Conditional statements are used to execute different blocks of code based on the value of a condition. Conditional statements in Lua can be used to execute different blocks of code based on the value of a condition. For example:
@@ -437,3 +467,5 @@ print(message) -- Output: Hello, John! You are 30 years old.
 }}
 
 This can even be used alongside [[Translations]] files to have dynamic text translated in different language.
+
+{{Navbox modding}}
