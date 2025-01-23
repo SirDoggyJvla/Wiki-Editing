@@ -17,7 +17,7 @@ Alternatively, you can test some Lua codes by utilizing a Lua interpreter such a
 
 The following sections will explain in detail the various aspects of Lua that you will need to know to get started with modding Project Zomboid. [[Mod optimization]] might interest you if you're in need of various tips to make your mods run faster.
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> It is recommanded to read the article [[Mod optization]] to understand how to optimize your mods and make them run faster. Things that are available in Project Zomboid Lua can have important performance impact such as prints or even functions.
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> It is recommanded to read the article [[Mod optimization]] to understand how to optimize your mods and make them run faster. Things that are available in Project Zomboid Lua can have important performance impact such as prints or even functions.
 
 ==Print==
 The print function is used to output text to the console. This is useful for debugging purposes, as it allows you to see the values of variables and the flow of your code. The print function can take any number of arguments, which will be concatenated together and output to the console. For example:
@@ -32,7 +32,7 @@ print("Hello", "World!") -- Output: Hello World!
 
 This code will output "Hello World!" in the console. In Project Zomboid, this will be displayed in the console window when the game is running in [[Debug mode]] as well as in the [[File structure#Console file|console file]].
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Printing too much text can slow down the game immensly, see [[Mod optimization#Prints are the devil|printing optimization]].
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Printing too much text can slow down the game immensly, see [[Mod optimization#Prints are the devil|printing performance impact]].
 
 ==Variables==
 Variables are used to store data that can be accessed and modified throughout your code. Variables can store a variety of data types, such as numbers, strings, and tables. Variables in Lua are dynamically typed, meaning that you do not need to specify the type of a variable when you declare it. For example:
@@ -54,6 +54,22 @@ local age = person.age -- age now references the age entry in the person table
 }}
 
 In this example, the `person` table contains two entries: `name` and `age`. The variables `name` and `age` are then assigned the values of the corresponding entries in the `person` table. This allows you to easily access and manipulate the data stored in the table.
+
+===Local and global===
+Variables can be declared as local or global. Local variables are only accessible within the scope in which they are declared, while global variables are accessible throughout Project Zomboid. For example:
+{{CodeSnip
+| lang = lua
+| code =
+-- global variable
+x = 10
+
+-- local variable
+local y = 20
+}}
+
+In this example, <code>x</code> is a global variable, while <code>y</code> is a local variable. Global variables can be accessed and modified from anywhere, while local variables are only accessible within the scope in which they are declared such as the core of your file or within [[#Functions]], [[#For loops]], [[#While loops]], [[#Repeat until]] and [[#Do end block]].
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> It is recommended to use local variables as much as possible to avoid polluting the global scope of your file. This will help you avoid conflicts with other mods and the game itself. If you need to access variables defined in a file from another file, use [[#Modules]].
 
 ===Data types===
 Lua has several data types that can be stored in variables. The most common data types are numbers, strings, and tables. Numbers can be integers or floating-point numbers, strings are sequences of characters enclosed in quotes, and tables are collections of key-value pairs. For example:
@@ -116,6 +132,8 @@ result = x or y -- result is true
 result = not x -- result is false
 }}
 
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> <code>false</code> and <code>nil</code> are considered as false in Lua, while <code>true</code> and any other value are considered as true.
+
 ===Relational operators===
 Lua supports several relational operators that can be used to compare values. The most common relational operators are `==` (equal), `~=` (not equal), `<` (less than), `>` (greater than), `<=` (less than or equal to), and `>=` (greater than or equal to). For example:
 {{CodeSnip
@@ -130,6 +148,22 @@ result = x <= y -- result is true
 result = x > y -- result is false
 result = x >= y -- result is false
 }}
+
+===Length operator===
+The length operator <code>#</code> can be used to get the length of a string or the number of elements in a table. For example:
+{{CodeSnip
+| lang = lua
+| code =
+-- string
+local name = "John"
+print(#name) -- Output: 4
+
+-- table
+local numbers = {1, 2, 3, 4, 5}
+print(#numbers) -- Output: 5
+}}
+
+This operator will not count keys-values in a table, but only the values in an array-like table.
 
 ==Tables==
 Tables are a fundamental data structure in Lua that can be used to store and organize data. Tables can store a variety of data types, including numbers, strings, and other tables. Tables can be indexed by keys, which can be strings, numbers, or other data types, or act as pseudo arrays. For example:
@@ -153,6 +187,8 @@ print(person.address.country) -- Output: USA
 }}
 
 Tables can be used to store and organize data in a structured way, making it easier to access and manipulate the data. Tables can also be used to represent complex data structures and relationships between data.
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> All tables are technically key-tables which is why "arrays" (<code>{5,6,"hello"}</code>) are pseudo-arrays. This makes them more costly than actual arrays but it is possible to create true arrays by using the <code>table.newarray()</code> function (see [[Mod optimization#Array tables|proper array tables]]).
 
 ===Table Iteration===
 Tables can be iterated over using the <code>pairs</code> and <code>ipairs</code> functions. The <code>pairs</code> function iterates over the key-value pairs in a table, while the <code>ipairs</code> function iterates over the values in a table with integer keys. For example:
@@ -197,13 +233,18 @@ end
 -- function call
 local result = add(10, 20)
 print(result) -- Output: 30
+
+-- alternative syntax, write in a variable the function
+local multiply = function(a, b)
+    return a * b
+end
 }}
 
 Functions can be defined using the <code>function</code> keyword, followed by the function name, a list of arguments in parentheses, and the function body. Functions can return values using the <code>return</code> keyword, followed by the value to be returned. Functions can be called by using the function name followed by a list of arguments in parentheses.
 
 Functions can also be assigned to variables, passed as arguments to other functions, and returned from other functions. This allows you to create higher-order functions that can manipulate and compose other functions.
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Functions overhead can be costly in terms of performance, see [[Mod optimization#The less function calls, the better|functions optimization]].
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Functions overhead can be costly in terms of performance, see [[Mod optimization#The less function calls, the better|functions optimization tips]].
 
 ==For loops==
 For loops are used to iterate over a sequence of values and perform operations on each value. For loops in Lua can be used to iterate over arrays, tables, and other sequences of values. For example:
@@ -310,6 +351,21 @@ func() -- Output: Unknown action
 
 In this example, the `actions` table contains functions for different actions. The `action` variable is used to look up the corresponding function in the `actions` table. If the action is not found, the `default` function is used. This allows you to create a switch-case like structure using tables.
 
+==Do end blocks==
+Do end blocks are used to create a block of code that can be executed as a single unit. For example:
+{{CodeSnip
+| lang = lua
+| code =
+do
+    local x = 10
+    local y = 20
+    local sum = x + y
+    print(sum) -- Output: 30
+end
+}}
+
+However this block is mostly used to limit the scope of variables and functions. This is useful to avoid polluting the global scope of your file with variables that are only used in a specific block of code.
+
 ==Modules==
 Modules are used to organize and encapsulate code into reusable units. Modules in Lua can be used to organize and encapsulate code into reusable units. Modules can contain functions, variables, and other data that can be accessed and used by other parts of your code. For example:
 {{CodeSnip
@@ -347,3 +403,37 @@ print(result) -- Output: 30
 -- use module variable
 print(mymodule.PI) -- Output: 3.14159
 }}
+
+==String manipulation==
+Strings are used to store and manipulate text data. Strings in Lua can be used to store and manipulate text data. Strings can be concatenated using the <code>..</code> operator. For example:
+{{CodeSnip
+| lang = lua
+| code =
+local name = "John"
+local age = 30
+local message = "Hello, " .. name .. "! You are " .. age .. " years old."
+print(message) -- Output: Hello, John! You are 30 years old.
+}}
+
+<code>tostring(variable)</code> can be used to transform a variable into a string. This works for all types of variables such as [[Java object|Java objects]].
+{{CodeSnip
+| lang = lua
+| code =
+local number = 10
+local string = tostring(number)
+print(string) -- Output: 10
+}}
+
+The [https://www.lua.org/pil/20.html string library of Lua] is very powerful and can be used to manipulate strings in many ways. For example, you can use the <code>string.upper</code> function to convert a string to uppercase, the <code>string.lower</code> function to convert a string to lowercase, and the <code>string.sub</code> function to extract a substring from a string.
+
+You can also format strings using the <code>string.format</code> function, which allows you to create formatted strings with placeholders for variables. For example:
+{{CodeSnip
+| lang = lua
+| code =
+local name = "John"
+local age = 30
+local message = string.format("Hello, %s! You are %d years old.", name, age)
+print(message) -- Output: Hello, John! You are 30 years old.
+}}
+
+This can even be used alongside [[Translations]] files to have dynamic text translated in different language.
