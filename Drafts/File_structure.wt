@@ -1,12 +1,9 @@
 {{Header|Modding}}
 {{Page version|42.0.2}}
-This page describes the '''folders structure''' of Project Zomboid. This page will list the folder structure needed for modding as well as where different types of files can be found.
+This page describes the '''file structure''' of Project Zomboid. This page will list the folder structure needed for modding as well as where different types of files can be found.
 
-==Game folder==
-The game folder holds most of the game code, files, textures, maps, models etc.
-
-===Accessing the game folder===
-Accessing the game files of Project Zomboid can be easily achieved through Steam:
+==Accessing the game folder==
+The game folder holds most of the game code, files, textures, maps, models etc. Accessing the game files of Project Zomboid can be easily achieved through Steam:
 *Open your Steam game library
 *Right click on Project Zomboid > Manage > Browse local files
 *Alternatively you can rick click Project Zomboid > Properties > Installed files > Browse
@@ -34,10 +31,19 @@ ProjectZomboid/
 }}
 
 ===Cache folder===
-The cache folder holds most of your configuration of the game, as well as local mods. It is located in the following folder:
+The cache folder holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder, simply use the following path in your file explorer:
 {{CodeSnip
 |code =
 %UserProfile%/Zomboid
+}}
+
+===Console file===
+The console file is located at the following path:
+{{CodeSnip
+|code =
+%UserProfile%
+└── Zomboid/
+    └── console.txt
 }}
 
 ===Online workshop folders===
@@ -97,7 +103,7 @@ Here's the full list of parameters:
 
 ===Mod folder===
 The files of your mods are placed in the folder <code>Contents/mods/</code> with the following folder structure:
-*For [[build 41]]:
+*For [[Build 41]]:
 {{CodeSnip
 | code =
 Contents/
@@ -116,7 +122,7 @@ Contents/
         └── ...
 }}
 
-*For [[build 42]]
+*For [[Build 42]]
 {{CodeSnip
 | code =
 Contents/
@@ -144,14 +150,14 @@ Contents/
     └── MyMod2/
         └── ...
 }}
-''For the rest of the guide, only [[build 42]] will be considered for the folder structure. The main difference with [[build 41]] is that this precedent version doesn't have versioning and the common folder, but the file structure within the <code>media/</code> folder is the same.''
+''For the rest of the guide, only [[Build 42]] will be considered for the folder structure. The main difference with [[Build 41]] is that this precedent version doesn't have versioning and the common folder, but the file structure within the <code>media/</code> folder is the same.''
 
-As stated in the previous section, multiple mods can be uploaded for the same Steam Workshop article which can be optional mods or different versions of the same mod, for example.
+As stated in the previous section, multiple mods can be uploaded for the same Steam Workshop article, which can be optional mods or different versions of the same mod, for example.
 
 ====mod.info file====
-This file is the root of your mod which helps the game to detect your mod with various parameters available. It can simply be edited like any <code>.txt</code> files with your chosen software for editing text or code files.
+This file is the root of your mod, which helps the game to detect your mod with various parameters available. It can simply be edited like any <code>.txt</code> file with your chosen software for editing text or code files.
 
-This file, while working in both common and versioning folders should be kept only in the versioning folders for ease of use and organization. Technically, all of the parameters are optional but excluding some of these might just break your mod, make it not available to run or other problems. The necessary parameters should at least be the ID and name.
+This file, while working in both common and versioning folders, should be kept only in the versioning folders for ease of use and organization. Technically, all of the parameters are optional, but excluding some of these might just break your mod, make it not available to run or other problems. The necessary parameters should at least be the ID and name.
 
 Below is the full list of parameters available for this file.
 {| class="wikitable theme-red"
@@ -159,13 +165,13 @@ Below is the full list of parameters available for this file.
 | style="padding: 5px;"| This parameter defines the displayed name for your mod in the game's mod manager.
 |-
 | style="padding: 10px;"| <big><code>id</code></big>
-| style="padding: 5px;" | The mod ID is used in a mod list of the user or servers to activate your mod. Before [[build 42]], this ID needed to be unique, or it would cause problems with mods that share the same, mixing files and overall breaking your mod but with the new build, this issue shouldn't ever happen anymore as the Workshop ID of your mod is added in front of the mod ID to recognize which Workshop article is associated to which mod ID.
+| style="padding: 5px;" | The mod ID is used in a mod list of the user or servers to activate your mod. Before [[Build 42]], this ID needed to be unique, or it would cause problems with mods that share the same, mixing files and overall breaking your mod but with the new build, this issue shouldn't ever happen anymore as the Workshop ID of your mod is added in front of the mod ID to recognize which Workshop article is associated to which mod ID.
 |-
 | style="padding: 10px;"| <big><code>author</code></big>
 | style="padding: 5px;" | Name of the author(s) of the mod, which, if the mod is originally yours, should be your username.
 |-
 | style="padding: 10px;"| <big><code>description</code></big>
-| style="padding: 5px;" | Description of your mod which shows up in the mod manager. It's possible to use [[ISRichTextPanel]] tags.
+| style="padding: 5px;" | Description of your mod, which shows up in the mod manager. It's possible to use [[ISRichTextPanel]] tags.
 |-
 | style="padding: 10px;"| <big><code>url</code></big>
 | style="padding: 5px;" | Show a URL link in the mod manager on the page of your mod for users to click on to open in browser. This can be used for donation links for example.
@@ -196,7 +202,11 @@ require=\theNeededMod,\theOtherOne
 }}
 |-
 | style="padding: 10px;"| <big><code>incompatible</code></big>
-| style="padding: 5px;" | ''Need more informations.''
+| style="padding: 5px;" | Mods that cannot be enabled at the same time as this mod. When enabled, the other mods will be unselectable. This mod will also become unselectable if any of the other mods are enabled.
+{{CodeSnip
+| code =
+incompatible=\theUnwantedMod,\theOtherOne
+}}
 |-
 | style="padding: 10px;"| <big><code>loadModAfter</code></big>
 | style="padding: 5px;" | ''Need more informations.''

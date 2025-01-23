@@ -24,7 +24,7 @@ deprecated_events.sort()
 
 def format_event_page(events, format_file_path,file_path):
     with open(format_file_path, 'r') as format_file:
-        format_string = format_file.read()
+        page_formating = format_file.read()
 
     for eventName in events:
         file_name = f"{file_path}\{eventName}.txt"
@@ -78,7 +78,7 @@ def format_event_page(events, format_file_path,file_path):
 
         # WRITE TO FILE
         with open(file_name, 'w') as file:
-            file.write(format_string.format(eventName=eventName,
+            file.write(page_formating.format(eventName=eventName,
                                             paramsListing=paramsListing,
                                             paramsFunction=paramsFunction,
                                             eventListing=eventListing,

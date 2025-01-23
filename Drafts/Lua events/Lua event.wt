@@ -1,6 +1,55 @@
 {{Header|Modding|Lua (API)}}
-{{Page version|42.0.2}}
+{{Page version|42.0.2|2=767129}}
 A '''Lua event''' in programming is a signal or notification that something has occurred or changed. In [[Project Zomboid]], most often a modder's custom functions are attached as observers to an event, so they'll run when the event is called.
+
+==Hooking to an event==
+To hook a function to an event, you use the <code>Events</code> object. For example, to hook a function to the <code>OnCreatePlayer</code> event, you would write:
+{{CodeSnip
+| lang = lua
+| code = 
+Events.OnCreatePlayer.Add(yourFunction)
+}}
+
+<code>yourFunction</code> is a reference to your Lua function. By using this same reference, you can also remove the function from the event:
+{{CodeSnip
+| lang = lua
+| code =
+Events.OnCreatePlayer.Remove(yourFunction)
+}}
+
+Your function needs to have parameters that match the event's output. For example, the <code>OnCreatePlayer</code> event has the parameter <code>player</code>. Your function would need to be:
+{{CodeSnip
+| lang = lua
+| code =
+local function yourFunction(player)
+    -- your code here
+end
+}}
+
+Each events listed in [[#Lua events]] have example code snippets to show how to hook a function to them and their various parameters.
+
+==New events==
+===42.0.0===
+<div class="list-columns">
+*[[OnContextKey]]
+*[[OnZombieCreate]]
+*[[OnClickedAnimalForContext]]
+*[[RenderOpaqueObjectsInWorld]]
+*[[OnMouseWheel]]
+*[[LoadChunk]]
+*[[OnProcessTransaction]]
+*[[OnProcessAction]]
+*[[OnAlertMessage]]
+*[[OnSourceWindowFileReload]]
+*[[OnSpawnVehicleStart]]
+*[[OnSpawnVehicleEnd]]
+*[[OnSleepingTick]]
+*[[OnDeadBodySpawn]]
+*[[OnAnimalTracks]]
+*[[OnItemFound]]
+*[[SetDragItem]]
+*[[OnSteamServerFailedToRespond2]]
+</div>
 
 ==Lua events==
 ===Current===
@@ -312,4 +361,4 @@ Below are different libraries that add custom events to the game for modders to 
 
 {{Navbox modding}}
 
-{{ll|Category:Lua Events|&#32;}}
+{{ll|Category:Lua events|&#32;}}

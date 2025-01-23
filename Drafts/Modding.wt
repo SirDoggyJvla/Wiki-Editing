@@ -75,11 +75,30 @@ Various tools might be needed depending on the type of modding you do:
 ===Other Modding tools===
 *[https://www.guidgenerator.com/ Free Online GUID Generator] - for making GUIDs for modded clothing and outfits.
 
+==Modding changes==
+{{HistoryTable
+|item_id=[[Lua (API)]]
+|
+{{HistoryLine|Build 42.1.0|Build 42.1.0|
+Via [https://github.com/demiurgeQuantified/UmbrellaAddon-Unstable/commit/9ea219160eac8efa91b600543f5b599531ff7dfc Umbrella changelog]
+}}
+}}
+
+{{HistoryTable
+|item_id=[[Scripts]]
+|
+{{HistoryLine|Build 42.1.0|Build 42.1.0|
+[[Recipe scripts]]:
+*<code>AutoLearn</code> to <code>AutoLearnAny</code>
+*<code>itemcount</code> to <code>flags[ItemCount]</code>
+}}
+}}
+
 ==Modding Resource Hub==
 Modding has different fields of modding, each with their own rules and tools which will be summed up the lists below.
 
 For a few generic resources on the subject:
-*[[Folders structure]] to understand Project Zomboid's folder structure, such as mod structure.
+*[[File structure]] to understand Project Zomboid's folder structure, such as mod structure.
 *[[Debug mode]] - Explanations of how to run the game in the debug (developer) mode and how to use it.
 *[[Startup parameters]] - Startup parameters to launch the game with.
 *[[Mod optimization]] to learn various tips and tricks and good habits that will improve your mods performances.
@@ -96,7 +115,7 @@ To learn how to use Project Zomboid's API, you can refer to [[Lua (API)]].
 The Javadoc is necessary to get the full list of exposed class and methods which can be used from the [[Lua (API)]].
 *[https://projectzomboid.com/modding/ Project Zomboid Java documentation build 41.77]
 *[https://zomboid-javadoc.com/41.78/ Project Zomboid Java documentation build 41.78 (Unofficial)]
-*[https://demiurgequantified.github.io/ProjectZomboidJavaDocs/ Project Zomboid Java documentation build 42.0.1-25246 (Unofficial)]
+*[https://demiurgequantified.github.io/ProjectZomboidJavaDocs/ Project Zomboid Java documentation build 42.1.0 (Unofficial)]
 
 [[Decompiling game code]] teaches how to decompile Project Zomboid's Java to more easily understand how the game works internally and what the methods and classes in the Java doc do.
 
@@ -130,6 +149,7 @@ Scripts are a required step in making any type of item such as weapons, clothing
 
 ====External resources====
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003 How To Create an Animation]
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=3060255898 How to create Custom Firearm with working muzzle/attachments] - explains the various steps of getting a custom gun in the game.
 
 ===Mapping and tiles===
 {{Main|Mapping}}

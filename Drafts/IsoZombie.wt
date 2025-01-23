@@ -1,0 +1,195 @@
+{{Header|Modding|Java objects}}
+{{Page version|42.0.2}}
+'''IsoZombie''' is the class [[Zombie|zombies]] use.
+
+==Java doc==
+[https://projectzomboid.com/modding/zombie/characters/IsoZombie.html IsoZombie]
+
+==Related Lua events==
+Direct Lua events:
+*[[OnZombieCreate]]
+*[[OnZombieDead]]
+*[[OnZombieUpdate]]
+
+Indirect Lua events:
+*[[OnWeaponHitCharacter]] - triggers when an [[IsoPlayer]] hits an [[IsoGameCharacter]], so an [[IsoZombie]] as well as an [[IsoPlayer]].
+
+==Technical note==
+IsoZombie is a type of class subject to [[Object Pooling]]. This means the instance of IsoZombie is not destroyed when the zombie gets killed or unloaded from the world, but it's recycled to be used later again. This is done for performance reasons to not have to constantly recreate instances of an object which is very impactful in the case of Project Zomboid due to the amount of zombies which can be loaded in at once (imagine loading in the LV Mall zombies without this small optimization boost).
+
+Since [[Build 42]], whenever an IsoZombie instance gets reused to load in a zombie, the event [[OnZombieCreate]] is triggered and can be used to initialize various aspects of zombies.
+
+The problem of [[Object Pooling]] is that associating data specifically to an instance of IsoZombie will be shuffled around different zombie entities whenever the zombie that had this set of data gets unloaded and another zombie reuses this IsoZombie instance. This is problematic to have persistent data attached to a specific zombies and currently no way was found on how to properly identificate zombies after they have been unloaded and reloaded in.
+
+The only method of identification which exists involves the [[PersistentOutfitID]] and has a problem of uniqueness, meaning zombies can share this ID and thus it doesn't properly allow for unique zombie identification.
+
+==Spawning zombies==
+Different methods exist to spawn a zombie in. The main thing to watch for is syncing client and server side the spawn of the zombie.
+
+===Clientside===
+{{Stub|section=true}}
+
+===Serverside===
+Spawning zombies server side can be achieved by using [[VirtualZombieManager]].
+
+Here is a small example which allows spawning zombies inside of the room of a container getting new loot added to it (fresh or respawned):
+{{CodeSnip
+| lang = lua
+| code =
+local n_z = 1 --# of zombies to spawn (int)
+local function onFillContainer(_roomName, _containerType, container)
+    if instanceof(container:getParent(), "BaseVehicle") then return end
+    
+    local sq = container:getSourceGrid()
+    if not sq then return end
+    
+    local sq_room = sq:getRoom()
+    if not sq_room then return end
+    
+    local sq_roomDef = sq_room:getRoomDef()
+    if not sq_roomDef then return end
+        
+    VirtualZombieManager.instance:addZombiesToMap(n_z, sq_roomDef, false) --boolean for allow dead zombies
+end
+Events.OnFillContainer.Add(onFillContainer)
+}}
+
+==Zombie taking damage==
+When a zombie gets hit, right before getting hit, the event [[OnWeaponHitCharacter]] is triggered. The damage value however is wrong and doesn't represent the actual damage the zombie will take. The actual damage the zombie will take is calculated via a list of factors.
+
+After the zombie gets hit, the event [[OnWeaponHitXp]] triggers.
+
+Everytime a zombie gets hit, a hit counter gets incremented, which increases the next hit damage. This counter is called <code>hitTime</code> and can be accessed with <code>zombie:getHitTime()</code> and set with <code>zombie:setHitTime()</code>.
+
+===Stop zombie taking damage===
+To stop a zombie from taking damage, you can use the following code:
+{{CodeSnip
+| lang = lua
+| code =
+local function OnWeaponHitCharacter(attacker, target, weapon, damage)
+    -- verify the target is the zombie still alive
+    if not instanceof(target,"IsoZombie") or not target:isAlive() then return end
+
+    zombie:seAtAvoidDamage(true) -- make the zombie immortal on this single hit, returns to false after getting hit
+end
+
+Events.OnWeaponHitCharacter.Add(OnWeaponHitCharacter)
+}}
+
+You can check if the zombie will avoid the next hit damage by using <code>zombie:avoidDamage()</code>. However you need to note that avoid damage will also stop the zombie from having a hit reaction or getting staggered.
+
+Alternatively, you can also use <code>noDamage</code> which can be accessed with <code>zombie:getNoDamage()</code> and set with <code>zombie:setNoDamage()</code>.
+
+===Stopping a zombie hit reaction===
+After the hit, the zombie gets a hit reaction. This hit reaction can be stopped by setting the hit reaction to nothing. This can be done by using the following code:
+{{CodeSnip
+| lang = lua
+| code =
+local function OnWeaponHitXp(attacker, weapon, target, damage)
+    -- verify the target is the zombie still alive
+    if not instanceof(target,"IsoZombie") or not target:isAlive() then return end
+
+    -- stop the hit reaction
+    target:setHitReaction("")
+end
+
+Events.OnWeaponHitXp.Add(OnWeaponHitXp)
+}}
+
+This won't stop the zombie from falling down. To do that, you can use:
+{{CodeSnip
+| lang = lua
+| code =
+local function OnWeaponHitXp(attacker, weapon, target, damage)
+    -- verify the target is the zombie still alive
+    if not instanceof(target,"IsoZombie") or not target:isAlive() then return end
+
+    -- stop the hit reaction
+    target:setKnockedDown(false)
+end
+
+Events.OnWeaponHitXp.Add(OnWeaponHitXp)
+}}
+
+===Make player unable to push zombie===
+In the same way, to make a player unable to push a zombie, you can use:
+{{CodeSnip
+| lang = lua
+| code =
+local function OnWeaponHitXp(attacker, weapon, target, damage)
+    -- verify the target is the zombie still alive
+    if not instanceof(target,"IsoZombie") or not target:isAlive() then return end
+
+    -- stop the hit reaction
+    target:setStaggerBack(false)
+end
+
+Events.OnWeaponHitXp.Add(OnWeaponHitXp)
+}}
+
+===Stop knife jaw stabs===
+To make a knife jaw stab not kill a zombie, you can intercept it before the hit damages the zombie and make the zombie unable to take damage. The zombie will still play the animation of the knife jawstab however and it will be locked in place during the animation.
+{{CodeSnip
+| lang = lua
+| code =
+local function OnWeaponHitCharacter(attacker, target, weapon, damage)
+    -- verify the target is the zombie still alive
+    if not instanceof(target,"IsoZombie") or not target:isAlive() then return end
+
+    -- stop the jawstab
+    if zombie:isKnifeDeath() then
+        zombie:setKnifeDeath(false) -- stop the zombie dying from knife death
+        zombie:setAvoidDamage(true) -- make the zombie immortal on this single hit, returns to false after getting hit
+    end
+end
+
+Events.OnWeaponHitCharacter.Add(OnWeaponHitCharacter)
+}}
+
+==Zombie attacking==
+Currently, no proper event exists to detect when a zombie attacks. This can however be checked with the following code:
+{{CodeSnip
+| lang = lua
+| code =
+local NonPersistentZData = {}
+
+local function OnZombieUpdate(zombie)
+    -- check if the zombie has a target
+    local target = zombie:getTarget()
+
+    -- used to store informations on the zombie attacks
+    NonPersistentZData[zombie] = NonPersistentZData[zombie] or {} -- init table if needed
+    local nonPersistentZData = NonPersistentZData[zombie]
+
+    -- retrieve last attack outcome
+    local attackOutcome = nonPersistentZData.attackOutcome
+    if target then
+        local currentAttackOutcome = zombie:getVariableString("AttackOutcome")
+        if currentAttackOutcome ~= "" and attackOutcome ~= currentAttackOutcome then
+            nonPersistentZData.attackOutcome = currentAttackOutcome
+
+            -- run code related to the zombie attacking
+        end
+    elseif attackOutcome then
+        nonPersistentZData.attackOutcome = nil
+    end
+end
+
+Events.OnZombieUpdate.Add(OnZombieUpdate)
+}}
+
+The attack outcome is related to the current animation of the zombie which is composed of 2 steps:
+*The start of the attack.
+*The result of the attack.
+
+<code>zombie:getVariableString("AttackOutcome")</code> retrieves the current attack outcome of the zombie. The attack outcome is a string which can be:
+*<code>""</code> - no attack.
+*<code>"start"</code> - the zombie starts an attack.
+*<code>"success"</code> - the zombie lands its attack.
+*<code>"fail"</code> - the zombie misses its attack.
+
+<code>"success"</code> can however be misleading as the zombie can still miss the attack and still have this outcome. Use <code>target:getHitReaction()</code> to confirm the target is reacting to an attack, meaning the zombie probably landed its attack. Alternatively this also allows to verify the type of attack the zombie just landed, if it was a bite for example.
+
+The code above detects a variation in attack outcome and triggers at <code>"start"</code>, <code>"success"</code> and <code>"fail"</code>. This can be used to detect when a zombie attacks.
+
+{{Navbox Java events}}
