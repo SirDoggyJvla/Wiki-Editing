@@ -1,5 +1,5 @@
 {{Header|Modding|Java objects}}
-{{Page version|42.0.2}}
+{{Page version|42.2.0}}
 '''IsoZombie''' is the class [[Zombie|zombies]] use.
 
 ==Java doc==
@@ -61,6 +61,36 @@ After the zombie gets hit, the event [[OnWeaponHitXp]] triggers.
 
 Everytime a zombie gets hit, a hit counter gets incremented, which increases the next hit damage. This counter is called <code>hitTime</code> and can be accessed with <code>zombie:getHitTime()</code> and set with <code>zombie:setHitTime()</code>.
 
+===Foot stomp and handpush===
+[[OnWeaponHitCharacter]] gives the weapon but in the case of pushing and foot stomping a zombie, it gives the same weapon <code>"Base.BareHands"</code>. To make the difference between a stomp and a push, you can use:
+{{CodeSnip
+| lang = lua
+| code =
+local function OnWeaponHitCharacter(attacker, target, weapon, damage)
+    -- verify the target is the zombie still alive
+    if not instanceof(target,"IsoZombie") or not target:isAlive() then return end
+
+    -- checks if player is handpushing zombie or foot stomping
+    -- this is done by checking the weapon are hands and if damage is close to 0
+    local handPush = false
+    local footStomp = false
+    if attacker:isDoShove() then
+        -- hand push
+        if attacker:isAimAtFloor() then
+            footStomp = true
+
+        -- foot stomp
+        else
+            handPush = true
+        end
+    end
+end
+
+Events.OnWeaponHitCharacter.Add(OnWeaponHitCharacter)
+}}
+
+Note that the damage value you get when pushing won't actually damage the player. Like stated above, the damage value is wrong and is bad indicator most of the time if the zombie takes damage or not.
+
 ===Stop zombie taking damage===
 To stop a zombie from taking damage, you can use the following code:
 {{CodeSnip
@@ -69,8 +99,7 @@ To stop a zombie from taking damage, you can use the following code:
 local function OnWeaponHitCharacter(attacker, target, weapon, damage)
     -- verify the target is the zombie still alive
     if not instanceof(target,"IsoZombie") or not target:isAlive() then return end
-
-    zombie:seAtAvoidDamage(true) -- make the zombie immortal on this single hit, returns to false after getting hit
+    zombie:setAvoidDamage(true) -- make the zombie immortal on this single hit, returns to false after getting hit
 end
 
 Events.OnWeaponHitCharacter.Add(OnWeaponHitCharacter)
@@ -178,7 +207,7 @@ end
 Events.OnZombieUpdate.Add(OnZombieUpdate)
 }}
 
-The attack outcome is related to the current animation of the zombie which is composed of 2 steps:
+The attack outcome is related to the current animation of the zombie, which is composed of 2 steps:
 *The start of the attack.
 *The result of the attack.
 
@@ -188,8 +217,15 @@ The attack outcome is related to the current animation of the zombie which is co
 *<code>"success"</code> - the zombie lands its attack.
 *<code>"fail"</code> - the zombie misses its attack.
 
-<code>"success"</code> can however be misleading as the zombie can still miss the attack and still have this outcome. Use <code>target:getHitReaction()</code> to confirm the target is reacting to an attack, meaning the zombie probably landed its attack. Alternatively this also allows to verify the type of attack the zombie just landed, if it was a bite for example.
+<code>"success"</code> can however be misleading as the zombie can still miss the attack and still have this outcome. Use <code>target:getHitReaction()</code> to confirm the target is reacting to an attack, meaning the zombie probably landed its attack. Alternatively, this also allows verifying the type of attack the zombie just landed, if it was a bite, for example.
 
 The code above detects a variation in attack outcome and triggers at <code>"start"</code>, <code>"success"</code> and <code>"fail"</code>. This can be used to detect when a zombie attacks.
 
-{{Navbox Java events}}
+==Zombie clothings==
+Due to how performance heavy storing every single zombie current items is, the inventory of a zombie doesn't really exist until it is dead. Thus clothings can't be accessed the same way as for an [[IsoPlayer]] and instead are saved in their current outfit in the form of a [[PersistentOutfitID]].
+
+You can access the current outfit of a zombie with <code>zombie:getOutfitName()</code> and set it with <code>zombie:dressInNamedOutfit("<outfit_name>")</code>.
+
+Alternatively, you can also access the items of the outfit of a zombie by accessing its ItemVisuals. It allows you to modify what item the zombie is currently wearing, how bloody or dirty they are, how many holes etc. See [[ItemVisuals]] but note that any modification to ItemVisuals will be lost when the zombie gets unloaded and reloaded in and thus modifying those need to be achieved everytime the zombie loads in.
+
+{{Navbox Java objects}}

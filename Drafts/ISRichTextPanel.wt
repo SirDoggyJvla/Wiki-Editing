@@ -1,10 +1,20 @@
 {{Header|Modding|Lua objects}}
 {{Page version|41.78.16}}
-{{Underconstruction}}
-'''ISRichTextPanel''' are tags which can be used in various displayed string variables to format the string, show images etc. These can notably be used in Sandbox options like the example shown which adds images:
+'''ISRichTextPanel''' are tags which can be used in various displayed string variables to format the string, show images etc.
 
-[[File:ISRichTextPanel_exampleSandboxOptions1.png|400px]]
-[[File:ISRichTextPanel_exampleSandboxOptions2.png|400px]]
+[[File:ISRichTextPanel_exampleSandboxOptions1.png|400px|thumb]]
+[[File:ISRichTextPanel_exampleSandboxOptions2.png|400px|thumb|Example usage of ISRichTextPanel tags to make custom [[Sandbox options]] more appealing]]
+
+<code>PZAPI.ModOptions</code> location in game folder:
+{{CodeSnip
+| code =
+ProjectZomboid/
+└── media/
+    └── lua/
+        └── client/
+            └── ISUI/
+                └── ISRichTextPanel.lua
+}}
 
 ==Available tags==
 *<code><LINE></code> - starts a new line, resetting the X position to 0 and moving the Y position down by one line height
@@ -41,7 +51,15 @@
 
 *<code><SETX:int></code> - sets the X position to a specific pixel position, overriding the text flow
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Any space in a tag will break it !
+*<code><GHC></code> - the Good Highlited Color set by the player in options
+
+*<code><BHC></code> - the Bad Highlited Color set by the player in options
+
+*<code><VIDEOCENTRE:VIDEO_NAME.bik, original_width, original_height, display_width, display_height></code> - <code>VIDEO_NAME.bik</code> must be in <code>media/videos/</code> (that's where the panel looks for videos); the original dimensions of the video; the size at which it will be displayed in the panel (default for displayed size is w=384, h=216 if undefined).
+
+*<code><VIDEOCENTRE:VIDEO_NAME.bik, original_width, original_height, backup_image_name></code> - if the video effects are off it will show the backup image, must be in <code>media/videos/</code> (hardcoded location).
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Any space in a tag will break it and the formatting needs to be stricktly respected!
 
 ===Examples for IMAGE===
 <code><IMAGE:media/ui/spiffo/packing.png></code>
@@ -118,5 +136,3 @@ end
 
 ===Example===
 [[File:ISRichTextPanel_exampleCustomRichTag.png|600px|center]]
-
-{{Navbox modding}}

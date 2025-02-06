@@ -1,13 +1,9 @@
 {{Header|Modding}}
-{{Page version|42.0.2}}
+{{Page version|42.1.1}}
 '''Mod optimization''' is a very important part of mod making which is often ignored by too many people. When mods start to stack in a save, you will happen to drag all the problems of each mods and as such can create important performance impact when very simple tips and tricks can be utilized to improve performances. The following guide will explain in detail some of these tips and tricks to reduce the performance impact of your mod to a minimum and develop good habits.
 
-==External resources on the subject==
-You can refer to these for more detail on performances impacts. Some of the points in these are explained in the guide:
-*[https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/Optimisation.md Lua optimization guide] by Albion
-
 ==Lua (API)==
-===Don't need it ? Don't run it===
+===Don't need it? Don't run it===
 The first and main way you can and should optimize your code is with a simple rule: if you don't need to run it, don't do it. It might seem obvious at first and yet it is often a common mistake.
 
 In your code, you will most likely use checks to verify if a code should run, for example run your code only if the player moves, as an intended feature. However it's possible to use the same principle to stop code from running when it doesn't need to run even if it technically doesn't matter in term of gameplay for your mod. It will however matter internally to have less code running.
@@ -140,7 +136,7 @@ There are however cases of vanilla global variables which you need to access, or
 | lang = lua
 | code =
 -- File1.lua
-MyGlobalVariable = "Hello World !"
+MyGlobalVariable = "Hello World!"
 
 -- File2.lua
 local MyGlobalVariable = MyGlobalVariable -- store locally the global variable
@@ -319,7 +315,7 @@ myArray = table.newarray(myArray) -- transform fake array into proper array
 print(myArray[2]) -- print second entry
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Proper array tables can't be saved, meaning you can't use them in mod data or send them in network commands.
+<span style="font-size: 120%; font-weight: bold; color: red;">Important! </span> Proper array tables can't be saved, meaning you can't use them in mod data or send them in network commands.
 
 ====<code>pairs</code> and <code>ipairs</code>====
 <code>pairs</code> and <code>ipairs</code> are Lua functions which are used to iterate through elements in a table (see [[Lua#Looping through tables|Looping through tables]]. However these are slow and it is better to use alternatives when available.
@@ -378,7 +374,8 @@ end
 }}
 
 ===Generating randomness===
-The usual way to generate a random number is by using [[ZombRand]] but it generates a high quality randomness which is not necessary at all. Thankfully there is an alternative <code>newrandom</code> which is less costly:
+{{Main|Random}}
+The usual way to generate a random number is by using [[ZombRand]] but it generates a high quality randomness which is not necessary at all. Thankfully there is an alternative [[Random]] which is less costly:
 {{CodeSnip
 | lang = lua
 | code =
@@ -513,16 +510,16 @@ The best way to optimize your models is to keep the [http://wiki.polycount.com/w
 
 A great way to add detail to a model is to utilize the texture. You can use drawing techniques to create the illusion of topography for the player. Take this example from [https://steamcommunity.com/id/palsj PALSJ] adding detail on the model via texturing instead of making a detailed model:
 
-[[File:optimization lowPoly.png|400px]]
+[[File:optimization lowPoly.png|600px|center]]
 
 ===Texture size limit===
 These rules apply to texturing too, because while you could have 4K textures, you really do not have a need for it for every game assets. See the example below from [https://forum.game-guru.com/thread/222504 a guide to texture optimization], in Project Zomboid the camera will be zoomed so far back most of the times that it will be impossible to notice the texture size and it's probably best to keep it below 256x256.
 
-[[File:optimization_reducing_texture_size.jpg|400px]]
+[[File:optimization_reducing_texture_size.jpg|600px|center]]
 
 The reality is that it's practically impossible to see the detail and there's even cases where too much detail will make your texture look worse. Take the example made by [https://steamcommunity.com/id/LazySpongie spongie] showcasing how the amount of detail can make a texture confusing to look at due to the amount of detail and how reducing the detail for Project Zomboid can improve the visual clarity of it.
 
-[[File:optimization_hairTexture.png|400px]]
+[[File:optimization_hairTexture.png|600px|center]]
 
 You can take the [https://discord.com/channels/136501320340209664/869327724504842330/993893080694530128 official suggestion from The Indie Stone] about texture size for Project Zomboid:
 <blockquote>
@@ -544,7 +541,11 @@ We will endeavour to help this situation along code-side, but in the meantime if
 ===UV mapping===
 The best way to do UV mapping is to fit as much texture and have as little of free space on the UV map as possible. This will reduce file size and can also help you in texturing on the model. Take this example from [https://steamcommunity.com/profiles/76561198046849708 Nik] on how you should optimize your UV map:
 
-[[File:optimization_UVmapping.png|400px]]
+[[File:optimization_UVmapping.png|600px|center]]
+
+==See also==
+You can refer to these for more detail on performances impacts. Some of the points in these are explained in the guide:
+*[https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/Optimisation.md Lua optimization guide] by Albion
 
 {{Navbox modding}}
 

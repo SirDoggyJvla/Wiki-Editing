@@ -1,0 +1,57 @@
+{{Header|Modding|Java objects}}
+{{Page version|42.2.0}}
+'''ItemVisuals''' is an [https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/ArrayList.html ArrayList] of [[ItemVisual]] objects. It can be used to modify the current visuals of clothings of [[IsoZombie]]s but also [[IsoPlayer]]s.
+
+==Java doc==
+{{Main|Java documentation}}
+[https://projectzomboid.com/modding/zombie/core/skinnedmodel/visual/ItemVisuals.html ItemVisuals]
+
+==Accessing ItemVisuals==
+Clothing ItemVisuals can be accessed through the following methods:
+{{CodeSnip
+| lang = lua
+| code = 
+-- isoGameCharacter is an IsoGameCharacter instance
+local itemVisuals = isoGameCharacter:getItemVisuals()
+for i = 0, itemVisuals:size() - 1 do
+    local itemVisual = itemVisuals:get(i)
+    -- Do something with itemVisual
+end
+}}
+
+Body ItemVisuals (see [[HumanVisual]]) can be accessed through the following methods:
+{{CodeSnip
+| lang = lua
+| code =
+-- isoGameCharacter is an IsoGameCharacter instance
+local bodyVisuals = isoGameCharacter:getHumanVisual():getBodyVisuals()
+for i = 0, bodyVisuals:size() - 1 do
+    local itemVisual = bodyVisuals:get(i)
+    -- Do something with itemVisual
+end
+}}
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Whenever you modify the ItemVisuals of a character, you need to call the method <code>isoGameCharacter:resetModel()</code> to apply the changes.
+
+==Adding a new ItemVisual==
+To add a new ItemVisual to an IsoGameCharacter, you can use the following method:
+{{CodeSnip
+| lang = lua
+| code =
+-- isoGameCharacter is an IsoGameCharacter instance
+local itemVisuals = isoGameCharacter:getItemVisuals()
+local itemVisual = ItemVisual.new()
+itemVIsual:setItemType("<itemType>") -- <itemType> is the clothing item ID in the script
+itemVisual:setClothingItemName("<itemType>")
+
+-- append the ArrayList with the new ItemVisual
+itemVisuals:add(itemVisual)
+
+-- reset the model to apply the changes
+isoGameCharacter:resetModel()
+}}
+
+==See also==
+*[[ItemVisual]] - to manipulate the clothing visuals.
+
+{{Navbox Java objects}}

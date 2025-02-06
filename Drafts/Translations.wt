@@ -1,29 +1,14 @@
 {{Header|Modding}}
-{{Page version|41.78.16}}
+{{Page version|42.1.1|2=559029}}
 {{About|translating the game or a mod|a guide to translating the wiki|Help:Translations}}
 
-Official translations used to be done on [https://github.com/TheIndieStone/ProjectZomboidTranslations ProjectZomboidTranslations GitHub], however starting with [[build 42]] a professional studio was hired for translations.
+Official translations used to be done on [https://github.com/TheIndieStone/ProjectZomboidTranslations ProjectZomboidTranslations GitHub], however starting with [[Build 42]] a professional studio was hired for translations.
 
 Information about the game's translation system. Translations need to be saved in the encoding of the language used by the game. Files also need to follow the naming conventions and format of the translation types.
 
-==Translation files==
-Translation files are simple [[File formats#Text files|text files]] which are placed in the following folder:
-{{CodeSnip
-| code =
-media/
-└── lua/
-    └── shared/
-        └── Translate/
-            └── <language code>/
-                └── ...
-}}
-
-<code><language code></code> needs to be replaced with code of the language you want to make a translation for which can be found in the [[#Languages]] section. Each files need to be named accordingly to the type of translation you are making and the language code: <code>{File}_{language code}.txt</code>. Each file types are defined below in the [[#Translation types]] section.
-
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> to get more informations on the modding folder structure and the media folder, see the [[Folders structure]] page.
-
 ==Translation types==
 ===Commonly used files===
+These files follow the same naming convention ''Translate/{language}/{File}_{language}.txt'' and use the same format.
 {| class="wikitable theme-blue sortable"
 |- style="font-weight:bold;"
 ! File
@@ -193,13 +178,19 @@ Riverside
  A colorful town tightly hugging the banks of the mighty Ohio: exploring Riverside is a rich and diverse experience!
 ...
 </pre>
-Translation files need to follow the folder structure of the map. e.g. ''Translate/challengemaps/Kingsmouth/title.txt''
+Translation files need to follow the folder structure of the map. e.g., ''Translate/challengemaps/Kingsmouth/title.txt''
 
 ===Radio data===
 Radio Data is read from ''media/radio/''. Radio sources are ''xml'' files, translations are ''txt'' files. The recommended way to translate these can be found on the translation GitHub, however you can also edit them just like any other txt file.
 
 ==Languages==
-The game uses languages added to the ''media/lua/shared/Translate'' folder, information about the language is stored in the the ''language.txt'' file of each language directory.
+The game uses languages added to the ''media/lua/shared/Translate'' folder, information about the language is stored in the ''language.txt'' file of each language directory.
+
+===Build 42===
+Almost all languages use the UTF-8 encoding, except for KO which uses UTF-16, CS which uses cp1250, CA uses ISO-8859-15 and AR uses cp1252.
+
+===Build 41===
+For [[Build 41]], most language use different encodings:
 {| class="wikitable theme-blue sortable"
 |+ Languages in game
 |- style="font-weight:bold;"

@@ -1,0 +1,50 @@
+Hello everyone Sir Doggy Jvla here to explain all the changes to the modding wiki in January 2025. Work continues on restructuring the modding wiki and new pages get created to explain various aspects of the game.
+
+First off, a list of tasks that were finished in January 2025:
+*Create a page on how mods work, the file structure instead of having the information spread out? ([[Modding]] is a mess with hundreds of outside resources). [[Folders structure]]
+*Explain how to setup and use [https://github.com/asledgehammer/Umbrella Umbrella]. Also explained Zed Scripts: [[Visual Studio Code]]
+*Link to the unofficial modding and mapping Discord.
+*Create a translation guide, standalone translation requiring original mod (perhaps in [[Translations]]?), see [https://github.com/TheIndieStone/ProjectZomboidTranslations/issues/997 issue on GitHub] as well. Added file paths to [[Translations]] to be a proper guide.
+*Write missing pages and overview for modding tools: [[CartoZed]], [[ItemZed]], [[TranslationZed]]
+*Make a page about generating randomness (for [[Lua (API)]]).
+*[[Icon]] explain the trick of actually having a folder named textures/Icon_whateverName/ and your icon being named whateverName/iconName in the [[Scripts]]. Done in [[File formats#Icon files]].
+*Fix formatting issues for some Lua events: [[OnPlayerGetDamage]].
+*Next to the link to wiki pages for Lua events parameters, also link the java doc for the java objects.
+*Regenerate event pages without extra categories.
+
+A note on some of the current tasks:
+*Organize pages to have instead of "How to..." to have a page for each element (like "Clothing mods" or just "Clothings"? "Custom flier"?). ''I think it's fine keeping it as is as it's specific guides for specific stuff ? However getting some thoughts on this decision would be nice.''
+*Rally mapping Discord to come and document mapping stuff here too. ''I was able to talk to some mappers, even explaining how the wiki could be utilized to have a better documentation of the various guides and resources they have. I'm still waiting for them to come and start documenting their work here.''
+
+New pages were created:
+*[[LootZed]] - A page explaining how to use LootZed to help in creating loot tables for your mods.
+*[[newrandom]] later renamed to [[Random]] - Explains the Random object in the API which is more efficient to generate randomness than what most people actually use.
+*[[Sandbox options]] - Created to better explain the various options available in the sandbox settings and how to create custom sandbox options.
+*[[Java documentation]] - A page that explains how to access the Java documentation for the game and how to use it to better understand the game's code. It was created to have a centralized place with the various official and unofficial java documentation links which might require updating in the future.
+*[[ModData]] - A page explaining how to use ModData to store data in the game for use even after reloading a save. Various classes have their own specific mod data attached to them however this page is spefically about the global mod data object named <code>ModData</code>.
+*[[Imgui]] - A new tool which was teased in the blogs but they actually never told us it was even accessible, so here it is.
+
+Some pages were updated:
+*[[Modding]] - The main page was updated to reflect the changes in the modding wiki. It also got a new section about the various changes to modding in the game. We'll have to see how viable it will be in the future due to how slow it can be to find those changes. ''On this, perhaps we need to refer the modding changes discoveries to the game version instead of refering those directly to which version of the game they were added. This way, it's easier to take note of the changes that were only recently discovered.''
+*[[File structure]] - Folder structure was moved this name instead. More work is done on this page to explain the file structures of mods and the game.
+*[[File formats]] - In the same way, the page was updated to explain the various file formats used in the game and in mods. But compared to before where it explained unique file formats, it now explains the various file formats used in the game and in mods, specific stuff about them but also tools related to those such as models and animations being <code>.x</code> files which require specific tools to be usable in Blender. A proper method to retrieving the vanilla animations in Blender was added recently in fact.
+*[[Lua event]] and [[Category:Lua events]] - Was reworked to be updated to the most recent version of the game while keeping some of the advantages of the various methods of events sharing that existed. Giving a compact list of the various events available, the new ones added in the most recent version of the game and the ones that were removed (tho no events were deleted yet, but the plan is to document those in the future).
+*[[Translation]] - Some bits were done on the page to better guide modders into making their own translations.
+*Navboxes were created for [[Java object]] pages to more easily navigate between them.
+*[[Visual Studio Code]] - Was updated with various tools that makes scripting easier.
+*[[ISRichTextPanel]] - Was updated with new tags.
+*[[Decompiling game code]] - Was updated with a new method to decompile the game code notably a new one by Albion which allows for very easy access to the game decompilation.
+*[[IsoPlayer]] - Was reworked to fit the new changes to the modding wiki. Currently, there's no point explaining and listing the various methods available for IsoPlayer as that is the job of the [[Java documentation]]. Instead, like for [[IsoZombie]] which is a good example right now due to how much is listed there, the goal is to explain how to do various stuff on Java objects and explain technical aspects of the classes.
+*[[Lua (language)]] - Was completely reworked to not bombard the new modders with useless informations. Instead it will serve as an introduction to the Lua language and its various objects, functions etc. For an in-depth look on the PZ Lua, the [[Lua (API)]] page is the place to go. [[Mod optimization]] is also a very important place to check when starting out.
+*[[Procedural distributions]] - Reworked the page to better explain the technical aspect of loot generation but also share good practices to make your loot tables more efficient but also easier to read and modify in the future.
+*[[Animation guide]] - A new rig was created for Blender from a few animators in the community. This rig fixes massive flaws with the precedent rigs and is now the recommended rig to use for animations. The page was updated to reflect this change, linking the new rig but it will need some rework overall in how the guide itself is approached.
+
+Some members of the community have been working on the wiki and joined the work effort to improve the modding wiki:
+*Albion - She's been helping with me understanding better various aspects of the game to give quality information on the wiki. She's also been fixing some mistakes in some pages here and there and her data base of the various Events in the [[Lua (API)]] was used to completely rework [[Lua event]] pages.
+*CrystalChris - He's been working on the Animation guide and has been helping me with some of the more complex parts of the game that I'm not familiar with. He also helped a bit with other pages such as scripts stuff.
+*Spongie - Updated some parts of the wiki with new informations.
+*Aoqia - Updated [[File structure]] with new informations.
+*Notloc and Glytch3r - Noticed mistakes in some pages and fixed them.
+*And of course the admins of the wiki who've been cleaning up after us.
+
+Like mentioned a bit before but also in the first ever Project Modding report, the wiki is a community effort. I'm not the only one working on it and in fact I shouldn't, I'm always looking for feedback on the various pages. If you have any suggestions or think something should be changed or added, do not hesitate to do so. In the same way, the mapping wiki requires more people to document their work there. I'm not a mapper and I can't document their work as well as they could. So if you're a mapper, please come and document your work on the wiki and don't feel scared to ask for help, it is my goal to guide people into sharing informations on the wiki.

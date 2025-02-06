@@ -1,0 +1,56 @@
+{{Header|Modding|Lua (API)|Java objects}}
+{{Page version|42.1.1}}
+'''newrandom''' is a java object which can be used to generate random numbers. It is about 40% more efficient than standard [[ZombRand]] and should be used in place of it.
+
+It is a global object and can be accessed with <code>newrandom()</code>. It allows you to set a seed for the random and also doesn't have the weird quirk of ZombRand where the maximum argument needs to be one higher than the actual maximum aimed at.
+
+==Using newrandom==
+To use newrandom, you need to first create a new instance of it. This can be done with <code>newrandom()</code> which will return a new instance of the object. You can then use this object to generate random numbers.
+
+{{CodeSnip
+| lang = lua
+| code =
+-- cache it for performance reasons, this random object can be shared between multiple different random calls
+local random = newrandom()
+
+-- generate a random number between 0 and 10
+local randomNumber = random:random(0, 10)
+
+-- generate a random number between 0 and 1
+local randomFloat = random:random(0,1)
+}}
+
+This method doesn't allow to directly generate float random numbers, but you can use the following code to generate a float random number between min and max:
+
+{{CodeSnip
+| lang = lua
+| code =
+-- cache it for performance reasons
+local random = newrandom()
+
+-- generate a random float number between 0 and 1
+local precision = 1000 -- increase this number if you need more precision (currently will generate 1000 possible numbers varying by 0.001)
+local randomFloat = random:random(0, precision) / precision
+}}
+
+==Seeds==
+You can also set a seed for the random number generator. This can be done with <code>newrandom():seed(seed)</code>. This will set the seed for the random number generator and will make sure that the random numbers generated are the same each time the seed is set to the same value.
+
+{{CodeSnip
+| lang = lua
+| code =
+-- cache it for performance reasons
+local random = newrandom()
+
+-- set the seed to 12345
+random:seed(12345)
+
+-- generate a random number between 0 and 10
+local randomNumber = random:random(0, 10) -- will generate the same number everytime
+}}
+
+==See also==
+*[[ZombRand]]
+*[[Noise Maps]]
+
+{{Navbox Java objects}}

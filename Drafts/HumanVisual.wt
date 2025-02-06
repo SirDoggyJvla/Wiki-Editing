@@ -1,0 +1,44 @@
+{{Header|Modding|Java objects}}
+{{Page version|42.2.0}}
+'''HumanVisual''' is a class which defines the various body visuals of [[IsoZombie]]s and [[IsoPlayer]]s. It involves anything related to the character model, textures, color, and more.
+
+==Java doc==
+{{Main|Java documentation}}
+[https://projectzomboid.com/modding/zombie/core/skinnedmodel/visual/HumanVisual.html HumanVisual]
+
+==Accessing human visuals==
+To access the human visuals of an [[IsoPlayer]] or [[IsoZombie]], you can use the following method:
+{{CodeSnip
+| lang = lua
+| code =
+-- zombie is an IsoZombie instance
+local humanVisual = zombie:getHumanVisual()
+}}
+
+==Bandages==
+Removing bandages can be achieved by accessing the body visuals which are in the form of an [[ItemVisuals]] array. You can simply remove the entries from the body visuals array to remove the bandages from the character.
+{{CodeSnip
+| lang = lua
+| code =
+-- zombie is an IsoZombie instance
+local humanVisual = zombie:getHumanVisual()
+
+-- remove bandages
+local bodyVisuals = humanVisual:getBodyVisuals()
+
+-- remove the first bandage
+bodyVisuals:remove(0)
+
+-- remove all bandages
+bodyVisuals:clear()
+
+-- reset the model to apply the changes
+zombie:resetModel()
+}}
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> The [[ItemVisuals]] here are different from the clothing ItemVisuals you can retrieve with <code>getItemVisuals()</code> but they use the same class and methods.
+
+==See also==
+*[[ItemVisuals]] - an array of [[ItemVisual]] which defines the clothings of an IsoGameCharacter.
+
+{{Navbox Java objects}}

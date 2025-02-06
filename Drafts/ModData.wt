@@ -1,0 +1,31 @@
+{{Header|Modding|Lua (API)|Java objects}}
+{{Page version|42.1.0}}
+'''ModData''' is a class used to store informations in a save in a persistent way.
+
+==Java doc==
+[https://demiurgequantified.github.io/ProjectZomboidJavaDocs/zombie/world/moddata/ModData.html ModData]
+
+==Using ModData==
+ModData is used as a Lua table to store variables such as strings, boolean, numbers and tables but it can't store objects. Below is an example of how to use ModData in Lua:
+{{CodeSnip
+| lang = lua
+| code =
+local modData = ModData.getOrCreate("MyModDataID")
+modData.myString = "Hello World"
+modData.myNumber = 42
+modData.myTable = {1, 2, 3}
+modData.myBoolean = true
+}}
+
+A simple trick to improve [[Mod optimization|performances]] you can do is to cache the ModData object in a local variable:
+{{CodeSnip
+| lang = lua
+| code =
+local modData
+
+Events.OnInitGlobalModData.Add(function()
+    modData = ModData.getOrCreate("MyModDataID")
+end)
+}}
+
+{{Navbox Java objects}}

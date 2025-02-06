@@ -25,13 +25,35 @@ The game uses 8bit PNGs (16bits is not accepted) for its textures and images, so
 {{Stub|section=true}}
 
 ===Modeling and animation formats===
-The model formats which can be used are either <code>.X</code> or <code>.FBX</code>. <code>.X</code> is the format which you will usually encounter in the game files, either for models or animations
+The model formats which can be used are either <code>.X</code> or <code>.FBX</code>. <code>.X</code> is the format which you will usually encounter in the game files, either for models or animations.
 
 While <code>.X</code> is what is most commonly used by the game, it is highly suggested to use <code>.FBX</code> as it is one of the most used formats in the video game industry and <code>.X</code> is no longer supported by a lot of 3D modeling software such as Blender.
 
-Importing a <code>.X</code> file in Blender can be done by using addons by note that importing animations is pratically impossible, and not a proper method to have usable and editable animations inside Blender has been found for Project Zomboid <code>.X</code> animations. For models however here is a simple list of addons:
+====Importing model files====
+Importing the <code>.X</code> of model files in Blender can be done by using addons:
 *[https://github.com/poikilos/io_import_x IO X Importer] - best one so far, works for older versions of Blender but also more recent versions such as confirmed working in 4.1 and 4.2.
-*[https://github.com/oguna/Blender-XFileImporter X File Importer] - should work for newer Blender versions.
+*[https://github.com/oguna/Blender-XFileImporter X File Importer] - should work for newer Blender versions but the imported models can have problems.
+
+====Importing animation files====
+Importing the <code>.X</code> of animation files in Blender can be done by using the [https://github.com/aoqia194/ZomboidAssetConverter Zomboid Asset Converter], a tool that can convert the <code>.X</code> files to <code>.gltf</code> files alongside its <code>.bin</code> file.
+
+To import the files, you'll need a bash interpreter such as [https://git-scm.com/downloads Git Bash]. To be able to convert the files, you'll need to follow the following steps:
+*Open the Git Bash terminal in the the folder you want to copy the converter. (right clicking in a folder and selecting "Open Git Bash Here")
+*Clone the repository in this folder by typing <code>git clone https://github.com/aoqia194/ZomboidAssetConverter</code> in the terminal.
+*Run the following command to enter the repository:
+{{CodeSnip
+| lang = bash
+| code =
+cd ZomboidAssetConverter
+}}
+*Run the converter with the following command, by setting the correct paths:
+{{CodeSnip
+| lang = bash
+| code =
+./ZomboidAssetExtractor <anim_X/folder/path> --output <output/folder/path> --fix-assets --convert-assets
+}}
+
+The program will convert the <code>.X</code> files to <code>.gltf</code> files and their <code>.bin</code> files.
 
 ===TexturePacks (.pack files)===
 Pack files are used to store image files in a very efficient way. The format requires you to use the [[Pack Viewer]] to be able to open the format.
