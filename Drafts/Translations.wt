@@ -379,10 +379,14 @@ The ''language.txt'' file must have VERSION, text and charset values, the rest a
 | not used, might have limited support
 |}
 
+==Translation tools==
+Below are tools which can be used to translate the game or mods:
+*[https://github.com/Chuckleberry-Finn/pz-translator/ PZ Translator (forked)] - a tool to translate the game and mods automatically, bases itself on Google Translate.
+
 ==See also==
-*[https://github.com/TheIndieStone/ProjectZomboidTranslations GitHub repository for the game translations]
+*[https://github.com/TheIndieStone/ProjectZomboidTranslations GitHub repository for the game translations (outdated)]
 *[https://github.com/timbaker/translatoid/releases Releases of TranslationZed tool]
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3006690572 Steam guide by '''''Matrioshka''''', '''''Riko Prushka''''']
-*[https://github.com/Poltergeist-PZ-Modding/pz-translator Scripts to automatically update your mod translations]
+*[https://github.com/Poltergeist-PZ-Modding/pz-translator PZ Translator (original)] - a tool to translate the game and mods automatically, bases itself on Google Translate.
 
 {{Navbox modding}}
