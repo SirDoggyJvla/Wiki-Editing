@@ -1,0 +1,7 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.3.0}}
+'''[https://github.com/demiurgeQuantified/PZEventDoc PZEventDoc]''' is a tool for generating Lua annotations for Project Zomboid events and hooks from a JSON specification to allow for autocompletion, type checking and easy access to documentation. Most modders will only be interested in the output files ([https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/Events.md Events documentation] or [[PZEventStubs]]).
+
+Its database was used to generate the updated list of [[Lua events]] on the wiki.
+
+{{Navbox modding}}

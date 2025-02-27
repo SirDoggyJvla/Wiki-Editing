@@ -1,0 +1,59 @@
+{{Header|Modding|Lua objects}}
+{{Page version|42.3.1}}
+'''ISToolTip''' is a subclass of [[ISPanel]] used to display a tooltip on the screen. It is used by the game to display tooltips for various UI elements. This page documents the methods and properties of ISToolTip objects.
+
+==Creating a tooltip==
+Creating a tooltip is done by calling the <code>ISToolTip:new()</code> function however a better way to do so is to use <code>ISWorldObjectContextMenu.addToolTip</code> which will pick a tooltip from a [[Object Pooling|pool of tooltips]]. This last method is recommanded as the game automatically creates new instances of tooltips if needed.
+{{CodeSnip
+| lang = lua
+| code = 
+-- create a new ISToolTip instance
+local tooltip = ISToolTip:new()
+
+-- get the tooltip from the existing pool of tooltips
+local tooltip = ISWorldObjectContextMenu.addToolTip()
+}}
+
+==Adding a description==
+To add a text description in the tooltip, you can simply add a string with the tooltip text to the field <code>description</code> of the tooltip object.
+{{CodeSnip
+| lang = lua
+| code = 
+-- create a new ISToolTip instance
+local tooltip = ISToolTip:new()
+
+-- add a description to the tooltip
+tooltip.description = "This is a tooltip description."
+}}
+
+[[ISRichTextPanel]] tags can be used in the description.
+
+==Adding an icon==
+To add an icon to the tooltip, you can simply add a [[Texture]] object to the field <code>texture</code> of the tooltip object.
+{{CodeSnip
+| lang = lua
+| code =
+-- create a new ISToolTip instance
+local tooltip = ISToolTip:new()
+
+-- add an icon to the tooltip
+tooltip.texture = getTexture("media/ui/yourImage.png")
+}}
+
+This icon will be shown on the left side of the tooltip description.
+
+==Adding a footnote==
+To add a footnote to the tooltip, you can simply add a string with the footnote text to the field <code>footnote</code> of the tooltip object.
+{{CodeSnip
+| lang = lua
+| code =
+-- create a new ISToolTip instance
+local tooltip = ISToolTip:new()
+
+-- add a footnote to the tooltip
+tooltip.footnote = "This is a tooltip footnote."
+}}
+
+[[ISRichTextPanel]] tags can't be used in the footnote.
+
+{{Navbox Lua objects}}

@@ -1,0 +1,7 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.3.0}}
+'''[https://github.com/demiurgeQuantified/PZEventStubs PZEventStub]''' provides Lua annotations for Project Zomboid events and hooks to allow for autocompletion, type checking and easy access to documentation. You can view the documentation as text in [[Lua events]] or [https://github.com/demiurgeQuantified/PZEventDoc/blob/develop/docs/Events.md here].
+
+It is recommanded to simply use [[Umbrella (Modding project)|Umbrella]] to get the latest version of the annotations.
+
+{{Navbox modding}}

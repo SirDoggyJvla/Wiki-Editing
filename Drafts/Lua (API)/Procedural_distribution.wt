@@ -1,6 +1,6 @@
 {{Header|Modding|Lua (API)}}
-{{Page version|42.0.2|2=405935}}
-'''Procedural distribution''' defines how loot spawns in the game, which items and where with which chance.
+{{Page version|42.3.1}}
+'''Procedural distribution''' explains how the loot system of the game works and how you can add your own loot to the procedural distribution.
 
 ==How does loot generation works==
 Each containers in the game have different possibilities of [[#Distributions|distribution lists]] which can also depend on the type of room they are in. This means each containers can have multiple distributions associated to them, based on the room they are in and the distribution they will use when being loaded in depends on a weighted random on these choices.
@@ -117,13 +117,15 @@ The main challenges you will face is properly understanding how loot generation 
 
 Inserting inside the Procedural Distribution needs to be achieved in <code>media/lua/server/Items</code>.
 
-There are many ways of achieving this and the most impractical one is to simply do:
+There are many ways of achieving this, and the most practical one is to simply do:
 {{CodeSnip
 | lang = lua
 | code =
 table.insert(ProceduralDistributions.list["DistributionListName"].items, "YourItem") -- add your item to the list
 table.insert(ProceduralDistributions.list["DistributionListName"].items, 0.5) -- following its chance value
 }}
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Items that are defined with a different [[Scripts#Module block|module]] than <code>Base</code> need to have their module in the item name. For example, if you have an item named <code>MyItem</code> in the <code>MyMod</code> module, you need to add it as <code>MyMod.MyItem</code>.
 
 A better way to handle this is to have every distributions and their items and chances in a singular table which is parsed through thanks to a loop and added with a single <code>table.insert</code> line.
 
@@ -241,7 +243,7 @@ Some of the best methods can involve:
 
 ==Distributions==
 Below is the full list of distributions as well as their different tags.
-{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center;
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center";
 |+ style="white-space:nowrap" | List of distributions and their different tags
 |-
 ! Distribution list !! Rolls !! <code>ignoreZombieDensity</code> !! <code>isShop</code> !! <code>stashChance</code> !! <code>canBurn</code> !! <code>isWorn</code> !! <code>isTrash</code> !! <code>isRotten</code> !! <code>bags</code> !! <code>maxMap</code> !! <code>onlyOne</code>

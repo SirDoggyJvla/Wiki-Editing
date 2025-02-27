@@ -1,6 +1,6 @@
 {{Header|Modding|Lua objects}}
-{{Page version|42.0.2}}
-The <code>ModOptions</code> [[Lua objects|Lua object]] from [[PZAPI]] is a new tool since [[Build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc.
+{{Page version|42.3.1}}
+The <code>ModOptions</code> [[Lua object]] from [[PZAPI]] is a new tool since [[build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc.
 
 This page will explain how to use this tool for your own mod, what's available and what's possible to do with its current features. When creating a new option section, it will appear in the category "MODS" in the game options.
 
@@ -450,7 +450,7 @@ Events.OnKeyPressed.Add(OnKeyPressed)
 }}
 
 ===Storing values===
-A way to not have to do all these steps is by using [[Modules]] to easily store and access each options values.
+A way to not have to do all these steps is by using [[Lua (language)#Modules]] to easily store and access each options values.
 
 The following code snippets allow exactly that:
 {{CodeSnip
@@ -536,5 +536,3 @@ end
 
 Events.OnKeyPressed.Add(OnKeyPressed)
 }}
-
-{{Navbox modding}}

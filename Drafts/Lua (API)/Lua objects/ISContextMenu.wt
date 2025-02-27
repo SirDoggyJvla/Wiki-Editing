@@ -1,0 +1,356 @@
+{{Header|Modding|Lua objects}}
+{{Page version|42.3.1}}
+'''ISContextMenu''' is a subclass of [[ISPanel]] used to instanciate a context menu UI allowing players to chose available options for one or more objects, usually used when right clicking in the game. This article will detail how to use this object in the [[Lua (API)]] to add your own options to existing context menu objects, modify and customize them and more.
+
+==Creating a context menu==
+Creating a context menu can be done the same way as creating UI elements or lua object instances. Here is an example of how to create a context menu:
+{{CodeSnip
+| lang = lua
+| code =
+-- create a new instance
+local contextMenu = ISContextMenu:new(x, y, width, height)
+contextMenu:setVisible(true)
+contextMenu:addToUIManager()
+}}
+
+==Accessing context menu==
+Different vanilla context menus are created in the game which can be accessed with various methods. The most common one involves using events which trigger when a context menu appears:
+- [[OnClickedAnimalForContext]]: Triggered when right clicking on an animal.
+- [[OnFillInventoryObjectContextMenu]]: Triggered when right clicking on an inventory item.
+- [[OnFillWorldObjectContextMenu]]: Triggered when right clicking in the world.
+- [[OnPreFillInventoryObjectContextMenu]]: Triggered when right clicking on an inventory item, before it is filled with the context menu options.
+- [[OnPreFillWorldObjectContextMenu]]: Triggered when right clicking in the world object, before it is filled with the context menu options.
+- [[onFillSearchIconContextMenu]]: Triggered when right clicking on a foraging icon.
+
+===OnFillInventoryObjectContextMenu===
+{{Main|OnFillInventoryObjectContextMenu}}
+This event is triggered when right clicking on an inventory item. Here is an example of how you can use the event and how you can iterate through every items selected:
+{{CodeSnip
+| lang = lua
+| code =
+local function OnFillInventoryObjectContextMenu(playerNum, context, items)
+    -- loop through every item stack
+	for i = 1,#items do
+		-- retrieve the item
+		local item = items[i]
+		if not instanceof(item, "InventoryItem") then
+            item = item.items[1]
+        end
+
+        -- run code here for specific item
+    end
+end
+
+Events.OnFillInventoryObjectContextMenu.Add(OnFillInventoryObjectContextMenu)
+}}
+
+===OnFillWorldObjectContextMenu===
+{{Main|OnFillWorldObjectContextMenu}}
+This event is triggered when right clicking in the world. Here is an example of how you can use the event and how you can iterate through every objects under the cursor when right clicking:
+{{CodeSnip
+| lang = lua
+| code =
+local function OnFillWorldObjectContextMenu(playerNum, context, worldObjects, test)
+    for i = 2,#worldObjects do
+        local object = worldObjects[i]
+        -- run code here for specific object
+    end
+end
+
+Events.OnFillWorldObjectContextMenu.Add(OnFillWorldObjectContextMenu)
+}}
+
+===Alternative method===
+Alternatively, you can access the player context menu with the following method:
+{{CodeSnip
+| lang = lua
+| code =
+ISContextMenu.get(player, x, y)
+}}
+
+==Options==
+===Adding options===
+Different methods can be used to add options to a context menu. The most common one is to use the `addOption` method. Here is an example of how to add an option to a context menu:
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 841
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:addOption(name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
+}}
+Leaving the <code>onSelect</code> parameter empty will make the option unclickable. This parameter is meant to be a function with the following structure:
+{{CodeSnip
+| lang = lua
+| code =
+function yourFunction(target, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
+    -- code here
+end
+}}
+Parameters that are unused can be removed from the function. Here is an example of how to add an option to a context menu:
+{{CodeSnip
+| lang = lua
+| code =
+-- supposing context is a context menu instance
+local option = context:addOption("My option") -- unclickable
+
+-- adding a clickable option with a function without parameters
+local function yourFunction()
+    print("Hello world!")
+end
+local option2 = context:addOption("Clickable option", nil, yourFunction, "param1", "param2")
+
+-- adding a clickable option with a function with parameters
+local function yourFunction2(player, message, time)
+    print("Player: " .. player)
+    print("Message: " .. message)
+    print("Time: " .. time)
+end
+
+local option3 = context:addOption("Another clickable option", "It's me!", yourFunction2, "Hello world!", "01:01")
+}}
+
+There exists other methods to add options to a context menu in the same way which are resumed in the following table:
+{| class="wikitable theme-blue"
+! Method name !! Description !! Source
+|-
+| style="padding: 10px;"| <big><code>addOption</code></big>
+| style="padding: 5px; max-width: 500px;"| The option will be added at the bottom in the context menu.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 841
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:addOption(name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
+}}
+|-
+| style="padding: 10px;"| <big><code>addOptionOnTop</code></big>
+| style="padding: 5px; max-width: 500px;"| The option will be added at the top in the context menu.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 880
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:addOptionOnTop(name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
+}}
+|-
+| style="padding: 10px;"| <big><code>insertOptionAfter</code></big>
+| style="padding: 5px; max-width: 500px;"| The option will be added after a specific option in the context menu. Identification of the option is done by its name (see [[#Accessing options]]).
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 898
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:insertOptionAfter(prevOptionName, name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
+}}
+|-
+| style="padding: 10px;"| <big><code>insertOptionBefore</code></big>
+| style="padding: 5px; max-width: 500px;"| The option will be added before a specific option in the context menu. Identification of the option is done by its name (see [[#Accessing options]]).
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 934
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:insertOptionBefore(nextOptionName, name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
+}}
+|-
+| style="padding: 10px;"| <big><code>addActionsOption</code></big>
+| style="padding: 5px; max-width: 500px;"| An option which adds a timed action to the queue of timed actions.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 1035
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:addActionsOption(text, getActionsFunction, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
+	local character = getSpecificPlayer(self.player)
+	return self:addOption(text, character, ISTimedActionQueue.queueActions, getActionsFunction, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
+end
+}}
+|-
+| style="padding: 10px;"| <big><code>addGetUpOption</code></big>
+| style="padding: 5px; max-width: 500px;"| An option which adds a timed action to the queue a function to be ran after the player got up.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 1004
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:addGetUpOption(text, target, onSelect, p2, p3, p4, p5, p6, p7, p8, p9, p10, ...)
+}}
+|-
+| style="padding: 10px;"| <big><code>addDefaultOptions</code></big>
+| style="padding: 5px; max-width: 500px;"| An option which adds default options to the context menu, useful for [[#Creating a submenu|submenus]].
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 625
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:addDefaultOptions()
+	-- Default options could be added when addSubMenu() is called, however some code
+	-- will remove a submenu option if the submenu is empty.  It won't be empty if
+	-- default options were added.
+}}
+|}
+
+===Accessing options===
+Options can be accessed in a context menu by using the `getOptionFromName` method. To do that, you have to know the name which was given to the option when it was added. Here is an example of how to access an option in a context menu:
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 857
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:getOptionFromName(name)
+}}
+{{CodeSnip
+| lang = lua
+| code =
+-- example option
+local option = context:addOption("My option")
+
+-- access the option
+local option = context:getOptionFromName("My option")
+}}
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Options having special formating such as [[Translations|translations]] or numbers might require extra operations to access its name.
+
+===Removing options===
+Different ways exist to remove an option from a context menu:
+{| class="wikitable theme-blue"
+! Method name !! Description !! Source
+|-
+| style="padding: 10px;"| <big><code>removeOptionByName</code></big>
+| style="padding: 5px; max-width: 500px;"| Remove the option by its name.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 982
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:removeOptionByName(optName)
+}}
+|-
+| style="padding: 10px;"| <big><code>removeLastOption</code></big>
+| style="padding: 5px; max-width: 500px;"| Remove the last option in the context menu.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 975
+| source = ISContextMenu.lua
+| path = ProjectZomboid\media\lua\client\ISUI
+| retrieved = true
+| version = 42.3.1
+| code =
+function ISContextMenu:removeLastOption()
+}}
+|}
+
+===Creating a submenu===
+Submenus can be created by creating an option which will then be marked as a sub context menu. Here is an example of how to create a submenu:
+{{CodeSnip
+| lang = lua
+| code =
+-- create a new option
+local option = context:addOption("My submenu")
+
+-- create a sub context menu within the context menu
+subMenu = context:getNew(context)
+
+-- link the submenu to the option
+context:addSubMenu(option, subMenu)
+}}
+This option will now be marked as a submenu and a sub context menu will appear when hovering with your cursor over it. You can add options to this menu the same way as you would with a regular context menu:
+{{CodeSnip
+| lang = lua
+| code =
+-- add an option to the submenu
+subMenu:addOption("My option")
+
+-- you can also add more options if needed
+subMenu:addOption("Another option")
+}}
+
+===Tooltip===
+{{Main|ISToolTip}}
+A descriptive tooltip can be added to an option, which will be an [[ISToolTip]]. Here is an example of how to add a tooltip to an option:
+{{CodeSnip
+| lang = lua
+| code =
+-- create a new option
+local option = context:addOption("My option")
+
+-- add a tooltip to the option
+local tooltipObject = ISWorldObjectContextMenu.addToolTip()
+tooltipObject.description = getText("Tooltip description bla bla bla")
+option.toolTip = tooltipObject
+}}
+
+===Customizing options===
+You can make an option disabled, thus not clickable by doing:
+{{CodeSnip
+| lang = lua
+| code =
+-- create a new option
+local option = context:addOption("My option")
+
+-- disable the option
+option.notAvailable = true
+}}
+
+You can add an icon texture to an option which will show up on the left side of the option by doing:
+{{CodeSnip
+| lang = lua
+| code =
+-- create a new option
+local option = context:addOption("My option")
+
+-- add an icon to the option
+option.iconTexture = getTexture("media/ui/myIconTexture.png")
+}}
+
+{{Navbox Lua objects}}

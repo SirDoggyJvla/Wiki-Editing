@@ -1,8 +1,9 @@
 {{Header|Modding|Java objects}}
-{{Page version|42.2.0}}
+{{Page version|42.3.1}}
 '''IsoZombie''' is the class [[Zombie|zombies]] use.
 
 ==Java doc==
+{{Main|Java documentation}}
 [https://projectzomboid.com/modding/zombie/characters/IsoZombie.html IsoZombie]
 
 ==Related Lua events==
@@ -15,6 +16,7 @@ Indirect Lua events:
 *[[OnWeaponHitCharacter]] - triggers when an [[IsoPlayer]] hits an [[IsoGameCharacter]], so an [[IsoZombie]] as well as an [[IsoPlayer]].
 
 ==Technical note==
+===Object Pooling===
 IsoZombie is a type of class subject to [[Object Pooling]]. This means the instance of IsoZombie is not destroyed when the zombie gets killed or unloaded from the world, but it's recycled to be used later again. This is done for performance reasons to not have to constantly recreate instances of an object which is very impactful in the case of Project Zomboid due to the amount of zombies which can be loaded in at once (imagine loading in the LV Mall zombies without this small optimization boost).
 
 Since [[Build 42]], whenever an IsoZombie instance gets reused to load in a zombie, the event [[OnZombieCreate]] is triggered and can be used to initialize various aspects of zombies.
@@ -22,6 +24,40 @@ Since [[Build 42]], whenever an IsoZombie instance gets reused to load in a zomb
 The problem of [[Object Pooling]] is that associating data specifically to an instance of IsoZombie will be shuffled around different zombie entities whenever the zombie that had this set of data gets unloaded and another zombie reuses this IsoZombie instance. This is problematic to have persistent data attached to a specific zombies and currently no way was found on how to properly identificate zombies after they have been unloaded and reloaded in.
 
 The only method of identification which exists involves the [[PersistentOutfitID]] and has a problem of uniqueness, meaning zombies can share this ID and thus it doesn't properly allow for unique zombie identification.
+
+===Zombie updates===
+Zombies are updated every ticks when visible to the player, but when not currently visible, they are updated less often to save performances.
+
+==Accessing zombies==
+Accessing zombies can be achieved with the various [[#Related Lua events|related lua events]] or with other means. A common useful way to retrieve zombies is by using the <code>getZombieList</code> method from [[IsoCell]]. This method returns a [[ArrayList]] of all zombies currently loaded in the '''player''' cell (and not the world cell !).
+
+{{CodeSnip
+| lang = lua
+| code =
+local zombies = getCell():getZombieList()
+for i=0, zombies:size()-1 do
+    local zombie = zombies:get(i)
+    -- do something with the zombie
+end
+}}
+
+Alternatively, you can also retrieve [[IsoMovingObject]]s on an [[IsoGridSquare]] and thus zombies with the following code:
+{{CodeSnip
+| lang = lua
+| code =
+local sq = getSquare(x, y, z)
+if not sq then return end -- not always needed but suggested if you are not sure the square exists
+
+local movingObjects = sq:getMovingObjects()
+for i = 0, movingObjects:size() - 1 do repeat -- using technique to allow continue
+    local movingObject = movingObjects:get(i)
+
+    -- verify the movingObject is a zombie
+    if not instanceof(movingObject, "IsoZombie") then break end
+
+    -- do something with the zombie (movingObject)
+until true end
+}}
 
 ==Spawning zombies==
 Different methods exist to spawn a zombie in. The main thing to watch for is syncing client and server side the spawn of the zombie.

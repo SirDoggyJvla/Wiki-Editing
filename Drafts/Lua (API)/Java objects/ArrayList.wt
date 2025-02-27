@@ -1,0 +1,57 @@
+{{Header|Modding|Java objects}}
+{{Page version|42.3.1}}
+[https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/ArrayList.html '''ArrayLists'''] are a type of list that can be used to store multiple objects. They are part of the Java Collections Framework and are used to store objects in a list. This article will explain how you can use them in the [[Lua (API)]].
+
+==Accessing an ArrayList==
+ArrayLists are a similar type of object as Lua tables but are not worked on in the same way from the Lua side and will usually contain a specific type of object.
+
+These can be accessed via various methods which will return such objects. For example the method [https://demiurgequantified.github.io/ProjectZomboidJavaDocs/zombie/iso/IsoGridSquare.html#getMovingObjects() <code>getMovingObjects()</code>] from [https://demiurgequantified.github.io/ProjectZomboidJavaDocs/zombie/iso/IsoGridSquare.html IsoGridSquare] instances will return an ArrayList containing [https://demiurgequantified.github.io/ProjectZomboidJavaDocs/zombie/iso/IsoMovingObject.html IsoMovingObjects]:
+{{
+| lang = lua
+| code = 
+-- supposing gridSquare is an IsoGridSquare instance
+local movingObjects = gridSquare:getMovingObjects()
+}}
+
+To iterate through elements in an ArrayList you can use the following code:
+{{
+| lang = lua
+| code =
+-- supposing gridSquare is an IsoGridSquare instance
+local movingObjects = gridSquare:getMovingObjects()
+for i = 0, movingObjects:size() - 1 do
+    local movingObject = movingObjects:get(i)
+    -- Do something with movingObject
+end
+}}
+
+Some methods can sometimes return subclasses of ArrayLists, such as [[ItemVisuals]] which will inherit from ArrayList. In this case, you can use the same methods as you would with an ArrayList and the same method is used to iterate through its content.
+
+==Modifying an ArrayList==
+Modifications done on an ArrayList from the Lua side will be reflected on the Java side and vice versa. You can add elements to an ArrayList using the <code>add</code> method:
+{{CodeSnip
+| lang = lua
+| code =
+-- supposing gridSquare is an IsoGridSquare instance
+local movingObjects = gridSquare:getMovingObjects()
+
+-- supposing movingObject is an IsoMovingObject instance
+movingObjects:add(movingObject)
+}}
+
+You can also remove elements from an ArrayList using the <code>remove</code> method:
+{{CodeSnip
+| lang = lua
+| code =
+-- supposing gridSquare is an IsoGridSquare instance
+local movingObjects = gridSquare:getMovingObjects()
+
+-- supposing movingObject is an IsoMovingObject instance
+-- index is the index of the element to be removed
+movingObjects:remove(index)
+}}
+
+More can be achieved on ArrayLists by using the methods provided by the [https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/ArrayList.html ArrayList class].
+
+
+{{Navbox Java objects}}

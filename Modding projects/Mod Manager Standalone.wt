@@ -1,0 +1,50 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.3.0}}
+'''Mod Manager Standalone''' is an external mod manager which can be used to manage mods, organize and update them, notably for servers. You can access it from the [https://steamcommunity.com/sharedfiles/filedetails/?id=3422448677 Steam Workshop page] or from its [https://github.com/OV3RLORDS-MODS/Modix-Mod-Manager Github page].
+
+==Features==
+*Mod Manager
+**Mod scanning and listing
+**Steam Workshop integration
+**Generate a list of mods for your server
+**Open, add, move, or delete mod files
+**Toggle favorites or update mod details
+
+*Lua Editor
+**Syntax highlighting
+**Autocompletion
+**Run & Debug
+**Find & Replace
+**Format & Commenting
+**Workshop Modding
+
+*Mod Builder
+**Create Mods instantly
+**Edit Mod Details
+**Package & Backup
+**Test & Validate Mods
+
+*Steam Parser
+**Parse Steam Collections to extract Workshop IDs
+**Copy Workshop IDs for server settings
+**Direct Steam Integration
+
+*Map Editor
+**Load and manage map files
+**Merge multiple maps
+**Generate .lotheader files
+**Preview merged maps
+
+*Modpack Builder
+**Create basic & advanced mod settings
+**Manage, package, test, and backup mods
+**Upload mods to Steam Workshop
+**Set dependencies, icons, and scripts
+**Error and log tracking
+
+*Tools
+**Usage statistics for mods
+**Performance metrics (CPU, memory, load times)
+**Mod analysis (file count, size, last modified, version)
+**Direct folder access for inspection
+**Data sourced from workshop folder

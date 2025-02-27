@@ -1,53 +1,32 @@
 {{Header|Modding}}
-{{Page version|42.0.2}}
-'''Visual Studio Code''', also abreviated to VSCode, is [https://en.wikipedia.org/wiki/Integrated_development_environment Integrated development environment (IDE)] used by Project Zomboid modders thanks to the existing tool of [[#Umbrella]].
+{{Page version|42.3.1}}
+'''Visual Studio Code''', commonly abbreviated to VSCode, is an [https://en.wikipedia.org/wiki/Integrated_development_environment Integrated development environment (IDE)] used by Project Zomboid modders. It is often used alongside [[#Umbrella|Umbrella]] for modding.
 
 Download Visual Studio Code from its official website: https://code.visualstudio.com/.
 
-To get used with the interface or other aspects of the IDE: https://code.visualstudio.com/docs/getstarted/userinterface.
+To get used to the interface or other aspects of the IDE: https://code.visualstudio.com/docs/getstarted/userinterface.
 
 ==Workspaces==
-It's suggested to open as a [https://code.visualstudio.com/docs/editor/workspaces Workspace] your entire mod by opening it's [[Folders structure#Workshop_folder_structure|Zomboid folder]]. This allows you to easily work on your mod, by having every files opened in the same interface. In the same way, you can open the [[Decompiling game code|decompiled code]] or the Project Zomboid media folder.
+It's suggested to open your entire mod as a [https://code.visualstudio.com/docs/editor/workspaces Workspace] by opening its [[Folders structure#Workshop_folder_structure|Zomboid folder]]. This allows you to easily work on your mod, by having every file opened in the same interface. In the same way, you can open the [[Decompiling game code|decompiled code]] or the Project Zomboid media folder.
 
-==Searcing in a folder==
+==Searching in a folder==
 Searching within files in an entire folder is a very powerful tool when looking for specific bits of codes in Project Zomboid. This can be done either in the media folder of Project Zomboid or directly in the [[Decompiling game code|decompiled code]].
 
 To search in an entire folder:
 *Open this folder as a [https://code.visualstudio.com/docs/editor/workspaces Workspace] or a parent folder.
-*In the search pannel, you can search in the entire folder.
-*You can define which specific folder should be searched in "files to include" or in the Explorer, you can right click on any folder and with "Find in Folder..." directly define it as your search folder.
+*In the search panel, you can search in the entire folder.
+*You can define which specific folder should be searched in "files to include" or in the Explorer, you can right click on any folder and, using "Find in Folder...", directly define it as your search folder.
 *You can exclude files with "files to exclude".
-*You can replace the term searched with one of your choice, very useful to quickly change a variable name in multiple files.
+*You can replace the term searched with one of your choice, which is very useful to quickly change a variable name in multiple files.
 
 ===Example===
-If you're searching where a timed action is used in Project Zomboid's code, you can simply use this functionality. Let's search for example for [[ISTakeFuel]]:
+If you're searching for where something is used in Project Zomboid's code, you can simply use this functionality. For example, let's search for [[ISTakeFuel]]:
 
 [[File:VSCode_exampleSearchInFolder.png|400px|center]]
 
-==Umbrella==
-Umbrella is a collection of Lua type stubs for Project Zomboid's modding API. It tells your IDE about Zomboid's classes and functions in order to provide autocomplete and type checking. It can be used with any IDE that supports LuaCATS annotations, but is primarily designed for VSCode's Lua plugin.
-
-===How to activate Umbrella===
-Umbrella requires the [https://marketplace.visualstudio.com/items?itemName=sumneko.lua Lua extension by Sumneko] to work. You can download it from VSCode extensions markplace directly in the IDE. See [https://code.visualstudio.com/docs/editor/extension-marketplace Extension Marketplace documentation] if you're having trouble downloading extensions.
-
-Once the extension is downloaded and active:
-*Press <code>CTRL + SHIFT + P</code>.
-*Open "Lua: Open Addon Manager ..."
-*In the search bar, look for "Umbrella", or "Umbrella (Unstable)" if on the Unstable version of the game.
-*Click <code>Enable</code>. This will download Umbrella and activate it.
-
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> for each new [https://code.visualstudio.com/docs/editor/workspaces Workspace], you need to activate Umbrella.
-
-===Manual download===
-If you need to manually download Umbrella, you can find it at these repositories:
-*[https://github.com/asledgehammer/Umbrella Umbrella] - official and main repository of Umbrella.
-*[https://github.com/demiurgeQuantified/UmbrellaAddon-Unstable Umbrella for Unstable] - version of Umbrella for the Unstable version of the game.
-
-==Zed Script==
-Zed Script is another typing tool which can be used for [[Scripts]] files. It can be accessed in the form of an extension for VSCode and requires manually activation for each script files due to those having the <code>.txt</code> format.
-
-To use Zed Script, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=asledgehammer.zedscript-vscode "ZedScript" by asledgehammer]. After activating it, while in a script file you can press <code>CTRL + SHIFT + P</code> and chose "Change Language Mode", then search for "Zed Script (zed)" and activate it.
-
-<span style="font-size: 120%; font-weight: bold; color: red;">Known problems: </span> currently the extension is not perfect and not fully up-to-date. This means that while it will greatly help you to develop [[Scripts]], it still has flaws and won't always properly detect typing mistakes.
+==Addons==
+*[[Umbrella (Modding project)]] - a collection of Lua type stubs for [[Lua (API)|Project Zomboid's modding API]] (autocomplete...).
+*[[Project Zomboid Script Support (Modding project)]] - an extension for Visual Studio Code that provides syntax highlighting for [[Scripts]].
+*[[Zed Script (Modding project)]] - an extension for Visual Studio Code that provides syntax highlighting for [[Scripts]].
 
 {{Navbox modding}}

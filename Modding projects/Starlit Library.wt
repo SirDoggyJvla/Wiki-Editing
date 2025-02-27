@@ -1,0 +1,14 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.3.1}}
+[[File:Starlit Library - preview.png|thumb]]
+'''[https://github.com/demiurgeQuantified/StarlitLibrary Starlit Library]''' is a general usage library for Project Zomboid mods.
+
+==Features==
+To see the full list of features added by the library, see it's [https://github.com/demiurgeQuantified/StarlitLibrary/wiki Github wiki].
+*Global Changes - allows easy access to fields of [[Java objects]].
+*InventoryUI - contains utility functions for working with the inventory UI, notably a custom event when the tooltip of an item gets created.
+*Reflection - provides functions for inspecting and modifying classes and objects, both from Lua and from Java.
+*TaskManager - allows you to delay or repeat functions at a specific tick rate.
+*TimedActionUtils - provides utilities for creating and working with timed actions.
+
+{{Navbox modding}} 

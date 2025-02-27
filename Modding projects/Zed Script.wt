@@ -1,0 +1,9 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.3.0}}
+'''[https://github.com/asledgehammer/ZedScript-VSCode Zed Script]''' is an extension for Visual Studio Code that provides syntax highlighting for [[Scripts]].
+
+To use Zed Script, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=asledgehammer.zedscript-vscode "ZedScript" by asledgehammer]. After activating it, while in a script file you can press <code>CTRL + SHIFT + P</code> and chose "Change Language Mode", then search for "Zed Script (zed)" and activate it.
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Known problems: </span> currently the extension is not perfect and not fully up-to-date. This means that while it will greatly help you to develop [[Scripts]], it still has flaws and won't always properly detect typing mistakes.
+
+{{Navbox modding}}

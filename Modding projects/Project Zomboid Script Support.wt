@@ -1,0 +1,7 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.3.0}}
+'''Project Zomboid Script Support''' is an extension for Visual Studio Code that provides syntax highlighting for [[Scripts]].
+
+To use Project Zomboid Script Support, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=cyberbobjr.pz-syntax-extension "Project Zomboid Script Support" by cyberbobjr].
+
+{{Navbox modding}}

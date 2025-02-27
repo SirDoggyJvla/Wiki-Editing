@@ -1,5 +1,5 @@
 {{Header|Modding}}
-{{Page version|42.0.2}}
+{{Page version|42.3.1}}
 {{About|the Lua language|API to learn how to hook to Project Zomboid by using Lua|Lua (API)}}
 '''Lua''' is a language heavily used in '''Project Zomboid'''. Its knowledge is handy if one plans to do any [[modding]] or just understand how the game works. It must be noted that Project Zomboid doesn't uses the last versions of Lua but instead a modified version of [https://www.lua.org/manual/5.1/ Lua 5.1]. The page explains the general knowledge needed of the Lua language to get started in programming in Lua but for specificities regarding the API, see the [[Lua (API)]] page.
 
@@ -181,7 +181,7 @@ print(numbers[1]) -- Output: 1
 print(numbers[2]) -- Output: 2
 
 -- nested tables
-local person = {name = "John", address = {city = "New York", country = "USA"}}
+local person = {name = "John", address = {city = "New York", country = "USA"},}
 print(person.address.city) -- Output: New York
 print(person.address.country) -- Output: USA
 }}
@@ -220,6 +220,60 @@ for i = 1, #numbers do
 end
 }}
 
+===Lookup tables===
+Lookup tables are tables that are used to map keys to values. They can be used to store data that can be accessed quickly and efficiently. They can notably be extremely efficient when needing to check for specific values or associations, providing a fast way to retrieve corresponding values on conditions. Lookup tables can also be used to emulate basic support for enums in Lua. For example:
+{{CodeSnip
+| lang = lua
+| code =
+-- Access a color based on it's name, like an enum!
+local colors = {
+    RED = "FF0000",
+    GREEN = "00FF00",
+    BLUE = "0000FF"
+}
+
+print(colors.RED) -- Output: FF0000
+-- or
+print(colors["RED"]) -- Output: FF0000
+
+-- alternatively, you can access the color using a variable
+local color = "GREEN"
+print(colors[color]) -- Output: 00FF00
+
+-- checking an entry not in the table
+local invalidColor = "YELLOW"
+print(colors[invalidColor]) -- Output: nil
+}}
+{{CodeSnip
+| lang = lua
+| code =
+-- supposing zombie is an IsoZombie instance
+local health = math.floor(zombie:getHealth())
+
+-- BAD
+local status
+if health == 0 then
+    status = "Dead"
+elseif health == 1 then
+    status = "Dying"
+elseif health == 2 then
+    status = "Injured"
+elseif health == 3 then
+    status = "Healthy"
+end
+
+-- BETTER
+local healthStatus = {
+    [0] = "Dead",
+    [1] = "Dying",
+    [2] = "Injured",
+    [3] = "Healthy"
+}
+local status = healthStatus[health]
+
+print("Health status:", status or "Unknown") -- Output the health status
+}}
+
 ==Functions==
 Functions are blocks of code that can be called and executed at any point in your program. Functions can take arguments, perform operations, and return values. Functions in Lua are first-class citizens, meaning that they can be assigned to variables, passed as arguments to other functions, and returned from other functions. For example:
 {{CodeSnip
@@ -244,7 +298,133 @@ Functions can be defined using the <code>function</code> keyword, followed by th
 
 Functions can also be assigned to variables, passed as arguments to other functions, and returned from other functions. This allows you to create higher-order functions that can manipulate and compose other functions.
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Functions overhead can be costly in terms of performance, see [[Mod optimization#The less function calls, the better|functions optimization tips]].
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Functions overhead can be performance heavy, see [[Mod optimization#The less function calls, the better|functions optimization tips]].
+
+===Decoration===
+Decorating a function is a way to add additional functionality to a function without modifying its original code. This can be done by wrapping the function in another function that adds the desired functionality. For example:
+{{CodeSnip
+| lang = lua
+| code =
+-- original function
+local function add(a, b)
+    return a + b
+end
+
+-- decorate the function
+local original_add = add
+
+-- decorate to run code before the original function
+local function add(a, b)
+    print("Adding", a, "and", b) -- extra action, will run before the original function
+    return original_add(a, b)
+end
+
+-- decorate to run code after the original function
+local function add(a, b)
+    local result = original_add(a, b)
+    print("Result is", result) -- extra action, will run after the original function
+    return result
+end
+
+-- decorate function to run different behavior based on input
+local function add(a, b)
+    -- don't run the addition if one of the arguments is 0
+    if a == 0 then
+        return b
+    elseif b == 0 then
+        return a
+    end
+
+    return original_add(a, b)
+end
+}}
+
+This can be applied to any functions defined by the game or by other mods to add additional functionality without modifying the original code. It is '''HIGHLY''' recommended to use this method to avoid conflicts with other mods if you don't purely need to overwrite base functionalities.
+
+==Nil==
+The <code>nil</code> value is used to represent the absence of a value. Variables that have not been assigned a value are automatically set to <code>nil</code>. For example:
+{{CodeSnip
+| lang = lua
+| code =
+local x
+print(x) -- Output: nil
+}}
+
+<code>nil</code> can also be used to remove a value from a variable. For example:
+{{CodeSnip
+| lang = lua
+| code =
+local x = 10
+print(x) -- Output: 10
+
+x = nil
+print(x) -- Output: nil
+}}
+
+<code>nil</code> is counted as falsy in Lua, meaning that it is considered as false in boolean expressions.
+{{CodeSnip
+| lang = lua
+| code =
+local x = nil
+if x then
+    print("x is true")
+else
+    print("x is false") -- Output: x is false
+end
+
+-- alternatively
+if not x then
+    print("x is false") -- Output: x is false
+end
+}}
+
+However, it is important to note that <code>nil</code> is not the same as <code>false</code> (<code>nil ~= false</code>). <code>nil</code> is used to represent the absence of a value, while <code>false</code> is a boolean value that represents false.
+
+===Nil and tables===
+You can remove a value in a key-table by setting it to <code>nil</code>. This will remove the key-value pair from the table. For example:
+{{CodeSnip
+| lang = lua
+| code =
+local person = {name = "John", age = 30}
+print(person.name) -- Output: John
+
+person.name = nil
+print(person.name) -- Output: nil
+}}
+
+However doing that to an array-like table will break <code>ipairs</code>. It will also break <code>#</code>.
+{{CodeSnip
+| lang = lua
+| code =
+tbl = {
+  "Hello",
+  "World",
+  "!",
+}
+
+print(#tbl) -- Output: 3
+for i,v in ipairs(tbl) do
+    print(i,v) -- Output: 1, Hello, 2, World, 3, !
+end
+
+tbl[2] = nil -- remove the second value
+
+-- ipairs and # iterate over the table until it finds a nil value, so it will stop at the first value and not print the second and third one
+print(#tbl) -- Output: 1
+for i,v in ipairs(tbl) do
+    print(i,v) -- Output: 1, Hello
+end
+
+-- however the values after 2 are still there, like demonstrated by this example here
+tbl[2] = "modders"
+
+print(#tbl) -- Output: 3
+for i,v in ipairs(tbl) do
+    print(i,v) -- Output: 1, Hello, 2, modders, 3, !
+end
+}}
+
+<code>pairs</code> on the other hand will not break and will iterate over all the values in the table. To remove values from an array-like table, it is recommended to use <code>table.remove</code> instead as this will move every subsequent element down in the array, maintaining the integrity of the indices and allowing <code>ipairs</code> and <code>#</code> to work as intended.
 
 ==For loops==
 For loops are used to iterate over a sequence of values and perform operations on each value. For loops in Lua can be used to iterate over arrays, tables, and other sequences of values. For example:
@@ -328,6 +508,20 @@ until i > 5
 Repeat until loops in Lua can be used to repeat a block of code until a condition is true. It is recommended to use repeat until loops instead of while loops when you want to ensure that the block of code is executed at least once.
 
 <code>break</code> can be used to stop the loop early.
+
+Repeat until can be used to create a continue-like behavior in other types of loop like [[#For loops]] and [[#While loops]].
+{{CodeSnip
+| lang = lua
+| code =
+for i = 1, 5 do
+    repeat
+        if i == 3 then
+            break
+        end
+        print(i) -- Output: 1, 2, 4, 5
+    until true
+end
+}}
 
 ==Conditional statements (if)==
 Conditional statements are used to execute different blocks of code based on the value of a condition. Conditional statements in Lua can be used to execute different blocks of code based on the value of a condition. For example:
@@ -467,5 +661,28 @@ print(message) -- Output: Hello, John! You are 30 years old.
 }}
 
 This can even be used alongside [[Translations]] files to have dynamic text translated in different language.
+
+==Tips and tricks==
+*Check [[Mod optimization]] to learn how to optimize your mods and make them run faster.
+
+===Readability===
+*Ask yourself if you read your code in a year, would you understand it? If not, you should improve it's readability.
+*Use proper indentation to make your code more readable.
+*Use descriptive variable and function names to make your code easier to understand.
+*Use comments to explain your code and document your functions.
+*Limiting making nested indentation is suggested. You can use guard clauses to avoid them:
+{{CodeSnip
+| lang = lua
+| code =
+if condition then
+    -- do stuff         <--- this adds an indentation level
+end
+
+-- instead do this
+if not condition then return end
+
+-- do stuff             <--- one less indentation level
+}}
+
 
 {{Navbox modding}}

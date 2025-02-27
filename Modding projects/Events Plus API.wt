@@ -1,0 +1,29 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+[[File:Events Plus API - preview.png|thumb]]
+'''[https://bitbucket.org/demellion/pzmods/src/master/eventsplus/ Events Plus API]''' is a modding library for Project Zomboid that adds custom events to the game for the [[Lua (API)]].
+
+==List of events==
+To see the full detail of each events, see the [https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Events.md Events Github page] and how to use this API see the [https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Usage.md Usage Github page].
+*<code>OnActionCreated</code> - Fires when specific ISBaseTimedAction is constructed.
+*<code>OnActionPerformed</code> - Fires when specific ISBaseTimedAction is performed
+*<code>OnActionQueued</code> - Fires when specific ISBaseTimedAction is added to actions queue.
+*<code>OnActionStopped</code> - Fires when specific ISBaseTimedAction is stopped.
+*<code>OnCheatOption</code> - Fires when cheat option was changed.
+*<code>OnDestroy</code> - Fires when player destroys object with actions like sledgehammer.
+*<code>OnDrink</code> - Fires when player uses drinkable item.
+*<code>OnEat</code> - Fires when player eats food.
+*<code>OnItemEquipped</code> - Fires when item is equipped by a player, including one-handed or two-handed.
+*<code>OnItemMoved</code> - Fires when inventory item is put or taken by a player.
+*<code>OnItemPlaced</code> - Fires when inventory item is put down via place action.
+*<code>OnItemUnequipped</code> - Fires when item is unequipped by a player, including one-handed or two-handed.
+*<code>OnMedicalAction</code> - Fires when player performs any medical action
+*<code>OnMedicalStatus</code> - Fires when player body or part was affected by or healed from medical condition.
+*<code>OnPlayerSleep</code> - Fires when player is going in out of sleeping phase.
+*<code>OnStatsChanged</code> - Fires when player stats were changed.
+*<code>OnTraitChanged</code> - Fires when player trait collection was changed, returns trait and if it was aquired or lost.
+*<code>OnAccessLevelChanged</code> - Fires when online player access level was changed.
+*<code>OnSandboxOption</code> - Fires when sandbox option is being changed.
+*<code>OnVehicleLoad</code> - Fires when vehicle is loaded into cell and returns the vehicle.
+
+{{Navbox modding}}

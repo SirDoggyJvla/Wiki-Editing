@@ -1,5 +1,6 @@
 {{Header|Modding}}
-{{Page version|42.0.2}}
+{{Page version|42.2.0}}
+{{About|file structure of Project Zomboid|explanations of file formats|File formats}}
 This page describes the '''file structure''' of Project Zomboid. This page will list the folder structure needed for modding as well as where different types of files can be found.
 
 ==Accessing the game folder==
@@ -114,7 +115,7 @@ Contents/
     │   ├── mod.info
     │   ├── poster.png
     │   └── ...
-    └── MyMod2/
+    └── MyMod2/             <--- for extra mods, simply add a new mod folder
         ├── media/
         │   └── ...
         ├── mod.info
@@ -123,12 +124,13 @@ Contents/
 }}
 
 *For [[Build 42]]
+Versioning was added in this version of the game, allowing you to 
 {{CodeSnip
 | code =
 Contents/
 └── mods/
     ├── MyMod1/
-    │   ├── common/
+    │   ├── common/         <--- common folder is mandatory, even if empty !
     │   │   └── media/
     │   │       └── ...
     │   ├── 42/
@@ -136,23 +138,25 @@ Contents/
     │   │   │   └── ...
     │   │   ├── mod.info
     │   │   └── poster.png
-    │   ├── 42.1/
+    │   ├── 42.1/           <--- for extra versions, simply add a new version folder
     │   │   ├── media/
     │   │   │   └── ...
     │   │   ├── mod.info
     │   │   └── poster.png
-    │   ├── 42.1.5/
+    │   ├── 42.1.5/         <--- same here, another different version
     │   │   ├── media/
     │   │   │   └── ...
     │   │   ├── mod.info
     │   │   └── poster.png
     │   └── ...
-    └── MyMod2/
+    └── MyMod2/            <--- for extra mods, simply add a new mod folder
         └── ...
 }}
 ''For the rest of the guide, only [[Build 42]] will be considered for the folder structure. The main difference with [[Build 41]] is that this precedent version doesn't have versioning and the common folder, but the file structure within the <code>media/</code> folder is the same.''
 
 As stated in the previous section, multiple mods can be uploaded for the same Steam Workshop article, which can be optional mods or different versions of the same mod, for example.
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Common folder is mandatory for your mod to work !
 
 ====mod.info file====
 This file is the root of your mod, which helps the game to detect your mod with various parameters available. It can simply be edited like any <code>.txt</code> file with your chosen software for editing text or code files.
@@ -236,7 +240,7 @@ To see which tiledef ID is available to be used for your mod, you can refer to [
 | style="padding: 5px;" | The minimum and maximum version of the game the mod can be used on.
 |}
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> the <code>poster</code> and <code>icon</code> can be within a folder instead of in the same folder as the <code>mod.info</code> file. For example, it can take in the media folder: <code>media/image.png</code>.'''
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> the <code>poster</code> and <code>icon</code> can be within a folder instead of in the same folder as the <code>mod.info</code> file. For example, it can take in the media folder: <code>media/image.png</code>.
 
 ====Common and versioning folders====
 The common and versioning folders will receive all the files that will handle your mod. Those folders allow the modder to have different versions of their assets for different versions of the game. It is particularly useful if there were major code changes in-between versions of if players tend to stay on older versions of the game due to big changes that make them unable to move on to the next version.

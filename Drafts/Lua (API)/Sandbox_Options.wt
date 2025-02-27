@@ -1,6 +1,6 @@
 {{Header|Modding}}
-{{Page version|42.0.2}}
-{{About|creating custom sandbox options|an explanation of sandbox options|Custom Sandbox}}
+{{Page version|42.3.1}}
+{{About|creating custom sandbox options (modding)|an explanation of options in the 'sandbox' game mode|Custom Sandbox}}
 '''Sandbox options''' allow users to tweak how they want to experience the game which mods can also utilize. In comparison to [[Mod Options]], these settings apply to every players, but like them, you have access to different types of options.
 
 ==How to create a custom sandbox option==
@@ -31,7 +31,7 @@ You can chose any name for <code>ModName</code> and <code>OptionName</code> with
 
 ==Option types==
 The <code>type</code> parameter defines the type of the option which replaces <code><optionType></code> in the example code above. The following lists every types and their various parameters:
-{| class="wikitable theme-red"
+{| class="wikitable theme-blue"
 ! Option type !! Description !! Parameters
 |-
 | style="padding: 10px;"| <big><code>boolean</code></big>
@@ -151,6 +151,36 @@ Sandbox_<language code> = {
     Sandbox_<ModName>_<OptionName>_option2 = "Second value",
 }
 }}
+
+==Sandbox options in the Lua==
+You can access the value of a sandbox option in Lua by using the <code>SandboxVars</code> table. The table is structured as follows:
+{{CodeSnip
+| code =
+local optionValue = SandboxVars.ModName.OptionName
+print(optionValue) -- This will print the value of OptionName
+}}
+
+Alternatively you can also access it by using:
+{{CodeSnip
+| code =
+getSandboxOptions():getOptionByName("ModName.OptionName"):getValue()
+}}
+
+You can also modify the value of a sandbox option in Lua by using the <code>setValue</code> function:
+{{CodeSnip
+| lang = lua
+| code =
+local sandboxOptions = getSandboxOptions()
+sandboxOptions:getOptionByName("ModName.OptionName"):setValue(newValue)
+
+-- to have changes applies java side, use
+sandboxOptions:toLua()
+
+-- for server syncing, use
+sandboxOptions:sendToServer()
+}}
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> <code>toLua</code> sends the option changes to the Java, and not the Lua.
 
 ==External links==
 *[https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/SandboxOptions.md Sandbox Options guide] by Albion

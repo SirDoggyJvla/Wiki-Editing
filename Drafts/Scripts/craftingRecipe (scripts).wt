@@ -1,0 +1,705 @@
+{{Header|Modding|Scripts}}
+{{Page version|42.3.1}}
+{{About|[[Build 42]] crafting recipes|crafting recipes for [[Build 41]]|Recipe (scripts)}}
+Crafting recipes in [[Build 42]] were changed to use a different formating and system than the one used in [[Build 41]] ([[Recipe (scripts)]]).
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Note that recipes are being heavily changed during the unstable build and it is important to verify the version of the informations provided.
+
+==craftingRecipe format==
+To create a new crafting recipe, simply use the following entry in a script file:
+{{CodeSnip
+| lang = lua
+| code =
+module yourModule /* or Base */
+{
+    craftRecipe <RecipeID>
+    {
+        ...
+    }
+}
+}}
+
+The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipe_{language}</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for english needs to have:
+{{CodeSnip
+| lang = lua
+| code =
+RecipeEN = {
+    Recipe_MyRecipe = "My Recipe Name"
+}
+}}
+
+==craftRecipe parameters==
+Different parameters can be used in the <code>craftRecipe</code> block to define the recipe. The following table lists the available parameters and the mandatory ones:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed"
+|+ style="white-space:nowrap" | List of parameters for the <code>craftRecipe</code> block
+! Parameter name !! Description !! Example
+|-
+| style="padding: 10px;text-align: center;"| <big><code>time</code></big>
+<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 5px; max-width: 500px;"| Time to craft the item. The value doesn't have a set unit, refer to other vanilla craftings and testing to get an idea of the time needed for your custom craft.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| code =
+time = 100,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>inputs</code></big>
+<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 5px; max-width: 500px;"| The ingredients needed to crafting the item. See [[#inputs]] for the detail. Will usually involve a combination of items, tags, modes or mappers of consumption of the crafting ingredients.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+inputs
+{
+    item 1 tags[RipClothingCotton] flags[AllowDestroyedItem;IsNotWorn],
+    item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue] mappers[umbrellaElla],
+    item 1 [Base.Hammer] mode:keep flags[Prop1],
+}
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>outputs</code></big>
+<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 5px; max-width: 500px;"| The item produced after crafting. See [[#outputs]] for the detail.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+outputs
+{
+    item 1 Base.Tissue,
+    item 1 Base.ScratchTicket,
+}
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>timedAction</code></big>
+| style="padding: 5px; max-width: 500px;"| Specifies actions that occur over time during crafting. See [[#timedAction]] for the detail.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+timedAction = Making,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>category</code></big>
+| style="padding: 5px; max-width: 500px;"| Specifies the category of the crafting recipe. This helps to organize and identify recipes in the crafting menu. See [[#category]] for the detail.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+category = Tailoring,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>Tags</code></big>
+| style="padding: 5px; max-width: 500px;"| Specifies specific conditions which need to be respected to craft this item. See [[#Available crafting condition tags]] for the possible tags and detail on formatting.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| code =
+Tags = InHandCraft;CanAlwaysBeResearched,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>ToolTip</code></big>
+| style="padding: 5px; max-width: 500px;"| Description of the crafting which is shown in the crafting menu. This parameter will refer to a translation key in the translation files (see [[Translations]]).
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+ToolTip = Tooltip_Recipe_MyRecipe,
+}}
+
+And in the translation file:
+{{CodeSnip
+| lang = lua
+| code =
+Tooltip_EN = {
+    Tooltip_Recipe_MyRecipe = "This is a description of my recipe",
+}
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>Icon</code></big>
+| style="padding: 5px; max-width: 500px;"| Specifies the icon associated with this crafting recipe. This seems to be used only once in the vanilla recipes with the entry <code>Icon = "Item_WaterDrop",</code>.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+Icon = "Item_WaterDrop",
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>itemMappers</code></big>
+| style="padding: 5px; max-width: 500px;"| Allows to define an item mapping for input items to create a specific item. See [[#itemMappers]] for the detail.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+itemMappers umbrellaElla
+{
+    Base.UmbrellaBlack = Base.ClosedUmbrellaBlack,
+    Base.UmbrellaBlue = Base.ClosedUmbrellaBlue,
+    Base.UmbrellaRed = Base.ClosedUmbrellaRed,
+    Base.UmbrellaTINTED = Base.ClosedUmbrellaTINTED,
+    Base.UmbrellaWhite = Base.ClosedUmbrellaWhite,
+}
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>OnCreate</code></big>
+| style="padding: 5px; max-width: 500px;"| Whenever the crafting recipe is finished, this Lua function will be called. See [[#OnCreate]] for the detail.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+OnCreate = "Recipe.OnCreate.OpenCannedFood",
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>OnTest</code></big>
+| style="padding: 5px; max-width: 500px;"| Used to verify if the crafting recipe can be crafted. If the function returns <code>true</code>, the recipe can be crafted. If the function returns <code>false</code>, the recipe cannot be crafted. See [[#OnTest]] for the detail.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+OnCreate = "Recipe.OnCreate.OpenCannedFood",
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>xpAward</code></big>
+| style="padding: 5px; max-width: 500px;"| Specifies the experience points awarded for crafting this item. See [[#Available skills]] for the possible skills and detail on formatting.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+xpAward = Blacksmith:10;Tailoring:5,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>SkillRequired</code></big>
+| style="padding: 5px; max-width: 500px;"| Specifies the skill level required to perform this crafting action. See [[#Available skills]] for the possible skills and detail on formatting.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+skillRequired = Blacksmith:3;Tailoring:2,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>needToBeLearn</code></big>
+| style="padding: 5px; max-width: 500px;"| Should the player learn the recipe before being able to craft it. Boolean, either <code>true</code> or <code>false</code>. Default is <code>false</code>.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+needToBeLearn = true,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>AutoLearnAll</code></big>
+| style="padding: 5px; max-width: 500px;"| All the skills and their required level need to be reached to learn the recipe, not be be confused with AutoLearnAny. See [[#Available skills]] for the possible skills and detail on formatting.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+autoLearnAll = Carving:3;Maintenance:2,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>AutoLearnAny</code></big>
+| style="padding: 5px; max-width: 500px;"| Only one of the listed skills and their required level needs to be reached to learn the recipe, not be confused with AutoLearnAll. See [[#Available skills]] for the possible skills and detail on formatting.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+AutoLearnAny = Carving:3,
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>MetaRecipe</code></big>
+| style="padding: 5px; max-width: 500px;"| A meta recipe is used to link two recipes so that if the meta recipe is known then the main recipe is known. The opposite however is not true, if the main recipe is known the meta recipe is not automatically known.
+| style="padding: 5px; max-width: 500px;"|
+In this example below, the recipe <code>MyRecipe1</code> will be known if the recipe <code>MyRecipe2</code> is known. However if the recipe <code>MyRecipe1</code> is known, the recipe <code>MyRecipe2</code> will not automatically be known and needs to be learnt.
+{{CodeSnip
+| lang = lua
+| code =
+craftRecipe MyRecipe1
+{
+    ...
+}
+
+craftRecipe MyRecipe2
+{
+    ...
+    metaRecipe = MyRecipe1,
+    ...
+}
+}}
+
+|-
+| style="padding: 10px;text-align: center;"| <big><code>AllowBatchCraft</code></big>
+| style="padding: 5px; max-width: 500px;"| Allows the recipe to be crafted in batches. Needs to be a boolean and default is <code>true</code>, set to <code>false</code> to disable batch craft.
+| style="padding: 5px; max-width: 500px;"|
+{{CodeSnip
+| lang = lua
+| code =
+AllowBatchCraft = false,
+}}
+|}
+
+===inputs===
+{{Underconstruction|section=True}}
+This section will explain in detail how to define the inputs of a crafting recipe.
+
+Inputs are listed one after the other and follow the format below:
+{{CodeSnip
+| lang = html
+| code =
+item <quantity integer> <item table> <mode optional> <mappers optional> <flags optional>,
+}}
+
+====quantity====
+The <code>quantity</code> is an integer that defines the number of items needed for the recipe.
+
+====item====
+Items are listed in tables by separating them with a semicolon. The table can contain multiple items which the player can use for this specific input. The items need to have their full type noted in the list. For example, <code>Base.ClosedUmbrellaBlack</code> is the black closed umbrella item. For a custom module it would have to be <code>YourModuleName.YourItemID</code>.
+
+{{CodeSnip
+| lang = lua
+| code =
+item 1 [Base.SmallKnife]
+item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue],
+item 1 [YourModuleName.YourItemID],
+}}
+
+Items can also be identified and listed by using their tags. For example, <code>Base.SmallKnife</code> has the tags <code>Tags = CutPlant;SharpKnife;ButcherAnimal;HasMetal;Blade;Sharpenable;KillAnimal,</code> which define specific uses of the knife. These tags can be used to list the items with the following method:
+{{CodeSnip
+| lang = html
+| code =
+item <quantity integer> tags[tagName1;tagName2...] ...,
+}}
+
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> both methods for listing items can't be combined.
+
+====mode====
+The <code>mode</code> is an optional parameter that can be used to define how the item is used in the recipe. Currently only two options are available:
+*<code>keep</code> - The item will be kept after the recipe is finished.
+*<code>destroy</code> - The item will be deleted after the recipe is finished.
+
+By default, <code>destroy</code> is used. Some [[#flags]] can be used to impact how <code>keep</code> is used, reducing the condition of the item for example.
+
+====flags====
+Below is the full list of flags that can be used:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Equiping items
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>Prop1</code> 
+| style="min-width: 600px;"| The item will be equipped in the right hand.
+|-
+| style="min-width: 200px;"| <code>Prop2</code>
+| style="min-width: 600px;"| The item will be equipped in the left hand.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Special conditions
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>AllowFavorite</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>HandcraftOnly</code> 
+| style="min-width: 600px;"| The item can only be crafted by hand.
+|-
+| style="min-width: 200px;"| <code>DontPutBack</code> 
+| style="min-width: 600px;"| Item won't be put back in the container it was taken from (usually bottles that need to be opened).
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Food conditions
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>AllowFrozenItem</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>AllowRottenItem</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>IsCookedFoodItem</code> 
+| style="min-width: 600px;"| The item is cooked.
+|-
+| style="min-width: 200px;"| <code>IsUncookedFoodItem</code> 
+| style="min-width: 600px;"| The item is uncooked.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Fluids
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>ItemIsFluid</code> 
+| style="min-width: 600px;"| The item is a fluid, <span style="font-weight: bold; color: orange;">unclear</span>.
+|-
+| style="min-width: 200px;"| <code>FullOfWater</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>IsEmpty</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>NotEmpty</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>IsFull</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>NotFull</code> 
+| style="min-width: 600px;"| 
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Item condition
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>IsDamaged</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>IsUndamaged</code> 
+| style="min-width: 600px;"| The item is not damaged.
+|-
+| style="min-width: 200px;"| <code>IsWorn</code> 
+| style="min-width: 600px;"| The item is worn out.
+|-
+| style="min-width: 200px;"| <code>IsNotWorn</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>AllowDestroyedItem</code> 
+| style="min-width: 600px;"| 
+|-
+| style="min-width: 200px;"| <code>NoBrokenItems</code> 
+| style="min-width: 600px;"| The item is not broken.
+|-
+| style="min-width: 200px;"| <code>IsHeadPart</code> 
+| style="min-width: 600px;"| The item is a head part.
+|-
+| style="min-width: 200px;"| <code>MayDegrade</code> 
+| style="min-width: 600px;"| Will degrade the item used.
+|-
+| style="min-width: 200px;"| <code>MayDegradeHeavy</code> 
+| style="min-width: 600px;"| Will degrade heavily the item used.
+|-
+| style="min-width: 200px;"| <code>MayDegradeLight</code> 
+| style="min-width: 600px;"| Will degrade lightly the item used.
+|-
+| style="min-width: 200px;"| <code>IsSharpenable</code> 
+| style="min-width: 600px;"| The item can be sharpened.
+|-
+| style="min-width: 200px;"| <code>IsNotDull</code> 
+| style="min-width: 600px;"| The item is sharp.
+|-
+| style="min-width: 200px;"| <code>SharpnessCheck</code> 
+| style="min-width: 600px;"| The item's sharpness will be reduced.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Inheriting items
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>CopyClothing</code> 
+| style="min-width: 600px;"| The output clothing item will copy the input clothing item stats.
+|-
+| style="min-width: 200px;"| <code>InheritAmmunition</code> 
+| style="min-width: 600px;"| Crafted item will receive the ammunition of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritColor</code> 
+| style="min-width: 600px;"| Crafted item will receive the color of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritCondition</code> 
+| style="min-width: 600px;"| Crafted item will receive the condition of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritCooked</code> 
+| style="min-width: 600px;"| Crafted item will receive the cooked status of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritFavorite</code> 
+| style="min-width: 600px;"| Crafted item will receive the favorite status of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritFoodAge</code> 
+| style="min-width: 600px;"| Crafted item will receive the food age of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritHeadCondition</code> 
+| style="min-width: 600px;"| Crafted item will receive the head condition of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritSharpness</code> 
+| style="min-width: 600px;"| Crafted item will receive the sharpness amount of the input item.
+|-
+| style="min-width: 200px;"| <code>InheritUses</code> 
+| style="min-width: 600px;"| Crafted item will receive the uses amount of the input item.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Unknown
+! Flag
+|-
+| style="min-width: 200px;"| <code>IsExclusive</code>
+|-
+| style="min-width: 200px;"| <code>ItemCount</code>
+|-
+| style="min-width: 200px;"| <code>DontReplace</code>
+|}
+
+===outputs===
+{{Underconstruction|section=True}}
+====flags====
+Below is the full list of flags that can be used:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Special conditions
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>HandcraftOnly</code> 
+| style="min-width: 600px;"| The output item can only be crafted when you didn't use automation.
+|-
+| style="min-width: 200px;"| <code>AutomationOnly</code>
+| style="min-width: 600px;"| The output item can only be crafted when you used automation. (existed but not implemented yet)
+|}
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Fluids
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>IsEmpty</code> 
+| style="min-width: 600px;"| The fluidContainer is empty.
+|-
+| style="min-width: 200px;"| <code>ForceEmpty</code>
+| style="min-width: 600px;"| Fluid already contained will be emptied.
+|-
+| style="min-width: 200px;"| <code>AlwaysFill</code> 
+| style="min-width: 600px;"| The fluidContainer will try to fill up if the available capacity exceeds the create fluid amount.
+|-
+| style="min-width: 200px;"| <code>RespectCapacity</code>
+| style="min-width: 600px;"| The fluidContainer must have enough free capacity.
+|}
+
+===timedAction===
+Below is the full list of timed actions which can be used:
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code>ApplyAlcohol</code>
+*<code>ApplyGlaze</code>
+*<code>Chisel_Surface</code>
+*<code>ChoppingBlock_Hammer</code>
+*<code>CraftArmourPiece</code>
+*<code>CraftKnifeSpear</code>
+*<code>CraftWeapon1H</code>
+*<code>CraftWeapon2H</code>
+*<code>Craft_Glassmaking</code>
+*<code>Craft_PotteryBench</code>
+*<code>Craft_PotteryWheel</code>
+*<code>CrushLimestone</code>
+*<code>CutClothing</code>
+*<code>CutWire</code>
+*<code>DismantleElectrical</code>
+*<code>DrawCard</code>
+*<code>EmptyPan</code>
+*<code>Knitting</code>
+*<code>MakeCoffee</code>
+*<code>MakeSheetSlingBag</code>
+*<code>Making</code>
+*<code>MakingElectrical</code>
+*<code>MakingHammer_Surface</code>
+*<code>MakingJewellery</code>
+*<code>MixingBowl</code>
+*<code>MixingBucket</code>
+*<code>MixingMortarPestle</code>
+*<code>OpenAmmoBox</code>
+*<code>OpenBeerBottle</code>
+*<code>OpenChampagne</code>
+*<code>OpenPopCan</code>
+*<code>OpenShellsBox</code>
+*<code>OpenTinCan</code>
+*<code>OpenTinCanWithKnife</code>
+*<code>PackingBox</code>
+*<code>PackingBox_Small</code>
+*<code>PlaceAmmoInBox</code>
+*<code>PutInBag</code>
+*<code>PutSeedsInPacket</code>
+*<code>RipClothing</code>
+*<code>RollDice</code>
+*<code>RollDiceDouble</code>
+*<code>RollTwoDice</code>
+*<code>SawLogs</code>
+*<code>SawOffShotgun</code>
+*<code>SawSmallItemMetal</code>
+*<code>ScrubClothWithSoap</code>
+*<code>SewingCloth</code>
+*<code>SharpenBlade</code>
+*<code>SharpenStake</code>
+*<code>SliceBread_Surface</code>
+*<code>SliceFood_Surface</code>
+*<code>SliceMeat</code>
+*<code>SliceMeat_Surface</code>
+*<code>SmashBottle</code>
+*<code>TanLeatherBarrel</code>
+*<code>Threshing</code>
+*<code>UnPackBox</code>
+*<code>UnPackBox_Small</code>
+*<code>UnPackSack</code>
+*<code>UnPackSmallBag</code>
+*<code>UncorkBottle</code>
+*<code>UseGrindingSlab</code>
+*<code>UseGrindingStone</code>
+*<code>UseHandPress</code>
+*<code>UseLoom</code>
+*<code>UseSpinningWheel</code>
+*<code>UseStoneQuern</code>
+*<code>Welding</code>
+*<code>Welding_Surface</code>
+</div>
+
+===category===
+Below is the full list of categories which can be used:
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code>Ammunition</code>
+*<code>Armor</code>
+*<code>Assembly</code>
+*<code>Blacksmithing</code>
+*<code>Blade</code>
+*<code>Carpentry</code>
+*<code>Carving</code>
+*<code>Cooking</code>
+*<code>Cookware</code>
+*<code>Electrical</code>
+*<code>Farming</code>
+*<code>Fishing</code>
+*<code>Glassmaking</code>
+*<code>Knapping</code>
+*<code>Masonry</code>
+*<code>Medical</code>
+*<code>Metalworking</code>
+*<code>Miscellaneous</code>
+*<code>Packing</code>
+*<code>Pottery</code>
+*<code>Repair</code>
+*<code>Survival</code>
+*<code>Tailoring</code>
+*<code>Tools</code>
+*<code>Weaponry</code>
+</div>
+
+===itemMappers===
+The <code>itemMappers</code> parameter allows to define an item mapping for input items to create a specific item. This is useful when you want to use a specific item in the recipe, but the player can use different items that are equivalent. For example, if you want to use a closed umbrella in a recipe, but the player can use any color of closed umbrella, you can use the following code:
+{{CodeSnip
+| lang = lua
+| code =
+inputs
+{
+    item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue;Base.ClosedUmbrellaRed;Base.ClosedUmbrellaTINTED;Base.ClosedUmbrellaWhite] mappers[umbrellaElla] flags[InheritColor;Prop1],
+}
+outputs
+{
+    item 1 mapper:umbrellaElla,
+}
+itemMapper umbrellaElla
+{
+    Base.UmbrellaBlack = Base.ClosedUmbrellaBlack,
+    Base.UmbrellaBlue = Base.ClosedUmbrellaBlue,
+    Base.UmbrellaRed = Base.ClosedUmbrellaRed,
+    Base.UmbrellaTINTED = Base.ClosedUmbrellaTINTED,
+    Base.UmbrellaWhite = Base.ClosedUmbrellaWhite,
+}
+}}
+
+The item mapper needs to follow the format <code><output item> = <input item></code>, associating the input item with the output item.
+
+===OnCreate===
+The <code>OnCreate</code> parameter allows to define a Lua function that will be called when the crafting recipe is finished. This can be used to add custom behavior to the crafting recipe when it gets finished. The function should be [[Lua (language)#Local and global|global]] and defined in a Lua file. Vanilla puts its global crafting functions inside the file <code>media/lua/server/recipecode.lua</code> however make sure to define your custom functions in a uniquely named file. 
+
+The function should have the following structure:
+{{CodeSnip
+| lang = lua
+| code =
+function MyOnCreateFunction(craftRecipeData, character)
+    -- your custom code here
+end
+}}
+
+The <code>craftRecipeData</code> is a [[CraftRecipeData]] java object that contains the data of the crafting recipe. The <code>character</code> is the [[IsoPlayer|player character]] that is crafting the recipe.
+
+===OnTest===
+The <code>OnTest</code> parameter allows to define a Lua function that will be called to verify if the crafting recipe can be crafted. If the function returns <code>true</code>, the recipe can be crafted. If the function returns <code>false</code>, the recipe cannot be crafted. The function should be [[Lua (language)#Local and global|global]] and defined in a Lua file. Vanilla puts its global crafting functions inside the file <code>media/lua/server/recipecode.lua</code> however make sure to define your custom functions in a uniquely named file.
+
+The function should have the following structure:
+{{CodeSnip
+| lang = lua
+| code =
+function MyOnTestFunction(item, result)
+    -- your custom code here
+    return logicTestResult  -- based on your logic test above
+end
+}}
+
+===Available crafting condition tags===
+Multiple tags can be used to define specific conditions that need to be respected to craft the item by separating them with a semicolon.
+
+Below is the full list of tags that can be used:
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code>AnySurfaceCraft</code>
+*<code>CanAlwaysBeResearched</code>
+*<code>CanBeDoneFromFloor</code>
+*<code>CanBeDoneInDark</code>
+*<code>CoffeeMachine</code>
+*<code>Cooking</code>
+*<code>Electrical</code>
+*<code>Engineer</code>
+*<code>Farming</code>
+*<code>Fishing</code>
+*<code>Forge</code>
+*<code>Furnace</code>
+*<code>Glassmaking</code>
+*<code>Grindstone</code>
+*<code>HandPress</code>
+*<code>Health</code>
+*<code>Heckling</code>
+*<code>InHandCraft</code>
+*<code>KeyDuplicator</code>
+*<code>KilnLarge</code>
+*<code>KilnSmall</code>
+*<code>Packing</code>
+*<code>Pottery</code>
+*<code>PotteryBench</code>
+*<code>PotteryWheel</code>
+*<code>RightClickOnly</code>
+*<code>Rippling</code>
+*<code>Scutching</code>
+*<code>Smithing</code>
+*<code>StandingDrillPress</code>
+*<code>Survivalist</code>
+*<code>Toaster</code>
+*<code>Trapper</code>
+*<code>Welding</code>
+</div>
+
+===Available skills===
+You can define multiple skills and their respective experience points/levels by separating them with <code>;</code>. Below is how each parameters need to be formatted:
+*<code>xpAward</code> format is <code>skill:experience</code>
+*<code>SkillRequired</code> format is <code>skill:level</code>
+*<code>AutoLearnAll</code> format is <code>skill:level</code>
+*<code>AutoLearnAny</code> format is <code>skill:level</code>
+
+Below is the full list of skills that can be used:
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code>Blacksmith</code>
+*<code>Butchering</code>
+*<code>Carving</code>
+*<code>Cooking</code>
+*<code>Electricity</code>
+*<code>FlintKnapping</code>
+*<code>Glassmaking</code>
+*<code>Maintenance</code>
+*<code>Masonry</code>
+*<code>MetalWelding</code>
+*<code>Pottery</code>
+*<code>Tailoring</code>
+*<code>WoodWork</code>
+</div>

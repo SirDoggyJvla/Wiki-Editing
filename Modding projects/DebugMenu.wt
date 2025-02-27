@@ -1,0 +1,22 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.3.0}}
+[[File:DebugTools - preview.png|thumb]]
+'''DebugTools''' are tools designed to assist with mod creation directly in-game, those extand the vanilla [[Debug mode]] tools and [[Category:Debug tools]]. You can access them from the [https://steamcommunity.com/sharedfiles/filedetails/?id=3386556284 Steam Workshop page].
+
+==Features==
+*Main functions are operational as expected  
+
+*Fixed issue with synthesis, construction, and mode being unusable  
+*Fixed issue preventing item duplication  
+*Fixed teleportation failure at revive points  
+*Added item deletion functionality  
+*Added animal debugging tools  
+
+*Fixed issue where cheat functions required debugging mode  
+*Fixed failure in synthesis mode  
+*Fixed issue with obtaining all formulas  
+
+*Added basement debugging support  
+*Teleportation now works for all generated basements  
+*Basements now generate consistently, unaffected by sandbox probability  
+*Fixed issue with missing lists for generated basements
