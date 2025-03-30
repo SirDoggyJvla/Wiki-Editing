@@ -141,9 +141,6 @@ The <code>ISBaseTimedAction</code> class is composed of the following methods by
 |-
 | style="min-width: 200px;"| <code>getDeltaModifiers(deltas: [[MoveDeltaModifiers]])</code>
 | Returns an object which can be modified to stop specific movement types. Notably used in [[ISClimbOverFence]] to stop the character from turning during the action.
-|-
-| style="min-width: 200px;"| <code>getFacingDirection()</code>
-| Returns the facing direction ([[IsoDirections]]) of the character.
 |}
 
 ==Creating a new timed action==

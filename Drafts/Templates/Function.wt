@@ -1,0 +1,26 @@
+<noinclude>
+{{wip}}
+
+{{ll|Category:Templates}}
+
+{{Function|function=isValidStart(args1,args2,args3,args4)|description=This is an example function|
+{{Function/param|name=arg1|type=string|default=defaultValue|optional=True|description=Example description}}
+{{Function/param|name=arg2|type=number|description=Example description}}
+{{Function/param|name=arg3|type=boolean|description=Example description}}
+{{Function/param|name=arg4|type=array|description=Example description}}
+}}
+{{Function|function=testFunction()|description=This is another example}}
+{{Function|function=testReturnFunction()|description=This is another example||
+{{Function/param|name=return1|type=string|description=Example return value}}
+}}
+{{Function|function=testReturnFunction(arg1)|description=This is another example|{{Function/param|name=arg1|type=string|default=defaultValue|optional=True|description=Example description}}|{{Function/param|name=return1|type=string|description=Example return value}}
+}}
+
+
+</noinclude><includeonly>----
+{{Code|function {{{function}}}|style={{{style|font-size:1.2em;}}}|lang={{{lang|lua}}}}}
+
+{{{description}}}
+<div style="display: inline;">{{#if: {{{1|}}} |<br>'''Parameters:'''<br>{{{1}}} }}
+{{#if: {{{2|}}} |<br>'''Returns:'''<br>{{{2}}} }}</div>
+</includeonly>

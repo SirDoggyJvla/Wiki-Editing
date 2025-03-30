@@ -1,0 +1,15 @@
+<noinclude>
+{{wip}}
+
+{{ll|Category:Templates}}
+
+
+{{Function/param|name=testParam|type=string|default=testDefault|optional=True|description=Example description}}
+
+{{Function/param|name=testParam|type=string|description=Example description}}
+
+</noinclude><includeonly>;{{Code|{{{name}}}}}
+:'''Type:''' {{{type}}}{{#if: {{{default|}}}| <br>'''Default:''' {{{default}}}
+}}{{#if: {{{optional|}}}| <br>'''Optional:''' {{{optional}}}
+}}{{#if: {{{description|}}}| <br>'''Description:''' {{{description}}}
+}}</includeonly>
