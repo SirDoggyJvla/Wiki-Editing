@@ -1,0 +1,21 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.4.1}}
+[[File:Magazine API - preview.png|thumb]]
+'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3436296238 Magazine API]''' is a mod that provides tools for modders to set multiple magazines on a single weapon. [https://steamcommunity.com/sharedfiles/filedetails/?id=3437763053 Vanilla Firearm Magazine Expansion] was developped as an example mod to using the API by adding extra magazines to vanilla rifles.
+
+To use the framework, simply use the following function:
+{{CodeSnip
+| lang = lua
+| code =
+require "MagazineAPI"
+MagAPI.defineParam(weapon, mag1, mag2, ... mag99, mag100)
+}}
+With the first parameter being the weapon and the following parameters being the magazines. You can add as many magazines as you want. For example to new magazines to the vanilla M16, you would use:
+{{CodeSnip
+| lang = lua
+| code = 
+require "MagazineAPI"
+MagAPI.defineParam("Base.AssaultRifle", "Base.9mmClip", "Base.556Clip", "Base.M14Clip", "Base.44Clip")
+}}
+
+{{Navbox modding}}

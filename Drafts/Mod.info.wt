@@ -1,0 +1,91 @@
+{{Header|Modding}}
+{{Page version|42.5.1}}
+This page explains the <code>mod.info</code> file which is defined by mods to be detected by the game and define other different aspects when loading the mod.
+
+The file needs to be placed in the [[File structure#Mod folder|mod folder]] and is a simple text file with the <code>.info</code> file extension. It is the root of your mod and you can edit it with any text editor.
+
+This file, while working in both common and versioning folders, should be kept only in the versioning folders for ease of use and organization. Technically, all of the parameters are optional, but excluding some of these might just break your mod, make it not available to run or other problems. The necessary parameters should at least be the ID and name.
+
+==Parameters==
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters
+! Parameter name !! Description
+|-
+| style="padding: 10px;"| <big><code>name</code></big>
+| style="padding: 5px;"| This parameter defines the displayed name for your mod in the game's mod manager.
+|-
+| style="padding: 10px;"| <big><code>id</code></big>
+| style="padding: 5px;" | The mod ID is used in a mod list of the user or servers to activate your mod. Make sure to use something unique which isn't shared between mods.
+|-
+| style="padding: 10px;"| <big><code>author</code></big>
+| style="padding: 5px;" | Name of the author(s) of the mod, which, if the mod is originally yours, should be your username.
+|-
+| style="padding: 10px;"| <big><code>description</code></big>
+| style="padding: 5px;" | Description of your mod, which shows up in the mod manager. It's possible to use [[ISRichTextPanel]] tags.
+|-
+| style="padding: 10px;"| <big><code>url</code></big>
+| style="padding: 5px;" | Show a URL link in the mod manager on the page of your mod for users to click on to open in browser. This can be used for donation links for example.
+|-
+| style="padding: 10px;"| <big><code>poster</code></big>
+| style="padding: 5px;" | Image which will show up in the mod manager as the mod image. Multiple posters can actually be used to show multiple images, but the first one will be used as the main poster in the mod manager. The rest will be in a list of images of the mod that users can click on to view.
+<BR>
+For example:
+{{CodeSnip
+| code =
+poster=poster.png
+poster=showcase.png
+poster=flying_chickens.png
+poster=credits.png
+}}
+|-
+| style="padding: 10px;"| <big><code>icon</code></big>
+| style="padding: 5px;" | Image which will be used in the mod manager to put next to the name of the mod in the list of available mods. This image will be small and while you can use a full image size, you do not need it. You can set your poster as the icon too to not use two images.
+|-
+| style="padding: 10px;"| <big><code>modversion</code></big>
+| style="padding: 5px;" | Version of the mod.
+|-
+| style="padding: 10px;"| <big><code>require</code></big>
+| style="padding: 5px;" | Mods required to run this mod. As of [[Build 42]], the way to require mods is done this way, if you have for example two mods with the ID <code>theNeededMod</code> and <code>theOtherOne</code>:
+{{CodeSnip
+| code =
+require=\theNeededMod,\theOtherOne
+}}
+|-
+| style="padding: 10px;"| <big><code>incompatible</code></big>
+| style="padding: 5px;" | Mods that cannot be enabled at the same time as this mod. When enabled, the other mods will be unselectable. This mod will also become unselectable if any of the other mods are enabled.
+{{CodeSnip
+| code =
+incompatible=\theUnwantedMod,\theOtherOne
+}}
+|-
+| style="padding: 10px;"| <big><code>loadModAfter</code></big>
+| style="padding: 5px;" | {{Note|type=warn|Need more informations.}}
+|-
+| style="padding: 10px;"| <big><code>loadModBefore</code></big>
+| style="padding: 5px;" | {{Note|type=warn|Need more informations.}}
+|-
+| style="padding: 10px;"| <big><code>category</code></big>
+| style="padding: 5px;" | {{Note|type=warn|Need more informations.}}
+|-
+| style="padding: 10px;"| <big><code>pack</code></big>
+| style="padding: 5px;" | Name of packs that need to be loaded by the game.
+''Need more informations.''
+|-
+| style="padding: 10px;"| <big><code>tiledef</code></big>
+| style="padding: 5px;" | Name of the tiledef with its ID that are added by the mod.
+<BR>
+For example:
+{{CodeSnip
+| code =
+tiledef=Excavation 2112
+}}
+
+To see which tiledef ID is available to be used for your mod, you can refer to [[Tiledefs used by mods]]. If you upload your mod with a new tiledef ID, you can update this list to reduce the chance of incompatibility with other mods adding tile packs.
+|-
+| style="padding: 10px;"| <big><code>versionMin</code> and <code>versionMax</code></big>
+| style="padding: 5px;" | The minimum and maximum version of the game the mod can be used on.
+|}
+
+{{Note|The <code>poster</code> and <code>icon</code> can be within a subfolder instead of in the same folder as the <code>mod.info</code> file. For example, it can take in the media folder: <code>media/image.png</code>. This is useful to not have to make copies of assets you want to use directly in your mod assets while still using them in the mod info.}}
+
+{{Navbox modding}}

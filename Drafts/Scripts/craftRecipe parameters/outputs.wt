@@ -1,0 +1,59 @@
+{{Header|Modding|Scripts|craftRecipe parameters}}
+{{Page version|42.5.1}}
+The <code>outputs</code> parameter defines the items that will be created when the recipe is finished. Outputs are listed one after the other and follow the format below:
+{{CodeSnip
+| lang = lua
+| code =
+outputs
+{
+    item <quantity integer> <item>,
+    ...
+}
+}}
+
+Compared to [[inputs]], only one item is defined per line. The <code>quantity</code> is an integer that defines the number of items produced by the recipe.
+
+==quantity==
+The <code>quantity</code> is an integer that defines the number of items needed for the recipe.
+
+==flags==
+Below is the full list of flags that can be used:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Special conditions
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>HandcraftOnly</code> 
+| style="min-width: 600px;"| The output item can only be crafted when you didn't use automation.
+|-
+| style="min-width: 200px;"| <code>AutomationOnly</code>
+| style="min-width: 600px;"| The output item can only be crafted when you used automation. (existed but not implemented yet)
+|}
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Fluids
+! Flag !! Description
+|-
+| style="min-width: 200px;"| <code>IsEmpty</code> 
+| style="min-width: 600px;"| The fluidContainer is empty.
+|-
+| style="min-width: 200px;"| <code>ForceEmpty</code>
+| style="min-width: 600px;"| Fluid already contained will be emptied.
+|-
+| style="min-width: 200px;"| <code>AlwaysFill</code> 
+| style="min-width: 600px;"| The fluidContainer will try to fill up if the available capacity exceeds the create fluid amount.
+|-
+| style="min-width: 200px;"| <code>RespectCapacity</code>
+| style="min-width: 600px;"| The fluidContainer must have enough free capacity.
+|}
+
+<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Flags for outputs currently do not have a single example in the vanilla recipes. The flags are listed because present in the game code but there currently is no confirmation of them working.
+
+==Example==
+{{CodeSnip
+| lang = lua
+| code =
+outputs
+{
+    item 1 Base.Tissue,
+    item 1 Base.ScratchTicket,
+}
+}}

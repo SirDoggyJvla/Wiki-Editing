@@ -1,0 +1,102 @@
+{{Header|Modding|Lua objects}}
+{{Page version|42.5.1}}
+'''ISTimedActionQueue''' is a class that manages the queue of timed actions. It is used by the game to handle timed actions created by the developpers or modders using the [[Lua (API)|Lua API]].
+
+==Retrieving queue==
+To retrieve the queue of timed actions, use the following function:
+{{CodeSnip
+| lang = lua
+| code =
+local queue = ISTimedActionQueue.getTimedActionQueue(character)
+}}
+
+Or create a new one for a character:
+{{CodeSnip
+| lang = lua
+| code =
+local queue = ISTimedActionQueue.new(character)
+}}
+
+This should however not be needed as all of this is handled by the game when adding new timed actions to the queue.
+
+==Adding timed actions to the queue==
+To add a timed action to the queue, use the following function:
+{{CodeSnip
+| lang = lua
+| code =
+ISTimedActionQueue.add(action)
+}}
+
+An <code>action</code> needs to be an instance of [[ISBaseTimedAction]] or [[ISBaseObject#Object inheritance|derived]] objects. Alternatively, you can add your timed action after another existing action if you have access to that action:
+{{CodeSnip
+| lang = lua
+| code =
+ISTimedActionQueue.addAfter(actionToAddAfter, action)
+}}
+
+You can make the character get up before doing the action with the following function:
+{{CodeSnip
+| lang = lua
+| code =
+ISTimedActionQueue.addGetUpAndThen(action)
+}}
+
+==Actions on the queue==
+===Player doing action===
+You can check if the character is doing an action with the following function:
+{{CodeSnip
+| lang = lua
+| code =
+local doingAction = ISTimedActionQueue.isPlayerDoingAction(character)
+}}
+
+===Accessing actions===
+You can access the actions in the queue with the following methods:
+*Get the action from its index
+{{CodeSnip
+| lang = lua
+| code =
+local queue = ISTimedActionQueue.getTimedActionQueue(character)
+local action = queue.queue[index]
+}}
+
+*Get the action from its type (its class name from the derive method)
+{{CodeSnip
+| lang = lua
+| code =
+local queue = ISTimedActionQueue.getTimedActionQueue(character)
+local actionIndex = queue:indexOfType(actionType)
+local action = queue.queue[actionIndex]
+}}
+
+===Removing actions===
+Removing an action can be done with different methods:
+*Remove an action from its instance.
+{{CodeSnip
+| lang = lua
+| code =
+local queue = ISTimedActionQueue.getTimedActionQueue(character)
+queue:removeFromQueue(action)
+}}
+
+*Remove an action from its known index in the queue.
+{{CodeSnip
+| lang = lua
+| code =
+local queue = ISTimedActionQueue.getTimedActionQueue(character)
+
+-- remove an action from its index
+table.remove(queue.queue, actionIndex)
+
+-- remove the last action in the queue
+table.remove(queue.queue, #queue.queue)
+}}
+
+*Remove all actions from the queue.
+{{CodeSnip
+| lang = lua
+| code =
+ISTimedActionQueue.clear(character)
+}}
+
+{{Navbox Lua objects}}

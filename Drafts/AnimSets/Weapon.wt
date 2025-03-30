@@ -1,0 +1,23 @@
+{{Header|Modding|AnimSets}}
+{{Page version|42.6.0}}
+'''Weapon''' is a type of [[AnimSets]] condition used to differentiate the type of weapon used by the character and adapt the animations accordingly.
+
+==List of weapons==
+The following tags are used by the game to identify the type of weapon used by the character:
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code></code>
+*<code>1handed</code>
+*<code>1Handed</code>
+*<code>2handed</code>
+*<code>2Handed</code>
+*<code>chainsaw</code>
+*<code>firearm</code>
+*<code>handgun</code>
+*<code>heavy</code>
+*<code>Heavy</code>
+*<code>knife</code>
+*<code>rifle</code>
+*<code>spear</code>
+*<code>throwing</code>
+</div>
+

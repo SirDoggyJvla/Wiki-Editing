@@ -1,0 +1,171 @@
+{
+    "variables": {
+      "character": {
+        "typeJava": "IsoPlayer",
+        "description": "The character doing the action."
+      },
+      "action": {
+        "typeJava": "LuaTimedActionNew",
+        "description": "The Java counterpart of the timed action."
+      },
+      "stopOnWalk": {
+        "type": "Boolean",
+        "default": true,
+        "description": "If the action should stop when the character starts walking."
+      },
+      "stopOnRun": {
+        "type": "Boolean",
+        "default": true,
+        "description": "If the action should stop when the character starts running."
+      },
+      "stopOnAim": {
+        "type": "Boolean",
+        "default": true,
+        "description": "If the action should stop when the character starts aiming."
+      },
+      "caloriesModifier": {
+        "type": "Number",
+        "default": 1,
+        "description": "The calories burning modifier for performing the action."
+      },
+      "maxTime": {
+        "type": "Number",
+        "default": -1,
+        "description": "The maximum time the action can take."
+      },
+      "_isAddingActions": {
+        "type": "Boolean",
+        "description": "Indicates if actions are being added after this one. True when 'beginAddingActions()' is called, nil when 'endAddingActions()' is called."
+      },
+      "_numAddedActions": {
+        "type": "Number",
+        "description": "The number of actions added after this action."
+      }
+    },
+    "methods": {
+      "new": {
+        "parameters": ["character"],
+        "return": "ISBaseTimedAction instance",
+        "description": "Constructor of the class."
+      },
+      "isValidStart": {
+        "parameters": [],
+        "return": "boolean",
+        "description": "Checks if the action can start. Resets queue and marks action as bugged if invalid."
+      },
+      "isValid": {
+        "parameters": [],
+        "return": "boolean",
+        "description": "Checks if the action is valid before updating. Stops the action if false."
+      },
+      "stop": {
+        "parameters": [],
+        "description": "Stops the action and cancels the action queue."
+      },
+      "forceComplete": {
+        "parameters": [],
+        "description": "Forces the action to complete."
+      },
+      "forceStop": {
+        "parameters": [],
+        "description": "Forces the action to stop and cancels remaining actions."
+      },
+      "forceCancel": {
+        "parameters": [],
+        "description": "Cancels the action before it starts."
+      },
+      "waitToStart": {
+        "parameters": [],
+        "return": "boolean",
+        "description": "Checks if the action can start later. Default is false."
+      },
+      "start": {
+        "parameters": [],
+        "description": "Starts the action if it is valid."
+      },
+      "isStarted": {
+        "parameters": [],
+        "return": "boolean",
+        "description": "Checks if the action has started."
+      },
+      "update": {
+        "parameters": [],
+        "description": "Updates the action every tick on the Java side."
+      },
+      "getJobDelta": {
+        "parameters": [],
+        "return": "number",
+        "description": "Returns the percentage of the action completed."
+      },
+      "resetJobDelta": {
+        "parameters": [],
+        "description": "Resets the job progress to the beginning."
+      },
+      "getDuration": {
+        "parameters": [],
+        "return": "number",
+        "description": "Returns the maxTime of the action."
+      },
+      "perform": {
+        "parameters": [],
+        "description": "Performs the action if it is valid."
+      },
+      "create": {
+        "parameters": [],
+        "description": "Creates the action and adjusts maxTime."
+      },
+      "begin": {
+        "parameters": [],
+        "description": "Begins the action when it is valid and queued."
+      },
+      "setCurrentTime": {
+        "parameters": ["currentTime: number"],
+        "description": "Sets the current time of the action."
+      },
+      "setTime": {
+        "parameters": ["time: number"],
+        "description": "Sets the maxTime of the action."
+      },
+      "adjustMaxTime": {
+        "parameters": ["maxTime: number"],
+        "return": "number",
+        "description": "Adjusts maxTime based on character conditions like pain or drunkenness."
+      },
+      "setActionAnim": {
+        "parameters": ["_action: string|CharacterActionAnims", "_displayItemModels: nil"],
+        "description": "Sets the animation for the action."
+      },
+      "setOverrideHandModels": {
+        "parameters": ["_primaryHand: InventoryItem", "_secondaryHand: InventoryItem", "_resetModel: boolean"],
+        "description": "Sets the character's hand models."
+      },
+      "overrideWeaponType": {
+        "parameters": [],
+        "description": "Updates the [[Weapon (AnimNode)|character weapon type]] based on the override model."
+      },
+      "restoreWeaponType": {
+        "parameters": ["_weaponType: string"],
+        "description": "Restores the [[Weapon (AnimNode)|character weapon type]] to the real weapon in hand."
+      },
+      "addAfter": {
+        "parameters": ["action"],
+        "return": "previousAction",
+        "description": "Adds the given action after the current one in the queue."
+      },
+      "beginAddingActions": {
+        "parameters": [],
+        "description": "Marks actions as automatically added after this one."
+      },
+      "endAddingActions": {
+        "parameters": [],
+        "return": "number",
+        "description": "Ends automatic action addition and returns the count of added actions."
+      },
+      "getFacingDirection": {
+        "parameters": [],
+        "return": "IsoDirections",
+        "description": "Returns the character's facing direction."
+      }
+    }
+  }
+  

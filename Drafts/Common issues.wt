@@ -1,0 +1,49 @@
+{{Header|Modding}}
+{{Page version|42.3.1}}
+{{About|common issues made by new and older modders as well as potential solutions.}}
+{{Stub}}
+This page is meant to be used a reference to common issues modders can encounter when modding Project Zomboid in different fields. It is meant to be a collection of solutions to common problems, and a way to help modders find their way through the modding process. (because pulling your hair out shouldn't be the norm)
+
+==Modeling==
+===Invisible model===
+The model is invisible in-game. Can be either on the floor or in the player's hands.
+*Scale up the model when exporting it, as it might be too small. Try scaling by 100.
+
+===Model looking weird===
+The model looks visually off in-game.
+*Verify the model normals, they should be pointing outwards.
+
+==Clothing==
+===Clothing having holes===
+The clothing has holes in it when it shouldn't.
+*If your clothing shouldn't get hidden by other clothings then add <code><m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder></code>. This is a band-aid fix so try other solutions first.
+
+==Animation==
+===Legs not playing animation===
+[[File:common issues - legs animation not playing.png|thumb]]
+Whenever the legs do not play the animation they are supposed to play, add this to the [[AnimSets|AnimSet]] file:
+{{CodeSnip
+| lang = xml
+| code =
+<m_SubStateBoneWeights>
+    <boneName>Dummy01</boneName>
+    <weight>1</weight>
+</m_SubStateBoneWeights>
+}}
+
+===Idle animation bugging out when turning===
+[[File:common issues - idle animation bugging out.png|thumb|On the left the idle animation working and on the right when aiming around.]]
+When the idle animation bugs out when turning, add this to the [[AnimSets|AnimSet]] file:
+{{CodeSnip
+| lang = xml
+| code =
+<m_Priority>10</m_Priority>
+<m_ConditionPriority>10</m_ConditionPriority>
+}}
+
+===Animation spaghettifying===
+
+Whenever your animation looks like a spaghetti monster, try exporting the animation by swapping the primary and secondary bones in the animation export settings.
+
+
+{{Navbox modding}}

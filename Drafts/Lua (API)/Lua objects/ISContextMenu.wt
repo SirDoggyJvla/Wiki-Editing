@@ -1,5 +1,5 @@
 {{Header|Modding|Lua objects}}
-{{Page version|42.3.1}}
+{{Page version|42.5.1}}
 '''ISContextMenu''' is a subclass of [[ISPanel]] used to instanciate a context menu UI allowing players to chose available options for one or more objects, usually used when right clicking in the game. This article will detail how to use this object in the [[Lua (API)]] to add your own options to existing context menu objects, modify and customize them and more.
 
 ==Creating a context menu==
@@ -15,12 +15,12 @@ contextMenu:addToUIManager()
 
 ==Accessing context menu==
 Different vanilla context menus are created in the game which can be accessed with various methods. The most common one involves using events which trigger when a context menu appears:
-- [[OnClickedAnimalForContext]]: Triggered when right clicking on an animal.
-- [[OnFillInventoryObjectContextMenu]]: Triggered when right clicking on an inventory item.
-- [[OnFillWorldObjectContextMenu]]: Triggered when right clicking in the world.
-- [[OnPreFillInventoryObjectContextMenu]]: Triggered when right clicking on an inventory item, before it is filled with the context menu options.
-- [[OnPreFillWorldObjectContextMenu]]: Triggered when right clicking in the world object, before it is filled with the context menu options.
-- [[onFillSearchIconContextMenu]]: Triggered when right clicking on a foraging icon.
+*[[OnClickedAnimalForContext]]: Triggered when right clicking on an animal.
+*[[OnFillInventoryObjectContextMenu]]: Triggered when right clicking on an inventory item.
+*[[OnFillWorldObjectContextMenu]]: Triggered when right clicking in the world.
+*[[OnPreFillInventoryObjectContextMenu]]: Triggered when right clicking on an inventory item, before it is filled with the context menu options.
+*[[OnPreFillWorldObjectContextMenu]]: Triggered when right clicking in the world object, before it is filled with the context menu options.
+*[[onFillSearchIconContextMenu]]: Triggered when right clicking on a foraging icon.
 
 ===OnFillInventoryObjectContextMenu===
 {{Main|OnFillInventoryObjectContextMenu}}
@@ -44,6 +44,8 @@ end
 Events.OnFillInventoryObjectContextMenu.Add(OnFillInventoryObjectContextMenu)
 }}
 
+This method to retrieve items is necessary due to the <code>item</code> object being retrieved having a different format based on if the dropdown menu which shows details on the stack of items is open or not.
+
 ===OnFillWorldObjectContextMenu===
 {{Main|OnFillWorldObjectContextMenu}}
 This event is triggered when right clicking in the world. Here is an example of how you can use the event and how you can iterate through every objects under the cursor when right clicking:
@@ -60,6 +62,8 @@ end
 Events.OnFillWorldObjectContextMenu.Add(OnFillWorldObjectContextMenu)
 }}
 
+This first object always has a duplicate in the table, which is why the loop starts at 2.
+
 ===Alternative method===
 Alternatively, you can access the player context menu with the following method:
 {{CodeSnip
@@ -70,7 +74,7 @@ ISContextMenu.get(player, x, y)
 
 ==Options==
 ===Adding options===
-Different methods can be used to add options to a context menu. The most common one is to use the `addOption` method. Here is an example of how to add an option to a context menu:
+Different methods can be used to add options to a context menu. The most common one is to use the <code>addOption</code> method. Here is an example of how to add an option to a context menu:
 {{CodeSnip
 | lang = lua
 | line = true
@@ -82,6 +86,7 @@ Different methods can be used to add options to a context menu. The most common 
 | code =
 function ISContextMenu:addOption(name, target, onSelect, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10)
 }}
+
 Leaving the <code>onSelect</code> parameter empty will make the option unclickable. This parameter is meant to be a function with the following structure:
 {{CodeSnip
 | lang = lua
@@ -90,6 +95,7 @@ function yourFunction(target, param1, param2, param3, param4, param5, param6, pa
     -- code here
 end
 }}
+
 Parameters that are unused can be removed from the function. Here is an example of how to add an option to a context menu:
 {{CodeSnip
 | lang = lua
@@ -230,7 +236,7 @@ function ISContextMenu:addDefaultOptions()
 |}
 
 ===Accessing options===
-Options can be accessed in a context menu by using the `getOptionFromName` method. To do that, you have to know the name which was given to the option when it was added. Here is an example of how to access an option in a context menu:
+Options can be accessed in a context menu by using the <code>getOptionFromName</code> method. To do that, you have to know the name which was given to the option when it was added. Here is an example of how to access an option in a context menu:
 {{CodeSnip
 | lang = lua
 | line = true

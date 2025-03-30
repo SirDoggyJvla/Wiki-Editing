@@ -1,0 +1,154 @@
+{{Header|Modding|Lua objects}}
+{{Page version|42.5.1}}
+'''ISBaseTimedAction''' is a subclass of [[ISBaseObject]] which serves as a base for timed actions. It is used by the developpers to create timed actions using the [[Lua (API)|Lua API]]. These timed actions can be added to the queue of actions [[ISTimedActionQueue]] to be fully handled by the game one after the other.
+
+When a new timed action is created, it also creates a [[LuaTimedActionNew]] java object which is used by the game java side to handle the timed action. The timed action <code>update</code> method is notably called from the java every ticks.
+
+==Composition==
+The <code>ISBaseTimedAction</code> class is composed of the following methods by default:
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Variables of ISBaseTimedAction
+! Flag !! Type !! Description
+|-
+| style="min-width: 200px;"| <code>character</code>
+| IsoPlayer
+| The character doing the action.
+|-
+| style="min-width: 200px;"| <code>action</code>
+| [[LuaTimedActionNew]]
+| The java counter part of the timed action.
+|-
+| style="min-width: 200px;"| <code>stopOnWalk</code>
+| Boolean
+| If the action should stop when the character starts walking. By default, it is set to true.
+|-
+| style="min-width: 200px;"| <code>stopOnRun</code>
+| Boolean
+| If the action should stop when the character starts running. By default, it is set to true.
+|-
+| style="min-width: 200px;"| <code>stopOnAim</code>
+| Boolean
+| If the action should stop when the character starts aiming. By default, it is set to true.
+|-
+| style="min-width: 200px;"| <code>caloriesModifier</code>
+| Number
+| The calories which are burnt for performing the action. By default, it is set to 1.
+|-
+| style="min-width: 200px;"| <code>maxTime</code>
+| Number
+| The maximum time the action can take. By default, it is set to -1.
+|-
+| style="min-width: 200px;"| <code>_isAddingActions</code>
+| Boolean
+| Identifies if the action is adding actions after it. Set to true when <code>beginAddingActions()</code> is triggered and nil when <code>endAddingActions()</code> is triggered.
+|-
+| style="min-width: 200px;"| <code>_numAddedActions</code>
+| Number
+| The number of actions added after this action. Value is returned when <code>endAddingActions()</code> is triggered.
+|}
+
+{| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
+|+ style="white-space:nowrap" | Methods and functions of ISBaseTimedAction
+! Function !! Description
+|-
+| style="min-width: 200px;"| <code>new(character) -> ISBaseTimedAction instance</code>
+| Constructor of the class.
+|-
+| style="min-width: 200px;"| <code>isValidStart() -> boolean</code>
+| Checks if the action can start. Only triggers the check when starting the action after another one. If not valid, the queue is reset and the action is declared as a bugged action.
+|-
+| style="min-width: 200px;"| <code>isValid() -> boolean</code>
+| Checks if the action is valid before triggering <code>update()</code>. If result is false or nil, then the timed action gets stopped and triggers <code>stop()</code>.
+|-
+| style="min-width: 200px;"| <code>stop()</code>
+| Stops the action. Only triggers when it is a forced stop. Cancels the entire queue of timed actions.
+|-
+| style="min-width: 200px;"| <code>forceComplete()</code>
+| Forces the action to complete.
+|-
+| style="min-width: 200px;"| <code>forceStop()</code>
+| Forces the action to stop. Cancels the rest of the queue and triggers <code>stop()</code>.
+|-
+| style="min-width: 200px;"| <code>forceCancel()</code>
+| Forces the action to cancel. Called whenever the action is removed the queue without being started.
+|-
+| style="min-width: 200px;"| <code>waitToStart() -> boolean</code>
+| Checks if the action can start until it can. By default, it is set to false so no waiting.
+|-
+| style="min-width: 200px;"| <code>start()</code>
+| Starts the action. This is called when the action is valid and can start.
+|-
+| style="min-width: 200px;"| <code>isStarted() -> boolean</code>
+| Checks if the action has started.
+|-
+| style="min-width: 200px;"| <code>update()</code>
+| Updates the action. This is called every ticks java side.
+|-
+| style="min-width: 200px;"| <code>getJobDelta() -> number</code>
+| Returns the job delta of the action. This number corresponds to the percentage of the action which is finished.
+|-
+| style="min-width: 200px;"| <code>resetJobDelta()</code>
+| Resets the job delta of the action to the start.
+|-
+| style="min-width: 200px;"| <code>getDuration() -> number</code>
+| Returns the <code>maxTime</code> of the action.
+|-
+| style="min-width: 200px;"| <code>perform()</code>
+| Performs the action. This is called when the action is valid and can start.
+|-
+| style="min-width: 200px;"| <code>create()</code>
+| Creates the action, triggers during <code>begin()</code>. Triggers <code>adjustMaxTime(maxTime)</code> to update the <code>maxTime</code> value. Also creates a [[LuaTimedActionNew]] java object.
+|-
+| style="min-width: 200px;"| <code>begin()</code>
+| Begins the action. Automatically triggered from [[ISTimedActionQueue]] when the action gets first in the queue and is valid to start.
+|-
+| style="min-width: 200px;"| <code>setCurrentTime(currentTime: number)</code>
+| Sets the current time of the action.
+|-
+| style="min-width: 200px;"| <code>setTime(time: number)</code>
+| Sets the <code>maxTime</code> of the action.
+|-
+| style="min-width: 200px;"| <code>adjustMaxTime(maxTime: number) -> number</code>
+| Adjusts the given <code>maxTime</code> of the action and returns an update value. This is called during <code>create()</code>. Applies a debuff based on unhappiness, drunkness, pain levels and character timed action modifier.
+|-
+| style="min-width: 200px;"| <code>setActionAnim(_action: string|[[CharacterActionAnims]], _displayItemModels: nil)</code>
+| Sets the action animation to <code>_action</code>. See [[PerformingAction]] for the list of available actions.
+{{Note|type=error|<code>_displayItemModels</code> should not be used and is deprecated. Code will error if used.}}
+|-
+| style="min-width: 200px;"| <code>setOverrideHandModels(_primaryHand: [[InventoryItem]], _secondaryHand: [[InventoryItem]], _resetModel: boolean)</code>
+| Sets the item in hands to <code>_primaryHand</code> and <code>_secondaryHand</code>. If <code>_resetModel</code> is true, it will reset the model to the default one.
+|-
+| style="min-width: 200px;"| <code>setOverrideHandModelsString(_primaryHand: string, _secondaryHand: string, _resetModel: boolean)</code>
+| Sets the item in hands to <code>_primaryHand</code> and <code>_secondaryHand</code>. If <code>_resetModel</code> is true, it will reset the model to the default one.
+|-
+| style="min-width: 200px;"| <code>overrideWeaponType()</code>
+| Updates the [[Weapon (AnimNode)|character weapon type]] to the currently force held weapon from overriding the hand model.
+|-
+| style="min-width: 200px;"| <code>restoreWeaponType(_weaponType: string)</code>
+| Restores the [[Weapon (AnimNode)|character weapon type]] to the real weapon in hands.
+|-
+| style="min-width: 200px;"| <code>setAnimVariable(_key, _val)</code>
+| Sets the animation variable <code>_key</code> to <code>_val</code> of the timed action <code>character</code>.
+|-
+| style="min-width: 200px;"| <code>addAfter(action) -> previousAction</code>
+| Adds the given <code>action</code> after this action instance (<code>self</code>) to the [[ISTimedActionQueue|queue]] (see [[ISTimedActionQueue#Adding timed actions to the queue|<code>addAfter</code> in queue]]).
+|-
+| style="min-width: 200px;"| <code>beginAddingActions()</code>
+| When triggered, the next actions added to the queue are automatically added after this action. Sets <code>_isAddingActions</code> to true and <code>_numAddedActions</code> to 0.
+|-
+| style="min-width: 200px;"| <code>endAddingActions() -> number</code>
+| Ends the automatic adding of actions after this action. Sets <code>_isAddingActions</code> to nil and returns <code>_numAddedActions</code> which is used to count the number of added actions after this action.
+|-
+| style="min-width: 200px;"| <code>getDeltaModifiers(deltas: [[MoveDeltaModifiers]])</code>
+| Returns an object which can be modified to stop specific movement types. Notably used in [[ISClimbOverFence]] to stop the character from turning during the action.
+|-
+| style="min-width: 200px;"| <code>getFacingDirection()</code>
+| Returns the facing direction ([[IsoDirections]]) of the character.
+|}
+
+==Creating a new timed action==
+Creating a custom timed action involve the <code>derive</code> method from [[ISBaseObject#Object inheritance|ISBaseObject]] which creates a completely new object with the same properties as the original object which is derived from. This can not only be used on the <code>ISBaseObject</code> class but also on any other class that inherits from it so you can derive an object which already derived from <code>ISBaseObject</code>.
+
+In this case, this is applied to <code>ISBaseTimedAction</code> to create a new timed action.
+
+{{Navbox Lua objects}}

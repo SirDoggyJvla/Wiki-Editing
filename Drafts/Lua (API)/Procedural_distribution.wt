@@ -1,5 +1,5 @@
 {{Header|Modding|Lua (API)}}
-{{Page version|42.3.1}}
+{{Page version|42.5.1}}
 '''Procedural distribution''' explains how the loot system of the game works and how you can add your own loot to the procedural distribution.
 
 ==How does loot generation works==
@@ -80,7 +80,7 @@ ProceduralDistributions.list = {
 }
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> The chance value is NOT a weight NOR a percentage ! To chose your chance values, base yourself on existing vanilla distribution and the chance values of vanilla items !
+{{Note|type=error|The chance value is '''not''' a weight '''nor''' a percentage! To chose your chance values, base yourself on existing vanilla distribution and the chance values of vanilla items!}}
 
 ===Tags for distribution===
 Alongside the <code>rolls</code> tag for the <code>distributionName</code> and <code>junk</code> tables, you can add arguments which will modify how items spawn in and their conditions of spawn:
@@ -243,7 +243,7 @@ Some of the best methods can involve:
 
 ==Distributions==
 Below is the full list of distributions as well as their different tags.
-{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center";
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center;
 |+ style="white-space:nowrap" | List of distributions and their different tags
 |-
 ! Distribution list !! Rolls !! <code>ignoreZombieDensity</code> !! <code>isShop</code> !! <code>stashChance</code> !! <code>canBurn</code> !! <code>isWorn</code> !! <code>isTrash</code> !! <code>isRotten</code> !! <code>bags</code> !! <code>maxMap</code> !! <code>onlyOne</code>

@@ -1,0 +1,19 @@
+{{Header|Modding|Scripts|craftRecipe parameters}}
+{{Page version|42.5.1}}
+The <code>ToolTip</code> parameter is used to define the description of the recipe. This parameter will refer to a translation key in the translation files (see [[Translations]]).
+
+==Example==
+{{CodeSnip
+| lang = lua
+| code =
+ToolTip = Tooltip_Recipe_MyRecipe,
+}}
+
+And in the translation file:
+{{CodeSnip
+| lang = lua
+| code =
+Tooltip_EN = {
+    Tooltip_Recipe_MyRecipe = "This is a description of my recipe",
+}
+}}

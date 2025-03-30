@@ -1,0 +1,122 @@
+{{Header|Modding|Scripts}}
+{{Page version|42.5.1}}
+{{About|[[Build 42]] crafting recipes|crafting recipes for [[Build 41]]|Recipe (scripts)}}
+Crafting recipes in [[Build 42]] were changed to use a different formatting and system than the one used in [[Build 41]] ([[Recipe (scripts)|Recipe]]).
+
+{{Note|type=error|Recipes are being heavily changed during the unstable build, and it is important to verify the version of the information provided.}}
+
+==craftingRecipe format==
+To create a new crafting recipe, simply use the following entry in a script file:
+{{CodeSnip
+| lang = lua
+| code =
+module yourModule /* or Base */
+{
+    craftRecipe <RecipeID>
+    {
+        ...
+    }
+}
+}}
+
+The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipe_{language}</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for English needs to have:
+{{CodeSnip
+| lang = lua
+| code =
+RecipeEN = {
+    Recipe_MyRecipe = "My Recipe Name"
+}
+}}
+
+==craftRecipe parameters==
+Different parameters can be used in the <code>craftRecipe</code> block to define the recipe. The following table lists the available parameters and the mandatory ones:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for the <code>craftRecipe</code> block
+! Parameter name !! Description
+|-
+| style="padding: 10px;text-align: center;"| [[time]]
+<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 5px; max-width: 500px;"| Time to craft the item.
+|-
+| style="padding: 10px;text-align: center;"| [[inputs]]
+<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 5px; max-width: 500px;"| The ingredients needed to crafting the item.
+|-
+| style="padding: 10px;text-align: center;"| [[outputs]]
+<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 5px; max-width: 500px;"| The item produced from the craft.
+|-
+| style="padding: 10px;text-align: center;"| [[timedAction]]
+| style="padding: 5px; max-width: 500px;"| Specifies animation played during the crafting process.
+|-
+| style="padding: 10px;text-align: center;"| [[category]]
+| style="padding: 5px; max-width: 500px;"| Specifies the category of the crafting recipe. This helps to organize and identify recipes in the crafting menu.
+|-
+| style="padding: 10px;text-align: center;"| [[Tags (craftRecipe)|Tags]]
+| style="padding: 5px; max-width: 500px;"| Specifies specific conditions which need to be respected to craft this item.
+|-
+| style="padding: 10px;text-align: center;"| [[ToolTip]]
+| style="padding: 5px; max-width: 500px;"| Description of the crafting which is shown in the crafting menu.
+|-
+| style="padding: 10px;text-align: center;"| [[Icon (craftRecipe)|Icon]]
+| style="padding: 5px; max-width: 500px;"| Specifies the icon associated with this crafting recipe.
+|-
+| style="padding: 10px;text-align: center;"| [[itemMapper]]
+| style="padding: 5px; max-width: 500px;"| Allows to define an item mapping for input items to create a specific output item.
+|-
+| style="padding: 10px;text-align: center;"| [[OnCreate (craftRecipe)|OnCreate]]
+| style="padding: 5px; max-width: 500px;"| Whenever the crafting recipe is finished, this Lua function will be called.
+|-
+| style="padding: 10px;text-align: center;"| [[OnTest]]
+| style="padding: 5px; max-width: 500px;"| Used to verify if the recipe can be crafted.
+|-
+| style="padding: 10px;text-align: center;"| [[xpAward]]
+| style="padding: 5px; max-width: 500px;"| Specifies the experience points awarded for crafting this item. 
+|-
+| style="padding: 10px;text-align: center;"| [[SkillRequired]]
+| style="padding: 5px; max-width: 500px;"| Specifies the skill level required to perform this crafting action.
+|-
+| style="padding: 10px;text-align: center;"| [[needToBeLearn]]
+| style="padding: 5px; max-width: 500px;"| Should the player learn the recipe before being able to craft it.
+|-
+| style="padding: 10px;text-align: center;"| [[AutoLearnAll]]
+| style="padding: 5px; max-width: 500px;"| All the skills and their required level need to be reached to learn the recipe, not be be confused with AutoLearnAny.
+|-
+| style="padding: 10px;text-align: center;"| [[AutoLearnAny]]
+| style="padding: 5px; max-width: 500px;"| Only one of the listed skills and their required level needs to be reached to learn the recipe, not be confused with AutoLearnAll.
+|-
+| style="padding: 10px;text-align: center;"| [[MetaRecipe]]
+| style="padding: 5px; max-width: 500px;"| A meta recipe is used to link two recipes so that if the meta recipe is known then the main recipe is known.
+|-
+| style="padding: 10px;text-align: center;"| [[AllowBatchCraft]]
+| style="padding: 5px; max-width: 500px;"| Allows the recipe to be crafted in batches.
+|-
+| style="padding: 10px;text-align: center;"| [[Fluids (craftRecipe)|Fluids]]
+| style="padding: 5px; max-width: 500px;"| Recipes can use fluids.
+|}
+
+===Available skills===
+You can define multiple skills and their respective experience points/levels by separating them with <code>;</code>. Below is how each parameters need to be formatted:
+*<code>xpAward</code> format is <code>skill:experience</code>
+*<code>SkillRequired</code> format is <code>skill:level</code>
+*<code>AutoLearnAll</code> format is <code>skill:level</code>
+*<code>AutoLearnAny</code> format is <code>skill:level</code>
+
+Below is the list of vanilla skills that are used in the vanilla crafts:
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code>Blacksmith</code>
+*<code>Butchering</code>
+*<code>Carving</code>
+*<code>Cooking</code>
+*<code>Electricity</code>
+*<code>FlintKnapping</code>
+*<code>Glassmaking</code>
+*<code>Maintenance</code>
+*<code>Masonry</code>
+*<code>MetalWelding</code>
+*<code>Pottery</code>
+*<code>Tailoring</code>
+*<code>WoodWork</code>
+</div>
+
+Alternatively, you can also use modded skills defined by your mod or other mods.

@@ -1,0 +1,25 @@
+Hello everyone, Sir Doggy Jvla here to explain all the changes to the modding wiki in February 2025. The wiki has now become a proper place to get information related to modding and to also learn modding. But of course some important points related to modding are still missing and work continues.
+
+Permanent invitations which are specifically used for the Modding and Mapping Discord were created to facilitate easier access for all community members interested in learning or sharing modding stuff. Currently, these are the amount of people who joined from the invitations:
+*[https://discord.gg/ghRTHUTc94 Unofficial Modding Discord]: 327 joined since the creation of the invitation (~december).
+*[https://discord.gg/CFuNM8rtCp Unofficial Mapping Discord]: 52 joined since the creation of the invitation (~december).
+
+A new category was created which allows modders to explain their personal tools and projects which can be used by modders. Debates and discussions were made on my arrival whenever pages which explain specific mods are welcomed in the modding wiki and the decision was made that the modding wiki is a place to share informations about modding and not to advertise mods due to the lack of fairness of accepting wiki pages for specific mods. Pages about specific mods are more in line with [[PZwiki:Project History]] to document mods that had a great impact on the game. 
+
+A discussion about documenting specific modding projects was started as these are sometimes specific mods on the Workshop. The decision was that mods that are APIs or tools for modders in general can be documented alongside outside tools such as [[Umbrella]]. As such the section [[Modding projects]] was created which gives a place for modders and the community to document their projects and tools that modders can use.
+
+Some tasks are still left unfinished but I've personally have been working on a few various pages that are very important to help new modders:
+*[[Attachment Editor]] - a page which was created by CrystalChris and is now usable by new modders to learn how to use it to setup their items.
+*[[ItemVisual]] and [[ItemVisuals]] alongside [[HumanVisual]] - pages for java objects that explain how visuals work for clothing items on characters.
+*[[ArrayList]] - a page that explains how to use the ArrayList objects in the [[Lua (API)]]. 
+*[[ISContextMenu]] - a page that explains how to use the ISContextMenu object in the [[Lua (API)]].
+*[[ISToolTip]] - a page needed for [[ISContextMenu]] to explain how to use the ISToolTip object in the [[Lua (API)]].
+*[[CraftRecipe]] - a page which was created to explain how to create recipes for [[Build 42]] with the new system. This page will probably need a lot of attention with the future updates to the crafting system that will happen.
+
+Other notable changes:
+*Pages related to scripts that had "scripts" are the end were changed to use descriptors instead. For example, [[Model scripts]] changed into [[Model (scripts)]]. 
+*[[Java object]] pages now link to the Java documentation page. 
+*[[Lua (language)#Decoration]] is a new section explaining how to decorate Lua functions for mod compatibility and hooking up to vanilla functions without replacing them.
+*Three new events ([[GrapplerLetGo]], [[GrappleGrabCollisionCheck]] and [[OnStopGrapple]]) were discovered in relation with [[Dya like them grapplez#LIFE’S A DRAG|grapple tech]] which was added in [[Build 42]], notably for corpse dragging but most important for possible horses in the future.
+
+To finish this summary, there is still a huge need for various members with specific knowledge on specific fields of modding, notably mapping, to come and document stuff on the wiki. The wiki is a community effort and I would like to thank anyone who helps.

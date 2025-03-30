@@ -1,0 +1,60 @@
+<noinclude>
+    {{Documentation|doc =
+    This template is used to contain the documented information and instructions of a certain template.
+    
+    ==Usage==
+    To use this template, use the following syntax:
+    <pre>
+    {{Documentation|doc =
+    template documentation...
+    }}
+    </pre>
+    
+    ===Parameters===
+    ;<code>doc</code> {{sup|required}}
+    :The documentation of the template. Will add the template to "{{ll|:Category:Templates without documentation|Template without documentation}}" category if empty.
+    
+    ==Example==
+    It is recommended to use the <code><nowiki><noinclude></nowiki></code> tag to prevent the documentation from appearing when the template is used:
+    <pre>
+    &lt;noinclude>
+    {{Documentation|doc =
+    template documentation...
+    }}
+    &lt;/noinclude>&lt;includeonly>template code...&lt;/includeonly>
+    </pre>
+    
+    {{Translation guide|<syntaxhighlight lang="html">
+    {{#switch: {{{1|}}}
+    | header = Template Documentation
+    | empty = '''This template doesn't have any documentation yet!''' Help out by <span class="plainlinks">[{{Fullurl:{{FULLPAGENAME}}|action=edit}} writing some]</span>.
+    | footer = Editors can experiment in this template's [[{{Languages/core}}/sandbox|sandbox]].
+    | #default = [[Category:Incorrect template usage]]
+    }}
+    </syntaxhighlight>}}
+    
+    ==See also==
+    *{{ll|mw:Template:Documentation}}
+    }}
+    {{ll|Category:Templates}}
+</noinclude><includeonly>{{LangSwitch}}
+<div class="documentation">
+    <div>[[File:Notebook-old.png|link=Template:Documentation{{lcs}}]]{{tt|name=Documentation
+    | default = Template Documentation
+    | arg1 = header
+    }}</div>
+    <div>
+{{#if: {{{doc|}}}
+| {{{doc}}}
+| {{tt|name=Documentation
+    | default = '''This template doesn't have any documentation yet!''' Help out by <span class="plainlinks">[{{Fullurl:{{FULLPAGENAME}}|action=edit}} writing some]</span>.
+    | arg1 = empty
+    }}{{ll|Category:Templates without documentation}}
+}}
+    </div>
+    <div>{{tt|name=Documentation
+    | default = Editors can experiment in this template's [[{{Languages/core}}/sandbox|sandbox]].
+    | arg1 = footer
+    }}</div>
+</div></includeonly>
+    

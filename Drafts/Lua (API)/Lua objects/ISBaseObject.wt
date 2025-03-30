@@ -1,0 +1,128 @@
+{{Header|Modding|Lua objects}}
+{{Page version|42.5.1}}
+'''ISBaseObject''' is the main class that serves as a base for most Lua objects in the game. It is used by the developers to create new objects using the [[Lua (API)|Lua API]].
+
+==Object inheritance==
+Creating a custom Lua object involve the <code>derive</code> method which creates a new object which inherits from the base class it is called from. This can not only be used on the <code>ISBaseObject</code> class but also on any other class that inherits from it so you can derive an object which already derived from <code>ISBaseObject</code>. This is used a lot in [[Timed Actions]] and UI elements.
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 17
+| source = ISBaseObject.lua
+| path = ProjectZomboid\media\lua\shared
+| retrieved = true
+| version = 42.5.1
+| code =
+function ISBaseObject:derive (type)
+    local o = {}
+    setmetatable(o, self)
+    self.__index = self
+	o.Type= type;
+    return o
+end
+}}
+
+Here is an example of deriving a new object from <code>ISBaseObject</code>:
+{{CodeSnip
+| lang = lua
+| code =
+-- Example of deriving a new object from ISBaseObject
+local MyCustomObject = ISBaseObject:derive("MyCustomObject")
+
+function MyCustomObject:new()
+    local o = {}
+    setmetatable(o, self)
+    self.__index = self
+    return o
+end
+
+function MyCustomObject:someMethod()
+    -- Custom method implementation
+end
+}}
+
+==Event handler==
+The <code>ISBaseObject</code> class also provides an event handler system which can be used to add and remove event listeners to the object. This system was added in [[Build 42]].
+
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of methods for event handling
+! Method !! Description !! Source
+|-
+| style="padding: 10px;text-align: center;"| <code>ISBaseObject:addEventListener(_event, _callback, _target)</code>
+| style="padding: 5px; max-width: 500px;"| Adds an event listener to the object. <code>_event</code> is the event name, <code>_callback</code> is the function to call when the event is triggered, and <code>_target</code> is a parameter which will be passed to the callback function. If <code>_target</code> is not provided, it will be set to <code>false</code>.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 32
+| source = ISBaseObject.lua
+| path = ProjectZomboid\media\lua\shared
+| retrieved = true
+| version = 42.5.1
+| code =
+function ISBaseObject:addEventListener(_event, _callback, _target)
+	if not self.__eventListeners then
+		self.__eventListeners = {};
+	end
+	if not self.__eventListeners[_event] then
+		self.__eventListeners[_event] = {};
+	end
+	self.__eventListeners[_event][_callback] = _target or false;
+end
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>ISBaseObject:removeEventListener(_event, _callback)</code>
+| style="padding: 5px; max-width: 500px;"| Removes an event listener from the object. <code>_event</code> is the event name and <code>_callback</code> is the function to remove from the event listeners.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 42
+| source = ISBaseObject.lua
+| path = ProjectZomboid\media\lua\shared
+| retrieved = true
+| version = 42.5.1
+| code =
+function ISBaseObject:removeEventListener(_event, _callback)
+	if not self.__eventListeners then
+		return;
+	end
+	if not self.__eventListeners[_event] then
+		return;
+	end
+	self.__eventListeners[_event][_callback] = nil;
+end
+}}
+|-
+| style="padding: 10px;text-align: center;"| <code>ISBaseObject:triggerEvent(_event, ...)</code>
+| style="padding: 5px; max-width: 500px;"| Triggers an event on the object. <code>_event</code> is the event name and <code>...</code> are the parameters to pass to the event listeners. Any number of parameters can be passed but is better to stay consistant for an event as functions are written to handle specific argument orders.
+| style="padding: 5px; max-width: 500px;"| 
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 52
+| source = ISBaseObject.lua
+| path = ProjectZomboid\media\lua\shared
+| retrieved = true
+| version = 42.5.1
+| code =
+function ISBaseObject:triggerEvent(_event, ...)
+	if self.__eventListeners and self.__eventListeners[_event] then
+		local p = {...};
+        if p[13]~=nil then
+            print("ISBaseObject.triggerEvent -> param overload");
+        end
+		for callback,target in pairs(self.__eventListeners[_event]) do
+			if target then
+				callback(target, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12]);
+			else
+				callback(p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9], p[10], p[11], p[12]);
+			end
+		end
+	end
+end
+}}
+|}
+
+{{Navbox Lua objects}}

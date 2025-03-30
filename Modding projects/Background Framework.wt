@@ -1,0 +1,61 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.4.1}}
+[[File:Background Framework - preview.png|thumb]]
+'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3405199543 Background Framework]''' gives tools for modders and users to easily swap the main menu image. Before this framework, modders had to replace the main menu image, which was not user-friendly because it required users to swap mod whenever they wanted a different background. This framework allows modders to give multiple options for users to chose from, add random selection and more. It also adds similar tools to swapping the Project Zomboid writing on the main menu.
+
+For more detail on how to use the framework, see the mod page.
+
+==Direct image feed==
+Users can chose to add their own images by directly adding them in a folder. The framework will automatically detect the images and add them to the list of backgrounds. This allows users to easily add their own images without having to create a mod.
+
+To add your own images, [[File structure#Accessing the game folder|access the game files]] and put your image in the following folder:
+{{CodeSnip
+| code = 
+Steam/
+└── steamapps/
+    └── common/
+        └── ProjectZomboid/
+            └── direct/
+                └── ...
+}}
+
+The images need to be png files and have a resolution of 1920x1080 pixels. Make sure to select the direct method in the [[Mod Options]].
+
+==Addon method==
+Modders can also add their own images by creating a mod. [https://steamcommunity.com/sharedfiles/filedetails/?id=3405225466 Background Example] is an example mod that can be used to make your own. The method involves a few steps and a tiny bit of [[Lua (language)|Lua]] but it easily allows you to create your own addon.
+
+Your images should be placed in the following folder in your [[File structure#Media folder|mod's directory]]:
+{{CodeSnip
+| code =
+media/
+└── ui/
+    └── backgrounds/
+        └── ...
+}}
+
+To add your background image to the list of available backgrounds, simply use the following code:
+{{CodeSnip
+| lang = lua
+| code =
+backgroundFramework:addBackground("DisplayName", "PictureFileName", "PictureFileNameForLightning")
+-- or if you don't have lightning image variation
+backgroundFramework:addBackground("DisplayName", "PictureFileName")
+}}
+
+For logos, put them in the following folder in your mod's directory:
+{{CodeSnip
+| code =
+media/
+└── ui/
+    └── logos/
+        └── ...
+}}
+
+And use the following Lua code to add your logo to the list of available logos:
+{{CodeSnip
+| lang = lua
+| code =
+backgroundFramework:addLogo("DisplayName", "logoFileName")
+}}
+
+{{Navbox modding}}

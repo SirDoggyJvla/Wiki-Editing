@@ -1,0 +1,47 @@
+{{Header|Modding|Scripts|craftRecipe parameters}}
+{{Page version|42.5.1}}
+The <code>itemMapper</code> parameter allows input items to be mapped to an output item. This is useful when you want to use a specific item in the recipe, but the player can use different items that are equivalent. This can alternatively be used for crafts that are the same for different types of objects. Mappers involve [[inputs]] and [[outputs]] as well as a whole new parameter <code>itemMapper</code>. To map items you need to use the following format:
+{{CodeSnip
+| lang = html
+| code =
+inputs
+{
+    item 1 <item table> mappers[mapperID],
+}
+outputs
+{
+    item 1 mapper:mapperID,
+}
+itemMapper mapperID
+{
+    <output item> = <input item>,
+    <output item2> = <input item2>,
+    ...
+}
+}}
+
+==Example==
+Creating a recipe which allows the user to open or close an umbrella needs to take into account the different colors of the umbrella.
+
+For example, if you want to use a closed umbrella in a recipe, but the player can use any color of closed umbrella, you can use the following code:
+{{CodeSnip
+| lang = lua
+| code =
+inputs
+{
+    item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue;Base.ClosedUmbrellaRed;Base.ClosedUmbrellaTINTED;Base.ClosedUmbrellaWhite] mappers[umbrellaElla] flags[InheritColor;Prop1],
+}
+outputs
+{
+    item 1 mapper:umbrellaElla,
+}
+itemMapper umbrellaElla
+{
+    Base.UmbrellaBlack = Base.ClosedUmbrellaBlack,
+    Base.UmbrellaBlue = Base.ClosedUmbrellaBlue,
+    Base.UmbrellaRed = Base.ClosedUmbrellaRed,
+    Base.UmbrellaTINTED = Base.ClosedUmbrellaTINTED,
+    Base.UmbrellaWhite = Base.ClosedUmbrellaWhite,
+}
+}}
+

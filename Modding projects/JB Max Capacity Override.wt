@@ -1,0 +1,23 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.6.0}}
+'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3452113500 JB Max Capacity Override]''' allows modders to override the capacity limited imposed by [[Build 42]] for containers. It fixes the limit by using the [[Lua (API)|Lua API]] compared to other patch mods which are Java mods and thus require manual installation.
+
+To patch a container, you can use the following function:
+{{CodeSnip
+| lang = lua
+| code =
+JB_MaxCapacityOverride.addContainer = function(containerType, capacity, preventNesting, _equippedWeight)
+}}
+
+For example:
+{{CodeSnip
+| lang = lua
+| code =
+local JB_MaxCapacityOverride = require("JB_MaxCapacityOverride")
+
+JB_MaxCapacityOverride.addContainer("Bag_ShotgunDblSawnoffBag", 125, true, 25)
+JB_MaxCapacityOverride.addContainer("militarycrate", 180, true)
+JB_MaxCapacityOverride.addContainer("TruckBedOpen", 500, false)
+}}
+
+{{Navbox modding}}

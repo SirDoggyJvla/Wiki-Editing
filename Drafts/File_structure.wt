@@ -1,5 +1,5 @@
 {{Header|Modding}}
-{{Page version|42.2.0}}
+{{Page version|42.5.1}}
 {{About|file structure of Project Zomboid|explanations of file formats|File formats}}
 This page describes the '''file structure''' of Project Zomboid. This page will list the folder structure needed for modding as well as where different types of files can be found.
 
@@ -32,11 +32,13 @@ ProjectZomboid/
 }}
 
 ===Cache folder===
-The cache folder holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder, simply use the following path in your file explorer:
+The cache folder (named <code>Zomboid</code> by default) holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder, simply use the following path in your file explorer:
 {{CodeSnip
 |code =
 %UserProfile%/Zomboid
 }}
+
+Deleting this folder can sometimes fix some game issues, however this will delete your game settings and saves, which you can backup before doing so.
 
 ===Console file===
 The console file is located at the following path:
@@ -62,14 +64,16 @@ Steam/
 To look for a specific mod in this folder, you can look for the Workshop ID of the mod which can be found in the URL of the mod page on the Steam Workshop or automatically at the bottom of the Workshop page. The folder of the mod will be named after the Workshop ID.
 
 ==Modding structure==
+Local mods are recognized in two different folders which each have their own rules and structure and are both in the [[#Cache folder]]:
+*<code>Zomboid/mods/</code> - place to put mods to install manually without using the Steam Workshop. Not recommanded for mod development.
+*<code>Zomboid/workshop/</code> - folder used for mod development and uploading to the Steam Workshop.
+
+See this [https://github.com/Project-Zomboid-Community-Modding/pzmc-template example mod structure] to get started with your mod. Make sure to change the files as needed for your own case.
+
+{{Note|It is highly suggested to use the <code>workshop/</code> folder for mod development as mods need to be uploaded from it and developing from the <code>mods/</code> folder will always require you to make a copy of it inside the <code>workshop/</code> folder if you want to upload it. There's also other advantages to using this folder.}}
+
 ===Workshop folder===
-The first step of creating your mod will involve the creation the folder which will host your mod files. Your mod will be localy stored in the [[#Cache folder]]. In it, there's two options on where mods can be placed localy but each involve a different folder structure for your mod to be usable:
-*<code>Zomboid/mods/</code>
-*<code>Zomboid/workshop/</code>
-
-Both are technically good for using a mod locally (not downloaded from Workshop) however it is heavily suggested to use the <code>workshop/</code> folder because you will have to use this folder to be able to upload your mod and it's file structure gives you some options to store files related to the mod without leaving them in the mod that gets uploaded (more on that point later).
-
-As such, create a folder for your mod with the following structure:
+The Workshop folder will use the following structure:
 {{CodeSnip
 |code = 
 Zomboid/
@@ -77,34 +81,27 @@ Zomboid/
     └── MyExampleMod/
         ├── Contents/
         │   └── mods/
-        │       └── ...
+        │       ├── MyMod1/
+        │       │   └── ...
+        │       └── MyMod2/
+        │           └── ...
         ├── workshop.txt
         └── preview.png
 }}
 
 *<code>Contents/</code>: The folder will only have the <code>mods/</code> folder.
-*<code>Contents/mods/</code>: Your various mods which can be activated by the players will be put here, with each mod having their <code>mod.info</code> associated (see relevant section on the subject).
-*<code>workshop.txt</code>: Informations which are needed to upload your mod are put here (see [[#workshop.txt file]]).
-*<code>preview.png</code>: The image used as your mod preview on the Steam Workshop.
+*<code>Contents/mods/</code>: Your various mods which can be activated by the players will be put here, with each mod having their own [[mod.info]] file associated to be recognized (see [[#Mod folder]]). This is the folder uploaded to the Workshop.
+*<code>workshop.txt</code>: Informations which are needed to upload your mod are put here (see [[workshop.txt]]).
+*<code>preview.png</code>: The image used as your mod preview on the Steam Workshop. Game imposes a 256x256 resolution.
 
-More folders can be created within <code>MyExampleMod/</code> which you can use to store various files relevant to the mod development and that won't get uploaded. So for example you can have a folder <code>Workshop/Images/</code> which will be have your Steam page images, but also a folder <code>Workshop/PythonScripts/</code> which can have Python scripts you used to create your mod. The naming of the folders depend on you and are not recognized by Project Zomboid anyway, only <code>Workshop/Contents/</code> is reserved for mod files. This can also be used as your root Git folder which creates files you do not want to upload (Git, Github...).
-
-====workshop.txt file====
-This file defines the parameters to be able to upload your mod but most of the parameters don't have to be filed in the file directly as it will be automatically generated based on your choices and additions in the Workshop page of the game when uploading your mod.
-
-Here's the full list of parameters:
-*<code>version</code> - used to define the version of your mod, but it's kind of useless.
-*<code>id</code> - the Workshop ID of the mod. If you want to upload to a specific Workshop ID (which you own or are a contributor to), simply add it to this field.
-*<code>title</code> - Steam Workshop page title.
-*<code>description</code> - description of the Workshop page.
-*<code>tags</code> - Steam Workshop Project Zomboid tags.
-*<code>visibility</code> - Steam page visibility.
-
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Make sure to replace the field description and title with your Steam description as the game ignores the existing description and replaces it with this field ! As such if you made a lot of effort on your description, make sure to ever back it up or to add to the <code>workshop.txt</code> file !
+{{Note|Subfolders in <code>MyExampleMod/</code> which are not <code>Contents/</code> are not recognized by the game and can be used to store various files for your mod that shouldn't get uploaded. Thus you can store in it Python scripts, images, assets, etc.}}
+{{Note|<code>MyExampleMod/</code> can be used as a Git repository (Git, Github, GitLab...).}}
 
 ===Mod folder===
-The files of your mods are placed in the folder <code>Contents/mods/</code> with the following folder structure:
-*For [[Build 41]]:
+The files of your mods are placed in the folder <code>Contents/mods/</code> alongside a [[mod.info]] file which is the core of your mod. The folder structure of your mod folder should be as follows:
+
+====Build 41====
+[[Build 41]] uses the following modding structure.
 {{CodeSnip
 | code =
 Contents/
@@ -123,8 +120,10 @@ Contents/
         └── ...
 }}
 
-*For [[Build 42]]
-Versioning was added in this version of the game, allowing you to 
+{{Note|type=warn|The [[#Build 42|Build 42 modding structure]] is considered for the rest of the page. The main difference is the position of the [[#Media folder|media folder]] and the lack of versioning and common folders for Build 41.}}
+
+====Build 42====
+[[Build 42]] uses the following modding structure.
 {{CodeSnip
 | code =
 Contents/
@@ -149,114 +148,28 @@ Contents/
     │   │   ├── mod.info
     │   │   └── poster.png
     │   └── ...
-    └── MyMod2/            <--- for extra mods, simply add a new mod folder
+    └── MyMod2/            <--- for extra mods, simply add a new differently named mod folder
         └── ...
 }}
-''For the rest of the guide, only [[Build 42]] will be considered for the folder structure. The main difference with [[Build 41]] is that this precedent version doesn't have versioning and the common folder, but the file structure within the <code>media/</code> folder is the same.''
 
-As stated in the previous section, multiple mods can be uploaded for the same Steam Workshop article, which can be optional mods or different versions of the same mod, for example.
+{{Note|Multiple mods can be present in a single uploaded mod (inside <code>Contents/mods/</code>). This can be used for optional mods or different versions of the same mod.}}
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Common folder is mandatory for your mod to work !
+===Common and versioning folders===
+Common and versioning folders, introduced in [[Build 42]], help manage different mod versions per game version.  
 
-====mod.info file====
-This file is the root of your mod, which helps the game to detect your mod with various parameters available. It can simply be edited like any <code>.txt</code> file with your chosen software for editing text or code files.
+*'''Versioning folders''' are useful when players stick to older game versions. You don't need one for every version. They should contain code files and [[mod.info]], as they often change with the game version.
+*'''Common folder''' stores large files (models, textures, animations) to keep mod size down.  
 
-This file, while working in both common and versioning folders, should be kept only in the versioning folders for ease of use and organization. Technically, all of the parameters are optional, but excluding some of these might just break your mod, make it not available to run or other problems. The necessary parameters should at least be the ID and name.
-
-Below is the full list of parameters available for this file.
-{| class="wikitable theme-red"
-| style="padding: 10px;"| <big><code>name</code></big>
-| style="padding: 5px;"| This parameter defines the displayed name for your mod in the game's mod manager.
-|-
-| style="padding: 10px;"| <big><code>id</code></big>
-| style="padding: 5px;" | The mod ID is used in a mod list of the user or servers to activate your mod. Before [[Build 42]], this ID needed to be unique, or it would cause problems with mods that share the same, mixing files and overall breaking your mod but with the new build, this issue shouldn't ever happen anymore as the Workshop ID of your mod is added in front of the mod ID to recognize which Workshop article is associated to which mod ID.
-|-
-| style="padding: 10px;"| <big><code>author</code></big>
-| style="padding: 5px;" | Name of the author(s) of the mod, which, if the mod is originally yours, should be your username.
-|-
-| style="padding: 10px;"| <big><code>description</code></big>
-| style="padding: 5px;" | Description of your mod, which shows up in the mod manager. It's possible to use [[ISRichTextPanel]] tags.
-|-
-| style="padding: 10px;"| <big><code>url</code></big>
-| style="padding: 5px;" | Show a URL link in the mod manager on the page of your mod for users to click on to open in browser. This can be used for donation links for example.
-|-
-| style="padding: 10px;"| <big><code>poster</code></big>
-| style="padding: 5px;" | Image which will show up in the mod manager as the mod image. Multiple posters can actually be used to show multiple images, but the first one will be used as the main poster in the mod manager. The rest will be in a list of images of the mod that users can click on to view.
-<BR>
-For example:
-{{CodeSnip
-| code =
-poster=poster.png
-poster=showcase.png
-poster=flying_chickens.png
-poster=credits.png
-}}
-|-
-| style="padding: 10px;"| <big><code>icon</code></big>
-| style="padding: 5px;" | Image which will be used in the mod manager to put next to the name of the mod in the list of available mods. This image will be small and while you can use a full image size, you do not need it. You can set your poster as the icon too to not use two images.
-|-
-| style="padding: 10px;"| <big><code>modversion</code></big>
-| style="padding: 5px;" | Version of the mod.
-|-
-| style="padding: 10px;"| <big><code>require</code></big>
-| style="padding: 5px;" | Mods required to run this mod. As of [[Build 42]], the way to require mods is done this way, if you have for example two mods with the ID <code>theNeededMod</code> and <code>theOtherOne</code>:
-{{CodeSnip
-| code =
-require=\theNeededMod,\theOtherOne
-}}
-|-
-| style="padding: 10px;"| <big><code>incompatible</code></big>
-| style="padding: 5px;" | Mods that cannot be enabled at the same time as this mod. When enabled, the other mods will be unselectable. This mod will also become unselectable if any of the other mods are enabled.
-{{CodeSnip
-| code =
-incompatible=\theUnwantedMod,\theOtherOne
-}}
-|-
-| style="padding: 10px;"| <big><code>loadModAfter</code></big>
-| style="padding: 5px;" | ''Need more informations.''
-|-
-| style="padding: 10px;"| <big><code>loadModBefore</code></big>
-| style="padding: 5px;" | ''Need more informations.''
-|-
-| style="padding: 10px;"| <big><code>category</code></big>
-| style="padding: 5px;" | ''Need more informations.''
-|-
-| style="padding: 10px;"| <big><code>pack</code></big>
-| style="padding: 5px;" | Name of packs that need to be loaded by the game.
-''Need more informations.''
-|-
-| style="padding: 10px;"| <big><code>tiledef</code></big>
-| style="padding: 5px;" | Name of the tiledef with its ID that are added by the mod.
-<BR>
-For example:
-{{CodeSnip
-| code =
-tiledef=Excavation 2112
-}}
-
-To see which tiledef ID is available to be used for your mod, you can refer to [[Tiledefs used by mods]]. If you upload your mod with a new tiledef ID, you can update this list to reduce the chance of incompatibility with other mods adding tile packs.
-|-
-| style="padding: 10px;"| <big><code>versionMin</code> and <code>versionMax</code></big>
-| style="padding: 5px;" | The minimum and maximum version of the game the mod can be used on.
-|}
-
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> the <code>poster</code> and <code>icon</code> can be within a folder instead of in the same folder as the <code>mod.info</code> file. For example, it can take in the media folder: <code>media/image.png</code>.
-
-====Common and versioning folders====
-The common and versioning folders will receive all the files that will handle your mod. Those folders allow the modder to have different versions of their assets for different versions of the game. It is particularly useful if there were major code changes in-between versions of if players tend to stay on older versions of the game due to big changes that make them unable to move on to the next version.
-
-Most files, however, especially big files such as textures, models, animations, should be prioritized in the common folder as they tend to be the heaviest files in your mod. Copying them for each versioning would increase the mod size by way too much. In the same way, posters and images which are used in the <code>mod.info</code> should be put in the common folder.
-
-''As of version 42.0.2 since [[Build 42]] release, posters, and images in the common folder are not recognized by the game and will not load.''
-
-As stated in the section before, the <code>mod.info</code> file can be put in both folders, but it is better to keep it in each versioning folders to not mix things up, especially as one of the parameters you can set is the mod version, and game version. As such, it is more fitting and easier to organize to just put this file in the versioning folders.
+These folders load with the following order:
+#Common folder  
+#Closest versioning folder to the game version (overwrites common files which are present in it)
 
 The versioning folders can have the following possible naming:
 {{CodeSnip
 | code =
-buildVerion.majorUpdate.minorUpdate
-buildVerion.majorUpdate                ====> buildVerion.majorUpdate.0
-buildVerion                            ====> buildVerion.0                ====> buildVerion.0.0
+buildVersion.majorUpdate.minorUpdate
+buildVersion.majorUpdate                ====> buildVersion.majorUpdate.0
+buildVersion                            ====> buildVersion.0.0
 }}
 
 For example:
@@ -270,35 +183,52 @@ For example:
 43.5.1
 }}
 
-The game loads the common folder and then the highest version available that's equal to or lower than the current game version. Versioning files are used in priority over common files.
-
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> '''common''' folder is mandatory for your mod to work!
+{{Note|type=warn|Common folder is not recognized by [[Build 41]] modding structure. However, the [[Build 41]] [[Lua (API)|Lua API]] can access some files in some cases.}}
+{{Note|type=error|Common folder is mandatory, even if empty, for your mod to work !}}
 
 ===Media folder===
-Your mod assets and codes need to be put inside specific folders in the <code>media/</code> folder. Different types of assets require different folders in the media folder which will be detailed in each sections related to each types of modding. Overall the folders which can be put in the modding media folder are the same as the [[#Default media folder]] and take on the same folder structure.
+Mod assets are put inside this folder. Different subfolders need to be created based on the type of assets. These are usually the same as the [[#Default media folder|game media folder]] but below is a list of the commonly used subfolders:
 
-These can be for example:
-{{CodeSnip
-| code =
-media/
-├── anims_X
-├── AnimSets
-├── clothing
-├── lua
-├── models_X
-└── sound
-}}
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of commonly used subfolders
+! Subfolder !! Description
+|-
+| style="min-width: 200px;text-align: center;"| <code>lua</code>
+| style="min-width: 600px;"| To program with [[Lua (language)|Lua]] using the [[Lua (API)|API]].
+|-
+| style="min-width: 200px;text-align: center;"| <code>scripts</code>
+| style="min-width: 600px;"| To create scripts for [[Item (scripts)|items]], [[Sound (scripts)|sounds]], [[Model (scripts)|models]], [[Vehicle (scripts)|vehicles]], [[CraftRecipe|crafts]], etc.
+|-
+| style="min-width: 200px;text-align: center;"| <code>AnimSets</code>
+| style="min-width: 600px;"| [[File formats#XML|XML]] files which are used to define how animations are triggered.
+|-
+| style="min-width: 200px;text-align: center;"| <code>clothing</code>
+| style="min-width: 600px;"| [[File formats#XML|XML]] files which are used to define clothing items and outfits.
+|-
+| style="min-width: 200px;text-align: center;"| <code>anims_X</code>
+| style="min-width: 600px;"| For [[File formats#Modeling and animation formats|animation files]].
+|-
+| style="min-width: 200px;text-align: center;"| <code>models_X</code>
+| style="min-width: 600px;"| For [[File formats#Modeling and animation formats|model files]].
+|-
+| style="min-width: 200px;text-align: center;"| <code>textures</code>
+| style="min-width: 600px;"| For texture files used on models.
+|-
+| style="min-width: 200px;text-align: center;"| <code>ui</code>
+| style="min-width: 600px;"| For images used in UI elements.
+|-
+| style="min-width: 200px;text-align: center;"| <code>sound</code>
+| style="min-width: 600px;"| For sounds files.
+|-
+| style="min-width: 200px;text-align: center;"| <code>maps</code>
+| style="min-width: 600px;"| For map files.
+|}
 
-Each types of modding will have the proper file structure required explained. Technically files outside of the media folder can still be recognized like for text files, as an example you can do changelog files that you can read from the [[Lua]]:
-{{CodeSnip
-| code =
-media
-  ...
-changelog.txt
-}}
+{{Note|Technically, files which are in the parent folder of the media folder can be read from the [[Lua (API)|Lua API]] within the media folder.}}
 
-==External links==
-*[https://github.com/Project-Zomboid-Community-Modding/pzmc-template Example mod folder structure]
+==See also==
+*[[Workshop.txt]]
+*[[mod.info]]
 
 {{Navbox modding}}
 
