@@ -1,0 +1,49 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.7.0}}
+[[File:Mod Update and Alert System - preview.png|thumb]]
+'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3077900375 Mod Update and Alert System]''' is an API which allows modders to directly add patchnotes in the game for users to see from the main menu. It also allows you to have various useful links for your mod such as Github repositories, Ko-Fi links and mod pages in the news panel for your own mod.
+
+Using it can be made optional to users and simply requires a new file in the [[Modding structure#Mod folder|mod folder]] of your own mod alongside the [[mod.info]] file. For [[Build 42]] mods, it's suggested to put this file in the [[Modding structure#Common and versioning folders|common folder]]. The file should be named <code>ChangeLog.txt</code>.
+
+==Configurating links==
+To configurate links to your mod, simply add the following lines in your changelog file:
+{{CodeSnip
+| code =
+[ ALERT_CONFIG ]
+link1 = <Username>'s Kofi = https://steamcommunity.com/linkfilter/?u=<ko-fi page link>,
+link2 = Workshop = <link to your workshop page or mod page>,
+link3 = Github = https://steamcommunity.com/linkfilter/?u=<link to github>,
+[ ------ ]
+}}
+
+{{Note|content=Project Zomboid stops you from being able to open links that are not accepted by the game. This is why the links are prefixed with <code>https://steamcommunity.com/linkfilter/?u=</code> which will prompt users to accept to be redirected to the link from a Steam page.}}
+
+==Adding patchnotes==
+To add patchnotes to your mod, simply add the following lines in your changelog file:
+{{CodeSnip
+| code =
+[ MM/DD/YYYY ]
+Content.....
+[ ------ ]
+}}
+
+==Example==
+Below is an example of a changelog file:
+{{CodeSnip
+| code =
+[ ALERT_CONFIG ]
+link1 = myUsername's Kofi = https://steamcommunity.com/linkfilter/?u=https://ko-fi.com/myUsername,
+link2 = Workshop = https://steamcommunity.com/id/myUsername/myworkshopfiles/?appid=108600,
+link3 = Github = https://steamcommunity.com/linkfilter/?u=https://github.com/myUsername,
+[ ------ ]
+
+[ 04/22/25 ]
+- New important feature users should take note of.
+[ ------ ]
+
+[ 04/25/25 ]
+- Hotfix to that new great feature that was added in the last update.
+[ ------ ]
+}}
+
+{{Navbox modding}}

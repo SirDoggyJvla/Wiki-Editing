@@ -1,8 +1,9 @@
 {{Header|Modding|Java objects}}
-{{Page version|42.1.1}}
+{{Page version|42.7.0}}
 '''IsoPlayer''' is the class which defines the [[Player|players]] object.
 
 ==Java doc==
+{{Main|Java documentation}}
 [https://projectzomboid.com/modding/zombie/characters/IsoPlayer.html IsoPlayer]
 
 ==Related Lua events==
@@ -20,8 +21,19 @@
 *[[OnWeaponSwing]]
 *[[OnWeaponSwingHitPoint]]
 
+==Retrieve player stats==
+Retrieving the level of an IsoPlayer perk can be achieved with the use of {{JavaObject|PerkFactory.Perk|package=zombie/characters/skills|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}} like in the following examples:
+{{CodeSnip
+| lang = lua
+| code =
+-- considering player an IsoPlayer instance
+local fitnessLevel = player:getPerkLevel(Perks.Fitness)
+local aimingLevel = player:getPerkLevel(Perks.Aiming)
+local electricityLevel = player:getPerkLevel(Perks.Electricity)
+}}
+
 ==Change player visibility==
-To change the visibility of a player, you can use the method <code>setTargetAlpha</code> which is inherited from [[IsoObject]]. The value for visibility is a float from 0 to 1.
+To change the visibility of a player, you can use the method <code>setTargetAlpha</code> which is inherited from {{JavaObject|IsoObject|zombie/iso}}. The value for visibility is a float from 0 to 1.
 {{CodeSnip
 | lang = lua
 | code =

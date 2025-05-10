@@ -1,0 +1,9 @@
+{{Header|Modding|Java objects}}
+{{Page version|42.2.0}}
+'''Stats''' is a class which defines stats such as endurance, pain, fatigue and more for an {{JavaObject|IsoGameCharacter|package=zombie/characters}} object.
+
+==Java doc==
+{{Main|Java documentation}}
+[https://projectzomboid.com/modding/zombie/characters/Stats.html Stats]
+
+{{Navbox Java objects}}

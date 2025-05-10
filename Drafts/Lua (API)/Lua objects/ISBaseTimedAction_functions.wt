@@ -1,32 +1,3 @@
-{{Header|Modding|Lua objects}}
-{{Page version|42.6.0}}
-'''ISBaseTimedAction''' is a subclass of [[ISBaseObject]] which serves as a base for timed actions. It is used by the developpers to create timed actions using the [[Lua (API)|Lua API]]. These timed actions can be added to the queue of actions [[ISTimedActionQueue]] to be fully handled by the game one after the other.
-
-When a new timed action is created, it also creates a [[LuaTimedActionNew]] java object which is used by the game java side to handle the timed action. The timed action <code>update</code> method is notably called from the java every ticks.
-
-==Composition==
-The <code>ISBaseTimedAction</code> class is composed of the following variables and functions by default:
-{{ToggleBox
-| title = Variables of an instance
-| id = 1
-| class = blue
-| content = 
-----{{Function/param|name=character|type=IsoPlayer|description=The character doing the action.|}}
-----{{Function/param|name=action|type=LuaTimedActionNew|description=The Java counterpart of the timed action.|}}
-----{{Function/param|name=stopOnWalk|type=Boolean|description=If the action should stop when the character starts walking.|default=True}}
-----{{Function/param|name=stopOnRun|type=Boolean|description=If the action should stop when the character starts running.|default=True}}
-----{{Function/param|name=stopOnAim|type=Boolean|description=If the action should stop when the character starts aiming.|default=True}}
-----{{Function/param|name=caloriesModifier|type=Number|description=The calories burning modifier for performing the action.|default=1}}
-----{{Function/param|name=maxTime|type=Number|description=The maximum time the action can take.|default=-1}}
-----{{Function/param|name=_isAddingActions|type=Boolean|description=Indicates if actions are being added directly after this one. True when {{Code|beginAddingActions()|lang=lua}} is called, nil when {{Code|endAddingActions()|lang=lua}} is called.|}}
-----{{Function/param|name=_numAddedActions|type=Number|description=The number of actions added directly after this action for the time {{Code|_isAddingActions}} was true. Value is returned when <code>endAddingActions()</code> is triggered.|}}
-}}
-
-{{ToggleBox
-| title = Functions of ISBaseTimedAction
-| id = 2
-| class = blue
-| content = 
 {{Function|function=ISBaseTimedAction:new(character)|description=Constructor of the class.|
 {{Function/param|name=character|type=IsoPlayer|description=The character doing the action.}}|
 {{Function/param|name=instance|type=ISBaseTimedAction|description=The instance of the class.}}}}
@@ -84,11 +55,3 @@ The <code>ISBaseTimedAction</code> class is composed of the following variables 
 {{Function/param|name=numAddedActions|type=Number|description=The number of actions added after this action.}}}}
 {{Function|function=ISBaseTimedAction:getDeltaModifiers(deltas)|description=By default is unused, but can be used to modify the {{Code|character}} movement. Notably used in [[ISClimbOverFence]] to stop the character from turning during the action.|
 {{Function/param|name=deltas|type=MoveDeltaModifiers|description=The delta modifiers object passed to the function by the java.}}|}}
-}}
-
-==Creating a new timed action==
-Creating a custom timed action involve the <code>derive</code> method from [[ISBaseObject#Object inheritance|ISBaseObject]] which creates a completely new object with the same properties as the original object which is derived from. This can not only be used on the <code>ISBaseObject</code> class but also on any other class that inherits from it so you can derive an object which already derived from <code>ISBaseObject</code>.
-
-In this case, this is applied to <code>ISBaseTimedAction</code> to create a new timed action.
-
-{{Navbox Lua objects}}

@@ -1,0 +1,73 @@
+<noinclude>
+{{Documentation|doc = 
+This template is used to create a row in the infobox with social media links. It is used in the {{tll|Infobox}} template.
+
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Image.png|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg
+    | Discord server
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com
+    | Workshop page
+    }}
+    {{Infobox/socials
+    | github=https://github.com/
+    | Github repository
+    }}
+    {{Infobox/socials
+    | bitbucket=https://bitbucket.org
+    | Bitbucket repository
+    }}
+    {{Infobox/socials
+    | X=https://x.com
+    | X post
+    }}
+    {{Infobox/socials
+    | other=https://www.google.com
+    | Other link
+    }}
+}}
+
+==Usage==
+<pre>
+{{Infobox/socials
+| linkType = link
+| description
+}}
+</pre>
+
+===Parameters===
+;{{Code|discord}}
+: Link of a Discord server. This will add a Discord logo to the row.
+;{{Code|steam}}
+: Link of a Steam page. This will add a Steam logo to the row.
+;{{Code|github}}
+: Link of a Github repository. This will add a Github logo to the row.
+;{{Code|bitbucket}}
+: Link of a Bitbucket repository. This will add a Bitbucket logo to the row.
+;{{Code|X}}
+: Link of a X page. This will add a X logo to the row.
+;{{Code|other}}
+: Link of any other page. This will add a generic link logo to the row.
+;{{Code|description}}
+: The description of the link. This will be displayed next to the logo and in hypertext with the link.
+
+}}
+
+
+</noinclude><includeonly><div class="infobox-section">
+<div>{{#if:{{{discord|}}}|[[File:Discord-Logo.png|link={{{discord}}}|25px]] [{{{discord}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{steam|}}}|[[File:Steam logo.png|link={{{steam}}}|25px]] [{{{steam}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{github|}}}|[[File:Github-Logo.png|link={{{github}}}|25px]] [{{{github}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{bitbucket|}}}|[[File:Bitbucket-Logo.webp|link={{{bitbucket}}}|25px]] [{{{bitbucket}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{X|}}}|[[File:X-Logo.png|link={{{X}}}|25px]] [{{{X}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{{other}}}|25px]] [{{{other}}} {{#replace:{{{1|}}}|\n|}}]
+}} }} }} }} }} }}</div>
+</div></includeonly>
+    

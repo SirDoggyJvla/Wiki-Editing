@@ -1,0 +1,54 @@
+<noinclude>{{Protection|Highly visible template.}}
+{{Documentation|doc =
+{{Infobox
+| title = Example
+| {{Infobox/section
+    | id = section
+    | Title
+    | color = grey
+    | {{Infobox/row
+    | key1
+    | value1
+    }}{{Infobox/row
+    | key2
+    | value2
+    }}{{Infobox/row
+    | key3
+    | value3
+    }}
+    }}
+}}
+
+==Usage==
+<pre>
+{{Infobox/section
+| color = title color
+| id = collapse id
+| 1 = title
+| 2 = {{Infobox/row
+    | 1 = key
+    | 2 = value
+    }}...
+}}
+</pre>
+
+===Parameters===
+;<code>color</code>{{sup|recommended}}
+:The color to be used in hex color codes. Common usage is one of: <code>var(--color-red)</code> or <code>var(--color-blue)</code>.
+;<code>1</code>
+:The title of the section.
+;<code>2</code>
+:The content of the section. Recommended to be used with {{tll|Infobox/row}}.
+;<code>id</code> {{sup|required}}
+:The unique id for the collapsible element.
+;<code>collapsed</code>
+:Any value will result in the section starting collapsed. Leave empty/omit to have the section start expanded.
+}}
+{{ll|Category:Infobox}}
+{{ll|Category:Metatemplates}}
+</noinclude><includeonly><div class="infobox-section">
+    <div class="mw-customtoggle-infobox-{{{id|}}}" title="{{int:show}}/{{int:hide}}" style="{{#if:{{{color|}}}|background-color: {{{color}}}; color: white;}} {{{style_heading|}}}">{{#if:{{{1|}}}|{{{1}}}|&nbsp;}}</div>
+    <div class="mw-collapsible {{#if:{{{collapsed|}}}|mw-collapsed}}" id="mw-customcollapsible-infobox-{{{id|[[Category:Incorrect template usage]]}}}" style="{{{style_data|}}}">{{#if:{{{2|}}}|{{{2}}}}}</div>
+    <div class="toggle small mw-customtoggle-infobox-{{{id|}}}" title="{{int:show}}/{{int:hide}}"></div>
+</div></includeonly>
+    

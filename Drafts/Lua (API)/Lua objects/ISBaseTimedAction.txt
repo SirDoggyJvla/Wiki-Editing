@@ -1,33 +1,4 @@
-{{Header|Modding|Lua objects}}
-{{Page version|42.6.0}}
-'''ISBaseTimedAction''' is a subclass of [[ISBaseObject]] which serves as a base for timed actions. It is used by the developpers to create timed actions using the [[Lua (API)|Lua API]]. These timed actions can be added to the queue of actions [[ISTimedActionQueue]] to be fully handled by the game one after the other.
-
-When a new timed action is created, it also creates a [[LuaTimedActionNew]] java object which is used by the game java side to handle the timed action. The timed action <code>update</code> method is notably called from the java every ticks.
-
-==Composition==
-The <code>ISBaseTimedAction</code> class is composed of the following variables and functions by default:
-{{ToggleBox
-| title = Variables of an instance
-| id = 1
-| class = blue
-| content = 
-----{{Function/param|name=character|type=IsoPlayer|description=The character doing the action.|}}
-----{{Function/param|name=action|type=LuaTimedActionNew|description=The Java counterpart of the timed action.|}}
-----{{Function/param|name=stopOnWalk|type=Boolean|description=If the action should stop when the character starts walking.|default=True}}
-----{{Function/param|name=stopOnRun|type=Boolean|description=If the action should stop when the character starts running.|default=True}}
-----{{Function/param|name=stopOnAim|type=Boolean|description=If the action should stop when the character starts aiming.|default=True}}
-----{{Function/param|name=caloriesModifier|type=Number|description=The calories burning modifier for performing the action.|default=1}}
-----{{Function/param|name=maxTime|type=Number|description=The maximum time the action can take.|default=-1}}
-----{{Function/param|name=_isAddingActions|type=Boolean|description=Indicates if actions are being added directly after this one. True when {{Code|beginAddingActions()|lang=lua}} is called, nil when {{Code|endAddingActions()|lang=lua}} is called.|}}
-----{{Function/param|name=_numAddedActions|type=Number|description=The number of actions added directly after this action for the time {{Code|_isAddingActions}} was true. Value is returned when <code>endAddingActions()</code> is triggered.|}}
-}}
-
-{{ToggleBox
-| title = Functions of ISBaseTimedAction
-| id = 2
-| class = blue
-| content = 
-{{Function|function=ISBaseTimedAction:new(character)|description=Constructor of the class.|
+{{Function|function=ISBaseTimedAction:new(character,)|description=Constructor of the class.|
 {{Function/param|name=character|type=IsoPlayer|description=The character doing the action.}}|
 {{Function/param|name=instance|type=ISBaseTimedAction|description=The instance of the class.}}}}
 {{Function|function=ISBaseTimedAction:isValidStart()|description=Checks if the action can start. Only triggers the check when starting the action after another one. If not valid, the queue is reset and the action is declared as a bugged action.||
@@ -52,43 +23,35 @@ The <code>ISBaseTimedAction</code> class is composed of the following variables 
 {{Function|function=ISBaseTimedAction:perform()|description=Performs the action at the end of the job delta.||}}
 {{Function|function=ISBaseTimedAction:create()|description=Creates the action, triggers during {{Code|begin()|lang=lua}}. Triggers {{Code|adjustMaxTime(maxTime)|lang=lua}} to update the <code>maxTime</code> value. Also creates a [[LuaTimedActionNew]] java object stored in {{Code|action}}.||}}
 {{Function|function=ISBaseTimedAction:begin()|description=Begins the action. Automatically triggered from [[ISTimedActionQueue]] when the action becomes the first in the queue and is valid to start.||}}
-{{Function|function=ISBaseTimedAction:setCurrentTime(currentTime)|description=Sets the current time of the action.|
+{{Function|function=ISBaseTimedAction:setCurrentTime(currentTime,)|description=Sets the current time of the action.|
 {{Function/param|name=currentTime|type=Number|description=The current time of the action.}}|}}
-{{Function|function=ISBaseTimedAction:setTime(time)|description=Sets the {{Code|maxTime}} of the action.|
+{{Function|function=ISBaseTimedAction:setTime(time,)|description=Sets the {{Code|maxTime}} of the action.|
 {{Function/param|name=time|type=Number|description=The new {{Code|maxTime}} of the action.}}|}}
-{{Function|function=ISBaseTimedAction:adjustMaxTime(maxTime)|description=Adjusts the given {{Code|maxTime}} and returns an update value. This is called during {{Code|create()|lang=lua}}. Applies a debuff based on unhappiness, drunkness, pain levels and character timed action modifier.|
+{{Function|function=ISBaseTimedAction:adjustMaxTime(maxTime,)|description=Adjusts the given {{Code|maxTime}} and returns an update value. This is called during {{Code|create()|lang=lua}}. Applies a debuff based on unhappiness, drunkness, pain levels and character timed action modifier.|
 {{Function/param|name=maxTime|type=Number|description=The {{Code|maxTime}} value to adjust.}}|
 {{Function/param|name=adjustedMaxTime|type=Number|description=The adjusted {{Code|maxTime}} value.}}}}
-{{Function|function=ISBaseTimedAction:setActionAnim(_action,_displayItemModels)|description=Sets the action animation to {{Code|_action}}. See [[PerformingAction]] for the list of available actions.|
+{{Function|function=ISBaseTimedAction:setActionAnim(_action,_displayItemModels,)|description=Sets the action animation to {{Code|_action}}. See [[PerformingAction]] for the list of available actions.|
 {{Function/param|name=_action|type=String|CharacterActionAnims|description=The action animation to set.}}
-{{Function/param|name=_displayItemModels|type=nil|description=Deprecated. Should not be used.}}|}}
-{{Function|function=ISBaseTimedAction:setOverrideHandModels(_primaryHand,_secondaryHand,_resetModel)|description=Sets the item in hands to {{Code|_primaryHand}} and {{Code|_secondaryHand}}. If {{Code|_resetModel}} is true, it will reset the model to the default one.|
+{{Function/param|name=_displayItemModels|type=nil|description={{Note|type=error|Deprecated. Should not be used.}}}}|}}
+{{Function|function=ISBaseTimedAction:setOverrideHandModels(_primaryHand,_secondaryHand,_resetModel,)|description=Sets the item in hands to {{Code|_primaryHand}} and {{Code|_secondaryHand}}. If {{Code|_resetModel}} is true, it will reset the model to the default one.|
 {{Function/param|name=_primaryHand|type=InventoryItem|description=The item to set in the primary hand.}}
 {{Function/param|name=_secondaryHand|type=InventoryItem|description=The item to set in the secondary hand.}}
 {{Function/param|name=_resetModel|type=Boolean|description=If true, it will reset the model.}}|}}
-{{Function|function=ISBaseTimedAction:setOverrideHandModelsString(_primaryHand,_secondaryHand,_resetModel)|description=Sets the item in hands to {{Code|_primaryHand}} and {{Code|_secondaryHand}}. If {{Code|_resetModel}} is true, it will reset the model to the default one.|
+{{Function|function=ISBaseTimedAction:setOverrideHandModelsString(_primaryHand,_secondaryHand,_resetModel,)|description=Sets the item in hands to {{Code|_primaryHand}} and {{Code|_secondaryHand}}. If {{Code|_resetModel}} is true, it will reset the model to the default one.|
 {{Function/param|name=_primaryHand|type=String|description=The item to set in the primary hand.}}
 {{Function/param|name=_secondaryHand|type=String|description=The item to set in the secondary hand.}}
 {{Function/param|name=_resetModel|type=Boolean|description=If true, it will reset the model.}}|}}
 {{Function|function=ISBaseTimedAction:overrideWeaponType()|description=Updates the [[Weapon (AnimNode)|character weapon type]] based on the override model.||}}
 {{Function|function=ISBaseTimedAction:restoreWeaponType()|description=Restores the [[Weapon (AnimNode)|character weapon type]] to the real weapon in hand.||}}
-{{Function|function=ISBaseTimedAction:setAnimVariable(_key,_val)|description=Sets the animation variable {{Code|_key}} to {{Code|_val}} of the timed action {{Code|character}}.|
+{{Function|function=ISBaseTimedAction:setAnimVariable(_key,_val,)|description=Sets the animation variable {{Code|_key}} to {{Code|_val}} of the timed action {{Code|character}}.|
 {{Function/param|name=_key|type=string|description=The animation variable to set.}}
 {{Function/param|name=_val|type=string|description=The value to set the animation variable to.}}|}}
-{{Function|function=ISBaseTimedAction:addAfter(action)|description=Adds the given {{Code|action}} after this action instance ({{Code|self}}) to the [[ISTimedActionQueue|queue]] (see [[ISTimedActionQueue#Adding timed actions to the queue|<code>addAfter</code> in queue]]).|
+{{Function|function=ISBaseTimedAction:addAfter(action,)|description=Adds the given {{Code|action}} after this action instance ({{Code|self}}) to the [[ISTimedActionQueue|queue]] (see [[ISTimedActionQueue#Adding timed actions to the queue|<code>addAfter</code> in queue]]).|
 {{Function/param|name=action|type=ISBaseTimedAction|description=The action to add after this one.}}|
 {{Function/param|name=queue|type=ISTimedActionQueue|description=The queue to which the action is added.}}
 {{Function/param|name=action|type=ISBaseTimedAction|description=The action added to the queue.}}}}
 {{Function|function=ISBaseTimedAction:beginAddingActions()|description=When triggered, the next actions added to the queue are automatically added after this action. Sets {{Code|_isAddingActions}} to true and {{Code|_numAddedActions}} to 0.||}}
 {{Function|function=ISBaseTimedAction:endAddingActions()|description=Ends the automatic adding of actions after this action. Sets {{Code|_isAddingActions}} to nil and returns {{Code|_numAddedActions}} which is used to count the number of added actions after this action.||
 {{Function/param|name=numAddedActions|type=Number|description=The number of actions added after this action.}}}}
-{{Function|function=ISBaseTimedAction:getDeltaModifiers(deltas)|description=By default is unused, but can be used to modify the {{Code|character}} movement. Notably used in [[ISClimbOverFence]] to stop the character from turning during the action.|
+{{Function|function=ISBaseTimedAction:getDeltaModifiers(deltas,)|description=By default is unused, but can be used to modify the {{Code|character}} movement. Notably used in [[ISClimbOverFence]] to stop the character from turning during the action.|
 {{Function/param|name=deltas|type=MoveDeltaModifiers|description=The delta modifiers object passed to the function by the java.}}|}}
-}}
-
-==Creating a new timed action==
-Creating a custom timed action involve the <code>derive</code> method from [[ISBaseObject#Object inheritance|ISBaseObject]] which creates a completely new object with the same properties as the original object which is derived from. This can not only be used on the <code>ISBaseObject</code> class but also on any other class that inherits from it so you can derive an object which already derived from <code>ISBaseObject</code>.
-
-In this case, this is applied to <code>ISBaseTimedAction</code> to create a new timed action.
-
-{{Navbox Lua objects}}

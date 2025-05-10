@@ -1,5 +1,5 @@
 {{Header|Modding|Lua objects}}
-{{Page version|42.3.1}}
+{{Page version|42.7.0}}
 The <code>ModOptions</code> [[Lua object]] from [[PZAPI]] is a new tool since [[build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc.
 
 This page will explain how to use this tool for your own mod, what's available and what's possible to do with its current features. When creating a new option section, it will appear in the category "MODS" in the game options.
@@ -339,9 +339,10 @@ This can be used to update some variables on your side after changing the mod op
 ==Example==
 This code snippet utilizes the different options in subsections of the mod options section.
 {{CodeBox
-| id = modOptions_bigExample
 | class = blue
-| {{CodeSnip
+| title = This is an example of a mod options usage.
+| 
+{{CodeSnip
 | lang = lua
 | line = true
 | start = 1
@@ -449,18 +450,16 @@ end
 Events.OnKeyPressed.Add(OnKeyPressed)
 }}
 
-===Storing values===
-A way to not have to do all these steps is by using [[Lua (language)#Modules]] to easily store and access each options values.
+===Alternative accessing method: module===
+A way to not have to do all these steps is by using a [[Lua (language)#Modules|module]] to easily store and access each options values. The following code snippets allow exactly that:
 
-The following code snippets allow exactly that:
 {{CodeSnip
 | lang = lua
 | line = true
 | start = 1
 | source = ExampleModOptions.lua
 | path = media\lua\client
-| retrieved = true
-| version = 42.0.2
+| version = 42.4.1
 | code =
 -- file ExampleModOptions.lua
 local config = {}
@@ -495,14 +494,14 @@ return config
 }}
 
 And to access the values:
+
 {{CodeSnip
 | lang = lua
 | line = true
 | start = 1
 | source = AnotherFile.lua
 | path = media\lua\client
-| retrieved = true
-| version = 42.0.2
+| version = 42.4.1
 | code =
 local config = require("ExmampleModOptions")
 -- Then:
@@ -510,14 +509,14 @@ local option = config.ID
 }}
 
 If we take our [[#Example|options example]] from before, we could simply access the values of each options by doing:
+
 {{CodeSnip
 | lang = lua
 | line = true
 | start = 1
 | source = AnotherFile.lua
 | path = media\lua\client
-| retrieved = true
-| version = 42.0.2
+| version = 42.4.1
 | code =
 local config = require("ExmampleModOptions")
 
@@ -536,3 +535,5 @@ end
 
 Events.OnKeyPressed.Add(OnKeyPressed)
 }}
+
+{{Navbox modding}}

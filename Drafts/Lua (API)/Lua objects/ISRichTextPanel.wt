@@ -1,6 +1,6 @@
 {{Header|Modding|Lua objects}}
-{{Page version|41.78.16}}
-'''ISRichTextPanel''' are tags which can be used in various displayed string variables to format the string, show images etc.
+{{Page version|42.3.1}}
+'''ISRichTextPanel''' is a [[Lua object]] which can be used to display strings with formating options such as color, centered text or even images and up to videos.
 
 [[File:ISRichTextPanel_exampleSandboxOptions1.png|400px|thumb]]
 [[File:ISRichTextPanel_exampleSandboxOptions2.png|400px|thumb|Example usage of ISRichTextPanel tags to make custom [[Sandbox options]] more appealing]]
@@ -16,50 +16,33 @@ ProjectZomboid/
                 └── ISRichTextPanel.lua
 }}
 
-==Available tags==
+==ISRichTextPanel tags==
+Tags below can be used in a string in a ISRichTextPanel object to format the text in it.
+
 *<code><LINE></code> - starts a new line, resetting the X position to 0 and moving the Y position down by one line height
-
 *<code>&lt;BR&gt;</code> - similar to <LINE>, but it creates a larger space between lines, effectively creating a double line break
-
 *<code><SPACE></code> - adds a space character's width to the current X position, used for inline spacing
-
 *<code>&lt;H1&gt;</code> - formats text with H1 properties, making it centered and setting the font to large
-
 *<code>&lt;H2&gt;</code> - formats text with H2 properties, aligning it to the left and setting the font to medium
-
 *<code><TEXT></code> - resets text properties to defaults for the body text, using a smaller font than headers
-
 *<code><CENTRE></code>, <code><LEFT></code>, <code><RIGHT></code> - aligns the text to the center, left, or right of the line respectively
-
 *<code><PUSHRGB:R,G,B></code> - saves the current color state onto a stack and sets the new text color according to the provided RGB values
-
 *<code><POPRGB></code> - restores the last text color from the stack, reversing the effect of the most recent <code><PUSHRGB></code>
-
 *<code><RGB:R,G,B></code> - sets the current text color to the specified RGB values without affecting the stack
-
 *<code><RED></code>, <code><ORANGE></code>, <code><GREEN></code> - sets the current text color to red, orange, or green respectively
-
 *<code><SIZE:small/medium/large></code> - changes the font size to small, medium, or large
-
 *<code><IMAGE:path/to/image,width,height></code> - inserts an image at the specified path with given width and height (width and height are optional)
-
 *<code><IMAGECENTRE:path/to/image,width,height></code> - inserts an image and centers it horizontally on the line, with specified width and height (width and height are optional)
-
 *<code><INDENT:int></code> - indents the current line by the specified number of pixels
-
 *<code><JOYPAD:key from Joypad.Texture,width,height></code> - inserts an image from the Joypad.Texture table with a specified key label and dimensions (see below)
-
 *<code><SETX:int></code> - sets the X position to a specific pixel position, overriding the text flow
-
 *<code><GHC></code> - the Good Highlited Color set by the player in options
-
 *<code><BHC></code> - the Bad Highlited Color set by the player in options
-
 *<code><VIDEOCENTRE:VIDEO_NAME.bik, original_width, original_height, display_width, display_height></code> - <code>VIDEO_NAME.bik</code> must be in <code>media/videos/</code> (that's where the panel looks for videos); the original dimensions of the video; the size at which it will be displayed in the panel (default for displayed size is w=384, h=216 if undefined).
-
 *<code><VIDEOCENTRE:VIDEO_NAME.bik, original_width, original_height, backup_image_name></code> - if the video effects are off it will show the backup image, must be in <code>media/videos/</code> (hardcoded location).
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Any space in a tag will break it and the formatting needs to be stricktly respected!
+{{Note|Any space in a tag will break it and the formatting needs to be strictly respected!}}
+{{Note|type=error|These tags only work in ISRichTextPanel objects or objects derived from ISRichTextPanel. [[ISLabel]] for example cannot use these tags.}}
 
 ===Examples for IMAGE===
 <code><IMAGE:media/ui/spiffo/packing.png></code>
@@ -71,7 +54,7 @@ or texture name <code><IMAGE:Item_Plank></code>, <code><IMAGE:location_entertain
 ==Make custom tags to use in <code>ISRichTextPanel</code>==
 This snipet is an example of custom tag you can create to add new options. It allows you to add images on top of text to have a nice effect of a bloody hand on top of a handwritten letter.
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> You are allowed to use these tags but adding the same tags as other modders can cause duplicates and create issues when PZ checks for tags. The best would be to name these tags with your own names even if you plan to use this snippet.
+{{Note|You are allowed to use these tags but adding the same tags as other modders can cause duplicates and create issues when PZ checks for tags. The best would be to name these tags with your own names even if you plan to use this snippet.}}
 
 {{CodeSnip
 | lang = Lua
@@ -136,3 +119,5 @@ end
 
 ===Example===
 [[File:ISRichTextPanel_exampleCustomRichTag.png|600px|center]]
+
+{{Navbox Lua objects}}

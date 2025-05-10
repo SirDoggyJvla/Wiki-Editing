@@ -1,0 +1,9 @@
+----{{Function/param|name=character|type=IsoPlayer|description=The character doing the action.|}}
+----{{Function/param|name=action|type=LuaTimedActionNew|description=The Java counterpart of the timed action.|}}
+----{{Function/param|name=stopOnWalk|type=Boolean|description=If the action should stop when the character starts walking.|default=True}}
+----{{Function/param|name=stopOnRun|type=Boolean|description=If the action should stop when the character starts running.|default=True}}
+----{{Function/param|name=stopOnAim|type=Boolean|description=If the action should stop when the character starts aiming.|default=True}}
+----{{Function/param|name=caloriesModifier|type=Number|description=The calories burning modifier for performing the action.|default=1}}
+----{{Function/param|name=maxTime|type=Number|description=The maximum time the action can take.|default=-1}}
+----{{Function/param|name=_isAddingActions|type=Boolean|description=Indicates if actions are being added directly after this one. True when {{Code|beginAddingActions()|lang=lua}} is called, nil when {{Code|endAddingActions()|lang=lua}} is called.|}}
+----{{Function/param|name=_numAddedActions|type=Number|description=The number of actions added directly after this action for the time {{Code|_isAddingActions}} was true. Value is returned when <code>endAddingActions()</code> is triggered.|}}

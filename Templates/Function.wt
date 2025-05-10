@@ -1,0 +1,54 @@
+<noinclude>
+{{Documentation|doc=
+{{wip}}
+This template is used to create a preformatted list of lua functions, and should be used alongside {{tll|Function/param}}.
+
+==Usage==
+<syntaxhighlight lang="wikitext">
+{{Function
+    |function=functionName(arg1,arg2,arg3)
+    |description=Function description
+    |param=
+{{Function/param|name=arg1|type=string|default=defaultValue|optional=True|description=Param description}}
+    |return=
+{{Function/param|name=return1|type=string|description=Return value description}}
+}}
+</syntaxhighlight>
+
+===Parameters===
+;<code>function</code>:The function name, formatted as: {{Code|functionName(arg1,arg2)}}
+;<code>description</code>:A description for the function.
+;<code>param</code> or <code>1</code> {{sup|optional}}:Container for the parameters. {{tll|Function/param}} can be used here.
+;<code>return</code> or <code>2</code> {{sup|optional}}:Container for the returned values. {{tll|Function/param}} can be used here.
+
+====Function/param====
+{{Main|/param}}
+;<code>name</code>:Parameter name.
+;<code>type</code>:Parameter type. I.e., {{Code|string}}, {{Code|number}}, {{Code|boolean}}, {{Code|array}}
+;<code>default</code> {{sup|optional}}:Default value.
+;<code>optional</code> {{sup|optional}}:Whether the parameter is optional. Should be {{Code|True}} or {{Code|False}}.
+;<code>description</code> {{sup|optional}}:Description of the parameter.
+
+==Examples==
+{{Function|function=isValidStart(args1,args2,args3,args4)|description=This is an example function|
+{{Function/param|name=arg1|type=string|default=defaultValue|optional=True|description=Example description}}
+{{Function/param|name=arg2|type=number|description=Example description}}
+{{Function/param|name=arg3|type=boolean|description=Example description}}
+{{Function/param|name=arg4|type=array|description=Example description}}
+}}
+{{Function|function=testFunction()|description=This is another example}}
+{{Function|function=testReturnFunction()|description=This is another example||
+{{Function/param|name=return1|type=string|description=Example return value}}
+}}
+{{Function|function=testReturnFunction(arg1)|description=This is another example|{{Function/param|name=arg1|type=string|default=defaultValue|optional=True|description=Example description}}|{{Function/param|name=return1|type=string|description=Example return value}}
+}}
+
+
+}}
+{{ll|Category:Templates}}
+</noinclude><includeonly>----
+{{Code|function {{{function}}}|style={{{style|font-size:1em;}}}|lang={{{lang|lua}}}}}
+
+{{{description}}}
+<div style="display: inline;">{{#if: {{{1|}}}{{{param|}}} |'''Parameters:'''<br>{{#if:{{{1|}}}|{{{1}}}|{{{param}}}}} }}
+{{#if: {{{2|}}}{{{return|}}} |'''Returns:'''<br>{{#if:{{{2|}}}|{{{2}}}|{{{return}}}}} }}</div></includeonly>

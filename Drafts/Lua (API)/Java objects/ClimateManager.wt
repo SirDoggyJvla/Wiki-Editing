@@ -1,0 +1,37 @@
+{{Header|Modding|Java objects}}
+{{Page version|42.7.0}}
+'''ClimateManager''' is the class used to handle the [[weather]].
+
+==Accessing the ClimateManager==
+You can access the ClimateManager instance of the world using the following code:
+{{CodeSnip
+| lang=lua
+| code=
+local climateManager = getClimateManager()
+}}
+
+==Rain==
+To start rain, use the following code:
+{{CodeSnip
+| lang=lua
+| code=
+local climateManager = getClimateManager()
+
+climateManager:transmitServerStartRain(0.1);
+climateManager:transmitGenerateWeather(0.1, 1)
+}}
+
+To stop rain, use the following code:
+{{CodeSnip
+| lang=lua
+| code=
+local climateManager = getClimateManager()
+if isClient() then
+    climateManager:transmitServerStopWeather()
+    climateManager:transmitStopWeather()
+else
+    climateManager:stopWeatherAndThunder()
+end
+}}
+
+{{Navbox Java objects}}

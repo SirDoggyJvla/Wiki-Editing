@@ -51,17 +51,35 @@
                     "description": "The character doing the action."
                 }
             ],
-            "return": "Class instance",
+            "returns": [
+                {
+                    "name": "instance",
+                    "type": "ISBaseTimedAction",
+                    "description": "The instance of the class."
+                }
+            ],
             "description": "Constructor of the class."
         },
         "isValidStart": {
             "parameters": [],
-            "return": "Boolean",
+            "returns": [
+                {
+                    "name": "valid",
+                    "type": "Boolean",
+                    "description": "If the action is valid to start."
+                }
+            ],
             "description": "Checks if the action can start. Only triggers the check when starting the action after another one. If not valid, the queue is reset and the action is declared as a bugged action."
         },
         "isValid": {
             "parameters": [],
-            "return": "Boolean",
+            "returns": [
+                {
+                    "name": "valid",
+                    "type": "Boolean",
+                    "description": "If the action is valid."
+                }
+            ],
             "description": "Checks if the action is valid before updating. Stops the action if false."
         },
         "stop": {
@@ -82,7 +100,13 @@
         },
         "waitToStart": {
             "parameters": [],
-            "return": "Boolean",
+            "returns": [
+                {
+                    "name": "valid",
+                    "type": "Boolean",
+                    "description": "If the action can start."
+                }
+            ],
             "description": "Checks if the action can start until it can."
         },
         "start": {
@@ -91,7 +115,13 @@
         },
         "isStarted": {
             "parameters": [],
-            "return": "Boolean",
+            "returns": [
+                {
+                    "name": "started",
+                    "type": "Boolean",
+                    "description": "If the action has started."
+                }
+            ],
             "description": "Checks if the action has started."
         },
         "update": {
@@ -100,7 +130,13 @@
         },
         "getJobDelta": {
             "parameters": [],
-            "return": "Number",
+            "returns": [
+                {
+                    "name": "jobDelta",
+                    "type": "Number",
+                    "description": "The percentage of the action completed."
+                }
+            ],
             "description": "Returns the percentage of the action completed."
         },
         "resetJobDelta": {
@@ -109,8 +145,14 @@
         },
         "getDuration": {
             "parameters": [],
-            "return": "Number",
-            "description": "Returns the {{Code|maxTime|lang=lua}} of the action."
+            "returns": [
+                {
+                    "name": "duration",
+                    "type": "Number",
+                    "description": "The {{Code|maxTime|lang=lua}} of the action."
+                }
+            ],
+            "description": "Returns the duration of the action."
         },
         "perform": {
             "parameters": [],
@@ -152,8 +194,14 @@
                     "description": "The {{Code|maxTime}} value to adjust."
                 }
             ],
-            "return": "Number",
-            "description": "Adjusts the given {{Code|maxTime}} of the action and returns an update value. This is called during {{Code|create()|lang=lua}}. Applies a debuff based on unhappiness, drunkness, pain levels and character timed action modifier."
+            "returns": [
+                {
+                    "name": "adjustedMaxTime",
+                    "type": "Number",
+                    "description": "The adjusted {{Code|maxTime}} value."
+                }
+            ],
+            "description": "Adjusts the given {{Code|maxTime}} and returns an update value. This is called during {{Code|create()|lang=lua}}. Applies a debuff based on unhappiness, drunkness, pain levels and character timed action modifier."
         },
         "setActionAnim": {
             "parameters": [
@@ -165,17 +213,50 @@
                 {
                     "name": "_displayItemModels",
                     "type": "nil",
-                    "description": "{{Note|type=error|Deprecated. Should not be used.}}"
+                    "description": "Deprecated. Should not be used.",
+                    "error": "Deprecated. Should not be used."
                 }
             ],
             "description": "Sets the action animation to {{Code|_action}}. See [[PerformingAction]] for the list of available actions."
         },
         "setOverrideHandModels": {
-            "parameters": ["_primaryHand:InventoryItem", "_secondaryHand:InventoryItem", "_resetModel?:boolean"],
+            "parameters": [
+                {
+                    "name": "_primaryHand",
+                    "type": "InventoryItem",
+                    "description": "The item to set in the primary hand."
+                },
+                {
+                    "name": "_secondaryHand",
+                    "type": "InventoryItem",
+                    "description": "The item to set in the secondary hand."
+                },
+                {
+                    "name": "_resetModel",
+                    "type": "Boolean",
+                    "description": "If true, it will reset the model."
+                }
+            ],
             "description": "Sets the item in hands to {{Code|_primaryHand}} and {{Code|_secondaryHand}}. If {{Code|_resetModel}} is true, it will reset the model to the default one."
         },
         "setOverrideHandModelsString": {
-            "parameters": ["_primaryHand:string", "_secondaryHand:string", "_resetModel?:boolean"],
+            "parameters": [
+                {
+                    "name": "_primaryHand",
+                    "type": "String",
+                    "description": "The item to set in the primary hand."
+                },
+                {
+                    "name": "_secondaryHand",
+                    "type": "String",
+                    "description": "The item to set in the secondary hand."
+                },
+                {
+                    "name": "_resetModel",
+                    "type": "Boolean",
+                    "description": "If true, it will reset the model."
+                }
+            ],
             "description": "Sets the item in hands to {{Code|_primaryHand}} and {{Code|_secondaryHand}}. If {{Code|_resetModel}} is true, it will reset the model to the default one."
         },
         "overrideWeaponType": {
@@ -187,13 +268,40 @@
             "description": "Restores the [[Weapon (AnimNode)|character weapon type]] to the real weapon in hand."
         },
         "setAnimVariable": {
-            "parameters": ["_key:string", "_val:string"],
-            "return": "previousAction",
+            "parameters": [
+                {
+                    "name": "_key",
+                    "type": "string",
+                    "description": "The animation variable to set."
+                },
+                {
+                    "name": "_val",
+                    "type": "string",
+                    "description": "The value to set the animation variable to."
+                }
+            ],
             "description": "Sets the animation variable {{Code|_key}} to {{Code|_val}} of the timed action {{Code|character}}."
         },
         "addAfter": {
-            "parameters": ["action:ISBaseTimedAction"],
-            "return": "previousAction",
+            "parameters": [
+                {
+                    "name": "action",
+                    "type": "ISBaseTimedAction",
+                    "description": "The action to add after this one."
+                }
+            ],
+            "returns": [
+                {
+                    "name": "queue",
+                    "type": "ISTimedActionQueue",
+                    "description": "The queue to which the action is added."
+                },
+                {
+                    "name": "action",
+                    "type": "ISBaseTimedAction",
+                    "description": "The action added to the queue."
+                }
+            ],
             "description": "Adds the given {{Code|action}} after this action instance ({{Code|self}}) to the [[ISTimedActionQueue|queue]] (see [[ISTimedActionQueue#Adding timed actions to the queue|<code>addAfter</code> in queue]])."
         },
         "beginAddingActions": {
@@ -202,12 +310,23 @@
         },
         "endAddingActions": {
             "parameters": [],
-            "return": "number",
+            "returns": [
+                {
+                    "name": "numAddedActions",
+                    "type": "Number",
+                    "description": "The number of actions added after this action."
+                }
+            ],
             "description": "Ends the automatic adding of actions after this action. Sets {{Code|_isAddingActions}} to nil and returns {{Code|_numAddedActions}} which is used to count the number of added actions after this action."
         },
         "getDeltaModifiers": {
-            "parameters": ["deltas:MoveDeltaModifiers"],
-            "return": "Number",
+            "parameters": [
+                {
+                    "name": "deltas",
+                    "type": "MoveDeltaModifiers",
+                    "description": "The delta modifiers object passed to the function by the java."
+                }
+            ],
             "description": "By default is unused, but can be used to modify the {{Code|character}} movement. Notably used in [[ISClimbOverFence]] to stop the character from turning during the action."
         }
     }

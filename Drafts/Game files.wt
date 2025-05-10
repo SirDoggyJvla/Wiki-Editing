@@ -1,0 +1,77 @@
+{{Header|Modding}}
+{{Page version|42.7.0}}
+{{About|game files of Project Zomboid|modding structure of Project Zomboid|Modding structure|explanations of file formats|File formats}}
+This page describes the '''game files''' of Project Zomboid and how to access them. This page will list where different types of files can be found.
+
+==Accessing the game files==
+The game folder holds most of the game code, files, textures, maps, models etc. Accessing the game files of Project Zomboid can be easily achieved through Steam:
+*Open your Steam game library
+*Right click on Project Zomboid > Manage > Browse local files
+*Alternatively you can rick click Project Zomboid > Properties > Installed files > Browse
+
+This should open a folder named <code>ProjectZomboid/</code> with a similar path to this:
+{{CodeSnip
+| code =
+Steam/
+└── steamapps/
+    └── common/
+        └── ProjectZomboid/
+            └── ...
+}}
+
+Also check the video below which explains two different methods of finding the files:
+https://www.youtube.com/watch?v=5LCGwCk7RH4
+
+==Media folder===
+Most of the files which you'll be interested in when modding will be located in:
+{{CodeSnip
+| code =
+ProjectZomboid/
+└── media/
+    └── ...
+}}
+
+==Cache folder==
+The cache folder (named <code>Zomboid</code> by default) holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder, simply use the following path in your file explorer:
+{{CodeSnip
+|code =
+%UserProfile%/
+└── Zomboid/
+    └── ...
+}}
+
+Deleting this folder can sometimes fix some game issues, however this will delete your game settings and saves, which you can backup before doing so.
+
+===Console file===
+The console file is the game log file which contains informations about the state of the game, errors, warnings and other useful informations for debugging. This file is created when the game is launched. [[Lua (language)#Print|Prints]] will show up in the console file.
+
+The console file is located at the following path:
+{{CodeSnip
+|code =
+%UserProfile%/
+└── Zomboid/
+    └── console.txt
+}}
+
+==Online workshop folders==
+When accessing the game files, if you go in a few folders above in <code>Steam/steamapps/</code>, you can access the folder <code>workshop/content/</code> which stores every mods from all of your games. Project Zomboid has the Steam ID <code>108600</code> which can be seen in the URL of the Steam market page of the game. The mods are stored in the following folder:
+{{CodeSnip
+|code =
+Steam/
+└── steamapps/
+    └── workshop/
+        └── content/
+            └── 108600/
+                └── ...
+}}
+
+To look for a specific mod in this folder, you can look for the Workshop ID of the mod which can be found in the URL of the mod page on the Steam Workshop or automatically at the bottom of the Workshop page. The folder of the mod will be named after the Workshop ID.
+
+==See also==
+*[[Modding structure]]
+*[[Workshop.txt]]
+*[[mod.info]]
+
+{{Navbox modding}}
+
+{{ll|Category:Guides}}

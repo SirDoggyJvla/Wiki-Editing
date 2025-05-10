@@ -1,0 +1,54 @@
+{{Title|map.info}}
+{{Header|Modding|Mapping}}
+{{Page version|42.7.0}}
+This page explains the <code>map.info</code> file which is used to define the map's information. It is used by the game to display the map in the map selection screen and to load the map into the world.
+
+==Location==
+The file is located in the following directory:
+{{CodeSnip
+| code =
+media
+  maps
+    <map folder>
+      map.info
+}}
+
+==Parameters==
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters
+! Parameter name !! Description
+|-
+| style="padding: 10px;"| <big><code>title</code></big>
+| style="padding: 5px;"| Title of the map.
+|-
+| style="padding: 10px;"| <big><code>description</code></big>
+| style="padding: 5px;"| Description of the map.
+|-
+| style="padding: 10px;"| <big><code>lots</code></big>
+| style="padding: 5px;"| Refers to the world map the map will be loaded into. For a map which is inside the vanilla world map, use <code>lots=Muldraugh, KY</code>.
+|-
+| style="padding: 10px;"| <big><code>fixed2x</code></big>
+| style="padding: 5px;"| Boolean which fixes rendering issues. Leave it as <code>true</code> if you are not sure.
+{{Note|type=warn|Need more informations about the exact effect of this parameter.}}
+|-
+| style="padding: 10px;"| <big><code>zoomX</code></big>
+| style="padding: 5px;"| Position parameter used to define the position of the camera on the world map when chosing the map to spawn in.
+|-
+| style="padding: 10px;"| <big><code>zoomY</code></big>
+| style="padding: 5px;"| Position parameter used to define the position of the camera on the world map when chosing the map to spawn in.
+|-
+| style="padding: 10px;"| <big><code>zoomS</code></big>
+| style="padding: 5px;"| Zoom parameter used to define the position of the camera on the world map when chosing the map to spawn in.
+|-
+| style="padding: 10px;"| <big><code>demoVideo</code></big>
+| style="padding: 5px;"| [[File formats#Video format|Video file]] used to showcase the map when selecting it.
+|}
+
+{{Note|<code>title</code> and <code>description</code> can be directly defined in a [[Translations|translation]] file without the need to put anything special in these parameters.}}
+
+==See also==
+*[[File structure]]
+*[[mod.info]]
+*[[workshop.txt]]
+
+{{Navbox modding}}

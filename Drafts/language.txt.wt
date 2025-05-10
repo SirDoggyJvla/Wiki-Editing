@@ -1,0 +1,39 @@
+{{Title|language.txt}}
+{{Header|Modding}}
+{{Page version|42.7.0}}
+The <code>language.txt</code> file is used to define a language for the game and is used for custom [[translations]].
+
+==Parameters==
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters
+! Parameter name !! Description !! Example
+|-
+| style="padding: 10px;"| <big><code>VERSION</code></big>
+| style="padding: 5px;"| Used to define the parser version.
+| style="padding: 5px;"| {{CodeSnip|code=VERSION=1,}}
+|-
+| style="padding: 10px;"| <big><code>text</code></big>
+| style="padding: 5px;"| Name of the language.
+| style="padding: 5px;"| {{CodeSnip|code=text=English,}}
+|-
+| style="padding: 10px;"| <big><code>charset</code></big>
+| style="padding: 5px;"| Encoding used by the language.
+| style="padding: 5px;"| {{CodeSnip|code=charset=UTF-8,}}
+|-
+| style="padding: 10px;"| <big><code>azerty</code></big>
+| style="padding: 5px;"| Boolean, set to <code>true</code> if the language uses the AZERTY keyboard layout.
+| style="padding: 5px;"| {{CodeSnip|code=azerty=true,}}
+|-
+| style="padding: 10px;"| <big><code>base</code></big>
+| style="padding: 5px;"| Not used, might have limited support.
+| style="padding: 5px;"| {{CodeSnip|code=base=PT,}}
+|}
+
+==See also==
+*[[Translations]]
+*[[File structure]]
+*[[mod.info]]
+*[[map.info]]
+*[[workshop.txt]]
+
+{{Navbox modding}}

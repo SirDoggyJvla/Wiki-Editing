@@ -1,0 +1,100 @@
+<noinclude>
+{{Documentation|doc =
+The {{Tll|CodeBox}} template is used to hide and display a code snippet, to reduce page length for the average user.
+
+==Usage==
+'''Usage:''' <syntaxhighlight lang="text" inline>{{CodeBox|title=This is an example CodeBox|This text will be hidden}}</syntaxhighlight>
+
+'''Produces:''' {{CodeBox|title=This is an example CodeBox|This text will be hidden}}
+
+===Parameters===
+;<code>1</code>
+:Content to be hidden.
+;<code>id</code> {{sup|optional}}
+:ID to be set if template is used multiple times on a page. Each use on a single page must have a unique value.
+;<code>title</code> {{sup|optional}}
+:Title of the CodeBox.
+;<code>class</code>
+:Color theme of the CodeBox. Can be <code>blue</code> or <code>red</code>. Default is <code>red</code>.
+
+==Examples==
+The below is an example of typical usage alongside {{tll|CodeSnip}}.
+<pre>
+{{CodeBox
+| {{CodeSnip
+    | lang = java
+    | line = true
+    | start = 92
+    | source = items.txt
+    | retrieved = true
+    | version = 41.78.16
+    | code =
+item BucketEmpty
+    {
+        DisplayCategory = WaterContainer,
+        Weight	=	1,
+        CanStoreWater	=	TRUE,
+        Type	=	Normal,
+        DisplayName	=	Bucket,
+        Icon	=	MetalBucket,
+        ReplaceOnUseOn = WaterSource-BucketWaterFull,
+        MetalValue = 20,
+        RainFactor = 1,
+        Tooltip = Tooltip_item_RainFromGround,
+        EatType = Bucket,
+        SurvivalGear = TRUE,
+        WorldStaticModel = Bucket_Ground,
+    }
+}}
+}}
+</pre>
+'''Produces:'''
+{{CodeBox
+| {{CodeSnip
+    | lang = java
+    | line = true
+    | start = 92
+    | source = items.txt
+    | retrieved = true
+    | version = 41.78.16
+    | code =
+item BucketEmpty
+    {
+        DisplayCategory = WaterContainer,
+        Weight	=	1,
+        CanStoreWater	=	TRUE,
+        Type	=	Normal,
+        DisplayName	=	Bucket,
+        Icon	=	MetalBucket,
+        ReplaceOnUseOn = WaterSource-BucketWaterFull,
+        MetalValue = 20,
+        RainFactor = 1,
+        Tooltip = Tooltip_item_RainFromGround,
+        EatType = Bucket,
+        SurvivalGear = TRUE,
+        WorldStaticModel = Bucket_Ground,
+    }
+}}
+}}
+
+{{Translation guide|<syntaxhighlight lang="html">
+{{#switch: {{{1|}}}
+| code_snippet = Code snippet!
+| heading_desc = This section contains source code from ''Project Zomboid''
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>}}
+
+==See also==
+*{{ll|Template:Code}}
+*{{ll|Template:CodeSnip}}
+*{{ll|Template:Retrieved}}
+*{{ll|Template:ToggleBox}}
+}}
+{{ll|Category:Templates}}
+</noinclude><includeonly>{{ToggleBox
+| title = [[File:Code icon.png|26px|link=]] [[Modding{{lcs}}|{{tt|name=CodeBox|default=Code snippet!|arg1=code_snippet}}]] {{#if: {{{title|}}}| {{{title}}} | {{tt|name=CodeBox|default=This section contains source code from ''Project Zomboid''|arg1=heading_desc}}}}
+| content = {{{1}}}
+| id = code{{#if:-{{{id|}}}|{{{id}}}}}
+| class = {{{class|red}}}
+}}</includeonly>

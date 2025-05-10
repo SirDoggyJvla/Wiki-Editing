@@ -1,0 +1,27 @@
+{{Header|Modding|Java objects}}
+{{Page version|42.7.0}}
+'''IsoGameCharacter''' is the class which defines the character objects such as [[Player]]s, [[Zombie]]s or [[Animal]]s.
+
+==Java doc==
+{{Main|Java documentation}}
+[https://projectzomboid.com/modding/zombie/characters/IsoGameCharacter.html IsoGameCharacter]
+
+==Retrieving stats==
+Retrieving stats such as endurance, stress and more can be achieved with the [[Stats]] object which can be retrieved for an IsoGameCharacter with:
+{{CodeSnip
+| lang = lua
+| code =
+-- assuming character is an IsoGameCharacter instance
+local stats = character:getStats()
+}}
+
+==Retrieving health status==
+This is achieved with the [[BodyDamage]] object which can be retrieved for an IsoGameCharacter with the following code:
+{{CodeSnip
+| lang = lua
+| code =
+-- assuming character is an IsoGameCharacter instance
+local bodyDamages = character:getBodyDamage()
+}}
+
+{{Navbox Java objects}}

@@ -17,7 +17,7 @@ Alternatively, you can test some Lua codes by utilizing a Lua interpreter such a
 
 The following sections will explain in detail the various aspects of Lua that you will need to know to get started with modding Project Zomboid. [[Mod optimization]] might interest you if you're in need of various tips to make your mods run faster.
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> It is recommanded to read the article [[Mod optimization]] to understand how to optimize your mods and make them run faster. Things that are available in Project Zomboid Lua can have important performance impact such as prints or even functions.
+{{Note|It is recommanded to read the article [[Mod optimization]] to understand how to optimize your mods and make them run faster. Things that are available in Project Zomboid Lua can have important performance impact such as prints or even functions.}}
 
 ==Print==
 The print function is used to output text to the console. This is useful for debugging purposes, as it allows you to see the values of variables and the flow of your code. The print function can take any number of arguments, which will be concatenated together and output to the console. For example:
@@ -32,7 +32,7 @@ print("Hello", "World!") -- Output: Hello World!
 
 This code will output "Hello World!" in the console. In Project Zomboid, this will be displayed in the console window when the game is running in [[Debug mode]] as well as in the [[File structure#Console file|console file]].
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Printing too much text can slow down the game immensly, see [[Mod optimization#Prints are the devil|printing performance impact]].
+{{Note|type=error|Printing too much text can slow down the game immensely, see [[Mod optimization#Prints are the devil|printing performance impact]]. After printing too much in the console, this can also lead to a major console file size which can be counted in gigabytes.}}
 
 ==Variables==
 Variables are used to store data that can be accessed and modified throughout your code. Variables can store a variety of data types, such as numbers, strings, and tables. Variables in Lua are dynamically typed, meaning that you do not need to specify the type of a variable when you declare it. For example:
@@ -69,7 +69,7 @@ local y = 20
 
 In this example, <code>x</code> is a global variable, while <code>y</code> is a local variable. Global variables can be accessed and modified from anywhere, while local variables are only accessible within the scope in which they are declared such as the core of your file or within [[#Functions]], [[#For loops]], [[#While loops]], [[#Repeat until]] and [[#Do end block]].
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> It is recommended to use local variables as much as possible to avoid polluting the global scope of your file. This will help you avoid conflicts with other mods and the game itself. If you need to access variables defined in a file from another file, use [[#Modules]].
+{{Note|type=warn|It is recommended to use local variables as much as possible to avoid polluting the global scope of your file. This will help you avoid conflicts with other mods and the game itself. If you need to access variables defined in a file from another file, use [[#Modules]].}}
 
 ===Data types===
 Lua has several data types that can be stored in variables. The most common data types are numbers, strings, and tables. Numbers can be integers or floating-point numbers, strings are sequences of characters enclosed in quotes, and tables are collections of key-value pairs. For example:
@@ -132,7 +132,7 @@ result = x or y -- result is true
 result = not x -- result is false
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> <code>false</code> and <code>nil</code> are considered as false in Lua, while <code>true</code> and any other value are considered as true.
+{{Note|<code>false</code> and <code>nil</code> are considered as false in Lua, while <code>true</code> and any other value are considered as true.}}
 
 ===Relational operators===
 Lua supports several relational operators that can be used to compare values. The most common relational operators are `==` (equal), `~=` (not equal), `<` (less than), `>` (greater than), `<=` (less than or equal to), and `>=` (greater than or equal to). For example:
@@ -188,7 +188,7 @@ print(person.address.country) -- Output: USA
 
 Tables can be used to store and organize data in a structured way, making it easier to access and manipulate the data. Tables can also be used to represent complex data structures and relationships between data.
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> All tables are technically key-tables which is why "arrays" (<code>{5,6,"hello"}</code>) are pseudo-arrays. This makes them more costly than actual arrays but it is possible to create true arrays by using the <code>table.newarray()</code> function (see [[Mod optimization#Array tables|proper array tables]]).
+{{Note|type=warn|All tables are technically key-tables which is why "arrays" (<code>{5,6,"hello"}</code>) are pseudo-arrays. This makes them more costly than actual arrays but it is possible to create true arrays by using the <code>table.newarray()</code> function (see [[Mod optimization#Array tables|proper array tables]]).}}
 
 ===Table Iteration===
 Tables can be iterated over using the <code>pairs</code> and <code>ipairs</code> functions. The <code>pairs</code> function iterates over the key-value pairs in a table, while the <code>ipairs</code> function iterates over the values in a table with integer keys. For example:
@@ -208,7 +208,7 @@ for index, value in ipairs(numbers) do
 end
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> <code>pairs</code> can also be used to iterate over arrays but it will also iterate over the keys which are not integers if you mixed both.
+{{Note|<code>pairs</code> can also be used to iterate over arrays but it will also iterate over the keys which are not integers if you mixed both.}}
 
 '''However''', for arrays, it is recommended to not use any of these functions and instead use a simple for loop. This is because the <code>ipairs</code> and <code>pairs</code> function are very costly in terms of performance (see [[Mod optimization#pairs and ipairs|pairs and ipairs optimization]]).
 {{CodeSnip
@@ -225,7 +225,7 @@ Lookup tables are tables that are used to map keys to values. They can be used t
 {{CodeSnip
 | lang = lua
 | code =
--- Access a color based on it's name, like an enum!
+-- Access a color based on its name, like an enum!
 local colors = {
     RED = "FF0000",
     GREEN = "00FF00",
@@ -298,7 +298,7 @@ Functions can be defined using the <code>function</code> keyword, followed by th
 
 Functions can also be assigned to variables, passed as arguments to other functions, and returned from other functions. This allows you to create higher-order functions that can manipulate and compose other functions.
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> Functions overhead can be performance heavy, see [[Mod optimization#The less function calls, the better|functions optimization tips]].
+{{Note|type=warn|Functions overhead can be performance heavy, see [[Mod optimization#The less function calls, the better|functions optimization tips]].}}
 
 ===Decoration===
 Decorating a function is a way to add additional functionality to a function without modifying its original code. This can be done by wrapping the function in another function that adds the desired functionality. For example:
