@@ -1,13 +1,11 @@
 {{Header|Modding|Lua (API)}}
-{{Page version|42.5.1}}
+{{Page version|42.7.0|2=405935}}
 '''Procedural distribution''' explains how the loot system of the game works and how you can add your own loot to the procedural distribution.
 
 ==How does loot generation works==
-Each containers in the game have different possibilities of [[#Distributions|distribution lists]] which can also depend on the type of room they are in. This means each containers can have multiple distributions associated to them, based on the room they are in and the distribution they will use when being loaded in depends on a weighted random on these choices.
+Containers in a room generate with different possibilities of [[#Distributions|distribution lists]]. Loot in containers is generated whenever they get loaded in the game or can respawn loot if the proper settings in the [[Custom Sandbox|sandbox options]] are set.
 
-Each [[#Distributions|distribution]] has a set amount of rolls for every items in their item list, and each item entry has a set chance which is neither a weight nor a percentage. Every loot roll will roll a random number based on some criteria such as loot spawn chance and zombie population and compare it to the item chance value set in the distribution list.
-
-This means that adding new items to a distribution list will ultimately increase the mean amount of items in this container which are spawning and the game will even ignore the container encumbrance limitations and still add items to the container if it rolls a pass for the item spawning. This means mods that add a lot of new items such as [https://steamcommunity.com/sharedfiles/filedetails/?id=2613146550 True Music] addons, large gun mods or clothing packs will increase the mean chance of finding items in a container, and the overall quantity which spawns in this container. If you combine mods that add lots of small items you end up with containers filled to the brim even with the rarest loot rarity chance and even worse you could find containers with a huge amount of loot and yet other containers without any loot.
+Each [[#Distributions|distribution]] has a set amount of rolls, and each item entry has a set chance which is neither a weight nor a percentage. Every distribution item entries will be rolled the amount of rolls the [[#Distributions|distribution list]] has with a random chance generated based on some criteria such as loot spawn chance and the zombie population.
 
 When loot is being spawned in a container, the event [[OnFillContainer]] triggers, allowing you to modify items which are spawning in or add other items.
 
@@ -113,11 +111,9 @@ Alongside the <code>rolls</code> tag for the <code>distributionName</code> and <
 *<code>onlyOne</code> '''DEPRECATED''' - a tag which can be found in distributions but looks deprecated from the java.
 
 ==How to add your own items to distributions==
-The main challenges you will face is properly understanding how loot generation actually works (see [[#How does loot generation works]]), finding the right distribution list and organizing the file which adds these.
+The main challenges you will face is properly understanding how loot generation actually works (see [[#How does loot generation works]]), finding the right distribution list and organizing the file which adds these. Inserting inside the procedural distribution needs to be done in <code>media/lua/server</code>.
 
-Inserting inside the Procedural Distribution needs to be achieved in <code>media/lua/server/Items</code>.
-
-There are many ways of achieving this, and the most practical one is to simply do:
+There are many ways of achieving this, with the most practical one being:
 {{CodeSnip
 | lang = lua
 | code =
@@ -125,7 +121,7 @@ table.insert(ProceduralDistributions.list["DistributionListName"].items, "YourIt
 table.insert(ProceduralDistributions.list["DistributionListName"].items, 0.5) -- following its chance value
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> Items that are defined with a different [[Scripts#Module block|module]] than <code>Base</code> need to have their module in the item name. For example, if you have an item named <code>MyItem</code> in the <code>MyMod</code> module, you need to add it as <code>MyMod.MyItem</code>.
+{{Note|type=warn|Items that are defined with a different [[Scripts#Module block|module]] than <code>Base</code> need to have their module in the item name. For example, if you have an item named <code>MyItem</code> in the <code>MyMod</code> module, you need to add it as <code>MyMod.MyItem</code>.}}
 
 A better way to handle this is to have every distributions and their items and chances in a singular table which is parsed through thanks to a loop and added with a single <code>table.insert</code> line.
 
@@ -234,12 +230,20 @@ You can add items in these tables.
 ===Accessing a container distribution in-game===
 Accessing a container distribution in-game can be achieved with [[LootZed]] which allows you to check for the various distribution lists for a container as well as listing each items and their chances of spawning in.
 
-===Solutions to the too many items problem===
-Different methods exist to counter act having to add a lot of tiny items to containers. The worst one is decreasing the overall chance for your items to spawn in but this won't actually fix properly adding too many items and can cause other problems in itself.
 
-Some of the best methods can involve:
-*not creating a lot of small items in your mod but actually having a single item with variants which can change texture and data on the go. For example imagine a mod which adds game cards, it would require a hundred items but instead of creating an [[Item scripts|item script]] for each you can dynamically set the cards by utilizing functions that will change its texture, icon, name, tooltip etc on the go.
-*creating dummy items. Instead of adding all your small items, you can add a dummy item which you will pick up [[OnFillContainer]] and roll for another item. When the dummy item gets added to the container, you can intercept it, and replace it with another item which you can pick randomly in a list of items that are supposed to have similar spawn chances.
+==Problem with the system==
+Due to the way the game works, adding new items to a [[#Distributions|distribution list]] will ultimately increase the mean amount of items in this container. For a small demonstration of the issue, see the following image which is a simulation of a distribution list getting more and more entries by following a normal distribution of loot for different amount of rolls:
+
+[[File:Procedural distribution - system problem.png|800px]]
+
+This is notably a major problem in some popular mods such as [https://steamcommunity.com/sharedfiles/filedetails/?id=2613146550 True Music] addons, large gun mods or clothing packs which have modders add multiple items in a single [[#Distributions|distribution list]] and end up bloating the containers with loot. Other problems are that the game will ignore the container encumbrance limitations or there will be inequal amount of loot in different types of containers.
+
+===Solutions===
+Different methods exist to counter act having to add a lot of tiny items to containers. Some of the best methods can involve:
+*having an item with variants which can change texture and data on the go. For example imagine a mod which adds game cards, it would require a hundred items but instead of creating an [[Item scripts|item script]] for each you can dynamically set the cards by utilizing functions that will change its texture, icon, name, tooltip etc on the go.
+*creating dummy items. When the dummy item gets added to the container, you can intercept it with [[OnFillContainer]], and replace it with another item which you can pick randomly in a list of items that are supposed to have similar spawn chances.
+
+{{Note|type=warn|Decreasing the overall chance of your items spawning is a band-aid solution which has its own problems. If your item is of a similar type as another one and should spawn with the same chances, this won't be possible since you decreased the chance of spawning it compared to the other item.}}
 
 ==Distributions==
 Below is the full list of distributions as well as their different tags.
