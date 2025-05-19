@@ -164,6 +164,83 @@ Mod assets are put inside this folder. Different subfolders need to be created b
 
 {{Note|Technically, files which are in the parent folder of the media folder can be read from the [[Lua (API)|Lua API]] within the media folder.}}
 
+==Example==
+Below is a full example of a mod structure.
+{{CodeSnip
+| code =
+Zomboid/
+└── Workshop/
+    └── MyMod/
+        ├── Contents/
+        │   └── mods/
+        │       ├── MyMod1/
+        │       │   ├── 42.0.0/                 <--- will be loaded for versions above 42.0.0
+        │       │   │   ├── media/
+        │       │   │   │   ├── AnimSets/
+        │       │   │   │   │   └── ...
+        │       │   │   │   ├── lua/
+        │       │   │   │   │   ├── client/
+        │       │   │   │   │   │   └── ...
+        │       │   │   │   │   ├── server/
+        │       │   │   │   │   │   └── ...
+        │       │   │   │   │   └── shared/
+        │       │   │   │   │       └── ...
+        │       │   │   │   ├── scripts/
+        │       │   │   │   │   └── ...
+        │       │   │   │   └── ...
+        │       │   │   ├── mod.info
+        │       │   │   ├── poster.png
+        │       │   │   └── icon.png
+        │       │   ├── 42.X.Y/                 <--- will be loaded instead of the versions below (4.0.0 above for example), for game versions compatibility if needed
+        │       │   │   └── ...
+        │       │   ├── common/                 <--- mandatory, mod won't be detected without it
+        │       │   │   └── media/
+        │       │   │       ├── anim_X/
+        │       │   │       │   └── ...
+        │       │   │       ├── model_X/
+        │       │   │       │   └── ...
+        │       │   │       └── ...
+        │       │   ├── media/
+        │       │   │   ├── anim_X/
+        │       │   │   │   └── ...
+        │       │   │   ├── AnimSets/
+        │       │   │   │   └── ...
+        │       │   │   ├── lua/
+        │       │   │   │   ├── client/
+        │       │   │   │   │   └── ...
+        │       │   │   │   ├── server/
+        │       │   │   │   │   └── ...
+        │       │   │   │   └── shared/
+        │       │   │   │       └── ...
+        │       │   │   ├── model_X/
+        │       │   │   │   └── ...
+        │       │   │   └── scripts/
+        │       │   │       └── ...
+        │       │   ├── mod.info
+        │       │   ├── poster.png
+        │       │   └── icon.png
+        │       └── MyMod2/                     <--- secondary mod, optional if needed
+        │           ├── 42.0.0/
+        │           │   ├── mod.info
+        │           │   ├── poster.png
+        │           │   ├── icon.png
+        │           │   └── ...
+        │           ├── 42.X.Y/
+        │           │   └── ...
+        │           ├── common/
+        │           │   └── ...
+        │           ├── media/
+        │           │   └── ...
+        │           ├── mod.info
+        │           ├── poster.png
+        │           ├── icon.png
+        │           └── ...
+        ├── workshop.txt                        <--- automatically generated when uploading
+        └── preview.png                         <--- 256x256 image
+}}
+
+{{Note|You can find a mod structure example in [https://github.com/Project-Zomboid-Community-Modding/pzmc-template this GitHub repository].}}
+
 ==See also==
 *[[File structure]]
 *[[Workshop.txt]]

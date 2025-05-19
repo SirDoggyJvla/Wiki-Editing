@@ -67,6 +67,13 @@ Steam/
 
 To look for a specific mod in this folder, you can look for the Workshop ID of the mod which can be found in the URL of the mod page on the Steam Workshop or automatically at the bottom of the Workshop page. The folder of the mod will be named after the Workshop ID.
 
+==Searching the game files==
+Tools exist to search through the entirety of the game files for specific elements in the game code. [[Wikipedia:Integrated development environment|Integrated development environment (IDE)]] are notably the most common ones used by modders since they allow you to search for specific terms inside text files in an entire workspace:
+*[[Visual Studio Code]] - a free IDE developped by Microsoft. Very easy to use and navigate and a few addons exist to help modding.
+*[[IntelliJ IDEA]] - a free IDE developped by JetBrains. It is a bit more complex to use than Visual Studio Code but has a lot of features and is very powerful especially to navigate the Java.
+
+
+
 ==See also==
 *[[Modding structure]]
 *[[Workshop.txt]]
