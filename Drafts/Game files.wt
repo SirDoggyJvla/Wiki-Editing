@@ -31,8 +31,17 @@ ProjectZomboid/
     └── ...
 }}
 
+
+
+==Java files==
+The Java files of the game are located in the <code>zombie</code> folder. Tools exist to [[Decompiling game code|decompile the Java code]] to make it easier to read. The Java files are located in the following path:
+{{CodeSnip
+| code =
+
+}}
+
 ==Cache folder==
-The cache folder (named <code>Zomboid</code> by default) holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder, simply use the following path in your file explorer:
+The cache folder (named <code>Zomboid</code> by default) holds most of your configuration of the game, as well as local mods, and doesn't get deleted when you uninstall the game, holding all your configurations. To access the folder in Windows, simply use the environment variable <code>%UserProfile%</code> in the file explorer. The cache folder will be located at:
 {{CodeSnip
 |code =
 %UserProfile%/
@@ -40,7 +49,8 @@ The cache folder (named <code>Zomboid</code> by default) holds most of your conf
     └── ...
 }}
 
-Deleting this folder can sometimes fix some game issues, however this will delete your game settings and saves, which you can backup before doing so.
+{{Note|Deleting this folder can sometimes fix some game issues, however this will delete your game settings and saves, which you can backup before doing so.}}
+{{Note|You can change your cache folder with the [[Startup parameters|startup parameter]] {{Code|-cachedir=<String Path>}}. If the folder doesn't exist, the game will create it.}}
 
 ===Console file===
 The console file is the game log file which contains informations about the state of the game, errors, warnings and other useful informations for debugging. This file is created when the game is launched. [[Lua (language)#Print|Prints]] will show up in the console file.

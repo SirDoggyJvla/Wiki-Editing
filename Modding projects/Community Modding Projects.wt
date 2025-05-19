@@ -1,12 +1,31 @@
 {{Header|Modding|Modding projects}}
-{{Page version|42.3.1}}
-'''[https://steamcommunity.com/sharedfiles/filedetails/?id=2909488957 Community Modding Projects]''' adds 3 major mods which are created and handled by the community, with anyone being able to add modifications through pull requests from the [https://github.com/Project-Zomboid-Community-Modding/pz-community-modding Github page]:
+{{Page version|42.4.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Community Modding Projects - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg/ghRTHUTc94
+    | Unofficial Modding Discord
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2909488957
+    | Workshop page
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Project-Zomboid-Community-Modding/pz-community-modding
+    | Github repository
+    }}
+}}
+'''Community Modding Projects''' adds 3 major mods which are created and handled by the community, with anyone being able to add modifications through pull requests from the Github page:
 *DebugTools - adds a lot of neat tools for debuging and creating mods.
 *Frameworks - tools modders can use in their mods.
 *Patch - community patch to recuring problems in the game.
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> the first one is used only to create and debug mods and is useless to most players.
+{{Note|content=The first one is used only to create and debug mods and is useless to most players.}}
 
 The debug tools are developed by and for modders and is automatically updated every Friday at midnight UTC.
 
-{{Navbox modding}} 
+{{Navbox modding}}
