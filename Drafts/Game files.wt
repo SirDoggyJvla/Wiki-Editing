@@ -19,25 +19,30 @@ Steam/
             └── ...
 }}
 
-Also check the video below which explains two different methods of finding the files:
-https://www.youtube.com/watch?v=5LCGwCk7RH4
+Also check this [https://www.youtube.com/watch?v=5LCGwCk7RH4 video] which explains two different methods of finding the files.
 
 ==Media folder===
 Most of the files which you'll be interested in when modding will be located in:
 {{CodeSnip
 | code =
-ProjectZomboid/
-└── media/
-    └── ...
+Steam/
+└── steamapps/
+    └── common/
+        └── ProjectZomboid/
+            └── media/
+                └── ...
 }}
 
-
-
 ==Java files==
-The Java files of the game are located in the <code>zombie</code> folder. Tools exist to [[Decompiling game code|decompile the Java code]] to make it easier to read. The Java files are located in the following path:
+The Java files of the game are located in the {{Code|zombie}} folder. Tools exist to [[Decompiling game code|decompile the Java code]] to make it easier to read. Below is the path to the Java files:
 {{CodeSnip
 | code =
-
+Steam/
+└── steamapps/
+    └── common/
+        └── ProjectZomboid/
+            └── zombie/
+                └── ...
 }}
 
 ==Cache folder==
@@ -82,7 +87,12 @@ Tools exist to search through the entirety of the game files for specific elemen
 *[[Visual Studio Code]] - a free IDE developped by Microsoft. Very easy to use and navigate and a few addons exist to help modding.
 *[[IntelliJ IDEA]] - a free IDE developped by JetBrains. It is a bit more complex to use than Visual Studio Code but has a lot of features and is very powerful especially to navigate the Java.
 
+Open the entire game folder as a workspace in the IDE of your choice to be able to search through all the files. You can open the <code>media/</code> folder or the [[Decompiling game code|decompiled code]] as a workspace to search through all the files.
 
+===Example===
+If you're searching for where something is used in Project Zomboid's code, you can simply use this functionality. For example, let's search for [[ISTakeFuel]] in [[Visual Studio Code|VSCode]]:
+
+[[File:VSCode_exampleSearchInFolder.png|400px|center]]
 
 ==See also==
 *[[Modding structure]]

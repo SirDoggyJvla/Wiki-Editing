@@ -6,24 +6,6 @@ Download Visual Studio Code from its official website: https://code.visualstudio
 
 To get used to the interface or other aspects of the IDE: https://code.visualstudio.com/docs/getstarted/userinterface.
 
-==Workspaces==
-It's suggested to open your entire mod as a [https://code.visualstudio.com/docs/editor/workspaces Workspace] by opening its [[Folders structure#Workshop_folder_structure|Zomboid folder]]. This allows you to easily work on your mod, by having every file opened in the same interface. In the same way, you can open the [[Decompiling game code|decompiled code]] or the Project Zomboid media folder.
-
-==Searching the game files==
-Searching within files in an entire folder is a very powerful tool when looking for specific bits of codes in Project Zomboid. This can be done either in the media folder of Project Zomboid or directly in the [[Decompiling game code|decompiled code]].
-
-To search in an entire folder:
-*Open this folder as a [https://code.visualstudio.com/docs/editor/workspaces Workspace] or a parent folder.
-*In the search panel, you can search in the entire folder.
-*You can define which specific folder should be searched in "files to include" or in the Explorer, you can right click on any folder and, using "Find in Folder...", directly define it as your search folder.
-*You can exclude files with "files to exclude".
-*You can replace the term searched with one of your choice, which is very useful to quickly change a variable name in multiple files.
-
-===Example===
-If you're searching for where something is used in Project Zomboid's code, you can simply use this functionality. For example, let's search for [[ISTakeFuel]]:
-
-[[File:VSCode_exampleSearchInFolder.png|400px|center]]
-
 ==Addons==
 *[[Umbrella (Modding project)]] - a collection of Lua type stubs for [[Lua (API)|Project Zomboid's modding API]] (autocomplete...).
 *[[Project Zomboid Script Support (Modding project)]] - an extension for Visual Studio Code that provides syntax highlighting for [[scripts]].
