@@ -1,0 +1,37 @@
+{{Header|Modding|Modding projects}}
+{{Page version|47.8.0}}
+{{Main|Decompiling game code}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/socials
+    | github=https://github.com/quarantin/beautiful-java
+    | GitHub repository
+    }}
+    {{Infobox/socials
+    | github=https://github.com/quarantin/beautiful-java/releases
+    | Decompiler releases
+    }}
+}}
+'''Beautiful Java''' is a decompiling tool developped by quarantin which was specifically designed to decompile Project Zomboid. It can be used to decompile both [[Build 41]] and [[Build 42]] game code.
+
+It will format variables with their type names, allowing easier reading of the game code, however [[Zomboid Decompiler]] might be a better, more up-to-date alternative.
+
+To use Beautiful Java, you will need:
+*A terminal - used to run the various functions.
+*[[IntelliJ IDEA]] - will be used by the script as the decompilation tool. You will need the path to it after downloading it.
+
+To use Beautiful Java, follow the steps below:
+*Place yourself in the folder you want to install Beautiful Java. To do that, you can use the command {{Code|lang=bash|cd path}} to change the path you're in.
+*Once in the folder you want to install Beautiful Java, type {{Code|lang=bash|git clone "https://github.com/quarantin/beautiful-java"}} which will copy the GitHub files of Beautiful Java in the folder {{Code|beautiful-java/}}.
+*Move in this new folder by typing {{Code|lang=bash|cd beautiful-java/}}.
+*Type the command {{Code|lang=bash|cp resources/config.txt.example config.txt}} which will create a copy of the example config file with the name {{Code|lang=bash|config.txt}} in the {{Code|beautiful-java/}} folder.
+*Open this configuration file with a text editor, and you will need to set up the different paths to [[IntelliJ IDEA]] and Project Zomboid files for your OS (Linux, macOS or Windows):
+**The IntelliJ folder should look something like {{Code|C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4}}.
+**For the Project Zomboid folder, see [[Game files#Accessing the game files]]. It should look like {{Code|C:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid\}}.
+*Save the configuration file and run the decompilation with {{Code|lang=bash|./BeautifulJava}}.
+*The decompiled code with be found in the folder {{Code|beautiful-java/pz/}}, inside {{Code|beautiful-java/pz/<gameversion>/sources}}.
+
+{{Note|The guide above was not tested in the Windows or MacOS terminal. If you have issues, try using a Bash interpreter like [https://git-scm.com/downloads Git Bash]. Paths with spaces in them need to be quoted ({{Code|lang=bash|"path"}}).}}
+
+{{Navbox modding}}

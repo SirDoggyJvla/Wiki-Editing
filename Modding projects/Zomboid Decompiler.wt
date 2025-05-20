@@ -1,0 +1,55 @@
+{{Header|Modding|Modding projects}}
+{{Page version|47.8.0}}
+{{Main|Decompiling game code}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/socials
+    | github=https://github.com/demiurgeQuantified/ZomboidDecompiler
+    | GitHub repository
+    }}
+    {{Infobox/socials
+    | github=https://github.com/demiurgeQuantified/ZomboidDecompiler/releases
+    | Download
+    }}
+}}
+'''Zomboid Decompiler''' is a tool specifically designed to decompile Project Zomboid's code. It can be used to decompile both [[Build 41]] and [[Build 42]] game code. It is currently the best available option as it will take into account the [[Java documentation]] of the game and will format the code in a way that is easier to read.
+
+You will need:
+*[[Decompiling game code#Java|Java]] 17 or above.
+*The [https://github.com/demiurgeQuantified/ZomboidDecompiler/releases latest] release of the tool.
+
+To decompile the game code, extra the zip, navigate to the {{Code|bin}} folder. To launch the decompiler, run {{Code|ZomboidDecompiler.bat}} on Windows or {{Code|ZomboidDecompiler}} on non-Windows OS. It will automatically find your game files and have the game installed on Steam and create two folders called {{Code|output/}} with the decompiled code and {{Code|logs/}}.
+
+Alternatively, if you are having issues decompiling, you can launch it from a command line directly from the file folder:
+*On Windows:
+{{CodeSnip
+| lang = bash
+| code =
+ZomboidDecompiler.bat "<path/to/your/ProjectZomboid/folder>"
+}}
+*On Linux:
+{{CodeSnip
+| lang = bash
+| code =
+./ZomboidDecompiler "<path/to/your/ProjectZomboid/folder>"
+}}
+
+{{Note|Use the <code>-h</code> or <code>--help</code> argument to get information about the command line parameters.}}
+
+===Remote debugging===
+Source code decompiled with ZomboidDecompiler can be used to remotely debug the game. This will allow you to set breakpoints in the game's engine and analyse the call stack, which can be extremely helpful for debugging mods.
+
+First, you must run ZomboidDecompiler with the <code>--remap-line-numbers</code> option specified. As the decompiler isn't able to match the original source code exactly, this changes the line numbers embedded in the class files to match the decompiled version. While this shouldn't have any noticeable side effects, this will permanently modify every class file in your game installation.
+
+To allow your game to be debugged remotely, you must launch it with the JVM argument <code>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005</code>. As always, any JVM arguments must appear before any game arguments (e.g. <code>-debug</code>) and be separated from them with <code>--</code>. For example, a typical argument set for remote debugging would be <code>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -- -debug</code> See [[Startup Parameters]] for a deeper explanation of launch arguments.
+
+Lastly you must set up your remote debugging environment. The process for this is IDE specific.
+
+====IntelliJ IDEA====
+Setting up remote debugging in IDEA is very straight forward. Enter the edit configurations menu (in the drop down next to the run button on the top bar, where it likely says Current File), click add (the plus in the top left) and select Remote JVM Debug. The default settings are already correct, but be sure to set the name to something clear like "Attach to PZ". If you have any problems, return to this menu and ensure Transport is set to <code>Socket</code>, Host is <code>localhost</code> and Port is <code>5005</code>. To debug, close this menu, start the game, and click the green debug button in the top bar to attach.
+
+==See also==
+*[[Beautiful Java]]
+
+{{Navbox modding}}

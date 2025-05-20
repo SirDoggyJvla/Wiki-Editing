@@ -1,10 +1,36 @@
 {{Header|Modding|Modding projects}}
 {{Page version|41.78.16}}
-[[File:Events Plus API - preview.png|thumb]]
-'''[https://bitbucket.org/demellion/pzmods/src/master/eventsplus/ Events Plus API]''' is a modding library for Project Zomboid that adds custom events to the game for the [[Lua (API)]].
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Events Plus API - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg
+    | Discord server
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3272364969
+    | Workshop page
+    }}
+    {{Infobox/socials
+    | bitbucket=https://bitbucket.org/demellion/pzmods/src/master/eventsplus/
+    | Bitbucket repository
+    }}
+    {{Infobox/socials
+    | bitbucket=https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Usage.md
+    | Usage guide
+    }}
+    {{Infobox/socials
+    | other=https://www.google.com
+    | Other link
+    }}
+}}
+'''Events Plus API''' is a modding library for Project Zomboid that adds custom events to the game for the [[Lua (API)]].
 
 ==List of events==
-To see the full detail of each events, see the [https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Events.md Events Github page] and how to use this API see the [https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Usage.md Usage Github page].
+To see the full detail of each events, see the [https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Events.md Events Github page] and how to use this API see the usage page.
 *<code>OnActionCreated</code> - Fires when specific ISBaseTimedAction is constructed.
 *<code>OnActionPerformed</code> - Fires when specific ISBaseTimedAction is performed
 *<code>OnActionQueued</code> - Fires when specific ISBaseTimedAction is added to actions queue.
