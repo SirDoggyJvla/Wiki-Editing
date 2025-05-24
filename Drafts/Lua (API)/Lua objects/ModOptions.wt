@@ -1,6 +1,7 @@
 {{Header|Modding|Lua objects}}
-{{Page version|42.7.0}}
-The <code>ModOptions</code> [[Lua object]] from [[PZAPI]] is a new tool since [[build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc.
+{{Page version|42.8.0}}
+{{Improve|Some bugs need confirmation if present for recent versions.}}
+The <code>ModOptions</code> [[Lua object]] from [[PZAPI]] is a new tool since [[Build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc.
 
 This page will explain how to use this tool for your own mod, what's available and what's possible to do with its current features. When creating a new option section, it will appear in the category "MODS" in the game options.
 
@@ -31,8 +32,7 @@ Mod Options are saved in a file at the following path:
 %USERPROFILE%\Zomboid\Lua\modOptions.ini
 }}
 
-==External resources==
-*[https://steamcommunity.com/sharedfiles/filedetails/?id=3386860561 ModOptions Example] - a small mod which modders can use as an example on how to add their own mod options.
+{{Note|type=error|You should NOT use Mod options for modification options that will alter gameplay. Something which should affect every players should utilize [[sandbox options]]! Mod options can be used for player UI settings for example.}}
 
 ==Creating your option section==
 Creating your own mod option section involves the following function:
@@ -61,7 +61,7 @@ To create a new mod option section in "MODS", simply do:
 | code =
 local myExampleOption = PZAPI.ModOptions:create("myExampleOptionID","Example options")
 }}
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> <code>"myExampleOptionID"</code> needs to be unique to your mod ! You should probably make the name unique too.
+{{Note|{{Code|"myExampleOptionID"}} needs to be unique to your mod ! You should probably make the name unique too.}}
 
 [[Mod optimization#Caching|Caching]] the creation of the option allows for an easier access to it to continue below this code and add your own options. If at any moment you need to access your mod option section or to access another mod options, you can simply do:
 {{CodeSnip
@@ -88,9 +88,8 @@ Options are added this way:
 local myTextEntryOption = myExampleOption:addTextEntry(id, name, value, _tooltip)
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> the returned value of <code>addTextEntry</code> is [[Mod optimization#Caching|cached]] in <code>myTextEntryOption</code> here. Its use is explained in (ADD SECTION LINK HERE).
-
 ===Text entry===
+{{Improve|section=True|Needs confirmation for the bug described in the note.}}
 '''Text entry''' allows the user to write a string in a text box.
 
 {{CodeSnip
@@ -109,7 +108,7 @@ function Options:addTextEntry(id, name, value, _tooltip)
 
 Accessing value function: <code>option:getValue()</code>.
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Known problem (Build 42.0.2): </span> leaving the text entry to blank and saving the mod options will break your game. If that happens, you need to delete <code>%USERPROFILE%\Zomboid\Lua\modOptions.ini</code>.
+{{Note|type=error|In version 42.0.2, leaving the text entry to blank and saving the mod options will break your game. If that happens, you need to delete <code>%USERPROFILE%\Zomboid\Lua\modOptions.ini</code>.}}
 
 ===Tickbox===
 '''Tickbox''' allows the user to chose a boolean value.
@@ -285,6 +284,7 @@ function Options:addSlider(id, name, min, max, step, value, _tooltip)
 Accessing value function: <code>option:getValue()</code>.
 
 ===Button===
+{{Improve|section=True|Needs confirmation for the bug described in the note.}}
 '''Button''' allows the user to trigger an action. This is more complex than the previous option types and its uses are way more niche.
 
 {{CodeSnip
@@ -315,7 +315,7 @@ function(target,buttonObject,args1,args2,args3,args4)
 
 <code>buttonObject</code> is the button informations, meaning you can change it when clicking on it, such as its color. You can access the UI the button is in for example, allowing you modify the UI when clicking the button.
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Known problem (Build 42.0.2): </span> the <code>onclickfunc</code> function currently has <code>args3</code> and <code>args4</code> equal to <code>arg3</code> in <code>Options:addButton(id, name, tooltip, onclickfunc, target, arg1, arg2, arg3, arg4)</code>, meaning <code>arg4</code> can't be accessed for now.
+{{Note|type=error|In version 42.0.2, the <code>onclickfunc</code> function currently has <code>args3</code> and <code>args4</code> equal to <code>arg3</code> in <code>Options:addButton(id, name, tooltip, onclickfunc, target, arg1, arg2, arg3, arg4)</code>, meaning <code>arg4</code> can't be accessed for now.}}
 
 ==Visual presentation==
 Various functions can be used to visually organize your mod options:
@@ -536,4 +536,7 @@ end
 Events.OnKeyPressed.Add(OnKeyPressed)
 }}
 
-{{Navbox modding}}
+==External links==
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=3386860561 ModOptions Example] - a small mod which modders can use as an example on how to add their own mod options.
+
+{{Navbox Lua objects}}

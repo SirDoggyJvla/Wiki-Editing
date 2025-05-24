@@ -1,5 +1,25 @@
 {{Header|Modding}}
 {{Page version|42.7.0}}
+[[File:IntelliJ IDEA - logo.png|thumb]]
 '''IntelliJ IDEA''' is an [[Wikipedia:Integrated development environment|Integrated development environment (IDE)]] used by Project Zomboid modders. It is most useful to parse the [[Game files#Java files|Java files]] of the game.
+
+==Remote debugging==
+{{Main|Remote debugging}}
+To setup [[remote debugging]] with IntelliJ IDEA, you need to set up a remote debugging configuration. This allows you to connect to the game process and debug it remotely. Follow the steps below to set up remote debugging in IntelliJ IDEA:
+*Open IntelliJ IDEA and open the [[Decompiling game code|decompiled game code]] as a project.
+*Top right corner, click ''"Current file"'' to open a dropdown menu. This might be something else if you used it already, it should be next to a play button, a green bug button and a three vertical dots button.
+*Open ''"Edit Configurations..."''.
+*Click the ''"+"'' button to add a new configuration (top left).
+*Select ''"Remote JVM Debug"'' from the list.
+*In the ''"Name"'' field, enter a name for the configuration (e.g. ''"Project Zomboid Remote Debug"'' or ''"Attach to PZ"''), this is just for your reference.
+*The other fields should already be set correctly. If you are having issues, check the following:
+**''Transport'' is set to ''Socket''
+**''Host'' is set to ''localhost''
+**''Port'' is set to ''5005''
+*Click ''"OK"'' to save the configuration.
+
+To start remote debugging, you need to start the game with the remote debugging options enabled. You can do this by adding the following JVM argument to the game launch options:
+
+{{Note|type=warn|Make sure to have remapped the game files first, see [[Zomboid Decompiler#Remapping|Zomboid Decompiler]] for more information.}}
 
 {{Navbox modding}}

@@ -1,0 +1,15 @@
+{{Header|Modding|Debug tools}}
+{{Page version|42.8.0}}
+'''Remote debugging''' allows you to set breakpoints in the game's engine and analyse the call stack, which can be extremely helpful for debugging mods and analysing the game code. The game code needs to be remapped first to fit the decompiled version used for remote debugging. To do so, use [[Zomboid Decompiler#Remapping|Zomboid Decompiler]]. The following launch JVM [[startup parameters]] need to be added to the game launch options:
+{{CodeSnip
+| lang = bash
+| code =
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+}}
+
+{{Note|type=warn|JVM arguments must be placed before any game arguments and be separated from them with {{Code|lang=bash|--}}. For example: {{Code|lang=bash|-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -- -debug}}.}}
+
+An IDE which allows for remote debugging is necessary. Below are some IDEs which can be used for remote debugging and their setup instructions:
+*[[IntelliJ IDEA#Remote debugging|IntelliJ IDEA]]
+
+{{Navbox modding}}

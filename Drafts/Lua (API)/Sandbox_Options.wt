@@ -1,7 +1,7 @@
 {{Header|Modding}}
-{{Page version|42.3.1}}
+{{Page version|42.8.0}}
 {{About|creating custom sandbox options (modding)|an explanation of options in the 'sandbox' game mode|Custom Sandbox}}
-'''Sandbox options''' allow users to tweak how they want to experience the game which mods can also utilize. In comparison to [[Mod Options]], these settings apply to every players, but like them, you have access to different types of options.
+'''Sandbox options''' allow users to tweak how they want to experience the game, which mods can also utilize. In comparison to [[ModOptions]], these settings apply to every player, but like them, you have access to different types of options.
 
 ==How to create a custom sandbox option==
 Mods sandbox options are defined in a file named <code>sandbox-options.txt</code> with the following folder structure:
@@ -11,11 +11,11 @@ media/
 └── sandbox-options.txt
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> to get more informations on the modding folder structure and the media folder, see the [[Folders structure]] page.
+<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> to get more information on the modding folder structure and the media folder, see the [[Folders structure]] page.
 
-The file starts with the line <code>VERSION = 1,</code> which is used by the game to recognize which method needs to be used to read the sandbox option file. It's used by developpers in case they change the way this file reads in future updates. Unless you know what you are doing, you shoulnd't change this value.
+The file starts with the line <code>VERSION = 1,</code> which is used by the game to recognize which method needs to be used to read the sandbox option file. It's used by developpers in case they change the way this file reads in future updates. Unless you know what you are doing, you shouldn't change this value.
 
-The rest of the file is a list of sandbox options, each defined by a block of lines resembling tables. Each blocks will follow the following structure:
+The rest of the file is a list of sandbox options, each defined by a block of lines resembling tables. All blocks will follow the following structure:
 {{CodeSnip
 | code =
 option ModName.OptionName
@@ -27,10 +27,10 @@ option ModName.OptionName
 }
 }}
 
-You can chose any name for <code>ModName</code> and <code>OptionName</code> without spaces but it is usually your mod name and a logical option name for easier identification. Accessing the option value in Lua will be done with <code>SandboxVars.ModName.OptionName</code>.
+You can choose any name for <code>ModName</code> and <code>OptionName</code> without spaces, but it is usually your mod name and a logical option name for easier identification. Accessing the option value in Lua will be done with <code>SandboxVars.ModName.OptionName</code>.
 
 ==Option types==
-The <code>type</code> parameter defines the type of the option which replaces <code><optionType></code> in the example code above. The following lists every types and their various parameters:
+The <code>type</code> parameter defines the type of the option which replaces <code><optionType></code> in the example code above. The following lists every type and their various parameters:
 {| class="wikitable theme-blue"
 ! Option type !! Description !! Parameters
 |-
@@ -136,12 +136,12 @@ Sandbox_<language code> = {
 }
 }}
 
-It's important to note that the tooltip translation is optional but it's recommended to add it for better understanding of the option. You can also use [[ISRichTextPanel]] tags in the tooltip, which means you can add images and colors in the sandbox options but also have custom text formating.
+It's important to note that the tooltip translation is optional, but it's recommended to add it for better understanding of the option. You can also use [[ISRichTextPanel]] tags in the tooltip, which means you can add images and colors in the sandbox options but also have custom text formating.
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important ! </span> If you don't add the translation parameters they can't appear in-game but if the translation doesn't exist in the translation files, it will simply appear with the string in the translation parameters.
+{{Note|type=warn|If you don't add the translation parameters, they can't appear in-game, but if the translation doesn't exist in the translation files, it will simply appear with the string in the translation parameters.}}
 
 ===Enumeration translation===
-Enumeration options need to have their values translated in the translation file. The translation tag in the translation file for each values needs to be <code>Sandbox_<ModName>_<OptionName>_option<value> = "Enum name"</code>.
+Enumeration options need to have their values translated in the translation file. The translation tag in the translation file for all values needs to be <code>Sandbox_<ModName>_<OptionName>_option<value> = "Enum name"</code>.
 
 For example:
 {{CodeSnip
@@ -180,7 +180,7 @@ sandboxOptions:toLua()
 sandboxOptions:sendToServer()
 }}
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> <code>toLua</code> sends the option changes to the Java, and not the Lua.
+{{Note|{{Code|toLua}} sends the option changes to the Java, and not the Lua.}}
 
 ==External links==
 *[https://github.com/demiurgeQuantified/PZModdingGuides/blob/main/guides/SandboxOptions.md Sandbox Options guide] by Albion
