@@ -1,0 +1,20 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.8.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Zombroid - preview.png]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/liamelui/zomdroid/releases
+    | Download
+    }}
+    {{Infobox/socials
+    | github=https://github.com/liamelui/zomdroid
+    | Github repository
+    }}
+}}
+'''Zombroid''' is a project which aims to provide a launcher on Android 11+ to run [[Project Zomboid]] on Android devices. The project is in early development stages and runs best on Snapdragon devices, but other [[Wikipedia:System on a chip|SoCs]] are supported. It supports both [[Build 41]] and [[Build 42]] and should even be able to run mods.
+
+{{Navbox modding}}

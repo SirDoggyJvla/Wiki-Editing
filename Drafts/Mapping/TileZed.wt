@@ -1,0 +1,27 @@
+{{Header|Modding|Mapping}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | 1 = [[File:TileZed - preview.png|link=]]
+    | 2 = [[File:Tilezed.jpg|link=]]
+    | 3 = [[File:Tileset flowchart.png|link=]]
+    | p1 = [[File:TileZed - preview.png]]
+    | p2 = [[File:Tilezed.jpg]]
+    | p3 = [[File:Tileset flowchart.png]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/timbaker/tiled
+    | GitHub repository
+    }}
+}}
+{{Stub|This page could appreciate more informations and more details on how to use TileZed.}}
+'''TileZed''' is an official Project Zomboid mapping tool which allows you to create and edit tilesets for the game as well as edit maps. It is part of the official mapping tools, which also includes [[WorldEd]]. It was previously an unofficial tool but was later adopted by the developers as an official tool.
+
+==See also==
+*[[WorldEd]]
+*[[Unofficial Mapping Tools]]
+*[[Unofficial Mapping Discord]]
+
+{{Navbox modding}}

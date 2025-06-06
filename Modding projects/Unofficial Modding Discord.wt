@@ -1,0 +1,57 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.8.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Unofficial Modding Discord - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg/ghRTHUTc94
+    | Unofficial Modding Discord
+    }}
+}}
+The '''Unofficial Modding Discord''' is a community-driven Discord server dedicated to modding Project Zomboid. It serves as a hub for modders to share knowledge, tools, and resources related to modding the game. 
+
+==Modding discussions==
+Various channels are available based on the type of modding you want to do, such as:
+*{{Code|#animations}} - For discussions related to animations, such as creating or modifying character animations, animal animations, and more.
+*{{Code|#audio}} - For discussions related to audio, such as creating or modifying sound effects and music.
+*{{Code|#coding}} - For general coding discussions and help, usually regarding the [[Lua (API)]].
+*{{Code|#graphics}} - For discussions related to graphics, such as creating or modifying textures, sprites, and other visual elements.
+*{{Code|#mapping}} - For discussions related to mapping and level design. However, see the [[Unofficial Mapping Discord]] for more mapping-specific discussions.
+*{{Code|#modeling}} - For discussions related to 3D modeling, such as creating or modifying 3D models for the game.
+*{{Code|#translations}} - For discussions related to translations, such as translating the game into different languages or creating new language files.
+
+{{Note|type=warn|Access is limited to members who verified their Steam account. This is to prevent spam and ensure that the community remains focused on modding discussions.}}
+
+==Community==
+Community channels are available for modders and users of mods to follow news and updates related to modding, such as:
+*{{Code|#pz-wiki}} - For discussions related to the Project Zomboid wiki, including updates, changes, and contributions.
+*{{Code|#events}} - To organize events, such as modding competitions, community challenges, or collaborative projects.
+*{{Code|#misc-guides}} - Used to share guides and resources related to modding which tend to not fit on the Wiki.
+*{{Code|#mod-projects}} - For modders to create threads of their own modding projects, allowing them to share their work, get feedback, and collaborate with others.
+*{{Code|#partner-communities}} - A list of partner communities with the '''Unofficial Modding Discord'''.
+*{{Code|#server-promotion}} - A channel to advertise for Project Zomboid servers.
+*{{Code|#supportive-saturday}} - An initiative to support and promote modders and their projects.
+
+Every Saturday, modders can promote their work, which will be highlighted in the Supportive Saturday's announcement channel and sent to servers which follow it. This was notably used to combate the 4-star plague on the Steam Workshop, where mods receive 5-stars ONLY if they reach a certain amount of votes (positive or negative), usually around 160 votes. This gives a small boost to mods that were newly released to help them get noticed and reach the 5-star rating.
+
+==Commissions==
+A part of the server is also dedicated to making commissions modders to create custom mods. Tools in place regarding commissions include:
+*A request agreement system, ensuring anyone sending commission requests or answering existing ones agreed upon rules and guidelines.
+*Public commission requests, allowing anyone to see what commissions are available and who is working on them.
+*A pricing guide which only serves as a reference for modders or commissioners to set a price for their commissions. This is not enforced and each modders have their own pricing.
+*A sign system, ensuring that both parties agree to the commission and that witnesses are present to ensure that the commission was accepted. A payment method can be added to the signature. This serves as a contract between the modder and the person requesting the commission.
+*Disclaimers and recommendations, ensuring that both parties are aware of the risks and responsibilities involved in the commission process.
+*A private message system, allowing both parties to communicate privately about the commission details, such as payment methods, deadlines, and specific requirements. This is only visible to the admins and the two parties involved in the commission.
+*And more...
+
+These tools are designed to ensure that commissions are handled professionally and that both parties are protected throughout the process.
+
+{{Note|type=warn|It is discouraged to use private messages to discuss commissions, as this can lead to misunderstandings, disputes, and potential scams. This has proven to be a recurrent problem in the past, and the server's tools are designed to prevent this. Scammers will try to DM commissioners to get them outside of the server, so be careful and always use the server's tools to handle commissions.}}
+
+==See also==
+*[[Unofficial Mapping Discord]] – a more suitable place to discuss things [[mapping]].
+
+{{Navbox modding}}

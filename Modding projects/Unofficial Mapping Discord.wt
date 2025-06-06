@@ -1,0 +1,53 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.8.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Unofficial Mapping Discord - preview.webp|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg/CFuNM8rtCp
+    | Unofficial Mapping Discord
+    }}
+}}
+The '''Unofficial Mapping Discord''' is a community-driven Discord server dedicated to [[Mapping|creating maps]] for Project Zomboid. It currently serves as a hub for mappers to share knowledge, tools, and resources related to mapping the game.
+
+==Events==
+The server hosts map jams, which are events where mappers come together to create maps within a limited time frame. These events are designed to encourage creativity and competition.
+*{{Code|#event-brief}} - Used to announce upcoming map jams and events.
+*{{Code|#event-chat}} - Discuss the current event.
+*{{Code|#event-submissions}} - Submit your map for the current event.
+*{{Code|#event-team-discussion}} - Discussions regarding the next event, such as rules, themes, and other details.
+
+==Tutorials and guides==
+Various tutorials and guides are available to help new mappers get started with mapping in Project Zomboid, such as:
+*{{Code|#pz-wiki}} - Used to link to the wiki and explain how to contribute to it.
+*{{Code|#tutorials-and-guides}} - The core guide to get started with mapping, to setup the mapping tools and configure your environment.
+*{{Code|#helper-tools-talk}} - To discuss 3rd party tools that enhance your mapping or modding experience.
+
+==Mapping discussions==
+Various channels can be used to discuss mapping-related topics, such as:
+*{{Code|#b42/b41-mapping}} - Discuss mapping either for [[Build 41]] or [[Build 42]].
+*{{Code|#b42/b41-troubleshooting}} - For troubleshooting issues related to mapping in either [[Build 41]] or [[Build 42]].
+*{{Code|#b42-tools}} - Announcement channel for the new releases of the mapping tools.
+*{{Code|#tile-making}} - Discuss tile making by sharing your work or asking for help.
+*{{Code|#wip-pictures}} - Share your work-in-progress maps and get feedback from the community.
+*{{Code|#released-maps}} - Shared your new released maps.
+*{{Code|#buildings-catalogue}} - Used to share or find pre-made buildings from other creators, which can be used in your own maps, or to share your own buildings.
+*{{Code|#member-tilesheets}} - Used to share tilesheets which were uploaded for the community to use in their maps.
+*{{Code|#map-projects}} - Share work on your own projects in more detail and in a place where users can easily find news and updates about your project.
+*{{Code|#commissions}} - Commission mappers, tile makers etc to create custom work for you. This is usually paid work and each modders have their own pricing.
+
+==Community==
+*{{Code|#server-ads}} - Advertise your Project Zomboid server.
+*{{Code|#off-topic}} - For off-topic discussions that are not related to mapping or Project Zomboid.
+*{{Code|#mapping-memes}} - To meme about mapping and share funny content related to mapping.
+*{{Code|#inspiration-gallery}} - Art sharing channel to give ideas to mappers or tile makers.
+*{{Code|#modding-general}}, {{Code|#clothes-mods}}, {{Code|#vehicles-mods}} and {{Code|#code-snippets}} - General modding discussions that are not related to mapping. For modding not related to mapping or tile making, it is recommended to use the [[Unofficial Modding Discord]] instead.
+*{{Code|#pets}} - Share pictures of your pets and discuss them with the community.
+*{{Code|#art}} - Share your art and discuss it with the community.
+*{{Code|#game-development}} - Discuss game development in general, not just related to Project Zomboid.
+*{{Code|#music-to-inspire-mapping}} - Share music that inspires you while mapping or working on your projects.
+
+{{Navbox modding}}

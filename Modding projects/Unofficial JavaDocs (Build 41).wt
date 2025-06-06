@@ -1,0 +1,17 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/socials
+    | other=https://projectzomboid.com/modding/
+    | Build 41.78 unofficial JavaDocs
+    }}
+    {{Infobox/socials
+    | github=https://github.com/quarantin/zomboid-javadoc
+    | Github repository
+    }}
+}}
+The '''Unofficial JavaDocs''' from '''quarantin''' aims to document the Java code of [[Project Zomboid]] for [[Build 41]] in a way similar to the official JavaDocs. It is intended to be used by modders to understand the available classes, methods, and fields in the game [[Lua (API)|Java]] code. It should not be confused with the [[Unofficial JavaDocs (Build 42)|unofficial JavaDocs]] for [[Build 41]] by [[User:Albion|Albion]].
+
+{{Navbox modding}}

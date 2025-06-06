@@ -1,0 +1,40 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.8.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:WorldEd (unofficial) - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg/CFuNM8rtCp
+    | Unofficial Mapping Discord
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Unjammer/WorldEd/releases
+    | Download
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Unjammer/WorldEd
+    | WorldEd fork GitHub repository
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Unjammer/TileZed
+    | TileZed fork GitHub repository
+    }}
+}}
+{{Move|Unofficial Mapping Tools|While the project has parts of a fork of WorldEd, it is not the only focus of the project.}}
+The '''Unofficial Mapping Tools''' is a project driven by the [[Unofficial Mapping Discord]] community, which aims to provide an alternative to the official Project Zomboid mapping tools as well as providing features needed for [[Build 42]] mapping. The tools are packaged from a fork of [[TileZed]] and [[WorldEd]]. One key feature is that it doesn't rely on Windows registry or a folder in {{Code|%userprofile%}}, allowing multiple versions of the tools on the same computer.
+
+Other features include:
+*A dark mode by default alongside a new theme management system, to create your own themes with the use of QSS themes.
+*Improves visibility of tiles and their names.
+*The Tiles Unpacker now includes advanced options beyond just prefix handling.
+*Road and full buildings generation and fixed built-in Lua engine for the InGameMap.
+*Thumbnail up to 8192 pixels.
+*Biomemap generator based on two images ({{Code|Main}} and {{Code|_veg}}). Includes automatic tile splitting.
+*Support for [[Build 42]] features such as basements, animals, WorldGen etc.
+*Includes the game tilesheets.
+*And more...
+
+{{Navbox modding}}

@@ -1,0 +1,17 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.8.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/socials
+    | other=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/
+    | Build 42 unofficial JavaDocs
+    }}
+    {{Infobox/socials
+    | github=https://github.com/demiurgeQuantified/ProjectZomboidJavaDocs
+    | Github repository
+    }}
+}}
+The '''Unofficial JavaDocs''' from '''[[User:Albion|Albion]]''' aims to document the Java code of [[Project Zomboid]] for [[Build 42]] in a way similar to the official JavaDocs. It is intended to be used by modders to understand the available classes, methods, and fields in the game [[Lua (API)|Java]] code. It should not be confused with the [[Unofficial JavaDocs (Build 41)|unofficial JavaDocs]] for [[Build 41]] by quarantin.
+
+{{Navbox modding}}

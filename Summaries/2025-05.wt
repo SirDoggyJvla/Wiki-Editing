@@ -1,0 +1,31 @@
+Hello everyone, Sir Doggy Jvla here to explain al the last changes to the modding wiki in May 2025 but also April 2025 since there wasn't a summary for that month at that time. The wiki is being used by many and shared as the starting point to modding Project Zomboid. Some major pages such as [[Modding]], [[Mod structure]] and [[Game files]] server as a great starting point to new modders to get started with making a mod. These pages were improved significantly in the past months and are now more complete than ever.
+
+As such, the [[File structure]] page, which previously explained the game files and mod files, was split into two pages:
+*[[Game files]] - explains the game files, including the different files and folders that are part of the game itself.
+*[[Mod structure]] - explains the file structure of a mod, including the different files and folders that can be used in a mod.
+
+This method of making more pages, by splitting informations, should help new modders not get overwhelmed by the amount of information on a single page. It also allows for more in-depth explanations of each topic, making it easier to understand and follow. The same principle was applied to the [[Decompiling game code]] page, by creating pages for each custom decompilers, allowing to go more in-depth to the capabilities of each.
+
+Below are the number of people who joined the modding and mapping Discords since the creation of the permanent invitations:
+*[[Unofficial Modding Discord]]: 574 joined since the creation of the invitation (~december). (was 327 in February)
+*[[Unofficial Mapping Discord]]: 97 joined since the creation of the invitation (~december). (was 52 in February)
+
+A new Wiki template [[Template:Function]] was created to help document functions in the [[Lua (API)]], however this has proven to not be a good solution. Discussions are ongoing regarding the best way to document various objects and functions in the [[Lua (API)]]. It seems this function template doesn't look fitting for the wiki and usage of something like the [[JavaDocs]] is more fitting. Work is being done by @nydjill to potentially bring the [[JavaDocs]] alongside documentation of the [[Lua objects]] in a singular page. The wiki will probably still be fitting to go in depth regarding what can be done with the functions and objects in the [[Lua (API)]] but it is clear that a tool needs to be developped to easily search what's available not just in the [[JavaDocs|Java]] but also in the [[Lua objects|Lua]].
+
+[[Modding projects]] was a big focus, with many new pags being created to document various projects that are useful for modders. A new subtemplate [[Template:Infobox/socials]] for [[Template:Infobox]] was created to help document social media links for modding projects, thus cleaning up the different links that were previously scattered around the pages.
+
+Other small changes were made to the wiki, such as:
+*A new template [[Template:JavaObject]] was also created to easily link to a Java object page if it exists, or link to its Java doc link.
+*[[language.txt]] was created to document the creation of a custom [[Translation]].
+*[[How to upload a mod]] was created to document how to upload a mod to the Steam Workshop as well as alternative methods to the in-game mod uploader.
+*A new debug tool [[Remote debugging]] was created to help modders study the Java code by adding breakpoints or directly modifying the code.
+*[[Mod Options]] was moved to [[ModOptions]] to match the in-game API name.
+*[[Tiledefs used by mods]] was reorganized so that advertising mods is not possible. Instead each tile mods Workshop page are linked to the tiledef entry, and modders are not allowed to simply link their mod list.
+*[[IntelliJ IDEA]] was created to document the usage of IntelliJ IDEA, a popular IDE for Java development, which is suggested to be used to read the decompiled code. It can notably be used for [[Remote debugging]].
+*[[Inputs]], [[Outputs]] and [[Fluids (craftRecipe)]] were improved to make it clearer which should use a table-like typing.
+*Some [[mod.info]] parameters were identified as not being used by the game.
+*Some pages were cleaned up.
+
+The first work on something related to [[Mapping]] was done, to possibly bring more documentations in the wiki with the creation of [[map.info]].
+
+Thank you to anyone who helped with the modding wiki. Work continues to improve the wiki and make it a better place for modders to learn and share their knowledge. If you have any suggestions or ideas for improvements, feel free to reach out to me or any other member of the modding community.

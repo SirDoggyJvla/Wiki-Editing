@@ -30,25 +30,25 @@ The following tiledef numbers are used in each mod's respective 'MOD.INFO' file,
 |-
 | 106 || transparentErosion2 ||
 |-
-| 107 || pinecone ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 107 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3016225029 pinecone] ||
 |-
-| 108 || DungeonGate ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 108 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3309083154 DungeonGate] ||
 |-
-| 109 || ExtendedDungeon ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 109 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3359266342 ExtendedDungeon] ||
 |-
-| 110 || GatchaMod ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 110 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3366797514 GatchaMod] ||
 |-
-| 111 || ParasiteZedNest ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 111 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3458740967 ParasiteZedNest] ||
 |-
-| 112 || CarDealer ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 112 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3469152591 CarDealer] ||
 |-
-| 113 || ServerPawnshop ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 113 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3474281243 ServerPawnshop] ||
 |-
 | 114 || OldPineVillage ||
 |-
 | 115~116 || Cherbourg ||
 |-
-| 117 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3232137856 lava/Floor Is Lava] || [https://steamcommunity.com/profiles/76561198329871201/myworkshopfiles/ Tchernobill]
+| 117 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3232137856 lava/Floor Is Lava] ||
 |-
 | 123 || FallLeaves ||
 |-
@@ -58,9 +58,9 @@ The following tiledef numbers are used in each mod's respective 'MOD.INFO' file,
 |-
 | 160 || 'tiledefinitionstest' || (also in AiZ3)
 |-
-| 161 || PackAPunch ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 161 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3375311708 PackAPunch] ||
 |-
-| 196 || ARSENAL(26)GunFighter[MOD 2.0] || ModID 2297098490
+| 196 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2297098490 ARSENAL(26)GunFighter[MOD 2.0]] ||
 |-
 | 201 || 'tztiledefinitions' || (also in AiZ3)
 |-
@@ -104,9 +104,9 @@ The following tiledef numbers are used in each mod's respective 'MOD.INFO' file,
 |-
 | 400 || BuildingMenu|| (tiledef=building_menu) ModID 3067798182
 |-
-| 420 || CannabisMod ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 420 || CannabisMod ||
 |-
-| 421 || MoonshineDistillery ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 421 || MoonshineDistillery ||
 |-
 | 424 || GasBarrels ||
 |-
@@ -208,11 +208,11 @@ The following tiledef numbers are used in each mod's respective 'MOD.INFO' file,
 |-
 | 869 || RabbitHashKY ('haragon_tiles') ||
 |-
-| 888 || RevenantPantryMod ||  [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 888 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3275972938 RevenantPantryMod] ||
 |-
-| 889 || VikingTiles ||  [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 889 || VikingTiles ||
 |-
-| 890 || BusRideTiles ||  [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 890 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3305121864 BusRideTiles] ||
 |-
 | 891 || ZombSack||  
 |-
@@ -298,47 +298,47 @@ The following tiledef numbers are used in each mod's respective 'MOD.INFO' file,
 |-
 | 2592 || Grapeseed || ModID 2463499011
 |-
-| 2605 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3485326793 ShopStuff] ||  [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2605 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3485326793 ShopStuff] ||
 |-
-| 2606 || gunrack ||  [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2606 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2992690035 gunrack] ||
 |-
-| 2607 || FloralDecorations ||  [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2607 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2961813310 FloralDecorations] ||
 |-
-| 2609 || DragonGravestone ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2609 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2932880530 DragonGravestone] ||
 |-
-| 2619 || AP_DesktopTiles ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2619 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2911085653 AP_DesktopTiles] ||
 |-
-| 2629 || Shops_KWRR ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2629 || Shops_KWRR ||
 |-
-| 2639 || XmasDecor ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2639 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2967231686 XmasDecor] ||
 |-
-| 2649 || Electro ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2649 || Electro ||
 |-
-| 2697 || Fish Farm ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2697 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2971843681 Fish Farm] ||
 |-
 | 2698 || TOMorePaintSigns ||
 |-
-| 2699 || DriedFishMod ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2699 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2949916678 DriedFishMod] ||
 |-
-| 2700 || PumpPlumb ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2700 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2934799912 PumpPlumb] ||
 |-
-| 2701 || Mortar ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2701 || Mortar ||
 |-
-| 2702 || AnimeStuff ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2702 || AnimeStuff ||
 |-
-| 2704 || RestrictedArea ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2704 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2950660206 RestrictedArea] ||
 |-
-| 2705 || Uta Mod ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2705 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3001493411 Uta Mod] ||
 |-
-| 2707 || MoreTraps ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2707 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3026420087 MoreTraps] ||
 |-
-| 2708 || BrowningM2 ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2708 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3146930873 BrowningM2] ||
 |-
-| 2709 || PostApocFences ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2709 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3147423081 PostApocFences] ||
 |-
-| 2710 || Corkboard ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2710 || [https://steamcommunity.com/sharedfiles/filedetails/?id=3161587488 Corkboard] ||
 |-
-| 2711 || PokerTiles ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 2711 || PokerTiles ||
 |-
 | 2799 || HashimaIsland || (also in AiZ3)
 |-
@@ -376,7 +376,7 @@ The following tiledef numbers are used in each mod's respective 'MOD.INFO' file,
 |-
 | 4827 || Blackwood || ModID 2536865912
 |-
-| 4834 || SafeCrackerMod ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 4834 || [https://steamcommunity.com/sharedfiles/filedetails/?id=2905858716 SafeCrackerMod] ||
 |-
 | 5001 || ResearchBase || (in each of its 3 modfolders)
 |-
@@ -392,7 +392,7 @@ The following tiledef numbers are used in each mod's respective 'MOD.INFO' file,
 |-
 | 5669 || Muldraugh Cottages ||
 |-
-| 5947 || ProjectRPContraband ||   [https://steamcommunity.com/id/glytch3r/myworkshopfiles/ Glytch3r]
+| 5947 || ProjectRPContraband ||
 |-
 | 5970~5971 || Facility 7 ||
 |-

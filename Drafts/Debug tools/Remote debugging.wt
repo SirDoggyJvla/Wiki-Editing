@@ -7,7 +7,7 @@
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 }}
 
-{{Note|type=warn|JVM arguments must be placed before any game arguments and be separated from them with {{Code|lang=bash|--}}. For example: {{Code|lang=bash|-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -- -debug}}.}}
+{{Note|type=warn|JVM arguments must be placed before any game arguments and be separated from them with {{Code|lang=bash|--}}. For example: {{Code|lang=bash|1=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -- -debug}}.}}
 
 An IDE which allows for remote debugging is necessary. Below are some IDEs which can be used for remote debugging and their setup instructions:
 *[[IntelliJ IDEA#Remote debugging|IntelliJ IDEA]]

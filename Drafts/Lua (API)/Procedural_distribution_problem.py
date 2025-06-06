@@ -3,13 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-# plt.rcParams.update({
-#     "text.usetex": True,
-#     "font.family": "Computer Modern Roman",
-#     "font.size": 12,
-#     #"font.weight":"normal",
-#     #"axes.labelweight":"normal"
-# })
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "Computer Modern Roman",
+    "font.size": 12,
+    #"font.weight":"normal",
+    #"axes.labelweight":"normal"
+})
 
 
 def populate_gaussian(N_entries, mean, stddev, item_list = None, disable=True):
@@ -86,7 +86,7 @@ mean, std = 5, 2
 min_chance, max_chance = 0.01, 20
 
 min_rolls, max_rolls = 1, 5
-min_amount, max_amount, step = 1, 50, 2
+min_amount, max_amount, step = 1, 10, 2
 
 ###
 ### Distribution
@@ -101,7 +101,7 @@ dist = get_chance_distribution(item_lists)
 fig, axs = plt.subplots(2, 1, figsize=(10, 6))
 ax = axs[0]
 ax.bar(dist.keys(), dist.values(), width=0.1, color='blue', alpha=1)
-ax.set_xlabel('Chance [%]')
+ax.set_xlabel('Chance')
 ax.set_ylabel('Items')
 ax.set_title(f"Distribution for {N_entries} entries")
 ax.grid(True)

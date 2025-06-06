@@ -1,7 +1,13 @@
 {{Header|Modding}}
-{{Page version|42.7.0}}
+{{Page version|42.8.1}}
 [[File:IntelliJ IDEA - logo.png|thumb]]
 '''IntelliJ IDEA''' is an [[Wikipedia:Integrated development environment|Integrated development environment (IDE)]] used by Project Zomboid modders. It is most useful to parse the [[Game files#Java files|Java files]] of the game.
+
+==Tips and tricks==
+*You can open an entire folder as a workspace, making it easier to navigate the files. Useful to [[Game files#Searching the game files|search for specific elements]] in the game files. To search in an entire folder, press {{Key|Ctrl}}+{{Key|Shift}}+{{Key|F}} and select the folder you want to search in.
+*You can search for Java classes by pressing {{Key|Ctrl}}+{{Key|N}} and typing the name of the class you want to find. This is useful for quickly navigating to specific classes in the decompiled code.
+*By holding {{Key|Ctrl}} then left clicking on a used method or class, you can quickly navigate to its definition.
+*By holding {{Key|Ctrl}} then left clicking on the definition of a method or class, you can see the various usages of that method or class in the code.
 
 ==Remote debugging==
 {{Main|Remote debugging}}
