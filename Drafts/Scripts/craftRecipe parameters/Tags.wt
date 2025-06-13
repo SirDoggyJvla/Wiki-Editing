@@ -1,5 +1,6 @@
 {{Header|Modding|Scripts|craftRecipe parameters}}
 {{Page version|42.5.1}}
+{{Main|CraftRecipe}}
 The <code>Tags</code> parameter is used to define specific conditions that need to be respected to be able to craft.
 
 The tags are defined by the following format:
@@ -34,43 +35,43 @@ Below is the list of tags that are used in vanilla crafts:
 ! Tag !! Description
 |-
 | style="min-width: 200px;"| <code>Cooking</code>
-| style="min-width: 600px;"| Recipe is related to cooking.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Electrical</code>
-| style="min-width: 600px;"| Recipe is related to electricity.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Engineer</code>
-| style="min-width: 600px;"| Recipe is related to engineering.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Farming</code>
-| style="min-width: 600px;"| Recipe is related to farming.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Fishing</code>
-| style="min-width: 600px;"| Recipe is related to fishing.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Glassmaking</code>
-| style="min-width: 600px;"| Recipe is related to glassmaking.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Health</code>
-| style="min-width: 600px;"| Recipe is related to health.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Packing</code>
-| style="min-width: 600px;"| Recipe is related to packing.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Pottery</code>
-| style="min-width: 600px;"| Recipe is related to pottery.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Smithing</code>
-| style="min-width: 600px;"| Recipe is related to smithing.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Survivalist</code>
-| style="min-width: 600px;"| Recipe is related to survival.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Trapper</code>
-| style="min-width: 600px;"| Recipe is related to trapping.
+| style="min-width: 600px;"|
 |-
 | style="min-width: 200px;"| <code>Welding</code>
-| style="min-width: 600px;"| Recipe is related to welding.
+| style="min-width: 600px;"|
 |}
 
 {| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
@@ -131,6 +132,8 @@ Below is the list of tags that are used in vanilla crafts:
 | style="min-width: 200px;"| <code>Toaster</code>
 | style="min-width: 600px;"| Can be crafted in a toaster.
 |}
+
+{{note|type=warn|The crafting bench tag is mandatory for the recipe to be recognized.}}
 
 ==Example==
 {{CodeSnip

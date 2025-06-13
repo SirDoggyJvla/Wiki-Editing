@@ -1,0 +1,21 @@
+{{Title|muscleStrainSkill}}
+{{Header|Modding|Scripts|timedAction parameters}}
+{{Page version|42.8.1}}
+{{Note|This parameter should be used alongside [[muscleStrainFactor]] and [[muscleStrainParts]].}}
+{{Unverified}}
+{{Main|timedAction (scripts)}}
+The {{Code|muscleStrainSkill}} parameter is used to define the skill that reduces the muscle strain generated during a timed action. It is defined by a skill name. To use a muscle strain skill in a timed action, use the following format:
+{{CodeSnip
+| lang = lua
+| code =
+muscleStrainSkill = <skill name>,
+}}
+
+==Example==
+{{CodeSnip
+| lang = lua
+| code =
+muscleStrainSkill = Strength,
+}}
+
+{{Navbox modding}}

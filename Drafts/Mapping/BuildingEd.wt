@@ -1,0 +1,19 @@
+{{Header|Modding|Mapping}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/socials
+    | github=https://github.com/timbaker/buildinged
+    | GitHub repository
+    }}
+}}
+'''BuildingEd''' was an official Project Zomboid [[mapping]] tool that allowed to create and edit buildings to implement in maps. It was merged inside [[TileZed]] and is now part of the official mapping tools.
+
+==See also==
+*[[WorldEd]]
+*[[TileZed]]
+*[[Unofficial Mapping Tools]]
+*[[Unofficial Mapping Discord]]
+
+{{Navbox modding}}

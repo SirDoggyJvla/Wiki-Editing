@@ -1,0 +1,30 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Mystery rig - preview.png]]
+    }}
+    {{Infobox/socials
+    | github=https://drive.google.com/file/d/14Hm0cvU3ZKqVljP6lnA3-iA6lPM46pXg/view
+    | Download
+    }}
+}}
+'''Mystery rig''' is a Blender [[animation]] IK rig for the Project Zomboid character model named after its creator.
+
+==Export instructions==
+To export the rig, you need to follow these steps:
+*Rename the 2 action BopRP (Bip01 and BipIK) to your animation name
+*Select:
+**Dummy01
+**Bip01
+**Body_NoDress
+**Translation_data (optional)
+*Export to the [[File formats#Modeling and animation formats|Filmbox]] ({{Code|.fbx}}) format with the following settings:
+**Selected Objects = True
+**Leaf Bones = False
+**NO change in primary secondary bones in armature
+**Scale = 0.01 (not needed if player animation usually, but required for zombie animations)
+
+{{Navbox modding}}

@@ -1,0 +1,23 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.8.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | 1 = [[File:pzmap2dzi - basement.jpg|link=]]
+    | 2 = [[File:pzmap2dzi - markedit.jpg|link=]]
+    | 3 = [[File:pzmap2dzi - i18n.jpg|link=]]
+    | 4 = [[File:pzmap2dzi - trimmer.jpg|link=]]
+    | p1 = [[File:pzmap2dzi - basement.jpg]]
+    | p2 = [[File:pzmap2dzi - markedit.jpg]]
+    | p3 = [[File:pzmap2dzi - i18n.jpg]]
+    | p4 = [[File:pzmap2dzi - trimmer.jpg]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/cff29546/pzmap2dzi
+    | GitHub repository
+    }}
+}}
+'''pzmap2dzi''' is a tool that converts Project Zomboid map data into a [[Wikipedia:Deep Zoom|Deep Zoom format]]. The tool supports both [[Build 41]] and [[Build 42]] map data.
+
+{{Navbox modding}}

@@ -1,0 +1,29 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/socials
+    | github=https://github.com/aoqia194/ZomboidAssetConverter/releases
+    | Download
+    }}
+    {{Infobox/socials
+    | github=https://github.com/aoqia194/ZomboidAssetConverter
+    | Github repository
+    }}
+}}
+'''ZomboidAssetConverter''' is a tool to convert [[Project Zomboid]] [[File formats#Modeling and animation formats|model and animation]] assets into a modern format. [[Wikipedia:DirectX|DirectX]] (<code>.x</code>) files are converted into [[Wikipedia:GlTF|glTF2]] (<code>.gltf</code>) accompanied by a binary file (<code>.bin</code>) containing the mesh data. One advantage to this converting solution for the Project Zomboid assets is that it allows you to convert an entire folder of assets at once.
+
+To be able to convert the files, you'll need to follow these steps:
+*Download the latest version of the tool.
+*Open a terminal in the folder where you downloaded the tool.
+*Run the converter with the following command, by setting the correct paths:
+{{CodeSnip
+| lang = bash
+| code =
+ZomboidAssetConverter <anim_X/folder/path> --output <output/folder/path> --fix-assets --convert-assets
+}}
+
+Once the program finishes execution, you are free to import the exported files into Blender. If desired, you can then export the model out of Blender to a specific format such as FBX (which the tool itself cannot export to because of technical limitations).
+
+{{Navbox modding}}

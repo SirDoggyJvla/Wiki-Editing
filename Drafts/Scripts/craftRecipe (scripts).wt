@@ -1,9 +1,9 @@
 {{Header|Modding|Scripts}}
-{{Page version|42.5.1}}
+{{Page version|42.8.1}}
 {{About|[[Build 42]] crafting recipes|crafting recipes for [[Build 41]]|Recipe (scripts)}}
 Crafting recipes in [[Build 42]] were changed to use a different formatting and system than the one used in [[Build 41]] ([[Recipe (scripts)|Recipe]]).
 
-{{Note|type=error|Recipes are being heavily changed during the unstable build, and it is important to verify the version of the information provided.}}
+{{Note|type=warn|Recipes might get changed during the unstable build, so it is important to verify the version of the information provided.}}
 
 ==craftingRecipe format==
 To create a new crafting recipe, simply use the following entry in a script file:
@@ -34,26 +34,23 @@ Different parameters can be used in the <code>craftRecipe</code> block to define
 |+ style="white-space:nowrap" | List of parameters for the <code>craftRecipe</code> block
 ! Parameter name !! Description
 |-
-| style="padding: 10px;text-align: center;"| [[time]]
-<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 10px;text-align: center;"| [[time]]{{sup|mandatory|red}}
 | style="padding: 5px; max-width: 500px;"| Time to craft the item.
 |-
-| style="padding: 10px;text-align: center;"| [[inputs]]
-<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 10px;text-align: center;"| [[inputs]]{{sup|mandatory|red}}
 | style="padding: 5px; max-width: 500px;"| The ingredients needed to crafting the item.
 |-
-| style="padding: 10px;text-align: center;"| [[outputs]]
-<span style="font-size: 100%; font-weight: bold; color: red;">Mandatory </span>
+| style="padding: 10px;text-align: center;"| [[outputs]]{{sup|mandatory|red}}
 | style="padding: 5px; max-width: 500px;"| The item produced from the craft.
 |-
-| style="padding: 10px;text-align: center;"| [[timedAction]]
-| style="padding: 5px; max-width: 500px;"| Specifies animation played during the crafting process.
+| style="padding: 10px;text-align: center;"| [[Tags (craftRecipe)|Tags]]{{sup|mandatory|red}}
+| style="padding: 5px; max-width: 500px;"| Specifies specific conditions which need to be respected to craft this item. At least one crafting bench tag is necessary for the craft to be recognized, such as {{Code|AnySurfaceCraft}}.
+|-
+| style="padding: 10px;text-align: center;"| [[timedAction (craftRecipe)|timedAction]]
+| style="padding: 5px; max-width: 500px;"| Specifies an animation played during the crafting process as well as sounds and the calory burn and body heat generation rates.
 |-
 | style="padding: 10px;text-align: center;"| [[category]]
 | style="padding: 5px; max-width: 500px;"| Specifies the category of the crafting recipe. This helps to organize and identify recipes in the crafting menu.
-|-
-| style="padding: 10px;text-align: center;"| [[Tags (craftRecipe)|Tags]]
-| style="padding: 5px; max-width: 500px;"| Specifies specific conditions which need to be respected to craft this item.
 |-
 | style="padding: 10px;text-align: center;"| [[ToolTip]]
 | style="padding: 5px; max-width: 500px;"| Description of the crafting which is shown in the crafting menu.
@@ -97,26 +94,114 @@ Different parameters can be used in the <code>craftRecipe</code> block to define
 
 ===Available skills===
 You can define multiple skills and their respective experience points/levels by separating them with <code>;</code>. Below is how each parameters need to be formatted:
-*<code>xpAward</code> format is <code>skill:experience</code>
-*<code>SkillRequired</code> format is <code>skill:level</code>
-*<code>AutoLearnAll</code> format is <code>skill:level</code>
-*<code>AutoLearnAny</code> format is <code>skill:level</code>
+*[[xpAward]] format is <code>skill:experience</code>
+*[[SkillRequired]] format is <code>skill:level</code>
+*[[AutoLearnAll]] format is <code>skill:level</code>
+*[[AutoLearnAny]] format is <code>skill:level</code>
 
-Below is the list of vanilla skills that are used in the vanilla crafts:
-<div class="list-columns" style="column-width:250px; max-width:900px;">
-*<code>Blacksmith</code>
-*<code>Butchering</code>
-*<code>Carving</code>
-*<code>Cooking</code>
-*<code>Electricity</code>
-*<code>FlintKnapping</code>
-*<code>Glassmaking</code>
-*<code>Maintenance</code>
-*<code>Masonry</code>
-*<code>MetalWelding</code>
-*<code>Pottery</code>
-*<code>Tailoring</code>
-*<code>WoodWork</code>
-</div>
+You can find the available skills in the {{JavaObject|package=zombie/characters/skills|PerkFactory.Perks}} class. Alternatively, you can also use modded skills defined by your mod or other mods.
 
-Alternatively, you can also use modded skills defined by your mod or other mods.
+==Example==
+Below are a few examples of vanilla crafting recipes you can do:
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 4
+| source = recipes_carpentry.txt
+| path = ProjectZomboid\media\scripts\recipes
+| retrieved = true
+| version = 42.8.1
+| code =
+craftRecipe SawLogs
+{
+    timedAction = SawLogs,
+    Time = 230,
+    Tags = InHandCraft;CanBeDoneFromFloor,
+    category = Carpentry,
+    xpAward = Woodwork:5,
+    inputs
+    {
+        item 1 [Base.Log] flags[Prop2],
+        item 1 tags[Saw] mode:keep flags[MayDegradeLight;Prop1],
+    }
+    outputs
+    {
+        item 3 Base.Plank,
+    }
+}
+}}
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 139
+| source = recipes_lightsources.txt
+| path = ProjectZomboid\media\scripts\recipes
+| retrieved = true
+| version = 42.8.1
+| code =
+craftRecipe RefillHurricaneLantern
+{
+    timedAction = Making,
+    Time = 50,
+    OnCreate = Recipe.OnCreate.RefillHurricaneLantern,
+    /* OnTest = Recipe.OnTest.RefillHurricaneLantern, */
+    Tags = InHandCraft;CanBeDoneInDark,
+    category = Miscellaneous, /*category = Survival,*/
+    inputs
+    {
+        item 1 [Base.Lantern_Hurricane;Base.Lantern_Hurricane_Copper;Base.Lantern_Hurricane_Forged;Base.Lantern_Hurricane_Gold;Base.Lantern_Hurricane_Silver] mode:destroy flags[NotFull;AllowFavorite;InheritFavorite;ItemCount] mappers[LampMapper],
+        item 1 [*],
+        -fluid 1.0 [Petrol],
+    }
+    outputs
+    {
+        item 1 mapper:LampMapper,
+    }
+    itemMapper LampMapper
+    {
+        Base.Lantern_Hurricane = Base.Lantern_Hurricane,
+        Base.Lantern_Hurricane_Copper = Base.Lantern_Hurricane_Copper,
+        Base.Lantern_Hurricane_Forged = Base.Lantern_Hurricane_Forged,
+        Base.Lantern_Hurricane_Gold = Base.Lantern_Hurricane_Gold,
+        Base.Lantern_Hurricane_Silver = Base.Lantern_Hurricane_Silver,
+
+        default = Base.Lantern_Hurricane,
+    }
+}
+}}
+
+{{CodeSnip
+| lang = lua
+| line = true
+| start = 745
+| source = recipes_bone.txt
+| path = ProjectZomboid\media\scripts\recipes
+| retrieved = true
+| version = 42.8.1
+| code =
+craftRecipe CarveWhistle
+{
+    time = 200,
+    tags = AnySurfaceCraft;Survivalist,
+    category = Carving,
+    xpAward = Carving:60,
+    SkillRequired = Carving:6,
+    needTobeLearn = true,
+    AutoLearnAny = Carving:8,
+    timedAction = SharpenStake,
+    inputs
+    {
+        item 1 tags[DrillWood;DrillMetal;DrillWoodPoor] mode:keep flags[MayDegradeLight],
+        item 1 tags[SharpKnife] mode:keep flags[MayDegradeLight],
+        item 1 [Base.SmallAnimalBone] flags[Prop2;AllowDestroyedItem],
+    }
+    outputs
+    {
+        item 1 Base.Whistle_Bone,
+    }
+}
+}}
+
+{{Navbox modding}}

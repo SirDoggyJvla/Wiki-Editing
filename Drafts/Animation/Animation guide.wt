@@ -1,0 +1,137 @@
+{{Header|Modding}}
+{{Page version|42.9.0}}
+{{Move|How to create custom animations|This is to follow the same naming convention as the other modding guides.}}
+This guide will teach step by step how to create custom [[animation]]s for the game. It uses the [[Mystery rig]] but [[Animation#Available rigs for animating|other options]] exist.
+
+==Using the rig==
+The rig used in the guide is the [[Mystery rig]] and is designed to be intuitive for animators familiar with 3D animation softwares. Here are the basic commands to get you started:
+*Unhiding Dress Bones: To reveal any hidden dress bones within the rig, press '''Alt+H'''. This action makes all concealed elements visible, allowing for comprehensive editing and animation control.
+*Hiding Dress Bones: To hide the dress bones again, simply press '''H'''. This command is useful for decluttering your workspace and focusing on specific parts of the rig.
+
+==Setting up your NLA==
+NLA stands for Non-Linear Animation and graph editing is a crucial part of the animation process, allowing for fine-tuned adjustments to motion and timing. Following these preparatory steps before diving into animation:
+*Disable the star: In the NLA editor, locate the <code>BobRPA_</code> item. Ensure the star next to this item is unchecked. 
+[[File:anim_tuto1.png|400px]]
+*Set animation length: Adjust the length of your animation to fit your scene. This can be done in two places
+**The bottom control panel
+**The <code>Frame start</code> and <code>Frame end</code> settings to the right of the NLA action editor. Both should match to ensure consistency across your animation. Be sure to select the Bip01 skeleton and do the same for the NLA action there. 
+[[File:anim_tuto2.png|400px]]
+
+Do this last step for both Bip01 Skeleton and BipIK Skeleton. The BipIK NLA length may reset itself depending on the position of your keyframes in the animation editor. Don't be alarmed if it does. Simply ensure you keyframe your animation to your desired length.
+
+==Exporting animation==
+After you have completed posing your animation, the next step involves preparing it for export. This section explains how to export your animation with specifically Mystery's rig but the reality is that it might depend on the rig you use.
+
+===Preparing animation===
+====Renaming the animation/action====
+This name serves as an identifier for your animation and should be carefully chosen to reflect its content or purpose and needs to be the same in the NLA Sheet.
+
+=====Example=====
+If you are exporting an animation of a character cheering, you might name it <code>TTRP_Cheering1</code>. This convention helps in organizing and identifying animations within your project, and will help others differentiate from vanilla animations and your animations in the [[Animation Viewer]].
+
+====Selecting the Bip01 skeleton====
+After naming your animation/action in the NLA Sheet for BipIK's skeleton, the next step is to select the Bip01 Skeleton within your project. Note: Be sure to unhide Bip01.
+[[File:anim_tuto3.png|400px]]
+
+====Consistency in naming and length====
+Ensure that the length and name of the BipO1 Skeleton animation/action in the NLA sheet match exactly with the BipIK skeleton's NLA sheet action. This step is crucial.
+[[File:anim_tuto4.png|400px]]
+
+===Export settings===
+This guide will walk you through hiding unnecessary bones, selecting the appropriate objects and adjusting export settings for optimal results.
+
+====Selecting for export====
+*Hiding BipIK Bones or the <code>IK</code> collection
+Hold down the CTRL key and select <code>Body_Nodress</code>, <code>Bip01</code> and <code>Dummy01</code> in your scene. These objects are crucial for the animation and need to be included in the FBX export. (You may also want to include <code>Translation_Data</code> if your animation moves the character physically in the game world.)
+
+You can also enter <code>Object Mode</code> and select the viewport with the IK rig set to hidden, and select all visible objects.
+[[File:anim_tuto5.png|400px]]
+
+====Exporting as FBX====
+After properly selecting the objects, navigate to the export menu and choose FBX (<code>.fbx</code>) as your export format.
+
+In the export menu, make the following adjustments to ensure your animation is exported correctly:
+*Include section: Check the <code>Selection Objects</code> option. This ensure that only the objects you have selected (<code>Body_Nodress</code>, <code>Bip01</code> and <code>Dummy01</code>) are included in the export.
+*Armature Section: Scroll down to the Armature options and make sure <code>Add Leaf Bones</code> is unchecked. Leaf bones are not needed for this export and unchecking this option prevents unnecessary data from being included in the FBX files.
+[[File:anim_tuto6.png|400px]]
+*Scale: Needs to be set to 0.01. This is not needed for player animations but is needed for zombie animations as partially loaded zombies will show up as giants when playing the animation if the scale is left to 1. (Can easily be tested by spawning a huge group of zombies and having one or more zombies play the animation.)
+
+There can be many other export parameters that might be relevant to your needs, but for virtually all circumstances, the above settings should be sufficient.
+
+====Finalizing the export====
+After adjusting the settings as described, proceed to export the animation. Choose a suitable location on your computer to save the FBX file and click <code>Export FBX</code>
+
+==File structure and XML structure==
+{{Main|Mod structure}}
+File structure and XML structure advice and notes.
+
+===FBX location===
+When moving your FBX file into your mod's file structure, you will keep FBX files under the following folder:
+{{CodeSnip
+| code =
+./media/anims_X/*
+}}
+
+Place the FBX files within the <code>anims_X</code> folder in your mod's file structure. In [[Build 42]], only subfolders set by the model's animationsMesh will be scanned for animations. These are further filtered by the animation set. This means that the same animation node can have different animations for each model. For the human models, only the folders <code>Bob/</code> and <code>Kate/</code> will be scanned, and file names must be prefixed with <code>Bob_</code> or <code>Kate_</code>. For example:
+{{CodeSnip
+| code =
+.ModName/Contents/mods/subModName/media/anims_X/Bob/Bob_*.fbx
+}}
+
+===Animation nodes===
+{{Main|AnimNodes}}
+Animation nodes, defined with XML files, (in the <code>AnimSets/</code> folder) control how your animations trigger, how fast they run etc. Here's a small set of rules/conventions to follow:
+*'''Naming convention''': XML files should usually mirror the FBX file name, and should include your mod's prefix or identifier for ease of organization and for discovering the animation files in large animation systems. For instance: <code>TTRP_Waving.fbx</code> corresponds to <code>TTRP_Waving.xml</code>.
+
+*'''Storage path''': The animation node must be placed in a folder corresponding to the name of the animation set is is a part of. For example, animations for player characters must be placed in the <code>player/</code> folder. In [[Build 42]], your animation node must also be placed into a subfolder corresponding to the action state it belongs to. For example, animation nodes for [[Timed Actions]] should go into the <code>player/actions/</code> folder rather than <code>player/idle</code>. And for animation masks, such as for adding specific animations to specific items held in the player's hands, you will want to place it inside of the <code>/player/maskingleft/</code>.
+
+===Animation node parameters===
+The following are a variety of parameters you can assign to your animation node that will modify the attributes of it in the game and how it interacts with other animations in the game. Modifying an animation node file will update in-game in real time if you are in debug mode, so it is easy to experiment. Unless otherwise noted, all fields are case sensitive.
+
+*<code><m_Name>holdingChugJugleft</m_Name></code> - The name of the animation node. This will be used by other animation nodes to reference it in transitions.
+
+*<code><m_AnimName>TTRP_ChugJugIdle</m_AnimName></code> - The name of the animation's FBX file. 
+
+*<code><m_Priority>1</m_Priority> can be a range up to <m_Priority>10</m_Priority></code> - Priority dictates, ''such as in cases when two animations are playing at the same time'', which animation's bone weights or keyframes will take precedence. An example would be an idle animMask holding a glass which transitions into a drinking animation. The drinking animation takes priority over the idle drink-holding ainmMask if its priority is higher than the idle animation mask's XML.
+
+*<code><m_ConditionPriority>0</m_ConditionPriority></code> - When multiple animation nodes are equally valid to be chosen with the current animation variables, the one with the highest priority will be chosen. When there is a tie the behaviour can be unpredictable so this is best used when attempting to override another animation.
+
+*<code><m_SpeedScale>1.00</m_SpeedScale></code> - SpeedScale dictates how quickly the animation plays inside of the game. 1.0 being the default animation speed, you can adjust this to be lower such as 0.50, or faster, such as 1.50.
+
+*<code><m_blendInTime>0.5<m_blendInTime></code> - How quickly the animation will begin to play, and how the game 'interpolates' moving the armature's bones from one animState to another.
+
+*<code><m_blendOutTime>0.5<m_blendOutTime></code> - How quickly the game will 'end' the animation when it has run its course, and interpolates moving the armature's bones back to idle or whatever previous animation was playing.
+
+*<code><m_Transitions></code> - Transitions are one of the key components of making a complex and multi-stage animation. They are a multi-field XML parameter that can be extensively modified. Example below;
+
+<code><m_Transitions></code><br>
+<code><m_Target>DrinkBottle</m_Target></code><br>
+<code><m_blendInTime>0.3</m_blendInTime></code><br>
+<code><m_blendOutTime>0.3</m_blendOutTime></code><br>
+<code><m_speedScale>1.00</m_speedScale></code><br>
+<code></m_Transitions></code><br>
+
+
+In the example above, the animation is targeted the XML with the <m_name> of DrinkBottle, this will transition the currently running animation, whether it be an idle animation or a multi-stage animation, to seamlessly transition between the two linked animations whenever 'DrinkBottle' is triggered, and pass the above speed scale and blend time parameters to that animation.
+
+*<code><m_SubStateBoneWeights></code> – You can define the 'weight' of a bone and its keyframes or descendants with the SubStateBoneWeights value, for example below; 
+
+<code><m_SubStateBoneWeights></code><br>
+<code><boneName>Bip01_R_Clavicle</boneName></code><br>
+<code><weight>1</weight></code><br>
+<code></m_SubStateBoneWeights></code><br>
+
+By default, all bones that are not defined have the default weight of 1. If you wanted to make it, so an animation were to only play a specific set of bones; you would define the <code>Dummy01</code> or the <code>Bip01</code> bones (These are the parent armature bones) to have a weight of 0, and then specifically define all the bones you wish to play to have a weight value greater than 0.
+
+
+*<code><m_deferredBoneAxis>Y</m_deferredBoneAxis></code> - 
+{{Stub|section=true}}
+
+===Notes===
+Reference vanilla animation XML files (idle, emote, actions, etc) to determine optimal parameters for your animations. Studying how The Indie Stone configures their XML files can provide insights into effective parameter settings.
+
+==See also==
+You can refer to these for more detail on animations.
+*[https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003 Animation guide] by Dislaik
+
+{{Navbox modding}}

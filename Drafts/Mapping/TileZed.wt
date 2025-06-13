@@ -7,9 +7,13 @@
     | 1 = [[File:TileZed - preview.png|link=]]
     | 2 = [[File:Tilezed.jpg|link=]]
     | 3 = [[File:Tileset flowchart.png|link=]]
-    | p1 = [[File:TileZed - preview.png]]
+    | p1 = [[File:TileZed - preview.png|thumb]]
     | p2 = [[File:Tilezed.jpg]]
     | p3 = [[File:Tileset flowchart.png]]
+    }}
+    {{Infobox/socials
+    | other=https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/
+    | Latest uploaded version
     }}
     {{Infobox/socials
     | github=https://github.com/timbaker/tiled
@@ -17,7 +21,7 @@
     }}
 }}
 {{Stub|This page could appreciate more informations and more details on how to use TileZed.}}
-'''TileZed''' is an official Project Zomboid mapping tool which allows you to create and edit tilesets for the game as well as edit maps. It is part of the official mapping tools, which also includes [[WorldEd]]. It was previously an unofficial tool but was later adopted by the developers as an official tool.
+'''TileZed''' is an official Project Zomboid mapping tool which allows you to create and edit tilesets for the game as well as edit maps. It is part of the [[Project Zomboid Modding Tools|official mapping tools]], which also includes [[WorldEd]]. It was previously an unofficial tool but was later adopted by the developers as an official tool.
 
 ==See also==
 *[[WorldEd]]

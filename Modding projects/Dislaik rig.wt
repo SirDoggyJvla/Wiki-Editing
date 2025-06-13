@@ -1,0 +1,35 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Dislaik rig - preview.png]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/katupia/Pz_Dislaik_AnimationGuide/blob/main/ANIM_TEMPLATE.blend
+    | Non-IK rig Download
+    }}
+    {{Infobox/socials
+    | github=https://github.com/katupia/Pz_Dislaik_AnimationGuide/blob/main/IK_ANIM_TEMPLATE.blend
+    | IK rig Download
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003
+    | Reposted animation guide
+    }}
+    {{Infobox/socials
+    | github=https://github.com/katupia/Pz_Dislaik_AnimationGuide
+    | Dislaik's Animation guide GitHub repository
+    }}
+}}
+{{Unverified|It is unconfirmed if Dislaik is the original creator of the rig.}}
+'''Dislaik rig''' is an [[animation]] rig made for [[Wikipedia:Blender|Blender]] for the Project Zomboid character model named after its supposed creator. It was originally posted by Dislaik for his Project Zomboid [https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003 animation guide], which he had deleted when leaving the community but was reposted by [https://steamcommunity.com/profiles/76561198329871201 Tchernobill]. It is however unconfirmed if Dislaik is the original creator of the rig.
+
+Two versions of the rig are available:
+*A pure one without any IK or custom controls and simply the character model and skeleton.
+*A version with IK controls or each limbs.
+
+The animation guide that came with it gives more informations on how to export the rig.
+
+{{Navbox modding}}

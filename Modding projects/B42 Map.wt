@@ -1,0 +1,16 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.8.1}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:B42 Map - preview.png]]
+    }}
+    {{Infobox/socials
+    | other=https://b42map.com/
+    | B42 Map website
+    }}
+}}
+'''B42 Map''' is a wiki project which aims to provide a [[Wikipedia:Deep Zoom|Deep Zoom]] map of the Project Zomboid world in [[Build 42]] the same way as the [[Project Zomboid Map Project]] does.
+
+{{Navbox modding}}

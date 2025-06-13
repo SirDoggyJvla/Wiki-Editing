@@ -1,91 +1,17 @@
+{{Title|timedAction}}
 {{Header|Modding|Scripts|craftRecipe parameters}}
-{{Page version|42.5.1}}
-{{About|the <code>timedAction</code> parameter used in crafting recipes|the timed actions used in the game|Timed Actions}}
-The <code>timedAction</code> parameter is used to define the action animation played during the crafting process. The timed action is defined by the following format:
+{{Page version|42.8.1}}
+{{Main|CraftRecipe}}
+{{About|the {{Code|timedAction}} parameter used in crafting recipes|the {{Code|timedAction}} script block explanations|timedAction (scripts)|the Lua timed actions used in the game|Timed Actions}}
+{{Move|timedAction (craftRecipe)}}
+The '''{{Code|timedAction}}''' parameter is used to define the action animation played during the crafting process, and is defined by a [[timedAction (scripts)|timedAction script]]. To use a timed action in a [[craftRecipe]], use the following format:
 {{CodeSnip
 | lang = lua
 | code =
 timedAction = <action name>,
 }}
 
-==List of timed actions==
-Below is the list of timed actions which are used in vanilla crafts:
-<div class="list-columns" style="column-width:250px; max-width:900px;">
-*<code>ApplyAlcohol</code>
-*<code>ApplyGlaze</code>
-*<code>Chisel_Surface</code>
-*<code>ChoppingBlock_Hammer</code>
-*<code>CraftArmourPiece</code>
-*<code>CraftKnifeSpear</code>
-*<code>CraftWeapon1H</code>
-*<code>CraftWeapon2H</code>
-*<code>Craft_Glassmaking</code>
-*<code>Craft_PotteryBench</code>
-*<code>Craft_PotteryWheel</code>
-*<code>CrushLimestone</code>
-*<code>CutClothing</code>
-*<code>CutWire</code>
-*<code>DismantleElectrical</code>
-*<code>DrawCard</code>
-*<code>EmptyPan</code>
-*<code>Knitting</code>
-*<code>MakeCoffee</code>
-*<code>MakeSheetSlingBag</code>
-*<code>Making</code>
-*<code>MakingElectrical</code>
-*<code>MakingHammer_Surface</code>
-*<code>MakingJewellery</code>
-*<code>MixingBowl</code>
-*<code>MixingBucket</code>
-*<code>MixingMortarPestle</code>
-*<code>OpenAmmoBox</code>
-*<code>OpenBeerBottle</code>
-*<code>OpenChampagne</code>
-*<code>OpenPopCan</code>
-*<code>OpenShellsBox</code>
-*<code>OpenTinCan</code>
-*<code>OpenTinCanWithKnife</code>
-*<code>PackingBox</code>
-*<code>PackingBox_Small</code>
-*<code>PlaceAmmoInBox</code>
-*<code>PutInBag</code>
-*<code>PutSeedsInPacket</code>
-*<code>RipClothing</code>
-*<code>RollDice</code>
-*<code>RollDiceDouble</code>
-*<code>RollTwoDice</code>
-*<code>SawLogs</code>
-*<code>SawOffShotgun</code>
-*<code>SawSmallItemMetal</code>
-*<code>ScrubClothWithSoap</code>
-*<code>SewingCloth</code>
-*<code>SharpenBlade</code>
-*<code>SharpenStake</code>
-*<code>SliceBread_Surface</code>
-*<code>SliceFood_Surface</code>
-*<code>SliceMeat</code>
-*<code>SliceMeat_Surface</code>
-*<code>SmashBottle</code>
-*<code>TanLeatherBarrel</code>
-*<code>Threshing</code>
-*<code>UnPackBox</code>
-*<code>UnPackBox_Small</code>
-*<code>UnPackSack</code>
-*<code>UnPackSmallBag</code>
-*<code>UncorkBottle</code>
-*<code>UseGrindingSlab</code>
-*<code>UseGrindingStone</code>
-*<code>UseHandPress</code>
-*<code>UseLoom</code>
-*<code>UseSpinningWheel</code>
-*<code>UseStoneQuern</code>
-*<code>Welding</code>
-*<code>Welding_Surface</code>
-</div>
-
-Actions are defined in [[AnimSets]] in the category <code>actions</code> for the player animations.
-
-{{Note|While unconfirmed, it is likely possible to create your own timed actions by creating new ones in the AnimSets.}}
+For a full list of actions, see [[timedAction (scripts)]].
 
 ==Example==
 {{CodeSnip

@@ -1,6 +1,6 @@
 {{Header|Modding}}
-{{Page version|42.2.0}}
-{{About|file formats used in Project Zomboid|the file structure of the game|File Structure}}
+{{Page version|42.9.0}}
+{{About|file formats used in Project Zomboid|the file structure of the game|File structure}}
 Project Zomboid uses different '''file formats''' for within its files to use models, textures, images but also to write codes and scripts. This page will list the different formats used in the game and their specificity.
 
 ==Programming==
@@ -9,48 +9,45 @@ Project Zomboid uses different '''file formats''' for within its files to use mo
 Project Zomboid allows modders to program functionalities via a Java implementation of '''Lua''' called Kahlua (see [[Lua (API)]] which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods.
 
 ===XML===
-{{Main|XML}}
-This format is mostly used for clothing items and definying animations by using AnimSets.
+This format is mostly used for clothing items and defining animations by using [[AnimNodes]].
 
 ===Text files===
-The <code>.txt</code> format is commonly used, notably for [[Scripts]]. Different files may require different types of formating inside the text file to be usable.
-
-[[Scripts]] and [[Translations]] can be written easier by using [[Visual Studio Code#Zed Script|Zed Script]], an addon developped for [[Visual Studio Code]].
+The <code>.txt</code> format is commonly used, notably for [[Scripts]] and [[Translations]]. Different files may require different types of formating inside the text file to be usable.
 
 ==Texture and modeling formats==
 Texture formats are used either to create items or to create the world. The formats are different for each type of texture, and the formats are outlined below. The model formats are used to create the 3D models to implement in the game, and are also outlined below.
 
 ===Image formats===
-The game uses 8bit PNGs (16bits is not accepted) for its textures and images, so you'll be dealing with those. A lot of the icons and some other images are not stored inside classic image textures but in [[#TexturePacks (.pack files)|.pack files]].
 {{Stub|section=true}}
+The game uses 8bit PNGs (16bits is not accepted) for its textures and images, so you'll be dealing with those. A lot of the icons and some other images are not stored inside classic image textures but in [[#TexturePacks (.pack files)|.pack files]].
 
 ===Modeling and animation formats===
-The model formats which can be used are either <code>.X</code> or <code>.FBX</code>. <code>.X</code> is the format which you will usually encounter in the game files, either for models or animations.
+{{Unverified|section=true|GLB is used in the [[game files]] but is not confirmed to be usable in mods yet, or at which extent.}}
+The model formats which can be used are :
+*[[Wikipedia:DirectX|DirectX]] (<code>.X</code>)
+*[[Wikipedia:FBX|Filmbox]] (<code>.FBX</code>)
+*[[Wikipedia:GlTF#GLB|GLB]] (<code>.GLB</code>) is also supposed to be supported but is unconfirmed. 
 
-While <code>.X</code> is what is most commonly used by the game, it is highly suggested to use <code>.FBX</code> as it is one of the most used formats in the video game industry and <code>.X</code> is no longer supported by a lot of 3D modeling software such as Blender.
+DirectX is the most used format in the game as it is used for a huge amount of models and is the only format used for animations. Some models use the Filmbox format, such as WorldItem models as well as the [[vehicle|vehicles]].
 
-====Importing model files====
-Importing the <code>.X</code> of model files in Blender can be done by using addons:
-*[https://github.com/poikilos/io_import_x IO X Importer] - best one so far, works for older versions of Blender but also more recent versions such as confirmed working in 4.1 and 4.2.
-*[https://github.com/oguna/Blender-XFileImporter X File Importer] - should work for newer Blender versions but the imported models can have problems.
-Or alternatively using an external tool to mass export DirectX files:
-*[https://github.com/aoqia194/ZomboidAssetConverter ZomboidAssetConverter] - Should be 100% acccurate with DirectX standard. Also works with animations.
+{{Note|It is recommended to use the Filmbox format for modding, as it is more widely supported by modern 3D modeling software. There is no point to using the DirectX format.}}
 
-====Importing animation files====
-Importing the <code>.X</code> animation files to Blender can be done by using [https://github.com/aoqia194/ZomboidAssetConverter ZomboidAssetConverter], a tool that can convert DirectX (<code>.X</code>) files to <code>.gltf</code> files (also accompanied with <code>.bin</code> files which contain mesh data).
+====Importing assets====
+Due to DirectX being a mostly outdated format, most 3D modeling software does not support it natively. However, there are tools and addons that allow you to import DirectX files into software like [[Wikipedia:Blender|Blender]] or other 3D modeling software.
 
-To be able to convert the files, you'll need to follow these steps:
-*Download the latest version of the tool in the repository's [https://github.com/aoqia194/ZomboidAssetConverter/releases/latest Releases] page.
-*Open a terminal in the folder where you downloaded the tool.
-*Run the converter with the following command, by setting the correct paths:
-{{CodeSnip
-| lang = bash
-| code =
-ZomboidAssetExtractor <anim_X/folder/path> --output <output/folder/path> --fix-assets --convert-assets
-}}
-
-Once the program finishes execution, you are free to import the exported <code>.gltf</code> files into Blender.
-If desired, you can then export the model out of Blender to a specific format such as FBX (which the tool itself cannot export because of technical limitations).
+{| class="wikitable theme-blue sortable" style="text-align: center;
+|+ style="white-space:nowrap" | Model and animation import tools
+|-
+! Tool !! Description !! Model import !! Animation import
+|-
+| [https://github.com/poikilos/io_import_x IO X Importer] || Blender addon. Works for older versions of Blender but also more recent versions such as confirmed working in 4.1 and 4.2. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+|-
+| [https://github.com/oguna/Blender-XFileImporter X File Importer] || Blender addon. Should work for newer Blender versions but '''the imported models can have problems'''. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+|-
+| [[ZomboidAssetConverter]] || A project which aimed to provide a proper tool to convert Project Zomboid assets into a usable modern format. || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| [https://3d-convert.com/en/ 3D convert] || General website to converting models. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+|}
 
 ===TexturePacks (.pack files)===
 Pack files are used to store image files in a very efficient way. The format requires you to use the [[Pack Viewer]] to be able to open the format.
@@ -158,6 +155,9 @@ ProjectZomboid/
             └── MyItemIcon.png
 }}
 
+===Video format===
+{{Stub|section=True}}
+Videos in the game use the <code>.bik</code> format. Currently they can only be installed manually.
 
 ==Map formats==
 
