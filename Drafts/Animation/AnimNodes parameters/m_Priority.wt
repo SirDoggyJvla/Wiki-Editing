@@ -1,0 +1,14 @@
+{{Title|m_Priority}}
+{{Header|Modding|Animation|AnimNodes parameters}}
+{{Page version|42.9.0}}
+{{Main|AnimNodes}}
+The {{Code|m_Priority}} parameter dictates, ''such as in cases when two animations are playing at the same time'', which animation's bone weights or keyframes will take precedence. An example would be an idle animMask holding a glass which transitions into a drinking animation. The drinking animation takes priority over the idle drink-holding ainmMask if its priority is higher than the idle animation mask's XML. The priority value is an integer ranging from 1 to 10 with high numbers taking the priority.
+
+==Example==
+{{CodeSnip
+| lang = xml
+| code =
+<m_Priority>10</m_Priority>
+}}
+
+{{Navbox modding}}

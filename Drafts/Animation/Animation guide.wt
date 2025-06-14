@@ -80,58 +80,14 @@ Place the FBX files within the <code>anims_X</code> folder in your mod's file st
 
 ===Animation nodes===
 {{Main|AnimNodes}}
-Animation nodes, defined with XML files, (in the <code>AnimSets/</code> folder) control how your animations trigger, how fast they run etc. Here's a small set of rules/conventions to follow:
-*'''Naming convention''': XML files should usually mirror the FBX file name, and should include your mod's prefix or identifier for ease of organization and for discovering the animation files in large animation systems. For instance: <code>TTRP_Waving.fbx</code> corresponds to <code>TTRP_Waving.xml</code>.
+Animation nodes, defined with XML files, (in the <code>AnimSets/</code> folder) control how your animations trigger, how fast they run etc.
 
-*'''Storage path''': The animation node must be placed in a folder corresponding to the name of the animation set is is a part of. For example, animations for player characters must be placed in the <code>player/</code> folder. In [[Build 42]], your animation node must also be placed into a subfolder corresponding to the action state it belongs to. For example, animation nodes for [[Timed Actions]] should go into the <code>player/actions/</code> folder rather than <code>player/idle</code>. And for animation masks, such as for adding specific animations to specific items held in the player's hands, you will want to place it inside of the <code>/player/maskingleft/</code>.
-
-===Animation node parameters===
-The following are a variety of parameters you can assign to your animation node that will modify the attributes of it in the game and how it interacts with other animations in the game. Modifying an animation node file will update in-game in real time if you are in debug mode, so it is easy to experiment. Unless otherwise noted, all fields are case sensitive.
-
-*<code><m_Name>holdingChugJugleft</m_Name></code> - The name of the animation node. This will be used by other animation nodes to reference it in transitions.
-
-*<code><m_AnimName>TTRP_ChugJugIdle</m_AnimName></code> - The name of the animation's FBX file. 
-
-*<code><m_Priority>1</m_Priority> can be a range up to <m_Priority>10</m_Priority></code> - Priority dictates, ''such as in cases when two animations are playing at the same time'', which animation's bone weights or keyframes will take precedence. An example would be an idle animMask holding a glass which transitions into a drinking animation. The drinking animation takes priority over the idle drink-holding ainmMask if its priority is higher than the idle animation mask's XML.
-
-*<code><m_ConditionPriority>0</m_ConditionPriority></code> - When multiple animation nodes are equally valid to be chosen with the current animation variables, the one with the highest priority will be chosen. When there is a tie the behaviour can be unpredictable so this is best used when attempting to override another animation.
-
-*<code><m_SpeedScale>1.00</m_SpeedScale></code> - SpeedScale dictates how quickly the animation plays inside of the game. 1.0 being the default animation speed, you can adjust this to be lower such as 0.50, or faster, such as 1.50.
-
-*<code><m_blendInTime>0.5<m_blendInTime></code> - How quickly the animation will begin to play, and how the game 'interpolates' moving the armature's bones from one animState to another.
-
-*<code><m_blendOutTime>0.5<m_blendOutTime></code> - How quickly the game will 'end' the animation when it has run its course, and interpolates moving the armature's bones back to idle or whatever previous animation was playing.
-
-*<code><m_Transitions></code> - Transitions are one of the key components of making a complex and multi-stage animation. They are a multi-field XML parameter that can be extensively modified. Example below;
-
-<code><m_Transitions></code><br>
-<code><m_Target>DrinkBottle</m_Target></code><br>
-<code><m_blendInTime>0.3</m_blendInTime></code><br>
-<code><m_blendOutTime>0.3</m_blendOutTime></code><br>
-<code><m_speedScale>1.00</m_speedScale></code><br>
-<code></m_Transitions></code><br>
-
-
-In the example above, the animation is targeted the XML with the <m_name> of DrinkBottle, this will transition the currently running animation, whether it be an idle animation or a multi-stage animation, to seamlessly transition between the two linked animations whenever 'DrinkBottle' is triggered, and pass the above speed scale and blend time parameters to that animation.
-
-*<code><m_SubStateBoneWeights></code> – You can define the 'weight' of a bone and its keyframes or descendants with the SubStateBoneWeights value, for example below; 
-
-<code><m_SubStateBoneWeights></code><br>
-<code><boneName>Bip01_R_Clavicle</boneName></code><br>
-<code><weight>1</weight></code><br>
-<code></m_SubStateBoneWeights></code><br>
-
-By default, all bones that are not defined have the default weight of 1. If you wanted to make it, so an animation were to only play a specific set of bones; you would define the <code>Dummy01</code> or the <code>Bip01</code> bones (These are the parent armature bones) to have a weight of 0, and then specifically define all the bones you wish to play to have a weight value greater than 0.
-
-
-*<code><m_deferredBoneAxis>Y</m_deferredBoneAxis></code> - 
-{{Stub|section=true}}
-
-===Notes===
-Reference vanilla animation XML files (idle, emote, actions, etc) to determine optimal parameters for your animations. Studying how The Indie Stone configures their XML files can provide insights into effective parameter settings.
+{{Note|Reference vanilla animation XML files (idle, emote, actions, etc) to determine optimal parameters for your animations. Studying how The Indie Stone configures their XML files can provide insights into effective parameter settings.}}
 
 ==See also==
 You can refer to these for more detail on animations.
+*[[AnimNodes]] - explains the XML structure of animation nodes and their parameters.
+*[[Animation Viewer]] - a tool to view animations in-game.
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003 Animation guide] by Dislaik
 
 {{Navbox modding}}

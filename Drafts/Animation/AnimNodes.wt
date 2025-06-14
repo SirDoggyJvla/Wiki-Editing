@@ -1,2 +1,66 @@
 {{Header|Modding}}
 {{Page version|42.9.0}}
+'''Animation nodes''', or ''AnimNodes'' are a system in Project Zomboid that allows the definition of [[animation]]s and their properties. They are used to play [[animation]]s in-game, define their transitions, and control how they interact with the character's skeleton. AnimNodes are defined in [[File formats#XML|XML]] files found inside the folder {{Code|media/AnimSets}}.
+
+{{Note|The name ''AnimSets'' is sometimes used in place of ''AnimNodes'' to refer to the same system.}}
+
+==Creating an AnimNode==
+To create an AnimNode, you need to properly locate your XML files inside the right folder. For example, zombie animations will need to be located inside {{Code|media/AnimSets/zombie}} (check the [[game files]] for every possibilities). 
+
+For each character type, subfolders exist for different kind of animations. Continuing with the zombie example, you can find for example the following subfolders:
+*{{Code|media/AnimSets/zombie/idle}} - for idle animations.
+*{{Code|media/AnimSets/zombie/walktoward}} - for walking animations.
+*{{Code|media/AnimSets/zombie/getup}} - for getting up animations.
+*{{Code|media/AnimSets/zombie/thump}} - for thumping animations.
+*Etc.
+
+In the same way, refer to the [[game files]] to find the right folders for the different animation types you're trying to create. These subfolders often refer to action states.
+
+Naming the AnimNode files is important and those usually have the same name as the animation they are associated with. So if your animation is named {{Code|ShootUp.fbx}}, it is recommended to name your AnimNode {{Code|ShootUp.xml}}.
+
+{{Note|type=warn|AnimNodes can override other AnimNodes with the same name. As such, it is recommended to use a unique name for your AnimNode. Adding a prefixe to your animation names is a good way to easily find them in the [[Animation Viewer]].}}
+{{Note|type=error|Currently in [[Build 42]], a recurring issue forces modders to make copies of their AnimNode files inside the [[Mod structure#Build 41|Build 41 mod structure]] to be recognized by the game. The [[Build 41]] files are however not used by the game for mods in [[Build 42]].}}
+
+==AnimNode parameters==
+{{Stub|section=true}}
+Below is a list of parameters that can be used in AnimNodes:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of AnimNodes parameters
+! Parameter name !! Description
+|-
+| style="padding: 10px;text-align: center;"| [[m_Name]]
+| style="padding: 5px; max-width: 500px;"| The name of the animation node. Will be used by other animation nodes to reference it in transitions.
+|-
+| style="padding: 10px;text-align: center;"| [[m_AnimName]]
+| style="padding: 5px; max-width: 500px;"| The name of the animation file that this node will play.
+|-
+| style="padding: 10px;text-align: center;"| [[m_Priority]]
+| style="padding: 5px; max-width: 500px;"| Priority dictates, ''such as in cases when two animations are playing at the same time'', which animation's bone weights or keyframes will take precedence.
+|-
+| style="padding: 10px;text-align: center;"| [[m_ConditionPriority]]
+| style="padding: 5px; max-width: 500px;"| When multiple animation nodes are equally valid to be chosen with the current animation variables, the one with the highest priority will be chosen.
+|-
+| style="padding: 10px;text-align: center;"| [[m_SpeedScale]]
+| style="padding: 5px; max-width: 500px;"| Dictates how quickly the animation plays inside of the game. 1.0 being the default animation speed, you can adjust this to be lower such as 0.50, or faster, such as 1.50.
+|-
+| style="padding: 10px;text-align: center;"| [[m_blendInTime]], [[m_blendOutTime]]
+| style="padding: 5px; max-width: 500px;"| How quickly the animation will begin to play or end, and how the game [[Wikipedia:Interpolation|interpolates]] moving the armature's bones from one animState to another.
+|-
+| style="padding: 10px;text-align: center;"| [[m_Transitions]]
+| style="padding: 5px; max-width: 500px;"| Used to create transitions between different animation nodes.
+|-
+| style="padding: 10px;text-align: center;"| [[m_SubStateBoneWeights]]
+| style="padding: 5px; max-width: 500px;"| Used to define the ''weight'' of a bone and its keyframes or descendants. This allows for more control over which bones are affected by the animation.
+|-
+| style="padding: 10px;text-align: center;"| [[m_deferredBoneAxis]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+|}
+
+==Lua API==
+{{Main|Lua (API)}}
+The Lua API can control some aspects of AnimNodes for characters, like defining the variables' values.
+
+==See also==
+*[[Animation guide]] - a step by step guide on how to create animations.
+
+{{Navbox modding}}

@@ -1,0 +1,14 @@
+{{Title|m_blendOutTime}}
+{{Header|Modding|Animation|AnimNodes parameters}}
+{{Page version|42.9.0}}
+{{Main|AnimNodes}}
+'''m_blendOutTime''' defines how quickly the animation will end, and how the game [[Wikipedia:Interpolation|interpolates]] moving the armature's bones from one animState to another. It is used to create a smooth transition when the animation is stopped or changed.
+
+==Example==
+{{CodeSnip
+| lang = xml
+| code =
+<m_blendOutTime>0.20</m_blendOutTime>
+}}
+
+{{Navbox modding}}

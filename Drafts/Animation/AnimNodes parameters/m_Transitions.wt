@@ -1,0 +1,21 @@
+{{Title|m_Transitions}}
+{{Header|Modding|Animation|AnimNodes parameters}}
+{{Page version|42.9.0}}
+{{Main|AnimNodes}}
+'''m_Transitions''' is one of the key components of making a complex and multi-stage animation. They are a multi-field XML parameter that can be extensively modified. It defines how the animation will transition to another animation node.
+
+==Example==
+{{CodeSnip
+| lang = xml
+| code =
+<m_Transitions>
+<m_Target>DrinkBottle</m_Target>
+<m_blendInTime>0.3</m_blendInTime>
+<m_blendOutTime>0.3</m_blendOutTime>
+<m_speedScale>1.00</m_speedScale>
+</m_Transitions>
+}}
+
+In this example, the animation will transition to the animation node with the [[m_Name]] of {{Code|DrinkBottle}} with a [[m_blendInTime|blend-in time]] of 0.3 and a [[m_blendOutTime|blend-out time]] of 0.3. The [[m_SpeedScale|speed scale]] is set to 1.00, meaning the animation will play at its normal speed.
+
+{{Navbox modding}}
