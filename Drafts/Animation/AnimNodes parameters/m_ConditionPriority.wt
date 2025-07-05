@@ -1,8 +1,8 @@
-{{Title|m_ConditionPriority}}
 {{Header|Modding|Animation|AnimNodes parameters}}
 {{Page version|42.9.0}}
 {{Main|AnimNodes}}
-When multiple animation nodes are equally valid to be chosen with the current animation variables, the one with the highest '''m_ConditionPriority''' will be chosen. When there is a tie the behaviour can be unpredictable so this is best used when attempting to override another animation.
+{{Move|ConditionPriority}}
+When multiple animation nodes are equally valid to be chosen with the current animation variables, the one with the highest {{Code|m_ConditionPriority}} will be chosen. When there is a tie the behaviour can be unpredictable so this is best used when attempting to override another animation.
 
 ==Example==
 {{CodeSnip

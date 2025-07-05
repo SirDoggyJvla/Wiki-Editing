@@ -1,7 +1,7 @@
-{{Title|m_Name}}
 {{Header|Modding|Animation|AnimNodes parameters}}
 {{Page version|42.9.0}}
 {{Main|AnimNodes}}
+{{Move|Name}}
 The {{Code|m_Name}} parameter is used to define the name of an [[AnimNodes|AnimNode]]. It is a required parameter and must be unique within the context of the AnimNode files. This name is used by other AnimNodes to reference it in transitions and other interactions.
 
 ==Example==

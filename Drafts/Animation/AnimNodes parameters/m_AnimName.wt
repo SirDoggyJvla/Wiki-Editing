@@ -1,8 +1,8 @@
-{{Title|m_AnimName}}
 {{Header|Modding|Animation|AnimNodes parameters}}
 {{Page version|42.9.0}}
 {{Main|AnimNodes}}
-The {{Code|m_AnimName}} parameter is used to define the name of the animation file that an [[AnimNodes|AnimNode]] will play. This parameter is essential for linking the AnimNode to the actual animation file, which is typically in [[File formats#Modeling and animation formats|Filmbox]] {{Code|.fbx}} format.
+{{Move|AnimName}}
+The {{Code|m_AnimName}} parameter is used to define the name of the animation file that an [[AnimNodes|AnimNode]] will play. This parameter is essential for linking the AnimNode to the actual animation file, which is typically in [[File formats#Modeling and animation formats|Filmbox]] ({{Code|.fbx}}) format for modded animations, and [[File formats#Modeling and animation formats|DirectX]] ({{Code|.x}}) used by vanilla animations.
 
 {{Note|type=warn|This parameter refers to the name of the animation '''inside''' the file itself, meaning an animation file can have a different name than the animation it contains. However, it is recommended to keep the names the same for easier management and understanding.}}
 

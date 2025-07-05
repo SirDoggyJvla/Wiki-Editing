@@ -1,8 +1,8 @@
-{{Title|m_blendInTime}}
 {{Header|Modding|Animation|AnimNodes parameters}}
 {{Page version|42.9.0}}
 {{Main|AnimNodes}}
-'''m_blendInTime''' defines how quickly the animation will begin to play, and how the game [[Wikipedia:Interpolation|interpolates]] moving the armature's bones from one animState to another.
+{{Move|blendInTime}}
+{{Code|m_blendInTime}} defines how quickly the animation will begin to play, and how the game [[Wikipedia:Interpolation|interpolates]] moving the armature's bones from one animState to another.
 
 ==Example==
 {{CodeSnip

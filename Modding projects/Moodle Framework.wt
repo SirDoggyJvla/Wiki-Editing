@@ -1,0 +1,20 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Moodle Framework - preview.png]]
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2859296947
+    | B41 Workshop page
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3396446795
+    | B42 Workshop page
+    }}
+}}
+'''Moodle Framework''' was created for modders to easily implement their own [[moodles]] into the game. The mod provides the necessary tools to do so as the base game doesn't provide easy ways to do it as moodles tend to be hardcoded. For details on how to use the framework, check out the Steam page for the game version you're interested in.
+
+{{Navbox modding}}

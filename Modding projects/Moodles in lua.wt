@@ -1,0 +1,32 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | 1 = [[File:Moodles in lua - preview.jpeg|link=]]
+    | 2 = [[File:Moodles in lua - options.jpeg|link=]]
+    | p1 = [[File:Moodles in lua - preview.jpeg]]
+    | p2 = [[File:Moodles in lua - options.jpeg]]
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3395171770
+    | Workshop page
+    }}
+    {{Infobox/socials
+    | github=https://github.com/molecule31/moodlesinlua
+    | GitHub repository
+    }}
+}}
+'''Moodles in lua''' completely reimplements the [[moodles]] system in [[Lua]], thus allowing hot-swappable textures and fixing bugs in the original system. It allows modders to create their own moodles texture packs for users to easily swap from the in-game options.
+
+{{Video
+|id=dWjoX4bD-_Q
+|image=Moodles in lua - demo video thumbnail.webp
+|name=demo of moodlesinlua
+}}
+
+==See also==
+*[[Moodle Framework]], a mod that allows modders to create their own moodles.
+
+{{Navbox modding}}

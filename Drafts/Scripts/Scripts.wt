@@ -1,0 +1,109 @@
+{{Header|Modding}}
+{{Page version|42.9.0}}
+'''Scripts''', also refered as ''zedscripts'', are a form of modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
+
+{{Note|type=warn|Scripts are not a programming language, but mostly a custom format to define data for game elements which are parsed and cached inside the Java.}}
+
+==Typing syntax==
+The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script types as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.
+
+Comments follow the Java syntax, with single line comments starting with {{Code|//}} and multiline comments starting with {{Code|/**}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks.
+
+Key value pairs are used to define the parameters of the script elements, with the syntax {{Code|1=Key = Value,}}. The comma at the end of each key value pair line is mandatory, even for the last line in a block. Some parameters do not need to be present for a script block to work.
+
+{{Note|type=warn|Scripts can be inconsistent in some cases and some syntax rules which are present in this section may not apply to all script types. Refer to the specific script type documentation for more details.}}
+{{Note|type=error|Make sure to not forget commas at the end of each key value pair lines, as this will cause the script to not be parsed correctly.}}
+
+===Module block===
+A module block needs to be defined at the start of the script files, unless it is a [[sandbox options]] script. The base game module is {{Code|Base}}, which means most entries will have the full ID {{Code|Base.ItemName}}. It can be used for your own scripts: 
+{{CodeSnip
+| lang = Java
+| code =
+module Base {
+    ...
+}
+}}
+{{CodeSnip
+| lang = Java
+| code =
+// alternative syntax
+module Base 
+{
+    ...
+}
+}}
+
+A custom module name can also be defined:
+{{CodeSnip
+| lang = Java
+| code =
+module MyModule {
+    ...
+}
+}}
+
+{{Note|If you use the vanilla module, make sure to use unique naming for your script entries to not clash with other mods. One trick is to add a prefix related to your mod name.}}
+{{Note|type=warn|The module block should not be used for [[sandbox options]] scripts.}}
+
+===Imports block===
+{{Unverified|Need to do some tests to verify the different configurations with and without module and in a craftRecipe example.}}
+Often in recipes and item blocks, you need to reference vanilla items or items from other mod's script modules. By importing the Base module (or any other module), you give your scripts direct access to the elements from these modules, and you can use item IDs without adding the module prefix (for example, you can use Nails instead of Base.Nails).
+{{CodeSnip
+| lang = Java
+| code =
+module MyModule {
+    imports {
+        Base
+        OtherMod
+    }
+}
+}}
+
+==Script types==
+Script types are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters.
+
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of AnimNodes parameters
+! Parameter name !! Description
+|-
+| style="padding: 10px;text-align: center;"| [[Item (scripts)|Item]]
+| style="padding: 5px; max-width: 500px;"| Used to define items, such as [[weapon]]s, [[clothing]], [[food]] and more.
+|-
+| style="padding: 10px;text-align: center;"| [[Fixing (scripts)|Fixing]]
+| style="padding: 5px; max-width: 500px;"| Used to define how items can be repaired or fixed.
+|-
+| style="padding: 10px;text-align: center;"| [[Recipe (scripts)|Recipe]]
+| style="padding: 5px; max-width: 500px;"| Used to define recipes in [[Build 41]].
+|-
+| style="padding: 10px;text-align: center;"| [[craftRecipe]]
+| style="padding: 5px; max-width: 500px;"| Used to define how items can be crafted in [[Build 42]].
+|-
+| style="padding: 10px;text-align: center;"| [[Evolvedrecipe (scripts)|Evolved Recipe]]
+| style="padding: 5px; max-width: 500px;"| Used to define recipes which can have a different set of ingredients and adapt the resulting item based on the ingredients used. Usually used for food recipes.
+|-
+| style="padding: 10px;text-align: center;"| [[Sound (scripts)|Sound]]
+| style="padding: 5px; max-width: 500px;"| Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the [[Lua (API)|Lua API]].
+|-
+| style="padding: 10px;text-align: center;"| [[Model (scripts)|Model]]
+| style="padding: 5px; max-width: 500px;"| Used to define a model, such as its 3D model, texture, animations and more. These models can then be used in other scripts.
+|-
+| style="padding: 10px;text-align: center;"| [[Vehicle (scripts)|Vehicle]]
+| style="padding: 5px; max-width: 500px;"| Used to define a vehicle, which consists of a complex set of different scripts.
+|-
+| style="padding: 10px;text-align: center;"| [[Multistagebuild (scripts)|Multistage build]]
+| style="padding: 5px; max-width: 500px;"| Used to define a multistage building in [[Build 41]], which is a building that can be built in multiple stages, such as a wall or a fence.
+|-
+| style="padding: 10px;text-align: center;"| [[Fluid (scripts)|Fluid]]
+| style="padding: 5px; max-width: 500px;"| Used to define a fluid in [[Build 42]].
+|-
+| style="padding: 10px;text-align: center;"| [[entity]]
+| style="padding: 5px; max-width: 500px;"| Used to define a buildable in [[Build 42]], like walls, fences, furnitures and more. It is composed of different sub-blocks.
+|}
+
+==See also==
+*{{ll|Lua Events}}
+*{{ll|Lua Objects}}
+
+{{Navbox modding}}
+
+{{ll|Category:Scripts|&#32;}}

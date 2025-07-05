@@ -1,0 +1,36 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:asledgehammer - preview.png]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg/u3vWvcPX8f
+    | Asledgehammer Discord
+    }}
+    {{Infobox/socials
+    | github=https://github.com/asledgehammer/Pythoid-Typings
+    | Visual Studio Code typings for Pythoid
+    }}
+    {{Infobox/socials
+    | github=https://github.com/asledgehammer/Pythoid-Example-Mods
+    | Example mods for Pythoid
+    }}
+    {{Infobox/socials
+    | github=https://github.com/asledgehammer/Pythoid-Patch-Client
+    | Pythoid patch client
+    }}
+    {{Infobox/socials
+    | github=https://github.com/asledgehammer/Pythoid-Patch-Server
+    | Pythoid patch server
+    }}
+    {{Infobox/socials
+    | github=https://github.com/asledgehammer/Pythoid-Installer
+    | Pythoid installer
+    }}
+}}
+'''Pythoid''' implements [https://www.jython.org/ Jython 2.7.3] interpreter to the Project Zomboid Java, enabling Python support for modding the game. The project was developped back in 2024 for the [[Build 41]] version of the game but never saw any proper use.
+
+{{Navbox modding}}

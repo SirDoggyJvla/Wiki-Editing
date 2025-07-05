@@ -1,0 +1,224 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Community Modding Projects - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.gg/ghRTHUTc94
+    | Unofficial Modding Discord
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2909488957
+    | Workshop page
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Project-Zomboid-Community-Modding/pz-community-modding
+    | Github repository
+    }}
+}}
+
+==Overview==
+The Animation API (AnimAPI) is an event-based framework for modders to be able to set Animation variables on player avatars. This allows for conditional animations based on items that are equipped, clothing that is worn, current skill levels, or can just force an animation variable. The variables are synced across all players, including in Multiplayer.
+
+AnimAPI supports settting animations variables based on:
+* Specific items, based on Full Name. (i.e. "Base.HandTorch")
+* Weapon Types (i.e. "WeaponType.handgun")
+* Item Tags (i.e. "Craftable")
+* The hand equipping the item
+* Or can be used to simply force a variable
+
+The interface is extremely flexible, and allows you to specify a single animation variable, a table of animation variables, or can be a function for further conditional animation application.
+
+'''Note:''' AnimAPI stored data is not persistent between sessions. Instead, data is recreated at the start of a session. This is to avoid data remaining for a mod that may no longer be used (possibly causing conflicts with other animations), and to ensure the stored data is clean.
+
+AnimAPI is included as part of the '''Community Modding Projects'''.
+
+==Usage==
+To include the AnimAPI as part of your mod:
+{{CodeSnip
+| lang = lua
+| code =
+local AnimAPI = require("AnimAPI/AnimAPI")
+}}
+
+===Available Functions===
+{| class="wikitable theme-blue"
+! Function !! Description !! Parameters
+|-
+| style="padding: 10px;"| <big><code>addRightItem</code></big>
+| style="padding: 5px;"| Add an item to apply an Animation Variable on Equip with the Right Hand
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Item's Full Name (Example: "Base.Item")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addRightWeaponType</code></big>
+| style="padding: 5px;"| Add a Weapon Type to apply an Animation Variable on Equip with the Right Hand
+| style="padding: 5px;"| 
+*<code>weaponType</code> ({{JavaObject|WeaponType|package=zombie/inventory/types}}) - The type of weapon being equipped. (Example: WeaponType.handgun)
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addRightWeaponTag</code></big>
+| style="padding: 5px;"| Use an item's [[Tags_(item_parameter)]] to apply an Animation Variable on Equip with the Right Hand
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Tag (Example: "Craftable")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addLeftItem</code></big>
+| style="padding: 5px;"| Add an item to apply an Animation Variable on Equip with the Left Hand
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Item's Full Name (Example: "Base.Item")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addLeftWeaponType</code></big>
+| style="padding: 5px;"| Add a Weapon Type to apply an Animation Variable on Equip with the Left Hand
+| style="padding: 5px;"| 
+*<code>weaponType</code> ({{JavaObject|WeaponType|package=zombie/inventory/types}}) - The type of weapon being equipped. (Example: WeaponType.handgun)
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addLeftWeaponTag</code></big>
+| style="padding: 5px;"| Use an item's [[Tags_(item_parameter)]] to apply an Animation Variable on Equip with the Left Hand
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Tag (Example: "Craftable")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addTwoHandItem</code></big>
+| style="padding: 5px;"| Add an item to apply an Animation Variable on Equip with both Hands
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Item's Full Name (Example: "Base.Item")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addTwoHandWeaponType</code></big>
+| style="padding: 5px;"| Add a Weapon Type to apply an Animation Variable on Equip with both Hands
+| style="padding: 5px;"| 
+*<code>weaponType</code> ({{JavaObject|WeaponType|package=zombie/inventory/types}}) - The type of weapon being equipped. (Example: WeaponType.handgun)
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addTwoHandWeaponTag</code></big>
+| style="padding: 5px;"| Use an item's [[Tags_(item_parameter)]] to apply an Animation Variable on Equip with both Hands
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Tag (Example: "Craftable")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addItem</code></big>
+| style="padding: 5px;"| Add an item to apply an Animation Variable on Equip. Will apply regardless of hand. Can also be used for clothing.
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Item's Full Name (Example: "Base.Item")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addItemWeaponType</code></big>
+| style="padding: 5px;"| dd an item to apply an Animation Variable on Equip. Will apply regardless of hand.
+| style="padding: 5px;"| 
+*<code>weaponType</code> ({{JavaObject|WeaponType|package=zombie/inventory/types}}) - The type of weapon being equipped. (Example: WeaponType.handgun)
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>addItemTag</code></big>
+| style="padding: 5px;"| Use an item's [[Tags_(item_parameter)]] to apply an Animation Variable on Equip. Will apply regardless of hand. Can also be used for clothing.
+| style="padding: 5px;"| 
+*<code>item</code> (string) - Tag (Example: "Craftable")
+*<code>animation</code> (string|table|function) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>, '''OR'''
+**Can be a function. The function provided is passed the player and item, and is expected to return either a string or a table of variables and their values.
+|-
+| style="padding: 10px;"| <big><code>Sync</code></big>
+| style="padding: 5px;"| Manually apply an Animation Variable on a player.
+| style="padding: 5px;"| 
+*<code>player</code> ({{JavaObject|IsoPlayer|package=zombie/characters}}) - The player object
+*<code>animation</code> (string|table) - The "animation" value can be:
+**Can be a string which will set the variable to "true", '''OR'''
+**Can be a table of variables and their values to set: <code>{ ["variable"] = value, ["variable2"] = value }</code>
+|}
+
+==Examples==
+The following are some examples on using the AnimAPI, and the various '''animation''' variable types the above functions use.
+
+====Using a String====
+The easiest, but most limited, is using a string to apply an animation. This can be used if an animation requires only a single variable, no conditions, and the animation variable is intended to be either "enabled" or "disabled".
+{{CodeSnip
+| lang = lua
+| code =
+local AnimAPI = require("AnimAPI/AnimAPI")
+AnimAPI.addRightItem("Base.Torch", "Experienced")
+}}
+
+In the above, if a player equips the "Base.Torch" item (a flashlight) in their right hand, then the "Experienced" animation variable is set to "True".
+====Using a Table====
+For more advanced control, or if multiple conditions are required, a table can be added to the AnimAPI.
+{{CodeSnip
+| lang = lua
+| code =
+local AnimAPI = require("AnimAPI/AnimAPI")
+AnimAPI.addLeftItem("Base.Torch", "{ ["Experienced"] = true, ["OtherVar"] = 5 }")
+}}
+
+In the above, if a player equips the "Base.Torch" item (a flashlight), then the "Experienced" animation variable is set to "True" and "OtherVar" is set to "5".
+
+====Using a Function====
+Finally, the most powerful method of setting animation variables is via a function. This allows you to perform checks based on whatever you want, and apply the animation variables as needed.
+
+Your function will be passed the {{JavaObject|IsoPlayer|package=zombie/characters}} and the {{JavaObject|InventoryItem|package=zombie/inventory}} currently being processed.
+Your function should return either a string, or a table of variables as outlined above. If no variable should be set, then return '''nil'''.
+{{CodeSnip
+| lang = lua
+| code =
+local AnimAPI = require("AnimAPI/AnimAPI")
+local function expHandgun(character, item)
+    return ((character:getPerkLevel(Perks.Aiming) >= 3) and "Experienced") or nil
+end
+AnimAPI.addRightWeaponType(WeaponType.handgun, expHandgun)
+}}
+In the above, if a player equips a handgun in their right hand, then the '''expHandgun''' function is run. This function checks if the player's aiming is above level 3, and if so, the "Experienced" variable will be set to "True".
+
+====Using Sync====
+"Sync" is a function that allows you to set an animation variable on a player. The variable will remain until it is removed by another call to "Sync" unsetting the variable.
+This is useful if you would like to force a specific animation on a character. 
+{{CodeSnip
+| lang = lua
+| code =
+local AnimAPI = require("AnimAPI/AnimAPI")
+Events.OnCreatePlayer.Add(function(player, character)
+    if character.HasTrait("Lefty")
+        AnimAPI.Sync(character, "Lefty")
+    end
+end)
+}}
+
+In the above, if a player has the trait "Lefty", then the "Lefty" Animation Variable will be set to "True" when the player is created!
+
+'''Note:''' As mentioned, the AnimAPI state is cleared when you end a session. As such, you will need to re-apply any variables set with "Sync" when starting a game.

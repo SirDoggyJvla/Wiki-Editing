@@ -1,8 +1,8 @@
-{{Title|m_SpeedScale}}
 {{Header|Modding|Animation|AnimNodes parameters}}
 {{Page version|42.9.0}}
 {{Main|AnimNodes}}
-'''m_SpeedScale''' dictates how quickly the animation plays inside of the game. 1.0 being the default animation speed, you can adjust this to be lower such as 0.50, or faster, such as 1.50.
+{{Move|SpeedScale}}
+{{Code|m_SpeedScale}} dictates how quickly the animation plays inside of the game. 1.0 being the default animation speed, you can adjust this to be lower such as 0.50, or faster, such as 1.50.
 
 ==Example==
 {{CodeSnip

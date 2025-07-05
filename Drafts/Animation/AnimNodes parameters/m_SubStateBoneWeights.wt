@@ -1,8 +1,8 @@
-{{Title|m_SubStateBoneWeights}}
 {{Header|Modding|Animation|AnimNodes parameters}}
 {{Page version|42.9.0}}
 {{Main|AnimNodes}}
-'''m_SubStateBoneWeights''' is used to define the weight of a bone and its keyframes or descendants. By default, all bones that are not defined have the default weight of 1. If you wanted to make it, so an animation were to only play a specific set of bones; you would define the {{Code|Dummy01}} or the {{Code|Bip01}} bones (the parent armature bones) to have a weight of 0, and then specifically define all the bones you wish to play to have a weight value greater than 0.
+{{Move|SubStateBoneWeights}}
+{{Code|m_SubStateBoneWeights}} is used to define the weight of a bone and its keyframes or descendants. By default, all bones that are not defined have the default weight of 1. If you wanted to make it, so an animation were to only play a specific set of bones; you would define the {{Code|Dummy01}} or the {{Code|Bip01}} bones (the parent armature bones) to have a weight of 0, and then specifically define all the bones you wish to play to have a weight value greater than 0.
 
 ==Example==
 {{CodeSnip

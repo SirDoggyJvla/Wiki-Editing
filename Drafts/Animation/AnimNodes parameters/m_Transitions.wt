@@ -1,8 +1,8 @@
-{{Title|m_Transitions}}
 {{Header|Modding|Animation|AnimNodes parameters}}
 {{Page version|42.9.0}}
 {{Main|AnimNodes}}
-'''m_Transitions''' is one of the key components of making a complex and multi-stage animation. They are a multi-field XML parameter that can be extensively modified. It defines how the animation will transition to another animation node.
+{{Move|Transitions}}
+{{Code|m_Transitions}} is one of the key components of making a complex and multi-stage animation. They are a multi-field XML parameter that can be extensively modified. It defines how the animation will transition to another animation node.
 
 ==Example==
 {{CodeSnip
