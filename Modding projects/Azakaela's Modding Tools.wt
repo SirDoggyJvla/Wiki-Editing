@@ -1,0 +1,42 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Azakaela's Modding Tools - preview.jpeg]]
+    | p2 = [[File:Azakaela's Audio Log Generator - preview.png]]
+    | p3 = [[File:Azakaela's Distribution Maker - preview.png]]
+    | p4 = [[File:Azakaela's Journal Maker Tool - preview.png]]
+    | p5 = [[File:Azakaela's Note Generator - preview.png]]
+    | p6 = [[File:Azakaela's Recorded Media Maker Tool - preview.png]]
+    | 1 = [[File:Azakaela's Modding Tools - preview.jpeg|link=]]
+    | 2 = [[File:Azakaela's Audio Log Generator - preview.png|link=]]
+    | 3 = [[File:Azakaela's Distribution Maker - preview.png|link=]]
+    | 4 = [[File:Azakaela's Journal Maker Tool - preview.png|link=]]
+    | 5 = [[File:Azakaela's Note Generator - preview.png|link=]]
+    | 6 = [[File:Azakaela's Recorded Media Maker Tool - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2998120058
+    | Steam Workshop
+    }}
+    {{Infobox/socials
+    | github=https://github.com/SirDoggyJvla/Archive.Azakaela-s-Modding-Tools
+    | Archive
+    }}
+    {{Infobox/socials
+    | other=https://itch.io/c/3559397/project-zomboid-tools
+    | Download
+    }}
+}}
+'''Azakaela's Modding Tools''' is a set of various tools that were created by [https://steamcommunity.com/id/Azakaela Azakaela]. The tools that were made available include:
+*Recorded Media Maker Tool - to create recorded [[media]].
+*Distribution Maker - to create [[procedural distributions]].
+*Journal Maker Tool - to create journal items that can be read.
+*Note Generator - to create notes that can be read.
+*Audio Log Generator - to create audio logs that can be listened to in-game.
+
+These tools are available on [https://itch.io/c/3559397/project-zomboid-tools Azakaela's shop] (paying is not required to download them). A Steam Workshop page was also made by the author to list all their tools. Most of the source code of these tools were lost by the author and as such updating these tools might be impossible.
+
+{{Navbox modding}}
