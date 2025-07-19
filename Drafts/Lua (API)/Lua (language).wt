@@ -1,4 +1,4 @@
-{{Header|Modding}}
+{{Header|Modding|Modding guides}}
 {{Page version|42.3.1}}
 {{About|the Lua language|API to learn how to hook to Project Zomboid by using Lua|Lua (API)}}
 '''Lua''' is a language heavily used in '''Project Zomboid'''. Its knowledge is handy if one plans to do any [[modding]] or just understand how the game works. It must be noted that Project Zomboid doesn't uses the last versions of Lua but instead a modified version of [https://www.lua.org/manual/5.1/ Lua 5.1]. The page explains the general knowledge needed of the Lua language to get started in programming in Lua but for specificities regarding the API, see the [[Lua (API)]] page.
@@ -463,6 +463,43 @@ for i = 1, 5 do
 end
 }}
 
+===Custom iterators===
+You can create [https://www.lua.org/pil/7.1.html custom iterators] in Lua by defining a custom iterator function. {{Code|ipairs}} is a built-in iterator function with the following shape:
+{{CodeSnip
+| lang = lua
+| code =
+local function ipairs_iterator(t, index)
+    local nextIndex = index + 1
+    local nextValue = t[nextIndex]
+    if nextValue ~= nil then
+        return nextIndex, nextValue
+    end
+end
+
+function ipairs(t)
+    return ipairs_iterator, t, 0
+end
+}}
+
+In the same way, you can make a custom iterator function:
+{{CodeSnip
+| lang = lua
+| code =
+function my_iterator(t, index)
+    local nextIndex = index + 1
+    local nextValue = t[nextIndex]
+    if nextValue ~= nil then
+        -- make sure that every numbers are doubled
+        if type(nextValue) == "number" then 
+            nextValue = nextValue * 2
+        end
+        return nextIndex, nextValue
+    end
+end
+}}
+
+When the iterator function returns {{Code|nil}}, the iteration stops.
+
 ==While loops==
 While loops are used to repeat a block of code while a condition is true. While loops in Lua can be used to repeat a block of code until a condition is false. For example:
 {{CodeSnip
@@ -685,4 +722,5 @@ if not condition then return end
 }}
 
 
+==Navigation==
 {{Navbox modding}}

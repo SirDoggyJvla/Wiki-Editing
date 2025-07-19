@@ -1,5 +1,5 @@
 {{Header|Modding}}
-{{Page version|42.9.0}}
+{{Page version|42.10.0}}
 '''Scripts''', also refered as ''zedscripts'', are a form of modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
 
 {{Note|type=warn|Scripts are not a programming language, but mostly a custom format to define data for game elements which are parsed and cached inside the Java.}}
@@ -7,7 +7,7 @@
 ==Typing syntax==
 The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script types as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.
 
-Comments follow the Java syntax, with single line comments starting with {{Code|//}} and multiline comments starting with {{Code|/**}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks.
+Comments follow the Java multiline comment syntax, starting with {{Code|/*}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks.
 
 Key value pairs are used to define the parameters of the script elements, with the syntax {{Code|1=Key = Value,}}. The comma at the end of each key value pair line is mandatory, even for the last line in a block. Some parameters do not need to be present for a script block to work.
 
@@ -42,12 +42,19 @@ module MyModule {
 }
 }}
 
-{{Note|If you use the vanilla module, make sure to use unique naming for your script entries to not clash with other mods. One trick is to add a prefix related to your mod name.}}
+{{Note|If you use the vanilla module, make sure to use unique naming for your script entries to not clash with other mods. One trick is to add a prefix related to your mod name ({{Code|MyMod_MyItemID}}).}}
 {{Note|type=warn|The module block should not be used for [[sandbox options]] scripts.}}
 
+To reference a script object, it is suggested to always use the module prefix, which is the module name followed by a dot. For example, if you define an item in the {{Code|MyModule}} module, you can reference it as {{Code|MyModule.MyItem}}. If you don't use the module prefix, the game will search in the following order:
+* The current module.
+* The [[#Imports block|imported modules]].
+* The {{Code|Base}} module.
+* Every other module.
+
+{{Note|type=error|This behavior is inconsistent in the various script types and as such it is recommended to always use the module prefix when referencing script objects. If you are having problems, try to put your script in the {{Code|Base}} module instead of a custom one.}}
+
 ===Imports block===
-{{Unverified|Need to do some tests to verify the different configurations with and without module and in a craftRecipe example.}}
-Often in recipes and item blocks, you need to reference vanilla items or items from other mod's script modules. By importing the Base module (or any other module), you give your scripts direct access to the elements from these modules, and you can use item IDs without adding the module prefix (for example, you can use Nails instead of Base.Nails).
+By importing the Base module or any other module, you give your scripts direct access to the elements from these modules, and you can use item IDs directly without the module prefix (for example, you can use {{Code|Nails}} instead of {{Code|Base.Nails}}).
 {{CodeSnip
 | lang = Java
 | code =
@@ -59,11 +66,13 @@ module MyModule {
 }
 }}
 
+{{Note|type=warn|It is overall suggested to not use the imports blocks, but to directly use the module prefix when referencing script objects.}}
+
 ==Script types==
 Script types are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters.
 
 {| class="wikitable theme-blue"
-|+ style="white-space:nowrap" | List of AnimNodes parameters
+|+ style="white-space:nowrap" | List of Script types
 ! Parameter name !! Description
 |-
 | style="padding: 10px;text-align: center;"| [[Item (scripts)|Item]]
@@ -98,12 +107,15 @@ Script types are the different kind of elements that can be defined in scripts. 
 |-
 | style="padding: 10px;text-align: center;"| [[entity]]
 | style="padding: 5px; max-width: 500px;"| Used to define a buildable in [[Build 42]], like walls, fences, furnitures and more. It is composed of different sub-blocks.
+|-
+| style="padding: 10px;text-align: center;"| [[Sandbox options]]
+| style="padding: 5px; max-width: 500px;"| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
+|-
+| style="padding: 10px;text-align: center;"| [[Mannequin (scripts)|Mannequin]]
+| style="padding: 5px; max-width: 500px;"| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
 |}
 
-==See also==
-*{{ll|Lua Events}}
-*{{ll|Lua Objects}}
-
+==Navigation==
 {{Navbox modding}}
 
 {{ll|Category:Scripts|&#32;}}

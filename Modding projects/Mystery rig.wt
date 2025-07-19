@@ -1,5 +1,5 @@
 {{Header|Modding|Modding projects}}
-{{Page version|42.9.0}}
+{{Page version|42.10.0}}
 {{Infobox
 | title = <div></div>
 | 
@@ -7,7 +7,11 @@
     | p1 = [[File:Mystery rig - preview.png]]
     }}
     {{Infobox/socials
-    | github=https://drive.google.com/file/d/14Hm0cvU3ZKqVljP6lnA3-iA6lPM46pXg/view
+    | github=https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/Animation/Mystery's%20Rig
+    | Archive
+    }}
+    {{Infobox/socials
+    | other=https://drive.google.com/file/d/14Hm0cvU3ZKqVljP6lnA3-iA6lPM46pXg/view
     | Download
     }}
 }}

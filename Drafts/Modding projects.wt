@@ -1,0 +1,16 @@
+{{Header|Modding}}
+{{Page version|42.8.0}}
+{{About|projects related to Project Zomboid modding|PZwiki project|PZwiki:Project Modding}}
+'''Modding projects''' documents different projects created for other modders such as mods, applications, tools etc but should not document ''content'' mods that do not serve a utility to other modders. A modding project page explains what it is about and links to the project outside the wiki. If you are working on a modding project, feel free to create a page about it. If you are looking for a project to contribute to or you are searching for specific tools or projects developed by the community, refer to the [[:Category:Modding projects|modding projects category]].
+
+==Rules==
+Below are rules and guidelines when creating or editing modding project pages. These rules are in addition to the general wiki rules and guidelines ([[Help:Contents]], [[Help:Editing for beginners]], and [[Help:Style guide]]).
+*Modding project pages '''must not''' be used for advertising. Content should remain neutral, factual, and informative.
+*Pages should follow a consistent format. Refer to existing modding project pages for examples. General style guidelines:
+**Place images that are not suitable for inline use in the [[Template:Infobox/image]]. Use the project icon (if available) as the first image to serve as the page thumbnail.
+**Add links to the project using [[Template:Infobox/socials]] for a consistent appearance and automatic logo linking (Discord, Steam, GitHub...). Additional logos can be requested for the template if needed.
+**Begin with a concise summary describing the project, its purpose, and its main features.
+**Use sections to provide further details or cover specific aspects of the project.
+*Detailed guides, technical documentation, and tutorials should be hosted externally (e.g., GitHub wikis or dedicated project websites), not on the modding project page itself. Short guides are acceptable if not too long. A rule of thumb is that if the guide requires multiple sections, it should be hosted externally.
+
+{{Navbox modding}}

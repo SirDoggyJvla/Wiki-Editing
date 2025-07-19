@@ -1,0 +1,104 @@
+{{Header|Modding}}
+{{Page version|42.10.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:SteamCMD - preview.png]]
+    }}
+    {{Infobox/socials
+    | other=https://developer.valvesoftware.com/wiki/SteamCMD
+    | Valve documentation: Setting up SteamCMD
+    }}
+    {{Infobox/socials
+    | other=https://partner.steamgames.com/doc/features/workshop/implementation#SteamCmd
+    | Workshop item build configuration file
+    }}
+}}
+'''SteamCMD''' is a command-line version of the Steam client, designed for installing and updating dedicated servers for games. It can be used to download and manage game files without the need for a graphical interface, as well as installing or uploading Workshop mods. Regular users do not need to use SteamCMD and it is primarily intended for server administrators and modders.
+
+The official Valve documentation provides detailed instructions on how to setup SteamCMD. However the documentation regarding details on how to use it is lacking.
+
+==Uploading Workshop items==
+To upload or create a new workshop item, you need to create a build configuration file. SteamCMD uses this file to get the informations about the workshop item you want to upload. Such a file needs to follow a specific format:
+{{CodeSnip
+| code =
+"workshopitem"
+{
+	"appid"		"108600"
+	"publishedfileid"		"3525515977"
+	"contentfolder"		"<path to content to upload>"
+	"previewfile"		"<path to preview image file>"
+	"visibility"		"0"
+	"title"		"Test SteamCMD upload"
+	"description"		"Test SteamCMD upload"
+	"changenote"		"Test SteamCMD upload: This is a test"
+}
+}}
+
+You can find a simple workshop item example uploaded with this method [https://steamcommunity.com/sharedfiles/filedetails/?id=3525515977 here]. In this example, a gif was uploaded as the preview image, which isn't possible with the [[Uploading mods#In-game uploader|in-game uploader]].
+
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters
+! Parameter name !! Description
+|-
+| style="padding: 10px;"| <big><code>appid</code></big>
+| style="padding: 5px;"| The App ID of the game for which you are uploading the workshop item. For Project Zomboid, this is always <code>108600</code>.
+|-
+| style="padding: 10px;"| <big><code>publishedfileid</code></big>
+| style="padding: 5px;"| The unique identifier for the workshop item. This number can easily be found for an existing Workshop item in the URL of the item page, but it is also automatically added to the description when using the [[Uploading mods#In-game uploader|in-game uploader]].
+
+{{Note|To create a new workshop item, simply set this to <code>0</code>. SteamCMD will create a new item with a new ID and replace this value with the new ID after the upload for future uploads.}}
+|-
+| style="padding: 10px;"| <big><code>contentfolder</code></big>
+| style="padding: 5px;"| The path to the folder containing the content of the workshop item. This folder should contain all the files that you want to include in the workshop item. For Project Zomboid, this folder should be {{Code|Workshop/<mod folder>/Contents/mods/}} if you take the default [[mod structure]].
+|-
+| style="padding: 10px;"| <big><code>previewfile</code></big>
+| style="padding: 5px;"| The path to the preview image file for the workshop item. This file will be displayed as the thumbnail for the item in the Workshop. It can be a PNG, JPG, or GIF file.
+|-
+| style="padding: 10px;"| <big><code>visibility</code></big>
+| style="padding: 5px;"| The visibility of the workshop item. It can be set to:
+*<code>0</code> for public visibility (default),
+*<code>1</code> for friends-only visibility,
+*<code>2</code> for private (hidden) visibility.
+*<code>3</code> for unlisted visibility.
+|-
+| style="padding: 10px;"| <big><code>title</code></big>
+| style="padding: 5px;"| The title of the workshop item. This is the name that will be displayed in the Workshop.
+|-
+| style="padding: 10px;"| <big><code>description</code></big>
+| style="padding: 5px;"| The description of the workshop item. This can be a multiline text in the configuration file, for example:
+{{CodeSnip
+| code =
+"workshopitem"
+{
+	"appid"		"108600"
+	"publishedfileid"		"3525515977"
+	"contentfolder"		"<path to content to upload>"
+	"previewfile"		"<path to preview image file>"
+	"visibility"		"0"
+	"title"		"Test SteamCMD upload"
+	"description"		"Test SteamCMD upload
+This is a multiline description
+
+Hello world"
+	"changenote"		"Test SteamCMD upload: Added build file to content"
+}
+}}
+|-
+| style="padding: 10px;"| <big><code>changenote</code></big>
+| style="padding: 5px;"| The change note for the workshop item. Like for the description, this can be a multiline text in the configuration file.
+|}
+
+{{Note|You can retrieve a Workshop item informations by using a [[Wikipedia:POST (HTTP)|POST request]] from the [https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage#GetPublishedFileDetails Steam API]:
+{{CodeSnip
+| lang = bash
+| code =
+curl -X POST "https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileDetails/v1/" -H "Content-Type: application/x-www-form-urlencoded" -d "itemcount=1" -d "publishedfileids[0]=<publishedfileid>"
+}}
+''This method was retrieved from this [https://steamcommunity.com/discussions/forum/1/364043054110232987/#c601900367173718469 Steam forum post].''
+}}
+{{Note|1=The description and patch note use [https://steamcommunity.com/sharedfiles/filedetails/?id=2807121939 Steam BBCode].}}
+
+==Navigation==
+{{Navbox modding}}

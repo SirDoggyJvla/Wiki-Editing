@@ -1,0 +1,41 @@
+Hello everyone, new modding summary from me, Sir Doggy Jvla. I've been quite busy with real life lately, so my activity has been a bit reduced overall.
+
+Individual pages for the [[Unofficial Modding Discord]] and [[Unofficial Mapping Discord]] were created under [[Modding projects]] to better document what these communities are about. Below is the number of people who joined via the wiki Discord invites:
+*[[Unofficial Modding Discord]]: 665 joined since the creation of the invite (\~December). (574 in May)
+*[[Unofficial Mapping Discord]]: 179 joined since the creation of the invite (\~December). (97 in May)
+
+The mapping tools now have their own dedicated pages: [[WorldEd]], [[TileZed]] (updated), [[BuildingEd]], and [[Unofficial Mapping Tools]]. The [[Mapping]] page was also overhauled to reflect up-to-date information and now links to all relevant mapping resources on the wiki. I also created a [[File:Mapping tools - diagram.png|graphic]] to visually represent the mapping tools hierarchy.
+
+Additionally, the official [[Project Zomboid Modding Tools|Modding Tools]] now have their own page, aligning with the expanded mapping documentation.
+
+Still on mapping: the [[pzmap2dzi]] tool now has its own page, and a new wiki project, [[B42 Map]], was launched with the goal of providing an interactive online map for [[Build 42]].
+
+The [[Lua (API)]] section saw a great new addition with the creation of [[LuaDocs]], a [[modding projects|modding project]] by [[User:Albion|Albion]] that functions similarly to [[JavaDocs]] but for Lua functions and objects. Additionally, individual pages were made for both the [[Unofficial JavaDocs (Build 41)]] and [[Unofficial JavaDocs (Build 42)]], as they are distinct projects created by different contributors and require separate documentation.
+
+The former "ModData" page has been renamed to [[Mod data]], now covering both global and object mod data. These topics share the same underlying mechanisms, so merging them helps reduce redundancy across the wiki. The [[Lua event]] page was also greatly simplified, since the event listings are now automatically handled by wiki categories, reducing future maintenance.
+
+Rainmaker released a video tutorial on creating a new item in the game, which has been added to the [[Modding]] page. Speaking of the [[Modding]] page, the tutorials and resources section has been significantly restructured. Guides have been moved to their relevant field-specific pages, with most mapping-related tutorials now under the revamped [[Mapping]] section.
+
+On the [[Scripts|scripting]] side, the [[TimedAction (scripts)]] page was created to document this script type, along with a new parameter category: [[:Category:TimedAction parameters]]. The [[TimedAction (craftRecipe)]] page now specifically documents the `craftRecipe` parameter that uses [[TimedAction (scripts)]]. (Yes, it's confusing — blame the game's naming conventions.)
+
+The modeling and animation section of the [[File formats]] page was streamlined for clarity. The [[ZomboidAssetConverter]] tool now has its own dedicated page for proper documentation.
+
+Several line-by-line guide pages were renamed for consistency, following naming patterns like [[Creating a clothing mod]] and [[Creating custom animations]]. These pages were moved to [[:Category:Modding guides]], along with other instructional pages, even if they're not strict walkthroughs.
+
+[[Animation]] now has its own page, and each rig has been given its own [[modding project]] page: [[Mystery rig]], [[Paddlefruit rig]], [[Dislaik rig]], [[Throttlekitty rig]]. [[AnimNodes]] are now partially documented, though still incomplete.
+
+Other minor additions or changes that don't warrant full paragraphs:
+
+*New [[Modding projects]] pages not yet mentioned — [[Pythoid]], [[Real Life Map]], [[Moodle Framework]], [[Moodles in lua]], [[Map Mover]], [[Zombie Layer Replacer]], [[PZTools]], [[Azakaela's Modding Tools]].
+*[[Azakaela's Modding Tools]] — a suite of tools by Azakaela that were previously lost due to broken download links — have been recovered. After contacting the author and receiving permission, I created an [https://github.com/SirDoggyJvla/Archive.Azakaela-s-Modding-Tools archive] of them. However the source code of those was lost.
+*Similarly, as part of the resource reorganization on [[Modding]], I archived several modding resources that were previously scattered across Discord via this [https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding archive].
+*Discussions with the mapping community were held to find better archiving solutions for their resources. While no solution has been finalized yet, I hope proper long-term preservation methods will be adopted.
+*Due to a persistent issue, I've been unable to move pages myself and had to rely on wiki admins to handle renames. As of last week, the problem still persists.
+
+Thanks to the various users contributing to the wiki:
+
+*[[User:Albion|Albion]] — for maintaining her own [[Starlit Library]], correcting various pages, and offering her invaluable modding insights across the wiki.
+*[[User:Aoqia|Aoqia]] — for updates to [[ZomboidAssetConverter]], [[Remote debugging]], and wording improvements to [[Beautiful Java]].
+*[[User:Dhert|Dhert]] — for creating the [[AnimAPI]] page (initially meant as a subpage to [[Community Modding Projects]]). However, due to the nature of the [[Modding projects]], technical documentation for tools will instead be moved to the GitHub wiki.
+*[[User:Imnotpolar|Imnotpolar]] — for wording fixes in the [[Debug mode]] page.
+*And of course, the wiki admins, who continually clean up formatting, typos, and issues we miss.

@@ -1,0 +1,25 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Map Mover - preview.png]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Unjammer/PZ_MoveMap
+    | GitHub repository
+    }}
+    {{Infobox/socials
+    | other=https://drive.google.com/file/d/1PRsZfmE3Ov7U9Nc_mSBv62fMFROpIIct/view
+    | Google Drive download link
+    }}
+    {{Infobox/socials
+    | other=https://discord.com/channels/136501320340209664/279303619277488128/946068961085231124
+    | Original upload from Unjammer
+    }}
+}}
+{{Stub}}
+'''Map Mover''' is an application used to move cells in maps.
+
+{{Navbox modding}}

@@ -1,0 +1,54 @@
+<noinclude>
+{{Documentation|doc=
+
+==Usage==
+{{tll|Navbox modding}}
+
+{{Navbox modding}}
+
+==See also==
+
+{{Navbox see also}}
+
+{{Translation guide|<syntaxhighlight lang="html">
+{{#switch: {{{1|}}}
+<!-- title -->
+| modding = Modding
+| #default = [[Category:Incorrect template usage]]
+}}
+</syntaxhighlight>}}
+
+}}
+{{ll|Category:Navbox}}</noinclude><includeonly>{{Navbox
+| title = {{ll|:Category:Modding|{{tt|name=Navbox modding|default=Modding|arg1=modding}}}}
+| theme = blue
+| content = {{Navbox/row
+  | group = {{ll|Modding#Communities}} community
+  | list = [[Discord|The Indie Stone Discord]] • [[Modding projects]] • [[Unofficial Mapping Discord]] • [[Unofficial Modding Discord]]
+}}{{Navbox/row
+  | group = {{ll|Modding#Modding guides}} guides
+  | list = [[Common modding issues]] • [[Creating a clothing mod]] • [[Creating a flier mod]] • [[Creating a hair mod]] • [[Creating custom animations]] • [[Creating custom voices]] • [[Creating dynamic radio channels]] • [[Decompiling game code]] • [[File formats]] • [[Game files]] • [[Installing mods]] • [[Lua (language)|Lua]] • [[Mod optimization]] • [[Mod structure]] • [[Resolving problems with mods]] • [[Testing mods in multiplayer]] • [[Uploading mods]] • [[Using mods]]
+}}{{Navbox/row
+  | group = {{ll|Modding}} resources
+  | list = [[Animation]] • [[Food types]] • [[Item tag]] • [[mod.info]] • [[Startup parameters]] • [[Translations]] • [[workshop.txt]]
+}}{{Navbox/row
+  | group = {{ll|Scripts}}
+  | list = [[CraftRecipe]] • [[Evolvedrecipe (scripts)|Evolvedrecipe]] • [[Fixing (scripts)|Fixing]] • [[Fluid (scripts)|Fluid]] • [[Item (scripts)|Item]] • [[Model (scripts)|Model]] • [[Multistagebuild (scripts)|Multistagebuild]] • [[Recipe (scripts)|Recipe]] • [[Sandbox options]] • [[Sound (scripts)|Sound]] • [[TimedAction (scripts)|TimedAction]] • [[Vehicle (scripts)|Vehicle]]
+}}{{Navbox/row
+  | group = {{ll|Lua (API)}}
+  | list = [[Decompiling game code]] • [[Game time]] • [[Java object]] • [[JavaDocs]] • [[Keyboard]] • [[LuaDocs]] • [[Lua event]] • [[Lua object]] • [[Mod data]] • [[PersistentOutfitID]] • [[Procedural distributions]] • [[Remote debugging]] • [[Umbrella (modding)|Umbrella]]
+}}{{Navbox/row
+  | group = {{ll|Mapping}}
+  | list = [[Adding new tiles]] • [[BuildingEd]] • [[Map.info]] • [[Room definitions and item spawns]] • [[Tile properties]] • [[Tiledefs used by mods]] • [[TileZed]] • [[Vehicle zones]] • [[WorldEd]]
+}}{{Navbox/row
+  | group = {{ll|Animation}}
+  | list = [[AnimNodes]] • [[Dislaik rig]] • [[Mystery rig]] • [[Paddlefruit rig]] • [[Throttlekitty rig]] • [[PerformingAction]]
+}}{{Navbox/row
+  | group = {{ll|Modding}} tools
+  | list = [[Animation Viewer]] • [[Attachment Editor]] • [[BuildingEd]] • [[CartoZed]] • [[Imgui]] • [[IntelliJ IDEA]] • [[ItemZed]]{{sup|outdated|red}} • [[LootZed]] • [[Remote debugging]] • [[TileZed]] • [[TranslationZed]]{{sup|outdated|red}} • [[Visual Studio Code]] • [[WordZed]] • [[WorldEd]]
+}}{{Navbox/row
+  | group = {{ll|Modding projects}}
+  | list = [[Azakaela's Modding Tools]] • [[B42 Map]] • [[Background Framework]] • [[Beautiful Java]] • [[Community Modding Projects]] • [[DebugMenu]] • [[Dislaik rig]] • [[Doggy's Library]] • [[Easy Distributions API]] • [[Elyon Lib]] • [[Events Plus API]] • [[JB ASSUtils]] • [[JB Max Capacity Override]] • [[KATTAJ1 Clothes Core]] • [[Leaf]] • [[Location Identifier Framework]] • [[LuaDocs]] • [[Magazine API]] • [[Map Mover]] • [[Mod Update and Alert System]] • [[Modix]] • [[Moodle Framework]] • [[Moodles in lua]] • [[Mystery rig]] • [[Paddlefruit rig]] • [[Project Zomboid Loot Analyzer]] • [[Project Zomboid Script Support]] • [[Pythoid]] • [[PZ AI agent]] • [[PZEventDoc]] • [[PZEventStubs]] • [[Pzmap2dzi]] • [[PZTools]] • [[Real Life Map]] • [[Starlit Library]] • [[TchernoLib]] • [[Throttlekitty rig]] • [[Umbrella (modding)|Umbrella]] • [[Unofficial JavaDocs (Build 41)]] • [[Unofficial JavaDocs (Build 42)]] • [[Unofficial Mapping Discord]] • [[Unofficial Mapping Tools]] • [[Unofficial Modding Discord]] • [[Zed Script]] • [[Zombie Layer Replacer]] • [[Zomboid Decompiler]] • [[ZomboidAssetConverter]] • [[Zomdroid]]
+}}
+|id = modding
+}}</includeonly>

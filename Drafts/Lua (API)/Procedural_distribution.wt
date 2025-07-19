@@ -232,7 +232,7 @@ Accessing a container distribution in-game can be achieved with [[LootZed]] whic
 
 
 ==Problem with the system==
-Due to the way the game works, adding new items to a [[#Distributions|distribution list]] will ultimately increase the mean amount of items in this container. For a small demonstration of the issue, see the following image which is a simulation of a distribution list getting more and more entries by following a normal distribution of loot for different amount of rolls:
+Due to the way the game works, adding new items to a [[#Distributions|distribution list]] will ultimately increase the mean amount of items in this container. For a small demonstration of the issue, see the following image which is a simulation of a distribution list getting more and more entries by following a distribution of loot for different amount of rolls:
 
 [[File:Procedural distribution - system problem.png|800px]]
 
@@ -2750,5 +2750,8 @@ Below is the full list of distributions as well as their different tags.
 |-
 | ZippeeClothing || 4 || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
 |}
+
+==See also==
+*[[PZTools]] - a tool to explore the loot distribution of the game.
 
 {{Navbox modding}}
