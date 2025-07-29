@@ -1,0 +1,26 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Mod Options - preview.png]]
+    | p2 = [[File:Mod Options - example.jpeg]]
+    | 1 = [[File:Mod Options - preview.png|link=]]
+    | 2 = [[File:Mod Options - example.jpeg|link=]]
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2169435993
+    | Workshop page
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/workshop/filedetails/discussion/2169435993/4260919351480715709/
+    | Guide for modders
+    }}
+}}
+{{About|the unofficial mod option framework for [[Build 41]]|[[Build 42]]'s native equivalent|ModOptions}}
+'''Mod Options''' is a framework which allows modders to add options to their mods for users. These kind of options should not be used to change game mechanics such as gameplay that affects all the players, but only to change user settings such as graphics, sound, keybinds, etc. This mod exists for [[Build 41]] but is now natively present in the game since [[Build 42]] in the form of the [[ModOptions]] API, with a different implementation.
+
+{{Note|type=error|You should NOT use mod options for options that will alter gameplay. Something which should affect every players should utilize [[sandbox options]]! Mod options can be used for player UI settings for example.}}
+
+{{Navbox modding}}

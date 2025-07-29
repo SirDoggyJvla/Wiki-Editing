@@ -1,0 +1,47 @@
+{{Header|Modding|Animation}}
+{{Page version|42.10.0}}
+{{Main|Animation}}
+'''AnimSets''' are collections of [[AnimState]]s, usually associated to a specific character or creature, such as the [[player]], [[zombie]]s or [[animal]]s. AnimSets are associated to an [[ActionGroup]], which defines transitions for [[AnimState]]s in the form of [[ActionState]]s.
+
+{{Note|type=warn|While custom AnimSets can be created, they require their custom [[ActionGroup]] counterpart to work, which is not currently supported.}}
+
+==Available AnimSets==
+<div class="list-columns" style="column-width:250px; max-width:900px;">
+*<code>animal-editor</code>
+*<code>buck</code>
+*<code>chick</code>
+*<code>cockerel</code>
+*<code>cow</code>
+*<code>cowcalf</code>
+*<code>doe</code>
+*<code>ewe</code>
+*<code>fawn</code>
+*<code>hen</code>
+*<code>lamb</code>
+*<code>mannequin</code>
+*<code>mouse</code>
+*<code>pig</code>
+*<code>piglet</code>
+*<code>player</code>
+*<code>player-avatar</code>
+*<code>player-editor</code>
+*<code>player-vehicle</code>
+*<code>rabbit</code>
+*<code>rabkitten</code>
+*<code>raccoon</code>
+*<code>ram</code>
+*<code>rat</code>
+*<code>turkey</code>
+*<code>turkeypoult</code>
+*<code>zombie</code>
+*<code>zombie-crawler</code>
+</div>
+
+==See also==
+*[[Animation guide]] - a step by step guide on how to create animations.
+*[[AnimState]] - a specific state an entity can be in, such as walking, running, or idle.
+*[[AnimNodes]] - defines the animations that can be played in an AnimState and its properties and conditions.
+*[[ActionGroup]] - defines transitions for [[AnimState]]s in the form of [[ActionState]]s.
+*[[ActionState]] - defines a specific transition between two [[AnimState]]s or special properties of an [[AnimState]].
+
+{{Navbox modding}}

@@ -1,0 +1,86 @@
+{{Header|Modding|Animation}}
+{{Page version|42.10.0}}
+{{Main|ActionState}}
+'''Transition files''' are used to define the transition conditions between different [[AnimState]]s from an [[AnimSet]]. They are a needed component of an [[ActionState]] and appear in the form of a [[File formats#XML|XML]] file by defining conditions of a transition. If no transition exists, the game won't allow the transition from one state to another.
+
+{{Note|type=error|Custom transition files are not supported yet.}}
+
+==Structure==
+{{Unverified|Some parameters may not be accurate or missing.}}
+Transition files are located in an [[ActionState]] folder in the form of an [[File formats#XML|XML]] file. Multiple transitions can be defined in a single file, and each transition needs to have a condition.
+
+The transition files if unique in an [[ActionState]] folder are usually named with a generic name {{Code|transitions.xml}}. If multiple transition files are present, they are named with a specific name, usually linking to the AnimState the transition goes to, such as {{Code|to_walk.xml}} or {{Code|to_idle.xml}}.
+
+If multiple {{Code|transitions}} are defined, the structure will start with:
+{{CodeSnip
+| lang = xml
+| code =
+<transitions x_include="../defaultTransitions.xml"> <!-- The include is optional here -->
+    <transition>
+        ...
+    </transition>
+</transitions>
+}}
+
+For a single transition, the structure jumps directly to the transition block:
+{{CodeSnip
+| lang = xml
+| code =
+<transition>
+    ...
+</transition>
+}}
+
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for the <code>transition</code> block
+! Parameter name !! Description
+|-
+| style="padding: 10px;text-align: center;"| {{Code|transitionTo}}
+| style="padding: 5px; max-width: 500px;"| AnimState that this transition will lead to. This is the name of the AnimState as defined in the AnimSet.
+|-
+| style="padding: 10px;text-align: center;"| {{Code|conditions}}
+| style="padding: 5px;"| Defines the conditions that need to be met for this transition to occur. This takes up the form of a animation boolean variable check from the entity either with a {{Code|isFalse}} or {{Code|isTrue}} condition. For example:
+{{CodeSnip
+| lang = xml
+| retrieved = true
+| version = 42.10.0
+| line = 5
+| source = ProjectZomboid/media/actiongroups/rabbit/eating/transitions.xml
+| code =
+<conditions>
+    <isFalse>isAnimalEating</isFalse>
+</conditions>
+}}
+
+Multiple conditions can be defined in the same block, and they will all need to be met for the transition to occur:
+{{CodeSnip
+| lang = xml
+| retrieved = true
+| version = 42.10.0
+| line = 4
+| source = ProjectZomboid/media/actiongroups/rabbit/trailer/to_walk.xml
+| code =
+<conditions>
+    <isTrue>bMoving</isTrue>
+    <isFalse>bPathfind</isFalse>
+</conditions>
+}}
+|-
+| style="padding: 10px;text-align: center;"| {{Code|ConditionsBounds}}
+| style="padding: 5px; max-width: 500px;"| Possibly used only in [[AnimZed]].
+|-
+| style="padding: 10px;text-align: center;"| {{Code|FromPoint}}
+| style="padding: 5px; max-width: 500px;"| Possibly used only in [[AnimZed]].
+|-
+| style="padding: 10px;text-align: center;"| {{Code|ToPoint}}
+| style="padding: 5px; max-width: 500px;"| Possibly used only in [[AnimZed]].
+|}
+
+==See also==
+*[[Animation guide]] - a step by step guide on how to create animations.
+*[[AnimSet]] - a collection of [[AnimState]]s associated to a specific character or creature.
+*[[AnimState]] - a specific state an entity can be in, such as walking, running, or idle.
+*[[AnimNodes]] - defines the animations that can be played in an AnimState and its properties and conditions.
+*[[ActionGroup]] - a collection of [[ActionState]]s.
+
+{{Navbox modding}}

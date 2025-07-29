@@ -1,0 +1,19 @@
+{{Header|Modding}}
+{{Page version|42.10.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:AnimZed - blog screenshot.png]]
+    }}
+    {{Infobox/socials
+    | custom=[[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]]
+    }}
+}}
+{{Future}}
+'''AnimZed''' is a tool used by [[The Indie Stone]] to create and edit [[animation]]s for the game. Not a lot of informations are available about it for now, but the last informations given indicate a release during [[Build 42]]. The last blog post about it was [[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]] on August 29, 2024.
+
+The tool is expected to allow easier managing of [[AnimNodes]], [[AnimState]]s and [[ActionState]]s. Hints in the game files indicate that AnimZed would be directly linked to the running game, notably to allow recording animations and to visually indicate how each animations played during the recording (the various plots visible in the blog post screenshot).
+
+==Navigation==
+{{Navbox modding}}

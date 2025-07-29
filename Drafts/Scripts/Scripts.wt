@@ -112,7 +112,7 @@ Script types are the different kind of elements that can be defined in scripts. 
 | style="padding: 5px; max-width: 500px;"| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
 |-
 | style="padding: 10px;text-align: center;"| [[Mannequin (scripts)|Mannequin]]
-| style="padding: 5px; max-width: 500px;"| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
+| style="padding: 5px; max-width: 500px;"| Used to define a mannequin type, notably used in [[Mapping]] to create custom mannequins in the world.
 |}
 
 ==Navigation==

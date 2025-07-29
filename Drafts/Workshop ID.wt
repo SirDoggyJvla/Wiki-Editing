@@ -1,0 +1,10 @@
+{{Header|Modding}}
+{{Page version|42.10.0}}
+The {{Code|Workshop ID}} is a unique identifier for your mod on the Steam Workshop. It is used to manage and reference your mod within the game and on the Steam platform. It is essential for [[Uploading mods|publishing your mod]] and ensuring that it can be found and downloaded by other players ([[Using mods]]) or servers ([[SteamCMD]]).
+
+To find this ID, you can:
+*Check the URL of your mod on the Steam Workshop. The ID is the number at the end of the URL.
+*Find it at the bottom of the mod's page if it was uploaded from the [[Uploading mods#In-game uploader|in-game uploader]].
+
+==Navigation==
+{{Navbox modding}}

@@ -14,11 +14,11 @@ This template is used to create a row in the infobox with social media links. It
     }}
     {{Infobox/socials
     | steam=https://steamcommunity.com
-    | Workshop page
+    | Steam Workshop page
     }}
     {{Infobox/socials
     | github=https://github.com/
-    | Github repository
+    | GitHub repository
     }}
     {{Infobox/socials
     | bitbucket=https://bitbucket.org
@@ -30,6 +30,15 @@ This template is used to create a row in the infobox with social media links. It
     }}
     {{Infobox/socials
     | other=https://www.google.com
+    | Other link
+    }}
+    {{Infobox/socials
+    | custom=[[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]]
+    | Other link
+    }}
+    {{Infobox/socials
+    | custom=[[zomboidweb:blog|Tiddy Up Time]]
+    | icon=File:The Indie Stone logo.png
     | Other link
     }}
 }}
@@ -55,19 +64,22 @@ This template is used to create a row in the infobox with social media links. It
 : Link of a X page. This will add a X logo to the row.
 ;{{Code|other}}
 : Link of any other page. This will add a generic link logo to the row.
-;{{Code|description}}
+;{{Code|custom}}
+: Use a custom text without a forced link. This can be used to link directly to a wikipedia page, a blog post or another wiki page. The icon won't be clickable.
+;{{Code|icon}}
+: ''Used alongside {{Code|custom}}''. Use a custom icon instead of the generic link logo. Needs to be the file name in the wiki (i.e. {{Code|File:Link-icon.webp}}). The icon is forced resized to 25px width and height.
+;{{Code|1}}
 : The description of the link. This will be displayed next to the logo and in hypertext with the link.
-
 }}
 
 
-</noinclude><includeonly><div class="infobox-section">
-<div>{{#if:{{{discord|}}}|[[File:Discord-Logo.png|link={{{discord}}}|25px]] [{{{discord}}} {{#replace:{{{1|}}}|\n|}}]|
+{{ll|Category:Templates}}</noinclude><includeonly><div class="infobox-section">
+<div>{{#if:{{{discord|}}}|[[File:Discord-Logo-Color.png|link={{{discord}}}|25px]] [{{{discord}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{steam|}}}|[[File:Steam logo.png|link={{{steam}}}|25px]] [{{{steam}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{github|}}}|[[File:Github-Logo.png|link={{{github}}}|25px]] [{{{github}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{bitbucket|}}}|[[File:Bitbucket-Logo.webp|link={{{bitbucket}}}|25px]] [{{{bitbucket}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{X|}}}|[[File:X-Logo.png|link={{{X}}}|25px]] [{{{X}}} {{#replace:{{{1|}}}|\n|}}]|
-    {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{{other}}}|25px]] [{{{other}}} {{#replace:{{{1|}}}|\n|}}]
-}} }} }} }} }} }}</div>
+    {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{{other}}}|25px]] [{{{other}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{custom|}}}|[[{{#if:{{{icon|}}}|{{{icon}}}|File:Link-icon.webp}}|25px]] {{{custom}}} 
+}} }} }} }} }} }} }}</div>
 </div></includeonly>
-    

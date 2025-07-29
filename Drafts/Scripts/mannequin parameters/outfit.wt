@@ -1,0 +1,15 @@
+{{Title|outfit (mannequin)}}
+{{Header|Modding|Scripts|mannequin parameters}}
+{{Page version|42.10.0}}
+{{About|outfit parameter of [[mannequin (scripts)|mannequin scripts]]|outfits in the game|Outfit}}
+The {{Code|outfit}} parameter is used to define the outfit used by the mannequin. The available outfits are defined in the {{Code|media/clothing/clothing.xml}} file. See [[Outfit]] for the full list of outfits available in the game.
+
+==Example==
+{{CodeSnip
+| lang = lua
+| code =
+outfit = BoxingBlue,
+}}
+
+==Navigation==
+{{Navbox modding}}

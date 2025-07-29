@@ -1,0 +1,33 @@
+{{Header|Modding|Animation}}
+{{Page version|42.10.0}}
+{{Main|Animation}}
+'''AnimState''' is a specific state an entity can be in, such as walking, running, or idle. An [[AnimState]] is part of an [[AnimSet]], which is a collection of AnimStates and are themselves collections of [[AnimNodes]]. An AnimState is associated to an [[ActionState]], which defines the transition conditions between different AnimStates as well as the properties of this state.
+
+For example, the [[cow]] [[AnimSet]] has the following AnimStates:
+*<code>attack</code>
+*<code>deadbody</code>
+*<code>death</code>
+*<code>eating</code>
+*<code>falldown</code>
+*<code>followwall</code>
+*<code>hitreaction</code>
+*<code>idle</code>
+*<code>onground</code>
+*<code>onhook</code>
+*<code>pathfind</code>
+*<code>trailer</code>
+*<code>walk</code>
+*<code>zone</code>
+
+Each of these AnimStates have one or more [[AnimNodes]] to trigger various animations.
+
+{{Note|type=warn|While custom AnimStates can be created, they require their custom [[ActionState]] counterpart to work, which is not currently supported.}}
+
+==See also==
+*[[Animation guide]] - a step by step guide on how to create animations.
+*[[AnimSet]] - a collection of [[AnimState]]s associated to a specific character or creature.
+*[[AnimNodes]] - defines the animations that can be played in an AnimState and its properties and conditions.
+*[[ActionGroup]] - defines transitions for [[AnimState]]s in the form of [[ActionState]]s.
+*[[ActionState]] - defines a specific transition between two [[AnimState]]s or special properties of an [[AnimState]].
+
+{{Navbox modding}}

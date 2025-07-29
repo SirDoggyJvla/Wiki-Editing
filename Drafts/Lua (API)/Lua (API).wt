@@ -1,14 +1,14 @@
 {{Header|Modding}}
-{{Page version|42.0.2}}
-{{About|the Lua API|language to learn how to code with Lua|Lua (language)}}
-Project Zomboid allows modders to program functionalities via a Java implementation of '''Lua''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods from Lua scripts.
+{{Page version|42.10.0}}
+{{About|the Lua API|a guide to learn how to code with Lua|Lua (language)}}
+Project Zomboid allows modders to program functionalities via a Java implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods from Lua scripts.
 
-It is highly suggested to take note of the [[Java documentation]] and possibly [[Decompiling game code]] to make your life easier when it comes to finding functions and understanding their inner working to more easily program your mod.
+It is highly suggested to take note of the [[JavaDocs]] and possibly [[Decompiling game code|decompiling the game code]] to make your life easier when it comes to finding functions and understanding their inner working to more easily manipulate the game's Lua. Alternatively, an unofficial project called [[LuaDocs]] acts like a JavaDocs but for the Lua API.
 
 ==How do Java classes work in the Lua API==
-Lua acts as a bridge to the Java, thanks to Project Zomboid's API. It means every time you try to run functions on a Java object from Lua, there are more operations happening than simply running a Lua function on a Lua object, which is also the source of performance impacts (also see [[Mod optimization]]).
+Lua acts as a bridge to the Java, thanks to Project Zomboid's API. Every time you try to run functions on a Java object from Lua, there are more operations happening than simply running a Lua function on a Lua object, which is also the source of performance impacts (see [[Mod optimization]]).
 
-There are many ways to access the various class objects in the game, sometimes easy and sometimes not so easy. The usual way is to utilize [[Lua Events]] which will output the various class objects they refer to. If you take for example [[OnZombieUpdate]] which runs for every single zombies, every zombie update tick:
+There are many ways to access the various class objects in the game, sometimes easy and sometimes not so easy. The usual way is to utilize [[Lua event]]s which will output the various class objects they refer to. Take for example [[OnZombieUpdate]] which runs for every single zombies and every zombie update tick:
 {{CodeSnip
 | lang = lua
 | code =
@@ -19,11 +19,7 @@ end
 Events.OnZombieUpdate.Add(OnZombieUpdate)
 }}
 
-In this case, the variable <code>zombie</code> is an [https://projectzomboid.com/modding/zombie/characters/IsoZombie.html IsoZombie] with various methods that can be used on it. Sometimes it involves creating one yourself with a [[#Constructor]] or directly retrieving the list of objects.
-
-Some classes can be instantiated, which is the case with IsoZombie here, but there is no point to [https://projectzomboid.com/modding/zombie/GameTime.html GameTime] to be instantiated. Classes that don't get instantiated can be accessed with other means, like <code>LuaManager.GlobalObject</code> methods (for GameTime: [https://projectzomboid.com/modding/zombie/Lua/LuaManager.GlobalObject.html#getGameTime() getGameTime()]). This will be explained more in detail further.
-
-Class objects from Lua side sort of act similarly to [[Lua objects]] which are technically tables, but they are not actual tables! The subsections below will explain every part which can be present for a Java object in its Java documentation.
+In this case, the variable {{Code|zombie}} is an [https://projectzomboid.com/modding/zombie/characters/IsoZombie.html IsoZombie] with various methods that can be used on it. Sometimes it involves creating one yourself with a [[#Constructor]] or directly retrieving the list of objects. Most classes can have multiple instances, like in the case of IsoZombie.
 
 ===Parent and subclasses===
 Most Java classes you'll encounter will be a subclass to another class, and might also be the parent to subclasses. For example, if we continue on the example of IsoZombie, its parent classes are:
@@ -40,49 +36,64 @@ java.lang.Object
 As such, IsoZombie will inherit most of the fields and methods from its parent classes.
 
 ===Nested classes===
-A subclass inherits another class, while a nested class is defined directly in a class and as such has access to even private methods and fields within its original class. It doesn't matter too much from Lua side, but there's notable nested classes which are often used, such as the [https://projectzomboid.com/modding/zombie/characters/skills/PerkFactory.Perks.html <code>PerkFactory.Perks</code>] for example.
+A subclass inherits another class, while a '''nested class''' is defined directly in a class and as such has access to even private methods and fields from its original class. In the [[JavaDocs]], nested classes are listed in the “Nested Class Summary” section of the class page. Nested classes are written as <code>ClassName.NestedClassName</code>.
 
-A subclass will inherit the nested classes from its parent classes. The nested classes are listed in the “Nested Class Summary” alongside their inherited nested classes.
+{{Note|This principle is not too important to understand to work with the Lua API and mostly a technical detail, however there are some notable nested classes which are often used, such as the [https://projectzomboid.com/modding/zombie/characters/skills/PerkFactory.Perks.html PerkFactory.Perks] for example.}}
 
-===Exposed fields===
-Fields are simple variables associated to its own instance of a class. Usually, fields in a [[Lua (language)#Tables|Lua table]] can be accessed this way.
+===Instance and static===
+Java classes can have two types of methods and fields: instance methods and static methods. To run, instance methods require an instance of the class, while static methods can be run without an instance. 
+
+===Public and private===
+Java classes can have methods and fields which are either public or private. Public methods and fields can be accessed from outside the class, while private methods and fields can only be accessed from within the class itself.
+
+===Methods and fields===
+Java classes can have methods and fields which are respectively functions and variables associated to the class if private or unique to an instance of the class.
+
+==Exposed elements==
+Not all the Java classes and methods are exposed to the Lua API. In the [[JavaDocs]], there is no indication of which classes are exposed but for the classes that are exposed, it shows only the methods that are exposed. To call a static method, you need to use the syntax {{Code|ClassName.methodName(args...)|lang=lua}}, while for instance methods, you need to use the syntax {{Code|instance:methodName(args...)|lang=lua}}. This directly refers to the Lua syntax for calling [[Lua objects]] methods with the colon {{Code|:|lang=lua}} operator passing {{Code|self|lang=lua}} (the instance here) as the first argument, while the dot {{Code|.|lang=lua}} operator is used for static methods.
+
+For example [https://projectzomboid.com/modding/zombie/characters/IsoPlayer.html#getLocalPlayerByOnlineID(short) {{Code|getLocalPlayerByOnlineID(ID)|lang=lua}}] can be ran without an instance of IsoPlayer ({{Code|IsoPlayer.getLocalPlayerByOnlineID(ID)|lang=lua}}), while [https://projectzomboid.com/modding/zombie/characters/IsoPlayer.html#getForname() {{Code|getForname()}}] needs an instance of IsoPlayer to be ran ({{Code|player:getForname()|lang=lua}}).
+
+[https://projectzomboid.com/modding/zombie/Lua/LuaManager.GlobalObject.html LuaManager.GlobalObject] defines global methods which are exposed in peculiar way, not following the usual way to use them described above. Static methods listed in the JavaDocs page for LuaManager.GlobalObject are called simply by like global Lua functions, such as [https://projectzomboid.com/modding/zombie/Lua/LuaManager.GlobalObject.html#getCell() {{Code|getPlayer()|lang=lua}}] or [https://projectzomboid.com/modding/zombie/Lua/LuaManager.GlobalObject.html#getPlayer() {{Code|getCell()|lang=lua}}].
+
+{{Note|Class objects from the Java are not the same as [[Lua objects]]! They are not tables, but rather direct links to the Java classes. As such, they cannot be used as Lua objects and do not have the same properties as Lua objects.}}
+
+===Accessing fields===
+Public static fields of exposed classes are exposed to Lua in a global table of the same name as the class.
 {{CodeSnip
 | lang = lua
 | code =
-local myTable = {
-    hello = "Hello", -- this is a field
-    world = "World", -- this is another field
-}
-
--- accessing the world key
-local value = myTable.world
+local DEATH_MUSIC_NAME = IsoPlayer.DEATH_MUSIC_NAME
 }}
 
-However, for the Java objects, they require bigger operations to be accessed (see [[#Accessing exposed fields]]).
-
-Each Java object can inherit the exposed fields of their parent classes. All the fields which can be accessed for an object are listed in “Field Summary” and the subsections of “Fields inherited from ...”.
-
-===Exposed methods===
-Methods are tied to a Java object and, like for fields, a Java object will inherit the methods of their parent class. Most methods will have instance methods but can also have static methods.
-
-Static methods are tagged with the term “static” in their “Modifier and Type” section in the “Method Summary” on the Javadoc. The difference with an instance method is that it doesn't need an instance of this class to be used.
-
-Take the example of [https://projectzomboid.com/modding/zombie/characters/IsoPlayer.html IsoPlayer] with the instance method [https://projectzomboid.com/modding/zombie/characters/IsoPlayer.html#getMoveSpeed() <code>getMoveSpeed()</code>] and the static method [https://projectzomboid.com/modding/zombie/characters/IsoPlayer.html#getPlayers() <code>getPlayers()</code>]:
+Fields are different as they are not directly exposed but can be accessed by using reflection. It involves a fairly complex set of operations, and can be very expensive.
 {{CodeSnip
 | lang = lua
 | code =
---- INSTANCE METHOD EXAMPLE ---
--- retrieve the client IsoPlayer instance
-local player = getPlayer() -- a LuaManager.GlobalObject method
-
--- retrieve the IsoPlayer instance movespeed
-local moveSpeed = player:getMoveSpeed() -- instance method, notice the ":"
-
-
---- STATIC METHOD EXAMPLE ---
--- retrieve the list of IsoPlayers
-local players = IsoPlayer.getPlayers() -- static method, notice the "."
+local function getZombieJavaField(object, field)  -- (IsoZombie instance, "strength")
+    local offset = string.len(field)
+    for i = 0, getNumClassFields(object) - 1 do
+        local m = getClassField(object, i)
+        if string.sub(tostring(m), -offset) == field then
+            return getClassFieldVal(object, m)
+        end
+    end
+    return nil -- no field found
+end
 }}
+This can access any field declared by the class, regardless of whether it is private or public.
+
+Alternatively, [[Starlit Library (Modding project)]] is a library which simplifies the access of fields on [[Java objects]]. Thanks to this library, accessing fields can simply be done in the following way:
+{{CodeSnip
+| lang = lua
+| code =
+-- with <object> an instance of a Java class
+-- and <field> the field you want to access
+local fieldValue = <object>.<field>
+}}
+Accessing fields this way is also much less expensive than the above method due to the library's heavy usage of caching.
+
+{{Note|type=error|Accessing the inherited fields of a class from one of its subclass is not possible currently.}}
 
 ===Constructor===
 Constructors are used to instantiate a Java class. This is done with the following way:
@@ -95,7 +106,7 @@ ClassName.new(args...)
 The <code>ClassName</code> of course needs to be the name of the Java class, so for example IsoZombie, while the arguments <code>args</code> are specific to the Java class.
 
 If you want to instantiate an IsoZombie, you can use its associated [https://projectzomboid.com/modding/zombie/characters/IsoZombie.html#<init>(zombie.iso.IsoCell) constructor].
-{{
+{{CodeSnip
 | lang = lua
 | code =
 -- create the IsoZombie instance
@@ -112,40 +123,22 @@ This IsoZombie instance can be used to create a corpse, for example with the fol
 square:addCorpse(IsoDeadBody.new(zombie), false) -- note the use of IsoDeadBody constructor here
 }}
 
-The different ways of creating Java objects will be listed in their respective [[Java objects]] pages.
-
-==Lua objects==
-{{Main|Lua objects}}
-'''Lua objects''' are tools defined in the Lua API to allow modders to interact with different aspects of the game.
-{{Underconstruction|section=true}}
-
-==Accessing exposed fields==
-Accessing exposed fields involves a fairly complex set of operations. 
+===Example===
 {{CodeSnip
 | lang = lua
 | code =
-local function getZombieJavaField(object, field)  -- (IsoZombie instance, "strength")
-    local offset = string.len(field)
-    for i = 0, getNumClassFields(object) - 1 do
-        local m = getClassField(object, i)
-        if string.sub(tostring(m), -offset) == field then
-            return getClassFieldVal(object, m)
-        end
-    end
-    return nil -- no field found
-end
-}}
+--- INSTANCE METHOD EXAMPLE ---
+-- retrieve the client IsoPlayer instance
+local player = getPlayer() -- a LuaManager.GlobalObject method
 
-Alternatively, the [[Starlit Library (Modding project)]] is a library which simplifies the access of exposed fields on [[Java objects]]. Thanks to this library, accessing exposed fields can simply be done in the following way:
-{{CodeSnip
-| lang = lua
-| code =
--- with <class> a Java object, instanced or static for static fields
--- and <field> the field you want to access
-local fieldValue = <class>.<field>
-}}
+-- retrieve the IsoPlayer instance movespeed
+local moveSpeed = player:getMoveSpeed() -- instance method, notice the ":"
 
-<span style="font-size: 120%; font-weight: bold; color: red;">Important! </span> Accessing the inherited fields of a parent class from a class is not possible currently.
+
+--- STATIC METHOD EXAMPLE ---
+-- retrieve the list of IsoPlayers
+local players = IsoPlayer.getPlayers() -- static method, notice the "."
+}}
 
 ==Where to start==
 Programming with the Lua (API) can be done in many ways, but in most cases it will involve using a [[Lua event]] to run your code at specific moments of the game. As such, it's suggested to check out the [[Lua event#Current|events]] which are available to see where you can get started.
@@ -154,6 +147,17 @@ When this didn't do much for you, another thing you might be interested to is to
 
 Alternatively, various guides available on the Wiki will explain how to do certain actions.
 
+===Community libraries===
+There are various community libraries which can help you with your Lua modding. For a full list, see the [[Modding projects]] in the [[:Category:Libraries|libraries category]].
+
+==See also==
+*[[Lua (language)]] - the programming language used in Project Zomboid.
+*[[Lua objects]] - classes defined in the Lua.
+*[[Lua event]] - events which can be used to run Lua code at specific moments of the game.
+*[[LuaDocs]] - an unofficial project which acts like a JavaDocs but for the Lua API.
+*[[ModOptions]] - the native mod options API introduced in [[Build 42]].
+
+==Navigation==
 {{Navbox modding}}
 
 {{ll|Category:Guides}}

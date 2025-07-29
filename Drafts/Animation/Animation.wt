@@ -1,18 +1,104 @@
 {{Header|Modding}}
-{{Page version|42.9.0}}
+{{Page version|42.10.0}}
 '''Animation''' in Project Zomboid consist in creation custom animations and add them to the game or replace existing ones. The process involves both animating a skeleton of the character model, usually called a ''rig'', exporting it to a [[File formats#Modeling and animation formats|format]] that the game can read (preferably Filmbox {{Code|.fbx}}) and defining an [[AnimNodes|AnimNode]] which will be used to play the animation in-game and define its properties.
-
-Animation files need to be located inside {{Code|media/anims_X}} while [[AnimNodes]] need to  be located inside {{Code|media/AnimSets}}.
 
 ==Available rigs for animating==
 These rigs are rigs which can be used to create animations.
-*[[Paddlefruit's rig]] - a modern rig which is designed to be used in Blender 4.0 and above, with IK and FK controls available.
-*[[Mystery rig]] - a Blender IK rig.
-*[[Dislaik rig]] - less sophisticated rig. With and without IK available.
-*[[Throttlekitty rig]] - a Maya rig.
+*[[Paddlefruit rig]] - a modern rig which is designed to be used in Blender 4.0 and above, with IK and FK controls available.
+*[[Mystery rig]] – a Blender IK rig.
+*[[Dislaik rig]] – less sophisticated rig. With and without IK available.
+*[[Throttlekitty rig]] – a Maya rig.
+
+==Animation structure==
+
+Animation files are stored in the {{Code|media/anims_X}} folder in the form of FBX files, or DirectX files (see [[File formats#Modeling and animation formats|Modeling and animation formats]]).
+
+An [[AnimSet]] is a collection of [[AnimState]]s and are usually associated to an entity such as the player, a zombie or an animal. [[AnimState]]s define a specific state the entity can be in, such as walking, running, or idle. For an AnimState, [[AnimNodes]] are used to define the animations that can be played in that state, and for which conditions like the current speed of the entity playing a different animation, or the player being injured having a different stance.
+
+In parallel, the game uses [[ActionGroup]]s which are associated to their own AnimSet, and are composed of [[ActionState]]s associated to a specific [[AnimState]], to define transition conditions between the different states.
+
+[[File:Animation structure.png|center]]
+
+===Example===
+Below is the animation structure of the [[cow]]:
+{{CodeBox
+| class = blue
+| id = 1
+| {{CodeSnip
+    | lang = lua
+    | retrieved = true
+    | version = 42.10.0
+    | code =
+media/
+├── actiongroups/
+│   └── cow/
+│       ├── attack/
+│       │   └── ...
+│       ├── death/
+│       │   └── ...
+│       ├── eating/
+│       │   └── ...
+│       ├── falldown/
+│       │   └── ...
+│       ├── followwall/
+│       │   └── ...
+│       ├── hitreaction/
+│       │   └── ...
+│       ├── idle/
+│       │   └── ...
+│       ├── onground/
+│       │   └── ...
+│       ├── onhook/
+│       │   └── ...
+│       ├── pathfind/
+│       │   └── ...
+│       ├── trailer/
+│       │   └── ...
+│       ├── walk/
+│       │   └── ...
+│       └── zone/
+│           └── ...
+├── anims_X/
+│   └── Cow/
+│       └── ...
+├── AnimSets/
+│   └── cow/
+│       ├── attack/
+│       │   └── ...
+│       ├── deadbody/
+│       │   └── ...
+│       ├── death/
+│       │   └── ...
+│       ├── eating/
+│       │   └── ...
+│       ├── falldown/
+│       │   └── ...
+│       ├── followwall/
+│       │   └── ...
+│       ├── hitreaction/
+│       │   └── ...
+│       ├── idle/
+│       │   └── ...
+│       ├── onground/
+│       │   └── ...
+│       ├── onhook/
+│       │   └── ...
+│       ├── pathfind/
+│       │   └── ...
+│       ├── trailer/
+│       │   └── ...
+│       ├── walk/
+│       │   └── ...
+│       └── zone/
+│           └── ...
+└── ...
+    }}
+}}
 
 ==See also==
-*[[Mod structure]] - explanation of the structure of a mod.
-*[[Animation guide]] - a step by step guide on how to create animations.
+*[[Creating custom animations]] – a step-by-step guide on how to create animations.
+*[[Game files]] – accessing game files, including animations.
+*[[Mod structure]] – explanation of the structure of a mod.
 
+==Navigation==
 {{Navbox modding}}

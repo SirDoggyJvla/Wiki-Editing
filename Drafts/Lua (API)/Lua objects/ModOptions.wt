@@ -1,22 +1,21 @@
 {{Header|Modding|Lua objects}}
-{{Page version|42.8.0}}
-{{Improve|Some bugs need confirmation if present for recent versions.}}
-The <code>ModOptions</code> [[Lua object]] from [[PZAPI]] is a new tool since [[Build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc.
-
-This page will explain how to use this tool for your own mod, what's available and what's possible to do with its current features. When creating a new option section, it will appear in the category "MODS" in the game options.
+{{Page version|42.10.0}}
+{{About|[[Build 42]]'s native mod options|the unofficial mod option framework for [[Build 41]]|Mod Options}}
+The {{Code|ModOptions}} [[Lua object]] from [[PZAPI]] is a new tool since [[Build 42]] which allows modders to easily add their own options for their mods such as keybinds, tick boxes, color pickers etc. The mod options created from this API will appear in the game options under the "MODS" category, allowing users to easily access them and change their values.
 
 Currently the available types of options are:
-*Text entry - string option.
-*Tickbox - boolean option.
-*Multiple tickbox - multiple booleans for a single option.
-*Combobox (dropdown menu) - chose between multiple default choices.
-*Color picker - chose a color.
-*Keybind - chose a keybind.
-*Slider - chose a value in-between a minimum and maximum, with a step.
-*Button - the user can click on it to trigger a function.
+*'''Text entry''' - string option.
+*'''Tickbox''' - boolean option.
+*'''Multiple tickbox''' - multiple booleans for a single option.
+*'''Combobox''' (dropdown menu) - chose between multiple default choices.
+*'''Color picker''' - chose a color.
+*'''Keybind''' - chose a keybind.
+*'''Slider''' - chose a value in-between a minimum and maximum, with a step.
+*'''Button''' - the user can click on it to trigger a function.
 
-<code>PZAPI.ModOptions</code> location in game folder:
+{{Code|PZAPI.ModOptions}} location in the [[Game files|game folder]]:
 {{CodeSnip
+| lang = lua
 | code =
 ProjectZomboid/
 └── media/
@@ -26,36 +25,20 @@ ProjectZomboid/
                 └── ModOptions.lua
 }}
 
-Mod Options are saved in a file at the following path:
-{{CodeSnip
-| code =
-%USERPROFILE%\Zomboid\Lua\modOptions.ini
-}}
-
-{{Note|type=error|You should NOT use Mod options for modification options that will alter gameplay. Something which should affect every players should utilize [[sandbox options]]! Mod options can be used for player UI settings for example.}}
-
-==Creating your option section==
-Creating your own mod option section involves the following function:
-
+Mod Options are saved inside the [[Game files#Cache folder|cache folder]] in the following file:
 {{CodeSnip
 | lang = lua
-| line = true
-| start = 233
-| source = ModOptions.lua
-| path = ProjectZomboid\media\lua\client\PZAPI
-| retrieved = true
-| version = 42.0.2
 | code =
-function PZAPI.ModOptions:create(modOptionsID, name)
-    name = name or modOptionsID
-    local options = Options:new(modOptionsID, name)
-    table.insert(PZAPI.ModOptions.Data, options)
-    PZAPI.ModOptions.Dict[modOptionsID] = options
-    return options
-end
+<cache folder>/
+└── Lua/
+    └── modOptions.ini
 }}
 
-To create a new mod option section in "MODS", simply do:
+{{Note|Mod options are only used in [[Lua|Lua]] mods and are not directly used for [[Scripts]], [[Mapping]], etc. This page considers that you are familiar enough with [[Lua (language)]] and [[Lua (API)]] to understand the code snippets shown here.}}
+{{Note|type=error|You should NOT use mod options for options that will alter gameplay. Something which affects every player should utilize [[sandbox options]]! Mod options can be used for player UI settings for example.}}
+
+==Creating your option section==
+Creating your own mod option section involves the function {{Code|PZAPI.ModOptions:create(modOptionsID, name)}}. To create a new mod option section in "MODS", simply do:
 {{CodeSnip
 | lang = lua
 | code =
@@ -63,7 +46,7 @@ local myExampleOption = PZAPI.ModOptions:create("myExampleOptionID","Example opt
 }}
 {{Note|{{Code|"myExampleOptionID"}} needs to be unique to your mod ! You should probably make the name unique too.}}
 
-[[Mod optimization#Caching|Caching]] the creation of the option allows for an easier access to it to continue below this code and add your own options. If at any moment you need to access your mod option section or to access another mod options, you can simply do:
+[[Mod optimization#Caching|Caching]] the creation of the option allows for an easier access to it to continue below this code and add your own options. However if at any moment you need to access your mod option section or to access another mod options, you can simply do:
 {{CodeSnip
 | lang = lua
 | code =
@@ -89,7 +72,6 @@ local myTextEntryOption = myExampleOption:addTextEntry(id, name, value, _tooltip
 }}
 
 ===Text entry===
-{{Improve|section=True|Needs confirmation for the bug described in the note.}}
 '''Text entry''' allows the user to write a string in a text box.
 
 {{CodeSnip
@@ -108,7 +90,7 @@ function Options:addTextEntry(id, name, value, _tooltip)
 
 Accessing value function: <code>option:getValue()</code>.
 
-{{Note|type=error|In version 42.0.2, leaving the text entry to blank and saving the mod options will break your game. If that happens, you need to delete <code>%USERPROFILE%\Zomboid\Lua\modOptions.ini</code>.}}
+{{Note|type=error|Since version 42.0.2, confirmed up-to 42.10.0, leaving the text entry to blank and saving the mod options will break your game. If that happens, you need to replace the empty string instance with text manually inside the <code>modOptions.ini</code> file. See this [https://theindiestone.com/forums/index.php?/topic/85637-42100-rev30053-modoptions-textentry-empty-strings-stop-the-game-from-loading/ bug report] for more information.}}
 
 ===Tickbox===
 '''Tickbox''' allows the user to chose a boolean value.
@@ -189,7 +171,7 @@ myComboOption:addItem("option4",false)
 *<code>name</code> (<code>string</code>) - name of this combobox entry.
 *<code>_isSelected</code> (<code>boolean</code>, OPTIONAL) - defines which entry is the default one. You should chose only one but chosing multiple should not cause any problem.
 
-Accessing value function: the value given is the option order. When adding an option, it was added in a specific order and it's this order which is retrieved. As such having an array which allows you to easily access the option chosen is better, for example:
+The value given by the combobox is the index of the entry based on the order it was added to the combobox. As such having an array which allows you to easily access the option chosen is better, for example:
 {{CodeSnip
 | lang = lua
 | code =
@@ -210,7 +192,7 @@ for i = 2,#FONT_LIST do
 end
 
 
--- when accessing that value, you can access the exact font which was chosen by doing
+-- later when accessing that value, you can access the exact font which was chosen by doing
 local fontIndex = comboBox:getValue()
 local fontName = FONT_LIST[fontIndex]
 }}
@@ -256,7 +238,7 @@ function Options:addKeyBind(id, name, key, _tooltip)
 
 Accessing value function: <code>option:getValue()</code>.
 
-To detect when a keybind was pressed, see:
+To detect when a keybind was pressed, see the associated [[Lua event]]s:
 *[[OnKeyKeepPressed]]
 *[[OnKeyPressed]]
 *[[OnKeyStartPressed]]
@@ -284,7 +266,6 @@ function Options:addSlider(id, name, min, max, step, value, _tooltip)
 Accessing value function: <code>option:getValue()</code>.
 
 ===Button===
-{{Improve|section=True|Needs confirmation for the bug described in the note.}}
 '''Button''' allows the user to trigger an action. This is more complex than the previous option types and its uses are way more niche.
 
 {{CodeSnip
@@ -310,12 +291,14 @@ The <code>onclickfunc</code> function receives the arguments this way:
 {{CodeSnip
 | lang = lua
 | code =
-function(target,buttonObject,args1,args2,args3,args4)
+function(target,buttonObject,arg1,arg2,arg3,arg4)
+    -- do anything
+end
 }}
 
-<code>buttonObject</code> is the button informations, meaning you can change it when clicking on it, such as its color. You can access the UI the button is in for example, allowing you modify the UI when clicking the button.
+<code>buttonObject</code> is the button informations, meaning you can change it when clicking on it, such as its color. You can access the UI the button is in for example, allowing you to modify the UI when clicking the button such as changing its color.
 
-{{Note|type=error|In version 42.0.2, the <code>onclickfunc</code> function currently has <code>args3</code> and <code>args4</code> equal to <code>arg3</code> in <code>Options:addButton(id, name, tooltip, onclickfunc, target, arg1, arg2, arg3, arg4)</code>, meaning <code>arg4</code> can't be accessed for now.}}
+{{Note|type=error|Since version 42.0.2, confirmed up-to 42.10.0, the {{Code|onclickfunc}} function has its arguments not properly passed with {{Code|arg4}} being {{Code|arg3}} instead. See this [https://theindiestone.com/forums/index.php?/topic/85639-42100-rev30053-modoptions-button-option-not-passing-the-right-parameter-to-the-button-callback/ bug report] for more information.}}
 
 ==Visual presentation==
 Various functions can be used to visually organize your mod options:
@@ -323,8 +306,10 @@ Various functions can be used to visually organize your mod options:
 *<code>addDescription(<string>)</code> - adds a description.
 *<code>addSeparator()</code> - adds a horizontal separation bar.
 
+These can be added at any point between your option definitions to visually organize your options.
+
 ==Apply function==
-You can link various actions to settings for your mod options being changed. For that you can simply link yourself to the <code>apply</code> function of your option section.
+You can link various actions to settings for your mod options being changed. For that you can simply hook to the <code>apply</code> function of your option section.
 {{CodeSnip
 | lang = lua
 | code =
@@ -334,7 +319,7 @@ myExampleOption.apply = function(self)
 end
 }}
 
-This can be used to update some variables on your side after changing the mod options. This can also be utilized in a very smart way with the example in [[#Accessing option values]].
+This can be used to update some variables on your side after changing the mod options. This can for example be used to cache the option values elsewhere with the method described in the section [[#Alternative accessing method: module]].
 
 ==Example==
 This code snippet utilizes the different options in subsections of the mod options section.
@@ -461,7 +446,6 @@ A way to not have to do all these steps is by using a [[Lua (language)#Modules|m
 | path = media\lua\client
 | version = 42.4.1
 | code =
--- file ExampleModOptions.lua
 local config = {}
 
 --- "UNIQUEID" should be replaced with your own unique ID. Possibly best to just use your mod's ID
@@ -505,11 +489,10 @@ And to access the values:
 | code =
 local config = require("ExmampleModOptions")
 -- Then:
-local option = config.ID
+local option = config["modOptionID"]
 }}
 
 If we take our [[#Example|options example]] from before, we could simply access the values of each options by doing:
-
 {{CodeSnip
 | lang = lua
 | line = true
@@ -539,4 +522,5 @@ Events.OnKeyPressed.Add(OnKeyPressed)
 ==External links==
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3386860561 ModOptions Example] - a small mod which modders can use as an example on how to add their own mod options.
 
+==Navigation==
 {{Navbox Lua objects}}

@@ -1,0 +1,15 @@
+{{Header|Modding|Animation}}
+{{Page version|42.10.0}}
+{{Main|Animation}}
+'''ActionGroup'''s are collections of [[ActionState]]s that define transition behavior between different [[AnimState]]s and are associated with a specific [[AnimSet]].
+
+{{Note|type=error|Custom ActionGroups are not supported yet.}}
+
+==See also==
+*[[Animation guide]] - a step by step guide on how to create animations.
+*[[AnimSet]] - a collection of [[AnimState]]s associated to a specific character or creature.
+*[[AnimState]] - a specific state an entity can be in, such as walking, running, or idle.
+*[[AnimNodes]] - defines the animations that can be played in an AnimState and its properties and conditions.
+*[[ActionState]] - defines a specific transition between two [[AnimState]]s or special properties of an [[AnimState]].
+
+{{Navbox modding}}
