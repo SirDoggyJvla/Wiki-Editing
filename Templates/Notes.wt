@@ -1,0 +1,45 @@
+<noinclude>
+{{Documentation|doc =
+This {{ll|PZwiki:Mboxes|mbox}} is used to display a note box on the page.
+
+==Usage==
+===Parameters===
+;<code>1</code> or <code>content</code> {{sup|required}}
+:The content of the Note.
+;<code>type</code>
+:The type of the Note. Can be case-insensitive <code>info</code>, <code>warn</code> or <code>error</code>. Default to <code>info</code>.
+
+==Examples==
+*{{tll|Note|This is content of the Note.}}
+{{Note|This is content of the Note.}}
+*{{tll|Note|type{{=}}warn|This is a warning Note.}}
+{{Note|type=warn|This is a warning Note.}}
+*{{tll|Note|type{{=}}error|This is an error Note.}}
+{{Note|type=error|This is an error Note.}}
+
+{{Translation guide}}
+
+==See also==
+*{{ll|PZwiki:Mboxes}}
+*{{ll|mw:Template:Note}}
+}}
+{{ll|Category:Mbox}}
+</noinclude><includeonly>{{Mbox
+| background = {{#switch: {{lc: {{{type|info}}} }}
+  | info = var(--background-message-info)
+  | warn = var(--background-message-warn)
+  | error = var(--background-message-error)
+  | #default = {{Error|translation}}
+  }}
+| color = {{#switch: {{lc: {{{type|info}}} }}
+  | info = #0030df
+  | warn = #ffcc33
+  | error = #cc3333
+  }}
+| sign = {{#switch: {{lc: {{{type|info}}} }}
+  | info = [[File:LightBulbBlue.png|link=Template:Note{{lcs}}]]
+  | warn = [[File:LightBulbYellow.png|link=Template:Note{{lcs}}]]
+  | error = [[File:LightBulbRed.png|link=Template:Note{{lcs}}]]
+  }}
+| content = {{{1|{{{content|{{Error|param_empty|content}}}}}}}}
+}}</includeonly>

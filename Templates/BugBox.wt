@@ -1,0 +1,31 @@
+<noinclude>
+{{Documentation|doc=
+{{tll|BugBox}} is used to display a note box on the page regarding a specific bug.
+
+;Produces
+{{BugBox|This is a bug which wasn't reported on the forums.|version=41.78.16|hidecat=true}}
+{{BugBox|This is a known bug which was reported on the forums.|version=42.10.0|link=85637-42100-rev30053-modoptions-textentry-empty-strings-stop-the-game-from-loading/|hidecat=true}}
+
+==Parameters==
+;<code>1</code>{{sup|required}}
+:Description of the bug.
+;<code>version</code>{{sup|required}}
+:Game version the bug was last found on.
+;<code>link</code>{{sup|required}}
+:Last part of the link to the bug report on [https://theindiestone.com/forums/index.php?/forum/85-bug-reports/ The Indie Stone forums]. Only include the end of the URL after <code>/topic/</code>.
+;<code>hidecat</code>
+:If set to <code>true</code>, the page will not be added to the "{{ll|:Category:Articles with known bugs|Articles with known bugs}}" category.
+}}
+
+==See also==
+*{{ll|PZwiki:Mboxes}}
+
+{{ll|Category:Mbox}}
+</noinclude><includeonly>{{Mbox
+<!-- | background =  -->
+| color = #aecb7f
+| sign = [[File:Insect_Aphid.png|link=Template:Note{{lcs}}]]
+| content = {{{1}}}
+| note = Present on version {{{version}}}. {{#if:{{{link|}}}|You can find the report of this bug [https://theindiestone.com/forums/index.php?/topic/{{{link}}} here].|This bug was not reported on the [https://theindiestone.com/forums/index.php?/forum/85-bug-reports/ forums].}}
+| cat = 
+}}{{#if:{{{nocat|}}}| | {{ll|Category:Articles with known bugs}}}}</includeonly>

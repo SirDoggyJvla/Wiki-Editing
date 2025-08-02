@@ -1,8 +1,8 @@
 {{Header|Modding}}
-{{Page version|42.8.1}}
+{{Page version|42.10.0}}
 '''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]]. Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
 
-You can access the existing [[Knox Country]] map from the [[Project Zomboid Map Project]].
+You can access the existing [[Knox Country]] map via the [[Project Zomboid Map Project]].
 
 ==Mapping tools==
 Official tools exist for mapping but at the moment are not available for [[Build 42]] yet. They are available in the [[Project Zomboid Modding Tools]] on Steam but are outdated. You can access them from the latest uploaded version on the [https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ Project Zomboid forum]. Below are each mapping tools available for Project Zomboid:
@@ -16,6 +16,14 @@ Official tools exist for mapping but at the moment are not available for [[Build
 {{Stub|section=true}}
 Your map needs to be accompanied by a [[map.info]] file which will define its informations.
 
+==Building pools==
+[[The Indie Stone]] and the community have created several building pools, which are collections of buildings that can be used in custom maps. These pools can be used as a reference or directly in your own maps, as long as you credit the original authors when asked for credit. Below is the list of available building pools:
+*[[Building Pool (official)]]
+*[[Building Pool (Blackbeard)]]
+*[[Building Pool (okkydoo)]]
+*[[Building Pool (Dylan)]]
+*[[Community Architect]]
+
 ==See also==
 *[https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ The Indie Stone forum post with the latest mapping tools]
 *[[Room definitions and item spawns]]
@@ -28,10 +36,30 @@ Your map needs to be accompanied by a [[map.info]] file which will define its in
 |-
 ! Tutorial !! Description !! Author !! Last updated
 |-
+| [https://theindiestone.com/forums/index.php?/topic/38329-customizing-loot-4151/ Customizing Loot (41.51+)]
+| A comprehensive guide to creating custom [[procedural distributions]] for custom maps.
+| RingoD123 (The Indie Stone)
+| {{#dateformat:2022-07|my}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831139140632656 source])
+|-
+| [https://theindiestone.com/forums/index.php?/topic/38819-how-to-create-annotated-stash-maps-416/ How to create Annotated Stash Maps (41.6+)]
+| A guide to creating annotated stash maps for Project Zomboid.
+| RingoD123 (The Indie Stone)
+| {{#dateformat:2022-01|my}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831234602995823 source])
+|-
 | [https://theindiestone.com/forums/index.php?/topic/21951-the-one-stop-tilezed-mapping-shop/ Official The Indie Stone TileZed mapping guide]
 | A comprehensive guide to using [[TileZed]], the mapping tool for Project Zomboid.
 | RingoD123 (The Indie Stone)
 | {{#dateformat:2021-12|my}} ([https://discord.com/channels/136501320340209664/279303619277488128/1391104002250244231 source])
+|-
+| [https://theindiestone.com/forums/index.php?/topic/22577-how-to-create-lootable-maps-for-build-416/ How to Create Lootable Maps for Build 41.6+]
+| A guide to creating lootable maps for Project Zomboid.
+| RingoD123 (The Indie Stone)
+| {{#dateformat:2021-12|my}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831096417321191 source])
+|-
+| [https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ Quick Guide: How To Mod The Loot Distribution System (Distributions.lua, ProceduralDistributions.lua)]
+| A guide to modding the loot distribution system.
+| RingoD123 (The Indie Stone)
+| {{#dateformat:2021-07-15|my}}
 |-
 | [https://www.youtube.com/watch?v=FNvTHgY__zg How to make a map in Project Zomboid Build 41]
 | A video tutorial on how to make a map in Project Zomboid Build 41. Also noted as valid for [[Build 40]] by the author.
@@ -74,6 +102,11 @@ Your map needs to be accompanied by a [[map.info]] file which will define its in
 | An archive of buildings made by the community, which you can use in your own maps or as a reference. Originally referenced in a [https://theindiestone.com/forums/index.php?/topic/22018-all-player-made-building-archives-verison-3-472022/ forum post], most buildings are now available on the Steam Workshop.
 | BlackBeard
 | {{#dateformat:2022-03-07|ymd}}
+|-
+| [https://theindiestone.com/forums/index.php?/topic/38185-new-room-definitions-4165/ New Room Definitions (41.65+)]
+| List of the new room definitions available in [[Build 41|Build 41.65]].
+| RingoD123 (The Indie Stone)
+| {{#dateformat:2021-12-30|my}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831264164446319 source])
 |-
 | [https://drive.google.com/file/d/12gGjdu89LATwgqZELu4EFfh47XlxwWyz/view Build 40 vegetation map]
 [https://drive.google.com/file/d/1yNOj2HtOG1MNaBMENLXDru6ecacm8Qjv/view Build 40 base map]
@@ -125,4 +158,5 @@ Your map needs to be accompanied by a [[map.info]] file which will define its in
 |class=blue
 }}
 
+==Navigation==
 {{Navbox modding}}

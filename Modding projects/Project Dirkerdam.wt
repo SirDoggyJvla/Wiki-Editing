@@ -1,0 +1,35 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Project Dirkerdam - preview.jpeg]]
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2977898120
+    | Workshop page
+    }}
+    {{Infobox/socials
+    | gdrive=https://drive.google.com/file/d/1E1VG15EMmqsyJnkf4qlTQi4_TtUWijAs/view
+    | Source files (password: <code>madebyDirkie</code>)
+    }}
+}}
+{{Quote|text="Dirkerdam was a fun project, but I don’t have the time or energy to update it to B42 or make the changes it needs. It was a lot of work, and I’d love for it to live on.
+ 
+With that in mind, I’m sharing the project files publicly so that anyone can use them. Please don’t abuse the access. Feel free to use parts of the project, update the map entirely, or make any changes you’d like.
+ 
+All I ask is that you keep me credited—beyond that, there are no restrictions.
+ 
+As it was a hobby project, there is no documentation and it’s a bit of a mess (sorry).
+ 
+When it comes to my tile pack, the same applies. They need to be updated, but I won’t be doing it. If you want to take parts or update it entirely, feel free—but again, please don’t abuse it."|author=Dirk}}
+'''Project Dirkerdam''' was a custom map created by DaddyDirkieDirk for [[Build 41]] which will not see further work from the original creator due to lack of time and energy. The project files were made public by Dirk so that anyone can use them, update them, or make changes as they see fit, as long as he is credited. This serves as a source of ideas and inspiration for the community and provides an important [[Mapping#Building pools|pool of buildings]] to pick from.
+
+==Gallery==
+{{Wip|section=true}}
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}

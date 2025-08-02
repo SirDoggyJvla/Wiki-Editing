@@ -29,17 +29,23 @@ This template is used to create a row in the infobox with social media links. It
     | X post
     }}
     {{Infobox/socials
+    | forum=https://theindiestone.com/forums/
+    | The Indie Stone forum
+    }}
+    {{Infobox/socials
+    | gdrive=https://drive.google.com
+    | Google Drive link
+    }}
+    {{Infobox/socials
     | other=https://www.google.com
     | Other link
     }}
     {{Infobox/socials
     | custom=[[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]]
-    | Other link
     }}
     {{Infobox/socials
-    | custom=[[zomboidweb:blog|Tiddy Up Time]]
+    | custom=[[zomboidweb:blog|Project Zomboid blog]]
     | icon=File:The Indie Stone logo.png
-    | Other link
     }}
 }}
 
@@ -62,6 +68,10 @@ This template is used to create a row in the infobox with social media links. It
 : Link of a Bitbucket repository. This will add a Bitbucket logo to the row.
 ;{{Code|X}}
 : Link of a X page. This will add a X logo to the row.
+;{{Code|forum}}
+: Link of an official [[The Indie Stone]] forum page. This will add the forum pie logo to the row.
+;{{Code|gdrive}}
+: Link of a Google Drive page. This will add a Google Drive logo to the row.
 ;{{Code|other}}
 : Link of any other page. This will add a generic link logo to the row.
 ;{{Code|custom}}
@@ -79,7 +89,9 @@ This template is used to create a row in the infobox with social media links. It
     {{#if:{{{github|}}}|[[File:Github-Logo.png|link={{{github}}}|25px]] [{{{github}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{bitbucket|}}}|[[File:Bitbucket-Logo.webp|link={{{bitbucket}}}|25px]] [{{{bitbucket}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{X|}}}|[[File:X-Logo.png|link={{{X}}}|25px]] [{{{X}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{forum|}}}|[[File:favicon.png|link={{{forum}}}|25px]] [{{{forum}}} {{#replace:{{{1|}}}|\n|}}]|
+    {{#if:{{{gdrive|}}}|[[File:Google Drive icon.webp|link={{{gdrive}}}|25px]] [{{{gdrive}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{{other}}}|25px]] [{{{other}}} {{#replace:{{{1|}}}|\n|}}]|
     {{#if:{{{custom|}}}|[[{{#if:{{{icon|}}}|{{{icon}}}|File:Link-icon.webp}}|25px]] {{{custom}}} 
-}} }} }} }} }} }} }}</div>
+}} }} }} }} }} }} }} }} }}</div>
 </div></includeonly>

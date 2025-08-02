@@ -1,0 +1,97 @@
+<noinclude>
+{{Documentation|doc =
+{{Protection}}
+This template is used to create a collapsible {{ll|PZwiki:Mboxes|mbox}}.
+
+This is a [[mw:Manual:Collapsible elements|collapsible element]]. You can toggle it by clicking the "◥" sign in the top-right corner.
+
+When collapsed, the image, content, and note will be hidden, only the title will be displayed.
+
+==Usage==
+Do not use this template directly, use one of the types listed in {{ll|PZwiki:Mboxes}} instead.
+
+===Syntax===
+<pre>
+{{Mbox
+| background = 
+| color = 
+| sign = 
+| title = 
+| content = 
+| note = 
+| cat = 
+| id = 
+| collapsed = 
+}}
+</pre>
+
+===Parameters===
+;<code>background</code>
+:Background color. Default to <code>#f8f9fa</code>.
+;<code>color</code>
+:Left bar color. Default to <code>#eaecf0</code>.
+;<code>sign</code>
+:Mbox image. Default to <code><nowiki>[[File:Question_On.png|link=]]</nowiki></code>.
+;<code>title</code>
+:Mbox title. Displayed in bold and large font.
+;<code>content</code>
+:Normal text.
+;<code>note</code>
+:Bottom text. Displayed in italic and small font.
+;<code>cat</code>
+:Category name, omit <code>Category:</code> prefix.
+;<code>id</code>
+:Id for each Mbox to collapse the content. Should be unique. Recommended to use the template name. The mbox will not be collapsible if not specified.
+;<code>collapsed</code>
+:Initial state of the content. Will be collapsed if set to <code>true</code>. Only works when <code>id</code> is specified.
+
+==Example==
+<pre>
+{{Mbox
+| title = This is an Mbox.
+| content = This is content of the Mbox.
+| note = This is a note of the Mbox.
+| id = example
+| collapsed = true
+}}
+</pre>
+{{Mbox
+| title = This is an Mbox.
+| content = This is content of the Mbox.
+| note = This is a note of the Mbox.
+| id = example
+| collapsed = true
+}}
+
+{{Translation guide}}
+
+==See also==
+*{{ll|PZwiki:Mboxes}}
+
+==Attribution==
+*[https://oxygennotincluded.wiki.gg/zh/wiki/Template:%E9%80%9A%E7%9F%A5%E6%A1%86 Mbox on Chinese Oxygen Not Included Wiki]
+}}
+{{ll|Category:Metatemplates}}
+{{ll|Category:Mbox}}
+</noinclude><includeonly><div class="mbox" {{#if:{{{background|}}}|style="background-color: {{{background}}};"}}>
+  <div {{#if:{{{color|}}}|style="background-color: {{{color}}};"}}></div>
+  <div {{#if:{{{id|}}}
+    | class="mw-collapsible {{yesno|{{{collapsed|}}}|yes=mw-collapsed|def=[[Category:Incorrect template usage]]}}" id="mw-customcollapsible-mbox-{{{id}}}"
+    }}>{{#if:{{{sign|}}}|{{{sign}}}|[[File:Question_On.png|link=|class=notpageimage]]}}</div>
+  {{#if:{{{id|}}}
+  | <div class="toggle mw-customtoggle-mbox-{{{id}}}" title="{{int:show}}/{{int:hide}}"></div>
+  }}
+  <div>
+    {{#if:{{{title|}}}
+    | <div style="font-weight: bold; padding-right: 1em;">{{{title}}}</div>
+    }}
+    <div {{#if:{{{id|}}}
+      | class="mw-collapsible {{yesno|{{{collapsed|}}}|yes=mw-collapsed|def=}}" id="mw-customcollapsible-mbox-{{{id}}}"
+      }}>{{#if:{{{content|}}}|{{{content}}}}}</div>
+    {{#if: {{{note|}}}
+    | <div {{#if:{{{id|}}}
+        | class="mw-collapsible {{yesno|{{{collapsed|}}}|yes=mw-collapsed|def=}}" id="mw-customcollapsible-mbox-{{{id}}}"
+        }} style="font-size: 80%; font-style: italic;">{{{note}}}</div>
+    }}
+  </div>
+</div>{{#if:{{{cat|}}}|[[Category:{{{cat}}}]]}}</includeonly>

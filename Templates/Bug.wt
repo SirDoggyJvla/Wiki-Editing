@@ -1,0 +1,47 @@
+<noinclude>
+{{Documentation|doc=
+The {{tll|Bug}} template is used to indicate a feature is itself or is affected by a bug. The template produces a superscripted {{Bug|nocat=True}} and adds the page to {{ll|:Category:Articles with known bugs}}.
+==Usage==
+<syntaxhighlight lang="wikitext">
+{{Bug|description|version|link}}
+</syntaxhighlight>
+Example: {{Bug|description|version|link|nocat=True}}
+
+===Parameters===
+;<code>1</code> {{sup|required}}
+:Description of the bug.
+;<code>2</code> {{sup|required}}
+:Version the bug was last found on.
+;<code>3</code>
+:Optional link to the bug report on [https://theindiestone.com/forums/index.php?/forum/85-bug-reports/ The Indie Stone forums]. Only include the end of the URL after <code>/topic/</code>.
+:E.g., {{Code|43261-read-here-first-bug-reporting-guideformatting/}} instead of {{Code|https://theindiestone.com/forums/index.php?/topic/43261-read-here-first-bug-reporting-guideformatting/}}.
+;<code>nocat</code>
+:Determines whether to add the article to the "{{ll|:Category:Articles with known bugs|Articles with known bugs}}" category. Leaving blank will add the page to the category.
+
+{{Translation guide|<syntaxhighlight lang="wikitext">
+{{#switch: {{{1|}}}
+| bug = Bug
+| default_tooltip = No bug description provided.
+| unknown_version = Unknown version
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>}}
+
+==See also==
+*{{ll|Template:Verify}}
+}}
+{{ll|Category:Templates}}
+</noinclude><includeonly><sup><span class="plainlinks" title="{{
+#if: {{{1|}}}
+ | {{{1}}}
+ | {{tt|name=Bug|default=No bug description provided.|arg1=default_tooltip}}
+}} ({{
+#if: {{{2|}}}
+ |{{{2}}}
+ |{{tt|name=Bug|default=Unknown version|arg1=unknown_version}}
+}})">[[File:Insect_Aphid.png|16px]] [{{
+#if:{{{3|}}}
+ |https://theindiestone.com/forums/index.php?/topic/{{{3}}}
+ |https://theindiestone.com/forums/index.php?/forum/85-bug-reports/
+}} {{tt|name=Bug|default=Bug|arg1=Bug}}</span>]</sup>{{
+#if:{{{nocat|}}}| | {{ll|Category:Articles with known bugs}}}}</includeonly>

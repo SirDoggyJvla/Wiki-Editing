@@ -1,0 +1,48 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:FrameworkZ - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | discord=https://discord.pzframeworkz.net
+    | FrameworkZ Discord server
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3535820826
+    | Early Open Alpha on Steam
+    }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3535821814
+    | Template gamemode
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Project-Zomboid-FrameworkZ/Framework
+    | GitHub repository
+    }}
+    {{Infobox/socials
+    | github=https://github.com/Project-Zomboid-FrameworkZ/Template
+    | Template gamemode repository
+    }}
+    {{Infobox/socials
+    | other=https://pzframeworkz.net/index.html
+    | Official website
+    }}
+    {{Infobox/socials
+    | other=https://docs.pzframeworkz.net/
+    | Official documentation
+    }}
+}}
+{{Stub}}
+'''FrameworkZ''' is a library mod which provides a lot of tools for modders to use in their mods.
+
+{{Video
+|id=-HIVD6OlGpE
+|image=FrameworkZ - video update1.webp
+|name=FrameworkZ for PZ Update Video 1 (Project Zomboid) - YouTube
+}}
+
+==Navigation==
+{{Navbox modding}}
