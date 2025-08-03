@@ -4,19 +4,19 @@ Here is the number of people who joined via the wiki Discord invites:
 *[[Unofficial Modding Discord]]: 714 joined since the creation of the invite (\~December). (665 in June)
 *[[Unofficial Mapping Discord]]: 232 joined since the creation of the invite (\~December). (179 in June)
 
-The [[Modding projects]] now has fixed rules written down for users who might want to document their projects. Discussions were done on the [[Unofficial Mapping Discord]] on documenting specific mapping related subjects. First off, the [[Building Pool]] (and [[Community Architect]]) were documented, having different projects which provide such content. 
+The [[Modding projects]] now has fixed rules written down for users who might want to document their projects. Discussions were done on the [[Unofficial Mapping Discord]] on documenting specific mapping related subjects. Starting with the [[Building Pool]]s (and [[Community Architect]]) were documented, having different projects which provide such content. 
 
-The big subject regarding [[Mapping]] for the [[Modding]] section is how individual maps which were made open-source by their creator should be handled on the wiki. The discussion which sparked this was about Dirkerdam, and the argument was made that open-source maps like these provide both both a source of buildings for mappers to pick from and an overall source of inspiration for new mappers. Previous discussions regarding documenting individual "content" mods had been done and concluded that they should not be documented on the wiki because they provide nothing to new modders and staying objective in which ones should be documented is just an infinite rabbit hole. The issue with open-source maps like these is that they were not created for modders in the first place, and only serve as a source of inspiration, but for how long ? For more detail, see my [https://discordapp.com/channels/1002947509670400071/1388575505250521288/1399877396244594780 post on the mapping Discord].
+The big subject regarding [[Mapping]] for the [[Modding]] section is how individual maps which were made open-source by their creator should be handled on the wiki. The discussion which sparked this was about Dirkerdam, and the argument was made that open-source maps like these provide both a source of buildings for mappers to pick from and an overall source of inspiration for new mappers. Previous discussions regarding documenting individual "content" mods had been done and concluded that they should not be documented on the wiki because they provide nothing to new modders and staying objective in which ones should be documented is just an infinite rabbit hole. The issue with open-source maps like these is that they were not created for modders in the first place, and mostly serve as a source of inspiration, but for how long ? For more detail, see my [https://discordapp.com/channels/1002947509670400071/1388575505250521288/1399877396244594780 post on the mapping Discord].
 
-I provided a set of choices and open suggestions regarding how this should be handled with four choices on how open-source maps should be handled on the wiki and their respective votes as of 02/08/2025:
-# Do not document them at all on the wiki - 0 votes
-# Document them in a table like [[Tiledefs used by mods]] - 7 votes
-# Create a new category like modding projects but for open-source maps. - 6 votes
-# Consider public maps as [[modding projects]] - 0 votes
+Thus I provided a set of choices and open suggestions regarding how this should be handled with four choices, with their respective vote counts as of 03/08/2025:
+# Do not document them at all on the wiki - 0 votes.
+# Document them in a table like [[Tiledefs used by mods]] - 7 votes.
+# Create a new category like modding projects but for open-source maps. - 6 votes.
+# Consider public maps as [[modding projects]] - 0 votes.
 
-I'm personally leaning more towards the second option, due to it following the [[Tiledefs used by mods]] format, which provides a structure easier to maintain by individual non-wiki editor users. Also a single page for a full map sounds like a lot due to the lack of information needed to document there. However there is still 3 days left to vote, so if you have an opinion on this, please do so on the [[Unofficial Mapping Discord]] #community-input channel.
+I'm personally leaning more towards the second option, due to it following the [[Tiledefs used by mods]] format, which provides a structure easier to maintain by individual non-wiki editor users. Also a single page for a full map sounds like a lot due to the lack of information to document there. However there is still 3 days left to vote, so if you have an opinion on this, please do so on the [[Unofficial Mapping Discord]] #community-input channel.
 
-Regarding the [[modding projects]], this section received subsection due to the amount of projects being documented, which should help more easily navigate the various resources provided by modders. These subcategories, which you can view in the main [[Category:Modding projects|category page]], are:
+Regarding the [[modding projects]], this section received subsections due to the amount of projects being documented, which should help more easily navigate the various resources provided by modders. These subcategories, which you can view in the main [[Category:Modding projects|category page]], are:
 *[[Category:Animation projects]]
 *[[Category:Assets]]
 *[[Category:Debug projects]]
@@ -26,11 +26,11 @@ Regarding the [[modding projects]], this section received subsection due to the 
 *[[Category:Mapping projects]]
 *[[Category:Miscellaneous projects]]
 
-A new [[PZWiki:Mboxes|Mbox]] was created to help document game bugs directly on the wiki format called [[Template:BugBox]] in the style of in the [[Template:Note]]. This is used to document bugs related in the [[ModOptions]] system from [[Build 42]] and links directly to bug report forum posts. [[ModOptions]] also now links to its [[Build 41]] equivalent ([[Mod Options]]). I also updated the [[Template:Infobox/socials]] to include blog posts as well as the forum posts and Google Drive links.
+A new [[PZWiki:Mboxes|Mbox]] was created to help document game bugs directly on the wiki format called [[Template:BugBox]] in the style of the [[Template:Note]]. This is used to document bugs related in the [[ModOptions]] system from [[Build 42]] and links directly to bug report forum posts. [[ModOptions]] now links to its [[Build 41]] equivalent ([[Mod Options]]). I also updated the [[Template:Infobox/socials]] to include blog posts as well as forum posts and Google Drive links.
 
 The [[Lua (API)]] was drastically improved with clearer informations as well as be less confusing and better at explaining stuff. [[Visual Studio Code]] now has some more detail on how to use it, similar to the [[IntelliJ IDEA]] page which has some tips.
 
-[[AnimZed]] which is a tool used by [[The Indie Stone]] received its own page for an early documentation of what informations are currently available regarding it. The tool was announced to come out for modders during [[Build 42]]. It should be able to handle the whole animation system, which the pages regarding that got a rework on the wiki. The following pages were created or updated to accompany the new [[Animation#Animation structure]]:
+[[AnimZed]] which is a tool used by [[The Indie Stone]] received its own page for an early documentation of what informations are currently available regarding it. TIS announced that the tool should get released during [[Build 42]] for modders. It should be able to handle the whole animation system, which the pages regarding that got a rework on the wiki. The following pages were created or updated to accompany the new [[Animation#Animation structure]] explanations:
 *[[AnimSet]]
 *[[AnimState]]
 *[[AnimNodes]]
@@ -38,15 +38,15 @@ The [[Lua (API)]] was drastically improved with clearer informations as well as 
 *[[ActionState]]
 *[[Transition file]]
 
-The [[Mannequin (scripts)|mannequin]] script types is now documented on the wiki too, which is used for [[mapping]], alongside its various parameters. I have plans to document the entire vehicle scripts system, but this is the biggest script type which exists with nested elements everywhere.
+The [[Mannequin (scripts)|mannequin script]] is now documented on the wiki too, which is used mostly for [[mapping]], alongside its various parameters. I have plans to document the entire vehicle scripts system, but this is the biggest script type which exists with nested elements everywhere, and probably one of the most complex modding field, making its full documentation quite a challenge.
 
-A guide about [[SteamCMD]] was created to explain how it can be used to upload and download mods from the Steam Workshop, providing more options than the [[Uploading mods#In-game uploader|in-game uploader]], like gifs for previews and bigger previews. A [[Workshop ID]] page was also created to document how to find the Workshop ID of a mod, which is needed for the [[SteamCMD]] guide and other bits around the modding wiki.
+A guide about [[SteamCMD]] was created to explain how it can be used to upload and download mods from the Steam Workshop, providing more options than the [[Uploading mods#In-game uploader|in-game uploader]], like gifs for previews and bigger previews. A [[Workshop ID]] page was also created to document what it is and how to find the Workshop ID of a mod, which is needed for the [[SteamCMD]] guide and other bits around modding.
 
 [[User:Aoqia|Aoqia]] provided a decompile to [[Azakaela's Modding Tools]], which were added to the archive of the tools. Some modders have expressed interest in updating or recreating these tools in a more up-to-date fashion.
 
 Some minor changes or additions that don't warrant full paragraphs:
-*[[Lua (language]] - documented custom iterator functions.
-*[[User:Faalagorn]] added a section regarding modding Discords in the [[Discord]] page.
+*[[Lua (language)]] - documented custom iterator functions.
+*[[User:Faalagorn]] added a section regarding the modding Discords in the [[Discord]] page.
 *Something I forgot to mention the last summary is that I reworked the [[Template:Navbox modding]] to be more easily usable by modders to navigate the wiki.
 *[[Testing mods in multiplayer]] was moved to the [[Modding]] section, but the page needs a rework. For now, there is a link to a Steam guide which explains how to test mods in multiplayer.
 
