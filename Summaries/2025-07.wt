@@ -16,15 +16,15 @@ Thus I provided a set of choices and open suggestions regarding how this should 
 
 I'm personally leaning more towards the second option, due to it following the [[Tiledefs used by mods]] format, which provides a structure easier to maintain by individual non-wiki editor users. Also a single page for a full map sounds like a lot due to the lack of information to document there. However there is still 3 days left to vote, so if you have an opinion on this, please do so on the [[Unofficial Mapping Discord]] #community-input channel.
 
-Regarding the [[modding projects]], this section received subsections due to the amount of projects being documented, which should help more easily navigate the various resources provided by modders. These subcategories, which you can view in the main [[Category:Modding projects|category page]], are:
-*[[Category:Animation projects]]
-*[[Category:Assets]]
-*[[Category:Debug projects]]
-*[[Category:External tools]]
-*[[Category:Java]]
-*[[Category:Libraries]]
-*[[Category:Mapping projects]]
-*[[Category:Miscellaneous projects]]
+Regarding the [[modding projects]], this section received subsections due to the amount of projects being documented, which should help more easily navigate the various resources provided by modders. These subcategories, which you can view in the main [[:Category:Modding projects|category page]], are:
+*[[:Category:Animation projects]]
+*[[:Category:Assets]]
+*[[:Category:Debug projects]]
+*[[:Category:External tools]]
+*[[:Category:Java]]
+*[[:Category:Libraries]]
+*[[:Category:Mapping projects]]
+*[[:Category:Miscellaneous projects]]
 
 A new [[PZWiki:Mboxes|Mbox]] was created to help document game bugs directly on the wiki format called [[Template:BugBox]] in the style of the [[Template:Note]]. This is used to document bugs related in the [[ModOptions]] system from [[Build 42]] and links directly to bug report forum posts. [[ModOptions]] now links to its [[Build 41]] equivalent ([[Mod Options]]). I also updated the [[Template:Infobox/socials]] to include blog posts as well as forum posts and Google Drive links.
 
