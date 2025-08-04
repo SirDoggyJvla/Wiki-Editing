@@ -1,5 +1,4 @@
 {{Header|Modding}}
-{{Page version|42.10.0}}
 {{Infobox
 | title = <div></div>
 | 
@@ -38,6 +37,18 @@ VSCode can have extensions installed to enhance its functionality. These extensi
 *[[Umbrella (modding)]] – a collection of Lua type stubs for [[Lua (API)|Project Zomboid's modding API]] (formatting, autocomplete...).
 *[[Project Zomboid Script Support]] – an extension for Visual Studio Code that provides syntax highlighting for [[scripts]].
 *[[Zed Script]] – an extension for Visual Studio Code that provides syntax highlighting for [[scripts]].
+
+===Wikitext===
+For editing wikitext files, you can install the [https://marketplace.visualstudio.com/items?itemName=RoweWilsonFrederiskHolme.wikitext Wikitext] extension. This extension provides syntax highlighting and preview of pages directly in VSCode. This will highlight with wikitext files which have the custom extension <code>.wt</code>.
+
+To set it up for the Project Zomboid wiki, you need to change some settings of the extension:
+*<code>Wikitext:Host</code> - Set it to <code>pzwiki.net</code>.
+*<code>Wikitext:Auto Login</code> - Set it to <code>Never</code> since there is no need for it in our case. When previewing pages, this will give you a warning that you are not logged in, but you can ignore it, it still properly previews the pages.
+*For better previews, toggle <code>Wikitext:Enable JavaScript</code> and <code>Wikitext:Get CSS</code>.
+
+If you want even better syntax highlights, you can install the extra extension [https://marketplace.visualstudio.com/items?itemName=Bhsd.vscode-extension-wikiparser WikiParser] then in the settings of the WikiParser extension, set <code>Wikiparser: Article Path</code> to <code>https://pzwiki.net/wiki/</code>. This allows you to open individual pages that you directly link in your wikitext files, such as the templates or direct links to other pages. This however doesn't seem to properly work when linking to Wikipedia pages directly.
+
+[[File:Visual Studio Code - Wikitext extension.png|center]]
 
 ==Navigation==
 {{Navbox modding}}

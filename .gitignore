@@ -1,1 +1,17 @@
 .venv
+*.aux
+*.bbl*
+*.bcf*
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*synctex.gz
+*run.xml
+*.toc
+*.synctex(busy)
+*.fdb*
+*.fls*
+*.bbl-*
+main.bbl-SAVE-ERROR
