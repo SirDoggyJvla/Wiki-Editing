@@ -1,5 +1,5 @@
-{{Header|Modding}}
-{{Page version|42.7.0}}
+{{Header|Modding|Modding guides}}
+{{Page version|42.10.0}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
 
 Local mods are recognized in two different folders which each have their own rules and structure and are both in the [[Game files#Cache folder|cache folder]]:
@@ -126,7 +126,6 @@ For example:
 
 ==Media folder==
 Mod assets are put inside this folder. Different subfolders need to be created based on the type of assets. These are usually the same as the [[Game files#Media folder|game media folder]] but below is a list of the commonly used subfolders:
-
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of commonly used subfolders
 ! Subfolder !! Description
@@ -162,10 +161,117 @@ Mod assets are put inside this folder. Different subfolders need to be created b
 | style="min-width: 600px;"| For map files.
 |}
 
-{{Note|Technically, files which are in the parent folder of the media folder can be read from the [[Lua (API)|Lua API]] within the media folder.}}
+{{Note|Technically, files which are in the parent folder of the media folder can be read from the [[Lua (API)|Lua API]].}}
+{{Note|type=error|Folder and file names must use strict casing spelling. For example, <code>lua</code> should not be written as <code>Lua</code> or <code>LUA</code>. Incorrect casing may prevent the game from recognizing your files for [[Wikipedia:Operating system|operating systems]] with case-sensitive file systems.}}
+
+===Lua===
+{{Main|Lua (API)}}
+'''Lua''' scripts are put inside the <code>lua</code> folder. They are simply files which are end with the extension <code>.lua</code>. This folder organizes in subfolders which are used to determine the loading of files in singleplayer and multiplayer.
+{{CodeSnip
+| code =
+media/
+└── lua/
+    ├── client/
+    │   └── ...
+    ├── server/
+    │   └── ...
+    └── shared/
+        └── ...
+}}
+
+The only time one of these folder is not loaded is for multiplayer server side:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | Which folders are loaded in which game mode
+! Folder !! Singleplayer !! Multiplayer: <BR>client side !! Multiplayer: <BR>server side
+|-
+| style="min-width: 100px;text-align: center;"| <code>client</code>
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Cross.png]]
+|-
+| style="min-width: 100px;text-align: center;"| <code>server</code>
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+|-
+| style="min-width: 100px;text-align: center;"| <code>shared</code>
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+|}
+
+Organization inside the client, server and shared folders is free and subfolders can be created with files named in any way. Files with the same relative path as vanilla files will overwrite them, so make sure to use unique names and relative paths.
+
+{{Note|Translation files are also put inside the <code>lua</code> folder but are not Lua files. See the [[Translations]] page for more detail.}}
+
+===Scripts===
+{{Main|Scripts}}
+'''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the Lua scripts. The only rule is that the script file must end with the extension <code>.txt</code>. Various script types can be used and spread across multiple script files in different subfolders.
+{{CodeSnip
+| code =
+media/
+└── scripts/
+    ├── subFolder/
+    │   └── anotherScript.txt
+    ├── this_is_a_script.txt
+    └── ...
+}}
+
+===AnimSets===
+{{Main|Animation}}
+'''AnimSets''' are put inside the <code>AnimSets</code> folder. They are used to define a set of rules to trigger animations which are called [[AnimNode]]s. See the [[animation]] page for more detail.
+{{CodeSnip
+| code =
+
+}}
+
+===clothing===
+The <code>clothing</code> folder is used to define clothing items via the use of XML files. Each clothing items is associated to its own XML file and a [[Wikipedia:Universally unique identifier|GUID]] to recognize the clothing item. Subfolders can be created to organize the clothing items. The outfit manager is also defined inside the file <code>clothing.xml</code> and is used to create or modify existing outfits. While this file is named the same as any others, it will not overwrite other files named like it.
+
+===anims_X===
+{{Main|Animation}}
+The <code>anims_X</code> folder is used to store animation files. The files need to be either in the DirectX format (<code>.x</code>) or Filmbox format (<code>.fbx</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the [[File formats#Modeling and animation formats]] page for more detail.
+
+===models_X===
+{{Main|Model (scripts)}}
+The <code>models_X</code> folder is used to store model files. The files need to be either in the DirectX format (<code>.x</code>) or Filmbox format (<code>.fbx</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the [[File formats#Modeling and animation formats]] page for more detail.
+
+===textures===
+The <code>textures</code> folder is used to store texture files. The files need to be in the PNG format (<code>.png</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the [[File formats#Image formats]] page for more detail.
+
+===ui===
+The <code>ui</code> folder is used to store images used in the user interface elements in the game. The files need to be in the PNG format (<code>.png</code>). They can be put in subfolders for organization and can replace files with the same relative path.
+
+===sound===
+The <code>sound</code> folder is used to store sound files. The files need to be in the OGG format (<code>.ogg</code>) or WAV format (<code>.wav</code>). They can be put in subfolders for organization and can replace files with the same relative path. Some sounds are stored inside bank files (<code>.bank</code>) which are used by the Fmod sound system, and they cannot be overwritten nor can bank files be loaded from mods.
+
+===maps===
+{{Main|Mapping}}
+[[File:Mod structure - maps.webp|thumb]]
+The <code>maps</code> folder is used to store map files. It's subfolder will correspond to a map and its associated files. These files are obtained by exporting a map from the mapping tools.
+{{CodeSnip
+| code =
+media/
+└── maps/
+    └── MyMap/
+        ├── maps/
+        │   └── ...
+        ├── X_Y.lotheader
+        ├── chunkdata_X_Y.bin
+        ├── map.info
+        ├── objects.lua
+        ├── spawnpoints.lua
+        ├── thumb.png
+        ├── worldmap-forest.xml
+        ├── worldmap.xml
+        ├── world_X_Y.lotpack
+        └── ...
+}}
+
+<code>MyMap</code> will needs to be a unique name associated with your map but the map informations are mostly defined the [[map.info]] file. Other files are used to define spawnpoints as well as the biomes, chunks, streetnames etc.
 
 ==Example==
-Below is the full example of a mod structure in Windows.
+Below is a full example of a mod structure in Windows.
 {{CodeSnip
 | code =
 %UserProfile%/
@@ -192,7 +298,7 @@ Below is the full example of a mod structure in Windows.
             │       │   │   ├── mod.info
             │       │   │   ├── poster.png
             │       │   │   └── icon.png
-            │       │   ├── 42.X.Y/                 <--- will be loaded instead of the versions below (4.0.0 above for example), for game versions compatibility if needed
+            │       │   ├── 42.X.Y/                 <--- will be loaded instead of older versions (4.0.0 for example will not load), for game versions compatibility if needed
             │       │   │   └── ...
             │       │   ├── common/                 <--- mandatory, mod won't be detected without it
             │       │   │   └── media/
@@ -201,7 +307,7 @@ Below is the full example of a mod structure in Windows.
             │       │   │       ├── model_X/
             │       │   │       │   └── ...
             │       │   │       └── ...
-            │       │   ├── media/
+            │       │   ├── media/                  <--- Build 41 only folder, not used in Build 42
             │       │   │   ├── anim_X/
             │       │   │   │   └── ...
             │       │   │   ├── AnimSets/
@@ -243,10 +349,12 @@ Below is the full example of a mod structure in Windows.
 {{Note|You can find a mod structure template in [https://github.com/Project-Zomboid-Community-Modding/pzmc-template this GitHub repository].}}
 
 ==See also==
-*[[File structure]]
-*[[Workshop.txt]]
-*[[mod.info]]
+*[[Uploading mods]] - teaches about uploading mods.
+*[[Game files]] - accessing the game files.
+*[[Workshop.txt]] - about a file used by the in-game uploader.
+*[[mod.info]] - about the core file which defines your mod.
 
+==Navigation==
 {{Navbox modding}}
 
 {{ll|Category:Guides}}
