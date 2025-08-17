@@ -1,5 +1,4 @@
 {{Header|Modding}}
-{{Page version|42.10.0}}
 {{Infobox
 | title = <div></div>
 | 
@@ -15,9 +14,15 @@
     | Workshop item build configuration file
     }}
 }}
-'''SteamCMD''' is a command-line version of the Steam client, designed for installing and updating dedicated servers for games. It can be used to download and manage game files without the need for a graphical interface, as well as installing or uploading Workshop mods. Regular users do not need to use SteamCMD and it is primarily intended for server administrators and modders.
+'''SteamCMD''' is a command-line version of the [[Steam]] client, designed for installing and updating dedicated servers for games. It can be used to download and manage game files without the need for a graphical interface, as well as installing or uploading Workshop mods. Regular users do not need to use SteamCMD, and it is primarily intended for server administrators and modders.
 
-The official Valve documentation provides detailed instructions on how to setup SteamCMD. However the documentation regarding details on how to use it is lacking.
+The official Valve documentation provides detailed instructions on how to setup SteamCMD. However, the documentation regarding details on how to use it is lacking.
+
+==Connecting to SteamCMD==
+{{Unverified|How long does the cache credential lasts and can it be changed ?}}
+After installing SteamCMD, you can connect to it by running the command <code>steamcmd</code> in a terminal or command prompt. This will start the SteamCMD client and display a custom command prompt where you can enter commands. Actions which do not require an account like download a Workshop item can be done anonymously, while actions that require an account, such as uploading a Workshop item, will require you to log in.
+
+To login anonymously, use the command <code>login anonymous</code>. To login with your Steam account, use the command <code>login {{CodeSnip/param|username}}</code> then enter your password. Your credentials will be cached for some time, allowing you to login back in without giving your password.
 
 ==Uploading Workshop items==
 To upload or create a new workshop item, you need to create a build configuration file. SteamCMD uses this file to get the informations about the workshop item you want to upload. Such a file needs to follow a specific format:
@@ -36,7 +41,10 @@ To upload or create a new workshop item, you need to create a build configuratio
 }
 }}
 
-You can find a simple workshop item example uploaded with this method [https://steamcommunity.com/sharedfiles/filedetails/?id=3525515977 here]. In this example, a gif was uploaded as the preview image, which isn't possible with the [[Uploading mods#In-game uploader|in-game uploader]].
+The format of the file doesn't matter but these files are usually refered to as [https://developer.valvesoftware.com/wiki/VDF VDF files (Valve Data File)]. To upload the item using the newly created build configuration file, use the command:
+{{CodeSnip/custom|code=
+workshop_build_item {{CodeSnip/param|2=path/to/build/file}}
+}}
 
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of parameters
@@ -48,7 +56,7 @@ You can find a simple workshop item example uploaded with this method [https://s
 | style="padding: 10px;"| <big><code>publishedfileid</code></big>
 | style="padding: 5px;"| The unique identifier for the workshop item. This number can easily be found for an existing Workshop item in the URL of the item page, but it is also automatically added to the description when using the [[Uploading mods#In-game uploader|in-game uploader]].
 
-{{Note|To create a new workshop item, simply set this to <code>0</code>. SteamCMD will create a new item with a new ID and replace this value with the new ID after the upload for future uploads.}}
+{{Note|To create a new workshop item, simply set this to <code>0</code> or remove the <code>publishedfileid</code> line. SteamCMD will create a new item with a new ID and replace or add this value with the new ID in the build file after the upload for future uploads.}}
 |-
 | style="padding: 10px;"| <big><code>contentfolder</code></big>
 | style="padding: 5px;"| The path to the folder containing the content of the workshop item. This folder should contain all the files that you want to include in the workshop item. For Project Zomboid, this folder should be {{Code|Workshop/<mod folder>/Contents/mods/}} if you take the default [[mod structure]].
@@ -90,15 +98,19 @@ Hello world"
 | style="padding: 5px;"| The change note for the workshop item. Like for the description, this can be a multiline text in the configuration file.
 |}
 
-{{Note|You can retrieve a Workshop item informations by using a [[Wikipedia:POST (HTTP)|POST request]] from the [https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage#GetPublishedFileDetails Steam API]:
+You can find a simple workshop item example uploaded with this method [https://steamcommunity.com/sharedfiles/filedetails/?id=3525515977 here]. In this example, a gif was uploaded as the preview image, which isn't possible with the [[Uploading mods#In-game uploader|in-game uploader]].
+
+{{Note|1=The description and patch note use [https://steamcommunity.com/sharedfiles/filedetails/?id=2807121939 Steam BBCode].}}
+
+==Retrieving a workshop item information==
+You can retrieve a Workshop item informations by using a [[Wikipedia:POST (HTTP)|POST request]] from the [https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage#GetPublishedFileDetails Steam API]:
 {{CodeSnip
 | lang = bash
 | code =
 curl -X POST "https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileDetails/v1/" -H "Content-Type: application/x-www-form-urlencoded" -d "itemcount=1" -d "publishedfileids[0]=<publishedfileid>"
 }}
+
 ''This method was retrieved from this [https://steamcommunity.com/discussions/forum/1/364043054110232987/#c601900367173718469 Steam forum post].''
-}}
-{{Note|1=The description and patch note use [https://steamcommunity.com/sharedfiles/filedetails/?id=2807121939 Steam BBCode].}}
 
 ==Navigation==
 {{Navbox modding}}

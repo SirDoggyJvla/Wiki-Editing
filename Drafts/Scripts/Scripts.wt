@@ -1,8 +1,21 @@
 {{Header|Modding}}
-{{Page version|42.10.0}}
+{{Page version|42.11.0}}
 '''Scripts''', also refered as ''zedscripts'', are a form of modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
 
 {{Note|type=warn|Scripts are not a programming language, but mostly a custom format to define data for game elements which are parsed and cached inside the Java.}}
+
+==Folder structure==
+{{Main|Mod structure}}
+'''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the [[Lua (API)|Lua]]. The only rule is that the script files must end with the extension <code>.txt</code>. Various script types can be used and spread across multiple script files in different subfolders.
+{{CodeSnip
+| code =
+media/
+└── scripts/
+    ├── subFolder/
+    │   └── anotherScript.txt
+    ├── this_is_a_script.txt
+    └── ...
+}}
 
 ==Typing syntax==
 The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script types as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.

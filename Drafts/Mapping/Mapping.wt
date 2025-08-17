@@ -9,12 +9,68 @@ Official tools exist for mapping but at the moment are not available for [[Build
 *[[WorldEd]] - The main tool for creating maps.
 *[[TileZed]] - Included in WorldEd, used to create and edit tilesets as well as edit maps.
 
-[[Unofficial Mapping Tools]] aims to provide the updated mapping tools for [[Build 42]], allowing the creation of basements. The picture below details the mapping tools hierarchy:
+The [[Unofficial Mapping Tools]] aims to provide the updated mapping tools for [[Build 42]], allowing the creation of basements. The picture below details the mapping tools hierarchy:
 [[File:Mapping tools - diagram.png|center]]
 
-==Creating a map==
-{{Stub|section=true}}
-Your map needs to be accompanied by a [[map.info]] file which will define its informations.
+==Folder structure==
+{{Main|Mod structure}}
+[[File:Mod structure - maps.webp|thumb]]
+The <code>maps</code> folder in <code>media</code> is used to store map files. It's subfolder will correspond to a map and its associated files which are obtained by exporting a map from the mapping tools.
+{{CodeSnip
+| code =
+media/
+└── maps/
+    └── MyMap/
+        ├── maps/
+        │   └── ...
+        ├── X_Y.lotheader
+        ├── chunkdata_X_Y.bin
+        ├── map.info
+        ├── objects.lua
+        ├── spawnpoints.lua
+        ├── thumb.png
+        ├── worldmap-forest.xml
+        ├── worldmap.xml
+        ├── world_X_Y.lotpack
+        └── ...
+}}
+
+<code>MyMap</code> will need to be a unique name associated with your map but the map informations are mostly defined the [[map.info]] file. Other files are used to define spawnpoints as well as the biomes, chunks, streetnames etc.
+
+{{Stub|section)=true|The table below is incomplete and needs more detail.}}
+{| class="wikitable theme-blue sortable" style="text-align: center;
+|+ style="white-space:nowrap" | Files in the maps folder
+|-
+! File !! Description
+|-
+| style="padding: 10px;text-align: center;"| <code>.lotheader</code> files
+| style="padding: 5px;"| Defines the location/cell of your map.
+|-
+| style="padding: 10px;text-align: center;"| <code>chunkdata.bin</code>
+| style="padding: 5px;"| {{Stub|section=true}}
+|-
+| style="padding: 10px;text-align: center;"| [[map.info]]
+| style="padding: 5px;"| Contains the informations about your map, such as its name, description, location...
+|-
+| style="padding: 10px;text-align: center;"| <code>objects.lua</code>
+| style="padding: 5px;"| Defines car spawns and navigation meshes.
+|-
+| style="padding: 10px;text-align: center;"| <code>spawnpoints.lua</code>
+| style="padding: 5px;"| Defines the spawnpoints XYZ coordinates for specific occupations for your map.
+|-
+| style="padding: 10px;text-align: center;"| <code>thumb.png</code>
+| style="padding: 5px;"| Image used as a thumbnail for the spawnpoints of your map.
+|-
+| style="padding: 10px;text-align: center;"| <code>worldmap-forest.xml</code>
+| style="padding: 5px;"| {{Stub|section=true}}
+|-
+| style="padding: 10px;text-align: center;"| <code>worldmap.xml</code>
+| style="padding: 5px;"| {{Stub|section=true}}
+|-
+| style="padding: 10px;text-align: center;"| <code>world.lotpack</code>
+| style="padding: 5px;"| {{Stub|section=true}}
+|}
+
 
 ==Building pools==
 [[The Indie Stone]] and the community have created several building pools, which are collections of buildings that can be used in custom maps. These pools can be used as a reference or directly in your own maps, as long as you credit the original authors when asked for credit. Below is the list of available building pools:
@@ -23,6 +79,33 @@ Your map needs to be accompanied by a [[map.info]] file which will define its in
 *[[Building Pool (okkydoo)]]
 *[[Building Pool (Dylan)]]
 *[[Community Architect]]
+
+==Public maps==
+{{Wip|section=true|I'm in need of some feedback on the format for this new section. Feel free to discuss this on the [[Unofficial Mapping Discord]] (ping me sirdoggyjvla).}}
+Some maps created by the community had their files made public for other mappers to use or study. Below is a list of public maps, their authors as well as how they can be used:
+{| class="wikitable theme-blue sortable" style="text-align: center;
+|+ style="white-space:nowrap" | Public maps
+|-
+! Map !! Author !! Files !! Permissions !! Last updated
+|-
+| [https://steamcommunity.com/sharedfiles/filedetails/?id=2977898120 Dirkerdam]
+| {{Infobox/socials|steam=https://steamcommunity.com/id/DiederikV|Daddy Dirkie Dirk}}
+{{Infobox/socials|discord=nolink|daddydirkiedirk}}
+| {{Infobox/socials|gdrive=https://drive.google.com/file/d/1EcHl5M_RKGvIhJew4nV6Qjn8Ulf0ycJQ/view?usp=sharing | Download}}
+| No restrictions, but credit the author.
+([https://discord.com/channels/1002947509670400071/1006246658750824451/1384101995563974778 source])
+| {{#dateformat:2023-07-21|my}} (Last Workshop item update)
+|-
+| [[Knox Country]] unofficial export
+| [[The Indie Stone]], map files exported by Unjammer:
+{{Infobox/socials|discord=nolink|alree_unjammer}}
+{{Infobox/socials|steam=https://steamcommunity.com/profiles/76561198040780708|Alree}}
+{{Infobox/socials|github=https://github.com/Unjammer|Unjammer}}
+| See the modding project [[Vanilla Map Export]]
+| No direct details on permissions since it is an unofficial export.
+| {{#dateformat:2023-01-31|my}}
+[[Build 41]].78.16 (last [[Build 41]] update)
+|}
 
 ==See also==
 *[https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ The Indie Stone forum post with the latest mapping tools]

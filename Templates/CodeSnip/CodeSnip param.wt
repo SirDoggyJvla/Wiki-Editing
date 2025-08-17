@@ -1,0 +1,23 @@
+<noinclude>
+{{Wip}}
+{{CodeSnip/param|1=Parameter1}}
+----
+{{CodeSnip/param|2=Parameter2}}
+----
+{{CodeSnip/param|3=Parameter3}}
+----
+{{CodeSnip/param|4=Parameter4}}
+----
+{{CodeSnip/param|5=Parameter5}}
+----
+{{CodeSnip/param|6=Parameter6}}
+
+
+</noinclude><includeonly>{{#switch: 1
+| {{#if:{{{1|}}}|1|0}} = <span style="color:#c21d1d;">{{{1}}}</span>
+| {{#if:{{{2|}}}|1|0}} = <span style="color:#00881d;">{{{2}}}</span>
+| {{#if:{{{3|}}}|1|0}} = <span style="color:#003fb4;">{{{3}}}</span>
+| {{#if:{{{4|}}}|1|0}} = <span style="color:#cfcc00;">{{{4}}}</span>
+| {{#if:{{{5|}}}|1|0}} = <span style="color:#cf00c5;">{{{5}}}</span>
+| {{#if:{{{6|}}}|1|0}} = <span style="color:#ff5100;">{{{6}}}</span>
+}}</includeonly>

@@ -1,0 +1,25 @@
+<noinclude>
+{{Documentation|doc = 
+This helper template is used for [[Template:Infobox/socials]] to handle cases where a link is not provided ({{Code|nolink}}), thus displaying the text without a link. It also strips the text from any newlines caracters.
+
+{{Infobox/socials/nolink|link=https://pzwiki.net|Hello PZwiki!}}
+
+{{Infobox/socials/nolink|link=nolink|Hello PZwiki!}}
+
+{{Infobox/socials/nolink|link=https://yourlink.com}}
+
+==Usage==
+<pre>
+{{Infobox/socials/nolink|link=https://yourlink.com|description}}
+{{Infobox/socials/nolink|link=nolink|description}}
+{{Infobox/socials/nolink|link=https://yourlink.com}}
+</pre>
+
+===Parameters===
+;{{Code|link}}
+: The link to the social media or website. If set to {{Code|nolink}}, the text will be displayed without a link.
+;{{Code|1}}
+: The description of the link. This will be displayed in hypertext with the link or as plain text if {{Code|link}} is set to {{Code|nolink}}. If no description is provided, only outputs the link.
+}}
+
+</noinclude><includeonly>{{#ifeq:{{{link|}}}|nolink|{{#replace:{{{1|}}}|\n|}}|{{#if:{{{1|}}}|[{{{link}}} {{#replace:{{{1|}}}|\n|}}]|{{{link}}}}}}}</includeonly>

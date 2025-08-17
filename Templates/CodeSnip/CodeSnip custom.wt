@@ -1,0 +1,20 @@
+<noinclude>
+{{Wip}}
+
+{{CodeSnipCustom|code=
+inputs
+{{CodeSnip/symbol|&#123;}}
+:{{CodeSnip/comment|-- simplest form}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|-- with tags}}
+:item {{CodeSnip/param|quantity}} tags{{CodeSnip/symbol|[}}{{CodeSnip/param|3=tagName1}};{{CodeSnip/param|3=tagName2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|-- with mode, mappers and flags}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}} mode:{{CodeSnip/param|4=mode}} mappers{{CodeSnip/symbol|[}}{{CodeSnip/param|5=mapperID}}{{CodeSnip/symbol|]}} flags{{CodeSnip/symbol|[}}{{CodeSnip/param|6=flag1}};{{CodeSnip/param|6=flag2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|...}}
+{{CodeSnip/symbol|&#125;}}
+}}
+</noinclude><includeonly><div class="mw-code">{{{code}}}</div>
+</includeonly>

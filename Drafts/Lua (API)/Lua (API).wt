@@ -1,5 +1,5 @@
 {{Header|Modding}}
-{{Page version|42.10.0}}
+{{Page version|42.11.0}}
 {{About|the Lua API|a guide to learn how to code with Lua|Lua (language)}}
 Project Zomboid allows modders to program functionalities via a Java implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods from Lua scripts.
 
@@ -22,7 +22,7 @@ Events.OnZombieUpdate.Add(OnZombieUpdate)
 In this case, the variable {{Code|zombie}} is an [https://projectzomboid.com/modding/zombie/characters/IsoZombie.html IsoZombie] with various methods that can be used on it. Sometimes it involves creating one yourself with a [[#Constructor]] or directly retrieving the list of objects. Most classes can have multiple instances, like in the case of IsoZombie.
 
 ===Parent and subclasses===
-Most Java classes you'll encounter will be a subclass to another class, and might also be the parent to subclasses. For example, if we continue on the example of IsoZombie, its parent classes are:
+All Java classes are a subclass to another class, and might also be the parent to subclasses. For example, if we continue on the example of IsoZombie, its parent classes are:
 {{CodeSnip
 | code =
 java.lang.Object
@@ -33,7 +33,7 @@ java.lang.Object
                 └── zombie.characters.IsoZombie
 }}
 
-As such, IsoZombie will inherit most of the fields and methods from its parent classes.
+As such, IsoZombie will inherit all of the fields and methods from its parent classes.
 
 ===Nested classes===
 A subclass inherits another class, while a '''nested class''' is defined directly in a class and as such has access to even private methods and fields from its original class. In the [[JavaDocs]], nested classes are listed in the “Nested Class Summary” section of the class page. Nested classes are written as <code>ClassName.NestedClassName</code>.
@@ -43,8 +43,8 @@ A subclass inherits another class, while a '''nested class''' is defined directl
 ===Instance and static===
 Java classes can have two types of methods and fields: instance methods and static methods. To run, instance methods require an instance of the class, while static methods can be run without an instance. 
 
-===Public and private===
-Java classes can have methods and fields which are either public or private. Public methods and fields can be accessed from outside the class, while private methods and fields can only be accessed from within the class itself.
+===Access Modifiers===
+Java class members have an access modifier (public, protected, package, private) which determines where they are accessible. Only public members are exposed to Lua.
 
 ===Methods and fields===
 Java classes can have methods and fields which are respectively functions and variables associated to the class if private or unique to an instance of the class.
@@ -131,7 +131,7 @@ square:addCorpse(IsoDeadBody.new(zombie), false) -- note the use of IsoDeadBody 
 -- retrieve the client IsoPlayer instance
 local player = getPlayer() -- a LuaManager.GlobalObject method
 
--- retrieve the IsoPlayer instance movespeed
+-- retrieve the IsoPlayer instance move speed
 local moveSpeed = player:getMoveSpeed() -- instance method, notice the ":"
 
 
@@ -139,6 +139,11 @@ local moveSpeed = player:getMoveSpeed() -- instance method, notice the ":"
 -- retrieve the list of IsoPlayers
 local players = IsoPlayer.getPlayers() -- static method, notice the "."
 }}
+
+==Lua objects==
+Lua objects are widely used in the Lua API and natively defined in it. They utilize the [[ISBaseObject]] class and derive from it to define new classes which can themselves be derived from. They are usually global and can be accessed from anywhere but in some cases where they are locked behind a local scope to a file, you can utilize the [[DOME]] library to access them.
+
+[[Timed Actions]] use Lua objects to easily instantiate them and derive directly from [[ISBaseTimedAction]]. UI elements also use Lua objects.
 
 ==Where to start==
 Programming with the Lua (API) can be done in many ways, but in most cases it will involve using a [[Lua event]] to run your code at specific moments of the game. As such, it's suggested to check out the [[Lua event#Current|events]] which are available to see where you can get started.
@@ -149,6 +154,59 @@ Alternatively, various guides available on the Wiki will explain how to do certa
 
 ===Community libraries===
 There are various community libraries which can help you with your Lua modding. For a full list, see the [[Modding projects]] in the [[:Category:Libraries|libraries category]].
+
+==Folder structure==
+{{Main|Mod structure}}
+'''Lua''' scripts are put inside the <code>lua</code> folder inside the <code>media</code> folder. They are simply files which end with the extension <code>.lua</code>. This folder organizes in subfolders, used to determine the loading of files in singleplayer and multiplayer.
+{{CodeSnip
+| code =
+media/
+└── lua/
+    ├── client/
+    │   └── ...
+    ├── server/
+    │   └── ...
+    └── shared/
+        └── ...
+}}
+
+The only time one of these folder is not loaded is for multiplayer server side:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | Which folders are loaded in which game mode
+! Folder !! Singleplayer !! Multiplayer: <BR>client side !! Multiplayer: <BR>server side
+|-
+| style="min-width: 100px;text-align: center;"| <code>client</code>
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Cross.png]]
+|-
+| style="min-width: 100px;text-align: center;"| <code>server</code>
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+|-
+| style="min-width: 100px;text-align: center;"| <code>shared</code>
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+| style="min-width: 100px;text-align: center;"| [[File:UI Tick.png]]
+|}
+
+Organization inside the client, server and shared folders is free and subfolders can be created with files named in any way. Files with the same relative path to the <code>lua</code> as vanilla files will overwrite them, so make sure to use unique names and relative paths. This applies to other mod files too and is impacted by the load order between mods.
+
+Lua files are loaded when launching the game, and when exiting a save, or when manually triggered in [[debug mode]] in the main menu, in the following order:
+# Shared - vanilla files
+# Shared - mod files
+# Client - vanilla files
+# Client - mod files
+
+The server subfolder is actually loaded only when launching a save, so anytime Lua loaded or reloaded the server files are unloaded until a save is loaded. The order for the server subfolder files is:
+<ol start="5">
+<li> Server - vanilla files </li>
+<li> Server - mod files </li>
+</ol>
+
+{{Note|Translation files are also put inside the <code>lua</code> folder but are not Lua files. See the [[Translations]] page for more detail.}}
+{{Note|type=warn|It is not recommended to overwrite existing files if not needed for compatibility reasons. Instead, overwrite specific functions or [[Lua (language)#Decoration|hook]] to them when possible.}}
 
 ==See also==
 *[[Lua (language)]] - the programming language used in Project Zomboid.

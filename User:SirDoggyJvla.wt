@@ -1,0 +1,29 @@
+<div class="pz-container" style="margin-bottom: 7px;">
+    <div style="flex-basis:30%; border-radius:10px; background-color:var(--color-blue); gap:5px; padding:5px;">
+<h3 style=" color:var(--color-mw-light); font-size:125%; text-align:center;">Contacts</h3>
+        <div style="background-color:var(--background-mw-1); border-radius:10px; padding:5px; text-align:center;">
+{{Infobox/socials|github=https://github.com/SirDoggyJvla|SirDoggyJvla}}
+{{User contact|discord|sirdoggyjvla}}
+{{User contact|steam|Sir Doggy Jvla|link=https://steamcommunity.com/id/jvladeya/}}
+{{User contact|forums|SirDoggyJvla|link=https://theindiestone.com/forums/index.php?/profile/73013-sirdoggyjvla/}}
+{{User contact|twitch|SirDoggyJvla}}
+        </div>
+    </div>
+
+    <div style="flex-basis:30%; border-radius:10px; background-color:var(--color-blue); gap:5px; padding:5px;">
+<h3 style=" color:var(--color-mw-light); font-size:125%; text-align:center;">About me</h3>
+        <div style="background-color:var(--background-mw-1); border-radius:10px; padding:5px;">
+Welcome on my page, my name is Simon and I'm a PhD student from France in fluid mechanics. I got into modding Project Zomboid in the start of 2024 and at the time documentation for modding was spread everywhere and was barely existent. This brought me to leading the Project Modding to introduce modding documentation on the wiki. My goal is to make the modding wiki the standard documentation when starting with modding but to also serve experienced modders as a comprehensive resource.
+        </div>
+    </div>
+
+    <div style="flex-basis:30%; border-radius:10px; background-color:var(--color-blue); gap:5px; padding:5px;">
+<h3 style=" color:var(--color-mw-light); font-size:125%; text-align:center;">Details</h3>
+        <div style="background-color:var(--background-mw-1); border-radius:10px; padding:5px;">
+:'''Location''': [[Wikipedia:France|France]] ([[Wikipedia:Central European Time|CET]])
+{{User language|en}}
+{{User language|fr}}
+{{User system|linux}}
+        </div>
+    </div>
+</div>

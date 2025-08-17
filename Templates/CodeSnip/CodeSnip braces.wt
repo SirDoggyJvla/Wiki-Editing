@@ -1,0 +1,7 @@
+<noinclude>
+{{Wip}}
+{{CodeSnip/braces|l}} This is in between braces {{CodeSnip/braces|r}}
+</noinclude><includeonly>{{CodeSnip/symbol|{{#switch: {{{1|}}}
+| l = &#123;
+| r = &#125;
+}}}}</includeonly>

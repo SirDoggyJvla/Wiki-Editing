@@ -1,34 +1,38 @@
 {{Title|inputs}}
 {{Header|Modding|Scripts|craftRecipe parameters}}
-{{Page version|42.6.0}}
+{{Page version|42.11.0}}
 {{Main|CraftRecipe}}
-The <code>inputs</code> parameter defines the ingredients needed to craft the item. Will usually involve a combination of items, tags, modes or mappers of consumption of the crafting ingredients.
+The <code>inputs</code> parameter defines the ingredients needed to craft the item and will usually involve a combination of items, tags, modes or mappers of consumption of the crafting ingredients.
 
-Inputs are listed one after the other and follow the format below:
-{{CodeSnip
-| lang = lua
-| code =
+Inputs are listed one after the other and follow the format examples below:
+{{CodeSnipCustom|code=
 inputs
-{
-    -- simplest form
-    item <quantity integer> <item table>,
+{{CodeSnip/symbol|&#123;}}
+:{{CodeSnip/comment|-- simplest form}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
 
-    -- with tags
-    item <quantity integer> tags[tagName1;tagName2...],
+:{{CodeSnip/comment|-- with tags}}
+:item {{CodeSnip/param|quantity}} tags{{CodeSnip/symbol|[}}{{CodeSnip/param|3=tag1}};{{CodeSnip/param|3=tag2}}...{{CodeSnip/symbol|]}},
 
-    -- with mode, mappers and flags
-    item <quantity integer> <item table> mode:<mode optional> <mappers optional> <flags optional>,
-    ...
-}
+:{{CodeSnip/comment|-- with mode, mappers and flags}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}} mode:{{CodeSnip/param|4=mode}} mappers{{CodeSnip/symbol|[}}{{CodeSnip/param|5=mapperID}}{{CodeSnip/symbol|]}} flags{{CodeSnip/symbol|[}}{{CodeSnip/param|6=flag1}};{{CodeSnip/param|6=flag2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|...}}
+{{CodeSnip/symbol|&#125;}}
 }}
 
-==quantity==
-The <code>quantity</code> is an integer that defines the number of items needed for the recipe.
+{{Note|type=error|Every {{Code|inputs}} lines need to finish with a comma or this will cause a parsing error. However, make sure to NOT put a comma after the final {{Code|} }} of the {{Code|inputs}} block !}}
 
-==item listing==
-{{Note|type=error|Both [[#item|items]] and [[#tags|tags]] methods of listing items can't be combined.}}
-===item===
-Items are listed in tables by separating them with a semicolon. The table can contain multiple items which the player can use for this specific input. The items need to have their full type noted in the list. For example, <code>Base.ClosedUmbrellaBlack</code> is the black closed umbrella item. For a custom module it would have to be <code>YourModuleName.YourItemID</code>.
+==Parameters==
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | Parameter details
+! style="min-width:100px;" | Parameter !! Description
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|1=quantity}}</code>
+| The {{CodeSnip/param|1=quantity}} is an integer that defines the number of items needed for the recipe.
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|2=item}}</code> table
+| Items are listed in a table by separating them with a semicolon (<code>;</code>). The table can contain multiple items which the player can use for this specific input. The items need to have their full type noted in the list. For example, <code>Base.ClosedUmbrellaBlack</code> is the black closed umbrella item. For a custom module it would have to be <code>YourModuleName.YourItemID</code>.
 {{CodeSnip
 | lang = lua
 | code =
@@ -37,31 +41,39 @@ item 1 [Base.ClosedUmbrellaBlack;Base.ClosedUmbrellaBlue],
 item 1 [YourModuleName.YourItemID],
 }}
 
-You can also use <code>[*]</code> for the item table to allow any item. This is notably used for fluids which are detailed in [[Fluids (craftRecipe)]]
+You can also use <code>{{CodeSnip/symbol|[}}*{{CodeSnip/symbol|]}}</code> for the item table to allow any item. This is notably used for fluids which are detailed in [[Fluids (craftRecipe)]].
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|3=tag}}</code> table
+| {{CodeSnip/param|3=Tags}} are used to identify a specific class of items that can be used in the recipe. It differs from [[Tags (craftRecipe)]] which are recipe tags and instead uses tags which are defined in the [[Item (scripts)|item script]] itself to identify types of items. You can define your own custom tags in your own items to use in your custom recipes too. Tags are listed in the format <code>tags[{{CodeSnip/param|3=tagName1}};{{CodeSnip/param|3=tagName2}}...]</code>. See [[Item tag]] for the list of tags available in the game.
 
-===tags===
-Tags are used to identify a specific class of items that can be used in the recipe. It differs from [[Tags (craftRecipe)]] and instead uses tags which are defined in the [[Item (scripts)|item script]]. This means you can define your own custom tags for items and use them in your custom recipe. Tags are listed in the format <code>tags[tagName1;tagName2...]</code>. See [[Item tag]] for the list of tags available in the game.
-
-For example, <code>Base.SmallKnife</code> has the tags <code>Tags = CutPlant;SharpKnife;ButcherAnimal;HasMetal;Blade;Sharpenable;KillAnimal,</code> which define specific uses of the knife so you can identify it with the most relevant tag for your recipe.
-
+For example, <code>Base.SmallKnife</code> has the tags: 
+<code>Tags = {{CodeSnip/param|3=CutPlant}};{{CodeSnip/param|3=SharpKnife}};{{CodeSnip/param|3=ButcherAnimal}};{{CodeSnip/param|3=HasMetal}};{{CodeSnip/param|3=Blade}};{{CodeSnip/param|3=Sharpenable}};{{CodeSnip/param|3=KillAnimal}}</code>
+Which define specific uses of the knife so you can identify it with the most relevant tag for your recipe.
 {{CodeSnip
 | lang = lua
 | code =
 item 1 tags[SharpKnife],
 }}
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|4=mode}}</code>
+| The {{CodeSnip/param|4=mode}} is an optional parameter that can be used to define how the item is used in the recipe. Currently only two options are available:
+*<code>{{CodeSnip/param|4=keep}}</code> - The item will be kept after the recipe is finished.
+*<code>{{CodeSnip/param|4=destroy}}</code> - The item will be deleted after the recipe is finished.
 
-==mode==
-The <code>mode</code> is an optional parameter that can be used to define how the item is used in the recipe. Currently only two options are available:
-*<code>keep</code> - The item will be kept after the recipe is finished.
-*<code>destroy</code> - The item will be deleted after the recipe is finished.
+By default, <code>{{CodeSnip/param|4=destroy}}</code> is used. Some [[#flags|{{CodeSnip/param|6=flags}}]] can be used to impact how <code>{{CodeSnip/param|4=keep}}</code> is used, like reducing the condition of the item for example.
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|5=mapperID}}</code>
+| The {{CodeSnip/param|5=mapper}} is an optional parameter used to link input items to their output equivalent. To see more detail on mappers and how they are used, see [[itemMapper]].
+|-
+| style="text-align:center" | <code>{{CodeSnip/param|6=flag}}</code> table
+| {{CodeSnip/param|6=Flags}} are used to define conditions to respect for items to be used in this input or behaviors to apply to this input item when keeping it. See [[#flags]] for the list of flags available.
+|}
 
-By default, <code>destroy</code> is used. Some [[#flags]] can be used to impact how <code>keep</code> is used, reducing the condition of the item for example.
+{{Note|type=error|Both {{CodeSnip/param|2=items}} and {{CodeSnip/param|3=tags}} methods of listing items can't be combined.}}
 
-==mappers==
-The <code>mappers</code> is an optional parameter used to link input items to their output items equivalent. To see more detail on mappers and how they are used, see [[itemMapper]].
-
-==flags==
-Below is the full list of flags that can be used:
+=={{CodeSnip/param|6=Flags}}==
+{{Stub|This list is outdated and incomplete. The last version of it dates to the [[Build 42.6.0]]}}
+Below is a list of flags that can be used:
 {| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
 |+ style="white-space:nowrap" | Equiping items
 ! Flag !! Description
@@ -102,6 +114,9 @@ Below is the full list of flags that can be used:
 |-
 | style="min-width: 200px;"| <code>IsUncookedFoodItem</code> 
 | style="min-width: 600px;"| The item is uncooked.
+|-
+| style="min-width: 200px;"| <code>IsWholeFoodItem</code>
+| style="min-width: 600px;"| Instead of consuming uses of the item, it will use the whole food item.
 |}
 
 {| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"

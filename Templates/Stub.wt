@@ -1,0 +1,48 @@
+<noinclude>
+{{Documentation|doc=
+This template should be used on articles that are considered too short to provide much informational use, although they may have potential to be expanded upon.
+
+Adds articles to the "{{ll|:Category:Stub articles|Stub articles}}" category.
+
+==Usage==
+===Parameters===
+;<code>1</code>
+:The reason why and what about it makes it a stub. This parameter is recommended to help editors know what to improve on the page or section.
+;<code>section</code>
+:If set to <code>true</code>, will display "section" instead of "article" in the title.
+;<code>hidecat</code>
+:If set to <code>true</code>, it will not add the page to the "{{ll|:Category:Stub articles|Stub articles}}" category.
+
+==Examples==
+*{{tll|Stub}}
+{{Stub|hidecat=true}}
+
+{{Translation guide|<syntaxhighlight lang="html">
+{{#switch: {{{1|}}}
+| title = This {{{2}}} may need more content.
+| note = Editors are encouraged to add new material to the page while expanding upon current topics.
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>}}
+
+==See also==
+*{{ll|PZwiki:Mboxes}}
+}}
+{{ll|Category:Mbox}}
+</noinclude><includeonly>{{Mbox
+| color = #00aaff
+| sign = [[File:Notebook-old.png|link=Template:Stub{{lcs}}]]
+| title = {{tt|name=Stub
+  | default = This {{Page ns|{{{section|}}}}} may need more content.
+  | arg1 = title
+  | arg2 = {{Page ns|{{{section|}}}}}
+  }}
+| content = {{#if:{{{1|}}}|{{{1}}}}}
+| note = {{tt|name=Stub
+  | default = Editors are encouraged to add new material to the page while expanding upon current topics.
+  | arg1 = note
+  }}
+| id = stub
+| cat = {{yesno|{{{hidecat|}}}|yes=|no=Stub articles{{lcs}}}}
+| collapsed = true
+}}</includeonly>

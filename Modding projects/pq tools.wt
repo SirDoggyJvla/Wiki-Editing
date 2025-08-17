@@ -1,0 +1,37 @@
+{{Title|pq tools}}
+{{Header|Modding|Modding projects}}
+{{Page version|42.11.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:pq tools - icons.png]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/pzmapping/pq-tools
+    | GitHub repository
+    }}
+    {{Infobox/socials
+    | github=https://github.com/pzmapping/pq-tools/releases
+    | Download
+    }}
+}}
+'''pq tools''' is a collection of tools for the [[TileZed]] fork of the [[Unofficial Mapping Tools]] written in Lua which can be directly used inside TileZed thanks to its lua scripting capabilities. The project notably ports some of [[beearr tools]] to the Unofficial Mapping Tools.
+
+==Tools==
+'''*Parking Stall Tool''' - Draws 5 lines instead of 4 for more precise parking spots.
+*'''More Fences Tool''' - Adds all fence types plus powerlines in one go.
+*'''Greens Tool''' - Quickly place hedges, vines, and bushes to add life.
+*'''Decoration Tool''' - Fast placement of garden, street, and trash container decorations.
+*'''Decoration Tool Multi''' - Handles multi-tile objects like slides, sandpiles, and holes.
+*'''Boulder Tool''' - Easy placement of the new B42 boulders.
+*'''Random Blood, Cracks & Trash Tools''' - (Originally by [[beearr tools|BeeArr]], used with permission)
+
+==Installation==
+#Make sure you only have the latest TileZed lua files in your <code>Tiled/lua</code> folder of the mapping tools.
+#Copy the '''pq-tools''' Lua files from the <code>lua</code> folder of the ZIP archive into your <code>Tiled/lua</code> folder.
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}

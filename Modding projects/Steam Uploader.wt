@@ -1,0 +1,23 @@
+{{Header|Modding|Modding projects}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/socials
+    | icon=File:Discord-Logo-Color.png
+    |custom=[[Unofficial Modding Discord]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/SirDoggyJvla/Steam-Uploader
+    | GitHub repository
+    }}
+    {{Infobox/socials
+    | github=https://github.com/SirDoggyJvla/Steam-Uploader/releases
+    | Download
+    }}
+}}
+'''Steam Uploader''' is an external uploader for Workshop items which can be used for Project Zomboid to bypass the [[Uploading mods#In-game uploader|in-game uploader]] limitations such as the preview size and file type limits and the forced description upload. It uses simple command lines arguments to control what needs to be updated, with the ability to directly provide a text file for the description and patch note.
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}

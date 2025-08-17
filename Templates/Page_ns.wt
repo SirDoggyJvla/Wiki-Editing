@@ -1,0 +1,45 @@
+<noinclude>
+{{Documentation|doc=
+{{Protection|Highly visible template.}}
+This template is used to display the name of the current page's namespace.
+
+==Usage==
+This template shouldn't be used directly.
+
+===Parameters===
+;<code>1</code>
+:If set to <code>true</code>, the template will return "section" regardless of the namespace. Otherwise, it will return the name of the current namespace.
+
+==Examples==
+*{{tll|Page ns|1}} -> {{Page ns|1}}
+*{{tll|Page ns}} -> {{Page ns}}
+
+{{Translation guide|<syntaxhighlight lang="html">
+{{#switch:{{{1|}}}
+| section = section
+| article = article
+| file = file
+| template = template
+| category = category
+| page = page
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>}}
+
+==See also==
+The following templates use this template:
+*{{ll|Template:About}}
+*{{ll|PZwiki:Mboxes}}
+}}
+{{ll|Category:Metatemplates}}
+</noinclude><includeonly>{{yesno|{{{1|}}}
+| yes = {{tt|name=Page ns|default=section|arg1=section}}
+| no = {{#switch: {{NAMESPACENUMBER}}
+  | 0 = {{tt|name=Page ns|default=article|arg1=article}}
+  | 6 = {{tt|name=Page ns|default=file|arg1=file}}
+  | 10 = {{tt|name=Page ns|default=template|arg1=template}}
+  | 14 = {{tt|name=Page ns|default=category|arg1=category}}
+  | 828 = module <!-- modules aren't translated -->
+  | #default = {{tt|name=Page ns|default=page|arg1=page}}
+  }}
+}}</includeonly>
