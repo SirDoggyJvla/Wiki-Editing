@@ -1,22 +1,51 @@
 {{Header|Modding|Modding projects}}
-{{Page version|42.3.1}}
-[[File:VSCode_exampleUmbrella.png|thumb]]
-'''Umbrella''' is a collection of Lua type stubs for [[Lua (API)|Project Zomboid's modding API]]. It tells your IDE about Zomboid's classes and functions in order to provide autocomplete and type checking. It can be used with any IDE that supports LuaCATS annotations, but is primarily designed for [[Visual Studio Code|VSCode]]'s Lua plugin.
+{{Page version|42.11.0}}
+{{About|a modding project|the item|Umbrella}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Umbrella - preview.png]]
+    | p2 = [[File:VSCode_exampleUmbrella.png]]
+    | 1 = [[File:Umbrella - preview.png|link=]]
+    | 2 = [[File:VSCode_exampleUmbrella.png|link=]]
+    }}
+    
+    {{Infobox/section
+    | color = var(--color-blue)
+    | id = 1
+    | 1 = [[Build 41]]
+    | 2 = 
+    {{Infobox/socials
+    | github=https://github.com/asledgehammer/Umbrella
+    | GitHub repository
+    }}
+    }}
+    {{Infobox/section
+    | color = var(--color-blue)
+    | id = 1
+    | 1 = [[Build 42]]
+    | 2 = 
+    {{Infobox/socials
+    | github=https://github.com/demiurgeQuantified/UmbrellaAddon-Unstable
+    | GitHub repository
+    }}
+    }}
+}}
+'''Umbrella''' is a collection of Lua type stubs for the [[Lua (API)|Lua API]]. It tells your IDE about Zomboid's classes and functions in order to provide autocomplete and type checking. It can be used with any IDE that supports LuaCATS annotations, but is primarily designed for [[Visual Studio Code|VSCode]]'s Lua plugin.
 
 ===How to activate Umbrella===
-Umbrella requires the [https://marketplace.visualstudio.com/items?itemName=sumneko.lua Lua extension by Sumneko] to work. You can download it from VSCode extensions markplace directly in the IDE. See [https://code.visualstudio.com/docs/editor/extension-marketplace Extension Marketplace documentation] if you're having trouble downloading extensions.
+Umbrella requires the [https://marketplace.visualstudio.com/items?itemName=sumneko.lua Lua extension by Sumneko] as well as [https://git-scm.com/downloads git] installed to work. You can download it from VSCode extensions markplace directly in the IDE. See [https://code.visualstudio.com/docs/editor/extension-marketplace Extension Marketplace documentation] if you're having trouble downloading extensions.
 
-Once the extension is downloaded and active:
-*Press <code>CTRL + SHIFT + P</code>.
+Once the Lua extension is downloaded and active:
+*Press {{Key|CTRL}}+{{Key|SHIFT}}+{{Key|P}}.
 *Open "Lua: Open Addon Manager ..."
 *In the search bar, look for "Umbrella", or "Umbrella (Unstable)" if developping mods on the Unstable version of the game.
-*Click <code>Enable</code>. This will download Umbrella and activate it.
+*Click <code>Enable</code> to activate it. If not downloaded already, make sure to enable again after it got downloaded.
 
-<span style="font-size: 120%; font-weight: bold; color: green;">Note: </span> for each new [https://code.visualstudio.com/docs/editor/workspaces Workspace], you need to activate Umbrella.
+{{Note|type=warn|You need to activate Umbrella for each new [[Visual Studio Code#Workspace|workspace]].}}
 
-===Manual download===
-If you need to manually download Umbrella, you can find it at these repositories:
-*[https://github.com/asledgehammer/Umbrella Umbrella] - official and main repository of Umbrella.
-*[https://github.com/demiurgeQuantified/UmbrellaAddon-Unstable Umbrella for Unstable] - version of Umbrella for the Unstable version of the game.
-
+==Navigation==
 {{Navbox modding}}
+
+{{ll|Category:External tools}}

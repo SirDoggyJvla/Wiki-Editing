@@ -1,0 +1,45 @@
+{{Header|Modding}}
+{{Page version|42.11.0}}
+This guide goes in-depth on setting up a [[modding]] environment. It covers the tools and practices that can help you write, test, and debug your mods effectively.
+
+==Folder structure==
+{{Main|Mod structure}}
+When working on a mod, it is highly advised to follow the guide regarding [[mod structure]] which explains how to setup folders for your mod to be detected in-game. It notably focuses on using the {{CodeSnip/param|1=Workshop}} folder instead of the {{CodeSnip/param|1=mods}} folder inside the cache folder due to its advantages and the cons of modding from the {{CodeSnip/param|1=mods}} folder.
+
+Using the {{CodeSnip/param|1=Workshop}} folder is needed to use the [[Uploading mods#In-game uploader|in-game uploader]] meaning if you use the {{CodeSnip/param|1=mods}} folder you will inevitably end up having to make a copy of your mod in the {{CodeSnip/param|1=Workshop}} folder to upload it to the Steam Workshop. This is still an issue when using an external uploader like the [[Steam Uploader]] modding project, as you need to upload the {{CodeSnip/param|1=mods}} folder which would upload all the extra folders. Take this for example, the folder structure of the cache folder:
+{{CodeSnip/custom
+| code =
+~/
+└── Zomboid/
+:├── Crafting/
+:├── joypads/
+:├── logs/
+:├── Lua/
+:├── messaging/
+:├── {{CodeSnip/param|1=mods}}/
+:│   ├── {{CodeSnip/param|2=MyMod1}}/
+:│   │   └── ...
+:│   └── {{CodeSnip/param|2=MyMod2}}/
+:│       └── ...
+:├── Recording/
+:├── Sandbox Presets/
+:├── Saves/
+:├── {{CodeSnip/param|1=Workshop}}/
+:│   └── {{CodeSnip/param|3=MyModWorkshop}}/
+:│       └── {{CodeSnip/param|4=Contents}}/
+:│           └── {{CodeSnip/param|1=mods}}/
+:│               ├── {{CodeSnip/param|2=MyMod1}}/
+:│               │   └── ...
+:│               └── {{CodeSnip/param|2=MyMod2}}/
+:│                   └── ...
+:├── console.txt
+:└── ...
+}}
+
+In the case where you use the {{CodeSnip/param|1=mods}} folder, to upload with an external tool you would have to indicate the application to upload the content of the folder <code>~/Zomboid</code> since the {{CodeSnip/param|1=mods}} folder needs to be uploaded. This will also upload all the folders around it and will upload other mods you are developing inside the {{CodeSnip/param|1=mods}} folder.
+
+A fake solution is to copy the mods you want to upload inside a folder structure of the {{CodeSnip/param|1=Workshop}} folder for your mod but the problem with making copies of a mod is that both copies will clash and so you need to make sure to delete the mod copy inside the {{CodeSnip/param|1=Workshop}} folder or you risk having invisible issues during the development.
+
+This last principle also applies to downloading your own mods on the Workshop while having local copies inside the {{CodeSnip/param|1=mods}} folder or the {{CodeSnip/param|1=Workshop}} folder, as they will clash and cause issues. While working directly from the {{CodeSnip/param|1=Workshop}} folder will assure you never get any problems in the future.
+
+Another benefit of using the {{CodeSnip/param|1=Workshop}} folder is that it allows you to store additional assets in the upper echelon of your mods {{CodeSnip/param|1=Workshop}} folder. This is due to the {{CodeSnip/param|1=Workshop}} folder having extra folders before the {{CodeSnip/param|1=mods}} folder, taking the previous shared example your mod is <code>MyModWorkshop</code>

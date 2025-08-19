@@ -1,0 +1,79 @@
+{{Header|Modding|Modding projects}}
+{{Page version|41.78.16}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:BeeArr tools - TileZedTools.png]]
+    | p2 = [[File:BeeArr tools - 4seasonbushes.gif]]
+    | p3 = [[File:BeeArr tools - 4seasontrees.gif]]
+    | p4 = [[File:BeeArr tools - blood.gif]]
+    | p5 = [[File:BeeArr tools - cracks.gif]]
+    | p6 = [[File:BeeArr tools - dddpowerstation.gif]]
+    | p7 = [[File:BeeArr tools - doublegates.gif]]
+    | p8 = [[File:BeeArr tools - flowers.gif]]
+    | p9 = [[File:BeeArr tools - grass.gif]]
+    | p10 = [[File:BeeArr tools - hedge.gif]]
+    | p11 = [[File:BeeArr tools - houseplant.gif]]
+    | p12 = [[File:BeeArr tools - hvacfence.gif]]
+    | p13 = [[File:BeeArr tools - mto1.gif]]
+    | p14 = [[File:BeeArr tools - mto2.gif]]
+    | p15 = [[File:BeeArr tools - overgrown.gif]]
+    | p16 = [[File:BeeArr tools - shrub.gif]]
+    | p17 = [[File:BeeArr tools - stackedjunk.gif]]
+    | p18 = [[File:BeeArr tools - stone.gif]]
+    | p19 = [[File:BeeArr tools - trash.gif]]
+    | p20 = [[File:BeeArr tools - trees.gif]]
+    | p21 = [[File:BeeArr tools - utilitypoles.gif]]
+    | 1 = [[File:BeeArr tools - TileZedTools.png|link=]]
+    | 2 = [[File:BeeArr tools - 4seasonbushes.gif|link=]]
+    | 3 = [[File:BeeArr tools - 4seasontrees.gif|link=]]
+    | 4 = [[File:BeeArr tools - blood.gif|link=]]
+    | 5 = [[File:BeeArr tools - cracks.gif|link=]]
+    | 6 = [[File:BeeArr tools - dddpowerstation.gif|link=]]
+    | 7 = [[File:BeeArr tools - doublegates.gif|link=]]
+    | 8 = [[File:BeeArr tools - flowers.gif|link=]]
+    | 9 = [[File:BeeArr tools - grass.gif|link=]]
+    | 10 = [[File:BeeArr tools - hedge.gif|link=]]
+    | 11 = [[File:BeeArr tools - houseplant.gif|link=]]
+    | 12 = [[File:BeeArr tools - hvacfence.gif|link=]]
+    | 13 = [[File:BeeArr tools - mto1.gif|link=]]
+    | 14 = [[File:BeeArr tools - mto2.gif|link=]]
+    | 15 = [[File:BeeArr tools - overgrown.gif|link=]]
+    | 16 = [[File:BeeArr tools - shrub.gif|link=]]
+    | 17 = [[File:BeeArr tools - stackedjunk.gif|link=]]
+    | 18 = [[File:BeeArr tools - stone.gif|link=]]
+    | 19 = [[File:BeeArr tools - trash.gif|link=]]
+    | 20 = [[File:BeeArr tools - trees.gif|link=]]
+    | 21 = [[File:BeeArr tools - utilitypoles.gif|link=]]
+    }}
+    {{Infobox/socials
+    | github=https://github.com/TheBeeArr/beearr-tiles-and-tools
+    | GitHub repository
+    }}
+}}
+'''BearArr tools''' is a collection of tools for the official [[TileZed]] tool and written in Lua which can be directly used inside TileZed thanks to its lua scripting capabilities.
+
+==Tools==
+*'''Edge Tool''' – Expanded tile selection and corner placement for edges and grime.
+*'''Fence Tool''' – All fence types, power lines, vines, and more, with corner and gate support.
+*'''Single-tile Object Tool''' – Place street decorations, lamps, and more.
+*'''Multi-Tile Object Tool''' – Place multi-tile objects with one click and rotate them.
+*'''Houseplant Tool''' – Expanded selection of houseplants.
+*'''Grass Tool''' – Place grass anywhere on the map.
+*'''Shrub Tool''' – Place shrubs and low plants.
+*'''Seasonal Bushes Tool''' – Place bushes for all four seasons with layer support.
+*'''Tree Tool''' – Place trees anywhere.
+*'''Seasonal Trees Tool''' – Place trees for all four seasons with layer support.
+*'''Cracks Tool''' – Place small street cracks.
+*'''Trash Tool''' – Place trash overlays.
+*'''Stone Tool''' – Place stones (requires DDD's tilepacks).
+*'''Stacked Junk Tool''' – Place stacked furniture (requires Dylan's tilepacks).
+*'''Overgrown Tiles Tool''' – Place overgrown tiles (requires Dylan's and Melo's tilepacks).
+*'''Blood Tool''' – Place blood splatters.
+*'''Azakaela's Tile 2 Item Converter Addon Tools''' – Place random corpses, zombies, containers, and more.
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}

@@ -146,6 +146,13 @@ Lua objects are widely used in the Lua API and natively defined in it. They util
 [[Timed Actions]] use Lua objects to easily instantiate them and derive directly from [[ISBaseTimedAction]]. UI elements also use Lua objects.
 
 ==Where to start==
+===Setting up a code environment===
+[[Visual Studio Code]] is the norm for programming Project Zomboid mods thanks to many extensions made by the community. These extensions are the following:
+*[[Umbrella (modding)|Umbrella]]
+
+IntelliJ IDEA is also another IDE which is often used to parse the Java files easily after decompiling the game code.
+
+
 Programming with the Lua (API) can be done in many ways, but in most cases it will involve using a [[Lua event]] to run your code at specific moments of the game. As such, it's suggested to check out the [[Lua event#Current|events]] which are available to see where you can get started.
 
 When this didn't do much for you, another thing you might be interested to is to either check the vanilla code or for a mod which does something similar and see how they achieve it. With experience, you can learn to understand the game code and create your own functionalities more easily without needing to use examples.
