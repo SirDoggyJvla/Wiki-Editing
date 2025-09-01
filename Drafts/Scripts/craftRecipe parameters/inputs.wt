@@ -5,11 +5,14 @@
 The <code>inputs</code> parameter defines the ingredients needed to craft the item and will usually involve a combination of items, tags, modes or mappers of consumption of the crafting ingredients.
 
 Inputs are listed one after the other and follow the format examples below:
-{{CodeSnipCustom|code=
+{{CodeSnip/custom|code=
 inputs
 {{CodeSnip/symbol|&#123;}}
 :{{CodeSnip/comment|-- simplest form}}
 :item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
+
+:{{CodeSnip/comment|-- simplest form, different quantity for some items}}
+:item {{CodeSnip/param|quantity}} {{CodeSnip/symbol|[}}{{CodeSnip/param|2=item1}};{{CodeSnip/param|1=2}}:{{CodeSnip/param|2=item2}}...{{CodeSnip/symbol|]}},
 
 :{{CodeSnip/comment|-- with tags}}
 :item {{CodeSnip/param|quantity}} tags{{CodeSnip/symbol|[}}{{CodeSnip/param|3=tag1}};{{CodeSnip/param|3=tag2}}...{{CodeSnip/symbol|]}},
@@ -21,7 +24,7 @@ inputs
 {{CodeSnip/symbol|&#125;}}
 }}
 
-{{Note|type=error|Every {{Code|inputs}} lines need to finish with a comma or this will cause a parsing error. However, make sure to NOT put a comma after the final {{Code|} }} of the {{Code|inputs}} block !}}
+{{Note|type=error|Every {{Code|inputs}} line needs to finish with a comma, or this will cause a parsing error. However, make sure to NOT put a comma after the final {{Code|} }} of the {{Code|inputs}} block!}}
 
 ==Parameters==
 {| class="wikitable theme-blue"
@@ -42,6 +45,13 @@ item 1 [YourModuleName.YourItemID],
 }}
 
 You can also use <code>{{CodeSnip/symbol|[}}*{{CodeSnip/symbol|]}}</code> for the item table to allow any item. This is notably used for fluids which are detailed in [[Fluids (craftRecipe)]].
+
+You can have different input amounts for different items in the table by adding <code>{{CodeSnip/param|1=quantity}}:</code> in front of the item ID which needs to have a different {{CodeSnip/param|1=quantity}} value than the default one. For example:
+{{CodeSnip
+| lang = lua
+| code =
+item 1 [Item1;2:Item2;10:Item3],
+}}
 |-
 | style="text-align:center" | <code>{{CodeSnip/param|3=tag}}</code> table
 | {{CodeSnip/param|3=Tags}} are used to identify a specific class of items that can be used in the recipe. It differs from [[Tags (craftRecipe)]] which are recipe tags and instead uses tags which are defined in the [[Item (scripts)|item script]] itself to identify types of items. You can define your own custom tags in your own items to use in your custom recipes too. Tags are listed in the format <code>tags[{{CodeSnip/param|3=tagName1}};{{CodeSnip/param|3=tagName2}}...]</code>. See [[Item tag]] for the list of tags available in the game.
@@ -69,8 +79,6 @@ By default, <code>{{CodeSnip/param|4=destroy}}</code> is used. Some [[#flags|{{C
 | {{CodeSnip/param|6=Flags}} are used to define conditions to respect for items to be used in this input or behaviors to apply to this input item when keeping it. See [[#flags]] for the list of flags available.
 |}
 
-{{Note|type=error|Both {{CodeSnip/param|2=items}} and {{CodeSnip/param|3=tags}} methods of listing items can't be combined.}}
-
 =={{CodeSnip/param|6=Flags}}==
 {{Stub|This list is outdated and incomplete. The last version of it dates to the [[Build 42.6.0]]}}
 Below is a list of flags that can be used:
@@ -97,6 +105,9 @@ Below is a list of flags that can be used:
 |-
 | style="min-width: 200px;"| <code>DontPutBack</code> 
 | style="min-width: 600px;"| Item won't be put back in the container it was taken from (usually bottles that need to be opened).
+|-
+| style="min-width: 200px;"| <code>IsExclusive</code> 
+| style="min-width: 600px;"| Whenever multiple possible inputs are available but only a single type can be used, to not mix multiple different items.
 |}
 
 {| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
@@ -224,8 +235,6 @@ Below is a list of flags that can be used:
 {| class="wikitable theme-blue mw-collapsible mw-collapsed" style="text-align: center"
 |+ style="white-space:nowrap" | Unknown
 ! Flag
-|-
-| style="min-width: 200px;"| <code>IsExclusive</code>
 |-
 | style="min-width: 200px;"| <code>ItemCount</code>
 |-

@@ -11,6 +11,8 @@
 {{CodeSnip/param|5=Parameter5}}
 ----
 {{CodeSnip/param|6=Parameter6}}
+----
+{{CodeSnip/param|7=Parameter7}}
 
 
 </noinclude><includeonly>{{#switch: 1
@@ -20,4 +22,5 @@
 | {{#if:{{{4|}}}|1|0}} = <span style="color:#cfcc00;">{{{4}}}</span>
 | {{#if:{{{5|}}}|1|0}} = <span style="color:#cf00c5;">{{{5}}}</span>
 | {{#if:{{{6|}}}|1|0}} = <span style="color:#ff5100;">{{{6}}}</span>
+| {{#if:{{{7|}}}|1|0}} = <span style="color:#5eff00;">{{{7}}}</span>
 }}</includeonly>

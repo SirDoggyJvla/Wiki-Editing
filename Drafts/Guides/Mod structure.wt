@@ -1,5 +1,5 @@
 {{Header|Modding|Modding guides}}
-{{Page version|42.10.0}}
+{{Page version|42.11.0}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
 
 Local mods are recognized in two different folders which each have their own rules and structure and are both in the [[Game files#Cache folder|cache folder]]:
@@ -9,7 +9,44 @@ Local mods are recognized in two different folders which each have their own rul
 Example default mod structures are provided by the community to directly use:
 *[https://github.com/Project-Zomboid-Community-Modding/pzmc-template Project Zomboid Community Modding template] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository.
 
-{{Note|It is highly suggested to use the <code>workshop/</code> folder for mod development as mods need to be uploaded from it and developing from the <code>mods/</code> folder will always require you to make a copy of it inside the <code>workshop/</code> folder if you want to upload it. There's also other advantages to using this folder.}}
+==Mods or workshop ?==
+Using the <code>Workshop</code> folder is needed to use the [[Uploading mods#In-game uploader|in-game uploader]] meaning if you use the <code>mods</code> folder you will inevitably end up having to make a copy of your mod in the <code>Workshop</code> folder to upload it to the Steam Workshop. This is still an issue when using an external uploader like the [[Steam Uploader]] modding project, as you need to upload the <code>mods</code> folder which would upload all the extra folders. Take this for example, the folder structure of the cache folder:
+{{CodeSnip
+| code =
+~/
+└── Zomboid/
+    ├── Crafting/
+    ├── joypads/
+    ├── logs/
+    ├── Lua/
+    ├── messaging/
+    ├── mods/
+    │   ├── MyMod1/
+    │   │   └── ...
+    │   └── MyMod2/
+    │       └── ...
+    ├── Recording/
+    ├── Sandbox Presets/
+    ├── Saves/
+    ├── Workshop/
+    │   └── MyModWorkshop/
+    │       └── Contents/
+    │           └── mods/
+    │               ├── MyMod1/
+    │               │   └── ...
+    │               └── MyMod2/
+    │                   └── ...
+    ├── console.txt
+    └── ...
+}}
+
+In the case where you use the <code>mods</code> folder, to upload with an external tool you would have to indicate the application to upload the content of the folder <code>~/Zomboid</code> since the <code>mods</code> folder needs to be uploaded. This will also upload all the folders around it and will upload other mods you are developing inside the <code>mods</code> folder.
+
+A bad solution is to copy the mods you want to upload inside of the <code>Workshop</code> folder for your mod but the problem with making copies of a mod is that they will clash and so you need to make sure to delete the mod copy inside the <code>Workshop</code> folder or you risk having invisible issues during the development.
+
+This last principle also applies to downloading your own mods on the Workshop while having local copies inside the <code>mods</code> folder or the <code>Workshop</code> folder, as they will clash and cause issues. While working directly from the <code>Workshop</code> folder will assure you never get any problems in the future.
+
+Another benefit of using the <code>Workshop</code> folder is that it allows you to store additional assets in the upper echelon of your mods <code>Workshop</code> folder. This is due to the <code>Workshop</code> folder having extra folders before the <code>mods</code> folder, taking the previous shared example you have <code>MyModWorkshop</code> and <code>Contents</code>. Anything in the <code>Contents</code> folder will be uploaded to the Workshop, but anything placed at the same level as it, inside <code>MyModWorkshop</code>, will not be uploaded and completely ignored by the game. You can use this to create other subfolders like <code>images</code> or <code>assets</code> which will hold your modding assets, you can have a file <code>README.md</code> and also a <code>.git</code> folder to have <code>MyModWorkshop</code> serve as your mod's [[Wikipedia:Git|git]] repository.
 
 ==Workshop folder==
 The Workshop folder will use the following structure:
@@ -34,7 +71,7 @@ Zomboid/
 *<code>preview.png</code>: The image used as your mod preview on the Steam Workshop. Game imposes a 256x256 resolution.
 
 {{Note|Subfolders in <code>MyExampleMod/</code> which are not <code>Contents/</code> are not recognized by the game and can be used to store various files for your mod that shouldn't get uploaded. Thus you can store in it Python scripts, images, assets, etc.}}
-{{Note|<code>MyExampleMod/</code> can be used as a Git repository (Git, Github, GitLab...).}}
+{{Note|<code>MyExampleMod/</code> can be used as a Git repository (GitHub, GitLab...).}}
 
 ==Mod folder==
 The files of your mods are placed in the folder <code>Contents/mods/</code> alongside a [[mod.info]] file which is the core of your mod. The folder structure of your mod folder should be as follows:
@@ -253,4 +290,4 @@ Below is a full example of a mod structure in Windows.
 ==Navigation==
 {{Navbox modding}}
 
-{{ll|Category:Guides}}
+{{ll|Category:Modding guides}}

@@ -1,0 +1,78 @@
+{{Header|Modding|Modding guides}}
+{{Page version|42.11.0}}
+It can be daunting to navigate the complexities of modding, especially on the Lua aspect when you have no programming experience. A lot is possible and your main limitation is knowing how to achieve things and the best course of actions, which you will learn after practicing more and more. Get used to the environment, learn the various tools available and how modding works, and don't discourage if your first mod doesn't do great or doesn't work too well because you will learn from it.
+
+It is clear from our experience that AI tools will usually bring you more problems than solutions if you blindly trust it (see [[#Warning on AI usage]]), and you will end up directly going back to square one most of the time. The list below are a few tips to help you get started with modding Project Zomboid:
+#'''Start Small''': Begin with simple mods and gradually increase complexity as you become more comfortable with the process of making mods.
+#'''Utilize Resources''': Take advantage of available resources such as the [[JavaDocs]], community forums, and the few tutorials to learn more about the modding practices. Make sure to read the wiki pages of the [[Modding#Modding fields|modding fields]] you are working with.
+#'''Experiment''': Don't be afraid to experiment with code snippets and test them in a controlled environment. This will help you understand how different functions and methods work.
+#'''Learn from others''': It is likely what you are trying to achieve has already been done or something similar was already done. Look for existing mods that achieve similar goals and study their implementation to reverse engineer the method used and create your own. You can access the files of mods you have downloaded with the method explained in the [[Game files#Online workshop folders|game files]] page.
+#'''Ask for Help''': If you're stuck, reach out to the [[Modding#Communities|modding community]] for assistance where many experienced modders are willing to help newcomers. Simply ask your questions and be respectful, and you will get some help, some answers or at the very least some guidance.
+
+==Folder structure==
+{{Main|Mod structure}}
+When working on a mod, it is highly advised to follow the guide regarding [[mod structure]] first which explains how to setup folders for your mod to be detected in-game. It notably focuses on using the ''Workshop'' folder instead of the ''mods'' folder inside the cache folder due to its advantages and the cons of modding from the ''mods'' folder.
+
+Individual pages for the [[Modding#Modding fields|modding fields]] also explain the important folders they use.
+
+==Programming environment==
+[[Visual Studio Code]] is the norm for programming Project Zomboid mods thanks to many extensions made by the community. These extensions are the following:
+*[[Umbrella (modding)|Umbrella]] - syntax highlight for the [[Lua (API)|Lua API]].
+*[[Project Zomboid Script Support]] - syntax highlight for the [[Scripts]].
+*[[Zed Script]] - another syntax highlight for the [[Scripts]].
+
+[[IntelliJ IDEA]] is also another [[Wikipedia:Integrated development environment|IDE]] which is often used to parse the [[Java]] files easily after [[Decompiling game code|decompiling the game code]].
+
+[[Wikipedia:Notepad++|Notepad++]] is not recommended as other editors with a bit more if not equal setup provide a better working environment for programming while also having extra tools for Project Zomboid modding. It is especially limited as it can't be used as an [[Wikipedia:Integrated development environment|IDE]] to easily navigate a mod project files.
+
+==Image editing==
+No particular software is suggested for image editing, you are free to use softwares you confortable with. However, here are a few suggestions:
+*[[Wikipedia:GIMP|GIMP]] - a free and open-source image editor that is powerful and versatile.
+*[[Wikipedia:Adobe Photoshop|Photoshop]] - a professional image editing software with advanced features but paid.
+*[[Wikipedia:Krita|Krita]] - a free and open-source digital painting software that is great for illustrations and concept art.
+
+==Modeling and animating==
+Same as for editing images, no particular software is suggested for modeling and [[Animation|animating]], you are free to use softwares you comfortable with. However, we suggest [[Wikipedia:Blender|Blender]] which is a powerful and free open-source 3D modeling software used by the majority of the community but with a steep learning curve.
+
+There are no specific tutorials for Project Zomboid modeling, but you can find many general tutorials on how to use Blender and how to create 3D models.
+
+==Mapping==
+A dedicated set of tools are maintainted specifically for Project Zomboid mapping, which are listed on the main [[Mapping#Mapping tools|Mapping]] page. A bunch of video tutorials are also available on that same page.
+
+==Warning on AI usage==
+AI tools are becoming more present than ever and which many people are using more and more. This warning is not regarding the different moral questions regarding, or from stopping you to use them. '''However''' you need to be aware in its current shape, AI prompts regarding Project Zomboid's modding will provide very low quality results, if not completely non working [[Lua|codes]], [[scripts]] etc.
+
+AI is not aware of how Project Zomboid works nor is it aware of the different functions that exist in the [[Lua (API)|Lua API]] or how [[scripts]] are written. It will hallucinate stuff and provide non working code especially if badly used ! Use it as a tool to learning basic programming, rather than the solution to your mod making instead !
+
+Another common use of AI is to make mod previews for in-game and workshop previews. There seems to be a trend where mods with AI previews will get less attention on the Workshop will tend to be ignored more by the player-base. Whenever you agree with that or not, you need to take this into account that in the current state, users will appreciate way more a human made preview, even if low quality. This is most likely due to the amount of low effort mods uploaded to the Workshop with AI generated previews, which can lead to a perception of lower quality or effort. You can take a simple screenshot of your mod in-game if possible and add the mod name as text on it to use as the preview.
+
+===Example===
+A common example of AI usage gone wrong with the [[Lua (API)|Lua API]] is the following, where <code>object</code> is a Java class instance, which is exposed to the Lua via the API and <code>thefunction</code> a method of this class:
+{{CodeSnip
+| lang = lua
+| code =
+-- normally calling the function
+object:thefunction()
+}}
+
+This is the usual way of calling a function of an instance, however an AI not being aware of every functions available in the base game will sometimes hallucinate functions. For example:
+{{CodeSnip
+| lang = lua
+| code =
+object:notAFunction()
+}}
+
+This triggers an error, the error gives the error to the AI or sometimes doesn't, and the AI will find a solution or be misslead into finding a technically working code, which doesn't actually do anything:
+{{CodeSnip
+| lang = lua
+| code =
+-- makes sure the function exists
+if object.notAFunction then
+    object:notAFunction() -- finally calls the function since it exists
+end
+}}
+
+This is a bad behavior which appears due to the AI finding solutions to a problem it has created itself and with the lack of understanding from the modder of what is being achieved by the AI. The reason this doesn't work is that an instance of an object will always have the functions available to it, which are notably listed in the [[JavaDocs]], and verifying if the function exists simply stops the code from throwing an error by masking the underlying issue that <code>notAFunction</code> is not a function of the instance <code>object</code> and the if statement will simply never pass.
+
+==Navigation==
+{{Navbox modding}}

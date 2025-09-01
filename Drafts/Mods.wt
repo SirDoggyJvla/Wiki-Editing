@@ -1,0 +1,80 @@
+{{Header|Modding}}
+{{Page version|42.11.0}}
+{{About|created mods|the details about creating mods|Modding}}
+'''Mods''' are player created customized content. ''Mod'' stands for ''modification'', as it alters the original game content. Guidelines for creating your own Project Zomboid modded content can be found on the [[modding]] page. If you are not interested in making your own mods, player created mods can be found on the [https://theindiestone.com/forums/index.php?/forum/58-mods/ Official Project Zomboid Forum - Mods category] or in the [[Spiffo's Workshop]] on Steam.
+
+==Installing mods==
+===Steam Workshop===
+For this method, you must have purchased the game on Steam.
+#Open [[Steam]].
+#Open your games library.
+#Click on Project Zomboid.
+#Click on the Workshop button on the game page.
+#Select a mod, open mod page and click "Subscribe".
+#If the game is running, turn it off. Mods can be downloaded with the game running but if you don't find the mod in the [[#Mod manager|mod manager]], then restart the game.
+#Wait for the mod to install.
+#You can now launch the game and enable the mod in the mod manager.
+
+{{Note|Downloaded mods are stored inside the [[Game files#Online workshop folders|workshop folder]].}}
+
+===Manual local installation===
+You can manually install mods by putting them inside the <code>mods</code> folder of the [[Game files#Cache folder|cache folder]]. Alternatively the <code>workshop</code> folder is used for mod development and required extra folders for a mod to be recognized there, see the [[mod structure]] page for more details on that.
+
+To retrieve mods manually you can either:
+*Ask someone to send you the files of the mod. This means someone needs to own the game on Steam, locate the mod files in their [[Game files#Online workshop folders|workshop folder]] and send you the mod folder.
+*Use [[SteamCMD]] which needs a lot more setup but allows you to download mods without needing to own the game.
+
+==Using mods==
+Mods are created by the community and can be version specific. Old mods for older versions of the game are likely to not work with new versions. If you are having problems when using mods, refer to the [[Resolving problems with mods|mod problem solving article]].
+
+===Mod manager===
+[[File:ModMenuExampleNumbers.png|600px|thumb]]
+The mod manager is the in-game interface to manage mods which allows you to enable and disable mods, make presets, favorite them, and more. It can be accessed from the main menu by clicking "Mods". The screenshot shown here is of the mod manager with various bit informations indicated with the red numbers, which are as follows:
+#Mod list with the mod icon, name and if it is enabled in green or not.
+#The mod informations as defined inside the [[mod.info]] file of the mod. This lists the status (if enabled), version, author, homepage, mod link, mod ID, [[Workshop ID]], the minimum and maximum game version, dependencies, incompatibilities.
+#The mod preview.
+#The mod description as defined inside the [[mod.info]] file of the mod.
+#Search bar to easily find mods in the manager.
+#Filters by mod type (map, vehicle, features, modpack).
+#Activate preset of enabled mods, you can save your current mod activated list, delete it, or share your mod preset by copying it to the clipboard or adding one you copied and want to import.
+#Map and mod order.
+#Confirmation to load the current selection, which will reload the lua.
+
+When launching a new save, it will use the currently active mod list.
+
+===Changing mods in an existing world===
+You can change the currently active mods in a save but make sure to backup your save beforehand. To do so:
+#Click the "Load" button in the main menu, which will list your current saves.
+#Select the save, and click "More".
+#Click "Choose Mods".
+#This opens the mod manager for this save, which you can toggle on or off the mods you want to change.
+
+===Setting mods for host===
+{{Improve|section=true|This was copy and pasted from the old [[Using mods|Using mods]] page and not verified or tested. It might need rephrasing or additional information.}}
+#Open server host settings
+#Select the item "Steam Workshop" in the menu on the left (If you run the server without Steam, go to step 4)
+#Select Steam Workshop mods from the drop down list and click on them to add them. To remove - select the mod in the list on the right and click the "Remove" button
+#Next, select "Mods" from the menu on the left
+#Select mods from the drop-down list and click on them to add (if you added mods in step 3 - then maybe some mods are already added). To remove - select the mod in the list on the right and click the "Remove" button
+#(Optional - map mods) - Select "Map" in the menu on the left and set the order for loading the map. Maps are loaded from top to bottom and if the map intersect - map will overwrite intersected zones of the previous maps.
+#Click save
+Ready! Now you can start the host server.
+
+===Mod settings===
+Some mods can have settings in two different form:
+*[[Sandbox options]] - settings which are world specific and which should apply to every players, found in the world creation menu.
+*[[ModOptions|Mod options]] - user specific settings independent between players, which can be found in the game settings menu in the section "MODS".
+
+==See also==
+*[[Modding]] - explains the process of creating mods.
+*[[Installing mods]] – how to install mods for [[Steam]] or [[GOG]] version of the game.
+*[[Using mods]] – how to enable and configure mods.
+*[[Resolving problems with mods]] – what to do if mods do not work well or break the game.
+*[[Uploading mods]] – how to upload mods to the [[Steam]] workshop.
+*[[Testing mods in multiplayer]] – guide about setting up the mod to work on the server.
+*[[Spiffo's Workshop]] - the Steam Workshop for Project Zomboid mods.
+*[https://theindiestone.com/forums/index.php?/forum/58-mods/ Completed mods] - the forum section to share completed mods.
+*[https://theindiestone.com/forums/index.php?/forum/59-wip/ Work-in-Progress mods] - the forum section to share Work-in-Progress mods.
+
+==Navigation==
+{{Navbox modding}}

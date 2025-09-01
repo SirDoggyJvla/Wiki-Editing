@@ -1,9 +1,10 @@
 {{Header|Modding}}
-{{Page version|42.3.0}}
+{{Page version|42.11.0}}
 {{About|an overview about modding|PZwiki project|PZwiki:Project Modding}}
 [[File:SpiffosWorkshop.png|link=https://steamcommunity.com/app/108600/workshop/|frame|right|Spiffo's Workshop is the home of [[Project Zomboid]] mods on [[Steam]]]]
+Modding is the process of creating new content by creating [[mods]] for a game. For Project Zomboid, modding is a natively integrated part of the game with a mod manager and an API to allow modders to create a various quantity of content, from simple items to complex systems. Mods are usually uploaded to the [[Spiffo's Workshop]] which serves as the official method for sharing mods with the community.
 
-=='''Terms & Conditions'''==
+==Terms & Conditions==
 By playing Project Zomboid, you agree to the '''[https://projectzomboid.com/blog/support/terms-conditions/ Terms & Conditions]'''.
 
 By modding Project Zomboid, you also agree with the '''[https://projectzomboid.com/blog/modding-policy/ Modding Policy]'''.
@@ -15,57 +16,29 @@ By modding Project Zomboid, you also agree with the '''[https://projectzomboid.c
 *Project Zomboid modders are free to receive monetary/gift donations from the players who use their releases, and appreciate the time and effort put into them. However, having mods created exclusively for those who choose to donate (or separate ‘in-mod’ content and bonuses) is not allowed. Mod creators cannot sell modifications to Project Zomboid.
 
 ==Communities==
-Different communities exist to get help with modding, be it installing or debugging mod problems or creating mods, maps, tiles etc :
-*[https://discord.gg/theindiestone Official Discord] - Check out the '''Workshop''' category to get help on installing mods, problems with mods or developing mods.
-*[[Unofficial Modding Discord]] - provides help on coding, modeling, animating…
-*[[Unofficial Mapping Discord]] - provides help on mapping and tile making.
+Different communities exist to get help with modding, be it installing or debugging mod problems or creating mods, maps, tiles, etc.:
+*[https://discord.gg/theindiestone Official Discord] – check out the '''Workshop''' category to get help on installing mods, problems with mods, or developing mods.
+*[[Unofficial Modding Discord]] – provides help on coding, modeling, animating…
+*[[Unofficial Mapping Discord]] – provides help on mapping and tile making.
 
 ===Modding Projects===
 {{Main|Modding projects}}
-Various projects are created and handled by the community in relation with Project Zomboid modding. It varies from APIs, debug tools to complete software development. Communities were also created to focus on modding Project Zomboid. You can contribute to some of these projects or communities directly or undirectly.
-
-==Installing and using mods==
-*[[Installing mods]] – how to install mods for [[Steam]] or [[GOG]] version of the game.
-*[[Using mods]] – how to enable and configure mods.
-*[[Resolving problems with mods]] – what to do if mods do not work well or break the game.
-*[[Uploading mods]] – how to upload mods to [[Steam]] workshop.
-*[[Testing mods in multiplayer]] – guide about setting up the mod to work on the server.
-
-==Current mods==
-{{Main|Mods}}
-*[https://steamcommunity.com/app/108600/workshop/ Spiffo's Workshop]
-*[https://theindiestone.com/forums/index.php?/forum/58-mods/ Completed mods]
-*[https://theindiestone.com/forums/index.php?/forum/59-wip/ Work-in-Progress mods]
+Various projects are created and handled by the community in relation to Project Zomboid modding. It varies from APIs, debug tools, to complete software development. Communities were also created to focus on modding Project Zomboid. You can contribute to some of these projects or communities directly or indirectly.
 
 ==How to get started==
-Making mods might feel challenging at first because of the lack of knowledge of modding. The best tip is to start small and while you might have a mod idea which is big, it's not a good idea to get started. You have to get used to your environment, learn the various tools available and how modding works.
-
-Go step by step but the great part is that the limitations aren't too big in the case of Project Zomboid and usually if you have an idea, the limitations might not be the game but knowing how to do it and having the time to do so. As such test some bits, don't discourage if your first mod doesn't do great or doesn't work well because you will learn from it.
-
-If you don't know what is doable, you can either check how other mods do it by [[Game files#Online workshop folders|accessing their files]]. Asking in the various modding [[#Communities]] is also a good idea in getting some help or finding out what you could possibly achieve with modding.
-
-Depending on the type of modding you are interested in, the [[#Modding Resource Hub]] will provide you with the necessary resources to get started as well as links to some important pages per modding fields.
+You can learn more in detail how to get started with modding in the [[getting started]] page. Depending on the type of modding you are interested in, the [[#Modding Resource Hub]] will provide you with the necessary resources to get started as well as links to some important pages per modding fields.
 
 ===Modding fields===
-*'''Scripts''' - allow to add items in the game with simple parameters which can be edited in any text editor. No programming knowledge is needed.
-*'''Lua API''' - Project Zomboid is coded in both Java and Lua but utilizing a link in-between. This part involves programming codes to create or modify features by using [[Lua (language)]].
+*'''[[Scripts]]''' - allow to add items in the game with simple parameters which can be edited in any text editor. No programming knowledge is needed.
+*'''[[Lua (API)|Lua API]]''' - Project Zomboid is coded in both Java and Lua but utilizing a link in-between. This part involves programming codes to create or modify features by using [[Lua (language)]].
 *'''Modeling and texturing''' - creating models is used when creating items. Texturing goes with it to put proper textures on your items.
 *'''Pictures and icons''' - needed to create items, but can also be used to make various images for the game such as fliers, moodles or UI elements.
-*'''Animating''' - used to create new animations for characters to visually do certain actions. It involves knowledge of 3D softwares for animating but also a small bit of XML programming required to get your animation in-game.
-*'''Mapping''' - tools exist to create new locations, buildings and general environments for the game. 
-*'''Translations''' – translating the game or mods to various languages.
+*'''[[Animation|Animating]]''' - used to create new animations for characters to visually do certain actions. It involves knowledge of 3D softwares for animating but also a small bit of XML programming required to get your animation in-game.
+*'''[[Mapping]]''' - tools exist to create new locations, buildings and general environments for the game. 
+*'''[[Translations]]''' – translating the game or mods to various languages.
 
 ===Working tools===
-Various tools might be needed depending on the type of modding you do:
-*'''Text editor''' – used to edit scripts and write code.
-**[[Visual Studio Code]] - '''HIGHLY SUGGESTED''', a few community addons for Project Zomboid typing exists for it.
-**[https://notepad-plus-plus.org Notepad++]
-*'''Image editor''' – used to create icons, textures for items and tiles.
-**[https://www.gimp.org/ GIMP]
-**Any tool for editing images.
-*'''3D modeling''' and '''animating''' – used to work on 3D models.
-**[https://store.steampowered.com/app/365670/Blender Blender] - the most used by the community.
-*'''Mapping and tilemaking''' - [https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ TileZed, WorldEd, and tilesets] – TileZed can also be downloaded and compiled from [https://github.com/timbaker/tiled the source code on GitHub], or they can be installed (currently only for Windows), as [https://steamdb.info/app/380880/ Project Zomboid Modding Tools] if the game is owned on Steam.
+Various tools might be needed depending on the type of modding you do. You can find a list of tools used for modding in the [[getting started]] page.
 
 ===Other modding tools===
 *[https://www.guidgenerator.com/ Free Online GUID Generator] – for making GUIDs for modded clothing and outfits.
@@ -75,7 +48,7 @@ Modding has different fields of modding, each with their own rules and tools whi
 
 For a few generic resources on the subject:
 *[[Game files]] - Explains Project Zomboid's file structure.
-*[[File formats]] - Documentation of file formats used by game.
+*[[File formats]] - Documentation of file formats used by the game.
 *[[Mod structure]] - Explains a mod files structure.
 *[[Debug mode]] - Explanations of how to run the game in the debug (developer) mode and how to use it.
 *[[Startup parameters]] - Startup parameters to launch the game with.
@@ -121,6 +94,7 @@ Scripts are a required step in making any type of item such as weapons, clothing
 |+ style="white-space:nowrap" | External tutorials
 |-
 ! Tutorial !! Description !! Author !! Last updated
+|-
 | [https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003 How To Create an Animation]
 | A guide on how to create an animation for Project Zomboid.
 | Dislaik
@@ -197,7 +171,7 @@ Unlisted external guides are listed below:
 | [https://discord.com/channels/136501320340209664/1070852229654917180 Mod Resources (Official Discord - Thread The Under Mod Development Channel)]
 | A thread on the official Discord server that contains a list of resources for modding Project Zomboid, including links to resources, tools, and other useful information.
 | Glytch3r
-| {{#dateformat:2024-07-21|ymd}}
+| {{#dateformat:2025-07-04|ymd}}
 |}
 
 ===General additional modding resources===
@@ -209,6 +183,7 @@ Unlisted external guides are listed below:
 *[https://theindiestone.com/forums/index.php?/topic/28633-complete-vehicle-modding-tutorial/  Complete Vehicle Modding Tutorial on TIS forum]
 *[https://github.com/Konijima/PZ-Community-API/blob/master/Contents/mods/CommunityAPI/media/lua/shared/CommunityAPI/IsoUtils.lua isoRangeScan: This is a utility function meant for large-scale scans of isoGridSquares around a given IsoObject. The scans are done fractally – that is to say, from a center (or centers) outward to fill a larger area.]
 
+==Navigation==
 {{Navbox modding}}
 
 {{ll|Category:Modding|&#32;}}

@@ -1,5 +1,5 @@
 {{Header|Modding|Modding projects}}
-{{Page version|41.78.16}}
+{{Page version|42.11.0}}
 {{Infobox
 | title = <div></div>
 | 
@@ -10,8 +10,12 @@
     | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3171829037
     | Workshop page
     }}
+    {{Infobox/socials
+    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3559919243
+    | Build 42 port
+    }}
 }}
-'''DOME''', of the full name ''Derived Object Module Extractor'', is a tool used to intercept freshly [[ISBaseObject#Object inheritance|derived]] Lua objects. This is mostly used to access derived objects which are not defined globally but locally in their respective files, thus rendering them inaccessible outside of their scope.
+'''DOME''', of the full name ''Derived Object Module Extractor'', is a tool used to intercept freshly [[ISBaseObject#Object inheritance|derived]] Lua objects. This is mostly used to access derived objects which are not defined globally but locally in their respective files, thus rendering them inaccessible outside of their scope. It received an unofficial port to [[Build 42]].
 
 ==Usage==
 To use DOME and access a specific derived object that you know the name of, you can use the following:

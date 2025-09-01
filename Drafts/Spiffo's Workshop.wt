@@ -1,0 +1,32 @@
+{{Header|Modding}}
+{{Page version|42.11.0}}
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | 1 = [[File:SpiffosWorkshop.png|link=]]
+    | 2 = [[File:Spiffo's Workshop - preview.png|link=]]
+    | p1 = [[File:SpiffosWorkshop.png]]
+    | p2 = [[File:Spiffo's Workshop - preview.png]]
+    }}
+    {{Infobox/socials
+    | other=https://steamcommunity.com/app/108600/workshop/
+    | Steam Workshop
+    }}
+    {{Infobox/socials
+    | forum=https://theindiestone.com/forums/index.php?/forum/58-mods/
+    | Forum's mod sharing section
+    }}
+    {{Infobox/socials
+    | forum=https://theindiestone.com/forums/index.php?/forum/59-wip/
+    | Forum's mod showcase section
+    }}
+}}
+'''Spiffo's Workshop''' is the home of [[Project Zomboid]] mods on [[Steam]], more generally known as the Steam Workshop. It serves as a platform for modders to share their creations and for players to discover and install mods for the game. It provides a central hub where you can see the trending mods, access your own mods, downloaded mods and favorites as well as list mods based on search terms, categories via the use of tags or filters.
+
+Currently the Workshop page features items as well as collections of mods created by the community. The trending mods section showcases a total of 9 of most popular mods in the past week or two. Mods can be up-voted and downvoted, providing a rating score via 5 stars. This rating score calculation is a bit special and unclear as the number of stars for a mod is limited by the number of votes it has received and not by its rating of positive and negative votes.
+
+Individual mod pages can hold mod previews, descriptions, comment and discussion sections as well as a change note section. They can indicate other necessary mods for their mod to work, as well as add contributors to the list of creators of the mod. You can also award a mod with badges via the use of Steam points and favorite mods to easily find them later or add them in a collection.
+
+==Navigation==
+{{Navbox modding}}
