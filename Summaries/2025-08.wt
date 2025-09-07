@@ -1,0 +1,39 @@
+Hello everyone, I'm Sir Doggy Jvla and here's the August project modding summary.
+
+Here is the number of people who joined via the wiki Discord invites:
+*[[Unofficial Modding Discord]]: 795 joined since the creation of the invite (\~December). (714 in July)
+*[[Unofficial Mapping Discord]]: 301 joined since the creation of the invite (\~December). (232 in July)
+
+A major reorganization was made for [[Mod structure]], where individual sections for the various modding fields were moved to their respective pages when possible, thus reducing the bloat of the page to what it was before these sections were added, and to not repeat informations at two different places or do constant back and forth linking. The [[Mod structure]] page is used for general informations on how to setup a mod folder and have it recognized by the game. Thus the following got a "folder structure" section:
+*[[Mapping]]
+*[[Scripts]]
+*[[Lua (API)]], notably goes into detail about Lua file load order.
+*[[Animation]] (already had one, but it got improved a bit)
+
+A [[Getting started with modding]] page was created for new modders to get started with setting up their modding environment and link to relevant ressources to start. [[Spiffo's Workshop]] was created to document the Steam Workshop for the game, and [[Mods]] was reworked to be up-to-date, and also to merge with [[Using mods]] and [[Installing mods]]. The getting started and installing and using mods sections of [[Modding]] were moved to the relevant pages.
+
+[[Lua (API)]] received some clarifications here and there thanks to [[User:Albion|Albion]] notably. A page about [[Networking]] was created to explain how to properly set your mod in a multiplayer environment.
+
+[[Scripts]] side, [[Vehicle (scripts)]] received an update, to put the parameters in a table instead of subsections. This page should get a deeper rework in the future, to properly entangle the process of making a custom vehicle. The various script blocks explained on the page will receive their respective wiki pages as they are script types. In the same way, [[Model (scripts)]] was reworked to also use a table for parameters and follow the same style as other script pages.
+
+Mapping side, [[Building Pool (disambiguation)]] was created to easily distinguish between the various building pool pages. [[Knox Country]] unofficial export was documented as a public map, thanks to the [[Vanilla Map Export]].
+
+Not fully modding related, but an extension for [[Visual Studio Code]] used to edit wikitext easily was documented on the VSCode page. This can be used by anyone who, like me, edit the wiki pages outside of the website in a more comfortable environment.
+
+[[Startup parameters]] received some very nice colors for parameters thanks to [[User:Aoqia|Aoqia]]. This idea was expanded on more sections of the wiki, notably anything script related could possibly use it. The idea is to put in a custom code block formatting the scripts with colors for users to more easily read them, since scripts aren't a proper programming language. This is how I came up with [[Template:CodeSnip/custom]] and subtemplates such as [[Template:CodeSnip/symbol]], [[Template:CodeSnip/param]], [[Template:CodeSnip/braces]] etc which should make the process of writing these custom code blocks easier. There are however big limitations such as tabulations not working properly and weird visual bugs, and awful to read source code, that even myself and other experienced wiki editors struggle to read. You can see an example of this in [[outputs]] and [[inputs]].
+
+Here are the new [[Modding projects]] documented this month:
+*[[Vanilla Map Export]]
+*[[Pq tools]] and [[BeeArr tools]] are sets of tools that can be used in [[WorldEd]]
+*[[Steam Uploader]]
+
+This last one is a tool which was specifically created by me for the Project Zomboid modding community (and can be used for other Steam Workshop games too), to provide an alternative to the in-game uploader which is very limited. It is a CLI tool to update and upload mods to the Steam Workshop, without needing to open the game. It's likely I'll implement a UI in the future to make it more user-friendly. [[App ID]] was created to document what it is and how to find it, since it's needed for the tool to work and needed in other pages of the wiki. [[BBCode]] was also created to document the Steam Workshop page formatting.
+
+Since we don't like getting flashbanged on the wiki, the <code>class=logo-dark</code> and <code>class=logo-light</code> parameters was added to some images to provide an automatic dark mode or light mode version of the image. This was introduced by [[User:Vaileasys]] and applied to other pages. Some examples: [[Keyboard#Keybinds ID]] and [[Procedural distributions#Problem with the system]].
+
+In terms of templates used for the modding section, the [[Template:Infobox/socials/nolink]] was created as a helper for the main template, to easily add socials that do not have a link, such as a Discord ID.
+
+Thanks to the various users contributing to the modding wiki this month:
+*The previously mentioned [[User:Albion|Albion]] and [[User:Aoqia|Aoqia]].
+*[[User:STIMP TM|STIMP TM]] and [[User:F7cjo|F7cjo]] - added missing informations about a flag in [[inputs]].
+*The wiki admins as always.
