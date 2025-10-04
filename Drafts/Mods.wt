@@ -3,6 +3,51 @@
 {{About|created mods|the details about creating mods|Modding}}
 '''Mods''' are player created customized content. ''Mod'' stands for ''modification'', as it alters the original game content. Guidelines for creating your own Project Zomboid modded content can be found on the [[modding]] page. If you are not interested in making your own mods, player created mods can be found on the [https://theindiestone.com/forums/index.php?/forum/58-mods/ Official Project Zomboid Forum - Mods category] or in the [[Spiffo's Workshop]] on Steam.
 
+==Commissions==
+Commissioning mods allows users to bring ideas into reality, but it involves both creative and financial trust. This guide outlines recommended practices to protect clients and modders, reduce misunderstandings, and encourage transparency.
+
+This guide is also extremely important due to the rise of scams in the community, be it by actual known modders who actively hunt clients to maliciously provide services for already existing features, or by fake modders who promise services without the intention to deliver anything to then disappear after stealing you.
+
+The guidelines below are recommendations and do not constitute legal advice. The modding [[Modding#Communities|communities]] provide a platform for modders and clients to connect in a safe and moderated environment. The [[Unofficial Modding Discord]] is a good place to start, with tools to help facilitate open communication and having the whole process documented, by providing tools to sign contrats and agreements, and providing an in-server private communication.
+
+===Writing a Commission Request===
+When creating a commission request:
+*'''Do your research''': Ask around in the modding community if the mod you are interested in already exists, and their advice on the project, if it is doable, and at a reasonable price.
+*'''Be descriptive''': Clearly explain features, functionality, and scope.
+*'''Provide references''': Include images, examples, or inspirations when possible.
+*'''Clarify ownership''': State who will publish the mod if this is important to you. Follow-up support (updates) should be not guaranteed outside of the agreed/initial mod.
+*'''Set a budget''': Mention your budget or note if it is negotiable.
+
+===Agreements and Transactions===
+*'''Stage the work''': Break projects into phases (agreement, draft, delivery, payment). Touch base often to make sure everything is going as planned. This avoids misunderstandings and surprises.
+*'''Confirm in writing''': Use permanent written records for prices, timelines, and deliverables.
+*'''Use milestones''': For large projects, consider split payments, initial deposits, continued payments at mid-points, and upon completion.
+
+===Safety Recommendations===
+*'''Ask for a portfolio'''. A modder capable of making Zomboid mods should have something related to Zomboid to show for it.
+*'''Do not pay before proof''' of work is provided.
+*'''Do not deliver''' the full mod '''before payment''' is received.
+*'''Share or archive copies''' through email, cloud storage, or workshop pages.
+*'''Keep all agreements documented''' in case of disputes.
+*'''Ask around''' about the modder you are about to hire. Some modders are well known in the community for their bad practices and for being often problematic.
+
+===Red Flags===
+Exercise caution if a prospective client or modder:
+*Has '''no history or visible presence''' in the community.
+*'''Refuses to provide a portfolio''', references, or past work.
+*'''Insists''' on private communication only. They are trying to avoid public scrutiny.
+*'''Refuses to link''' a relevant game profile or '''verifiable identity'''.
+
+===Payment and Trust===
+Upfront payment should not be the default and is generally discouraged. Modders should expect upfront payment when:
+*They are proven and trusted in the community, with a very solid portfolios, past commissions or good reputation in the community.
+*The project is particularly large or time-intensive.
+
+For most projects, milestone-based payments after work is demonstrated are safest.
+
+===Final Tips===
+Communicate expectations clearly and professionally. Be conservative when money is involved—better to walk away than risk a scam. Transparency protects both the commissioner and the modder, and helps maintain a healthy community.
+
 ==Installing mods==
 ===Steam Workshop===
 For this method, you must have purchased the game on Steam.
@@ -50,7 +95,7 @@ You can change the currently active mods in a save but make sure to backup your 
 #This opens the mod manager for this save, which you can toggle on or off the mods you want to change.
 
 ===Setting mods for host===
-{{Improve|section=true|This was copy and pasted from the old [[Using mods|Using mods]] page and not verified or tested. It might need rephrasing or additional information.}}
+{{Improve|section=true|This was copy and pasted from the old [[#Using mods|Using mods]] page and not verified or tested. It might need rephrasing or additional information.}}
 #Open server host settings
 #Select the item "Steam Workshop" in the menu on the left (If you run the server without Steam, go to step 4)
 #Select Steam Workshop mods from the drop down list and click on them to add them. To remove - select the mod in the list on the right and click the "Remove" button
@@ -67,8 +112,6 @@ Some mods can have settings in two different form:
 
 ==See also==
 *[[Modding]] - explains the process of creating mods.
-*[[Installing mods]] – how to install mods for [[Steam]] or [[GOG]] version of the game.
-*[[Using mods]] – how to enable and configure mods.
 *[[Resolving problems with mods]] – what to do if mods do not work well or break the game.
 *[[Uploading mods]] – how to upload mods to the [[Steam]] workshop.
 *[[Testing mods in multiplayer]] – guide about setting up the mod to work on the server.

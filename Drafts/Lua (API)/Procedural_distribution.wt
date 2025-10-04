@@ -113,7 +113,7 @@ Alongside the <code>rolls</code> tag for the <code>distributionName</code> and <
 ==How to add your own items to distributions==
 The main challenges you will face is properly understanding how loot generation actually works (see [[#How does loot generation works]]), finding the right distribution list and organizing the file which adds these. Inserting inside the procedural distribution needs to be done in <code>media/lua/server</code>.
 
-There are many ways of achieving this, with the most practical one being:
+There are many ways of achieving this, with the most common one, but worst one, being:
 {{CodeSnip
 | lang = lua
 | code =
@@ -230,11 +230,10 @@ You can add items in these tables.
 ===Accessing a container distribution in-game===
 Accessing a container distribution in-game can be achieved with [[LootZed]] which allows you to check for the various distribution lists for a container as well as listing each items and their chances of spawning in.
 
-
 ==Problem with the system==
 Due to the way the game works, adding new items to a [[#Distributions|distribution list]] will ultimately increase the mean amount of items in this container. For a small demonstration of the issue, see the following image which is a simulation of a distribution list getting more and more entries by following a distribution of loot for different amount of rolls:
 
-[[File:Procedural distribution - system problem.png|800px]]
+[[File:Procedural distribution - system problem.png|800px|class=logo-dark]]
 
 This is notably a major problem in some popular mods such as [https://steamcommunity.com/sharedfiles/filedetails/?id=2613146550 True Music] addons, large gun mods or clothing packs which have modders add multiple items in a single [[#Distributions|distribution list]] and end up bloating the containers with loot. Other problems are that the game will ignore the container encumbrance limitations or there will be inequal amount of loot in different types of containers.
 
@@ -2754,4 +2753,8 @@ Below is the full list of distributions as well as their different tags.
 ==See also==
 *[[PZTools]] - a tool to explore the loot distribution of the game.
 
+==External links==
+*[https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ Quick Guide: How To Mod The Loot Distribution System (Distributions.lua, ProceduralDistributions.lua)] — a 2021 guide to adding loot distribution.
+
+==Navigation==
 {{Navbox modding}}

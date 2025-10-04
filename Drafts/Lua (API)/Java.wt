@@ -1,0 +1,25 @@
+{{Header|Modding}}
+{{Page version|42.11.0}}
+{{Infobox
+| color = theme-blue
+| class = theme-blue
+| title = Java
+| {{Infobox/image
+    | p1 = [[File:Java logo.png]]
+    }}
+}}
+'''Java''' modding consists in creating mods directly in Java, which provides way more liberties than [[Lua (API)|Lua modding]], but is also more complex and has its own limitations. The principal limitation is that Java mods cannot be directly loaded from Workshop mods, and requires a manual installation from the users. Another limitation is that any changes to the game code of the classes you modify will be overwritten by any game updates, and will thus require you to update your mod way more often than other mod types, which isn't ideal for long term support.
+
+[[Leaf]] is developing tools to make Java modding easier by providing a mod loader for Java mods and tools to not require a full rewrite of the classes you want to modify, and without needing you to update your mod as often. It is currently the main project being developed to expand Java modding, and only solution to the previously mentioned limitations.
+
+You can access the game code by [[Decompiling game code|decompiling]] it.
+
+{{Note|type=warn|If you are new to modding, or programming in general, it is recommended to start with [[Lua (API)|Lua modding]] first at the very least.}}
+
+==Installating Java==
+You can download the last version on [https://www.oracle.com/fr/java/technologies/downloads/ Oracle's website], but other Java implementations such as [https://openjdk.org/ OpenJDK] will work too. Make sure to restart your terminal after downloading a new java version if you are [[Decompiling game code|decompiling]] from it.
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}

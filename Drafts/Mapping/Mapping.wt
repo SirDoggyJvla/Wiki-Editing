@@ -10,6 +10,10 @@ Official tools exist for mapping but at the moment are not available for [[Build
 *[[TileZed]] - Included in WorldEd, used to create and edit tilesets as well as edit maps.
 
 The [[Unofficial Mapping Tools]] aims to provide the updated mapping tools for [[Build 42]], allowing the creation of basements. The picture below details the mapping tools hierarchy:
+
+Erika from [[The Indie Stone]] stated work is being done to update the official mapping tools for [[Build 42]] and will be released on stable:
+{{Quote|author=Erika in [https://discord.com/channels/136501320340209664/279303619277488128/1423997542009405451 the official Discord] - October 2025|text=Hello 🙂 Just wanted to give you a small update about the tools. We are currently at work on B42 unstable. The official B42 tools will be released when we release B42 stable. We will share them as soon as we can, right now I can't give a timeline for when it's ready.}}
+
 [[File:Mapping tools - diagram.png|center]]
 
 ==Folder structure==
@@ -80,7 +84,6 @@ media/
 *[[Community Architect]]
 
 ==Public maps==
-{{Wip|section=true|I'm in need of some feedback on the format for this new section. Feel free to discuss this on the [[Unofficial Mapping Discord]] (ping me sirdoggyjvla).}}
 Some maps created by the community had their files made public for other mappers to use or study. Below is a list of public maps, their authors as well as how they can be used:
 {| class="wikitable theme-blue sortable" style="text-align: center;
 |+ style="white-space:nowrap" | Public maps
@@ -117,11 +120,6 @@ Some maps created by the community had their files made public for other mappers
 |+ style="white-space:nowrap" | External tutorials
 |-
 ! Tutorial !! Description !! Author !! Last updated
-|-
-| [https://www.youtube.com/watch?v=KCX6nwJR3RQ How To Make Curved Roads]
-| A video tutorial on how to make curved roads with tiles.
-| PentyT
-| {{#dateformat:2025-01-03|ymd}}
 |-
 | [https://www.youtube.com/watch?v=YwL8bJUkUeA How To Make Sittable Chairs In Build 42 I Project Zomboid Modding]
 | A video tutorial on how to make sittable chairs in [[Build 42]].
@@ -207,9 +205,6 @@ Some maps created by the community had their files made public for other mappers
 | {{#dateformat:2019-08-24|ymd}}
 |}
 
-{{ToggleBox
-|title=Outdated tutorials/resources
-|content=
 {| class="wikitable theme-blue sortable" style="text-align: center;
 |+ style="white-space:nowrap" | Outdated tutorials
 |-
@@ -245,10 +240,6 @@ Some maps created by the community had their files made public for other mappers
 | Thuztor
 | {{#dateformat:2015-04-19|ymd}}
 |}
-
-|id=1
-|class=blue
-}}
 
 ==Navigation==
 {{Navbox modding}}

@@ -1,9 +1,10 @@
+{{Title|craftRecipe}}
 {{Header|Modding|Scripts}}
-{{Page version|42.8.1}}
+{{Page version|42.11.0}}
 {{About|[[Build 42]] crafting recipes|crafting recipes for [[Build 41]]|Recipe (scripts)}}
-Crafting recipes in [[Build 42]] were changed to use a different formatting and system than the one used in [[Build 41]] ([[Recipe (scripts)|Recipe]]).
+'''craftRecipe'''s are a type of [[scripts]] used to define crafting recipes by providing a set of parameters and conditions.
 
-{{Note|type=warn|Recipes might get changed during the unstable build, so it is important to verify the version of the information provided.}}
+{{Note|Crafting recipes in [[Build 42]] were changed to use a different formatting and system than the one used in [[Build 41]] ([[Recipe (scripts)|Recipe]]).}}
 
 ==craftingRecipe format==
 To create a new crafting recipe, simply use the following entry in a script file:
@@ -19,11 +20,11 @@ module yourModule /* or Base */
 }
 }}
 
-The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipe_{language}</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for English needs to have:
+The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipes_{language}.txt</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for English needs to have:
 {{CodeSnip
 | lang = lua
 | code =
-RecipeEN = {
+Recipes_EN = {
     Recipe_MyRecipe = "My Recipe Name"
 }
 }}
@@ -34,20 +35,20 @@ Different parameters can be used in the <code>craftRecipe</code> block to define
 |+ style="white-space:nowrap" | List of parameters for the <code>craftRecipe</code> block
 ! Parameter name !! Description
 |-
-| style="padding: 10px;text-align: center;"| [[time]]{{sup|mandatory|red}}
-| style="padding: 5px; max-width: 500px;"| Time to craft the item.
+| style="padding: 10px;text-align: center;"| [[Tags (craftRecipe)|Tags]]{{sup|mandatory|red}}
+| style="padding: 5px; max-width: 500px;"| Specifies specific conditions which need to be respected to craft this item. At least one crafting bench tag is necessary for the craft to be recognized, such as {{Code|AnySurfaceCraft}}.
 |-
 | style="padding: 10px;text-align: center;"| [[inputs]]{{sup|mandatory|red}}
 | style="padding: 5px; max-width: 500px;"| The ingredients needed to crafting the item.
 |-
-| style="padding: 10px;text-align: center;"| [[outputs]]{{sup|mandatory|red}}
+| style="padding: 10px;text-align: center;"| [[outputs]]
 | style="padding: 5px; max-width: 500px;"| The item produced from the craft.
 |-
-| style="padding: 10px;text-align: center;"| [[Tags (craftRecipe)|Tags]]{{sup|mandatory|red}}
-| style="padding: 5px; max-width: 500px;"| Specifies specific conditions which need to be respected to craft this item. At least one crafting bench tag is necessary for the craft to be recognized, such as {{Code|AnySurfaceCraft}}.
+| style="padding: 10px;text-align: center;"| [[time]]
+| style="padding: 5px; max-width: 500px;"| Time to craft the item. Defaults to 50.
 |-
 | style="padding: 10px;text-align: center;"| [[timedAction (craftRecipe)|timedAction]]
-| style="padding: 5px; max-width: 500px;"| Specifies an animation played during the crafting process as well as sounds and the calory burn and body heat generation rates.
+| style="padding: 5px; max-width: 500px;"| Specifies an animation played during the crafting process, as well as sounds and the calorie burn and body heat generation rates.
 |-
 | style="padding: 10px;text-align: center;"| [[category]]
 | style="padding: 5px; max-width: 500px;"| Specifies the category of the crafting recipe. This helps to organize and identify recipes in the crafting menu.
@@ -90,6 +91,9 @@ Different parameters can be used in the <code>craftRecipe</code> block to define
 |-
 | style="padding: 10px;text-align: center;"| [[Fluids (craftRecipe)|Fluids]]
 | style="padding: 5px; max-width: 500px;"| Recipes can use fluids.
+|-
+| style="padding: 10px;text-align: center;"| [[overlayMapper]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
 |}
 
 ===Available skills===
@@ -100,6 +104,35 @@ You can define multiple skills and their respective experience points/levels by 
 *[[AutoLearnAny]] format is <code>skill:level</code>
 
 You can find the available skills in the {{JavaObject|package=zombie/characters/skills|PerkFactory.Perks}} class. Alternatively, you can also use modded skills defined by your mod or other mods.
+
+==Modifying existing recipes==
+{{Stub|section=true|Other methods to modify specific elements exist and need to be documented.}}
+Below will be a list of known methods to modify specific elements of existing recipes.
+
+{{Note|type=error|The new craftRecipe from [[Build 42]] is very limited when it comes to modifying existing recipes from the Lua compared to the previous [[recipe (scripts)|recipe scripts]] from [[Build 41]].}}
+
+===Adding a new output mapper output===
+This method can be used to add new entries to the script output [[itemMapper]].
+{{CodeSnip
+| lang = lua
+| code =
+Events.OnGameStart.Add(function()
+    local recipe = ScriptManager.instance:getCraftRecipe("SliceHead")
+    if recipe then
+        local outputs = recipe:getOutputs()
+        for i=0, outputs:size()-1 do
+            local out = outputs:get(i)
+            local mapper = out:getOutputMapper()
+            if mapper then
+                local list = ArrayList.new()
+                list:add("HorseMod.Horse_Head")
+                mapper:addOutputEntree("HorseMod.Horse_Skull", list)
+                mapper:OnPostWorldDictionaryInit(recipe:getName())
+            end
+        end
+    end
+end)
+}}
 
 ==Example==
 Below are a few examples of vanilla crafting recipes you can do:
@@ -204,4 +237,5 @@ craftRecipe CarveWhistle
 }
 }}
 
+==Navigation==
 {{Navbox modding}}

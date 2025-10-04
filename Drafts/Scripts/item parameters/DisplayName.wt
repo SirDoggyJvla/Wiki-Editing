@@ -1,0 +1,36 @@
+{{Header|Modding|Scripts|Item script parameters}}
+{{Page version|42.12.1|2=984907}}
+'''{{Code|DisplayName}}''' is used to set the display name of an item. This parameter is optional as of [[Build 42.12.0]]. It is suggested to use [[translations|item name translations]] instead, which will take priority over this parameter. The priority order for the display name of an item is:
+#[[translations|Item name translation]] for current language
+#[[translations|Item name translation]] for english
+#{{Code|DisplayName}} parameter
+#Item full type
+
+Below is an example usage of the parameter:
+{{CodeSnip|code=
+DisplayName = Opened Canned Tomato,
+}}
+
+{{Note|type=warn|It is highly advised to use translations instead of this parameter, as it provides other modders the ability to translate your items into their own language with simple addons for your mod.}}
+
+==Using translation==
+Setup a [[Translations#Commonly used files|translation file]] for one or more languages inside the folder {{Code|media/lua/shared/Translate/{language code}/}} with {{Code|{language code}}} listed in the [[Translations#Languages|translations]] page. The file needs to be named {{Code|ItemName_{language code}.txt}}:
+{{CodeSnip|code=
+media/
+└── lua/
+    └── shared/
+        └── Translate/
+            ├── EN/
+            │   └── ItemName_EN.txt
+            ├── FR/
+            │   └── ItemName_FR.txt
+            └── ...
+}}
+
+Inside the file, add a line for each item you want to translate, using the full type of the item as the key with the prefix {{Code|ItemName_}}, and the desired display name as the value:
+{{CodeSnip|code=
+ItemName_EN = {
+    ItemName_Base.CannedTomato = Opened Canned Tomato,
+    ItemName_Base.CannedCorn = Opened Canned Corn,
+}
+}}

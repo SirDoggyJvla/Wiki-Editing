@@ -1,9 +1,11 @@
 {{Header|Modding}}
 {{Page version|42.11.0}}
 {{About|the Lua API|a guide to learn how to code with Lua|Lua (language)}}
-Project Zomboid allows modders to program functionalities via a Java implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods from Lua scripts.
+Project Zomboid allows modders to program functionalities via a [[Java]] implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods from Lua scripts.
 
 It is highly suggested to take note of the [[JavaDocs]] and possibly [[Decompiling game code|decompiling the game code]] to make your life easier when it comes to finding functions and understanding their inner working to more easily manipulate the game's Lua. Alternatively, an unofficial project called [[LuaDocs]] acts like a JavaDocs but for the Lua API.
+
+[[Java]] modding also exists and is a more powerful way to mod the game, by reducing the limitations to the minimum. However, it is more complex and has its own major drawbacks.
 
 ==How do Java classes work in the Lua API==
 Lua acts as a bridge to the Java, thanks to Project Zomboid's API. Every time you try to run functions on a Java object from Lua, there are more operations happening than simply running a Lua function on a Lua object, which is also the source of performance impacts (see [[Mod optimization]]).
@@ -159,16 +161,19 @@ There are various community libraries which can help you with your Lua modding. 
 
 ==Folder structure==
 {{Main|Mod structure}}
-'''Lua''' scripts are put inside the <code>lua</code> folder inside the <code>media</code> folder. They are simply files which end with the extension <code>.lua</code>. This folder organizes in subfolders, used to determine the loading of files in singleplayer and multiplayer.
+'''Lua''' scripts, with the file extension <code>.lua</code> need to be inside three subfolders inside the <code>media/lua</code> folder, and are used to determine the loading of files in singleplayer and multiplayer:
 {{CodeSnip
 | code =
 media/
 └── lua/
     ├── client/
+    │   ├── yourFile.lua
     │   └── ...
     ├── server/
+    │   ├── yourOtherFile.lua
     │   └── ...
     └── shared/
+        ├── thisIsALuaScript.lua
         └── ...
 }}
 
@@ -211,6 +216,7 @@ The server subfolder is actually loaded only when launching a save, so anytime L
 {{Note|type=warn|It is not recommended to overwrite existing files if not needed for compatibility reasons. Instead, overwrite specific functions or [[Lua (language)#Decoration|hook]] to them when possible.}}
 
 ==See also==
+*[[Java]] - explains things related to 
 *[[Lua (language)]] - the programming language used in Project Zomboid.
 *[[Lua objects]] - classes defined in the Lua.
 *[[Lua event]] - events which can be used to run Lua code at specific moments of the game.

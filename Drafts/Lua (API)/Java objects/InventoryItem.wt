@@ -1,7 +1,26 @@
-==Description==
-Main class for items in the game.
+{{Header|Modding|Lua (API)|Java objects}}
+{{Page version|42.12.1}}
+'''InventoryItem''' is the class which defines items in the game. It has multiple subclasses:
+*{{JavaObject|AlarmClock|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|AlarmClockClothing|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Animal|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Clothing|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Container|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Drainable|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Food|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Key|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Literature|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Map|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Moveable|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Normal|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Radio|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|Weapon|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+*{{JavaObject|WeaponPart|package=zombie/inventory/types|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+
+Creating these subclasses usually involves simply creating an InventoryItem and the subclass will be given to the items that need it.
 
 ==Java doc==
+{{Main|Java documentation}}
 [https://projectzomboid.com/modding/zombie/inventory/InventoryItem.html InventoryItem]
 
 ==InventoryItem creation==
@@ -86,3 +105,6 @@ for _ = 1,5 do
     isoGridSquare:AddWorldInventoryItem(item, 0, 0, 0)
 end
 }}
+
+==Navigation==
+{{Navbox Java objects}}

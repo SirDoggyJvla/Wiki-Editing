@@ -1,0 +1,15 @@
+{{Header|Modding}}
+{{Page version|42.12.0}}
+{{Stub}}
+'''Modeling''' is the process of creating 3D models using specialized software, to directly implement in-game in the form of items or vehicles, or to create [[rendering|renders]]. The most common software in the Project Zomboid community for any 3D work is [[Wikipedia:Blender|Blender]], but there are many others available.
+
+It is possible to import game assets to use in your own project, see [[File formats#Importing assets]].
+
+==See also==
+*[[Animation]] - a guide on creating custom animations for the game.
+*[[Scripts]] - a guide on creating scripts to add new items, vehicles etc.
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}

@@ -1,0 +1,14 @@
+{{Header|Modding|Lua (API)}}
+{{Page version|42.11.0}}
+{{About|an overview of the Project Zomboid Java documentation|other uses}}
+The '''JavaDocs''' of Project Zomboid is a crucial resource for modders, as it provides detailed information about the various classes and methods used within the game's [[Java]]. This documentation is essential for understanding the game's inner workings and is often used in conjunction with the [[Decompiling game code|decompiled game code]] to better understand what the various classes and methods do.
+
+It is the documentation of every Java classes and methods exposed to the Lua API, allowing modders to see directly what they can utilize in their codes to program Project Zomboid mods. By knowing the name of the class or method you are trying to look for, you can simply type it in the search bar on the Javadoc which will list you every class, methods, or fields of the same name or in its name. If it doesn't appear it means it is not in the Java.
+
+Below are all the available JavaDocs and for which version of the game they are available:
+*[https://projectzomboid.com/modding/ Official Project Zomboid JavaDocs for Build 41.77]
+*[[Unofficial JavaDocs (Build 41)]]
+*[[Unofficial JavaDocs (Build 42)]]
+
+==Navigation==
+{{Navbox modding}}

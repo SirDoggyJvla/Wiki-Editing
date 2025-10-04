@@ -44,8 +44,11 @@ This template is used to create a row in the infobox with social media links. It
     | custom=[[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]]
     }}
     {{Infobox/socials
-    | custom=[[zomboidweb:blog|Project Zomboid blog]]
-    | icon=File:The Indie Stone logo.png
+    | custom=[[T-shirt - TIS]]
+    | icon=File:Spiffo8.png
+    }}
+    {{Infobox/socials
+    | blog=[[zomboidweb:blog|Project Zomboid blog]]
     }}
     {{Infobox/socials
     | discord=nolink
@@ -72,8 +75,8 @@ This template is used to create a row in the infobox with social media links. It
 : Link of a Bitbucket repository. This will add a Bitbucket logo to the row.
 ;{{Code|X}}
 : Link of a X page. This will add a X logo to the row.
-;{{Code|forum}}
-: Link of an official [[The Indie Stone]] forum page. This will add the forum pie logo to the row.
+;{{Code|forum}} or {{Code|blog}}
+: Link of an official [[The Indie Stone]] forum page or blog. This will add the forum pie logo to the row. Blog links are best to used the format {{Code|[[zomboidweb:blog|Project Zomboid blog]]}}.
 ;{{Code|gdrive}}
 : Link of a Google Drive page. This will add a Google Drive logo to the row.
 ;{{Code|other}}
@@ -92,12 +95,13 @@ By setting the value for the icon types parameters to {{Code|nolink}}, the icon 
 {{ll|Category:Templates}}</noinclude><includeonly><div class="infobox-section">
 <div>{{#if:{{{discord|}}}|[[File:Discord-Logo-Color.png|link={{Infobox/socials/nolink|link={{{discord|}}}}}|25px]] {{Infobox/socials/nolink|link={{{discord|}}}|1={{{1|}}}}}|
     {{#if:{{{steam|}}}|[[File:Steam logo.png|link={{Infobox/socials/nolink|link={{{steam|}}}}}|25px]] {{Infobox/socials/nolink|link={{{steam|}}}|1={{{1|}}}}}|
-    {{#if:{{{github|}}}|[[File:Github-Logo.png|link={{Infobox/socials/nolink|link={{{github|}}}}}|25px]] {{Infobox/socials/nolink|link={{{github|}}}|1={{{1|}}}}}|
+    {{#if:{{{github|}}}|[[File:Github-Logo.png|class=logo-dark|link={{Infobox/socials/nolink|link={{{github|}}}}}|25px]] {{Infobox/socials/nolink|link={{{github|}}}|1={{{1|}}}}}|
     {{#if:{{{bitbucket|}}}|[[File:Bitbucket-Logo.webp|link={{Infobox/socials/nolink|link={{{bitbucket|}}}}}|25px]] {{Infobox/socials/nolink|link={{{bitbucket|}}}|1={{{1|}}}}}|
-    {{#if:{{{X|}}}|[[File:X-Logo.png|link={{Infobox/socials/nolink|link={{{X|}}}}}|25px]] {{Infobox/socials/nolink|link={{{X|}}}|1={{{1|}}}}}|
+    {{#if:{{{X|}}}|[[File:X-Logo.png|class=logo-dark|link={{Infobox/socials/nolink|link={{{X|}}}}}|25px]] {{Infobox/socials/nolink|link={{{X|}}}|1={{{1|}}}}}|
     {{#if:{{{forum|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{forum|}}}}}|25px]] {{Infobox/socials/nolink|link={{{forum|}}}|1={{{1|}}}}}|
+    {{#if:{{{blog|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{blog|}}}}}|25px]] {{Infobox/socials/nolink|link={{{blog|}}}|1={{{1|}}}}}|
     {{#if:{{{gdrive|}}}|[[File:Google Drive icon.webp|link={{Infobox/socials/nolink|link={{{gdrive|}}}}}|25px]] {{Infobox/socials/nolink|link={{{gdrive|}}}|1={{{1|}}}}}|
     {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{Infobox/socials/nolink|link={{{other|}}}}}|25px]] {{Infobox/socials/nolink|link={{{other|}}}|1={{{1|}}}}}|
     {{#if:{{{custom|}}}|[[{{#if:{{{icon|}}}|{{{icon}}}|File:Link-icon.webp}}|25px]] {{{custom}}} 
-}} }} }} }} }} }} }} }} }}</div>
+}} }} }} }} }} }} }} }} }} }}</div>
 </div></includeonly>

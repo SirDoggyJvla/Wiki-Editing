@@ -1,5 +1,5 @@
 {{Header|Modding}}
-{{Page version|42.11.0}}
+{{Page version|42.12.0}}
 '''Animation''' in Project Zomboid consist in creation custom animations and add them to the game or replace existing ones. The process involves both animating a skeleton of the character model, usually called a ''rig'', exporting it to a [[File formats#Modeling and animation formats|format]] that the game can read (preferably Filmbox {{Code|.fbx}}) and defining an [[AnimNodes|AnimNode]] which will be used to play the animation in-game and define its properties.
 
 ==Available rigs for animating==
@@ -99,6 +99,17 @@ media/
 *[[Creating custom animations]] – a step-by-step guide on how to create animations.
 *[[Game files]] – accessing game files, including animations.
 *[[Mod structure]] – explanation of the structure of a mod.
+
+{| class="wikitable theme-blue sortable" style="text-align: center;
+|+ style="white-space:nowrap" | External tutorials
+|-
+! Tutorial !! Description !! Author !! Last updated
+|-
+| [https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003 How To Create an Animation]
+| A guide on how to create an animation for Project Zomboid.
+| Dislaik
+| {{#dateformat:2023-10-02|ymd}}
+|}
 
 ==Navigation==
 {{Navbox modding}}

@@ -1,5 +1,5 @@
-{{Header|Modding}}
-{{Page version|42.9.0}}
+{{Header|Modding|Modding guides}}
+{{Page version|42.10.0}}
 {{About|file formats used in Project Zomboid|the file structure of the game|File structure}}
 Project Zomboid uses different '''file formats''' for within its files to use models, textures, images but also to write codes and scripts. This page will list the different formats used in the game and their specificity.
 
@@ -9,10 +9,12 @@ Project Zomboid uses different '''file formats''' for within its files to use mo
 Project Zomboid allows modders to program functionalities via a Java implementation of '''Lua''' called Kahlua (see [[Lua (API)]] which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods.
 
 ===XML===
-This format is mostly used for clothing items and defining animations by using [[AnimNodes]].
+This format is mostly used for clothing items and defining animations by using AnimSets.
 
 ===Text files===
-The <code>.txt</code> format is commonly used, notably for [[Scripts]] and [[Translations]]. Different files may require different types of formating inside the text file to be usable.
+The <code>.txt</code> format is commonly used, notably for [[Scripts]]. Different files may require different types of formating inside the text file to be usable.
+
+[[Scripts]] and [[Translations]] can be written easier by using [[Visual Studio Code#Zed Script|Zed Script]], an addon developped for [[Visual Studio Code]].
 
 ==Texture and modeling formats==
 Texture formats are used either to create items or to create the world. The formats are different for each type of texture, and the formats are outlined below. The model formats are used to create the 3D models to implement in the game, and are also outlined below.
@@ -22,18 +24,18 @@ Texture formats are used either to create items or to create the world. The form
 The game uses 8bit PNGs (16bits is not accepted) for its textures and images, so you'll be dealing with those. A lot of the icons and some other images are not stored inside classic image textures but in [[#TexturePacks (.pack files)|.pack files]].
 
 ===Modeling and animation formats===
-{{Unverified|section=true|GLB is used in the [[game files]] but is not confirmed to be usable in mods yet, or at which extent.}}
 The model formats which can be used are :
-*[[Wikipedia:DirectX|DirectX]] (<code>.X</code>)
-*[[Wikipedia:FBX|Filmbox]] (<code>.FBX</code>)
-*[[Wikipedia:GlTF#GLB|GLB]] (<code>.GLB</code>) is also supposed to be supported but is unconfirmed. 
+*[[Wikipedia:DirectX|DirectX]] (<code>.x</code>)
+*[[Wikipedia:FBX|Filmbox FBX]] (<code>.fbx</code>)
+*[[Wikipedia:GlTF#GLB|Graphics Library Transmission Format]] (<code>.glb</code>) - allows for animations to be stored in model files, to animate clothing and other models.
 
-DirectX is the most used format in the game as it is used for a huge amount of models and is the only format used for animations. Some models use the Filmbox format, such as WorldItem models as well as the [[vehicle|vehicles]].
+Most vanilla game assets use DirectX for most of its models, with some Filmbox model such as WorldItem as well as the [[vehicle]]s.
 
-{{Note|It is recommended to use the Filmbox format for modding, as it is more widely supported by modern 3D modeling software. There is no point to using the DirectX format.}}
+{{Note|type=warn|It is recommended to use the Filmbox format for modding, as it is more widely supported by modern 3D modeling software. There is no point to using the DirectX format.}}
+{{Note|type=error|If you are having issues with implementing custom models in the game, switching to DirectX will '''never''' be the solution to fix those.}}
 
 ====Importing assets====
-Due to DirectX being a mostly outdated format, most 3D modeling software does not support it natively. However, there are tools and addons that allow you to import DirectX files into software like [[Wikipedia:Blender|Blender]] or other 3D modeling software.
+Due to DirectX being a mostly outdated format, most 3D modeling software do not support it natively. However, there are tools and addons that allow you to import DirectX files into software like [[Wikipedia:Blender|Blender]] or other 3D modeling software.
 
 {| class="wikitable theme-blue sortable" style="text-align: center;
 |+ style="white-space:nowrap" | Model and animation import tools
@@ -238,4 +240,5 @@ Room format, iterate over it the number of times indicated by the <code>int32</c
     [end of object format]
 </pre>
 
+==Navigation==
 {{Navbox modding}}

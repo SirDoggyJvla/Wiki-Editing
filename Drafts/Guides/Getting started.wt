@@ -39,6 +39,9 @@ There are no specific tutorials for Project Zomboid modeling, but you can find m
 ==Mapping==
 A dedicated set of tools are maintainted specifically for Project Zomboid mapping, which are listed on the main [[Mapping#Mapping tools|Mapping]] page. A bunch of video tutorials are also available on that same page.
 
+==Other modding tools==
+*[https://www.guidgenerator.com/ Free Online GUID Generator] – to generate GUIDs for clothing and outfits making.
+
 ==Warning on AI usage==
 AI tools are becoming more present than ever and which many people are using more and more. This warning is not regarding the different moral questions regarding, or from stopping you to use them. '''However''' you need to be aware in its current shape, AI prompts regarding Project Zomboid's modding will provide very low quality results, if not completely non working [[Lua|codes]], [[scripts]] etc.
 
