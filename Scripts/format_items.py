@@ -61,7 +61,7 @@ elif cmd == "2":
 
     header = (
         """{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center;\n"""
-        + """|+ style="white-space:nowrap" | Parameters for various item class used by the vanilla game\n"""
+        + """|+ style="white-space:nowrap" | Parameters used by the vanilla game for the various item classes\n"""
         + """|-\n"""
     )
     types_row = "! Parameter !! " + " !! ".join(uniques_classes) + "\n"
@@ -69,6 +69,7 @@ elif cmd == "2":
 
     # write to file wiki table
     with open("output.wt", "w") as f:
+        f.write("==Parameters comparison==\n")
         f.write(header)
         f.write(types_row)
         for param in unique_params:
