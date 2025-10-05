@@ -1,0 +1,33 @@
+Hello everyone, here's the project modding summary for September 2025. Very small month and not much on my end as I'm busy, slowly having less and less time in my life for the wiki due to my thesis. Thankfully the modding wiki is now at a decent state, but there are still major sections that need work and documentation. I have hopes for more contributions from the community in the future.
+
+Here is the number of people who joined via the wiki Discord invites:
+*[[Unofficial Modding Discord]]: - joined since the creation of the invite (\~December). (795 in August)
+*[[Unofficial Mapping Discord]]: - joined since the creation of the invite (\~December). (301 in August)
+
+To start off, the wiki now has an official mod which I created, to provide support for wiki access directly in-game, called [[Wiki That!]]. Not exactly related to modding, but this seemed like the best place to talk about it in the wiki summary.
+
+Currently, the plan is to expand the modding fields documentation, by adding more various pages about specific modding topics, similar to [[Lua (API)]], [[Scripts]] or [[Mapping]]. [[Java]] was created as Java modding received a lot of attention in the past month or two, which will get expanded in the future to provide more informations about this modding field. [[Rendering]] is also a new modding field page, to document how rendering of game assets in Blender and other 3D software works, which isn't directly used for modding but can be used for mod presentation on the [[Steam Workshop]] or for [[flier]]s like the base game does. [[Modeling]] was created to document the process of creating 3D models for the game, but this new page will need to be expanded to provide more informations.
+
+As a result of adding new modding fields, the [[Modding]] page was reworked a bit to provide more concise informations about the various modding fields, and provide a better presentation in the form of a table. Various useful links for these modding fields were added to the table as well. I hope to expand the modding fields, to spread various modding aspects of the game into their own pages, such as creating an [[Item making]] page, a [[Vehicle making]] page, a [[Sound modding]] page etc. These pages will hold external links to guides and tutorials on these subjects.
+
+The [[Modding]] and [[Mods]] pages received informations about mod commissions, to provide a list of tips and indications for users and modders to both have a good experience with commissions, and not fall for scams. Commission scams have been extremely present in the [[Unofficial Modding Discord]], and growing in frequency, which led to us pushing for good pratice informations on the wiki. This was worked on by [[User:ChuckleberryFinn|Chuck]] for the most part.
+
+[[CraftRecipe]] received a new section about modifying existing craftRecipe scripts from the Lua. There's a lot of limitations but some tricks do exist to modify some aspects of it.
+
+On the [[Scripts]] aspect, some [[Item (scripts)]] parameters were updated to reflect the new modding wiki format, and to clean them up and add more up-to-date informations. The reworked parameters include:
+*[[Icon (item parameter)]] - details the file structure, the naming of icon files and set of rules to follow, as well as detailing on the trick to make subfolders for these. The food icons section was mostly kept intact, with a bit of a rewrite here and there.
+*[[DisplayName]] - reworked to explain this parameter is optional as of [[Build 42.12.0]], and that [[translations]] entries should be used for naming items instead.
+*[[Type]] - alongside [[InventoryItem]], listed every item types available in the game, with links to their respective [[JavaDocs]] entries or wiki page if it exists. There is also a note about the ECS system being worked on, to replace {{Code|Type}} in the future, which was announced in [[Build 42.12.0]].
+
+More work will be done on [[Item (scripts)]] page, to better list the various parameters available for the various [[Type]]s. You can find a concept from me in [[User:SirDoggyJvla/sandbox#Parameters comparison]] in the form of a table.
+
+An official statement by Erika from [[The Indie Stone]] was made about work being done on the [[Mapping]] tools, and that they should release with [[Build 42]] stable release. However, no ETA was given. You can find a quote of this statement in the [[Mapping#Mapping tools]] section.
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:ChuckleberryFinn|Chuck]] - previously mentioned work on the mod commissions section.
+*[[User:Aoqia|Aoqia]] - small contributions here and there.
+*[[User:Albion|Albion]] - small contributions here and there, rewrote a section of [[Umbrella (modding)]] to possibly reduce confusion.
+*[[User:BjornWintergreen|BjornWintergreen]] - small contributions here and there.
+*[[User:Xandalf|Xandalf]] - fixed typos
+*[[User:JBDiablo|JBDiablo]] - updated his modding project page [[JB Max Capacity Override]].
+*The wiki admins as always.
