@@ -1,5 +1,5 @@
 {{Header|Modding|Modding guides}}
-{{Page version|42.11.0}}
+{{Page version|42.12.1}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
 
 Local mods are recognized in two different folders which each have their own rules and structure and are both in the [[Game files#Cache folder|cache folder]]:
@@ -7,9 +7,16 @@ Local mods are recognized in two different folders which each have their own rul
 *{{Code|Zomboid/workshop/}} - folder used for mod development and uploading to the Steam Workshop.
 
 Example default mod structures are provided by the community to directly use:
-*[https://github.com/Project-Zomboid-Community-Modding/pzmc-template Project Zomboid Community Modding template] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository.
+*[[Project Zomboid Community Modding template]] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository.
 
-==Mods or workshop ?==
+== Video guide ==
+{{Video
+|id=MUGQ647o5M4
+|image=PZ Modding Guides - setting up a mod structure - thumbnail.png
+|name=PZ Modding Guides - setting up a mod structure
+}}
+
+== Mods or workshop ==
 Using the <code>Workshop</code> folder is needed to use the [[Uploading mods#In-game uploader|in-game uploader]] meaning if you use the <code>mods</code> folder you will inevitably end up having to make a copy of your mod in the <code>Workshop</code> folder to upload it to the Steam Workshop. This is still an issue when using an external uploader like the [[Steam Uploader]] modding project, as you need to upload the <code>mods</code> folder which would upload all the extra folders. Take this for example, the folder structure of the cache folder:
 {{CodeSnip
 | code =
@@ -46,12 +53,12 @@ A bad solution is to copy the mods you want to upload inside of the <code>Worksh
 
 This last principle also applies to downloading your own mods on the Workshop while having local copies inside the <code>mods</code> folder or the <code>Workshop</code> folder, as they will clash and cause issues. While working directly from the <code>Workshop</code> folder will assure you never get any problems in the future.
 
-Another benefit of using the <code>Workshop</code> folder is that it allows you to store additional assets in the upper echelon of your mods <code>Workshop</code> folder. This is due to the <code>Workshop</code> folder having extra folders before the <code>mods</code> folder, taking the previous shared example you have <code>MyModWorkshop</code> and <code>Contents</code>. Anything in the <code>Contents</code> folder will be uploaded to the Workshop, but anything placed at the same level as it, inside <code>MyModWorkshop</code>, will not be uploaded and completely ignored by the game. You can use this to create other subfolders like <code>images</code> or <code>assets</code> which will hold your modding assets, you can have a file <code>README.md</code> and also a <code>.git</code> folder to have <code>MyModWorkshop</code> serve as your mod's [[Wikipedia:Git|git]] repository.
+Another benefit of using the <code>Workshop</code> folder is that it allows you to store additional assets in the upper echelon of your mods <code>Workshop</code> folder. This is due to the <code>Workshop</code> folder having extra folders before the <code>mods</code> folder, taking the previous shared example you have <code>MyModWorkshop</code> and <code>Contents</code>. Anything in the <code>Contents</code> folder will be uploaded to the Workshop, but anything placed at the same level as it, inside <code>MyModWorkshop</code>, will not be uploaded and completely ignored by the game. You can use this to create other subfolders like <code>images</code> or <code>assets</code> which will hold your modding assets, you can have a file <code>README.md</code> and also a <code>.git</code> folder to have <code>MyModWorkshop</code> serve as your mod's [[Wikipedia:Git|git]] repository. This also applies to folders specific to your [[Wikipedia:Integrated development environment|IDE]] like <code>.vscode</code> ([[Visual Studio Code|VSCode]]) or <code>.idea</code> ([[IntelliJ IDEA|IDEA]]).
 
-==Workshop folder==
+== Workshop folder ==
 The Workshop folder will use the following structure:
 {{CodeSnip
-|code = 
+|code =
 Zomboid/
 └── Workshop/
     └── MyExampleMod/
@@ -73,10 +80,10 @@ Zomboid/
 {{Note|Subfolders in <code>MyExampleMod/</code> which are not <code>Contents/</code> are not recognized by the game and can be used to store various files for your mod that shouldn't get uploaded. Thus you can store in it Python scripts, images, assets, etc.}}
 {{Note|<code>MyExampleMod/</code> can be used as a Git repository (GitHub, GitLab...).}}
 
-==Mod folder==
+== Mod folder ==
 The files of your mods are placed in the folder <code>Contents/mods/</code> alongside a [[mod.info]] file which is the core of your mod. The folder structure of your mod folder should be as follows:
 
-====Build 41====
+==== Build 41 ====
 [[Build 41]] uses the following modding structure.
 {{CodeSnip
 | code =
@@ -98,7 +105,7 @@ Contents/
 
 {{Note|type=warn|The [[#Build 42|Build 42 modding structure]] is considered for the rest of the page. The main difference is the position of the [[#Media folder|media folder]] and the lack of versioning and common folders for Build 41.}}
 
-===Build 42===
+=== Build 42 ===
 [[Build 42]] uses the following modding structure.
 {{CodeSnip
 | code =
@@ -130,14 +137,14 @@ Contents/
 
 {{Note|Multiple mods can be present in a single uploaded mod (inside <code>Contents/mods/</code>). This can be used for optional mods or different versions of the same mod.}}
 
-==Common and versioning folders==
-Common and versioning folders, introduced in [[Build 42]], help manage different mod versions per game version.  
+== Common and versioning folders ==
+Common and versioning folders, introduced in [[Build 42]], help manage different mod versions per game version.
 
 *'''Versioning folders''' are useful when players stick to older game versions. You don't need one for every version. They should contain code files and [[mod.info]], as they often change with the game version.
-*'''Common folder''' stores large files (models, textures, animations) to keep mod size down.  
+*'''Common folder''' stores large files (models, textures, animations) to keep mod size down.
 
 These folders load with the following order:
-#Common folder  
+#Common folder
 #Closest versioning folder to the game version (overwrites common files which are present in it)
 
 The versioning folders can have the following possible naming:
@@ -162,50 +169,50 @@ For example:
 {{Note|type=warn|Common folder is not recognized by [[Build 41]] modding structure. However, the [[Build 41]] [[Lua (API)|Lua API]] can access some files in some cases.}}
 {{Note|type=error|Common folder is mandatory, even if empty, for your mod to work !}}
 
-==Media folder==
+== Media folder ==
 Mod assets are for the most part inside this folder. Different subfolders need to be created based on the type of assets. These are usually the same as the [[Game files#Media folder|game media folder]] and based on your [[Modding#Modding fields|modding field]], you need different ones. See each modding fields individual pages for more details on their folder structure:
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | Subfolders and modding field
 ! Modding field !! Subfolder
 |-
-| [[Animation]] || 
+| [[Animation]] ||
 *<code>anims_X</code>
 *<code>AnimSets</code>
 |-
-| [[Lua (API)|Lua]] || 
+| [[Lua (API)|Lua]] ||
 *<code>lua</code>
 *<code>ui</code> and <code>textures</code> used for custom UI elements
 |-
-| [[Mapping]] || 
+| [[Mapping]] ||
 *<code>maps</code>
 |-
-| [[Scripts]] || 
+| [[Scripts]] ||
 *<code>scripts</code>
 *<code>clothing</code>
 *<code>textures</code>
-*<code>model_X</code>
+*<code>models_X</code>
 *<code>sound</code>
 |}
 
 {{Note|type=error|Folder and file names must use strict casing spelling. For example, <code>lua</code> should not be written as <code>Lua</code> or <code>LUA</code>. Incorrect casing may prevent the game from recognizing your files for [[Wikipedia:Operating system|operating systems]] with case-sensitive file systems.}}
 
-===clothing===
+=== clothing ===
 The <code>clothing</code> folder is used to define clothing items via the use of XML files. Each clothing items is associated to its own XML file and a [[Wikipedia:Universally unique identifier|GUID]] to recognize the clothing item. Subfolders can be created to organize the clothing items. The outfit manager is also defined inside the file <code>clothing.xml</code> and is used to create or modify existing outfits. While this file is named the same as any others, it will not overwrite other files named like it.
 
-===models_X===
+=== models_X ===
 {{Main|Model (scripts)}}
 The <code>models_X</code> folder is used to store model files. The files need to be either in the DirectX format (<code>.x</code>) or Filmbox format (<code>.fbx</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the [[File formats#Modeling and animation formats]] page for more detail.
 
-===textures===
+=== textures ===
 The <code>textures</code> folder is used to store texture files. The files need to be in the PNG format (<code>.png</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the [[File formats#Image formats]] page for more detail.
 
-===ui===
+=== ui ===
 The <code>ui</code> folder is used to store images used in the user interface elements in the game. The files need to be in the PNG format (<code>.png</code>). They can be put in subfolders for organization and can replace files with the same relative path.
 
-===sound===
+=== sound ===
 The <code>sound</code> folder is used to store sound files. The files need to be in the OGG format (<code>.ogg</code>) or WAV format (<code>.wav</code>). They can be put in subfolders for organization and can replace files with the same relative path. Some sounds are stored inside bank files (<code>.bank</code>) which are used by the Fmod sound system, and they cannot be overwritten nor can bank files be loaded from mods.
 
-==Example==
+== Example ==
 Below is a full example of a mod structure in Windows.
 {{CodeSnip
 | code =
@@ -281,13 +288,13 @@ Below is a full example of a mod structure in Windows.
             └── preview.png                         <--- 256x256 image
 }}
 
-==See also==
+== See also ==
 *[[Uploading mods]] - teaches about uploading mods.
 *[[Game files]] - accessing the game files.
 *[[Workshop.txt]] - about a file used by the in-game uploader.
 *[[mod.info]] - about the core file which defines your mod.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Modding guides}}

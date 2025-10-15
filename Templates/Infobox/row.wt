@@ -1,0 +1,40 @@
+<noinclude>{{Protection|Highly visible template.}}
+{{Documentation|doc =
+{{Css}}
+{{Infobox
+| title = Unknown
+| {{Infobox/row
+  | class_label = class_label
+  | style_label = style_label
+  | tooltip = tooltip
+  | label
+  | class_data = style_data
+  | style_data = style_data
+  | data
+  }}
+  {{Infobox/row
+  | label[[File:Image.png|link=]]
+  | tooltip = tooltip
+  | data
+  }}
+}}
+
+==Usage==
+<syntaxhighlight lang="wikitext">
+{{Infobox/row
+| 1 = label
+| class_label = class_label
+| style_label = style_label
+| tooltip = tooltip
+| 2 = data
+| class_data = class_data
+| style_data = style_data
+}}
+</syntaxhighlight>
+}}
+{{ll|Category:Infobox}}
+{{ll|Category:Metatemplates}}
+</noinclude><includeonly>{{#if:{{{2|}}}|<div class="infobox-item">
+  <div {{#if:{{{tooltip|}}}|title{{=}}"{{{tooltip}}}" class{{=}}"{{{class_label|}}}" style{{=}}"border-bottom: 1px dotted; cursor:help; {{{style_label|}}}"}}>{{#if:{{{1|}}}|{{{1}}}|&nbsp;}}</div>
+  <div class{{=}}"{{{class_data|}}}" style{{=}}"{{{style_data|}}}">{{#if:{{{2|}}}|{{{2}}}}}</div>
+</div>}}</includeonly>

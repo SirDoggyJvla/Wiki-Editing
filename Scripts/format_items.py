@@ -56,7 +56,7 @@ elif cmd == "2":
 
     symbol = {
         "present": "[[File:UI Tick.png]]",
-        "absent": "[[File:UI Cross.png]]",
+        "absent": "",
     }
 
     header = (

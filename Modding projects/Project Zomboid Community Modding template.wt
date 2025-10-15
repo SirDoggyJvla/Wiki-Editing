@@ -1,0 +1,26 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.12.1}}
+{{Infobox
+| title = Project Zomboid Community Modding template
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Project Zomboid Community Modding.png]]
+    }}
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | github=https://github.com/Project-Zomboid-Community-Modding/pzmc-template
+        | Github repository
+        }}
+    }}
+}}
+This project is a '''mod template''' provided by the [[PZ Modding Community]] to be used as a [[Mod structure|base structure]] to create a mod. To use it, simply clone the repository with {{Code|git clone <url>}} and rename the various elements to initialize your mod.
+
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Miscellaneous projects}}

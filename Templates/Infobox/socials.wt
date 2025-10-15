@@ -3,56 +3,67 @@
 This template is used to create a row in the infobox with social media links. It is used in the {{tll|Infobox}} template.
 
 {{Infobox
-| title = <div></div>
+| title = Project
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Image.png|link=]]
     }}
-    {{Infobox/socials
-    | discord=https://discord.gg
-    | Discord server
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com
-    | Steam Workshop page
-    }}
-    {{Infobox/socials
-    | github=https://github.com/
-    | GitHub repository
-    }}
-    {{Infobox/socials
-    | bitbucket=https://bitbucket.org
-    | Bitbucket repository
-    }}
-    {{Infobox/socials
-    | X=https://x.com
-    | X post
-    }}
-    {{Infobox/socials
-    | forum=https://theindiestone.com/forums/
-    | The Indie Stone forum
-    }}
-    {{Infobox/socials
-    | gdrive=https://drive.google.com
-    | Google Drive link
-    }}
-    {{Infobox/socials
-    | other=https://www.google.com
-    | Other link
-    }}
-    {{Infobox/socials
-    | custom=[[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]]
-    }}
-    {{Infobox/socials
-    | custom=[[T-shirt - TIS]]
-    | icon=File:Spiffo8.png
-    }}
-    {{Infobox/socials
-    | blog=[[zomboidweb:blog|Project Zomboid blog]]
-    }}
-    {{Infobox/socials
-    | discord=nolink
-    | myDiscordID
+    {{Infobox/section
+    | color = var(--color-blue)
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | discord=https://discord.gg
+        | Discord server
+        }}
+        {{Infobox/socials
+        | steam=https://steamcommunity.com
+        | Steam Workshop page
+        }}
+        {{Infobox/socials
+        | github=https://github.com/
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | bitbucket=https://bitbucket.org
+        | Bitbucket repository
+        }}
+        {{Infobox/socials
+        | X=https://x.com
+        | X post
+        }}
+        {{Infobox/socials
+        | forum=https://theindiestone.com/forums/
+        | The Indie Stone forum
+        }}
+        {{Infobox/socials
+        | gdrive=https://drive.google.com
+        | Google Drive link
+        }}
+        {{Infobox/socials
+        | npmjs=https://www.npmjs.com/
+        | NPM website
+        }}
+        {{Infobox/socials
+        | other=https://www.google.com
+        | Other link
+        }}
+        {{Infobox/socials
+        | custom=[[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]]
+        }}
+        {{Infobox/socials
+        | custom=[[T-shirt - TIS]]
+        | icon=File:Spiffo8.png
+        }}
+        {{Infobox/socials
+        | blog=[[zomboidweb:blog|Project Zomboid blog]]
+        }}
+        {{Infobox/socials
+        | discord=nolink
+        | myDiscordID
+        }}
     }}
 }}
 
@@ -79,6 +90,8 @@ This template is used to create a row in the infobox with social media links. It
 : Link of an official [[The Indie Stone]] forum page or blog. This will add the forum pie logo to the row. Blog links are best to used the format {{Code|[[zomboidweb:blog|Project Zomboid blog]]}}.
 ;{{Code|gdrive}}
 : Link of a Google Drive page. This will add a Google Drive logo to the row.
+;{{Code|npmjs}}
+: Link to a NPM package page. This will add the NPM icon to the row.
 ;{{Code|other}}
 : Link of any other page. This will add a generic link logo to the row.
 ;{{Code|custom}}
@@ -92,7 +105,7 @@ By setting the value for the icon types parameters to {{Code|nolink}}, the icon 
 }}
 
 
-{{ll|Category:Templates}}</noinclude><includeonly><div class="infobox-section">
+{{ll|Category:Templates}}</noinclude><includeonly><div style="text-align:center; font-size:1.1em; font-weight:bold;">
 <div>{{#if:{{{discord|}}}|[[File:Discord-Logo-Color.png|link={{Infobox/socials/nolink|link={{{discord|}}}}}|25px]] {{Infobox/socials/nolink|link={{{discord|}}}|1={{{1|}}}}}|
     {{#if:{{{steam|}}}|[[File:Steam logo.png|link={{Infobox/socials/nolink|link={{{steam|}}}}}|25px]] {{Infobox/socials/nolink|link={{{steam|}}}|1={{{1|}}}}}|
     {{#if:{{{github|}}}|[[File:Github-Logo.png|class=logo-dark|link={{Infobox/socials/nolink|link={{{github|}}}}}|25px]] {{Infobox/socials/nolink|link={{{github|}}}|1={{{1|}}}}}|
@@ -101,7 +114,8 @@ By setting the value for the icon types parameters to {{Code|nolink}}, the icon 
     {{#if:{{{forum|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{forum|}}}}}|25px]] {{Infobox/socials/nolink|link={{{forum|}}}|1={{{1|}}}}}|
     {{#if:{{{blog|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{blog|}}}}}|25px]] {{Infobox/socials/nolink|link={{{blog|}}}|1={{{1|}}}}}|
     {{#if:{{{gdrive|}}}|[[File:Google Drive icon.webp|link={{Infobox/socials/nolink|link={{{gdrive|}}}}}|25px]] {{Infobox/socials/nolink|link={{{gdrive|}}}|1={{{1|}}}}}|
+    {{#if:{{{npmjs|}}}|[[File:npmjs icon.png|link={{Infobox/socials/nolink|link={{{npmjs|}}}}}|25px]] {{Infobox/socials/nolink|link={{{npmjs|}}}|1={{{1|}}}}}|
     {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{Infobox/socials/nolink|link={{{other|}}}}}|25px]] {{Infobox/socials/nolink|link={{{other|}}}|1={{{1|}}}}}|
     {{#if:{{{custom|}}}|[[{{#if:{{{icon|}}}|{{{icon}}}|File:Link-icon.webp}}|25px]] {{{custom}}} 
-}} }} }} }} }} }} }} }} }} }}</div>
+}} }} }} }} }} }} }} }} }} }} }}</div>
 </div></includeonly>

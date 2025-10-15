@@ -1003,6 +1003,743 @@ This is not a 100% rule where which parameter can be located. Some parameters ma
 *[[WorldStaticModel|WorldStaticModel]]
 </div>
 
+==Parameters comparison==
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center;
+|+ style="white-space:nowrap" | Parameters used by the vanilla game for the various item classes
+|-
+! Parameter !! AlarmClock !! AlarmClockClothing !! Animal !! Clothing !! Container !! Drainable !! Food !! Key !! Literature !! Map !! Moveable !! Normal !! Radio !! Weapon !! WeaponPart
+|-
+| AcceptItemFunction ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| AcceptMediaType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| ActivatedItem ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| AimingMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AimingPerkCritModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AimingPerkHitChanceModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AimingPerkMinAngleModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AimingPerkRangeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AimingTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AimingTimeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| AlarmSound || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| AlcoholPower ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Alcoholic ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| AlwaysKnockdown ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AlwaysWelcomeGift ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| AmmoBox ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AmmoType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| AngleFalloff ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| AnimalFeedType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| AttachmentReplacement ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| AttachmentType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || 
+|-
+| AttachmentsProvided ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| BadCold ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| BadInMicrowave ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| BandagePower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| BaseSpeed ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| BaseVolumeRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| BiteDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| BloodLocation ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
+|-
+| BodyLocation ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| BoredomChange ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| BreakSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| BringToBearSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| BulletDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Calories ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CanAttach ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| CanBandage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CanBarricade ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| CanBeEquipped ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| CanBePlaced ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| CanBeRemote ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| CanBeReused ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| CanBeWrite ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| CanDetach ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| CanHaveHoles ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CanStack ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CanStoreWater ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| CannedFood ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| CantAttackWithLowestEndurance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| CantBeFrozen ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| CantEat ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| Capacity ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Carbohydrates ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| Categories ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| ChanceToFall ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ChanceToSpawnDamaged ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ClickSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ClipSize ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| CloseKillMove ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| CloseSound ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ClothingExtraSubmenu ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ClothingItem ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| ClothingItemExtra ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ClothingItemExtraOption ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ColorBlue ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| ColorGreen ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| ColorRed ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| CombatSpeedModifier ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ConditionAffectsCapacity ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ConditionLowerChanceOneIn ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| ConditionLowerOffroad ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ConditionLowerStandard ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ConditionMax ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || 
+|-
+| ConsolidateOption ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ContainerName ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| CookingSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CorpseSicknessDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Cosmetic ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Count ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CritDmgMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| CriticalChance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| CustomContextMenu ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CustomDrinkSound ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| CustomEatSound ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| DamageCategory ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| DamageMakeHole ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| DamagedSound ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| DangerousUncooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| DaysFresh ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| DaysTotallyRotten ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| DigType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| DigitalPadlock ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
+|-
+| DisappearOnUse ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| DiscomfortModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| DisplayCategory || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| DisplayName || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| DoorDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| DoorHitSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| DropSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| EatTime ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| EatType ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| EjectAmmoSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| EjectAmmoStartSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| EjectAmmoStopSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| EnduranceChange ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| EnduranceMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| EngineLoudness ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| EquipSound ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| EquippedNoSprint ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| EvolvedRecipe ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| EvolvedRecipeName ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ExplosionDuration ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ExplosionPower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ExplosionRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ExplosionSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ExplosionTimer ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| FabricType ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| FatigueChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| FillFromDispenserSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| FillFromLakeSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| FillFromTapSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| FillFromToiletSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| FireFuelRatio ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  || 
+|-
+| FireMode ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| FireModePossibilities ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| FirePower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| FireRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| FishingLure ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| FluReduction ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| FoodType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| GoodHot ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| GunType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| HaveChamber ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| HeadCondition ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| HeadConditionLowerChanceMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| HeadConditionMax ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| HearingModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| HerbalistType ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| HitAngleMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| HitChance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| HitChanceModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| HitFloorSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| HitSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| HungerChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| Icon || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| IconColorMask ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| IconFluidMask ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| IconsForTexture ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| IconsFortexture ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| IdleAnim ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| ImpactSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| InitialPercentMax ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| InitialPercentMin ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| InputLocked ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| InsertAllBulletsReload ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| InsertAmmoSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| InsertAmmoStartSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| InsertAmmoStopSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| Insulation ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| IsAimedFirearm ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| IsAimedHandWeapon ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| IsCookable ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| IsDung ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| IsHighTier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| IsPortable ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| IsTelevision ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| IsWaterSource ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ItemAfterCleaning ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ItemWhenDry ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| JamGunChance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| KeepOnDeplete ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| KnockBackOnNoDeath ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| KnockdownMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| LightDistance ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| LightStrength ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| Lipids ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| LowLightBonus ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| LvlSkillTrained ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| MagazineType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| MakeUpType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ManuallyRemoveSpentRounds ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| Map ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || 
+|-
+| MaxAmmo ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MaxCapacity ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| MaxChannel ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| MaxDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MaxHitCount ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MaxItemSize ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| MaxRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MaxRangeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| MaxSightRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| MechanicsItem ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| MediaCategory ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| Medical ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| MetalValue || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| MicRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| MinAngle ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MinChannel ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| MinDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MinRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MinSightRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| MinimumSwingTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| MinutesToBurn ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| MinutesToCook ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ModelWeaponPart ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| MountOn ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| MultipleHitConditionAffected ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| NPCSoundBoost ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| NeckProtectionModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| NoTransmit ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| NoiseDuration ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| NoiseRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| NumLevelsTrained ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| NumberOfPages ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| OnBreak ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| OnCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| OnCreate ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| OnEat ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| OpenSound ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Opened ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| OriginX ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
+|-
+| OriginY ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
+|-
+| OtherHandRequire ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| OtherHandUse ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| Packaged ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| Padlock ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
+|-
+| PageToWrite ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| PainReduction ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| PartType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| PhysicsObject ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| PickRandomFluid ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| PiercingBullets ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| PlaceMultipleSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| PlaceOneSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| PlacedSprite ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| PoisonPower ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| PourType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ProjectileCount ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ProjectileSpread ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ProjectileSpreadModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| ProjectileWeightCenter ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ProtectFromRainWhenEquipped ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| Proteins ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| PushBackMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| PutInSound ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| RackAfterShoot ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| RackSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| RainFactor ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| RangeFalloff ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| Ranged ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ReadType ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| RecoilDelay ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| RecoilDelayModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| ReduceFoodSickness ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ReduceInfectionPower ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ReloadTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ReloadTimeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| RemoteController ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| RemoteRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| RemoveNegativeEffectOnCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| RemoveOnBroken ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| RemoveUnhappinessWhenCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ReplaceInPrimaryHand ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
+|-
+| ReplaceInSecondHand ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
+|-
+| ReplaceOnCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ReplaceOnDeplete ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ReplaceOnRotten ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ReplaceOnUse ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ReplaceOnUseOn ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| RequireInHandOrInventory ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| RequiresEquippedBothHands ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| ResearchableRecipes ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| RunAnim ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| RunSpeedModifier ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| ScaleWorldIcon ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ScratchDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| SensorRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ShareDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| Sharpness ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| ShellFallSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ShoutMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ShoutType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| SkillTrained ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| SmokeRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| SoundGain ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| SoundMap ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| SoundParameter ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| SoundRadius || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SoundVolume ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SpawnWith ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Spice ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| SplatBloodOnNoDeath ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SplatNumber ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SplatSize ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| StaticModel ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| StaticModelsByIndex ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| StompPower ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| StopPower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| StressChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| SubCategory ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SurvivalGear ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SuspensionCompression ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| SuspensionDamping ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| SwingAmountBeforeImpact ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SwingAnim ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SwingSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| SwingTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| Tags || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| TeachedRecipes ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| ThirstChange ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| ToHitModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| ToolTip ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| Tooltip ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| TorchCone ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| TorchDot ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| TransmitRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| Trap ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| TreeDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| TriggerExplosionTimer ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| TwoHandWeapon ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| TwoWay ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| Type || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| UnequipSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| UnhappyChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
+|-
+| UseDelta ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
+|-
+| UseEndurance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| UseSelf ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| UseWhileEquipped ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
+|-
+| UseWhileUnequipped ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| UseWorldItem ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| UsesBattery ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
+|-
+| VehiclePartModel ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| VehicleType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| VisionModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| VisualAid ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| WaterResistance ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| WeaponLength ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| WeaponReloadType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| WeaponSprite ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| WeaponSpritesByIndex ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| WeaponWeight ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| Weight || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| WeightEmpty ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| WeightModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
+|-
+| WeightReduction ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| Wet ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| WetCooldown ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| WheelFriction ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| WindResistance ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| WithDrainable ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| WithoutDrainable ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| WorldObjectSprite ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
+|-
+| WorldStaticModel || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+|-
+| WorldStaticModelsByIndex ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| brakeForce ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| cantBeConsolided ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| capacity ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
+|-
+| clothingExtraSubmenu ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| critDmgMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|-
+| fluids ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| originZ ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
+|-
+| primaryAnimMask ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| secondaryAnimMask ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
+|-
+| ticksPerEquipUse ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
+|-
+| triggerExplosionTimer ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
+|}
+
 ==Other parameters==
 Any other parameter not in the list will be written as a key-value in the item's ModData. For example:
 {{CodeSnip

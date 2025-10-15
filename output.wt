@@ -1,735 +1,736 @@
+==Parameters comparison==
 {| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center;
-|+ style="white-space:nowrap" | Parameters for various item class used by the vanilla game
+|+ style="white-space:nowrap" | Parameters used by the vanilla game for the various item classes
 |-
 ! Parameter !! AlarmClock !! AlarmClockClothing !! Animal !! Clothing !! Container !! Drainable !! Food !! Key !! Literature !! Map !! Moveable !! Normal !! Radio !! Weapon !! WeaponPart
 |-
-| AcceptItemFunction || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AcceptItemFunction ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| AcceptMediaType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AcceptMediaType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| ActivatedItem || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| ActivatedItem ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| AimingMod || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AimingMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AimingPerkCritModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AimingPerkCritModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AimingPerkHitChanceModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AimingPerkHitChanceModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AimingPerkMinAngleModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AimingPerkMinAngleModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AimingPerkRangeModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AimingPerkRangeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AimingTime || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AimingTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AimingTimeModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| AimingTimeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| AlarmSound || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AlarmSound || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| AlcoholPower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AlcoholPower ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Alcoholic || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Alcoholic ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| AlwaysKnockdown || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AlwaysKnockdown ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AlwaysWelcomeGift || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AlwaysWelcomeGift ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| AmmoBox || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AmmoBox ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AmmoType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AmmoType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| AngleFalloff || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AngleFalloff ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| AnimalFeedType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AnimalFeedType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| AttachmentReplacement || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AttachmentReplacement ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| AttachmentType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| AttachmentType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || 
 |-
-| AttachmentsProvided || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| AttachmentsProvided ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| BadCold || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BadCold ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| BadInMicrowave || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BadInMicrowave ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| BandagePower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BandagePower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| BaseSpeed || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| BaseSpeed ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| BaseVolumeRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BaseVolumeRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| BiteDefense || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BiteDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| BloodLocation || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BloodLocation ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
 |-
-| BodyLocation || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BodyLocation ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| BoredomChange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BoredomChange ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| BreakSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| BreakSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| BringToBearSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| BringToBearSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| BulletDefense || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| BulletDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Calories || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Calories ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CanAttach || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| CanAttach ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| CanBandage || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CanBandage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CanBarricade || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CanBarricade ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| CanBeEquipped || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CanBeEquipped ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| CanBePlaced || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CanBePlaced ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| CanBeRemote || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CanBeRemote ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| CanBeReused || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CanBeReused ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| CanBeWrite || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CanBeWrite ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| CanDetach || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| CanDetach ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| CanHaveHoles || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CanHaveHoles ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CanStack || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CanStack ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CanStoreWater || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CanStoreWater ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| CannedFood || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CannedFood ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| CantAttackWithLowestEndurance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CantAttackWithLowestEndurance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| CantBeFrozen || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CantBeFrozen ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| CantEat || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CantEat ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| Capacity || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Capacity ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Carbohydrates || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Carbohydrates ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| Categories || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| Categories ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| ChanceToFall || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ChanceToFall ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ChanceToSpawnDamaged || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ChanceToSpawnDamaged ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ClickSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ClickSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ClipSize || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ClipSize ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| CloseKillMove || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CloseKillMove ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| CloseSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CloseSound ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ClothingExtraSubmenu || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ClothingExtraSubmenu ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ClothingItem || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ClothingItem ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| ClothingItemExtra || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ClothingItemExtra ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ClothingItemExtraOption || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ClothingItemExtraOption ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ColorBlue || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ColorBlue ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| ColorGreen || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ColorGreen ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| ColorRed || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ColorRed ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| CombatSpeedModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CombatSpeedModifier ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ConditionAffectsCapacity || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ConditionAffectsCapacity ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ConditionLowerChanceOneIn || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ConditionLowerChanceOneIn ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| ConditionLowerOffroad || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ConditionLowerOffroad ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ConditionLowerStandard || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ConditionLowerStandard ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ConditionMax || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ConditionMax ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || 
 |-
-| ConsolidateOption || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ConsolidateOption ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ContainerName || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ContainerName ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| CookingSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CookingSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CorpseSicknessDefense || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CorpseSicknessDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Cosmetic || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Cosmetic ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Count || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Count ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CritDmgMultiplier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CritDmgMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| CriticalChance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| CriticalChance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| CustomContextMenu || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CustomContextMenu ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CustomDrinkSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CustomDrinkSound ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| CustomEatSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| CustomEatSound ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| DamageCategory || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| DamageCategory ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| DamageMakeHole || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| DamageMakeHole ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| DamagedSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| DamagedSound ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| DangerousUncooked || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| DangerousUncooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| DaysFresh || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| DaysFresh ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| DaysTotallyRotten || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| DaysTotallyRotten ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| DigType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| DigType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| DigitalPadlock || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| DigitalPadlock ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
 |-
-| DisappearOnUse || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| DisappearOnUse ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| DiscomfortModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| DiscomfortModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
 | DisplayCategory || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
 | DisplayName || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| DoorDamage || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| DoorDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| DoorHitSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| DoorHitSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| DropSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| DropSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| EatTime || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| EatTime ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| EatType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| EatType ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| EjectAmmoSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| EjectAmmoSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| EjectAmmoStartSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| EjectAmmoStartSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| EjectAmmoStopSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| EjectAmmoStopSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| EnduranceChange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| EnduranceChange ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| EnduranceMod || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| EnduranceMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| EngineLoudness || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| EngineLoudness ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| EquipSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| EquipSound ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| EquippedNoSprint || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| EquippedNoSprint ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| EvolvedRecipe || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| EvolvedRecipe ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| EvolvedRecipeName || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| EvolvedRecipeName ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ExplosionDuration || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ExplosionDuration ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ExplosionPower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ExplosionPower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ExplosionRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ExplosionRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ExplosionSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ExplosionSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ExplosionTimer || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ExplosionTimer ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| FabricType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FabricType ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| FatigueChange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FatigueChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| FillFromDispenserSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FillFromDispenserSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| FillFromLakeSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FillFromLakeSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| FillFromTapSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FillFromTapSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| FillFromToiletSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FillFromToiletSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| FireFuelRatio || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FireFuelRatio ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  || 
 |-
-| FireMode || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| FireMode ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| FireModePossibilities || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| FireModePossibilities ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| FirePower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| FirePower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| FireRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| FireRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| FishingLure || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FishingLure ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| FluReduction || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FluReduction ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| FoodType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| FoodType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| GoodHot || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| GoodHot ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| GunType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| GunType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| HaveChamber || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HaveChamber ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| HeadCondition || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HeadCondition ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| HeadConditionLowerChanceMultiplier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HeadConditionLowerChanceMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| HeadConditionMax || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HeadConditionMax ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| HearingModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| HearingModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| HerbalistType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| HerbalistType ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| HitAngleMod || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HitAngleMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| HitChance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HitChance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| HitChanceModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| HitChanceModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| HitFloorSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HitFloorSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| HitSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| HitSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| HungerChange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| HungerChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
 | Icon || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| IconColorMask || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| IconColorMask ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| IconFluidMask || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| IconFluidMask ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| IconsForTexture || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| IconsForTexture ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| IconsFortexture || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| IconsFortexture ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| IdleAnim || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| IdleAnim ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| ImpactSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ImpactSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| InitialPercentMax || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| InitialPercentMax ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| InitialPercentMin || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| InitialPercentMin ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| InputLocked || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| InputLocked ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| InsertAllBulletsReload || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| InsertAllBulletsReload ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| InsertAmmoSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| InsertAmmoSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| InsertAmmoStartSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| InsertAmmoStartSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| InsertAmmoStopSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| InsertAmmoStopSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| Insulation || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Insulation ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| IsAimedFirearm || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| IsAimedFirearm ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| IsAimedHandWeapon || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| IsAimedHandWeapon ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| IsCookable || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| IsCookable ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| IsDung || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| IsDung ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| IsHighTier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| IsHighTier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| IsPortable || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| IsPortable ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| IsTelevision || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| IsTelevision ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| IsWaterSource || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| IsWaterSource ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ItemAfterCleaning || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ItemAfterCleaning ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ItemWhenDry || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ItemWhenDry ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| JamGunChance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| JamGunChance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| KeepOnDeplete || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| KeepOnDeplete ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| KnockBackOnNoDeath || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| KnockBackOnNoDeath ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| KnockdownMod || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| KnockdownMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| LightDistance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| LightDistance ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| LightStrength || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| LightStrength ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| Lipids || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Lipids ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| LowLightBonus || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| LowLightBonus ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| LvlSkillTrained || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| LvlSkillTrained ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| MagazineType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MagazineType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| MakeUpType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MakeUpType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ManuallyRemoveSpentRounds || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ManuallyRemoveSpentRounds ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| Map || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Map ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || 
 |-
-| MaxAmmo || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MaxAmmo ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MaxCapacity || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MaxCapacity ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| MaxChannel || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MaxChannel ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| MaxDamage || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MaxDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MaxHitCount || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MaxHitCount ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MaxItemSize || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MaxItemSize ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| MaxRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MaxRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MaxRangeModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| MaxRangeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| MaxSightRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| MaxSightRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| MechanicsItem || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MechanicsItem ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| MediaCategory || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MediaCategory ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| Medical || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Medical ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| MetalValue || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| MetalValue || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| MicRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MicRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| MinAngle || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MinAngle ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MinChannel || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MinChannel ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| MinDamage || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MinDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MinRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MinRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MinSightRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| MinSightRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| MinimumSwingTime || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MinimumSwingTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| MinutesToBurn || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MinutesToBurn ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| MinutesToCook || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| MinutesToCook ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ModelWeaponPart || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ModelWeaponPart ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| MountOn || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| MountOn ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| MultipleHitConditionAffected || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| MultipleHitConditionAffected ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| NPCSoundBoost || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| NPCSoundBoost ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| NeckProtectionModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| NeckProtectionModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| NoTransmit || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| NoTransmit ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| NoiseDuration || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| NoiseDuration ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| NoiseRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| NoiseRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| NumLevelsTrained || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| NumLevelsTrained ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| NumberOfPages || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| NumberOfPages ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| OnBreak || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| OnBreak ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| OnCooked || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| OnCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| OnCreate || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| OnCreate ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| OnEat || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| OnEat ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| OpenSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| OpenSound ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Opened || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Opened ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| OriginX || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| OriginX ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
 |-
-| OriginY || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| OriginY ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
 |-
-| OtherHandRequire || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| OtherHandRequire ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| OtherHandUse || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| OtherHandUse ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| Packaged || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Packaged ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| Padlock || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Padlock ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
 |-
-| PageToWrite || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PageToWrite ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| PainReduction || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PainReduction ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| PartType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| PartType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| PhysicsObject || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| PhysicsObject ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| PickRandomFluid || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PickRandomFluid ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| PiercingBullets || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| PiercingBullets ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| PlaceMultipleSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PlaceMultipleSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| PlaceOneSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PlaceOneSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| PlacedSprite || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| PlacedSprite ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| PoisonPower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PoisonPower ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| PourType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PourType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ProjectileCount || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ProjectileCount ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ProjectileSpread || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ProjectileSpread ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ProjectileSpreadModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| ProjectileSpreadModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| ProjectileWeightCenter || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ProjectileWeightCenter ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ProtectFromRainWhenEquipped || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ProtectFromRainWhenEquipped ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| Proteins || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Proteins ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| PushBackMod || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| PushBackMod ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| PutInSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| PutInSound ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| RackAfterShoot || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| RackAfterShoot ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| RackSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| RackSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| RainFactor || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| RainFactor ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| RangeFalloff || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| RangeFalloff ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| Ranged || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| Ranged ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ReadType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReadType ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| RecoilDelay || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| RecoilDelay ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| RecoilDelayModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| RecoilDelayModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| ReduceFoodSickness || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReduceFoodSickness ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ReduceInfectionPower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReduceInfectionPower ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ReloadTime || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ReloadTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ReloadTimeModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| ReloadTimeModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| RemoteController || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| RemoteController ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| RemoteRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| RemoteRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| RemoveNegativeEffectOnCooked || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| RemoveNegativeEffectOnCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| RemoveOnBroken || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| RemoveOnBroken ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| RemoveUnhappinessWhenCooked || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| RemoveUnhappinessWhenCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ReplaceInPrimaryHand || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReplaceInPrimaryHand ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
 |-
-| ReplaceInSecondHand || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReplaceInSecondHand ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
 |-
-| ReplaceOnCooked || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReplaceOnCooked ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ReplaceOnDeplete || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReplaceOnDeplete ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ReplaceOnRotten || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReplaceOnRotten ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ReplaceOnUse || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ReplaceOnUse ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ReplaceOnUseOn || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ReplaceOnUseOn ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| RequireInHandOrInventory || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| RequireInHandOrInventory ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| RequiresEquippedBothHands || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| RequiresEquippedBothHands ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| ResearchableRecipes || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ResearchableRecipes ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| RunAnim || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| RunAnim ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| RunSpeedModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| RunSpeedModifier ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| ScaleWorldIcon || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ScaleWorldIcon ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ScratchDefense || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ScratchDefense ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| SensorRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SensorRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ShareDamage || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ShareDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| Sharpness || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| Sharpness ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| ShellFallSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ShellFallSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ShoutMultiplier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ShoutMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ShoutType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ShoutType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| SkillTrained || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| SkillTrained ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| SmokeRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SmokeRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| SoundGain || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SoundGain ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| SoundMap || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| SoundMap ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| SoundParameter || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| SoundParameter ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| SoundRadius || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SoundRadius || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SoundVolume || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SoundVolume ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SpawnWith || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| SpawnWith ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Spice || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Spice ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| SplatBloodOnNoDeath || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SplatBloodOnNoDeath ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SplatNumber || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SplatNumber ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SplatSize || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SplatSize ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| StaticModel || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| StaticModel ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| StaticModelsByIndex || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| StaticModelsByIndex ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| StompPower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| StompPower ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| StopPower || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| StopPower ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| StressChange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| StressChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| SubCategory || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SubCategory ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SurvivalGear || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SurvivalGear ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SuspensionCompression || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| SuspensionCompression ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| SuspensionDamping || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| SuspensionDamping ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| SwingAmountBeforeImpact || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SwingAmountBeforeImpact ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SwingAnim || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SwingAnim ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SwingSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SwingSound ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| SwingTime || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| SwingTime ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| Tags || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| Tags || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| TeachedRecipes || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| TeachedRecipes ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| ThirstChange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ThirstChange ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| ToHitModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| ToHitModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| ToolTip || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ToolTip ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| Tooltip || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| Tooltip ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| TorchCone || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| TorchCone ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| TorchDot || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| TorchDot ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| TransmitRange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| TransmitRange ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| Trap || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Trap ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| TreeDamage || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| TreeDamage ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| TriggerExplosionTimer || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| TriggerExplosionTimer ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| TwoHandWeapon || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| TwoHandWeapon ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| TwoWay || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| TwoWay ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
 | Type || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| UnequipSound || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| UnequipSound ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| UnhappyChange || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| UnhappyChange ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || 
 |-
-| UseDelta || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| UseDelta ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
 |-
-| UseEndurance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| UseEndurance ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| UseSelf || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| UseSelf ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| UseWhileEquipped || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| UseWhileEquipped ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
 |-
-| UseWhileUnequipped || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| UseWhileUnequipped ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| UseWorldItem || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| UseWorldItem ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| UsesBattery || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| UsesBattery ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || 
 |-
-| VehiclePartModel || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| VehiclePartModel ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| VehicleType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| VehicleType ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| VisionModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| VisionModifier ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| VisualAid || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| VisualAid ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| WaterResistance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WaterResistance ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| WeaponLength || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| WeaponLength ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| WeaponReloadType || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| WeaponReloadType ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| WeaponSprite || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| WeaponSprite ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| WeaponSpritesByIndex || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| WeaponSpritesByIndex ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| WeaponWeight || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| WeaponWeight ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
 | Weight || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| WeightEmpty || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WeightEmpty ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| WeightModifier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]]
+| WeightModifier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]]
 |-
-| WeightReduction || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WeightReduction ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| Wet || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| Wet ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| WetCooldown || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WetCooldown ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| WheelFriction || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WheelFriction ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| WindResistance || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WindResistance ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| WithDrainable || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WithDrainable ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| WithoutDrainable || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WithoutDrainable ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| WorldObjectSprite || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| WorldObjectSprite ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || 
 |-
-| WorldStaticModel || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| WorldStaticModel || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]]
 |-
-| WorldStaticModelsByIndex || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| WorldStaticModelsByIndex ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| brakeForce || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| brakeForce ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| cantBeConsolided || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| cantBeConsolided ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| capacity || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| capacity ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  || [[File:UI Tick.png]] || 
 |-
-| clothingExtraSubmenu || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| clothingExtraSubmenu ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| critDmgMultiplier || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| critDmgMultiplier ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |-
-| fluids || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| fluids ||  ||  ||  || [[File:UI Tick.png]] || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| originZ || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| originZ ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  || 
 |-
-| primaryAnimMask || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| primaryAnimMask ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| secondaryAnimMask || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| secondaryAnimMask ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  || 
 |-
-| ticksPerEquipUse || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
+| ticksPerEquipUse ||  ||  ||  ||  ||  || [[File:UI Tick.png]] ||  ||  ||  ||  ||  ||  ||  ||  || 
 |-
-| triggerExplosionTimer || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| triggerExplosionTimer ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || [[File:UI Tick.png]] || 
 |}

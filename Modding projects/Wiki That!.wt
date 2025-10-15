@@ -1,0 +1,45 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.12.1}}
+{{Infobox
+| title = Wiki That!
+| 
+    {{Infobox/image
+    | p1 = [[File:Wiki That! - preview.png]]
+    }}
+    {{Infobox/section
+    | color = var(--color-blue)
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3567109091
+        | Steam Workshop
+        }}
+        {{Infobox/socials
+        | github=https://github.com/SirDoggyJvla/Wiki-That
+        | GitHub repository
+        }}
+    }}
+}}
+'''Wiki That!''' is the official mod from the Project Zomboid Wiki team to provide in-game access to the wiki. It can be downloaded from the [[Steam Workshop]], then enabled in the game's Mods menu, allowing you to right click various aspects of the game to provide quick access to the relevant wiki pages.
+
+The mod uses automatically generated dictionaries of the Wiki pages associated to items, tiles, vehicles, traits and more. It is regularly updated to include the latest additions to the wiki.
+
+==Video==
+{{Video
+|id=KMkoidKkOQo
+|image=Wiki That! - preview_long.png
+|name=Wiki That! - Showcase
+}}
+
+==Gallery==
+<gallery>
+Wiki That! - preview1.jpg|Steam Workshop mod preview
+Wiki That! - example1.jpg|Context menu example 1
+Wiki That! - example2.jpg|Context menu example 2
+</gallery>
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:Miscellaneous projects}}
