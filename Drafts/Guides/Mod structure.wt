@@ -1,5 +1,6 @@
-{{Header|Modding|Modding guides}}
-{{Page version|42.12.1}}
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.12.3}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
 
 Local mods are recognized in two different folders which each have their own rules and structure and are both in the [[Game files#Cache folder|cache folder]]:
@@ -8,6 +9,8 @@ Local mods are recognized in two different folders which each have their own rul
 
 Example default mod structures are provided by the community to directly use:
 *[[Project Zomboid Community Modding template]] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository.
+
+{{Note|type=warn|Some [[Wikipedia:Operating system|operating systems]] like Linux and MacOS are case-sensitive regarding file and folder names. Make sure to use the correct casing when creating your mod structure to avoid issues for those users. (for example <code>common</code> and not <code>Common</code>)}}
 
 == Video guide ==
 {{Video
@@ -170,31 +173,48 @@ For example:
 {{Note|type=error|Common folder is mandatory, even if empty, for your mod to work !}}
 
 == Media folder ==
-Mod assets are for the most part inside this folder. Different subfolders need to be created based on the type of assets. These are usually the same as the [[Game files#Media folder|game media folder]] and based on your [[Modding#Modding fields|modding field]], you need different ones. See each modding fields individual pages for more details on their folder structure:
+Mod assets are for the most part inside this folder. Different subfolders need to be created based on the type of assets. These are usually the same as the [[Game files#Media folder|game media folder]] and based on your [[Modding#Modding fields|modding field]], you may need different ones. See each modding fields individual pages for more details on their folder structure:
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | Subfolders and modding field
 ! Modding field !! Subfolder
 |-
 | [[Animation]] ||
-*<code>anims_X</code>
-*<code>AnimSets</code>
+Animations involve the storing of the [[File formats#Modeling and animation formats|animation files]], as well defining how those animations are triggered:
+*<code>anims_X</code> - stores the animation files.
+*<code>AnimSets</code> - stores the animation triggers and parameters definitions.
 |-
 | [[Lua (API)|Lua]] ||
-*<code>lua</code>
-*<code>ui</code> and <code>textures</code> used for custom UI elements
+Most of the time, Lua modding doesn't involve game assets but simple plain code lines, however in some cases you may want to add custom UI elements and maybe need textures.
+*<code>lua</code> - stores the Lua scripts.
+*<code>ui</code> and <code>textures</code> - used for custom UI elements
 |-
 | [[Mapping]] ||
-*<code>maps</code>
+*<code>maps</code> - stores the map files and assets.
+|-
+| [[Modeling]] ||
+*<code>models_X</code> - stores the model assets.
+|-
+| [[Texturing]] ||
+*<code>textures</code> - stores the texture assets
+|-
+| [[Translations]] ||
+*<code>lua/shared/Translate</code> - translation files are put inside subfolders inside the main lua folder
+|-
+| [[Rendering]] ||
+Renders are indirectly linked to modding, as in most cases is a process external to Project Zomboid where you use game assets for 3D renders:
+*<code>models_X</code>
+*<code>textures</code>
+*<code>texturepacks</code> - holds the tile sprites that you will need to unpack with the [[Project Zomboid Modding Tools]]
+But in the case where renders are used to create in-game assets, you will most likely need to access the <code>ui</code> or <code>textures</code> folders.
 |-
 | [[Scripts]] ||
-*<code>scripts</code>
-*<code>clothing</code>
+Scripts involve mainly defining properties and behaviors via text files, but in most cases involve the use of assets like [[modeling|models]], [[texturing|textures]] and sounds.
+*<code>scripts</code> - stores the script definitions.
+*<code>clothing</code> - stores clothing item definitions.
 *<code>textures</code>
 *<code>models_X</code>
 *<code>sound</code>
 |}
-
-{{Note|type=error|Folder and file names must use strict casing spelling. For example, <code>lua</code> should not be written as <code>Lua</code> or <code>LUA</code>. Incorrect casing may prevent the game from recognizing your files for [[Wikipedia:Operating system|operating systems]] with case-sensitive file systems.}}
 
 === clothing ===
 The <code>clothing</code> folder is used to define clothing items via the use of XML files. Each clothing items is associated to its own XML file and a [[Wikipedia:Universally unique identifier|GUID]] to recognize the clothing item. Subfolders can be created to organize the clothing items. The outfit manager is also defined inside the file <code>clothing.xml</code> and is used to create or modify existing outfits. While this file is named the same as any others, it will not overwrite other files named like it.

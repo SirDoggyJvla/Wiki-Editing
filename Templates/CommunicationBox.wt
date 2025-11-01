@@ -1,0 +1,20 @@
+<noinclude>
+{{Documentation|doc=
+{{tll|CommunicationBox}} is used to display informations about elements in a section of the page.
+
+
+
+}}
+
+==See also==
+*{{ll|PZwiki:Mboxes}}
+
+{{ll|Category:Mbox}}
+</noinclude><includeonly>{{Mbox
+<!-- | background =  -->
+| color = #ff00bf
+| sign = [[File:Insect_Aphid.png|link=Template:Note{{lcs}}]]
+| content = {{{1}}}
+| note = 
+| cat = 
+}}</includeonly>

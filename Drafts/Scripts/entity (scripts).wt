@@ -1,0 +1,48 @@
+{{Title|entity}}
+{{Header|Modding|Scripts}}
+{{Page version|42.12.1}}
+'''entity''' scripts are used to define buildables in, like walls, fences, furnitures and more. They are composed of different sub-blocks which are called <code>component</code> which are used to define properties of the buildable.
+
+==entity format==
+To create a new entity, simple use the following entry in a script file:
+{{CodeSnip
+| lang = lua
+| code =
+module yourModule /* or Base */
+{
+    entity <EntityID>
+    {
+        component
+        {
+            ...
+        }
+        ...
+    }
+}
+}}
+
+==entity components==
+{{Stub|section=true|A lot of the informations about individual components might be missing due to the documentation being made by reverse engineering and looking at existing scripts. The amount of possibilities to look at makes it hard to cover everything with the current methodology used. If you have more information about specific components, feel free to contribute!}}
+Entities are composed of different components, which define different properties of the buildable. The following table lists the available components, their respective pages if exists and a short description on their usage:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of components for the <code>entity</code> block
+! Component name !! Description
+|-
+| [[CraftRecipe]]
+| Used to define the crafting recipe for the entity, or more precisely the item used to build it. It follows for the most part the same structure as a regular [[craftRecipe]] script, without any <code>outputs</code>.
+|-
+| [[CraftBenchSounds]]
+| Used to define the sounds played when using the crafting bench such as adding and removing inputs, starting the craft etc.
+|-
+| [[Resources]]
+| Defines inputs and outputs [[group]]s to define input and output usage quantities for the crafting bench processes. These can then be used in the [[DryingCraftLogic]] component.
+|-
+| [[DryingCraftLogic]]
+| Used to define a drying process for the entity, such as food items. This is notably one of the components used to define a crafting bench [[Tags (craftRecipe)|tag]]. Seems to be mutual exclusive with the [[CraftBench]] component.
+|-
+| [[CraftBench]]
+| Used to define a crafting bench [[Tags (craftRecipe)|tag]] for the entity, to then be used in a [[craftRecipe]]. Seems to be mutual exclusive with the [[DryingCraftLogic]] component.
+|}
+
+==Navigation==
+{{Navbox modding}}

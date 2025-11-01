@@ -1,0 +1,13 @@
+{
+    "Lua.workspace.library": [
+        "${addons}/scribunto/module/library"
+    ],
+    "Lua.runtime.builtin": {
+        "package": "disable",
+        "os": "disable",
+        "debug": "disable",
+        "io": "disable",
+        "coroutine": "disable"
+    },
+    "Lua.workspace.checkThirdParty": false
+}

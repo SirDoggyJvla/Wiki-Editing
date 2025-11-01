@@ -1,0 +1,39 @@
+<noinclude>
+{{Documentation|doc=
+This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist with user navigation. A navbar differs from a [[Template:Navbox|navbox]] in that it is intended to link to broad overview pages rather than being an exhaustive list of objects.
+
+== Usage ==
+{{tlx|Navbar_modding}}
+{{Navbar_modding}}
+
+{{Translation guide|{{Note|Any strings not listed below don't need to be translated, as they will use the page title instead. Please see {{tll|Title}} for this.}}
+<syntaxhighlight lang="wikitext">
+{{#switch: {{{1|}}}
+| #default = {{Error|translation}}
+}}
+</syntaxhighlight>}}
+
+== See also ==
+
+{{ll|Category:Navbar}}
+}}
+</noinclude><includeonly>{{Navbar/sandbox
+|title={{ll|:Category:Modding|Modding}}
+|links={{#invoke:Join|join|sep=&#32;&bull;&#32;
+  |{{ll|Game files}}
+  |{{ll|File formats}}
+  |{{ll|Mod structure}}
+  |{{ll|Decompiling game code}}
+  |{{ll|Startup parameters}}
+  |{{ll|Mod optimization}}
+  |{{ll|Procedural distributions}}
+  |{{ll|Scripts}}
+  |{{ll|Lua (API)}}
+  |{{ll|Java}}
+  |{{ll|Modeling}}
+  |{{ll|Rendering}}
+  |{{ll|Animation}}
+  |{{ll|Mapping}}
+  |{{ll|Translations}}
+  }}
+}}<includeonly/>

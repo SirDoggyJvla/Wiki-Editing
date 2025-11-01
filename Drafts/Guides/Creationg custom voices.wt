@@ -1,0 +1,248 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.12.3}}
+Voices are a new system of [[Build 42]] which introduced voice acting for the [[player]] character, to provide more immersion and reaction to your character. This guide explains how to implement your own voices by creating an example mod which implements Frank West voice.
+
+The following are used in the guide:
+*Sound files
+*[https://www.audacityteam.org Audacity]
+*[[Visual Studio Code]]
+
+== Mod structure ==
+{{Main|Mod structure}}
+You will need the following files to add new voices:
+*<code>media/voiceStyles/voiceStyles.xml</code> - this is where you add the voice to character creation.
+*<code>media/lua/shared/translate/EN/IG_UI_EN.txt</code> - this file implements the [[translations|translation]] for the name of the voice in character creation. In this case, this is for english but you can add other languages.
+*<code>media/sound/voice/</code> - this is where you will put the sound files. It's suggested to put them inside subfolders named after your mod to reduce incompatibilities.
+*<code>media/scripts/</code> - the voice lines will be defined using [[scripts]] inside this folder. You will create this script using a template later. Like for the voice folder, use a subfolder to reduce incompatibilities.
+
+The final mod structure will look like something like this:
+{{CodeSnip
+| code =
+media/
+├── voiceStyles/
+│   └── voiceStyles.xml
+├── lua/
+│   └── shared/
+│       └── translate/
+│           └── <language_code>/
+│               └── IG_UI_<language_code>.txt
+├── sound/
+│   └── voice/
+│       └── ...
+└── scripts/
+    └── ...
+}}
+
+== Creating the voice style ==
+Inside the <code>voiceStyles</code> folder, you'll need to create <code>voiceStyles.xml</code>. This is where we will add the voice to the menu, as well as define the name we will need to use for our [[sound (scripts)|sound script]]. This file should look like this:
+{{CodeSnip
+| lang = xml
+| code =
+<?xml version="1.0" encoding="utf-8"?>
+<voiceStyles>
+	<style>
+		<name>FrankWest</name>
+		<prefix>VoiceFrankWest</prefix>
+		<voiceType>0</voiceType>
+		<bodyTypeDefault>2</bodyTypeDefault>
+	</style>
+</voiceStyles>
+}}
+*<code>name</code> - the unique name the game will use for your voice.
+*<code>prefix</code> - used to define the sounds to use for the voice.
+*<code>voiceType</code> - this chooses which vanilla voice is used for the vanilla sound events. There are a few sounds that are impossible to replace, so you should choose one of the voice types that matches as closely as possible.
+*<code>bodyTypeDefault</code> - 2 for male, 1 for female.
+
+== Creating the display name ==
+Now you should be able to launch the game and see that your new voice is selectable in-game but with a messed up name, so you will need to create a [[Translations|translation]] file to tell the game what it should actually display.
+
+To do this you will need to go to <code>media/lua/shared/Translate/EN</code>, where we will create <code>IG_UI_EN.txt</code>, or to a different language code based on your needs.
+
+This file should contain this:
+{{CodeSnip
+| code =
+IGUI_EN = {
+    IGUI_Voice_FrankWest = "Frank West",
+}
+}}
+<code>IGUI_Voice_</code> is a prefix added to the name of every voice to define the display name, and <code>FrankWest</code> is the name that you chose in <code>voiceStyles.xml</code>.
+
+== Sound files ==
+Your sound files can be in either .wav or .ogg. Sound mods tend to have a large file size so you should absolutely use .ogg instead of .wav.
+
+{{Note|The sound folder for the Leon Kennedy voice mod was 19mb using .wav but switching to .ogg lowered it to 3.49mb.}}
+
+If you already have all your sound files, then you should be good to go, but if you are taking your sounds from a video, then you will want to use Audacity to separate them.
+
+=== Extracting from a video ===
+You will need to make sure you have [https://support.audacityteam.org/basics/installing-ffmpeg FFMPEG installed for Audacity] and then you should be able to drag the video file into Audacity to access the audio.
+
+If you have many sounds in the same video, then you will want to use [https://manual.audacityteam.org/man/label_tracks.html Labels] to label sections of the video that you want to export as separate files. Select a section of audio and then press {{Key|CTRL}} + {{Key|B}} to label it, then name the label whatever you want the filename to be.
+
+You can automate some of the labelling process by selecting some of the audio and then going to <code>Analyze > Label Sounds</code>. This tool will automatically separate your selected audio into labels depending on how much silence there is between them. Here, you will need to tweak the Minimum silence duration and Minimum label interval until it properly labels your sounds. You should also change the Label text to the filename you want them to have.
+
+It's also worth noting that Audacity will automatically number exported files if the labels share the same name.
+
+This is what my Audacity scenes look like before I export it:
+[[File:VoiceGuide_Audacity.png|1000px]]
+
+=== Exporting the sounds ===
+Once you have all the sounds that you need labelled, you will need to combine the label tracks so that you can export the sounds. For some reason, Audacity only uses the top-most label track to export files, so you need to go to <code>File > Export Other > Export Labels</code> and save the file.
+
+Then you should delete all of the label tracks in your Audacity scene and then go to <code>File > Import > Labels</code> and choose the file you just saved, this should combine all the labels into a single track so you can export.
+
+Now you should go to <code>File > Export Audio</code>, choose your export folder, set the export file type to .ogg, and then change Export Range to Multiple Files.
+Here, you might also want to change some settings to further lower the file size. I would recommend switching from Stereo to Mono and also lowering the Sample Rate as low as you can go before the audio quality becomes unacceptable to you.
+
+Finally, you can hit Export.
+
+== Sound script ==
+{{Main|Sound (scripts)}}
+At this point, you should have your sounds ready inside your sound folder, and you can now assign them to your voice.
+
+=== Sound script template ===
+First you will need a template for the voice script, so you need to go to your games install directory and then go to <code>media/scripts/generated/sounds/player</code> and find the file called <code>sounds_player_voice_male.txt</code>.
+
+You need to copy this file to <code>media/scripts</code> in your mod folder and then rename it to something unique, but preferably put it inside a subfolder named with your mod name, to reduce incompatibilities. I have named mine <code>Player_Sound_FrankWest.txt</code>.
+
+Inside this file, you will need to [https://code.visualstudio.com/docs/editing/codebasics#_find-and-replace search and replace] every instance of <code>VoiceMale</code> with the <code>prefix</code> you assigned in voiceStyles.xml.
+
+After doing this, the start of my script looks like this
+{{CodeSnip
+| code =
+module Base
+{
+    sound VoiceFrankWest
+    {
+        category = Player,
+        clip
+        {
+            event = Character/Voice/Male,
+        }
+    }
+
+    sound VoiceFrankWestMeleeStab
+    {
+        category = Player,
+        clip
+        {
+            event = Character/Voice/Male/Melee/Stab,
+        }
+    }
+...
+}}
+
+So now you are ready to begin adding the sounds to each of these blocks.
+
+=== Adding sounds ===
+Inside each of the sound blocks, you can see that the vanilla voices call an FMOD sound event to choose and trigger the appropriate voice line. We don't have access to FMOD so instead we will replace these with direct references to our sound files.
+
+To do this, you can replace
+{{CodeSnip
+| code =
+    sound VoiceFrankWestMeleeStab
+    {
+        category = Player,
+        clip
+        {
+            event = Character/Voice/Male/Melee/Stab,
+        }
+    }
+}}
+with
+{{CodeSnip
+| code =
+    sound VoiceFrankWestMeleeStab
+    {
+        category = Player,
+        clip
+        {
+			file = media/sound/Voice/FrankWest/Grunt 01.wav,
+			volume = 0.3,
+        }
+    }
+}}
+
+You can just replace my sound file location with your own. You can also add multiple sound files for the game to choose from, like so:
+{{CodeSnip
+| code =
+    sound VoiceFrankWestMeleeStab
+    {
+        category = Player,
+        clip
+        {
+			file = media/sound/Voice/FrankWest/Grunt 01.wav,
+			volume = 0.3,
+        }
+        clip
+        {
+			file = media/sound/Voice/FrankWest/Grunt 02.wav,
+			volume = 0.3,
+        }
+        clip
+        {
+			file = media/sound/Voice/FrankWest/Grunt 07.wav,
+			volume = 0.3,
+        }
+    }
+}}
+
+{{Note|type=warn|It's likely you'll need to adjust the volume field for all your sounds.}}
+
+=== Important ===
+You should always leave this first sound block as
+{{CodeSnip
+| code =
+    sound VoiceFrankWest
+    {
+        category = Player,
+        clip
+        {
+            event = Character/Voice/Male,
+        }
+    }
+}}
+or
+{{CodeSnip
+| code =
+    sound VoiceFrankWest
+    {
+        category = Player,
+        clip
+        {
+            event = Character/Voice/Female,
+        }
+    }
+}}
+
+From what I've tested, this is the sound block used for passive sounds like the character's heavy breathing at high exhaustion. It is likely that implementing these sounds is hard if not impossible without the use of FMOD events which can't be modded.
+
+== Final notes ==
+Now you should be able to add all of your sound files and test them in-game, hopefully with no issues. Because the vanilla voices use FMOD, which modded sounds don't have access to, custom voices are limited in quality compared to them.
+
+For example, you might have noticed that your custom voice will always play a sound when shoving, but the vanilla voices don't. You can try to match this by adding empty clips to the shove sound block to make voice lines less likely. Custom voices also don't have access to any fancy audio effects like becoming muffled when the player zooms out.
+
+== Playing character voices through Lua ==
+You can trigger a character's voice by using the function <code>player:playerVoiceSound("SOUND")</code> on [[IsoPlayer]]. This can play any vanilla voice sounds (such as "ApplyBandage") but it can also be used to trigger custom ones if the appropriate sound block exists for the player's voice style.
+
+If you want more information, the code below is essentially the same as using playerVoiceSound()
+{{CodeSnip
+| lang = lua
+| code =
+local function playerVoiceSound(soundName)
+    local emitter = character:getEmitter()
+    local prefix = character:getDescriptor():getVoicePrefix()
+    local soundToPlay = prefix .. soundName
+
+    if emitter:isPlaying(soundToPlay) then return end
+
+    emitter:playVocals(soundToPlay)
+end
+
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}
