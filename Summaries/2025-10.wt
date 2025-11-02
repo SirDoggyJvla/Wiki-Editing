@@ -1,1 +1,46 @@
 Hello everyone, here's the project modding summary for October 2025. Very small activity this month, even worse than September, but I hope to have a bit more time in November.
+
+Here is the number of people who joined via the wiki Discord invites:
+
+[[File:Plot modding communities join count.png|600px|class=logo-dark]]
+
+The important bits of the month is that I have now discovered the incredible power of Lua on the Wiki, and with my experience of the language I hope to utilize it to create more easily dynamic elements for the modding pages. I have started this by completely reworking the [[Template:Infobox/socials]] to use a Lua module to select the right icons, to link stuff etc. Previously, if you are curious, the template looked like this monstrosity:
+<pre>
+<div style="text-align:center; font-size:1.1em; font-weight:bold;">
+<div>{{#if:{{{discord|}}}|[[File:Discord-Logo-Color.png|link={{Infobox/socials/nolink|link={{{discord|}}}}}|25px]] {{Infobox/socials/nolink|link={{{discord|}}}|1={{{1|}}}}}|
+    {{#if:{{{steam|}}}|[[File:Steam logo.png|link={{Infobox/socials/nolink|link={{{steam|}}}}}|25px]] {{Infobox/socials/nolink|link={{{steam|}}}|1={{{1|}}}}}|
+    {{#if:{{{github|}}}|[[File:Github-Logo.png|class=logo-dark|link={{Infobox/socials/nolink|link={{{github|}}}}}|25px]] {{Infobox/socials/nolink|link={{{github|}}}|1={{{1|}}}}}|
+    {{#if:{{{bitbucket|}}}|[[File:Bitbucket-Logo.webp|link={{Infobox/socials/nolink|link={{{bitbucket|}}}}}|25px]] {{Infobox/socials/nolink|link={{{bitbucket|}}}|1={{{1|}}}}}|
+    {{#if:{{{X|}}}|[[File:X-Logo.png|class=logo-dark|link={{Infobox/socials/nolink|link={{{X|}}}}}|25px]] {{Infobox/socials/nolink|link={{{X|}}}|1={{{1|}}}}}|
+    {{#if:{{{forum|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{forum|}}}}}|25px]] {{Infobox/socials/nolink|link={{{forum|}}}|1={{{1|}}}}}|
+    {{#if:{{{blog|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{blog|}}}}}|25px]] {{Infobox/socials/nolink|link={{{blog|}}}|1={{{1|}}}}}|
+    {{#if:{{{gdrive|}}}|[[File:Google Drive icon.webp|link={{Infobox/socials/nolink|link={{{gdrive|}}}}}|25px]] {{Infobox/socials/nolink|link={{{gdrive|}}}|1={{{1|}}}}}|
+    {{#if:{{{npmjs|}}}|[[File:npmjs icon.png|link={{Infobox/socials/nolink|link={{{npmjs|}}}}}|25px]] {{Infobox/socials/nolink|link={{{npmjs|}}}|1={{{1|}}}}}|
+    {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{Infobox/socials/nolink|link={{{other|}}}}}|25px]] {{Infobox/socials/nolink|link={{{other|}}}|1={{{1|}}}}}|
+    {{#if:{{{custom|}}}|[[{{#if:{{{icon|}}}|{{{icon}}}|File:Link-icon.webp}}|25px]] {{{custom}}} 
+}} }} }} }} }} }} }} }} }} }} }}</div>
+</div>
+</pre>
+
+What ? You can't read it ? Yea me neither. It is now replaced with a Lua module ([[Module:Socials]]) alongside a dataset which holds the icons files associated to the link type ([[Module:Socials/data]]). This Lua function is simply called to do all the job of what the previous template did, in a way that can actually be modified by a human being in less than a minute.
+
+Apparently, [[mw:Extension:Scribunto/Lua_reference_manual#SVG_library|SVG drawing]] is supposed to be possible but from my tests I haven't managed to make it work, so it might be deactivated for now but I hope to see its usage possible in the future, notably for the rare plots like at the top of this summary, or in [[Procedural distributions]]. This would also allow users to directly see how things are calculated since they would be done fully on the wiki, and to have direct access to the data used as they would be stored on the wiki itself.
+
+The second big subject, which is a bit personal but that I plan on being centered around the Wiki, is that I'm going to create [https://www.youtube.com/playlist?list=PL91PT-Vd7Vhp_eBA8pE4hCXPcrxHWgr_E modding video guides] for the modding wiki pages. A first video was made to guide new modders on setting up a simple mod to be detected, centering on the [[Mod structure]] page for the most part. I set my next challenge as creating proper video guides to doing [[Lua (API)|Lua modding]], which isn't going to be easy to make at all as a lot of concepts regarding it are confusing and not straightforward due to how Project Zomboid implements a Java-Lua interface. I have done 2 tries for it but it is clear I need to change my approach of it to manage to make a not confusing video guide.
+
+A new navbar now replaces the previous header for the modding pages, which should come as an improvement. I plan on reworking it however as it is clear that direct access to the [[:Category:Modding|Modding categories]] is necessary to navigate the modding wiki, and this ability is not present. An icon should be added next to pages with relevant categories, for direct access. The pages that are accessible in this will also be changed to the main modding field pages, a subject discussed a bit in the september 2025 summary.
+
+I have started work on an in-game tool for the wiki admins to automate certain actions, such as an outfit rendered, which simply utilizes the {{Code|ISUI3DModel}} UI class, to draw the character in front of a green screen, and automate the screenshot taking and cycling through every outfits available in the game, for the male and female characters.
+
+I moved the section about the online workshop files from the [[Game files]] page to the [[Spiffo's Workshop]] page, which should reduce confusion regarding that folder being used for modding. I also wrote a bit about the Steam Workshop rating system in that same page.
+
+Some small changes were made too:
+*Some extra details regarding the modding fields important media folders was added in [[Mod structure#Media folder]]. 
+*I reworked a bit the [[Creating custom voices]] page to fit the modding wiki styling. I didn't remove or add new information, or only corrected some information.
+*Linked Daddy Dirkie dirk mapping tutorials in [[Mapping]], which was surprisingly missing even though it is the most used and followed mapping tutorial. I added a note to it as "recommended" for users to more easily notice it, as it is the reference for mapping.
+*Added a bug box to [[mod.info]] for a bug which was found regarding the icon parameter. I made a bug report for it. (thanks to Obstructed who found the bug and Karmachameleon who let me know about it)
+*Newly found method to add to existing [[craftRecipe#Adding a new output mapper output|output mapper]].
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Albion|Albion]] - maintaining the [[Umbrella (modding)]] page.
+*[[User:BjornWintergreen|BjornWintergreen]] - small contributions here and there.
