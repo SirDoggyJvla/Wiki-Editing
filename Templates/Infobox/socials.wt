@@ -1,6 +1,9 @@
 <noinclude>
 {{Documentation|doc = 
+{{Note|type=warn|This template received a major rework which completely changes its usage, however for compatibility reasons, the previous usage ([[Special:PermanentLink/1222485|old version]]) is still supported but should not be used for new content.}}
 This template is used to create a row in the infobox with social media links. It is used in the {{tll|Infobox}} template.
+
+This template relies on the Lua module: {{ll|Module:Socials}}.
 
 {{Infobox
 | title = Project
@@ -15,94 +18,135 @@ This template is used to create a row in the infobox with social media links. It
     | 1 = Links
     | 2 = 
         {{Infobox/socials
-        | discord=https://discord.gg
+        | type=discord
+        | link=https://discord.gg
         | Discord server
         }}
         {{Infobox/socials
-        | steam=https://steamcommunity.com
+        | type=steam
+        | link=https://steamcommunity.com
         | Steam Workshop page
         }}
         {{Infobox/socials
-        | github=https://github.com/
+        | type=github
+        | link=https://github.com/
         | GitHub repository
         }}
         {{Infobox/socials
-        | bitbucket=https://bitbucket.org
+        | type=bitbucket
+        | link=https://bitbucket.org
         | Bitbucket repository
         }}
         {{Infobox/socials
-        | X=https://x.com
+        | type=X
+        | link=https://x.com
         | X post
         }}
         {{Infobox/socials
-        | forum=https://theindiestone.com/forums/
+        | type=forum
+        | link=https://theindiestone.com/forums/
         | The Indie Stone forum
         }}
         {{Infobox/socials
-        | gdrive=https://drive.google.com
+        | type=gdrive
+        | link=https://drive.google.com
         | Google Drive link
         }}
         {{Infobox/socials
-        | npmjs=https://www.npmjs.com/
+        | type=npmjs
+        | link=https://www.npmjs.com/
         | NPM website
         }}
         {{Infobox/socials
-        | other=https://www.google.com
+        | link=https://www.google.com
         | Other link
         }}
         {{Infobox/socials
-        | custom=[[zomboidweb:blog/news/2024/08/tidy-up-time|Tiddy Up Time]]
+        | page=zomboidweb:blog/news/2024/08/tidy-up-time
+        | Tiddy Up Time
         }}
         {{Infobox/socials
-        | custom=[[T-shirt - TIS]]
         | icon=File:Spiffo8.png
+        | page=T-shirt - TIS
         }}
         {{Infobox/socials
-        | blog=[[zomboidweb:blog|Project Zomboid blog]]
+        | type=blog
+        | page=zomboidweb:blog
+        | Project Zomboid blog
         }}
         {{Infobox/socials
-        | discord=nolink
+        | type=discord
         | myDiscordID
         }}
     }}
 }}
 
 ==Usage==
+; Normal usage (icon and link)
 <pre>
 {{Infobox/socials
-| linkType = link
+| type = type_code
+| link = link_url
+| description
+}}
+</pre>
+
+; No link usage (icon without link)
+<pre>
+{{Infobox/socials
+| type = type_code
+| description
+}}
+</pre>
+
+; Default link usage (generic link icon)
+<pre>
+{{Infobox/socials
+| link = link_url
+| description
+}}
+</pre>
+
+; Page link
+<pre>
+{{Infobox/socials
+| type = type_code
+| page = page name
+| description
+}}
+</pre>
+
+; Custom icon and no link
+<pre>
+{{Infobox/socials
+| icon = File:file_name.extension
 | description
 }}
 </pre>
 
 ===Parameters===
-;{{Code|discord}}
-: Link of a Discord server. This will add a Discord logo to the row.
-;{{Code|steam}}
-: Link of a Steam page. This will add a Steam logo to the row.
-;{{Code|github}}
-: Link of a GitHub repository. This will add a GitHub logo to the row.
-;{{Code|bitbucket}}
-: Link of a Bitbucket repository. This will add a Bitbucket logo to the row.
-;{{Code|X}}
-: Link of a X page. This will add a X logo to the row.
-;{{Code|forum}} or {{Code|blog}}
-: Link of an official [[The Indie Stone]] forum page or blog. This will add the forum pie logo to the row. Blog links are best to used the format {{Code|[[zomboidweb:blog|Project Zomboid blog]]}}.
-;{{Code|gdrive}}
-: Link of a Google Drive page. This will add a Google Drive logo to the row.
-;{{Code|npmjs}}
-: Link to a NPM package page. This will add the NPM icon to the row.
-;{{Code|other}}
-: Link of any other page. This will add a generic link logo to the row.
-;{{Code|custom}}
-: Use a custom text without a forced link. This can be used to link directly to a wikipedia page, a blog post or another wiki page. The icon won't be clickable.
-;{{Code|icon}}
-: ''Used alongside {{Code|custom}}''. Use a custom icon instead of the generic link logo. Needs to be the file name in the wiki (i.e. {{Code|File:Link-icon.webp}}). The icon is forced resized to 25px width and height.
+;{{Code|type}} {{Sup|Mutual exclusive|green}}
+: The type of social media icon to display. Valid options are:
+* discord
+* steam
+* github
+* bitbucket
+* X
+* forum
+* blog
+* gdrive
+* npmjs
+: To add new ones, please edit the Lua module dataset {{ll|Module:Socials/data}}.
+;{{Code|link}} {{Sup|Mutual exclusive|orange}}
+: The URL to link to. If not provided, no link will be added.
+;{{Code|page}} {{Sup|Mutual exclusive|orange}}
+: The name of a wiki page to link to.
+;{{Code|icon}} {{Sup|Mutual exclusive|green}}
+: A custom icon file to use instead of the default social media icons. The icon should be in the format {{Code|File:file_name.extension}}.
 ;{{Code|1}}
-: The description of the link. This will be displayed next to the logo and in hypertext with the link.
+: The description text to display next to the icon.
 
-By setting the value for the icon types parameters to {{Code|nolink}}, the icon will be displayed without a link thanks to the use of the helper template [[Template:Infobox/socials/nolink]].
+{{Note|All parameters are technically optional, and are needed only based on the use case.}}
 }}
-
 
 {{ll|Category:Templates}}</noinclude><includeonly><div style="text-align:center; font-size:1.1em; font-weight:bold;"><div>{{#invoke:Socials|socials|type={{#if:{{{type|}}}|{{{type}}}|}}|link={{#if:{{{link|}}}|{{{link}}}|}}|page={{#if:{{{page|}}}|{{{page}}}|}}|icon={{#if:{{{icon|}}}|{{{icon}}}|}}|{{#if:{{{1|}}}|{{{1}}}|}}}}</div></div></includeonly>

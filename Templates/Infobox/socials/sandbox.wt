@@ -1,7 +1,10 @@
 <noinclude>
 {{Documentation|doc = 
+{{Note|type=warn|This template received a major rework which completely changes its usage, however for compatibility reasons, the previous usage ([[Special:PermanentLink/1222485|old version]]) is still supported but should not be used for new content.}}
 This template is used to create a row in the infobox with social media links. It is used in the {{tll|Infobox}} template.
-{{ll|Modding}}
+
+This template relies on the Lua module: {{ll|Module:Socials}}.
+
 {{Infobox
 | title = Project
 | class = theme-blue
@@ -14,72 +17,136 @@ This template is used to create a row in the infobox with social media links. It
     | id = 1
     | 1 = Links
     | 2 = 
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=discord
         | link=https://discord.gg
         | Discord server
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=steam
         | link=https://steamcommunity.com
         | Steam Workshop page
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=github
         | link=https://github.com/
         | GitHub repository
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=bitbucket
         | link=https://bitbucket.org
         | Bitbucket repository
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=X
         | link=https://x.com
         | X post
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=forum
         | link=https://theindiestone.com/forums/
         | The Indie Stone forum
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=gdrive
         | link=https://drive.google.com
         | Google Drive link
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=npmjs
         | link=https://www.npmjs.com/
         | NPM website
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | link=https://www.google.com
         | Other link
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | page=zomboidweb:blog/news/2024/08/tidy-up-time
         | Tiddy Up Time
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | icon=File:Spiffo8.png
         | page=T-shirt - TIS
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=blog
         | page=zomboidweb:blog
         | Project Zomboid blog
         }}
-        {{Infobox/socials/sandbox
+        {{Infobox/socials
         | type=discord
         | myDiscordID
         }}
     }}
 }}
-[https://www.google.com Test hello world]
+
+==Usage==
+; Normal usage (icon and link)
+<pre>
+{{Infobox/socials
+| type = type_code
+| link = link_url
+| description
 }}
+</pre>
 
+; No link usage (icon without link)
+<pre>
+{{Infobox/socials
+| type = type_code
+| description
+}}
+</pre>
 
+; Default link usage (generic link icon)
+<pre>
+{{Infobox/socials
+| link = link_url
+| description
+}}
+</pre>
+
+; Page link
+<pre>
+{{Infobox/socials
+| type = type_code
+| page = page name
+| description
+}}
+</pre>
+
+; Custom icon and no link
+<pre>
+{{Infobox/socials
+| icon = File:file_name.extension
+| description
+}}
+</pre>
+
+===Parameters===
+;{{Code|type}} {{Sup|Mutual exclusive|green}}
+: The type of social media icon to display. Valid options are:
+* discord
+* steam
+* github
+* bitbucket
+* X
+* forum
+* blog
+* gdrive
+* npmjs
+: To add new ones, please edit the Lua module dataset {{ll|Module:Socials/data}}.
+;{{Code|link}} {{Sup|Mutual exclusive|orange}}
+: The URL to link to. If not provided, no link will be added.
+;{{Code|page}} {{Sup|Mutual exclusive|orange}}
+: The name of a wiki page to link to.
+;{{Code|icon}} {{Sup|Mutual exclusive|green}}
+: A custom icon file to use instead of the default social media icons. The icon should be in the format {{Code|File:file_name.extension}}.
+;{{Code|1}}
+: The description text to display next to the icon.
+
+{{Note|All parameters are technically optional, and are needed only based on the use case.}}
+}}
 
 {{ll|Category:Templates}}</noinclude><includeonly><div style="text-align:center; font-size:1.1em; font-weight:bold;"><div>{{#invoke:Socials|socials|type={{#if:{{{type|}}}|{{{type}}}|}}|link={{#if:{{{link|}}}|{{{link}}}|}}|page={{#if:{{{page|}}}|{{{page}}}|}}|icon={{#if:{{{icon|}}}|{{{icon}}}|}}|{{#if:{{{1|}}}|{{{1}}}|}}}}</div></div></includeonly>
