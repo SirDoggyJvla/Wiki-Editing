@@ -18,7 +18,7 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
 {{ll|Category:Navbar}}
 }}
 </noinclude><includeonly>{{Navbar/sandbox
-|title={{ll|:Category:Modding|Modding}}
+|title={{ll|Modding}}
 |links={{#invoke:Join|join|sep=&#32;&bull;&#32;
   |{{ll|Game files}}
   |{{ll|File formats}}
