@@ -6,8 +6,7 @@ import os
 from datetime import datetime
 
 # Get the directory where this script is located
-script_dir = os.path.dirname(os.path.abspath(__file__))
-csv = os.path.join(script_dir, "member_join.csv")
+csv = os.path.join(os.path.abspath("./Data/member_join.csv"))
 
 # Read the CSV file with proper delimiter (space-separated)
 df = pd.read_csv(csv, sep=r'\s+', engine='python')
