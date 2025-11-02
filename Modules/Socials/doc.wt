@@ -1,0 +1,37 @@
+{{Documentation|doc=
+This module is used to format a social infobox section entry.
+
+This module is used to concatenate two or more strings into one string, with an optional separator.
+
+== Usage ==
+<syntaxhighlight lang="wikitext">
+{{#invoke:Join
+|<function>
+|sep=<separator>
+|<arg1>
+|<arg2>
+|<arg3>
+}}
+</syntaxhighlight>
+
+=== Parameters ===
+;<code>function</code>
+:Function ''must'' be <code>socials</code>, which is the first parameter
+
+
+
+;<code>sep</code> {{sup|Optional}}
+:Define the separator, defaults to no separator.
+{{Note|type=warn|Mediawiki trims any spaces in template arguments, so any spaces must be replaced by {{Code|lang=html|&#32;}} (regular space) or {{Code|lang=html|&nbsp;}} (non-breaking space).}}
+
+;<code>arg</code>
+:All unnamed parameters will be concatenated with the <code>sep</code> delimiter, if defined.
+
+== Examples ==
+;Without separator:<syntaxhighlight lang="wikitext" inline>{{#invoke:Join|join|Hello|World}}</syntaxhighlight>
+;Produces: {{#invoke:Join|join|Hello|World}}
+
+;With separator:<syntaxhighlight lang="wikitext" inline>{{#invoke:Join|join|sep=,&#32;|One|Two|Three}}</syntaxhighlight>
+;Produces: {{#invoke:Join|join|sep=,&#32;|One|Two|Three}}
+
+}}
