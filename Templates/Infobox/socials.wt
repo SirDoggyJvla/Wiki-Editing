@@ -105,19 +105,4 @@ By setting the value for the icon types parameters to {{Code|nolink}}, the icon 
 }}
 
 
-{{ll|Category:Templates}}</noinclude><includeonly><div style="text-align:center; font-size:1.1em; font-weight:bold;">
-<div>{{#if:{{{type|}}}|
-
-|{{#if:{{{discord|}}}|[[File:Discord-Logo-Color.png|link={{Infobox/socials/nolink|link={{{discord|}}}}}|25px]] {{Infobox/socials/nolink|link={{{discord|}}}|1={{{1|}}}}}|
-    {{#if:{{{steam|}}}|[[File:Steam logo.png|link={{Infobox/socials/nolink|link={{{steam|}}}}}|25px]] {{Infobox/socials/nolink|link={{{steam|}}}|1={{{1|}}}}}|
-    {{#if:{{{github|}}}|[[File:Github-Logo.png|class=logo-dark|link={{Infobox/socials/nolink|link={{{github|}}}}}|25px]] {{Infobox/socials/nolink|link={{{github|}}}|1={{{1|}}}}}|
-    {{#if:{{{bitbucket|}}}|[[File:Bitbucket-Logo.webp|link={{Infobox/socials/nolink|link={{{bitbucket|}}}}}|25px]] {{Infobox/socials/nolink|link={{{bitbucket|}}}|1={{{1|}}}}}|
-    {{#if:{{{X|}}}|[[File:X-Logo.png|class=logo-dark|link={{Infobox/socials/nolink|link={{{X|}}}}}|25px]] {{Infobox/socials/nolink|link={{{X|}}}|1={{{1|}}}}}|
-    {{#if:{{{forum|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{forum|}}}}}|25px]] {{Infobox/socials/nolink|link={{{forum|}}}|1={{{1|}}}}}|
-    {{#if:{{{blog|}}}|[[File:Favicon_Forum.png|link={{Infobox/socials/nolink|link={{{blog|}}}}}|25px]] {{Infobox/socials/nolink|link={{{blog|}}}|1={{{1|}}}}}|
-    {{#if:{{{gdrive|}}}|[[File:Google Drive icon.webp|link={{Infobox/socials/nolink|link={{{gdrive|}}}}}|25px]] {{Infobox/socials/nolink|link={{{gdrive|}}}|1={{{1|}}}}}|
-    {{#if:{{{npmjs|}}}|[[File:npmjs icon.png|link={{Infobox/socials/nolink|link={{{npmjs|}}}}}|25px]] {{Infobox/socials/nolink|link={{{npmjs|}}}|1={{{1|}}}}}|
-    {{#if:{{{other|}}}|[[File:Link-icon.webp|link={{Infobox/socials/nolink|link={{{other|}}}}}|25px]] {{Infobox/socials/nolink|link={{{other|}}}|1={{{1|}}}}}|
-    {{#if:{{{custom|}}}|[[{{#if:{{{icon|}}}|{{{icon}}}|File:Link-icon.webp}}|25px]] {{{custom}}} 
-}} }} }} }} }} }} }} }} }} }} }} }}</div>
-</div></includeonly>
+{{ll|Category:Templates}}</noinclude><includeonly><div style="text-align:center; font-size:1.1em; font-weight:bold;"><div>{{#invoke:Socials|socials|type={{#if:{{{type|}}}|{{{type}}}|}}|link={{#if:{{{link|}}}|{{{link}}}|}}|page={{#if:{{{page|}}}|{{{page}}}|}}|icon={{#if:{{{icon|}}}|{{{icon}}}|}}|{{#if:{{{1|}}}|{{{1}}}|}}}}</div></div></includeonly>

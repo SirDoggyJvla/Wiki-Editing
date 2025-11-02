@@ -1,0 +1,85 @@
+<noinclude>
+{{Documentation|doc = 
+This template is used to create a row in the infobox with social media links. It is used in the {{tll|Infobox}} template.
+{{ll|Modding}}
+{{Infobox
+| title = Project
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Image.png|link=]]
+    }}
+    {{Infobox/section
+    | color = var(--color-blue)
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials/sandbox
+        | type=discord
+        | link=https://discord.gg
+        | Discord server
+        }}
+        {{Infobox/socials/sandbox
+        | type=steam
+        | link=https://steamcommunity.com
+        | Steam Workshop page
+        }}
+        {{Infobox/socials/sandbox
+        | type=github
+        | link=https://github.com/
+        | GitHub repository
+        }}
+        {{Infobox/socials/sandbox
+        | type=bitbucket
+        | link=https://bitbucket.org
+        | Bitbucket repository
+        }}
+        {{Infobox/socials/sandbox
+        | type=X
+        | link=https://x.com
+        | X post
+        }}
+        {{Infobox/socials/sandbox
+        | type=forum
+        | link=https://theindiestone.com/forums/
+        | The Indie Stone forum
+        }}
+        {{Infobox/socials/sandbox
+        | type=gdrive
+        | link=https://drive.google.com
+        | Google Drive link
+        }}
+        {{Infobox/socials/sandbox
+        | type=npmjs
+        | link=https://www.npmjs.com/
+        | NPM website
+        }}
+        {{Infobox/socials/sandbox
+        | link=https://www.google.com
+        | Other link
+        }}
+        {{Infobox/socials/sandbox
+        | page=zomboidweb:blog/news/2024/08/tidy-up-time
+        | Tiddy Up Time
+        }}
+        {{Infobox/socials/sandbox
+        | icon=File:Spiffo8.png
+        | page=T-shirt - TIS
+        }}
+        {{Infobox/socials/sandbox
+        | type=blog
+        | page=zomboidweb:blog
+        | Project Zomboid blog
+        }}
+        {{Infobox/socials/sandbox
+        | type=discord
+        | myDiscordID
+        }}
+    }}
+}}
+[https://www.google.com Test hello world]
+}}
+
+
+
+{{ll|Category:Templates}}</noinclude><includeonly><div style="text-align:center; font-size:1.1em; font-weight:bold;"><div>{{#invoke:Socials|socials|type={{#if:{{{type|}}}|{{{type}}}|}}|link={{#if:{{{link|}}}|{{{link}}}|}}|page={{#if:{{{page|}}}|{{{page}}}|}}|icon={{#if:{{{icon|}}}|{{{icon}}}|}}|{{#if:{{{1|}}}|{{{1}}}|}}}}</div></div></includeonly>
