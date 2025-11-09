@@ -18,3 +18,10 @@
       args={"Discord server",["type"]="discord", ["link"]="https://discord.gg"}
    }
 )
+
+=p.socials(
+   mw.getCurrentFrame():newChild{
+      title="Module:Socials",
+      args={"Discord server",["type"]="github", ["link"]="https://discord.gg"}
+   }
+)

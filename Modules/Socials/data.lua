@@ -2,17 +2,17 @@
 
 return {
     -- default link icon
-    ["default"] = "File:Link-icon.webp",
+    ["default"] = {file="File:Link-icon.webp"},
 
     -- other apps/website icons
     -- add new ones here if needed
-    ["discord"] = "File:Discord-Logo-Color.png",
-    ["steam"] = "File:Steam logo.png",
-    ["github"] = "File:Github-Logo.png",
-    ["bitbucket"] = "File:Bitbucket-Logo.webp",
-    ["X"] = "File:X-Logo.png",
-    ["forums"] = "File:Favicon_Forum.png",
-    ["blog"] = "File:Favicon_Forum.png",
-    ["gdrive"] = "File:Google Drive icon.webp",
-    ["npmjs"] = "File:npmjs icon.png",
+    ["discord"] = {file="File:Discord-Logo-Color.png"},
+    ["steam"] = {file="File:Steam logo.png"},
+    ["github"] = {file="File:Github-Logo.png", class="logo-dark"},
+    ["bitbucket"] = {file="File:Bitbucket-Logo.webp"},
+    ["X"] = {file="File:X-Logo.png", class="logo-dark"},
+    ["forums"] = {file="File:Favicon_Forum.png"},
+    ["blog"] = {file="File:Favicon_Forum.png"},
+    ["gdrive"] = {file="File:Google Drive icon.webp"},
+    ["npmjs"] = {file="File:npmjs icon.png"},
 }

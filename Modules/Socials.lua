@@ -9,8 +9,8 @@ local p = {
 
     TEMPLATES = {
         ICON = {
-            DEFAULT = "[[{icon}|{iconSize}px]]",
-            WITH_LINK = "[[{icon}|link={link} |{iconSize}px]]",
+            DEFAULT = "[[{icon}|{iconSize}px|class={class}]]",
+            WITH_LINK = "[[{icon}|link={link} |{iconSize}px|class={class}]]",
         },
         NO_TEXT = {
             DEFAULT = "{text}",
@@ -100,15 +100,15 @@ p._try_backward_compatibility = function(frame)
     }
     params.link = link
 
-    local out_icon = p._format_template(template_icon, params)
-    local out_text = p._format_template(template_text, params)
+    local out_icon = format._format_string(template_icon, params)
+    local out_text = format._format_string(template_text, params)
     return out_icon .. "\n" .. out_text
 end
 
 ---Retrieve the icon from provided type, or return `default`.
 ---@TODO: improve feedback for provided type not existing
 ---@param t string
----@return string
+---@return table
 p._get_icon_link = function(t)
     t = t ~= "" and t
         or "default" -- no icon nor type provided
@@ -123,11 +123,13 @@ p._format_param = function(param)
     return s
 end
 
-p._format_template = function(template, params)
-    return format._format_string(template, params)
+
+
+p.list_types_doc = function(frame)
+
 end
 
----comment
+---Main function to be called from wikitext.
 ---@param frame frame
 p.socials = function(frame)
     local args = frame.args
@@ -136,15 +138,16 @@ p.socials = function(frame)
     if out then return out end
 
     -- retrieve icon
-    local _icon_arg = p._format_param(args["icon"])
-    local icon_link = _icon_arg
-        or p._get_icon_link(args["type"])
+    local _icon_arg = p._format_param(args["icon"]) -- use custom one
+    local icon_link = _icon_arg and {file=_icon_arg}
+        or p._get_icon_link(args["type"]) -- use predefined one
 
     -- retrieve the text, remove spaces at the start and end
     local text = p._format_param(args["1"]) or "link"
 
     local params = {
-        icon = icon_link,
+        icon = icon_link.file,
+        class = icon_link.class or "",
         iconSize = tostring(p.ICON_SIZE),
         text = text,
     }
@@ -163,8 +166,8 @@ p.socials = function(frame)
     local template_text = text == "link" and p.TEMPLATES.NO_TEXT[template_text_id]
         or p.TEMPLATES.TEXT[template_text_id]
 
-    local out_icon = p._format_template(template_icon, params)
-    local out_text = p._format_template(template_text, params)
+    local out_icon = format._format_string(template_icon, params)
+    local out_text = format._format_string(template_text, params)
 
     return out_icon .. " " .. out_text
 end

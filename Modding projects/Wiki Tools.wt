@@ -1,0 +1,32 @@
+{{Header|Modding|Modding projects}}
+{{Page version|42.12.3}}
+{{Infobox
+| title = Wiki Tools
+| 
+    <!-- {{Infobox/image
+    | p1 = [[File:Wiki That! - preview.png]]
+    }} -->
+    {{Infobox/section
+    | color = var(--color-blue)
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3598605832
+        | Steam Workshop
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/SirDoggyJvla/Wiki-Tools
+        | GitHub repository
+        }}
+    }}
+}}
+'''Wiki Tools''' is a set of tools and utilities designed to assist wiki editors in various tasks such as rendering [[outfits]] or item models. These tools are primarily intended for use by wiki contributors but may also be of interest to modders and developers working with [[Project Zomboid]].
+
+==Navigation==
+{{Navbox modding}}
+
+{{ll|Category:Debug projects}}
+{{ll|Category:Miscellaneous projects}}
