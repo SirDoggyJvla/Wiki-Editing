@@ -1,31 +1,38 @@
-{{Header|Modding}}
-{{Page version|42.8.1}}
+{{LangSwitch}}
+{{Navbar_modding}}
 {{Infobox
-| title = <div></div>
+| title = IntelliJ IDEA
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:IntelliJ IDEA - logo.png]]
     }}
-    {{Infobox/socials
-    | other=https://www.jetbrains.com/idea/
-    | IntelliJ IDEA website
-    }}
-    {{Infobox/socials
-    | other=https://www.jetbrains.com/idea/download
-    | IntelliJ IDEA download page
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://www.jetbrains.com/idea/
+        | IntelliJ IDEA website
+        }}
+        {{Infobox/socials
+        | link=https://www.jetbrains.com/idea/download
+        | IntelliJ IDEA download page
+        }}
     }}
 }}
 '''IntelliJ IDEA''' is an [[Wikipedia:Integrated development environment|Integrated development environment (IDE)]] used by Project Zomboid modders. It is most useful to parse the [[Game files#Java files|Java files]] of the game.
 
 {{Note|type=warn|Make sure to download the '''Community Edition''' of IntelliJ IDEA which is free compared to the '''Ultimate Edition'''.}}
 
-==Tips and tricks==
+== Tips and tricks ==
 *You can open an entire folder as a workspace, making it easier to navigate the files. Useful to [[Game files#Searching the game files|search for specific elements]] in the game files. To search in an entire folder, press {{Key|Ctrl}}+{{Key|Shift}}+{{Key|F}} and select the folder you want to search in.
 *You can search for Java classes by pressing {{Key|Ctrl}}+{{Key|N}} and typing the name of the class you want to find. This is useful for quickly navigating to specific classes in the decompiled code.
 *By holding {{Key|Ctrl}} then left clicking on a used method or class, you can quickly navigate to its definition.
 *By holding {{Key|Ctrl}} then left clicking on the definition of a method or class, you can see the various usages of that method or class in the code.
 
-==Remote debugging==
+== Remote debugging ==
 {{Main|Remote debugging}}
 To setup [[remote debugging]] with IntelliJ IDEA, you need to set up a remote debugging configuration. This allows you to connect to the game process and debug it remotely. Follow the steps below to set up remote debugging in IntelliJ IDEA:
 *Open IntelliJ IDEA and open the [[Decompiling game code|decompiled game code]] as a project.
@@ -44,5 +51,7 @@ To start remote debugging, you need to start the game with the remote debugging 
 
 {{Note|type=warn|Make sure to have remapped the game files first, see [[Zomboid Decompiler#Remapping|Zomboid Decompiler]] for more information.}}
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding}}

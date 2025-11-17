@@ -1,30 +1,38 @@
-{{Header|Modding}}
+{{LangSwitch}}
+{{Navbar_modding}}
 {{Infobox
-| title = <div></div>
+| title = SteamCMD
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:SteamCMD - preview.png]]
     }}
-    {{Infobox/socials
-    | other=https://developer.valvesoftware.com/wiki/SteamCMD
-    | Valve documentation: Setting up SteamCMD
-    }}
-    {{Infobox/socials
-    | other=https://partner.steamgames.com/doc/features/workshop/implementation#SteamCmd
-    | Workshop item build configuration file
-    }}
+
+	{{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+		{{Infobox/socials
+		| link=https://developer.valvesoftware.com/wiki/SteamCMD
+		| Valve documentation: Setting up SteamCMD
+		}}
+		{{Infobox/socials
+		| link=https://partner.steamgames.com/doc/features/workshop/implementation#SteamCmd
+		| Workshop item build configuration file
+		}}
+	}}
 }}
 '''SteamCMD''' is a command-line version of the [[Steam]] client, designed for installing and updating dedicated servers for games. It can be used to download and manage game files without the need for a graphical interface, as well as installing or uploading Workshop mods. Regular users do not need to use SteamCMD, and it is primarily intended for server administrators and modders.
 
 The official Valve documentation provides detailed instructions on how to setup SteamCMD. However, the documentation regarding details on how to use it is lacking.
 
-==Connecting to SteamCMD==
+== Connecting to SteamCMD ==
 {{Unverified|How long does the cache credential lasts and can it be changed ?}}
 After installing SteamCMD, you can connect to it by running the command <code>steamcmd</code> in a terminal or command prompt. This will start the SteamCMD client and display a custom command prompt where you can enter commands. Actions which do not require an account like download a Workshop item can be done anonymously, while actions that require an account, such as uploading a Workshop item, will require you to log in.
 
 To login anonymously, use the command <code>login anonymous</code>. To login with your Steam account, use the command <code>login {{CodeSnip/param|username}}</code> then enter your password. Your credentials will be cached for some time, allowing you to login back in without giving your password.
 
-==Uploading Workshop items==
+== Uploading Workshop items ==
 To upload or create a new workshop item, you need to create a build configuration file. SteamCMD uses this file to get the informations about the workshop item you want to upload. Such a file needs to follow a specific format:
 {{CodeSnip
 | code =
@@ -102,7 +110,7 @@ You can find a simple workshop item example uploaded with this method [https://s
 
 {{Note|1=The description and patch note use [https://steamcommunity.com/sharedfiles/filedetails/?id=2807121939 Steam BBCode].}}
 
-==Retrieving a workshop item information==
+== Retrieving a workshop item information ==
 You can retrieve a Workshop item informations by using a [[Wikipedia:POST (HTTP)|POST request]] from the [https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage#GetPublishedFileDetails Steam API]:
 {{CodeSnip
 | lang = bash
@@ -112,5 +120,11 @@ curl -X POST "https://api.steampowered.com/ISteamRemoteStorage/GetPublishedFileD
 
 ''This method was retrieved from this [https://steamcommunity.com/discussions/forum/1/364043054110232987/#c601900367173718469 Steam forum post].''
 
-==Navigation==
+== See also ==
+*[[Uploading mods]] - a page explaining how to upload a mod.
+*[[Steam Uploader]] - a tool for uploading mods which utilizes the Steamworks SDK.
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding}}

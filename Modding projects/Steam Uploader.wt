@@ -1,23 +1,33 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Infobox
-| title = <div></div>
+| title = Steam Uploader
+| class = theme-blue
 | 
-    {{Infobox/socials
-    | icon=File:Discord-Logo-Color.png
-    |custom=[[Unofficial Modding Discord]]
-    }}
-    {{Infobox/socials
-    | github=https://github.com/SirDoggyJvla/Steam-Uploader
-    | GitHub repository
-    }}
-    {{Infobox/socials
-    | github=https://github.com/SirDoggyJvla/Steam-Uploader/releases
-    | Download
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | page=Unofficial Modding Discord
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/SirDoggyJvla/Steam-Uploader
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/SirDoggyJvla/Steam-Uploader/releases
+        | Download
+        }}
     }}
 }}
-'''Steam Uploader''' is an external uploader for Workshop items which can be used for Project Zomboid to bypass the [[Uploading mods#In-game uploader|in-game uploader]] limitations such as the preview size and file type limits and the forced description upload. It uses simple command lines arguments to control what needs to be updated, with the ability to directly provide a text file for the description and patch note.
+'''Steam Uploader''' is an external uploader for Steam Workshop items that can be used for Project Zomboid to bypass the [[Uploading mods#In-game uploader|in-game uploader]] limitations, such as the preview size and file type limits and the forced description upload. It uses simple command-line arguments to control what needs to be updated, with the ability to directly provide a text file for the description and patch note. This requires the Steam client to be opened when using the tool.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

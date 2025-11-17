@@ -1,7 +1,9 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.11.0}}
 {{Infobox
-| title = <div></div>
+| title = Unofficial Mapping Tools
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:WorldEd (unofficial) - preview.png|link=]]
@@ -10,31 +12,38 @@
     | color = var(--color-blue)
     | id = 1
     | 1 = Build 42
-    | 2 = {{Infobox/socials
-    | github=https://github.com/Unjammer/WorldEd/releases
-    | Download
-    }}
-    {{Infobox/socials
-    | github=https://github.com/Unjammer/WorldEd
-    | WorldEd fork
-    }}
-    {{Infobox/socials
-    | github=https://github.com/Unjammer/TileZed
-    | TileZed fork
-    }}
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Unjammer/WorldEd/releases
+        | Download
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Unjammer/WorldEd
+        | WorldEd fork
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Unjammer/TileZed
+        | TileZed fork
+        }}
     }}
     {{Infobox/section
     | color = var(--color-blue)
     | id = 2
     | 1 = Build 41
-    | 2 = {{Infobox/socials
-    | gdrive=https://drive.google.com/file/d/1HJ3REpk78-mebIqFwBjyXOyUG3tJs0wt
-    | WorldEd fork Build 41
-    }}
-    {{Infobox/socials
-    | gdrive=https://drive.google.com/file/d/1GjurwzP6gMFhhI6u7SLDby_2aMOeA14V
-    | TileZed fork Build 41
-    }}
+    | 2 = 
+        {{Infobox/socials
+        | type=gdrive
+        | link=https://drive.google.com/file/d/1HJ3REpk78-mebIqFwBjyXOyUG3tJs0wt
+        | WorldEd fork Build 41
+        }}
+        {{Infobox/socials
+        | type=gdrive
+        | link=https://drive.google.com/file/d/1GjurwzP6gMFhhI6u7SLDby_2aMOeA14V
+        | TileZed fork Build 41
+        }}
     }}
 }}
 The '''Unofficial Mapping Tools''' is a project by Unjammer which aims to provide an alternative to the official Project Zomboid mapping tools as well as providing features needed for [[Build 42]] mapping. The tools are packaged from a fork of [[TileZed]] and [[WorldEd]]. One key feature is that it doesn't rely on Windows registry or a folder in {{Code|%userprofile%}}, allowing multiple versions of the tools on the same computer. A version of the tools for [[Build 41]] is also available.
@@ -50,8 +59,9 @@ Other features include:
 *Includes the game tilesheets.
 *And more...
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Mapping projects}}
 {{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

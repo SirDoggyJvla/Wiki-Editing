@@ -1,0 +1,36 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = Project Zomboid Modding Tools
+| class = theme-blue
+|
+    {{Infobox/image
+    | p1 = [[File:346421b034310b16b40eaf1186c17eda256c2977.jpg]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamdb.info/app/380880/
+        | SteamDB entry
+        }}
+    }}
+}}
+{{Note|type=warn|The tools available might not the most recent ones. Check the tools' individual pages for the links to the most recent version of them.}}
+'''Project Zomboid Modding Tools''' are the official modding tools released by [[The Indie Stone]]. Although they individually can be downloaded for free, they require owning a game on [[Steam]] to download. They can be found by simply searching for them in your library when owning [[Project Zomboid]].
+
+The modding tools are currently not available for [[GOG]] owners, and only the Windows versions of tools are currently offered.
+
+The modding tools currently include two tools:
+*[[TileZed]]
+*[[WorldEd]]
+as well as tiles in the PNG format, required for TileZed to run properly. Other officially released tools are not available with this package.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding}}

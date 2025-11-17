@@ -1,6 +1,103 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.4.1}}
-[[File:TchernoLib - preview.png|thumb]]
-'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3389605231 TchernoLib]''' is an API with various tools for modders. It adds a lot of tools that go from UI functions to global objects to custom sandbox options entries.
+{{Infobox
+| title = TchernoLib
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:TchernoLib - preview.gif|link=]]
+    }}
 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3389605231
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2986578314
+        | B41 version workshop page
+        }}
+    }}
+}}
+'''TchernoLib''' is an API with various tools for modders. It adds a lot of tools that go from UI functions to global objects to custom sandbox options entries.
+
+'''Global objects'''
+*Simple interface to add your own Global Objects to the game.
+*[https://steamcommunity.com/workshop/filedetails/discussion/2986578314/3812906855246163752/ Details here].
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2986715593 Portal Gun] mod for example.
+
+'''Spawn'''
+*Spawn a specific item in a specific container.
+*Spawn a specific item from a right click + action on a specific square.
+*[https://steamcommunity.com/workshop/filedetails/discussion/2986578314/3812906855249791467/ Details here].
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2986715593 Portal Gun] mod for example.
+
+'''Sandbox options'''
+*Handle sandbox color selection as enum.
+*[https://steamcommunity.com/workshop/filedetails/discussion/2986578314/3812906855246425780/ Details here].
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2986715593 Portal Gun] and [https://steamcommunity.com/sharedfiles/filedetails/?id=2970134188 Battle Royale] mods for examples.
+
+'''Player variables'''
+*Simple interface for spreading player variables in multiplayer.
+*Adds IsoPlayer flags to player variables.
+*Player variables are (mainly) used for animations.
+*Adds isCmdReady(). A function to know when sendClientCommand can be safely used in MP.
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2991010328 Infected Player] mod for example.
+
+'''Movement control'''
+*Simple interface for movement control.
+*Simple interface for teleport.
+*Vanilla movement speed recomputed with Lua.
+*[https://steamcommunity.com/workshop/filedetails/discussion/2986578314/3812909627184558592/ Tuning options] for movement speed.
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=3002243696 No Limping] mod for example.
+
+'''World chat'''
+*Simple interface to make any world object talk.
+*[https://steamcommunity.com/workshop/filedetails/discussion/2986578314/6458775074329393731/ Detailed interface].
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=3004974776 NPC Baelin The Fisherman] mod for example.
+
+'''UI'''
+*Simple interface for adding a new tab to Character Info window.
+*Adds Player ModData Debug to Debug Dev menu (below Global Mod Data Debug).
+*Draw circles on world (better than vanilla).
+*Draw lines (better than vanilla). [Not always displayed]
+*Shows modded icon in Item List. Thx to [https://steamcommunity.com/id/NotNotloc/myworkshopfiles/?appid=108600 Notloc].
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2970134188 Battle Royale] mod for drawing example.
+
+'''Geometry'''
+*Detects point inclusion in triangle.
+*Detects point inclusion in rectangle.
+*Detects intersecting point of two segments.
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2970134188 Battle Royale] mod for example.
+
+'''Targeting'''
+*Adds getPlayerMouseSquare(player,goThroughWindow). Detects the square under the mouse, including lower levels.
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2986715593 Portal Gun] mod for example.
+
+'''luautils'''
+*Deep Lua table copy.
+*Transform square to table for data storage.
+*Formatting table, square, player for easy debug.
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=2986715593 Portal Gun] and [https://steamcommunity.com/sharedfiles/filedetails/?id=2970134188 Battle Royale] mods for examples.
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

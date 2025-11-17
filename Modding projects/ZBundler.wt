@@ -1,7 +1,8 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.12.1}}
 {{Infobox
-| title = Project Zomboid Community Modding template
+| title = ZBundler
 | class = theme-blue
 | 
     <pre>
@@ -16,16 +17,18 @@
     | 1 = Links
     | 2 = 
         {{Infobox/socials
-        | github=https://github.com/ecneho/zbun
-        | Github repository
+        | type=github
+        | link=https://github.com/ecneho/zbun
+        | GitHub repository
         }}
         {{Infobox/socials
-        | npmjs=https://www.npmjs.com/package/zbundler
+        | type=npmjs
+        | link=https://www.npmjs.com/package/zbundler
         | NPM package
         }}
     }}
 }}
-'''ZBundler''' is a JavaScript CLI tool to initialize, manage and build mods. It is meant to be used to delevop mods in their own folder, outside of the Project Zomboid usual [[Game files#Cache folder|cache folder]] method.
+'''ZBundler''' is a JavaScript CLI tool to initialize, manage, and build mods. It is meant to be used to develop mods in their own folder, outside of the Project Zomboid usual [[Game files#Cache folder|cache folder]] method.
 
 {{Clear}}
 == Navigation ==

@@ -1,22 +1,35 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.3.0}}
-[[File:DebugTools - preview.png|thumb]]
-'''DebugTools''' are tools designed to assist with mod creation directly in-game, those extand the vanilla [[Debug mode]] tools and [[Category:Debug tools]]. You can access them from the [https://steamcommunity.com/sharedfiles/filedetails/?id=3386556284 Steam Workshop page].
+{{About|a custom debug menu mod|official game debug menu|link=https://steamcommunity.com/sharedfiles/filedetails/?id=3386556284|Debug mode}}
+{{Infobox
+| title = DebugMenu
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:DebugTools - preview.png]]
+    | p2 = [[File:DebugTools - preview.png]]
+    | 1 = [[File:DebugTools - preview.png|link=]]
+    | 2 = [[File:DebugTools - preview.png|link=]]
+    }}
 
-==Features==
-*Main functions are operational as expected  
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3386556284
+        | Workshop page
+        }}
+    }}
+}}
+'''DebugMenu''' are tools designed to assist with mod creation directly in-game, those extand the vanilla [[debug mode]] tools and [[:Category:Debug tools|debug tools]], and also add a few fixes to the base game.
 
-*Fixed issue with synthesis, construction, and mode being unusable  
-*Fixed issue preventing item duplication  
-*Fixed teleportation failure at revive points  
-*Added item deletion functionality  
-*Added animal debugging tools  
+[[File:DebugTools - context menu.png|center|600px]]
 
-*Fixed issue where cheat functions required debugging mode  
-*Fixed failure in synthesis mode  
-*Fixed issue with obtaining all formulas  
+== Navigation ==
+{{Navbox modding}}
 
-*Added basement debugging support  
-*Teleportation now works for all generated basements  
-*Basements now generate consistently, unaffected by sandbox probability  
-*Fixed issue with missing lists for generated basements
+{{ll|Category:Debug projects}}
+{{ll|Category:Modding projects}}

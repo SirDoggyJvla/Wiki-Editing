@@ -1,24 +1,35 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = Vanilla Map Export
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Vanilla Map Export - preview.jpg]]
     }}
-    {{Infobox/socials
-    | github=https://github.com/Unjammer/PZ_Vanilla_Map-B41-
-    | GitHub repository
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Unjammer/PZ_Vanilla_Map-B41-
+        | GitHub repository
+        }}
     }}
 }}
-This project provides the map files of the vanilla game maps from [[Build 41]] to be used in the [[Mapping]] tools. These files were retrieved by using an undisclosed tool and provided as is for mappers to use. It also provides the vegetation map for [[Knox Country]] as well as a top view of the map and the zombie density map. Currently it provides the files for the following maps:
+This project provides the map files of the vanilla game maps from [[Build 41]] to be used in the [[mapping]] tools. These files were retrieved by using an undisclosed tool and provided as is for mappers to use. It also provides the vegetation map for [[Knox Country]] as well as a top view of the map and the zombie density map. Currently it provides the files for the following maps:
 *[[Knox Country]]
-*[[Game modes#Kingsmouth|Kingsmouth]]
-*[[Game modes#Studio|Studio]]
-*[[Game modes#Tutorial|Tutorial]]
-*Challenge 1 and 2 maps
+*[[Kingsmouth]]
+*[[Studio]]
+*[[Tutorial]]
+*Challenge 1 ([[House In The Woods]])
+*Challenge 2
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

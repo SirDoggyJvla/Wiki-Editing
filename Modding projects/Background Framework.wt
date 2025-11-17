@@ -1,16 +1,28 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.4.1}}
-[[File:Background Framework - preview.png|thumb]]
-'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3405199543 Background Framework]''' gives tools for modders and users to easily swap the main menu image. Before this framework, modders had to replace the main menu image, which was not user-friendly because it required users to swap mod whenever they wanted a different background. This framework allows modders to give multiple options for users to chose from, add random selection and more. It also adds similar tools to swapping the Project Zomboid writing on the main menu.
+{{Infobox
+| title = <div></div>
+| 
+    {{Infobox/image
+    | p1 = [[File:Background Framework - preview.png|link=]]
+    }}
+    {{Infobox/socials
+    | type=steam
+    | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3405199543
+    | Workshop page
+    }}
+}}
+'''Background Framework''' gives tools for modders and users to easily swap the main menu image. Before this framework, modders had to replace the main menu image, which was not user-friendly because it required users to swap mod whenever they wanted a different background. This framework allows modders to give multiple options for users to chose from, add random selection and more. It also adds similar tools to swapping the Project Zomboid title on the main menu.
 
 For more detail on how to use the framework, see the mod page.
 
-==Direct image feed==
+== Direct image feed ==
 Users can chose to add their own images by directly adding them in a folder. The framework will automatically detect the images and add them to the list of backgrounds. This allows users to easily add their own images without having to create a mod.
 
 To add your own images, [[File structure#Accessing the game folder|access the game files]] and put your image in the following folder:
 {{CodeSnip
-| code = 
+| code =
 Steam/
 └── steamapps/
     └── common/
@@ -19,9 +31,9 @@ Steam/
                 └── ...
 }}
 
-The images need to be png files and have a resolution of 1920x1080 pixels. Make sure to select the direct method in the [[Mod Options]].
+The images need to be png files and have a resolution of 1920x1080 pixels. Make sure to select the direct method in the [[ModOptions]].
 
-==Addon method==
+== Addon method ==
 Modders can also add their own images by creating a mod. [https://steamcommunity.com/sharedfiles/filedetails/?id=3405225466 Background Example] is an example mod that can be used to make your own. The method involves a few steps and a tiny bit of [[Lua (language)|Lua]] but it easily allows you to create your own addon.
 
 Your images should be placed in the following folder in your [[File structure#Media folder|mod's directory]]:
@@ -58,4 +70,8 @@ And use the following Lua code to add your logo to the list of available logos:
 backgroundFramework:addLogo("DisplayName", "logoFileName")
 }}
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

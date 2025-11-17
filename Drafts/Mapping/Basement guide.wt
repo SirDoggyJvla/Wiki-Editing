@@ -1,0 +1,46 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.12.3|2=405935}}
+{{About|creating basements in a custom map using the [[mapping]] tools|explanation about basements in the game|Basements}}
+This guide will cover how to add custom basements to a custom [[Mapping|map]] using the [[Unofficial Mapping Tools]]. It will teach how to create a simple 1 level basement, and how to import it into the editor.
+
+There are two methods to creating basements:
+#Creating the basement as a standalone {{Code|.tbx}} file.
+#Creating the basement directly into your {{Code|building.tbx}}
+
+This guide will focus on the first method.
+
+== Creating a Basement ==
+To begin, inside [[Unofficial Mapping Tools|TileZed]] navigate into the Building Editor by selecting the Tools tab at the top, then Building Editor.
+
+Once inside the building editor, create a New Building.
+Before drawing a basement be sure to check the list of rooms and their definitions, so when drawing the basement it has the correct room definitions.
+
+In iso mode, using the Draw Room tool, draw out the basement on floor 1/1 making sure it is completely enclosed. To create a basement with more than 1 level, simply add more floors but note that topmost floor will be the first floor into the basement.
+
+Using the Place Stairs tool, place a staircase anywehere for player to enter the basement. Then save the tbx file.
+
+=== Preparing the Basement Placement ===
+Open your map project in TilEd, and choose a location on your map where you would like the basement entrance to be.
+
+Selecting the BMP Eraser tool in the top right, delete 3 ground floor tiles by left clicking. These 3 deleted tiles will be directly above the staircase to allow entry into the basement.
+
+=== Placing the Basement ===
+Open your project in [[Unofficial Mapping Tools|WorldEd]], then drag your basement {{Code|.tbx}} file into your map.
+
+Navigate to the “lots” tab on the left side of the program, where a list of “Levels” can be found. Drag your basement {{Code|.tbx}} file name from Level 0 onto Level -1. You can also select Level -1 before dragging the basement {{Code|.tbx}} into your map to place the Basement directly on Floor -1. The basement should appear underground.
+
+Finally, left click and drag your basement so the 3 tiles removed earlier using BMP eraser are directly above the staircase.
+
+== Connecting to a building ==
+In the building editor, open the {{Code|.tbx}} file for a house/building and navigate to the “Edit rooms” tab, then set the “floor” tile in your room to None, Click OK.
+
+Navigate to Tile mode on the left side of the program below Iso mode, then in the bottom right tab named "Tilesets" type “flooring”.
+Selecting a floor tile of your choice and making sure the “floor” layer is selected on the layers tab, use the Draw Tile tool to place the flooring down everywhere except for 3 tiles directly above your staircase. Save the building TBX.
+
+Place the house/building tbx into WorldEd, and line up the 3 missing floor tiles.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping}}

@@ -1,25 +1,39 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = Zombie Layer Replacer
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Zombie Layer Replacer - preview.png]]
     }}
-    {{Infobox/socials
-    | github=https://github.com/Unjammer/PZ_ZombieLayerReplacer
-    | GitHub repository
-    }}
-    {{Infobox/socials
-    | other=https://drive.google.com/file/d/1zvjxsjLi2KGwU7SVbLoH2m32UuSgCxcw/view
-    | Google Drive download link
-    }}
-    {{Infobox/socials
-    | other=https://discord.com/channels/136501320340209664/279303619277488128/946068520951746570
-    | Original upload from Unjammer
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Unjammer/PZ_ZombieLayerReplacer
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | link=https://drive.google.com/file/d/1zvjxsjLi2KGwU7SVbLoH2m32UuSgCxcw/view
+        | Google Drive download link
+        }}
+        {{Infobox/socials
+        | link=https://discord.com/channels/136501320340209664/279303619277488128/946068520951746570
+        | Original upload from Unjammer
+        }}
     }}
 }}
 {{Stub}}
 '''Zombie Layer Replacer''' is an application used to replace the zombie layers of cells in the map.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

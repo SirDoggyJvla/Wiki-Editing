@@ -1,22 +1,31 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = Dylan's Building Pool
+| class = theme-blue
 | 
-    {{Infobox/socials
-    | gdrive=https://drive.google.com/file/d/1gipy3nJUGrVIeFVtZOK70a2_W0HTy1jr/view
-    | Building Pool by Dylan
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = gdrive
+        | link=https://drive.google.com/file/d/1gipy3nJUGrVIeFVtZOK70a2_W0HTy1jr/view
+        | Building Pool by Dylan
+        }}
     }}
 }}
 The '''Building Pool''' provided by [https://steamcommunity.com/id/dylmyers246 Dylan] is a bank of building files which can be used by the community in their own maps, as long as they are credited.
 
-==See also==
+== See also ==
 *[[Building Pool (official)]] - a bank of vanilla building files provided by [[The Indie Stone]].
 *[[Community Architect]] - a mapping project initialized by the [[Unofficial Mapping Discord]] community, which aims to create a large pool of buildings created by the community for the community.
 *[[Building Pool (Blackbeard)]] - a mapping project by Blackbeard, which aims to create a large pool of buildings created by the community for the community.
 *[[Building Pool (okkydoo)]] - a mapping project by okkydoo, a standalone building pool provided by okkydoo himself, which serves as a sort of continuation of the [[Building Pool (Blackbeard)|Building Pool by Blackbeard]].
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

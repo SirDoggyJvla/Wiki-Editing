@@ -1,9 +1,36 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.4.1}}
-[[File:Magazine API - preview.png|thumb]]
-'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3436296238 JB_ASSUtils]''' gives tools to modders to introduce area selection for modders. This was made due to the lack of flexibility with the drag selection tool introduced in [[Build 42]].
+{{Infobox
+| title = JB_ASSUtils
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:JB_ASSUtils - preview.png|link=]]
+    }}
 
-==Video==
-{{Video|link=https://www.youtube.com/watch?v=VvDCEufNye4|version=42.3.1}}
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3439101981
+        | Workshop page
+        }}
+    }}
+}}
+'''JB_ASSUtils''' gives tools to introduce area selection for modders. This was made due to the lack of flexibility with the drag selection tool introduced in [[Build 42]].
 
+== Video ==
+{{Video
+|id=Zv1Vd9VsPhc
+|image=JB_ASSUtils_Preview.jpg
+|name=JB's Area & Square Select Utilities {{!}} Project Zomboid Modding - YouTube
+}}
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

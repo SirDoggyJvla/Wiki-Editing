@@ -1,18 +1,23 @@
-{{Header|Modding|Modding guides}}
+{{LangSwitch}}
+{{Navbar_modding}}
 {{Infobox
-| title = <div></div>
+| title = BBCode
+| class = theme-blue
 | 
     {{Infobox/socials
-    | steam=https://steamcommunity.com/comment/ForumTopic/formattinghelp
+    | type=steam
+    | link=https://steamcommunity.com/comment/ForumTopic/formattinghelp
     | Steam formatting guide
     }}
 }}
 '''[[Wikipedia:BBCode|BBCode]]''' is a form of markup language used to format posts in many message boards and forums. It allows users to add elements like bold text, italics, links, and images to their messages using a simple tag-based syntax. It can be recognized by its use of square brackets to enclose tags, such as `[b]` for bold text. It is used by [[Steam]] to format posts in the Steam Community.
 
-==See also==
+== See also ==
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=2807121939 Comprehensive Formatting Help] - a deeper guide on BBCode than the official Steam one, explaining how to render videos directly in text for example.
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=1245720477 Embed Images and Buttons in Artwork Descriptions] - a guide on using BBCode for Artwork descriptions, on profiles etc.
 *[https://bijx.github.io/Steam-Markup-Generator/ Steam Markup Generator] - a tool to edit and render in real time Steam's BBCode.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding guides}}

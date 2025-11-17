@@ -2,7 +2,7 @@
 
 return {
     -- default link icon
-    ["default"] = {file="File:Link-icon.webp"},
+    ["default"] = {file="File:Link-icon.webp", doc_comment="(default icon if no type or icon is provided)"},
 
     -- other apps/website icons
     -- add new ones here if needed

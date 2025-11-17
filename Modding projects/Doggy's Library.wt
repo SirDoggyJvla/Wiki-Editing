@@ -1,0 +1,71 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.9.0}}
+{{Infobox
+| title = Doggy's Library
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Doggy's Library - preview.gif]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.gg/ghRTHUTc94
+        | Unofficial Modding Discord
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3428272880
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/SirDoggyJvla/Doggy-s-Library
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/SirDoggyJvla/Doggy-s-Library/wiki
+        | GitHub repository wiki
+        }}
+    }}
+}}
+'''Doggy's Library''' is a general usage library for Project Zomboid mods. See the [https://github.com/SirDoggyJvla/Doggy-s-API/wiki wiki page] for the detail on the new features and events added by the library.
+
+== Custom events ==
+[[File:Doggy's API - example custom sandbox option panel.png|thumb]]
+To see the detail of the new events added by the library, see it's [https://github.com/SirDoggyJvla/Doggy-s-API/wiki/DoggyEvents GitHub wiki page] on the subject. Hooking to the events is based on [[Starlit Library (Modding project)|Starlit Library]]'s custom event system so make sure to check the wiki of the API.
+{| class="wikitable theme-blue"
+! Event !! Description !! Parameters
+|-
+| style="padding: 10px;"| <big><code>LoadNewChunk</code></big>
+| style="padding: 5px;"| Fires when a chunk gets loaded in for the first time.
+| style="padding: 5px;"|
+*<code>chunk</code> ({{JavaObject|IsoChunk|package=zombie/iso}}) - Chunk which gets loaded in for the first time.
+|-
+| style="padding: 10px;"| <big><code>OnCreateSandboxOptions</code></big>
+| style="padding: 5px;"| Fires whenever a sandbox option custom page gets created, usually whenever the game boots up. It allows you to hook onto the page to customize it visually, or modify it completely.
+| style="padding: 5px;"|
+*<code>panel</code> (SandboxOptionPanel/table) - UI instance of the sandbox option panel.
+|-
+| style="padding: 10px;"| <big><code>OnZombieVisuals</code></big>
+| style="padding: 5px;"| Fires once a zombie gets its visuals set.
+| style="padding: 5px;"|
+*<code>zombie</code> ({{JavaObject|IsoZombie|package=zombie/characters}}) - Zombie getting its visuals set.
+|-
+| style="padding: 10px;"| <big><code>OnZombieRecycle</code></big>
+| style="padding: 5px;"| Fires when a zombie gets unloaded, aka recycled. Recycled because when a zombie unloads, its instance is not delete but is added to a pool of available instance to use for newly loaded zombies.
+| style="padding: 5px;"|
+*<code>zombie</code> ({{JavaObject|IsoZombie|package=zombie/characters}}) - Zombie getting recycled.
+|}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

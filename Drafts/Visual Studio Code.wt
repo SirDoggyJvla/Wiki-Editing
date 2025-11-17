@@ -1,22 +1,29 @@
 {{LangSwitch}}
 {{Navbar_modding}}
 {{Infobox
-| title = <div></div>
+| title = Visual Studio Code
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Visual Studio Code - logo.png]]
     }}
-    {{Infobox/socials
-    | other=https://code.visualstudio.com/
-    | Visual Studio Code website
-    }}
-    {{Infobox/socials
-    | other=https://code.visualstudio.com/docs/getstarted/userinterface
-    | Getting started with the interface
-    }}
-    {{Infobox/socials
-    | other=https://code.visualstudio.com/docs/editing/workspaces/workspaces
-    | Getting started with workspaces
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://code.visualstudio.com/
+        | Visual Studio Code website
+        }}
+        {{Infobox/socials
+        | link=https://code.visualstudio.com/docs/getstarted/userinterface
+        | Getting started with the interface
+        }}
+        {{Infobox/socials
+        | link=https://code.visualstudio.com/docs/editing/workspaces/workspaces
+        | Getting started with workspaces
+        }}
     }}
 }}
 '''Visual Studio Code''', commonly abbreviated to ''VSCode'', is an [[Wikipedia:Integrated development environment|Integrated development environment (IDE)]] used by Project Zomboid modders. It is often used alongside [[Umbrella (modding)|Umbrella]] for modding.
@@ -38,6 +45,10 @@ VSCode can have extensions installed to enhance its functionality. These extensi
 *[[Umbrella (modding)]] – a collection of Lua type stubs for [[Lua (API)|Project Zomboid's modding API]] (formatting, autocomplete...).
 *[[Project Zomboid Script Support]] – an extension for Visual Studio Code that provides syntax highlighting for [[scripts]].
 *[[Zed Script]] – an extension for Visual Studio Code that provides syntax highlighting for [[scripts]].
+
+=== LuaLs ===
+{{Main|LuaLs}}
+LuaLs is a language server pack which provides typings via the use of addons. This is greatly used in [[Modding]], and can be used on the wiki too. [[Umbrella (modding)]] notably depends on it.
 
 === Wikitext ===
 For editing wikitext files, you can install the [https://marketplace.visualstudio.com/items?itemName=RoweWilsonFrederiskHolme.wikitext Wikitext] extension. This extension provides syntax highlighting and preview of pages directly in VSCode. This will highlight with wikitext files which have the custom extension <code>.wt</code>.

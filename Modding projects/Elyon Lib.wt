@@ -1,6 +1,37 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.7.0}}
-[[File:Elyon Lib - preview.png|thumb]]
-[https://steamcommunity.com/sharedfiles/filedetails/?id=3463116811 '''Elyon Lib'''] is a utility mod which compiles various tools for modders. You can access the mod code on its [https://github.com/eI1on/pz-elyonlib Github repository].
+{{Infobox
+| title = Elyon Lib
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Elyon Lib - preview.png|link=]]
+    }}
 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3463116811
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/eI1on/pz-elyonlib
+        | GitHub repository
+        }}
+    }}
+}}
+{{Stub|Need more informations on the library and what tools it brings for modders.}}
+'''Elyon Lib''' is a utility mod which compiles various tools for modders.
+
+{{Clear}}
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

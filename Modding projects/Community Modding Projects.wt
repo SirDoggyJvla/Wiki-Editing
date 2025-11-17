@@ -1,25 +1,36 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.4.1}}
 {{Infobox
-| title = <div></div>
+| title = Community Modding Projects
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Community Modding Projects - preview.png|link=]]
     }}
-    {{Infobox/socials
-    | discord=https://discord.gg/ghRTHUTc94
-    | Unofficial Modding Discord
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2909488957
-    | Workshop page
-    }}
-    {{Infobox/socials
-    | github=https://github.com/Project-Zomboid-Community-Modding/pz-community-modding
-    | Github repository
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.gg/ghRTHUTc94
+        | Unofficial Modding Discord
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2909488957
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Project-Zomboid-Community-Modding/pz-community-modding
+        | GitHub repository
+        }}
     }}
 }}
-'''Community Modding Projects''' adds 3 major mods which are created and handled by the community, with anyone being able to add modifications through pull requests from the Github page:
+'''Community Modding Projects''' adds 3 major mods which are created and handled by the community, with anyone being able to add modifications through pull requests from the GitHub page:
 *DebugTools - adds a lot of neat tools for debuging and creating mods.
 *Frameworks - tools modders can use in their mods.
 *Patch - community patch to recuring problems in the game.
@@ -28,4 +39,8 @@
 
 The debug tools are developed by and for modders and is automatically updated every Friday at midnight UTC.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

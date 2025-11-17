@@ -1,4 +1,5 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.12.1}}
 {{Infobox
 | title = Project Zomboid Community Modding template
@@ -7,13 +8,15 @@
     {{Infobox/image
     | p1 = [[File:Project Zomboid Community Modding.png]]
     }}
+
     {{Infobox/section
     | id = 1
     | 1 = Links
     | 2 = 
         {{Infobox/socials
-        | github=https://github.com/Project-Zomboid-Community-Modding/pzmc-template
-        | Github repository
+        | type=github
+        | link=https://github.com/Project-Zomboid-Community-Modding/pzmc-template
+        | GitHub repository
         }}
     }}
 }}

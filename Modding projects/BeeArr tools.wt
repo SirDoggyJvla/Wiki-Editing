@@ -1,7 +1,9 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = BeeArr tools
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:BeeArr tools - TileZedTools.png]]
@@ -48,13 +50,14 @@
     | 21 = [[File:BeeArr tools - utilitypoles.gif|link=]]
     }}
     {{Infobox/socials
-    | github=https://github.com/TheBeeArr/beearr-tiles-and-tools
+    | type=github
+    | link=https://github.com/TheBeeArr/beearr-tiles-and-tools
     | GitHub repository
     }}
 }}
 '''BearArr tools''' is a collection of tools for the official [[TileZed]] tool and written in Lua which can be directly used inside TileZed thanks to its lua scripting capabilities.
 
-==Tools==
+== Tools ==
 *'''Edge Tool''' – Expanded tile selection and corner placement for edges and grime.
 *'''Fence Tool''' – All fence types, power lines, vines, and more, with corner and gate support.
 *'''Single-tile Object Tool''' – Place street decorations, lamps, and more.
@@ -73,7 +76,8 @@
 *'''Blood Tool''' – Place blood splatters.
 *'''Azakaela's Tile 2 Item Converter Addon Tools''' – Place random corpses, zombies, containers, and more.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

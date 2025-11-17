@@ -1,7 +1,36 @@
-{{Header|Modding|Modding projects}}
-{{Page version|42.3.0}}
-'''Project Zomboid Script Support''' is an extension for Visual Studio Code that provides syntax highlighting for [[Scripts]].
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.4.1}}
+{{Infobox
+| title = Project Zomboid Script Support
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Project Zomboid Script Support - preview.png|link=]]
+    }}
 
-To use Project Zomboid Script Support, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=cyberbobjr.pz-syntax-extension "Project Zomboid Script Support" by cyberbobjr].
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://marketplace.visualstudio.com/items?itemName=cyberbobjr.pz-syntax-extension
+        | Visual Studio marketplace
+        }}
+    }}
+}}
+'''Project Zomboid Script Support''' is an extension for [[Visual Studio Code]] that provides syntax highlighting for [[scripts]].
 
+To use Project Zomboid Script Support, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=cyberbobjr.pz-syntax-extension “Project Zomboid Script Support” by cyberbobjr].
+
+[[File:VSCode_examplePZScriptSupport.png|800px]]
+
+You can also inspect specific items in a crafting to see what they are.
+
+[[File:VSCode_exampleInspectElements.png|800px]]
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

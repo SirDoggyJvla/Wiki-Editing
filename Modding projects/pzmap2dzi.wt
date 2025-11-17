@@ -1,7 +1,10 @@
-{{Header|Modding|Modding projects}}
+{{Title|pzmap2dzi}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.8.1}}
 {{Infobox
-| title = <div></div>
+| title = pzmap2dzi
+| class = theme-blue
 | 
     {{Infobox/image
     | 1 = [[File:pzmap2dzi - basement.jpg|link=]]
@@ -13,11 +16,28 @@
     | p3 = [[File:pzmap2dzi - i18n.jpg]]
     | p4 = [[File:pzmap2dzi - trimmer.jpg]]
     }}
-    {{Infobox/socials
-    | github=https://github.com/cff29546/pzmap2dzi
-    | GitHub repository
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/cff29546/pzmap2dzi
+        | GitHub repository
+        }}
     }}
 }}
-'''pzmap2dzi''' is a tool that converts Project Zomboid map data into a [[Wikipedia:Deep Zoom|Deep Zoom format]]. The tool supports both [[Build 41]] and [[Build 42]] map data.
+'''pzmap2dzi''' is a tool that converts Project Zomboid map data into a [[Wikipedia:Deep Zoom|Deep Zoom format]]. The tool supports both [[Build 41]] and [[Build 42]] map data. The main function of the tool is to render the Project Zomboid map files into a usable local zoomable map, which includes a local web server and front end. It also has a save editor.
 
+The tool supports a wide range of customization ranging from what map you render, the season, tree types, whether to show vegetation clutter or snow, and technical configuration including image type and compression. A full render of the main map at default settings takes approximately 4 hours and 400 GiB.
+
+== See also ==
+*[[B42 Map]]
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

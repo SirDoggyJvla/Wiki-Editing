@@ -1,21 +1,35 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.8.1}}
 {{Infobox
-| title = <div></div>
+| title = Easy Distributions API
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Easy Distributions API - preview.png|link=]]
     }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3487312010
-    | Workshop page
-    }}
-    {{Infobox/socials
-    | github=https://github.com/DrStalker/Zomboid-EasyDistributions
-    | Github repository
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3487312010
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/DrStalker/Zomboid-EasyDistributions
+        | GitHub repository
+        }}
     }}
 }}
 '''Easy Distributions API''' is a library of tools to simplify the process of adding [[Procedural distributions|loot distribution]] to mods. Currently the mod provides the following set of tools:
 *Add an item by following the same distribution as another item. A multiplier can be applied to the chance.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

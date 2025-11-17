@@ -1,18 +1,27 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.9.0}}
 {{Infobox
-| title = <div></div>
+| title = ZomboidAssetConverter
+| class = theme-blue
 | 
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/ZomboidAssetConverter/releases
-    | Download
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/ZomboidAssetConverter
-    | Github repository
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/ZomboidAssetConverter/releases
+        | Download
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/ZomboidAssetConverter
+        | GitHub repository
+        }}
     }}
 }}
-'''ZomboidAssetConverter''' is a tool to convert [[Project Zomboid]] [[File formats#Modeling and animation formats|model and animation]] assets into a modern format. [[Wikipedia:DirectX|DirectX]] (<code>.x</code>) files are converted into [[Wikipedia:GlTF|glTF2]] (<code>.gltf</code>) accompanied by a binary file (<code>.bin</code>) containing the mesh data. One advantage to this converting solution for the Project Zomboid assets is that it allows you to convert an entire folder of assets at once.
+'''ZomboidAssetConverter''' is a tool to convert [[Project Zomboid]] [[File formats#Modeling and animation formats|model and animation]] assets into a modern format. Asset conversion is essentially a wrapper around Assimp, the library that Project Zomboid also uses to import certain model formats. [[Wikipedia:DirectX|DirectX]] (<code>.x</code>) files are converted into [[Wikipedia:GlTF|glTF2]] (<code>.gltf</code>) accompanied by a binary file (<code>.bin</code>) containing the mesh data. One advantage to this converting solution for the Project Zomboid assets is that it allows you to convert an entire folder of assets at once.
 
 To be able to convert the files, you'll need to follow these steps:
 *Download the latest version of the tool.
@@ -26,4 +35,16 @@ ZomboidAssetConverter <anim_X/folder/path> --output <output/folder/path> --fix-a
 
 Once the program finishes execution, you are free to import the exported files into Blender. If desired, you can then export the model out of Blender to a specific format such as FBX (which the tool itself cannot export to because of technical limitations).
 
+== Video guide ==
+{{Video
+|id=zXVM6Rwp9qo
+|image=PZ Modding Guides - Converting DirectX assets.png
+|name=PZ Modding Guides - Converting DirectX assets
+}}
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Animation projects}}
+{{ll|Category:Modding projects}}

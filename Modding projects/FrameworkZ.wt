@@ -1,38 +1,51 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = FrameworkZ
+| class = theme-blue
 | 
     {{Infobox/image
-    | p1 = [[File:FrameworkZ - preview.png|link=]]
+    | p1 = [[File:FrameworkZ - preview.png]]
     }}
-    {{Infobox/socials
-    | discord=https://discord.pzframeworkz.net
-    | FrameworkZ Discord server
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3535820826
-    | Early Open Alpha on Steam
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3535821814
-    | Template gamemode
-    }}
-    {{Infobox/socials
-    | github=https://github.com/Project-Zomboid-FrameworkZ/Framework
-    | GitHub repository
-    }}
-    {{Infobox/socials
-    | github=https://github.com/Project-Zomboid-FrameworkZ/Template
-    | Template gamemode repository
-    }}
-    {{Infobox/socials
-    | other=https://pzframeworkz.net/index.html
-    | Official website
-    }}
-    {{Infobox/socials
-    | other=https://docs.pzframeworkz.net/
-    | Official documentation
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.pzframeworkz.net
+        | FrameworkZ Discord server
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3535820826
+        | Early Open Alpha on Steam
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3535821814
+        | Template gamemode
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Project-Zomboid-FrameworkZ/Framework
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Project-Zomboid-FrameworkZ/Template
+        | Template gamemode repository
+        }}
+        {{Infobox/socials
+        | link=https://pzframeworkz.net/index.html
+        | Official website
+        }}
+        {{Infobox/socials
+        | link=https://docz.pzframeworkz.net/
+        | Official documentation
+        }}
     }}
 }}
 {{Stub}}
@@ -44,5 +57,8 @@
 |name=FrameworkZ for PZ Update Video 1 (Project Zomboid) - YouTube
 }}
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

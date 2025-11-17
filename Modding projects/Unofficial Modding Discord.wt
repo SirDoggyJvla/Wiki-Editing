@@ -1,19 +1,27 @@
-{{Header|Modding|Modding projects}}
-{{Page version|42.8.1}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Infobox
-| title = <div></div>
+| title = PZ Modding Community
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Unofficial Modding Discord - preview.png|link=]]
     }}
-    {{Infobox/socials
-    | discord=https://discord.gg/ghRTHUTc94
-    | Unofficial Modding Discord
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.gg/ghRTHUTc94
+        | Unofficial Modding Discord
+        }}
     }}
 }}
-The '''Unofficial Modding Discord''' is a community-driven Discord server dedicated to modding Project Zomboid. It serves as a hub for modders to share knowledge, tools, and resources related to modding the game. 
+The '''PZ Modding Community''' is a community-driven Discord server dedicated to modding Project Zomboid. It serves as a hub for modders to share knowledge, tools, and resources related to modding the game.
 
-==Modding discussions==
+== Modding discussions ==
 Various channels are available based on the type of modding you want to do, such as:
 *{{Code|#animations}} - For discussions related to animations, such as creating or modifying character animations, animal animations, and more.
 *{{Code|#audio}} - For discussions related to audio, such as creating or modifying sound effects and music.
@@ -25,7 +33,7 @@ Various channels are available based on the type of modding you want to do, such
 
 {{Note|type=warn|Access is limited to members who verified their Steam account. This is to prevent spam and ensure that the community remains focused on modding discussions.}}
 
-==Community==
+== Community ==
 Community channels are available for modders and users of mods to follow news and updates related to modding, such as:
 *{{Code|#pz-wiki}} - For discussions related to the Project Zomboid wiki, including updates, changes, and contributions.
 *{{Code|#events}} - To organize events, such as modding competitions, community challenges, or collaborative projects.
@@ -37,7 +45,7 @@ Community channels are available for modders and users of mods to follow news an
 
 Every Saturday, modders can promote their work, which will be highlighted in the Supportive Saturday's announcement channel and sent to servers which follow it. This was notably used to combate the 4-star plague on the Steam Workshop, where mods receive 5-stars ONLY if they reach a certain amount of votes (positive or negative), usually around 160 votes. This gives a small boost to mods that were newly released to help them get noticed and reach the 5-star rating.
 
-==Commissions==
+== Commissions ==
 A part of the server is also dedicated to making commissions modders to create custom mods. Tools in place regarding commissions include:
 *A request agreement system, ensuring anyone sending commission requests or answering existing ones agreed upon rules and guidelines.
 *Public commission requests, allowing anyone to see what commissions are available and who is working on them.
@@ -51,7 +59,11 @@ These tools are designed to ensure that commissions are handled professionally a
 
 {{Note|type=warn|It is discouraged to use private messages to discuss commissions, as this can lead to misunderstandings, disputes, and potential scams. This has proven to be a recurrent problem in the past, and the server's tools are designed to prevent this. Scammers will try to DM commissioners to get them outside of the server, so be careful and always use the server's tools to handle commissions.}}
 
-==See also==
+== See also ==
 *[[Unofficial Mapping Discord]] – a more suitable place to discuss things [[mapping]].
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Miscellaneous projects}}
+{{ll|Category:Modding projects}}

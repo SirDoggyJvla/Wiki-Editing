@@ -1,55 +1,67 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = Events Plus API
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Events Plus API - preview.png|link=]]
     }}
-    {{Infobox/socials
-    | discord=https://discord.gg
-    | Discord server
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3272364969
-    | Workshop page
-    }}
-    {{Infobox/socials
-    | bitbucket=https://bitbucket.org/demellion/pzmods/src/master/eventsplus/
-    | Bitbucket repository
-    }}
-    {{Infobox/socials
-    | bitbucket=https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Usage.md
-    | Usage guide
-    }}
-    {{Infobox/socials
-    | other=https://www.google.com
-    | Other link
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.gg
+        | Discord server
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3272364969
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=bitbucket
+        | link=https://bitbucket.org/demellion/pzmods/src/master/eventsplus/
+        | Bitbucket repository
+        }}
+        {{Infobox/socials
+        | type=bitbucket
+        | link=https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Usage.md
+        | Usage guide
+        }}
     }}
 }}
 '''Events Plus API''' is a modding library for Project Zomboid that adds custom events to the game for the [[Lua (API)]].
 
-==List of events==
-To see the full detail of each events, see the [https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Events.md Events Github page] and how to use this API see the usage page.
-*<code>OnActionCreated</code> - Fires when specific ISBaseTimedAction is constructed.
-*<code>OnActionPerformed</code> - Fires when specific ISBaseTimedAction is performed
-*<code>OnActionQueued</code> - Fires when specific ISBaseTimedAction is added to actions queue.
-*<code>OnActionStopped</code> - Fires when specific ISBaseTimedAction is stopped.
-*<code>OnCheatOption</code> - Fires when cheat option was changed.
-*<code>OnDestroy</code> - Fires when player destroys object with actions like sledgehammer.
-*<code>OnDrink</code> - Fires when player uses drinkable item.
-*<code>OnEat</code> - Fires when player eats food.
-*<code>OnItemEquipped</code> - Fires when item is equipped by a player, including one-handed or two-handed.
-*<code>OnItemMoved</code> - Fires when inventory item is put or taken by a player.
-*<code>OnItemPlaced</code> - Fires when inventory item is put down via place action.
-*<code>OnItemUnequipped</code> - Fires when item is unequipped by a player, including one-handed or two-handed.
-*<code>OnMedicalAction</code> - Fires when player performs any medical action
-*<code>OnMedicalStatus</code> - Fires when player body or part was affected by or healed from medical condition.
-*<code>OnPlayerSleep</code> - Fires when player is going in out of sleeping phase.
-*<code>OnStatsChanged</code> - Fires when player stats were changed.
-*<code>OnTraitChanged</code> - Fires when player trait collection was changed, returns trait and if it was aquired or lost.
-*<code>OnAccessLevelChanged</code> - Fires when online player access level was changed.
-*<code>OnSandboxOption</code> - Fires when sandbox option is being changed.
-*<code>OnVehicleLoad</code> - Fires when vehicle is loaded into cell and returns the vehicle.
+== List of events ==
+To see the full detail of each event, see the [https://bitbucket.org/demellion/pzmods/src/master/eventsplus/Events.md Events GitHub page], and to see how to use this API, see the usage page.
+*<code>OnActionCreated</code> – fires when a specific ISBaseTimedAction is constructed.
+*<code>OnActionPerformed</code> – fires when a specific ISBaseTimedAction is performed
+*<code>OnActionQueued</code> – fires when a specific ISBaseTimedAction is added to the actions queue.
+*<code>OnActionStopped</code> – fires when a specific ISBaseTimedAction is stopped.
+*<code>OnCheatOption</code> – fires when the cheat option was changed.
+*<code>OnDestroy</code> – fires when player destroys object with actions like sledgehammer.
+*<code>OnDrink</code> – fires when player uses drinkable item.
+*<code>OnEat</code> – fires when player eats food.
+*<code>OnItemEquipped</code> – fires when item is equipped by a player, including one-handed or two-handed.
+*<code>OnItemMoved</code> – fires when an inventory item is put or taken by a player.
+*<code>OnItemPlaced</code> – fires when an inventory item is put down via place action.
+*<code>OnItemUnequipped</code> – fires when an item is unequipped by a player, including one-handed or two-handed.
+*<code>OnMedicalAction</code> – fires when player performs any medical action
+*<code>OnMedicalStatus</code> – fires when the player's body or part was affected by or healed from a medical condition.
+*<code>OnPlayerSleep</code> – fires when player is going in or out of sleeping phase.
+*<code>OnStatsChanged</code> – fires when player stats were changed.
+*<code>OnTraitChanged</code> – fires when player trait collection was changed. Returns the trait and if it was acquired or lost.
+*<code>OnAccessLevelChanged</code> – fires when online player access level was changed.
+*<code>OnSandboxOption</code> – fires when the sandbox option is being changed.
+*<code>OnVehicleLoad</code> - Fires when the vehicle is loaded into the cell and returns the vehicle.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

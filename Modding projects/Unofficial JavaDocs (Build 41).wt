@@ -1,17 +1,30 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
+{{About|the Build 41 JavaDocs project|the Build 42 JavaDocs project|Unofficial JavaDocs (Build 42)|other uses|JavaDocs (disambiguation)}}
 {{Infobox
-| title = <div></div>
+| title = Unofficial JavaDocs (Build 41)
+| class = theme-blue
 | 
-    {{Infobox/socials
-    | other=https://projectzomboid.com/modding/
-    | Build 41.78 unofficial JavaDocs
-    }}
-    {{Infobox/socials
-    | github=https://github.com/quarantin/zomboid-javadoc
-    | Github repository
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://projectzomboid.com/modding/
+        | Build 41.78 unofficial JavaDocs
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/quarantin/zomboid-javadoc
+        | GitHub repository
+        }}
     }}
 }}
-The '''Unofficial JavaDocs''' from '''quarantin''' aims to document the Java code of [[Project Zomboid]] for [[Build 41]] in a way similar to the official JavaDocs. It is intended to be used by modders to understand the available classes, methods, and fields in the game [[Lua (API)|Java]] code. It should not be confused with the [[Unofficial JavaDocs (Build 42)|unofficial JavaDocs]] for [[Build 41]] by [[User:Albion|Albion]].
+The '''Unofficial JavaDocs''' from '''quarantin''' aims to document the Java code of [[Project Zomboid]] for [[Build 41]] in a way similar to the official JavaDocs. It is intended to be used by modders to understand the available classes, methods, and fields in the game [[Lua (API)|Java]] code.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

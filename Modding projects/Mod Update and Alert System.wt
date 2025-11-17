@@ -1,24 +1,48 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.7.0}}
-[[File:Mod Update and Alert System - preview.png|thumb]]
-'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3077900375 Mod Update and Alert System]''' is an API which allows modders to directly add patchnotes in the game for users to see from the main menu. It also allows you to have various useful links for your mod such as Github repositories, Ko-Fi links and mod pages in the news panel for your own mod.
+{{Infobox
+| title = Mod Update and Alert System
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Mod Update and Alert System - preview.png|link=]]
+    }}
 
-Using it can be made optional to users and simply requires a new file in the [[Modding structure#Mod folder|mod folder]] of your own mod alongside the [[mod.info]] file. For [[Build 42]] mods, it's suggested to put this file in the [[Modding structure#Common and versioning folders|common folder]]. The file should be named <code>ChangeLog.txt</code>.
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.gg/ghRTHUTc94
+        | Unofficial Modding Discord
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3077900375
+        | Workshop page
+        }}
+    }}
+}}
+'''Mod Update and Alert System''' is an API that allows modders to directly add patchnotes in the game for users to see from the main menu. It also allows you to have various useful links for your mod, such as GitHub repositories, Ko-Fi links, and mod pages in the news panel for your own mod.
 
-==Configurating links==
-To configurate links to your mod, simply add the following lines in your changelog file:
+Using it can be made optional to users and simply requires a new file in the [[Modding structure#Mod folder|mod folder]] of your own mod alongside the [[mod.info]] file. For [[Build 42]] mods, the file needs to be in the [[Modding structure#Common and versioning folders|common folder]], and for [[Build 41]] the file should be put in the [[Modding structure#Media folder|media folder]]. The file should be named <code>ChangeLog.txt</code>.
+
+== Configuring links ==
+To configure links to your mod, simply add the following lines in your changelog file:
 {{CodeSnip
 | code =
 [ ALERT_CONFIG ]
 link1 = <Username>'s Kofi = https://steamcommunity.com/linkfilter/?u=<ko-fi page link>,
 link2 = Workshop = <link to your workshop page or mod page>,
-link3 = Github = https://steamcommunity.com/linkfilter/?u=<link to github>,
+link3 = GitHub = https://steamcommunity.com/linkfilter/?u=<link to GitHub>,
 [ ------ ]
 }}
 
 {{Note|content=Project Zomboid stops you from being able to open links that are not accepted by the game. This is why the links are prefixed with <code>https://steamcommunity.com/linkfilter/?u=</code> which will prompt users to accept to be redirected to the link from a Steam page.}}
 
-==Adding patchnotes==
+== Adding patchnotes ==
 To add patchnotes to your mod, simply add the following lines in your changelog file:
 {{CodeSnip
 | code =
@@ -27,7 +51,7 @@ Content.....
 [ ------ ]
 }}
 
-==Example==
+== Example ==
 Below is an example of a changelog file:
 {{CodeSnip
 | code =
@@ -46,4 +70,8 @@ link3 = Github = https://steamcommunity.com/linkfilter/?u=https://github.com/myU
 [ ------ ]
 }}
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

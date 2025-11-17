@@ -1,7 +1,9 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = Blackbeard's Building Pool
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Building Pool - Blackbeard - V2.jpeg]]
@@ -9,17 +11,26 @@
     | 1 = [[File:Building Pool - Blackbeard - V2.jpeg|link=]]
     | 2 = [[File:Building Pool - Blackbeard - V3.jpeg|link=]]
     }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2790725628
-    | Building Pool V2
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2790726238
-    | Building Pool V3
-    }}
-    {{Infobox/socials
-    | forum=https://theindiestone.com/forums/index.php?/topic/22018-all-player-made-building-archives-verison-3-472022/
-    | Building Pool forum post
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2790725628
+        | Building Pool V2
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2790726238
+        | Building Pool V3
+        }}
+        {{Infobox/socials
+        | type=forum
+        | link=https://theindiestone.com/forums/index.php?/topic/22018-all-player-made-building-archives-verison-3-472022/
+        | Building Pool forum post
+        }}
     }}
 }}
 {{Unverified|It is stated by Blackbeard in the Building Pool V2 description the following:
@@ -29,7 +40,7 @@ The '''Building Pool''' provided by Blackbeard is a bank of building files which
 
 The Building Pool V2 contains 1290 buildings for 37+ artists participating and the Building Pool V3 contains 1896 buildings for 37+ artists as well as [[The Indie Stone]] participating in its content.
 
-==Galery==
+== Galery ==
 Below are the pictures provided by Blackbeard of the Building Pool in the two Steam Workshop pages.
 <gallery>
 File:Building Pool - Blackbeard - 1.jpeg
@@ -41,13 +52,14 @@ File:Building Pool - Blackbeard - 6.jpeg
 File:Building Pool - Blackbeard - 7.jpeg
 </gallery>
 
-==See also==
+== See also ==
 *[[Building Pool (official)]] - a bank of vanilla building files provided by [[The Indie Stone]].
 *[[Community Architect]] - a mapping project initialized by the [[Unofficial Mapping Discord]] community, which aims to create a large pool of buildings created by the community for the community.
 *[[Building Pool (okkydoo)]] - a mapping project by okkydoo, a standalone building pool provided by okkydoo himself, which serves as a sort of continuation of the [[Building Pool (Blackbeard)|Building Pool by Blackbeard]].
 *[[Building Pool (Dylan)]] - a mapping project by Dylan, a standalone building pool provided by Dylan himself.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

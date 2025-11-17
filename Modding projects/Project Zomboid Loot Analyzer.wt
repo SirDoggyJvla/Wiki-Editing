@@ -1,0 +1,37 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.7.0}}
+{{Infobox
+| title = Project Zomboid Loot Analyzer
+| class = theme-blue
+|    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/sullivandavid42/Project-Zomboid-Loot-Analyzer
+        | GitHub repository
+        }}
+    }}
+}}
+'''Project Zomboid Loot Analyzer''' is a web tool to analyze and explore loot distributions from Project Zomboid mod files. To use it, simply copy the project repository and open the html file in a browser then load the txt files provided which contains the informations regarding the distributions. Alternatively, the project also has a Python script you can run which will do exactly the same thing instead of doing it from the html file.
+
+[[File:Project Zomboid Loot Analyzer - preview.png|center]]
+
+{{Video
+|id=_uGiWM882X0
+|image=Project Zomboid Loot Analyzer - video thumbnail.webp
+|name=NewFeature - ProceduralDist {{!}} Project Zomboid Modding - YouTube
+}}
+
+== See also ==
+*[[Room definitions and item spawns]]
+*[[Procedural distributions]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

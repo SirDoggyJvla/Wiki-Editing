@@ -25,86 +25,6 @@ local p = {
     },
 }
 
----Try to provide backward compatibility with old usage
----@TODO: replace every instances using the previous method with the new one, then remove this function
----@param frame frame
----@return string|nil
-p._try_backward_compatibility = function(frame)
-    local args = frame:getParent().args -- we check in the parent template params (aka Infobox/socials)
-    local text = args["1"] or ""
-    local type, link
-
-    local arg_keys = { -- previously supported keys
-        ["discord"] = true,
-        ["steam"] = true,
-        ["github"] = true,
-        ["bitbucket"] = true,
-        ["X"] = true,
-        ["forum"] = true,
-        ["blog"] = true,
-        ["gdrive"] = true,
-        ["npmjs"] = true,
-    }
-
-    -- check if any of the old keys is provided
-    for k, v in pairs(args) do
-        if arg_keys[k] then
-            type = k
-            link = v
-            break
-        end
-    end
-
-    -- handle other and custom cases
-    if not type then
-        local other = args["other"]
-        local custom = args["custom"]
-        if other then
-            link = other
-        elseif custom then
-            text = custom
-        else
-            return
-        end
-
-        type = "default"
-    end
-
-    -- handle nolink case
-    if link and link == "nolink" then
-        link = nil
-    end
-
-    -- retrieve icon
-    local icon_link = p._get_icon_link(type)
-
-    -- remove spaces at the start and end
-    text = mw.text.trim(text)
-    if text == "" then
-        -- in this scenario, it's likely a custom link without a provided text,
-        -- such as in one of the examples (direct blog link)
-        ---@cast link string
-        text = link
-        link = nil
-    end
-
-    ---@FIXME: adjust to new TEMPLATES structure
-    local template_id = link and "WITH_LINK" or "DEFAULT"
-    local template_icon = p.TEMPLATES.ICON[template_id]
-    local template_text = p.TEMPLATES.TEXT[template_id]
-
-    local params = {
-        icon = icon_link,
-        iconSize = tostring(p.ICON_SIZE),
-        text = text,
-    }
-    params.link = link
-
-    local out_icon = format._format_string(template_icon, params)
-    local out_text = format._format_string(template_text, params)
-    return out_icon .. "\n" .. out_text
-end
-
 ---Retrieve the icon from provided type, or return `default`.
 ---@TODO: improve feedback for provided type not existing
 ---@param t string
@@ -126,16 +46,20 @@ end
 
 
 p.list_types_doc = function(frame)
-
+    local out = {
+        string.format("*[[%s|25px]] <code>%s</code> %s", data["default"].file, "default", data["default"].doc_comment or ""),
+    }
+    for k,v in pairs(data) do repeat
+        if k == "default" then break end
+        table.insert(out, string.format("*[[%s|25px|class=%s]] <code>%s</code> %s", v.file, v.class or "", k, v.doc_comment or ""))
+    until true end -- the repeat until here is used to allow a continue statement
+    return table.concat(out, "\n")
 end
 
 ---Main function to be called from wikitext.
 ---@param frame frame
 p.socials = function(frame)
     local args = frame.args
-
-    local out = p._try_backward_compatibility(frame)
-    if out then return out end
 
     -- retrieve icon
     local _icon_arg = p._format_param(args["icon"]) -- use custom one

@@ -1,14 +1,23 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.9.0}}
 {{Infobox
-| title = <div></div>
+| title = Real Life Map
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Real Life Map - preview.png]]
     }}
-    {{Infobox/socials
-    | github=https://github.com/SadPeanut/Pz-RealLifeMap
-    | GitHub repository
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/SadPeanut/Pz-RealLifeMap
+        | GitHub repository
+        }}
     }}
 }}
 '''Real Life Map''' is a tool to generate simplified maps and vegetation maps from real life terrain with OpenStreetMap data using Project Zomboid's official color mapping palette.
@@ -21,7 +30,11 @@ The project utilizes [https://osmnx.readthedocs.io/en/stable/ OSMnx], a Python p
 |name=Project Zomboid - IRL Map Generator Demo
 }}
 
-==References==
+== References ==
 <references/>
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

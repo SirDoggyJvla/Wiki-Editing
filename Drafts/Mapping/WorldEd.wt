@@ -1,26 +1,38 @@
-{{Header|Modding|Mapping}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = WorldEd
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:WorldEd - preview.png|link=]]
     }}
-    {{Infobox/socials
-    | other=https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/
-    | Latest uploaded version
-    }}
-    {{Infobox/socials
-    | github=https://github.com/timbaker/pzworlded
-    | GitHub repository
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/
+        | Latest uploaded version
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/timbaker/pzworlded
+        | GitHub repository
+        }}
     }}
 }}
 {{Stub|This page could appreciate more informations and more details on how to use WorldEd.}}
 '''WorldEd''' is an official Project Zomboid mapping tool which allows you to unify cells to create a complete map. It is part of the [[Project Zomboid Modding Tools|official mapping tools]], which also includes [[TileZed]].
 
-==See also==
+== See also ==
 *[[TileZed]]
 *[[Unofficial Mapping Tools]]
 *[[Unofficial Mapping Discord]]
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Mapping}}

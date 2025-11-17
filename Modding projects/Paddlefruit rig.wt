@@ -1,21 +1,34 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.9.0}}
 {{Infobox
-| title = <div></div>
+| title = Paddlefruit rig
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Paddlefruit's rig - preview.png]]
     }}
-    {{Infobox/socials
-    | github=https://github.com/Paddlefruit/ProjectZomboid_CommunityRig/releases
-    | Download
-    }}
-    {{Infobox/socials
-    | github=https://github.com/Paddlefruit/ProjectZomboid_CommunityRig
-    | GitHub repository
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Paddlefruit/ProjectZomboid_CommunityRig/releases
+        | Download
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Paddlefruit/ProjectZomboid_CommunityRig
+        | GitHub repository
+        }}
     }}
 }}
-{{Move|Paddlefruit rig}}
 '''Paddlefruit rig''' is a Blender [[animation]] IK and FK rig for the Project Zomboid character model named after its creator. The rig was designed for the version 4 of Blender. See its GitHub repository for more informations as well as instructions on how to use it.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Animation projects}}
+{{ll|Category:Modding projects}}

@@ -1,22 +1,27 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar meta}}
 {{Page version|42.12.1}}
 {{Infobox
 | title = Wiki That!
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Wiki That! - preview.png]]
     }}
+
     {{Infobox/section
     | color = var(--color-blue)
     | id = 1
     | 1 = Links
     | 2 = 
         {{Infobox/socials
-        | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3567109091
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3567109091
         | Steam Workshop
         }}
         {{Infobox/socials
-        | github=https://github.com/SirDoggyJvla/Wiki-That
+        | type=github
+        | link=https://github.com/SirDoggyJvla/Wiki-That
         | GitHub repository
         }}
     }}
@@ -25,21 +30,18 @@
 
 The mod uses automatically generated dictionaries of the Wiki pages associated to items, tiles, vehicles, traits and more. It is regularly updated to include the latest additions to the wiki.
 
-==Video==
+== Video showcase ==
 {{Video
 |id=KMkoidKkOQo
 |image=Wiki That! - preview_long.png
 |name=Wiki That! - Showcase
 }}
 
-==Gallery==
+== Gallery ==
 <gallery>
 Wiki That! - preview1.jpg|Steam Workshop mod preview
 Wiki That! - example1.jpg|Context menu example 1
 Wiki That! - example2.jpg|Context menu example 2
 </gallery>
 
-==Navigation==
-{{Navbox modding}}
-
-{{ll|Category:Miscellaneous projects}}
+{{ll|Category:PZwiki}}

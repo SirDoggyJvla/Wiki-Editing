@@ -1,4 +1,5 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
 | title = <div></div>
@@ -18,15 +19,17 @@
     | 6 = [[File:Azakaela's Recorded Media Maker Tool - preview.png|link=]]
     }}
     {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2998120058
+    | type=steam
+    | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2998120058
     | Steam Workshop
     }}
     {{Infobox/socials
-    | github=https://github.com/SirDoggyJvla/Archive.Azakaela-s-Modding-Tools
+    | type=github
+    | link=https://github.com/SirDoggyJvla/Archive.Azakaela-s-Modding-Tools
     | Archive
     }}
     {{Infobox/socials
-    | other=https://itch.io/c/3559397/project-zomboid-tools
+    | link=https://itch.io/c/3559397/project-zomboid-tools
     | Download
     }}
 }}
@@ -39,4 +42,8 @@
 
 These tools are available on [https://itch.io/c/3559397/project-zomboid-tools Azakaela's shop] (paying is not required to download them). A Steam Workshop page was also made by the author to list all their tools. Most of the source code of these tools were lost by the author and as such updating these tools might be impossible.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

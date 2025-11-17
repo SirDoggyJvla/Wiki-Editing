@@ -1,20 +1,33 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = Throttlekitty rig
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Throttlekitty rig - preview.png]]
     }}
-    {{Infobox/socials
-    | other=https://drive.google.com/drive/folders/1i2VYWHNvrGXfDS1dv_9VYgCnI4PpTqxc
-    | Download
-    }}
-    {{Infobox/socials
-    | discord=https://discord.com/channels/136501320340209664/869327724504842330/938913862982455406
-    | Discord original post
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://drive.google.com/drive/folders/1i2VYWHNvrGXfDS1dv_9VYgCnI4PpTqxc
+        | Download
+        }}
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.com/channels/136501320340209664/869327724504842330/938913862982455406
+        | Discord original post
+        }}
     }}
 }}
 '''Throttlekitty rig''' is an [[animation]] rig made for [[Wikipedia:Autodesk Maya|Maya]] for the Project Zomboid character model named after its creator. It was originally posted in the Project Zomboid Discord server.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Animation projects}}
+{{ll|Category:Modding projects}}

@@ -1,32 +1,76 @@
-{{Header|Project Zomboid}}
-{{Page version|42.11.0|2=791137}}
-Project Zomboid has customizable '''startup parameters''' that are to override the default options used by the launcher, JVM, and game. JVM arguments must be provided first and end with <code>--</code> even if there are no game arguments. Game arguments can be passed to the launcher because they are forwarded to the game itself.
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.12.3|2=791137}}
+Project Zomboid has customizable '''startup parameters''' that are used to override the default options of the launcher, JVM, and game. JVM arguments must be provided first and end with <code>--</code> even if there are no game arguments. Game arguments can be passed to the launcher because they are forwarded to the game itself.
 
-;Create [[Steam]] shortcut:
-#Navigate to the game folder via right-clicking ''Project Zomboid'' in the ''Steam Library'' → ''Manage'' → ''Browse local files''.
-#Create a shortcut of the game launcher <code>ProjectZomboid<32/64>.exe</code>.
-#Add the JVM arguments to the ''Target'' field.
-Example: <code>"C:\ProjectZomboid64.exe" -Xmx1024m -Xms1024m -- -nosteam</code>
-
-;[[Steam]] application:
+== Usage ==
+=== From the [[Steam]] application ===
 #Right-click the game in the ''Steam Library'', a menu will pop up.
 #Click ''Properties''. A new modal window will appear.
 #By default the 'general' tab in the modal window should be opened, but if not, click it.
 #Look under ''Launch Options'' → ''Selected Launch Option''. Add a parameter from the table below, e.g., <code>-debug</code> to the field.
 #Close window and launch the game.
 
-;StartServer64.bat Parameters:
+==== Example ====
+{{CodeSnip
+| code=
+-Xmx8192m -Xms4096m -- -nosteam
+}}
+
+=== From a game shortcut ===
+#Navigate to the game folder via right-clicking ''Project Zomboid'' in the ''Steam Library'' → ''Manage'' → ''Browse local files''.
+#Create a shortcut of the game launcher <code>ProjectZomboid<32/64>.exe</code>.
+#Add the arguments to the ''Target'' field.
+
+==== Example ====
+{{CodeSnip
+| code=
+"C:\ProjectZomboid64.exe" -Xmx8192m -Xms4096m -- -nosteam
+}}
+
+=== From the StartServer64.bat parameters ===
+This method is only for dedicated servers.
 #Open the <code>StartServer64.bat</code> script with a text editor.
 #Add any JVM arguments after the <code>-Xmx</code> line in the script.
 #Add any game parameters after the <code>%1 %2</code> text inside the script, which is at the end of the file before PAUSE.
-Examples:
 
-<code>-Xmx16g -Duser.home=C:\Zomboid</code>
+{{Note|type=warn|Here the <code>--</code> is not needed because the script already separates the JVM and game arguments.}}
 
-<code>%1 %2 -nosteam -servername MySecondServer -adminpassword Password123</code>
+==== Example ====
+{{CodeSnip
+| code=
+-Xmx16g -Duser.home=C:\Zomboid
+}}
+{{CodeSnip
+| code=
+%1 %2 -nosteam -servername MySecondServer -adminpassword Password123
+}}
 
-==Game arguments==
-===Client & server===
+== Common use cases ==
+=== Increasing allocated memory ===
+To increase the maximum allocated memory to 8 GB and the minimum to 4 GB, add the following to the launch options:
+{{CodeSnip
+| code=
+-Xmx8192m -Xms4096m --
+}}
+
+=== Opening the game in debug mode ===
+To open the game in debug mode, add the following to the launch options:
+{{CodeSnip
+| code=
+-debug
+}}
+
+=== Disabling Steam integration ===
+To disable Steam integration, add the following to the launch options:
+{{CodeSnip
+| code=
+-nosteam
+}}
+
+== Game arguments ==
+
+=== Client & server ===
 {| class="wikitable theme-blue" style="width: 100%;"
 |-
 ! Arguments !! Description !! Example
@@ -44,7 +88,7 @@ Examples:
 | style="white-space: nowrap" |
 |}
 
-===Client===
+=== Client ===
 {| class="wikitable theme-blue"
 |-
 ! Arguments !! Description !! Example
@@ -98,7 +142,7 @@ Examples:
 | style="white-space: nowrap" |
 |}
 
-===Server===
+=== Server ===
 {| class="wikitable theme-blue"
 |-
 ! Arguments !! Description !! Example
@@ -152,19 +196,20 @@ Examples:
 | style="white-space: nowrap" | <code>-servername <span style="color: #c21d1d;">AnotherWorldSave</span></code>
 |}
 
-==JVM arguments==
-{{Note|type=warn|JVM arguments must be placed before any game arguments and be separated from them with {{Code|--}}.}}
-===Client & server===
+== JVM arguments ==
+{{Note|type=warn|JVM arguments must be provided first and end with {{Code|--}} even if there are no game arguments.}}
+
+=== Client & server ===
 {| class="wikitable theme-blue"
 |-
 ! Arguments !! Description !! Example
 |-
 | style="white-space: nowrap" | <code>-Xms{int <span style="color: #c21d1d;">size</span>}{char <span style="color: #00881d;">unit</span>}</code>
-|  The minimum amount of memory to allocate to the JVM. The game will not start if there is not enough memory available on the system to allocate.
+|  The minimum amount of memory to allocate to the JVM. The game will not start if there is not enough memory available on the system to allocate. The unit can be <code>g</code> or <code>m</code>.
 | style="white-space: nowrap" | <code>-Xms<span style="color: #c21d1d;">4096</span><span style="color: #00881d;">m</span></code>
 |-
 | style="white-space: nowrap" | <code>-Xmx{int <span style="color: #c21d1d;">size</span>}{char <span style="color: #00881d;">unit</span>}</code>
-| The maximum amount of memory to allocate to the JVM. Setting this above the physical RAM amount of the system will end up using virtual memory.
+| The maximum amount of memory to allocate to the JVM. Setting this above the physical RAM amount of the system will end up using virtual memory. The unit can be <code>g</code> or <code>m</code>.
 | style="white-space: nowrap" | <code>-Xmx<span style="color: #c21d1d;">8192</span><span style="color: #00881d;">m</span></code>
 |-
 | style="white-space: nowrap" | <code>-Dzomboid.ConsoleDotTxtSizeKB={int <span style="color: #c21d1d;">size</span>}</code>
@@ -188,7 +233,7 @@ Examples:
 | style="white-space: nowrap" |
 |}
 
-===Client===
+=== Client ===
 {| class="wikitable theme-blue"
 |-
 ! Arguments !! Description !! Example
@@ -202,8 +247,9 @@ Examples:
 | style="white-space: nowrap" | <code>-Dargs.server.password="<span style="color: #c21d1d;">DinoNuggetsTasteGood!!</span>"</code>
 |}
 
-==Launcher arguments==
-===Client===
+== Launcher arguments ==
+
+=== Client ===
 {| class="wikitable theme-blue"
 |-
 ! Arguments !! Description !! Example
@@ -217,10 +263,11 @@ Examples:
 | style="white-space: nowrap" | <code>-pzexelog <span style="color: #c21d1d;">ProjectZomboid64.log</span></code>
 |}
 
-==References==
+== References ==
 <references />
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Multiplayer}}
+{{ll|Category:Project Zomboid}}

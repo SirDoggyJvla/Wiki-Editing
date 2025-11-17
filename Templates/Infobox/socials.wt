@@ -3,7 +3,7 @@
 {{Note|type=warn|This template received a major rework which completely changes its usage, however for compatibility reasons, the previous usage ([[Special:PermanentLink/1222485|old version]]) is still supported but should not be used for new content.}}
 This template is used to create a row in the infobox with social media links. It is used in the {{tll|Infobox}} template.
 
-This template relies on the Lua module: {{ll|Module:Socials}}.
+This template relies on the Lua module: {{ll|Module:Socials}}. You can add new socials associated to their icon in {{ll|Module:Socials/data}}.
 
 {{Infobox
 | title = Project
@@ -58,7 +58,7 @@ This template relies on the Lua module: {{ll|Module:Socials}}.
         | NPM website
         }}
         {{Infobox/socials
-        | link=https://www.google.com
+        | link=https://www.example.com
         | Other link
         }}
         {{Infobox/socials
@@ -125,28 +125,21 @@ This template relies on the Lua module: {{ll|Module:Socials}}.
 </pre>
 
 ===Parameters===
+;{{Code|icon}} {{Sup|Mutual exclusive|green}}
+: A custom icon file to use instead of the default social media icons. The icon should be in the format {{Code|File:file_name.extension}}.
 ;{{Code|type}} {{Sup|Mutual exclusive|green}}
 : The type of social media icon to display. Valid options are:
-* discord
-* steam
-* github
-* bitbucket
-* X
-* forum
-* blog
-* gdrive
-* npmjs
+{{#invoke:Socials|list_types_doc}}
 : To add new ones, please edit the Lua module dataset {{ll|Module:Socials/data}}.
 ;{{Code|link}} {{Sup|Mutual exclusive|orange}}
 : The URL to link to. If not provided, no link will be added.
 ;{{Code|page}} {{Sup|Mutual exclusive|orange}}
 : The name of a wiki page to link to.
-;{{Code|icon}} {{Sup|Mutual exclusive|green}}
-: A custom icon file to use instead of the default social media icons. The icon should be in the format {{Code|File:file_name.extension}}.
 ;{{Code|1}}
 : The description text to display next to the icon.
 
-{{Note|All parameters are technically optional, and are needed only based on the use case.}}
+{{Note|If neither {{Code|link}} nor {{Code|page}} is provided, the icon will be displayed without a link.}}
+{{Note|If neither {{Code|icon}} nor {{Code|type}} is provided, the icon used is the default link icon ([[File:Link-icon.webp|25px]]).}}
 }}
 
 {{ll|Category:Templates}}</noinclude><includeonly><div style="text-align:center; font-size:1.1em; font-weight:bold;"><div>{{#invoke:Socials|socials|type={{#if:{{{type|}}}|{{{type}}}|}}|link={{#if:{{{link|}}}|{{{link}}}|}}|page={{#if:{{{page|}}}|{{{page}}}|}}|icon={{#if:{{{icon|}}}|{{{icon}}}|}}|{{#if:{{{1|}}}|{{{1}}}|}}}}</div></div></includeonly>

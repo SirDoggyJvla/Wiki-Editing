@@ -1,33 +1,45 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.10.0}}
 {{Infobox
-| title = <div></div>
+| title = Community Architect
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Community Architect - Building Pool.png]]
     }}
-    {{Infobox/socials
-    | discord=https://discord.gg/CFuNM8rtCp
-    | Unofficial Mapping Discord
-    }}
-    {{Infobox/socials
-    | github=https://github.com/pzmapping/CA24-Building-Pool/releases/tag/1.0
-    | Community Architect 2024 release
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3391129399
-    | Community Architect Workshop page
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.gg/CFuNM8rtCp
+        | Unofficial Mapping Discord
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/pzmapping/CA24-Building-Pool/releases/tag/1.0
+        | Community Architect 2024 release
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3391129399
+        | Community Architect Workshop page
+        }}
     }}
 }}
 '''Community Architect''' is a mapping project initialized by the [[Unofficial Mapping Discord]] community. It aims to create a large pool of buildings created by the community for the community. The 2024 release of the project included over 800 buildings submitted by 10 participants.
 
-==See also==
+== See also ==
 *[[Building Pool (official)]] - a bank of vanilla building files provided by [[The Indie Stone]].
 *[[Building Pool (Blackbeard)]] - a mapping project by Blackbeard, which aims to create a large pool of buildings created by the community for the community.
 *[[Building Pool (okkydoo)]] - a mapping project by okkydoo, a standalone building pool provided by okkydoo himself, which serves as a sort of continuation of the [[Building Pool (Blackbeard)|Building Pool by Blackbeard]].
 *[[Building Pool (Dylan)]] - a mapping project by Dylan, a standalone building pool provided by Dylan himself.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

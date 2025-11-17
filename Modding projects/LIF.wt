@@ -1,0 +1,57 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.7.0}}
+{{Infobox
+| title = Location Identifier Framework
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Location Identifier Framework - preview.png|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3473144811
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Arendameth/Location-Identifier-Framework
+        | GitHub repository
+        }}
+    }}
+}}
+'''Location Identifier Framework''', or '''LIF''', is an API for modders which can be used to retrieve vanilla and modded location informations on the map, such as the name, id, mod ID adding the location, the bounding coordinates of the area etc.
+
+== Usage example ==
+{{CodeSnip
+| lang = lua
+| code =
+local LIF = require("LIF")
+
+-- Get location data from coordinates
+local loc = LIF.getLocation(5420, 9450)
+print(loc.shortName) -- Outputs: Dixie
+
+-- Get the current location of a player
+local playerLoc = LIF.getPlayerLocation(player)
+print(playerLoc.longName) -- Outputs: Dixie, KY
+}}
+
+Each location entry includes:
+*longName – Full name of the location (e.g., "Dixie, KY")
+*shortName – Abbreviated name (e.g., "Dixie")
+*id – A lowercase ID key (e.g., "dixie")
+*mod – The mod ID that added the location. If the location is vanilla, it will return "Vanilla"
+*isVanilla – Boolean flag for vanilla locations
+*startX/endX/startY/endY – Bounding coordinates
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

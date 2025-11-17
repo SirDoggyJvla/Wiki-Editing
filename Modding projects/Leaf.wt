@@ -1,43 +1,61 @@
-{{Header|Modding|Modding projects}}
-{{Page version|42.7.0}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.11.0}}
 {{Infobox
-| title = <div></div>
+| title = Leaf
+| class = theme-blue
 | 
-    {{Infobox/socials
-    | discord=https://discord.gg/ghRTHUTc94
-    | Unofficial Modding Discord
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/leaf-installer
-    | Leaf - Installer (user installer)
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/leaf-example-mod
-    | Leaf - Example mod (user installer)
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/leaf-loader
-    | Leaf - Loader (mod loader)
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/leaf-filament
-    | Leaf - Filament (utility)
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/leaf-loom
-    | Leaf - Loom (dev tools)
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/leaf-yarn
-    | Leaf - Yarn (dev tools)
-    }}
-    {{Infobox/socials
-    | github=https://github.com/aoqia194/leaf/
-    | Leaf - PZ manifests (dev)
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | page=Unofficial Modding Discord
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/leaf-installer
+        | Leaf - Installer (user installer)
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/leaf-example-mod
+        | Leaf - Example mod (user installer)
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/leaf-loader
+        | Leaf - Loader (mod loader)
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/leaf-filament
+        | Leaf - Filament (utility)
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/leaf-loom
+        | Leaf - Loom (dev tools)
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/leaf-yarn
+        | Leaf - Yarn (dev tools)
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/aoqia194/leaf/
+        | Leaf - PZ manifests (dev)
+        }}
     }}
 }}
-'''Leaf''' is a fork of [https://fabricmc.net/ FabricMC]'s toolchain, mostly known as ''Fabric'' used in [[Wikipedia:Minecraft|Minecraft]] modding, for direct usage for Project Zomboid Java modding. The project aims to implement a Java modding API for Project Zomboid by having the users simply download Leaf, giving them the ability to download mods directly from the Steam Workshop which will be loaded when launching the game.
+'''Leaf''' is a fork of [https://fabricmc.net/ FabricMC]'s toolchain, mostly known as ''Fabric'' used in [[Wikipedia:Minecraft|Minecraft]] modding, for direct usage for Project Zomboid Java modding. The project aims to implement a Java modding API for Project Zomboid by having the users simply download Leaf, giving them the ability to download mods directly from the Steam Workshop which will be loaded when launching the game. This tackles a common issue with Java mods which requires them to update their Java files every game updates and thus needs users to manually download the Java mods every single game updates.
 
 Since the internal structure is the same as ''Fabric'', most if not all of their guides can directly be used. This will exclude anything from Fabric API since Leaf currently doesn't have one or need one. Guides that revolve around Minecraft-specific Java code and systems will not work for Project Zomboid.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Java}}
+{{ll|Category:Modding projects}}

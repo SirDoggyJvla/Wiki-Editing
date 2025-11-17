@@ -2,7 +2,8 @@
 {{Navbar_modding}}
 {{Page version|42.11.0}}
 {{Infobox
-| title = <div></div>
+| title = Spiffo's Workshop
+| class = theme-blue
 | 
     {{Infobox/image
     | 1 = [[File:SpiffosWorkshop.png|link=]]
@@ -10,17 +11,25 @@
     | p1 = [[File:SpiffosWorkshop.png]]
     | p2 = [[File:Spiffo's Workshop - preview.png]]
     }}
-    {{Infobox/socials
-    | other=https://steamcommunity.com/app/108600/workshop/
-    | Spiffo's Workshop
-    }}
-    {{Infobox/socials
-    | forum=https://theindiestone.com/forums/index.php?/forum/58-mods/
-    | Forum's mod sharing section
-    }}
-    {{Infobox/socials
-    | forum=https://theindiestone.com/forums/index.php?/forum/59-wip/
-    | Forum's mod showcase section
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://steamcommunity.com/app/108600/workshop/
+        | Spiffo's Workshop
+        }}
+        {{Infobox/socials
+        | type=forum
+        | link=https://theindiestone.com/forums/index.php?/forum/58-mods/
+        | Forum's mod sharing section
+        }}
+        {{Infobox/socials
+        | type=forum
+        | link=https://theindiestone.com/forums/index.php?/forum/59-wip/
+        | Forum's mod showcase section
+        }}
     }}
 }}
 '''Spiffo's Workshop''' is the home of [[Project Zomboid]] mods on [[Steam]], more generally known as the Steam Workshop. It serves as a platform for modders to share their creations and for players to discover and install mods for the game. It provides a central hub where you can see the trending mods, access your own mods, downloaded mods, and favorites, as well as list mods based on search terms and categories via the use of tags or filters.

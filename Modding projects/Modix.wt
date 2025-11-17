@@ -1,8 +1,33 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.3.0}}
-'''Mod Manager Standalone''' is an external mod manager which can be used to manage mods, organize and update them, notably for servers. You can access it from the [https://steamcommunity.com/sharedfiles/filedetails/?id=3422448677 Steam Workshop page] or from its [https://github.com/OV3RLORDS-MODS/Modix-Mod-Manager Github page].
+{{Infobox
+| title = Modix: Game Panel
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Modix - preview.png|link=]]
+    }}
 
-==Features==
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3422448677
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/OV3RLORDS-MODS/Modix-Mod-Manager
+        | GitHub repository
+        }}
+    }}
+}}
+'''Modix: Game Panel''' is an external mod manager which can be used to manage mods, organize and update them, notably for servers. You can access it from the Steam Workshop or from its GitHub page.
+
+== Features ==
 *Mod Manager
 **Mod scanning and listing
 **Steam Workshop integration
@@ -48,3 +73,9 @@
 **Mod analysis (file count, size, last modified, version)
 **Direct folder access for inspection
 **Data sourced from workshop folder
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

@@ -1,24 +1,29 @@
-{{Header|Modding|Modding projects}}
-{{Page version|47.8.0}}
-{{Main|Decompiling game code}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.0}}
 {{Infobox
-| title = <div></div>
+| title = Beautiful Java
+| class = theme-blue
 | 
     {{Infobox/socials
-    | github=https://github.com/quarantin/beautiful-java
+    | type=github
+    | link=https://github.com/quarantin/beautiful-java
     | GitHub repository
     }}
     {{Infobox/socials
-    | github=https://github.com/quarantin/beautiful-java/releases
-    | Decompiler releases
+    | type=github
+    | link=https://github.com/quarantin/beautiful-java/releases
+    | Download
     }}
 }}
+{{Main|Decompiling game code}}
 '''Beautiful Java''' is a decompiling tool developped by quarantin which was specifically designed to decompile Project Zomboid. It can be used to decompile both [[Build 41]] and [[Build 42]] game code.
 
-It will format variables with their type names, allowing easier reading of the game code, however [[Zomboid Decompiler]] might be a better, more up-to-date alternative.
+It will format variables with their type names, allowing easier reading of the game code, however [[Zomboid Decompiler]] is a better, more up-to-date alternative.
 
 To use Beautiful Java, you will need:
 *A terminal - used to run the various functions.
+*[[Decompiling game code#Java|Java]] 17 or above.
 *[[IntelliJ IDEA]] - will be used by the script as the decompilation tool. You will need the path to it after downloading it.
 
 To use Beautiful Java, follow the steps below:
@@ -32,6 +37,13 @@ To use Beautiful Java, follow the steps below:
 *Save the configuration file and run the decompilation with {{Code|lang=bash|./BeautifulJava}}.
 *The decompiled code with be found in the folder {{Code|beautiful-java/pz/}}, inside {{Code|beautiful-java/pz/<gameversion>/sources}}.
 
-{{Note|The guide above was not tested in the Windows or MacOS terminal. If you have issues, try using a Bash interpreter like [https://git-scm.com/downloads Git Bash]. Paths with spaces in them need to be quoted ({{Code|lang=bash|"path"}}).}}
+{{Note|The guide above was not tested in the Windows or macOS terminal. If you have issues, try using a Bash interpreter like [https://git-scm.com/downloads Git Bash]. Paths with spaces in them need to be quoted ({{Code|lang=bash|"path"}}).}}
 
+== See also ==
+*[[Zomboid Decompiler]]
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Java}}
+{{ll|Category:Modding projects}}

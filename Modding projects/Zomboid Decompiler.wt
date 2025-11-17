@@ -1,25 +1,34 @@
-{{Header|Modding|Modding projects}}
-{{Page version|47.8.0}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.8.0}}
 {{Main|Decompiling game code}}
 {{Infobox
-| title = <div></div>
+| title = Zomboid Decompiler
+| class = theme-blue
 | 
-    {{Infobox/socials
-    | github=https://github.com/demiurgeQuantified/ZomboidDecompiler
-    | GitHub repository
-    }}
-    {{Infobox/socials
-    | github=https://github.com/demiurgeQuantified/ZomboidDecompiler/releases
-    | Download
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/demiurgeQuantified/ZomboidDecompiler
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/demiurgeQuantified/ZomboidDecompiler/releases
+        | Download
+        }}
     }}
 }}
 '''Zomboid Decompiler''' is a tool specifically designed to decompile Project Zomboid's code. It can be used to decompile both [[Build 41]] and [[Build 42]] game code. It is currently the best available option as it will take into account the [[Java documentation]] of the game and will format the code in a way that is easier to read.
 
 You will need:
-*[[Decompiling game code#Java|Java]] 17 or above.
+*[[Java#Installating Java|Java]] 17 or above.
 *The [https://github.com/demiurgeQuantified/ZomboidDecompiler/releases latest] release of the tool.
 
-To decompile the game code, extra the zip, navigate to the {{Code|bin}} folder. To launch the decompiler, run {{Code|ZomboidDecompiler.bat}} on Windows or {{Code|ZomboidDecompiler}} on non-Windows OS. It will automatically find your game files and have the game installed on Steam and create two folders called {{Code|output/}} with the decompiled code and {{Code|logs/}}.
+To decompile the game code, extract the zip, navigate to the {{Code|bin}} folder. To launch the decompiler, run {{Code|ZomboidDecompiler.bat}} on Windows or {{Code|ZomboidDecompiler}} on non-Windows OS. It will automatically find your game files and have the game installed on Steam and create two folders called {{Code|output/}} with the decompiled code and {{Code|logs/}}.
 
 Alternatively, if you are having issues decompiling, you can launch it from a command line directly from the file folder:
 *On Windows:
@@ -37,7 +46,7 @@ ZomboidDecompiler.bat "<path/to/your/ProjectZomboid/folder>"
 
 {{Note|Use the <code>-h</code> or <code>--help</code> argument to get information about the command line parameters.}}
 
-==Remapping==
+== Remapping ==
 {{Main|Remote debugging}}
 Zomboid Decompiler allows for remote debugging by remapping the game files. To do so, you need to decompile the game code with a specific option which is going to remap the lines of the game code to match the decompiled version:
 *On Windows:
@@ -53,11 +62,15 @@ ZomboidDecompiler.bat "<path/to/your/ProjectZomboid/folder>" --remap-line-number
 ./ZomboidDecompiler "<path/to/your/ProjectZomboid/folder>" --remap-line-numbers
 }}
 
-See [[Remote debugging]] for more information on how to set up remote debugging.
+See [[remote debugging]] for more information on how to set up remote debugging.
 
-{{Note|type=warn|This will modify the game files and thus needs to be done everytime the game is updated.}}
+{{Note|type=warn|This will modify the game files and thus needs to be done every time the game is updated.}}
 
-==See also==
+== See also ==
 *[[Beautiful Java]]
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Java}}
+{{ll|Category:Modding projects}}

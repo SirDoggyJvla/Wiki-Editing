@@ -1,12 +1,32 @@
-{{Header|Modding|Modding projects}}
-{{Page version|42.6.0}}
-'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3452113500 JB Max Capacity Override]''' allows modders to override the capacity limited imposed by [[Build 42]] for containers. It fixes the limit by using the [[Lua (API)|Lua API]] compared to other patch mods which are Java mods and thus require manual installation.
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.12.1}}
+{{Infobox
+| title = JB Max Capacity Override
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:JB Max Capacity Override - preview.png|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3452113500
+        | Workshop page
+        }}
+    }}
+}}
+'''JB Max Capacity Override''' allows modders to override the capacity limited imposed by [[Build 42]] for containers. It fixes the limit by using the [[Lua (API)|Lua API]] compared to other patch mods which are Java mods and thus require manual installation.
 
 To patch a container, you can use the following function:
 {{CodeSnip
 | lang = lua
 | code =
-JB_MaxCapacityOverride.addContainer = function(containerType, capacity, preventNesting, _equippedWeight)
+JB_MaxCapacityOverride.addContainer = function(containerType, capacity, preventNesting, _equippedWeight, _transferTimeSpeed)
 }}
 
 For example:
@@ -15,9 +35,21 @@ For example:
 | code =
 local JB_MaxCapacityOverride = require("JB_MaxCapacityOverride")
 
-JB_MaxCapacityOverride.addContainer("Bag_ShotgunDblSawnoffBag", 125, true, 25)
+JB_MaxCapacityOverride.addContainer("Bag_ShotgunDblSawnoffBag", 125, true, 25, 15)
 JB_MaxCapacityOverride.addContainer("militarycrate", 180, true)
 JB_MaxCapacityOverride.addContainer("TruckBedOpen", 500, false)
 }}
 
+You can override capacity through mod data if the container exists in the lookup table, for example:<syntaxhighlight lang="lua">
+yourContainer:getModData()["JB_MaxCapacityOverride"] = { capacity = 75 }
+</syntaxhighlight>Includes fixes for:
+
+* Run Speed Modifier slowdown caused by having too many items in your inventory
+* Place Item with a container over 50 weight on a floor tile
+* Force Dropping overweight containers when using Remove Item
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

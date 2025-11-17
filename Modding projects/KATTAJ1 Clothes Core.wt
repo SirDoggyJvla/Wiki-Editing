@@ -1,6 +1,37 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.3.1}}
-[[File:KATTAJ1 Clothes Core - preview.png|thumb]]
-'''[https://steamcommunity.com/sharedfiles/filedetails/?id=3079932014 KATTAJ1 Clothes Core]''' is a mod that provides a variety of clothing models to use in custom clothing mods. It was notably developped alongside [https://steamcommunity.com/sharedfiles/filedetails/?id=3079948242 KATTAJ1 Military Pack].
+{{Infobox
+| title = KATTAJ1 Clothes Core
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:KATTAJ1 Clothes Core - preview.png]]
+    | p2 = [[File:KATTAJ1 Clothes Core - models.png]]
+    | 1 = [[File:KATTAJ1 Clothes Core - preview.png|link=]]
+    | 2 = [[File:KATTAJ1 Clothes Core - models.png|link=]]
+    }}
 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | link=https://discord.gg/mxqZbpgn3S
+        | Discord server
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3470422050
+        | Workshop page
+        }}
+    }}
+}}
+'''KATTAJ1 Clothes Core''' is a mod that provides a variety of clothing models to use in custom clothing mods. It was notably developped alongside [https://steamcommunity.com/sharedfiles/filedetails/?id=3470426196 KATTAJ1 Military Pack].
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Assets}}
+{{ll|Category:Modding projects}}

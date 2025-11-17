@@ -1,18 +1,31 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.4.1}}
 {{Infobox
-| title = <div></div>
+| title = PZTools
+| class = theme-blue
 | 
-    {{Infobox/socials
-    | github=https://github.com/geromet/PZTools
-    | Github repository
-    }}
-    {{Infobox/socials
-    | github=https://github.com/geromet/PZTools/releases
-    | Download
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/geromet/PZTools
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/geromet/PZTools/releases
+        | Download
+        }}
     }}
 }}
 {{Stub}}
 '''PZTools''' is an external tool which allows you to explore the loot distribution of the game.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

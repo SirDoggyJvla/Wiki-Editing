@@ -1,26 +1,33 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.9.0}}
 {{Infobox
-| title = <div></div>
+| title = Dislaik rig
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Dislaik rig - preview.png]]
     }}
-    {{Infobox/socials
-    | github=https://github.com/katupia/Pz_Dislaik_AnimationGuide/blob/main/ANIM_TEMPLATE.blend
-    | Non-IK rig Download
-    }}
-    {{Infobox/socials
-    | github=https://github.com/katupia/Pz_Dislaik_AnimationGuide/blob/main/IK_ANIM_TEMPLATE.blend
-    | IK rig Download
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003
-    | Reposted animation guide
-    }}
-    {{Infobox/socials
-    | github=https://github.com/katupia/Pz_Dislaik_AnimationGuide
-    | Dislaik's Animation guide GitHub repository
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/katupia/Pz_Dislaik_AnimationGuide/blob/main/IK_ANIM_TEMPLATE.blend
+        | Download
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3035712003
+        | Reposted animation guide
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/katupia/Pz_Dislaik_AnimationGuide
+        | Dislaik's Animation guide GitHub repository
+        }}
     }}
 }}
 {{Unverified|It is unconfirmed if Dislaik is the original creator of the rig.}}
@@ -32,4 +39,8 @@ Two versions of the rig are available:
 
 The animation guide that came with it gives more informations on how to export the rig.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Animation projects}}
+{{ll|Category:Modding projects}}

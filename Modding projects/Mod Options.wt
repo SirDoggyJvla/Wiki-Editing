@@ -1,7 +1,9 @@
-{{Header|Modding|Modding projects}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|41.78.16}}
 {{Infobox
-| title = <div></div>
+| title = Mod Options
+| class = theme-blue
 | 
     {{Infobox/image
     | p1 = [[File:Mod Options - preview.png]]
@@ -9,13 +11,21 @@
     | 1 = [[File:Mod Options - preview.png|link=]]
     | 2 = [[File:Mod Options - example.jpeg|link=]]
     }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/sharedfiles/filedetails/?id=2169435993
-    | Workshop page
-    }}
-    {{Infobox/socials
-    | steam=https://steamcommunity.com/workshop/filedetails/discussion/2169435993/4260919351480715709/
-    | Guide for modders
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2169435993
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/workshop/filedetails/discussion/2169435993/4260919351480715709/
+        | Guide for modders
+        }}
     }}
 }}
 {{About|the unofficial mod option framework for [[Build 41]]|[[Build 42]]'s native equivalent|ModOptions}}
@@ -24,3 +34,6 @@
 {{Note|type=error|You should NOT use mod options for options that will alter gameplay. Something which should affect every players should utilize [[sandbox options]]! Mod options can be used for player UI settings for example.}}
 
 {{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

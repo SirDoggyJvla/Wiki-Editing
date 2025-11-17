@@ -1,15 +1,16 @@
-{{Header|Modding|Lua (API)}}
+{{LangSwitch}}
+{{Navbar_modding}}
 {{Page version|42.7.0|2=405935}}
 '''Procedural distribution''' explains how the loot system of the game works and how you can add your own loot to the procedural distribution.
 
-==How does loot generation works==
+== How does loot generation works ==
 Containers in a room generate with different possibilities of [[#Distributions|distribution lists]]. Loot in containers is generated whenever they get loaded in the game or can respawn loot if the proper settings in the [[Custom Sandbox|sandbox options]] are set.
 
 Each [[#Distributions|distribution]] has a set amount of rolls, and each item entry has a set chance which is neither a weight nor a percentage. Every distribution item entries will be rolled the amount of rolls the [[#Distributions|distribution list]] has with a random chance generated based on some criteria such as loot spawn chance and the zombie population.
 
 When loot is being spawned in a container, the event [[OnFillContainer]] triggers, allowing you to modify items which are spawning in or add other items.
 
-===Distribution structure===
+=== Distribution structure ===
 Vanilla loot distribution is defined in the following file:
 {{CodeSnip
 | code =
@@ -80,7 +81,7 @@ ProceduralDistributions.list = {
 
 {{Note|type=error|The chance value is '''not''' a weight '''nor''' a percentage! To chose your chance values, base yourself on existing vanilla distribution and the chance values of vanilla items!}}
 
-===Tags for distribution===
+=== Tags for distribution ===
 Alongside the <code>rolls</code> tag for the <code>distributionName</code> and <code>junk</code> tables, you can add arguments which will modify how items spawn in and their conditions of spawn:
 *<code>ignoreZombieDensity</code> - ignores the zombie density impact on item spawn chance.
 *<code>isShop</code> - when not set to true:
@@ -110,7 +111,7 @@ Alongside the <code>rolls</code> tag for the <code>distributionName</code> and <
 *<code>maxMap</code> (integer) - limits the same item to a max amount. (UNSURE)
 *<code>onlyOne</code> '''DEPRECATED''' - a tag which can be found in distributions but looks deprecated from the java.
 
-==How to add your own items to distributions==
+== How to add your own items to distributions ==
 The main challenges you will face is properly understanding how loot generation actually works (see [[#How does loot generation works]]), finding the right distribution list and organizing the file which adds these. Inserting inside the procedural distribution needs to be done in <code>media/lua/server</code>.
 
 There are many ways of achieving this, with the most common one, but worst one, being:
@@ -197,7 +198,7 @@ insertInDistribution(myDistribution)
 
 Other table formating and functions can be used to insert in distribution.
 
-===Other loot tables===
+=== Other loot tables ===
 Some vanilla distribution tables will use generic items which are defined inside <code>ClutterTables</code>. Here's all the files that have clutter tables:
 {{CodeSnip
 | code =
@@ -227,24 +228,24 @@ lua/
 
 You can add items in these tables.
 
-===Accessing a container distribution in-game===
+=== Accessing a container distribution in-game ===
 Accessing a container distribution in-game can be achieved with [[LootZed]] which allows you to check for the various distribution lists for a container as well as listing each items and their chances of spawning in.
 
-==Problem with the system==
+== Problem with the system ==
 Due to the way the game works, adding new items to a [[#Distributions|distribution list]] will ultimately increase the mean amount of items in this container. For a small demonstration of the issue, see the following image which is a simulation of a distribution list getting more and more entries by following a distribution of loot for different amount of rolls:
 
 [[File:Procedural distribution - system problem.png|800px|class=logo-dark]]
 
 This is notably a major problem in some popular mods such as [https://steamcommunity.com/sharedfiles/filedetails/?id=2613146550 True Music] addons, large gun mods or clothing packs which have modders add multiple items in a single [[#Distributions|distribution list]] and end up bloating the containers with loot. Other problems are that the game will ignore the container encumbrance limitations or there will be inequal amount of loot in different types of containers.
 
-===Solutions===
+=== Solutions ===
 Different methods exist to counter act having to add a lot of tiny items to containers. Some of the best methods can involve:
 *having an item with variants which can change texture and data on the go. For example imagine a mod which adds game cards, it would require a hundred items but instead of creating an [[Item scripts|item script]] for each you can dynamically set the cards by utilizing functions that will change its texture, icon, name, tooltip etc on the go.
 *creating dummy items. When the dummy item gets added to the container, you can intercept it with [[OnFillContainer]], and replace it with another item which you can pick randomly in a list of items that are supposed to have similar spawn chances.
 
 {{Note|type=warn|Decreasing the overall chance of your items spawning is a band-aid solution which has its own problems. If your item is of a similar type as another one and should spawn with the same chances, this won't be possible since you decreased the chance of spawning it compared to the other item.}}
 
-==Distributions==
+== Distributions ==
 Below is the full list of distributions as well as their different tags.
 {| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center;
 |+ style="white-space:nowrap" | List of distributions and their different tags
@@ -2750,11 +2751,13 @@ Below is the full list of distributions as well as their different tags.
 | ZippeeClothing || 4 || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]] || [[File:UI Cross.png]]
 |}
 
-==See also==
+== See also ==
 *[[PZTools]] - a tool to explore the loot distribution of the game.
 
-==External links==
+== External links ==
 *[https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ Quick Guide: How To Mod The Loot Distribution System (Distributions.lua, ProceduralDistributions.lua)] — a 2021 guide to adding loot distribution.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Lua (API)}}
