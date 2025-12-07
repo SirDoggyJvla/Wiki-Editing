@@ -1,0 +1,22 @@
+Hey everyone, not much to say as I've been occupied working on personal modding projects (notably on the horse mod yeehaw o-o).
+
+Here is the number of people who joined via the wiki Discord invites:
+
+[[File:Plot modding communities join count.png|600px|class=logo-dark]]
+
+I continued my work on video guides for modding, with the following guides:
+*Converting assets from DirectX to usable Blender [[File formats#Modeling and animation formats|formats]].
+*[[Decompiling the game code]].
+*[[Lua (API)|Lua API]], Java-Lua communication.
+
+I created a new page regarding [[LuaLs]] which is the Lua language server pack extension used in [[Visual Studio Code]] for [[Umbrella (modding)|Umbrella]]. However Umbrella is going to move to [[EmmyLua]] in its future public version, which is currently in beta and tested by [[User:Albion|Albion]] herself and me. EmmyLua is an improvement over LuaLs, using the exact same system since both are linked in their development cycles, but is more up-to-date and allow libraries to be directly linked to in their settings instead of requiring the use of git and contribution to addon repositories for LuaLs. This should make it easier to manage Umbrella in the future, and possibly make it an extension for VSCode for easier access. So you should see a page pop-up whenever I finish the major work I'm putting on my private projects, as well as a possible explanation of how to use Umbrella with EmmyLua.
+
+The [[mapping]] wiki is getting some attention from one of the [[Unofficial Mapping Discord]], [[User:MrSecr3t:MrSecr3t]], who has created a [[Basement guide]] to adding basements in the [[Unofficial Mapping Tools]] for [[Build 42]].
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Albion|Albion]] - added a new [[Model (scripts)|model script]] parameter she discovered.
+*[[User:MrSecr3t|MrSecr3t]] - already mentioned work on the [[Basement guide]].
+*[[User:Aoqia|Aoqia]] - some clarifications here and there.
+*[[User:Udarmolota|Udarmolota]] - updated the [[Zomdroid]] page about them making a fork of the project to continue it.
+*[[User:BjornWintergreen|BjornWintergreen]] - some fixes here and there.
+*[[User:HCapy|HCapy]] - added the new [[Build 42]] debug icon in the [[Debug mode]] page.

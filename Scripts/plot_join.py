@@ -37,7 +37,7 @@ plt.tight_layout()
 plt.savefig(os.path.abspath("./Files/Plot modding communities join count.png"))
 
 # Print some statistics
-print("\nData Summary:")
-print(f"Modding growth: {df['count_modding'].iloc[-1] - df['count_modding'].iloc[0]} members")
-print(f"Mapping growth: {df['count_mapping'].iloc[-1] - df['count_mapping'].iloc[0]} members")
-print(f"Time period: {df['date'].iloc[0].strftime('%B %Y')} to {df['date'].iloc[-1].strftime('%B %Y')}")
+print("\nLast growth:")
+print(f"Modding growth: {df['count_modding'].iloc[-1] - df['count_modding'].iloc[-2]} members")
+print(f"Mapping growth: {df['count_mapping'].iloc[-1] - df['count_mapping'].iloc[-2]} members")
+print(f"Time period: {df['date'].iloc[-2].strftime('%B %Y')} to {df['date'].iloc[-1].strftime('%B %Y')}")
