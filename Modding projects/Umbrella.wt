@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.12.0}}
+{{Page version|42.12.3}}
 {{About|a modding project|the item|Umbrella}}
 {{Infobox
 | title = Umbrella
@@ -16,22 +16,95 @@
     {{Infobox/section
     | id = 1
     | 1 = Links
-    | 2 = 
+    | 2 =
+        {{Infobox/socials
+        | link=https://pz-umbrella.github.io/wiki/
+        | Umbrella wiki
+        }}
         {{Infobox/socials
         | type=github
         | link=https://github.com/PZ-Umbrella/Umbrella
         | GitHub repository
         }}
     }}
+
+    {{Infobox/section
+    | id = 2
+    | 1 = Download
+    | 2 =
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/PZ-Umbrella/Umbrella/releases/tag/unstable
+        | Unstable release (Build 42)
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/PZ-Umbrella/Umbrella/releases/tag/stable
+        | Stable release (Build 41)
+        }}
+    }}
 }}
-'''Umbrella''' is a collection of Lua type stubs for the [[Lua (API)|Lua API]]. It tells your IDE about Zomboid's classes and functions in order to provide autocomplete and type checking. It can be used with any IDE that supports LuaCATS annotations, but is primarily designed for [[Visual Studio Code|VSCode]]'s Lua plugin.
+'''Umbrella''' is a collection of Lua type stubs for the [[Lua (API)|Lua API]]. It tells your IDE about Zomboid's classes and functions in order to provide autocomplete and type checking. It can be used with any IDE and language server that supports EmmyLua annotations, but is primarily designed for [[Visual Studio Code|VSCode]]'s [[EmmyLua]] plugin.
 
 == How to activate Umbrella ==
+Two lua language server extensions are available:
+*[[LuaLs]] - Lua Language Server by Sumneko.
+*[[EmmyLua]] <span style="color: orange;">(recommended)</span> - EmmyLua plugin for various IDEs.
 
-=== Prerequisites ===
-First, Umbrella requires the [[LuaLs|Lua extension by Sumneko]] as well as [https://git-scm.com/downloads git] installed to work. You can download the Lua extension from the VSCode extensions marketplace directly in the IDE. See [https://code.visualstudio.com/docs/editor/extension-marketplace Extension Marketplace documentation] if you're having trouble downloading extensions.
+Both don't use the same installation method, so follow the instructions for your chosen extension.
 
-=== Installing Umbrella ===
+{{Note|type=warn|[[Build 42]] can use both extensions, but [[Build 41]] only supports [[LuaLs]].}}
+
+=== EmmyLua ===
+Install the [[EmmyLua|EmmyLua extension]], compared to [[LuaLs]] git isn't needed here. Download Umbrella's last source code from the GitHub release page or [https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository clone the repository].
+
+Once the EmmyLua extension is downloaded and active:
+*Create the default configuration file for EmmyLua ({{Code|.emmyconfig.json}}) in your workspace root which you can find the content in [[EmmyLua#Configuration file|EmmyLua's configuration file section]].
+*In the {{Code|library}} field, add a new entry to the array ({{Code|[]}}) with the path to Umbrella's {{Code|library}} folder on your computer.
+
+Your configuration file structure should look something like this:
+{{CodeBox
+| class = blue
+| title = Configuration file example
+|
+<syntaxhighlight lang="json">
+{
+    "$schema": "https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/refs/heads/main/crates/emmylua_code_analysis/resources/schema.json",
+    "workspace": {
+        "library": ["C:\Documents\Umbrella\library"],
+        "workspaceRoots": [
+            "Contents/mods/YourMod/42/media/lua"
+        ]
+    },
+    "runtime": {
+        "requirePattern": [
+            "shared/?.lua",
+            "client/?.lua",
+            "server/?.lua"
+        ],
+        "version": "Lua5.1"
+    },
+    "diagnostics": {
+        "disable": ["unnecessary-if"]
+    }
+}
+</syntaxhighlight>
+}}
+
+{{Note|You can also create an [https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html environment variable] on your computer to easily reference Umbrella's library folder. For example:
+{{CodeSnip
+| lang = json
+| code =
+"workspace": {
+    "library": ["$PZ_UMBRELLA"]
+}
+}}
+With the {{Code|$PZ_UMBRELLA}} variable pointing to {{Code|C:\Documents\Umbrella\library}}
+}}
+
+=== LuaLs ===
+Install the [[LuaLs|Lua extension by Sumneko]] as well as [https://git-scm.com/downloads git] for it to work. You can download the Lua extension from the [[Visual Studio Code|VSCode]] extensions marketplace directly in the IDE. See [https://code.visualstudio.com/docs/editor/extension-marketplace Extension Marketplace documentation] if you're having trouble downloading extensions.
+
 Once the Lua extension is downloaded and active:
 *Press {{Key|CTRL}}+{{Key|SHIFT}}+{{Key|P}}.
 *Open "Lua: Open Addon Manager ..."
@@ -39,6 +112,7 @@ Once the Lua extension is downloaded and active:
 *Click <code>Enable</code> to activate it. If not downloaded already, make sure to enable again after it got downloaded.
 
 {{Note|type=warn|You need to activate Umbrella for each new [[Visual Studio Code#Workspace|workspace]].}}
+{{Note|type=error|Don't forget to install [https://git-scm.com/downloads git] on your system, as well as activate Umbrella in the '''Addon Manager'''.}}
 
 == Navigation ==
 {{Navbox modding}}

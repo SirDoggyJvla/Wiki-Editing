@@ -1,28 +1,36 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.11.0}}
+{{Page version|42.12.2}}
 {{Infobox
 | title = Leaf
 | class = theme-blue
 | 
     {{Infobox/section
-    | id = 1
-    | 1 = Links
-    | 2 = 
-        {{Infobox/socials
-        | type=discord
-        | page=Unofficial Modding Discord
-        }}
+    | id = 2
+    | 1 = Main links
+    | 2 =
         {{Infobox/socials
         | type=github
         | link=https://github.com/aoqia194/leaf-installer
-        | Leaf - Installer (user installer)
+        | Installer
         }}
+    }}
+
+    {{Infobox/section
+    | id = 2
+    | 1 = Modding resources
+    | 2 =
         {{Infobox/socials
         | type=github
         | link=https://github.com/aoqia194/leaf-example-mod
-        | Leaf - Example mod (user installer)
+        | Example mod
         }}
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Development repositories
+    | 2 = 
         {{Infobox/socials
         | type=github
         | link=https://github.com/aoqia194/leaf-loader
@@ -53,6 +61,26 @@
 '''Leaf''' is a fork of [https://fabricmc.net/ FabricMC]'s toolchain, mostly known as ''Fabric'' used in [[Wikipedia:Minecraft|Minecraft]] modding, for direct usage for Project Zomboid Java modding. The project aims to implement a Java modding API for Project Zomboid by having the users simply download Leaf, giving them the ability to download mods directly from the Steam Workshop which will be loaded when launching the game. This tackles a common issue with Java mods which requires them to update their Java files every game updates and thus needs users to manually download the Java mods every single game updates.
 
 Since the internal structure is the same as ''Fabric'', most if not all of their guides can directly be used. This will exclude anything from Fabric API since Leaf currently doesn't have one or need one. Guides that revolve around Minecraft-specific Java code and systems will not work for Project Zomboid.
+
+== Installation ==
+Installating Leaf is as simple as downloading and running the installer linked in the infobox above. On Windows, you can simply run it by double-clicking it, which requires you to have [[Java]] installed. On Linux, you can run it via the terminal with the command:
+{{CodeSnip
+| lang = bash
+| code =
+java -jar leaf-installer-<version>.jar
+}}
+
+When in the installer:
+#Select the Project Zomboid version to install Leaf for.
+#Select the loader version.
+#Modify the [[Game files|game location]] if it isn't detected correctly.
+#Click ''Install''.
+
+Leaf should be ready to use and load Leaf Java mods from the [[Steam Workshop]] when launching the game.
+
+== Creating Leaf mods ==
+{{Stub|section=true}}
+To create Leaf mods, refer to the example mod linked in the infobox above.
 
 == Navigation ==
 {{Navbox modding}}

@@ -1,0 +1,63 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.12.3}}
+{{Infobox
+| title = LuaLs
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:LuaLs - logo.png]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/LuaLS/lua-language-server
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=vscode
+        | link=https://marketplace.visualstudio.com/items?itemName=sumneko.lua
+        | Marketplace extension
+        }}
+        {{Infobox/socials
+        | link=https://luals.github.io/wiki/
+        | Documentation
+        }}
+    }}
+}}
+'''LuaLs''', of the full name ''Lua Language Server'', is a language server extension for [[Visual Studio Code|VSCode]] that provides advanced Lua language features such as code completion, diagnostics, and code navigation. It was commonly used by Project Zomboid modders in combination with [[Umbrella (modding)|Umbrella]] to enhance the Lua scripting experience but it is suggested to use [[EmmyLua]] instead which is the primary extension Umbrella supports now.
+
+== Installation ==
+The extension can easily be installed from the VSCode extension tab by searching for "Lua" and selecting the one by ''sumneko''. 
+
+== Typings ==
+{{Main|Typing}}
+The extension provides a [[typing]] system based on LuaCATS annotations to offer type information for Lua code. You can find a list of every available notations on their [https://luals.github.io/wiki/annotations/ documentation].
+
+== Addons ==
+Addons are a system implemented by the extension to allow users to easily add new content to the extension via pre-packaged Lua definitions.
+
+To access addons, open the command palette with {{Key|CTRL}}+{{Key|SHIFT}}+{{Key|P}} and search for "Lua: Open Addon Manager ...". This will open a new tab where you can search for addons, install them, enable or disable them for the current [[Visual Studio Code#Workspace|workspace]].
+
+Addons require you to have [https://git-scm.com/downloads git] installed on your system to work properly.
+
+=== Umbrella ===
+{{Main|Umbrella (modding)}}
+Umbrella is the most popular addon for LuaLs in the Project Zomboid modding community. It provides type definitions and annotations for the Project Zomboid [[Lua (API)|Lua API]], enabling features like code completion and error checking specific to Project Zomboid modding.
+
+=== MediaWiki Scribunto ===
+The MediaWiki Scribunto addon provides Lua definitions for the [[mw:Extension:Scribunto|Scribunto extension]] available on the wiki. It provides type definitions and annotations, autocomplete and error checking for wikitext Lua modules.
+
+== See also ==
+*[[EmmyLua]] - Another popular Lua language server extension with additional features.
+*[[Umbrella (modding)]] - A collection of Lua type stubs for the Lua API used in Project Zomboid modding.
+*[[Typing]] - Information about typings in Lua.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Lua (API)}}

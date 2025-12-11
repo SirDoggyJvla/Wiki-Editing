@@ -1,0 +1,154 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.12.3}}
+{{Infobox
+| title = EmmyLua
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:EmmyLua - logo.png]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/EmmyLua/VSCode-EmmyLua
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=vscode
+        | link=https://marketplace.visualstudio.com/items?itemName=tangzx.emmylua
+        | Marketplace extension
+        }}
+        {{Infobox/socials
+        | link=https://github.com/EmmyLuaLs/emmylua-analyzer-rust/blob/main/docs/config/emmyrc_json_EN.md
+        | Documentation
+        }}
+    }}
+}}
+'''EmmyLua''' is a language server extension for any LSP-compatible editor, most notably [[Visual Studio Code|VSCode]], that provides advanced Lua language features such as code completion, diagnostics, and code navigation. It is commonly used by Project Zomboid modders in combination with [[Umbrella (modding)|Umbrella]] to enhance the Lua scripting experience.
+
+== Installation ==
+The extension can easily be installed from the VSCode extension tab by searching for "EmmyLua" and selecting the one by ''Tangzx''.
+
+== Typings ==
+{{Main|Typing}}
+The extension provides a [[typing]] system based on LuaCATS annotations to offer type information for Lua code. It follows the exact same typing syntax as [[LuaLs]] but with some extra features.
+
+Their documentation is a bit lacking since they haven't yet documented the new annotations, but most of them can be found on the [https://luals.github.io/wiki/annotations/ LuaLs annotations documentation].
+
+=== Namespace annotation ===
+{{Code|lang=lua|---@namespace NamespaceName}}
+
+Defines a namespace for alias and classes defined after this annotation, allowing easier organization of typings. For example:
+{{CodeSnip
+| lang = lua
+| code =
+---file1.lua
+
+---@namespace MyNamespace
+
+---@class MyClass
+MyClass = {}
+}}
+{{CodeSnip
+| lang = lua
+| code =
+---file2.lua
+
+---@type MyNamespace.MyClass  -- Refers to the class defined in file1.lua
+local var = value
+
+---@namespace MyNamespace  -- Switches to the namespace defined in file1.lua for easier access
+
+---@type MyClass  -- Refers to the class defined in file1.lua
+local var2 = value
+}}
+
+== Configuration file ==
+EmmyLua favors a configuration file named {{Code|.emmyrc.json}} to customize its behavior instead of using the VSCode settings UI. The reason for that is to allow to users to share the same configuration across different IDEs. The configuration file should be placed in the root folder of your [[Visual Studio Code#Workspace|workspace]].
+
+For example, the file should be placed here when working on your Project Zomboid mod (see the [[Mod structure]] page for reference):
+{{CodeSnip
+| code =
+Zomboid/
+└── Workshop/
+    └── MyMod/ <--- open as a workspace in VSCode
+        ├── Contents/
+        │   └── mods/
+        │       └── MyMod/
+        │           ├── 42/
+        │           │   └── media/
+        │           │       └── lua/
+        │           │           ├── client/
+        │           │           ├── server/
+        │           │           └── shared/
+        │           └── common/
+        └── .emmyrc.json
+}}
+
+The file should have the following default content for your Project Zomboid modding workspace:
+{{CodeSnip
+| lang = json
+| code =
+{
+    "$schema": "https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/refs/heads/main/crates/emmylua_code_analysis/resources/schema.json",
+    "workspace": {
+        "library": ["$PZ_UMBRELLA"],
+        "workspaceRoots": [
+            "Contents/mods/YourMod/42/media/lua"
+        ]
+    },
+    "runtime": {
+        "requirePattern": [
+            "shared/?.lua",
+            "client/?.lua",
+            "server/?.lua"
+        ],
+        "version": "Lua5.1"
+    },
+    "diagnostics": {
+        "disable": ["unnecessary-if"]
+    }
+}
+}}
+
+Below are explanations for some of the important fields:
+*The {{Code|$schema}} field allows your IDE to provide autocompletion and validation for the configuration file itself.
+*The {{Code|workspace}} section contains settings related to your workspace:
+**The {{Code|library}} field should contain the path to Umbrella's library on your computer. Here it was assigned to the special variable {{Code|$PZ_UMBRELLA}} for easier access across the computer and for easy access in the git repository for everyone without needing to modify the configuration file locally after cloning. See [[Umbrella (modding)#How to activate Umbrella|Umbrella's installation instructions]] for more information about this.
+**The {{Code|workspaceRoots}} field should contain the path to your mod's Lua source code folder relative to the workspace root.
+*The {{Code|runtime}} section contains settings related to the Lua runtime environment:
+**The {{Code|requirePattern}} field should contain the patterns used by Project Zomboid to resolve {{Code|require}} calls in your Lua code. This allows EmmyLua to propose proper autocompletion for {{Code|lang=lua|require}} statements.
+**The {{Code|version}} field should be set to {{Code|Lua5.1}} since Project Zomboid uses Lua 5.1 as its Lua version.
+*The {{Code|diagnostics}} section contains settings related to code [https://github.com/EmmyLuaLs/emmylua-analyzer-rust/blob/main/docs/config/emmyrc_json_EN.md#available-diagnostics-list diagnostics]:
+**The {{Code|disable}} field contains a list of diagnostics to disable. In this example, the {{Code|unnecessary-if}} diagnostic is disabled to avoid warnings about unnecessary {{Code|if}} statements in the code. This is needed for Project Zomboid specifically because Java returns on the Lua side ''nil'' without being specified explicitly in the Java as a potential return value.
+
+See their documentation for a more in-depth explanation of each field.
+
+{{Note|Regarding the {{Code|unnecessary-if}} diagnostic, here is an example of why it is needed to disable it for Project Zomboid modding:
+{{CodeSnip
+| lang = lua
+| code =
+local player = getPlayer() -- in some cases, this returns nil, like when the player is dead
+
+-- so you need to check for nil explicitly
+if player then
+    player:doSomething()
+end
+}}
+In this situation, typings defined by Umbrella automatically from the Java game code indicate that {{Code|lang=lua|getPlayer()}} returns [[IsoPlayer]], but in reality it can also return {{Code|lang=lua|nil}}, so EmmyLua marks the {{Code|lang=lua|if}} check as unnecessary because it will always be truthy.
+}}
+
+== See also ==
+*[[LuaLs]] - Lua Language Server by Sumneko, another popular Lua language server extension.
+*[[Umbrella (modding)]] - A collection of Lua type stubs for the Lua API used in Project Zomboid modding.
+*[[Typing]] - Information about typings in Lua.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Lua (API)}}
