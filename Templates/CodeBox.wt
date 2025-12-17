@@ -16,6 +16,8 @@ The {{Tll|CodeBox}} template is used to hide and display a code snippet, to redu
 :Title of the CodeBox.
 ;<code>class</code>
 :Color theme of the CodeBox. Can be <code>blue</code> or <code>red</code>. Default is <code>red</code>.
+;<code>collapsed</code> {{sup|optional}}
+:If set to <code>false</code>, the CodeBox will be expanded by default.
 
 ==Examples==
 The below is an example of typical usage alongside {{tll|CodeSnip}}.
@@ -93,8 +95,9 @@ item BucketEmpty
 }}
 {{ll|Category:Templates}}
 </noinclude><includeonly>{{ToggleBox
-| title = [[File:Code icon.png|26px|link=]] [[Modding{{lcs}}|{{tt|name=CodeBox|default=Code snippet!|arg1=code_snippet}}]] {{#if: {{{title|}}}| {{{title}}} | {{tt|name=CodeBox|default=This section contains source code from ''Project Zomboid''|arg1=heading_desc}}}}
+| title = [[File:Code icon.png|26px|link=]] {{#if: {{{title|}}}| {{{title}}} | {{tt|name=CodeBox|default=This section contains source code from ''Project Zomboid''|arg1=heading_desc}}}}
 | content = {{{1}}}
 | id = code{{#if:-{{{id|}}}|{{{id}}}}}
 | class = {{{class|red}}}
+| collapsed = {{#if: {{{collapsed|}}}|{{{collapsed}}}|true}}
 }}</includeonly>

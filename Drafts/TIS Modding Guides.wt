@@ -1,0 +1,17 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.0}}
+This page is used to list modding guides provided officially by the [[The Indie Stone]].
+
+== Mapping guides ==
+{{Underconstruction|Guides listed in [[Mapping#See also]] should be listed here, and this page section should be linked in the Mapping see also guides table.}}
+
+== Build 42 MP unstable release ==
+With the release of [[Build 42.13.0|Build 42 MP unstable]], The Indie Stone released 2 guides and example files to help modders update their mods to the new [[registries]] system as well as the new method to adding multiplayer compatibility in mods.
+
+Those guides can be found here:
+*[https://theindiestone.com/forums/index.php?/topic/88499-modding-migration-guide-4213/ Official forums].
+*[https://discord.com/channels/136501320340209664/1448602571810803785 Discord thread with the documentation].
+*[https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/TIS%20guides/B42%20unstable%20MP Repository holding archives of the guides and example files].
+
+{{ll|Category:Modding guides}}

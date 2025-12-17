@@ -1,12 +1,13 @@
 {{Title|craftRecipe}}
-{{Header|Modding|Scripts}}
-{{Page version|42.11.0}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.0}}
 {{About|[[Build 42]] crafting recipes|crafting recipes for [[Build 41]]|Recipe (scripts)}}
 '''craftRecipe'''s are a type of [[scripts]] used to define crafting recipes by providing a set of parameters and conditions.
 
 {{Note|Crafting recipes in [[Build 42]] were changed to use a different formatting and system than the one used in [[Build 41]] ([[Recipe (scripts)|Recipe]]).}}
 
-==craftingRecipe format==
+== craftingRecipe format ==
 To create a new crafting recipe, simply use the following entry in a script file:
 {{CodeSnip
 | lang = lua
@@ -25,11 +26,13 @@ The <code><RecipeID></code> is a unique identifier for the recipe, and '''should
 | lang = lua
 | code =
 Recipes_EN = {
-    Recipe_MyRecipe = "My Recipe Name"
+    Recipe_MyRecipe = "My Recipe Name",
 }
 }}
 
-==craftRecipe parameters==
+{{BugBox|The <code>module</code> cannot be a custom one or your mod will not work on [[multiplayer]]. In the meantime, use <code>module Base</code>, but you should be able to easily swap it when this gets fixed (only for recipes, not [[Item (scripts)|items]] or they will dispawn after changing the module!).|version=42.13.0}}
+
+== craftRecipe parameters ==
 Different parameters can be used in the <code>craftRecipe</code> block to define the recipe. The following table lists the available parameters and the mandatory ones:
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of parameters for the <code>craftRecipe</code> block
@@ -69,7 +72,7 @@ Different parameters can be used in the <code>craftRecipe</code> block to define
 | style="padding: 5px; max-width: 500px;"| Used to verify if the recipe can be crafted.
 |-
 | style="padding: 10px;text-align: center;"| [[xpAward]]
-| style="padding: 5px; max-width: 500px;"| Specifies the experience points awarded for crafting this item. 
+| style="padding: 5px; max-width: 500px;"| Specifies the experience points awarded for crafting this item.
 |-
 | style="padding: 10px;text-align: center;"| [[SkillRequired]]
 | style="padding: 5px; max-width: 500px;"| Specifies the skill level required to perform this crafting action.
@@ -94,9 +97,12 @@ Different parameters can be used in the <code>craftRecipe</code> block to define
 |-
 | style="padding: 10px;text-align: center;"| [[overlayMapper]]
 | style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+|-
+| style="padding: 10px;text-align: center;"| [[recipeGroup]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
 |}
 
-===Available skills===
+=== Available skills ===
 You can define multiple skills and their respective experience points/levels by separating them with <code>;</code>. Below is how each parameters need to be formatted:
 *[[xpAward]] format is <code>skill:experience</code>
 *[[SkillRequired]] format is <code>skill:level</code>
@@ -105,14 +111,34 @@ You can define multiple skills and their respective experience points/levels by 
 
 You can find the available skills in the {{JavaObject|package=zombie/characters/skills|PerkFactory.Perks}} class. Alternatively, you can also use modded skills defined by your mod or other mods.
 
-==Modifying existing recipes==
+== Modifying existing recipes ==
 {{Stub|section=true|Other methods to modify specific elements exist and need to be documented.}}
 Below will be a list of known methods to modify specific elements of existing recipes.
 
 {{Note|type=error|The new craftRecipe from [[Build 42]] is very limited when it comes to modifying existing recipes from the Lua compared to the previous [[recipe (scripts)|recipe scripts]] from [[Build 41]].}}
 
-===Adding a new output mapper output===
-This method can be used to add new entries to the script output [[itemMapper]].
+=== Adding a new output mapper output ===
+Below are listed methods to modify an existing craftRecipe [[itemMapper]]s.
+==== First method ====
+This method needs the mod to define a craftRecipe with the same name as the one to add new [[itemMapper]] entries. Only the itemMapper or overlayMapper entries need to be added the craftRecipe, which will not overwrite the original craftRecipe but add new entries to it. Simply make sure that your item gets added to the [[inputs]] either by adding it manually or if the input uses [[tags (item parameter)|item tags]], that your item has the same tags.
+{{CodeSnip
+| lang = lua
+| code =
+craftRecipe DrySmallLeather
+    {
+        itemMapper DryLeatherSmall
+        {
+            Base.RaccoonLeather_Spiffo_Fur_Tan = Base.RaccoonLeather_Spiffo_Fur_Tan_Wet,
+        }
+        overlayMapper
+        {
+            Base.RaccoonLeather_Spiffo_Fur_Tan_Wet = DeerLeather,
+        }
+}
+}}
+
+==== Second method ====
+The second method involves the use of Lua.
 {{CodeSnip
 | lang = lua
 | code =
@@ -134,7 +160,7 @@ Events.OnGameStart.Add(function()
 end)
 }}
 
-==Example==
+== Example ==
 Below are a few examples of vanilla crafting recipes you can do:
 
 {{CodeSnip
@@ -237,5 +263,7 @@ craftRecipe CarveWhistle
 }
 }}
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Scripts}}
