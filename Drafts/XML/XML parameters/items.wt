@@ -1,0 +1,11 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.1}}
+{{Main|clothing.xml}}
+{{Stub}}
+The <code>m_items</code> XML block is used for clothings to define the items that are part of the outfit.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:AnimNodes parameters}}

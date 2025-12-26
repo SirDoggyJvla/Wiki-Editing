@@ -1,7 +1,7 @@
 {{LangSwitch}}
 {{Navbar_modding}}
+{{Title|clothing.xml}}
 {{Page version|42.13.1}}
-{{Stub}}
 The <code>clothing.xml</code> file is used by mods to modify or create outfits. The file is located in the following folder structure within a mod:
 {{CodeSnip
 | code =
@@ -10,7 +10,43 @@ media/
     └── clothing.xml
 }}
 
-== Parameter ==
+== Format ==
+The <code>clothing.xml</code> file needs to follow the format below:
+{{CodeSnip
+| lang = xml
+| code =
+<?xml version="1.0" encoding="utf-8"?>
+<outfitManager>
+    ...
+</outfitManager>
+}}
+
+Inside the <code>outfitManager</code> block, outfits are defined as male or female by using the following two blocks:
+* <code>m_MaleOutfits</code>
+* <code>m_FemaleOutfits</code>
+
+An outfit can exist as a male outfit, a female outfit, or both with the male and female having different definitions independently from each others.
+
+{{CodeSnip
+| lang = xml
+| code =
+<?xml version="1.0" encoding="utf-8"?>
+<outfitManager>
+    <m_FemaleOutfits>
+        <m_Name>VeryUniqueOutfitName</m_Name>
+        ...
+    </m_FemaleOutfits>
+    <m_MaleOutfits>
+        <m_Name>VeryUniqueOutfitName</m_Name>
+        ...
+    </m_MaleOutfits>
+</outfitManager>
+}}
+
+For each outfit block, male and female, the parameters defined in the next section can be used.
+
+== Outfit parameters ==
+{{Stub|section=true}}
 Below is a list of parameters that can be used in the <code>clothing.xml</code> file:
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of AnimNodes parameters
@@ -22,20 +58,23 @@ Below is a list of parameters that can be used in the <code>clothing.xml</code> 
 | style="text-align: center;"| [[GUID|m_Guid]]
 | The [[GUID]] of the outfit. Must be unique.
 |-
-| style="text-align: center;"| <code>m_Pants</code>
+| style="text-align: center;"| m_Pants
 | 
 |-
-| style="text-align: center;"| <code>m_Top</code>
+| style="text-align: center;"| m_Top
 | 
 |-
-| style="text-align: center;"| <code>m_AllowPantsHue</code>
+| style="text-align: center;"| m_AllowPantsHue
 | 
 |-
-| style="text-align: center;"| <code>m_AllowTopTint</code>
+| style="text-align: center;"| m_AllowTopTint
+| 
+|-
+| style="text-align: center;"| m_AllowTShirtDecal
 | 
 |-
 | style="text-align: center;"| [[m_items]]
-| 
+| Used to define a combination of one or more clothing items that make up the outfit.
 |}
 
 == See also ==
