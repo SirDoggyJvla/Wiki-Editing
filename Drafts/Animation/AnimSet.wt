@@ -1,11 +1,12 @@
-{{Header|Modding|Animation}}
+{{LangSwitch}}
+{{Navbar_modding}}
 {{Page version|42.10.0}}
 {{Main|Animation}}
 '''AnimSets''' are collections of [[AnimState]]s, usually associated to a specific character or creature, such as the [[player]], [[zombie]]s or [[animal]]s. AnimSets are associated to an [[ActionGroup]], which defines transitions for [[AnimState]]s in the form of [[ActionState]]s.
 
 {{Note|type=warn|While custom AnimSets can be created, they require their custom [[ActionGroup]] counterpart to work, which is not currently supported.}}
 
-==Available AnimSets==
+== Available AnimSets ==
 <div class="list-columns" style="column-width:250px; max-width:900px;">
 *<code>animal-editor</code>
 *<code>buck</code>
@@ -37,7 +38,7 @@
 *<code>zombie-crawler</code>
 </div>
 
-==See also==
+== See also ==
 *[[Animation guide]] - a step by step guide on how to create animations.
 *[[AnimState]] - a specific state an entity can be in, such as walking, running, or idle.
 *[[AnimNodes]] - defines the animations that can be played in an AnimState and its properties and conditions.
@@ -45,3 +46,5 @@
 *[[ActionState]] - defines a specific transition between two [[AnimState]]s or special properties of an [[AnimState]].
 
 {{Navbox modding}}
+
+{{ll|Category:Animation}}

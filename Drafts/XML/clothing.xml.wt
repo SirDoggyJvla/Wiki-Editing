@@ -1,0 +1,48 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.1}}
+{{Stub}}
+The <code>clothing.xml</code> file is used by mods to modify or create outfits. The file is located in the following folder structure within a mod:
+{{CodeSnip
+| code =
+media/
+└── clothing/
+    └── clothing.xml
+}}
+
+== Parameter ==
+Below is a list of parameters that can be used in the <code>clothing.xml</code> file:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of AnimNodes parameters
+! Parameter name !! Description
+|-
+| style="text-align: center;"| [[m_Name]]
+| The name of the outfit. Must be unique.
+|-
+| style="text-align: center;"| [[GUID|m_Guid]]
+| The [[GUID]] of the outfit. Must be unique.
+|-
+| style="text-align: center;"| <code>m_Pants</code>
+| 
+|-
+| style="text-align: center;"| <code>m_Top</code>
+| 
+|-
+| style="text-align: center;"| <code>m_AllowPantsHue</code>
+| 
+|-
+| style="text-align: center;"| <code>m_AllowTopTint</code>
+| 
+|-
+| style="text-align: center;"| [[m_items]]
+| 
+|}
+
+== See also ==
+*[[Outfit XML Converter]]
+*[[Creating a clothing mod]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}

@@ -1,0 +1,29 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Infobox
+| title = Expression rig
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Expression rig - preview.png]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/nonameservices83/ExpressionRig
+        | GitHub repository
+        }}
+    }}
+}}
+'''Expression rig''' is a Blender [[animation]] IK rig for the Project Zomboid character model which is more specialized in [[rendering]] with facial expressions, fingers and extra bones for more detailed poses than the vanilla character skeleton. It also comes with already predefined clothing, items and accessories which are attached to the rig, that can be deactivated or activated as needed.
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Animation projects}}
+{{ll|Category:Modding projects}}

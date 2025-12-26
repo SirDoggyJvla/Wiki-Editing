@@ -1,0 +1,25 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Infobox
+| title = Outfit XML Converter
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/LazySpongie/OutfitXMLConverter
+        | GitHub repository
+        }}
+    }}
+}}
+'''Outfit XML Converter''' is a script used to transform the various [[File formats#XML|XML files]] used to define [[Creating a clothing mod|clothings]] in Project Zomboid into a simpler format. This tool involves the transformation of the [[clothing.xml]] file to replace all the [[GUID]]s with the clothing names directly and a script can then be used to transform them back to the original recognized format for game testing.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding projects}}
+{{ll|Category:External tools}}

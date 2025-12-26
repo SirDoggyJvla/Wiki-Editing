@@ -1,12 +1,12 @@
-{{Header|Modding|Animation}}
-{{Page version|42.10.0}}
-{{Main|Animation}}
-'''Animation nodes''', or ''AnimNodes'' are a system in Project Zomboid that allows the definition of [[animation]]s and their properties. They are used to play [[animation]]s in-game, define their transitions, and control how they interact with the character's skeleton. AnimNodes are defined in [[File formats#XML|XML]] files found inside the folder {{Code|media/AnimSets}}.
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.9.0}}
+'''AnimNode''' or '''animation node''' are a part of the system in Project Zomboid that allows the definition of [[animation]]s and their properties. They are used to play [[animation]]s in-game, define their transitions, and control how they interact with the character's skeleton. AnimNodes are defined in [[File formats#XML|XML]] files found inside the folder {{Code|media/AnimSets}}.
 
 {{Note|The name ''AnimSets'' is sometimes used in place of ''AnimNodes'' to refer to the same system.}}
 
-==Creating an AnimNode==
-To create an AnimNode, you need to properly locate your XML files inside the right folder. For example, zombie animations will need to be located inside {{Code|media/AnimSets/zombie}} (check the [[game files]] for every possibilities). 
+== Creating an AnimNode ==
+To create an AnimNode, you need to properly locate your XML files inside the right folder. For example, zombie animations will need to be located inside {{Code|media/AnimSets/zombie}} (check the [[game files]] for every possibilities).
 
 For each character type, subfolders exist for different kind of animations. Continuing with the zombie example, you can find for example the following subfolders:
 *{{Code|media/AnimSets/zombie/idle}} - for idle animations.
@@ -22,7 +22,7 @@ Naming the AnimNode files is important and those usually have the same name as t
 {{Note|type=warn|AnimNodes can override other AnimNodes with the same name. As such, it is recommended to use a unique name for your AnimNode. Adding a prefixe to your animation names is a good way to easily find them in the [[Animation Viewer]].}}
 {{Note|type=error|Currently in [[Build 42]], a recurring issue forces modders to make copies of their AnimNode files inside the [[Mod structure#Build 41|Build 41 mod structure]] to be recognized by the game. The [[Build 41]] files are however not used by the game for mods in [[Build 42]].}}
 
-==AnimNode parameters==
+== AnimNode parameters ==
 {{Stub|section=true}}
 Below is a list of parameters that can be used in AnimNodes:
 {| class="wikitable theme-blue"
@@ -57,8 +57,10 @@ Below is a list of parameters that can be used in AnimNodes:
 | style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
 |}
 
-==See also==
+== See also ==
 *[[Creating custom animations]] – a step by step guide on how to create animations.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Animation}}

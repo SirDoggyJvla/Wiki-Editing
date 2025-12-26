@@ -1,0 +1,25 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.9.0}}
+{{Main|AnimNodes|clothing.xml}}
+The {{Code|m_Name}} parameter is used to define the name of an AnimNode or an outfit. It is a required parameter and must be unique. This name is used by other AnimNodes to reference it in transitions and other interactions. For outfits, this name identifies the outfit within the game.
+
+== Example ==
+For AnimNodes:
+{{CodeSnip
+| lang = xml
+| code =
+<m_Name>holdingChugJugleft</m_Name>
+}}
+
+For outfits:
+{{CodeSnip
+| lang = xml
+| code =
+<m_Name>JackieChan</m_Name>
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:AnimNodes parameters}}

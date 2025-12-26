@@ -1,14 +1,17 @@
 {{LangSwitch}}
 {{Navbar_modding}}
-{{Page version|42.12.3}}
+{{Page version|42.13.1}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
+[[File:Mod structure.png|thumb|class=logo-light]]
 
 Local mods are recognized in two different folders which each have their own rules and structure and are both in the [[Game files#Cache folder|cache folder]]:
 *{{Code|Zomboid/mods/}} - place to put mods to install manually without using the Steam Workshop. Not recommanded for mod development.
 *{{Code|Zomboid/workshop/}} - folder used for mod development and uploading to the Steam Workshop.
 
+When downloading mods from the [[Steam Workshop]], they will be downloaded in [[#Online workshop folder|their own folders]] locally which you should **not** be working from when [[modding]]. Mods with the same [[mod.info|Mod ID]] as mods in other recognized folders, so for example in the online workshop folder and in the mods cache folder, will clash together and overwrite each others. This can lead to confusion when debugging your mods and even make it impossible to load new changes you applied to your mod when developing so make sure to not have two copies of your mods.
+
 Example default mod structures are provided by the community to directly use:
-*[[Project Zomboid Community Modding template]] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository.
+*[[Project Zomboid Community Modding template]] - a template mod structure to use as a base for your own mods. Simply make a copy of the repository on your computer and modify the different elements for your own use.
 
 {{Note|type=warn|Some [[Wikipedia:Operating system|operating systems]] like Linux and MacOS are case-sensitive regarding file and folder names. Make sure to use the correct casing when creating your mod structure to avoid issues for those users. (for example <code>common</code> and not <code>Common</code>)}}
 
@@ -58,6 +61,22 @@ This last principle also applies to downloading your own mods on the Workshop wh
 
 Another benefit of using the <code>Workshop</code> folder is that it allows you to store additional assets in the upper echelon of your mods <code>Workshop</code> folder. This is due to the <code>Workshop</code> folder having extra folders before the <code>mods</code> folder, taking the previous shared example you have <code>MyModWorkshop</code> and <code>Contents</code>. Anything in the <code>Contents</code> folder will be uploaded to the Workshop, but anything placed at the same level as it, inside <code>MyModWorkshop</code>, will not be uploaded and completely ignored by the game. You can use this to create other subfolders like <code>images</code> or <code>assets</code> which will hold your modding assets, you can have a file <code>README.md</code> and also a <code>.git</code> folder to have <code>MyModWorkshop</code> serve as your mod's [[Wikipedia:Git|git]] repository. This also applies to folders specific to your [[Wikipedia:Integrated development environment|IDE]] like <code>.vscode</code> ([[Visual Studio Code|VSCode]]) or <code>.idea</code> ([[IntelliJ IDEA|IDEA]]).
 
+{{Note|type=error|When developing mods, make sure to not be subscribed to your own mod on the Steam Workshop. Any duplicated version of your mod on your computer which are loaded by the game, will mix and clash together, sometimes making any changes you make in a version, not appear in-game because they are being overwritten by this other duplicate version of the mod. Always keep only your local version inside the Workshop folder.}}
+
+== Online workshop folder ==
+When accessing the [[game files]], if you go in a few folders above in <code>Steam/steamapps/</code>, you can access the folder <code>workshop/content/</code> which stores every mods from all of your games. Project Zomboid has the Steam ID <code>108600</code> which can be seen in the URL of the Steam market page of the game. The mods are stored in the following folder:
+{{CodeSnip
+|code =
+Steam/
+└── steamapps/
+    └── workshop/
+        └── content/
+            └── 108600/
+                └── ...
+}}
+
+The folder of the mod will be named after its [[Workshop ID]].
+
 == Workshop folder ==
 The Workshop folder will use the following structure:
 {{CodeSnip
@@ -82,6 +101,7 @@ Zomboid/
 
 {{Note|Subfolders in <code>MyExampleMod/</code> which are not <code>Contents/</code> are not recognized by the game and can be used to store various files for your mod that shouldn't get uploaded. Thus you can store in it Python scripts, images, assets, etc.}}
 {{Note|<code>MyExampleMod/</code> can be used as a Git repository (GitHub, GitLab...).}}
+{{Note|type=error|Make sure to access the Workshop folder inside the [[Game files#Cache folder|cache folder]] and not the game files one which has the path {{Code|steamapps/common/ProjectZomboid/Workshop}} ! This folder cannot be used for modding.}}
 
 == Mod folder ==
 The files of your mods are placed in the folder <code>Contents/mods/</code> alongside a [[mod.info]] file which is the core of your mod. The folder structure of your mod folder should be as follows:
@@ -153,20 +173,19 @@ These folders load with the following order:
 The versioning folders can have the following possible naming:
 {{CodeSnip
 | code =
-buildVersion.majorUpdate.minorUpdate
-buildVersion.majorUpdate                ====> buildVersion.majorUpdate.0
-buildVersion                            ====> buildVersion.0.0
+buildVersion.majorVersion.minorVersion  ====> buildVersion.majorVersion
+buildVersion.majorVersion               ====> buildVersion.majorVersion
+buildVersion                            ====> buildVersion.0
 }}
-
-For example:
+The minor version is not supported for the naming, so a folder named <code>42.1.5</code> will be treated as <code>42.1</code>. For example:
 {{CodeSnip
 | code =
-42             ====> 42.0.0
-43             ====> 43.0.0
-42.12          ====> 42.12.0
-42.1           ====> 42.1.0
-42.0.5
-43.5.1
+42             ====> 42.0
+43             ====> 43.0
+42.12          ====> 42.12
+42.1           ====> 42.1
+42.0.5         ====> 42.0
+43.5.1         ====> 43.5
 }}
 
 {{Note|type=warn|Common folder is not recognized by [[Build 41]] modding structure. However, the [[Build 41]] [[Lua (API)|Lua API]] can access some files in some cases.}}
@@ -260,17 +279,17 @@ Below is a full example of a mod structure in Windows.
             │       │   │   ├── mod.info
             │       │   │   ├── poster.png
             │       │   │   └── icon.png
-            │       │   ├── 42.X.Y/                 <--- will be loaded instead of older versions (4.0.0 for example will not load), for game versions compatibility if needed
+            │       │   ├── 42.X.Y/                 <--- will be loaded instead of older versions (42.0.0 for example will not load), for game versions compatibility if needed
             │       │   │   └── ...
             │       │   ├── common/                 <--- mandatory, mod won't be detected without it
             │       │   │   └── media/
-            │       │   │       ├── anim_X/
+            │       │   │       ├── anims_X/
             │       │   │       │   └── ...
-            │       │   │       ├── model_X/
+            │       │   │       ├── models_X/
             │       │   │       │   └── ...
             │       │   │       └── ...
             │       │   ├── media/                  <--- Build 41 only folder, not used in Build 42
-            │       │   │   ├── anim_X/
+            │       │   │   ├── anims_X/
             │       │   │   │   └── ...
             │       │   │   ├── AnimSets/
             │       │   │   │   └── ...
@@ -281,7 +300,7 @@ Below is a full example of a mod structure in Windows.
             │       │   │   │   │   └── ...
             │       │   │   │   └── shared/
             │       │   │   │       └── ...
-            │       │   │   ├── model_X/
+            │       │   │   ├── models_X/
             │       │   │   │   └── ...
             │       │   │   └── scripts/
             │       │   │       └── ...

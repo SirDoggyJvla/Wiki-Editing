@@ -1,17 +1,13 @@
-{{Header|Modding}}
-{{Page version|42.12.0}}
-'''Animation''' in Project Zomboid consist in creation custom animations and add them to the game or replace existing ones. The process involves both animating a skeleton of the character model, usually called a ''rig'', exporting it to a [[File formats#Modeling and animation formats|format]] that the game can read (preferably Filmbox {{Code|.fbx}}) and defining an [[AnimNodes|AnimNode]] which will be used to play the animation in-game and define its properties.
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.1}}
+'''Animation''' in Project Zomboid consist in the creation of custom animations and adding them to the game or replacing existing ones. The process involves both animating a skeleton of the character model, usually called a ''rig'', exporting it to a [[File formats#Modeling and animation formats|format]] that the game can read (preferably Filmbox {{Code|.fbx}}) and defining an [[AnimNodes|AnimNode]] which will be used to play the animation in-game and define its properties.
 
-==Available rigs for animating==
-These rigs are rigs which can be used to create animations.
-*[[Paddlefruit rig]] - a modern rig which is designed to be used in Blender 4.0 and above, with IK and FK controls available.
-*[[Mystery rig]] – a Blender IK rig.
-*[[Dislaik rig]] – less sophisticated rig. With and without IK available.
-*[[Throttlekitty rig]] – a Maya rig.
+You can find a list of available rigs for animating on the page [[Animation rigs]].
 
-==Folder structure==
+== Folder structure ==
 {{Main|Mod structure}}
-The <code>anims_X</code> folder is used to store animation files. The files need to be either in the DirectX format (<code>.x</code>) or Filmbox format (<code>.fbx</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the page [[File formats#Modeling and animation formats|file formats]] for more details. 
+The <code>anims_X</code> folder is used to store animation files. The files need to be either in the DirectX format (<code>.x</code>) or Filmbox format (<code>.fbx</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the page [[File formats#Modeling and animation formats|file formats]] for more details.
 
 '''AnimSets''' are put inside the <code>AnimSets</code> folder. An [[AnimSet]] is a collection of [[AnimState]]s and are usually associated to an entity such as the player, a zombie or an animal. [[AnimState]]s define a specific state the entity can be in, such as walking, running, or idle. For an AnimState, [[AnimNodes]] are used to define the animations that can be played in that state, and for which conditions like the current speed of the entity playing a different animation, or the player being injured having a different stance.
 
@@ -19,7 +15,7 @@ In parallel, the game uses [[ActionGroup]]s which are associated to an AnimSet, 
 
 [[File:Animation structure.png|center]]
 
-===Example===
+=== Example ===
 Below is the animation structure of the [[cow]]:
 {{CodeBox
 | class = blue
@@ -95,7 +91,7 @@ media/
     }}
 }}
 
-==See also==
+== See also ==
 *[[Creating custom animations]] – a step-by-step guide on how to create animations.
 *[[Game files]] – accessing game files, including animations.
 *[[Mod structure]] – explanation of the structure of a mod.
@@ -111,5 +107,7 @@ media/
 | {{#dateformat:2023-10-02|ymd}}
 |}
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding}}
