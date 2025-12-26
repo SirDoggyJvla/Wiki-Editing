@@ -1,0 +1,45 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Stub}}
+{{Infobox
+| title = Tile pack (Pertominus)
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Tile pack (Pertominus) - thumbnail.jpeg]]
+    | 1 = [[File:Tile pack (Pertominus) - thumbnail.jpeg|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2837923608
+        | Workshop page
+        }}
+    }}
+}}
+This is a custom tile pack featuring various tiles.
+
+== Gallery ==
+<gallery>
+File:Tile pack (Pertominus) - preview1.jpeg
+File:Tile pack (Pertominus) - preview2.jpeg
+File:Tile pack (Pertominus) - preview3.jpeg
+File:Tile pack (Pertominus) - preview4.jpeg
+File:Tile pack (Pertominus) - preview5.jpeg
+File:Tile pack (Pertominus) - preview6.jpeg
+File:Tile pack (Pertominus) - preview7.jpeg
+File:Tile pack (Pertominus) - preview8.jpeg
+File:Tile pack (Pertominus) - preview9.jpeg
+File:Tile pack (Pertominus) - preview10.jpeg
+</gallery>
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

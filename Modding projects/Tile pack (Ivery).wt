@@ -1,0 +1,38 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+{{Stub}}
+{{Infobox
+| title = Tile pack (Ivery)
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Tile pack (Ivery) - thumbnail.jpeg]]
+    | 1 = [[File:Tile pack (Ivery) - thumbnail.jpeg|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2898138850
+        | Workshop page
+        }}
+    }}
+}}
+This is a custom tile pack featuring various tiles.
+
+== Gallery ==
+<gallery>
+File:Tile pack (Ivery) - preview1.jpeg
+File:Tile pack (Ivery) - preview2.jpeg
+File:Tile pack (Ivery) - preview3.jpeg
+</gallery>
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

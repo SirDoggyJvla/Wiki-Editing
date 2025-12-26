@@ -1,0 +1,46 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|41.78.16}}
+{{Stub}}
+{{Infobox
+| title = Tile pack (ExtraNoise's Newburbs)
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Tile pack (ExtraNoise's Newburbs) - thumbnail.jpeg]]
+    | 1 = [[File:Tile pack (ExtraNoise's Newburbs) - thumbnail.jpeg|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2774834715
+        | Workshop page
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3520263838
+        | Workshop page (continued)
+        }}
+    }}
+}}
+This is a custom tile pack featuring various tiles.
+
+== Gallery ==
+<gallery>
+File:Tile pack (ExtraNoise's Newburbs) - preview1.jpeg
+File:Tile pack (ExtraNoise's Newburbs) - preview2.jpeg
+File:Tile pack (ExtraNoise's Newburbs) - preview3.jpeg
+File:Tile pack (ExtraNoise's Newburbs) - preview4.jpeg
+File:Tile pack (ExtraNoise's Newburbs) - preview5.jpeg
+File:Tile pack (ExtraNoise's Newburbs) - preview6.jpeg
+</gallery>
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

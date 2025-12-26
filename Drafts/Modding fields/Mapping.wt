@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar_modding}}
-{{Page version|42.11.0}}
+{{Page version|42.13.1}}
 '''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]]. Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
 
 You can access a full view render of the [[Knox Country]] map via the [[Project Zomboid Map Project]].
@@ -86,10 +86,22 @@ media/
 
 == Tile packs ==
 Below is a list containing references to tilepacks which are available for the mappers to use directly in their map mods. Those usually come in the form of [[Steam Workshop]] items that you can directly use as an addon to your map mod.
-<div style="column-count: 4;">
+<div style="column-count: 2;">
 *[[Asian Style Builds]]
 *[[Community Tile Pack]]
 *[[Tile pack (BigZombieMonkeys)]]
+*[[Tile pack (Daddy Dirkie Dirks)]]
+*[[Tile pack (Dylan)]]
+*[[Tile pack (ExtraNoise's Newburbs)]]
+*[[Tile pack (Fear's Funky)]]
+*[[Tile pack (Ivery)]]
+*[[Tile pack (Loolie)]]
+*[[Tile pack (Pertominus)]]
+*[[Tile pack (Simon MDs)]]
+*[[Tile pack (Skizot)]]
+*[[Tile pack (throttlekitty)]]
+*[[Tile pack (TryHonesty)]]
+*[[Tile pack (Melos)]]
 </div>
 
 == Public maps ==

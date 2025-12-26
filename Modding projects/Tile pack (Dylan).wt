@@ -3,12 +3,12 @@
 {{Page version|41.78.16}}
 {{Stub}}
 {{Infobox
-| title = Tile pack (BigZombieMonkeys)
+| title = Tile pack (Dylan)
 | class = theme-blue
 | 
     {{Infobox/image
-    | 1 = [[File:Tile pack (BigZombieMonkeys) - thumbnail.jpeg]]
-    | p1 = [[File:Tile pack (BigZombieMonkeys) - thumbnail.jpeg|link=]]
+    | p1 = [[File:Tile pack (Dylan) - thumbnail.jpeg]]
+    | 1 = [[File:Tile pack (Dylan) - thumbnail.jpeg|link=]]
     }}
 
     {{Infobox/section
@@ -17,13 +17,21 @@
     | 2 = 
         {{Infobox/socials
         | type=steam
-        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2804428637
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2599752664
         | Workshop page
         }}
     }}
 }}
 This is a custom tile pack featuring various tiles.
-{{Clear}}
+
+== Gallery ==
+<gallery>
+File:Tile pack (Dylan) - preview1.jpeg
+File:Tile pack (Dylan) - preview2.jpeg
+File:Tile pack (Dylan) - preview3.jpeg
+File:Tile pack (Dylan) - preview4.jpeg
+</gallery>
+
 == Navigation ==
 {{Navbox modding}}
 
