@@ -4,7 +4,32 @@
 This page is used to list modding guides provided officially by the [[The Indie Stone]].
 
 == Mapping guides ==
-{{Underconstruction|Guides listed in [[Mapping#See also]] should be listed here, and this page section should be linked in the Mapping see also guides table.}}
+
+{| class="wikitable theme-blue sortable" style="text-align: center;
+|+ style="white-space:nowrap" | Official tutorials
+|-
+! Tutorial !! Description !! Last updated
+|-
+| [https://theindiestone.com/forums/index.php?/topic/38329-customizing-loot-4151/ Customizing Loot (41.51+)]
+| A comprehensive guide to creating custom [[procedural distributions]] for custom maps.
+| {{#dateformat:2022-07|ymd}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831139140632656 source])
+|-
+| [https://theindiestone.com/forums/index.php?/topic/38819-how-to-create-annotated-stash-maps-416/ How to create Annotated Stash Maps (41.6+)]
+| A guide to creating annotated stash maps for Project Zomboid.
+| {{#dateformat:2022-01|ymd}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831234602995823 source])
+|-
+| [https://theindiestone.com/forums/index.php?/topic/21951-the-one-stop-tilezed-mapping-shop/ Official The Indie Stone TileZed mapping guide]
+| A comprehensive guide to using [[TileZed]], the mapping tool for Project Zomboid.
+| {{#dateformat:2021-12|ymd}} ([https://discord.com/channels/136501320340209664/279303619277488128/1391104002250244231 source])
+|-
+| [https://theindiestone.com/forums/index.php?/topic/22577-how-to-create-lootable-maps-for-build-416/ How to Create Lootable Maps for Build 41.6+]
+| A guide to creating lootable maps for Project Zomboid.
+| {{#dateformat:2021-12|ymd}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831096417321191 source])
+|-
+| [https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ Quick Guide: How To Mod The Loot Distribution System (Distributions.lua, ProceduralDistributions.lua)]
+| A guide to modding the loot distribution system.
+| {{#dateformat:2021-07-15|ymd}}
+|}
 
 == Build 42 MP unstable release ==
 With the release of [[Build 42.13.0|Build 42 MP unstable]], The Indie Stone released 2 guides and example files to help modders update their mods to the new [[registries]] system as well as the new method to adding multiplayer compatibility in mods.

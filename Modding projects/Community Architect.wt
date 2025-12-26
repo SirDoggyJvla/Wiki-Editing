@@ -6,31 +6,50 @@
 | class = theme-blue
 | 
     {{Infobox/image
-    | p1 = [[File:Community Architect - Building Pool.png]]
+    | p1 = [[File:Community Architect - 2024.png]]
+    | p2 = [[File:Community Architect - 2025.png]]
+    | 1 = [[File:Community Architect - 2024.png|link=]]
+    | 2 = [[File:Community Architect - 2025.png|link=]]
     }}
 
     {{Infobox/section
     | id = 1
-    | 1 = Links
+    | 1 = Organizer
     | 2 = 
         {{Infobox/socials
         | type=discord
-        | link=https://discord.gg/CFuNM8rtCp
-        | Unofficial Mapping Discord
+        | page=Unofficial Mapping Discord
         }}
+    }}
+
+    {{Infobox/section
+    | id = 2
+    | 1 = 2024 edition
+    | 2 = 
         {{Infobox/socials
         | type=github
         | link=https://github.com/pzmapping/CA24-Building-Pool/releases/tag/1.0
-        | Community Architect 2024 release
+        | Repository
         }}
         {{Infobox/socials
         | type=steam
         | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3391129399
-        | Community Architect Workshop page
+        | Workshop page
+        }}
+    }}
+
+    {{Infobox/section
+    | id = 3
+    | 1 = 2025 edition
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3629967741
+        | Workshop page
         }}
     }}
 }}
-'''Community Architect''' is a mapping project initialized by the [[Unofficial Mapping Discord]] community. It aims to create a large pool of buildings created by the community for the community. The 2024 release of the project included over 800 buildings submitted by 10 participants.
+'''Community Architect''' is a mapping project initialized by the [[Unofficial Mapping Discord]] community. It aims to create a large pool of buildings created by the community for the community. The 2024 release of the project included over 800 buildings submitted by 10 participants. The 2025 release includes over 823 buildings (605 for [[Build 41]] and 218 for [[Build 42]]) submitted by 26 participants.
 
 == See also ==
 *[[Building Pool (official)]] - a bank of vanilla building files provided by [[The Indie Stone]].

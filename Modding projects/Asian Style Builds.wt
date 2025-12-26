@@ -1,0 +1,39 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Stub}}
+{{Infobox
+| title = Asian Style Builds
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Asian Style Builds - thumbnail.jpeg]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=2973698541
+        | Workshop page
+        }}
+    }}
+}}
+The '''Asian Style Builds''' tilepack adds tiles styled for traditional japanese buildings.
+
+== Galery ==
+<gallery>
+File:Asian Style Builds - preview1.jpeg
+File:Asian Style Builds - preview2.jpeg
+File:Asian Style Builds - preview3.jpeg
+File:Asian Style Builds - preview4.jpeg
+File:Asian Style Builds - preview5.jpeg
+</gallery>
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

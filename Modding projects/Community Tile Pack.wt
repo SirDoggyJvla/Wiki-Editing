@@ -1,0 +1,34 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Infobox
+| title = Community Tile Pack
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Unofficial Mapping Discord - preview.webp]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=discord
+        | page=Unofficial Mapping Discord
+        }}
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3628736763
+        | Workshop page
+        }}
+    }}
+}}
+The '''Community Tile Pack''' aims to revive tilepacks which are left abandonned by their original creators, by maintaiing them for new versions of Project Zomboid.
+
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:Modding projects}}

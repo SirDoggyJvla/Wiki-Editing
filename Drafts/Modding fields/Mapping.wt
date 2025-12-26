@@ -84,6 +84,14 @@ media/
 *[[Building Pool (Dylan)]]
 *[[Community Architect]]
 
+== Tile packs ==
+Below is a list containing references to tilepacks which are available for the mappers to use directly in their map mods. Those usually come in the form of [[Steam Workshop]] items that you can directly use as an addon to your map mod.
+<div style="column-count: 4;">
+*[[Asian Style Builds]]
+*[[Community Tile Pack]]
+*[[Tile pack (BigZombieMonkeys)]]
+</div>
+
 == Public maps ==
 Some maps created by the community had their files made public for other mappers to use or study. Below is a list of public maps, their authors as well as how they can be used:
 {| class="wikitable theme-blue sortable" style="text-align: center;
@@ -110,7 +118,7 @@ Some maps created by the community had their files made public for other mappers
 [[Build 41]].78.16 (last [[Build 41]] update)
 |}
 
-==See also==
+== See also ==
 *[https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ The Indie Stone forum post with the latest mapping tools]
 *[[Room definitions and item spawns]]
 *[[Vehicle zones]]
@@ -133,30 +141,10 @@ It was made for [[Build 41]] mapping, but is still very relevant to [[Build 42]]
 | Daddy Dirkie dirk
 | {{#dateformat:2022-09|ym}}
 |-
-| [https://theindiestone.com/forums/index.php?/topic/38329-customizing-loot-4151/ Customizing Loot (41.51+)]
-| A comprehensive guide to creating custom [[procedural distributions]] for custom maps.
+| [[TIS Modding Guides#Mapping guides|Official TIS Mapping guides]]
+| A set of official guides by [[The Indie Stone]] on how to create maps and mod maps.
 | RingoD123 (The Indie Stone)
-| {{#dateformat:2022-07|ym}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831139140632656 source])
-|-
-| [https://theindiestone.com/forums/index.php?/topic/38819-how-to-create-annotated-stash-maps-416/ How to create Annotated Stash Maps (41.6+)]
-| A guide to creating annotated stash maps for Project Zomboid.
-| RingoD123 (The Indie Stone)
-| {{#dateformat:2022-01|ym}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831234602995823 source])
-|-
-| [https://theindiestone.com/forums/index.php?/topic/21951-the-one-stop-tilezed-mapping-shop/ Official The Indie Stone TileZed mapping guide]
-| A comprehensive guide to using [[TileZed]], the mapping tool for Project Zomboid.
-| RingoD123 (The Indie Stone)
-| {{#dateformat:2021-12|ym}} ([https://discord.com/channels/136501320340209664/279303619277488128/1391104002250244231 source])
-|-
-| [https://theindiestone.com/forums/index.php?/topic/22577-how-to-create-lootable-maps-for-build-416/ How to Create Lootable Maps for Build 41.6+]
-| A guide to creating lootable maps for Project Zomboid.
-| RingoD123 (The Indie Stone)
-| {{#dateformat:2021-12|ym}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831096417321191 source])
-|-
-| [https://theindiestone.com/forums/index.php?/topic/38165-quick-guide-how-to-mod-the-loot-distribution-system-distributionslua-proceduraldistributionslua/ Quick Guide: How To Mod The Loot Distribution System (Distributions.lua, ProceduralDistributions.lua)]
-| A guide to modding the loot distribution system.
-| RingoD123 (The Indie Stone)
-| {{#dateformat:2021-07-15|ym}}
+| 2021 to 2022
 |-
 | [https://www.youtube.com/watch?v=FNvTHgY__zg How to make a map in Project Zomboid Build 41]
 | A video tutorial on how to make a map in Project Zomboid Build 41. Also noted as valid for [[Build 40]] by the author.
@@ -184,24 +172,13 @@ It was made for [[Build 41]] mapping, but is still very relevant to [[Build 42]]
 |-
 ! Resource !! Description !! Author !! Last updated
 |-
-| [https://theindiestone.com/forums/index.php?/topic/54395-vanilla-buildings-pool/ Vanilla Buildings Pool]
-| A collection of vanilla buildings used in the game, which you can use in your own maps or as a reference.
-| RingoD123 (The Indie Stone)
-| {{#dateformat:2022-05-26|ymd}}
-|-
 | [https://drive.google.com/drive/folders/12jQxlDlyC-fACV45oCWshZb60QHoQ6kf Build 41 base and vegetation maps]
 | Base and vegetation image maps for [[Build 41]].
 | Unknown
 | {{#dateformat:2022-03-14|ymd}}
 |-
-| [https://steamcommunity.com/sharedfiles/filedetails/?id=2790725628 Building Pool V2]
-[https://steamcommunity.com/sharedfiles/filedetails/?id=2790726238 Building Pool V3]
-| An archive of buildings made by the community, which you can use in your own maps or as a reference. Originally referenced in a [https://theindiestone.com/forums/index.php?/topic/22018-all-player-made-building-archives-verison-3-472022/ forum post], most buildings are now available on the Steam Workshop.
-| BlackBeard
-| {{#dateformat:2022-03-07|ymd}}
-|-
 | [https://theindiestone.com/forums/index.php?/topic/38185-new-room-definitions-4165/ New Room Definitions (41.65+)]
-| List of the new room definitions available in [[Build 41|Build 41.65]].
+| List of the new room definitions available in [[Build 41.65]].
 | RingoD123 (The Indie Stone)
 | {{#dateformat:2021-12-30|ym}} ([https://discord.com/channels/136501320340209664/279303619277488128/1399831264164446319 source])
 |-
@@ -210,42 +187,6 @@ It was made for [[Build 41]] mapping, but is still very relevant to [[Build 42]]
 | Base and vegetation image maps for [[Build 40]]. Originally posted on the [https://theindiestone.com/forums/index.php?/topic/25742-project-zomboid-basemap/ Project Zomboid forum].
 | Okamikurainya
 | {{#dateformat:2019-08-24|ymd}}
-|}
-
-{| class="wikitable theme-blue sortable" style="text-align: center;
-|+ style="white-space:nowrap" | Outdated tutorials
-|-
-! Tutorial !! Description !! Author !! Last updated
-|-
-| [https://theindiestone.com/forums/index.php?/topic/23263-sliding-glass-doors-new-textures-heres-how/&tab=comments#comment-265063 Sliding Glass Doors, New Textures, Here's How!]
-| The guide images are no longer available, rendering the guide pratically useless.
-| Cpt_Paradox
-| {{#dateformat:2017-11-30|ymd}}
-|-
-| [https://theindiestone.com/forums/index.php?/topic/23264-making-rooms-with-the-place-wall-tool-item-spawns-ortho-and-more/&tab=comments#comment-265065 Making rooms with the place wall tool, item spawns, ortho and more!]
-| The guide images are no longer available, rendering the guide pratically useless.
-| Cpt_Paradox
-| {{#dateformat:2017-11-30|ymd}}
-|-
-| [https://theindiestone.com/forums/index.php?/topic/22576-how-to-combine-map-mods/&tab=comments#comment-257834 How to Combine Map Mods]
-| A guide for mod users on how to combine map mods.
-| RingoD123
-| {{#dateformat:2017-06-11|ymd}}
-|-
-| [https://theindiestone.com/forums/index.php?/topic/21943-how-to-make-a-map-start-to-finish-full-video-tutorial/&tab=comments#comment-251657 How to make a map Start to Finish Full Video Tutorial]
-| The video tutorial is no longer available.
-| BlackBeard
-| {{#dateformat:2017-01-30|ymd}}
-|-
-| [https://theindiestone.com/forums/index.php?/topic/21932-project-zomboid-mapping-instructions-vegmap-to-testing-custom-map/&tab=comments#comment-251579 VegMap to Testing Custom Map]
-| Explains the process of creating a vegetation map for a custom map. Some links are outdated and the forum post is hard to read due to its formating.
-| Cpt_Paradox
-| {{#dateformat:2017-01-28|ymd}}
-|-
-| [https://theindiestone.com/forums/index.php?/topic/14109-thuztors-mapping-tutorial-videos/ Thuztors Mapping Tutorials]
-| A series of video tutorials for using [[TileZed]] and [[WorldEd]]. The videos date back from 2015 and use old versions of the [[#Mapping tools|mapping tools]].
-| Thuztor
-| {{#dateformat:2015-04-19|ymd}}
 |}
 
 ==Navigation==
