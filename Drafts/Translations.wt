@@ -1,15 +1,17 @@
-{{Header|Modding}}
-{{Page version|42.7.0|2=559029}}
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.1|2=559029}}
 {{About|translating the game or a mod|a guide to translating the wiki|Help:Translations}}
 
 Official translations used to be done on [https://github.com/TheIndieStone/ProjectZomboidTranslations ProjectZomboidTranslations GitHub], however starting with [[Build 42]] a professional studio was hired for translations.
 
 Information about the game's translation system. Translations need to be saved in the encoding of the language used by the game. Files also need to follow the naming conventions and format of the translation types.
 
-==Translation types==
-===Commonly used files===
+== Translation types ==
+
+=== Commonly used files ===
 These files follow the same naming convention <code>Translate/{language}/{File}_{language}.txt</code> and use the same format.
-{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed" style="text-align: center;
+{| class="wikitable theme-blue mw-collapsible" style="text-align: center;
 |+ List of translation files
 |- style="font-weight:bold;"
 ! File
@@ -49,7 +51,7 @@ These files follow the same naming convention <code>Translate/{language}/{File}_
 |-
 | Fluids
 | <code>Fluid_Name_</code>
-| 
+|
 | [[Fluid (scripts)|Fluids]].
 |-
 | GameSound
@@ -129,7 +131,7 @@ These files follow the same naming convention <code>Translate/{language}/{File}_
 |-
 | SurvivorNames
 | <code>SurvivorSurname_</code> or <code>SurvivorName_</code>
-| 
+|
 | Random character names.
 |-
 | Tooltip
@@ -144,9 +146,9 @@ These files follow the same naming convention <code>Translate/{language}/{File}_
 |}
 *Prefixes can be handled differently; they can be optional, removed from key maps or not used at all.
 *Use the full type where type is used as key.
-*Moveables use *Group Name Custom Name* for names and keys. These characters ` `, `-`, `'`, `.` are converted.
+*Moveables use '''Group Name Custom Name''' for names and keys. These characters <code> </code>, <code>-</code>, <code>'</code>, <code>.</code> are converted.
 
-====Examples====
+==== Examples ====
 Example of ContextMenu:
 {{CodeSnip
 | lang = lua
@@ -155,7 +157,7 @@ Example of ContextMenu:
 | code =
 ContextMenu_EN = {
     ContextMenu_Destroy = "Destroy ",
-} 
+}
 }}
 
 Example of text split in multiple lines.
@@ -166,10 +168,10 @@ SurvivalGuide_EN = {
     SurvivalGuide_entrie11moreinfo = " <H1> FORAGING / SEARCH SYSTEM <BR> " ..
                                      " ..." ..
                                      " For example, trash can be found in trash piles, chipped stones are often found in cracks and potholes on roads. <LINE> <LINE> ",
-} 
+}
 }}
 
-{{Note|content=The translation parser skips the first line, then breaks the line into key - text format. Required characters: <code>=</code>, <code>"</code> and <code>,</code>.
+{{Note|content=The translation parser skips the first line, then breaks the line into key - text format. Required characters: <code>=</code> and <code>"</code>.
 {{CodeSnip
 | code =
 line 1: skipped
@@ -177,7 +179,7 @@ key = "text",
 }}
 }}
 
-====Recipes====
+==== Recipes ====
 {{Outdated|section=True}}
 Script parser uses `replace("recipe","")` to make original name, sets translated recipe name. Translator populates recipe maps (normal and 'dot' maps) and uses *replace("Recipe_","")*, *replace("_"," ")* for the keys.
 
@@ -197,11 +199,11 @@ original name: 'Convert_A_B'
 translation key: 'Convert A B'
 </pre>
 
-===News===
+=== News ===
 {{Stub|section=True}}
 The news file uses separate format.
 
-===Map information===
+=== Map information ===
 Map translations use the following files:
 {{CodeSnip
 | code =
@@ -228,18 +230,19 @@ Example Riverside description:
 | lang = lua
 | source = description.txt
 | path = Translate\EN\Riverside, KY
-| retrieved = 42.7.0
+| retrieved = true
+| version = 42.7.0
 | code =
 <CENTRE> <SIZE:medium> RIVERSIDE <LINE> <LINE>
 <LEFT> <SIZE:small> A colorful town tightly hugging the banks of the mighty Ohio: exploring Riverside is a rich and diverse experience! To the west you'll find the older parts of town, while out east is where wealthier residents work, rest, and play. <LINE> <LINE>
 If you're considering a stay with us, why not check out the nearby West Maple Country Club? The ultimate in comfort and relaxation, members have access to an 18-hole golf course, tennis courts, swimming pool, and fantastic bars and lounges. Come join today!
 }}
 
-===Radio data===
+=== Radio data ===
 {{Outdated|section=True}}
 Radio Data is read from <code>media/radio/</code>. Radio sources are <code>xml</code> files, translations are <code>txt</code> files. The recommended way to translate these can be found on the translation GitHub, however you can also edit them just like any other txt file.
 
-==Languages==
+== Languages ==
 The game uses languages added to the <code>media/lua/shared/Translate</code> folder, information about the language is stored in the <code>language.txt</code> file of each language directory.
 
 For [[Build 41]], most language use different encodings. But for [[Build 42]], almost all languages use the UTF-8 encoding, except for KO which uses UTF-16, CS which uses cp1250, CA uses ISO-8859-15 and AR uses cp1252.
@@ -249,8 +252,8 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 |- style="font-weight:bold;"
 ! Code
 ! Language
-! Build 41 Encoding
-! Build 42 Encoding
+! Build 41 encoding
+! Build 42 encoding
 ! Category
 |-
 | AR
@@ -287,7 +290,7 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | Danish
 | Cp1252
 | UTF-8
-| 
+|
 |-
 | DE
 | Deutsch - German
@@ -311,7 +314,7 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | Finnish
 | Cp1252
 | UTF-8
-| 
+|
 |-
 | FR
 | Francais - French
@@ -323,7 +326,7 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | Hungarian
 | Cp1250
 | UTF-8
-| 
+|
 |-
 | ID
 | Indonesia
@@ -335,7 +338,7 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | Italiano
 | Cp1252
 | UTF-8
-| 
+|
 |-
 | JP
 | Japanese
@@ -346,7 +349,7 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | KO
 | Korean
 | UTF-16
-| UTF-16
+| UTF-8
 |
 |-
 | NL
@@ -371,19 +374,19 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | Polish
 | Cp1250
 | UTF-8
-| 
+|
 |-
 | PT
 | Portuguese
 | Cp1252
 | UTF-8
-| 
+|
 |-
 | PTBR
 | Brazilian Portuguese
 | Cp1252
 | UTF-8
-| 
+|
 |-
 | RO
 | Romanian
@@ -395,7 +398,7 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | Russian
 | Cp1251
 | UTF-8
-| 
+|
 |-
 | TH
 | Thai
@@ -413,24 +416,27 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 | Ukrainian
 | Cp1251
 | UTF-8
-| 
+|
 |}
 
-===Adding new languages===
+=== Adding new languages ===
 {{Stub|section=True}}
 *Create a new folder with the id of the language
 *Add the [[language.txt]] file
 *Add fonts if neccessary
 *Add translations
 
-==Translation tools==
+== Translation tools ==
 Below are tools which can be used to translate the game or mods:
 *[https://github.com/Chuckleberry-Finn/pz-translator/ PZ Translator (forked)] - a tool to translate the game and mods automatically, bases itself on Google Translate.
 
-==See also==
+== See also ==
 *[https://github.com/TheIndieStone/ProjectZomboidTranslations GitHub repository for the game translations (outdated)]
 *[https://github.com/timbaker/translatoid/releases Releases of TranslationZed tool]
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3006690572 Steam guide by '''''Matrioshka''''', '''''Riko Prushka''''']
 *[https://github.com/Poltergeist-PZ-Modding/pz-translator PZ Translator (original)] - a tool to translate the game and mods automatically, bases itself on Google Translate.
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding}}

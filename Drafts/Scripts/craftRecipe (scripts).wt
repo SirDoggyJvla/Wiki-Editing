@@ -1,7 +1,7 @@
 {{Title|craftRecipe}}
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.0}}
+{{Page version|42.13.1}}
 {{About|[[Build 42]] crafting recipes|crafting recipes for [[Build 41]]|Recipe (scripts)}}
 '''craftRecipe'''s are a type of [[scripts]] used to define crafting recipes by providing a set of parameters and conditions.
 
@@ -158,6 +158,90 @@ Events.OnGameStart.Add(function()
         end
     end
 end)
+}}
+
+=== Adding new inputs ===
+Below is an example of how you can add new items to the [[inputs]] of an existing craftRecipe using Lua. The hardest part of adding new items to inputs is identifying the inputs themselves, which is done with a testFunction in the example below. The reason it is so complicated to add to inputs is that it involves directly accessing the cached item script inputs stored in a [[Lua (API)#Methods and fields|Java field]] called <code>loadedItems</code>, thus requiring access via [[Lua (API)#Accessing fields|reflection]], and directly adding your item entries in there.
+
+In the example provided, the recipe also depends on itemMappers, so you need to make sure to patch using the method described in [[#Adding a new output mapper output]].
+{{CodeBox
+| class = blue
+| title = Full snipet for adding new inputs to an existing craftRecipe
+|
+<syntaxhighlight lang="lua">
+local items = {
+    "HorseMod.HorseLeather_AP_Fur_Tan",
+    "HorseMod.HorseLeather_AP_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_APHO_Fur_Tan",
+    "HorseMod.HorseLeather_APHO_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_AQHBR_Fur_Tan",
+    "HorseMod.HorseLeather_AQHBR_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_AQHP_Fur_Tan",
+    "HorseMod.HorseLeather_AQHP_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_FBG_Fur_Tan",
+    "HorseMod.HorseLeather_FBG_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_GDA_Fur_Tan",
+    "HorseMod.HorseLeather_GDA_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_LPA_Fur_Tan",
+    "HorseMod.HorseLeather_LPA_Fur_Tan_Medium",
+    "HorseMod.HorseLeather_T_Fur_Tan",
+    "HorseMod.HorseLeather_T_Fur_Tan_Medium",
+}
+
+-- this is the item full type we will use to identify the correct input to add our new items to
+-- in this recipe example this is enough because we know the second input only contains tool items, so not really leathers
+local checkItem = "Base.Leather_Crude_Large"
+
+---An example of input identification function. Checks if the input contains an item with a specific full type, which is usually enough to identify it.
+---@param input InputScript
+---@param loadedItems ArrayList<string>
+---@return boolean
+local function identifyInput(input, loadedItems)
+    if loadedItems:contains(checkItem) then return true end
+    return false
+end
+
+---Utility function to retrieve fields of specific Java object instances.
+---@param object any
+---@param field string
+local function getJavaField(object, field)
+    local offset = string.len(field)
+    for i = 0, getNumClassFields(object) - 1 do
+        local m = getClassField(object, i)
+        if string.sub(tostring(m), -offset) == field then
+            return getClassFieldVal(object, m)
+        end
+    end
+    return nil -- no field found
+end
+
+---Function used to patch a recipe by adding new items to one of its inputs. Uses a `testInput` function to identify the correct input to add items to.
+---@param recipeID string
+---@param testInput fun(input: InputScript, loadedItems: ArrayList<string>): boolean
+---@param itemsToAdd string[]
+local function patchRecipe(recipeID, testInput, itemsToAdd)
+    -- retrieve the recipe informations
+    local craftRecipe = getScriptManager():getCraftRecipe(recipeID)
+    local inputs = craftRecipe:getInputs()
+
+    for i = 0, inputs:size() - 1 do
+        -- retrieve the input and its script loaded items
+        local input = inputs:get(i)
+        local loadedItems = getJavaField(input, "loadedItems") --[[@as ArrayList<string>]]
+
+        -- check if the input passes the test function
+        if testInput(input, loadedItems) then
+            -- add the items to the input
+            for j = 1, #itemsToAdd do
+                loadedItems:add(itemsToAdd[j])
+            end
+            return
+        end
+    end
+end
+
+patchRecipe("Base.CutLeatherInHalf", identifyInput, items)
+</syntaxhighlight>
 }}
 
 == Example ==
