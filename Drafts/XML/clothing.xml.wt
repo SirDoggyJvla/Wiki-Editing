@@ -2,13 +2,20 @@
 {{Navbar_modding}}
 {{Title|clothing.xml}}
 {{Page version|42.13.1}}
-The <code>clothing.xml</code> file is used by mods to modify or create outfits. The file is located in the following folder structure within a mod:
+The <code>clothing.xml</code> file is used by mods and the base game to define outfits that will spawn on zombies in the game world. 
+
+The file is located in the following folder structure within a mod:
 {{CodeSnip
 | code =
 media/
 └── clothing/
     └── clothing.xml
 }}
+
+
+The file must have the name <code>clothing.xml</code> in order to work but it does not overwrite the file from the base game or other mods. 
+
+New outfits can be created in this file but you can also use the same outfit name and [[GUID]] to overwrite one from the base game or another mod.
 
 == Format ==
 The <code>clothing.xml</code> file needs to follow the format below:
@@ -25,7 +32,7 @@ Inside the <code>outfitManager</code> block, outfits are defined as male or fema
 * <code>m_MaleOutfits</code>
 * <code>m_FemaleOutfits</code>
 
-An outfit can exist as a male outfit, a female outfit, or both with the male and female having different definitions independently from each others.
+An outfit can exist as a male outfit, a female outfit, or both with the male and female versions having different clothing items from each other.
 
 {{CodeSnip
 | lang = xml
@@ -49,7 +56,7 @@ For each outfit block, male and female, the parameters defined in the next secti
 {{Stub|section=true}}
 Below is a list of parameters that can be used in the <code>clothing.xml</code> file:
 {| class="wikitable theme-blue"
-|+ style="white-space:nowrap" | List of AnimNodes parameters
+|+ style="white-space:nowrap" | List of Outfit parameters
 ! Parameter name !! Description
 |-
 | style="text-align: center;"| [[m_Name]]
@@ -74,8 +81,90 @@ Below is a list of parameters that can be used in the <code>clothing.xml</code> 
 | 
 |-
 | style="text-align: center;"| [[m_items]]
-| Used to define a combination of one or more clothing items that make up the outfit.
+| Defines a single clothing option that will make up the outfit. 
+
+
+Guaranteed to spawn unless a probability block is defined or another clothing item is spawned with a conflicting bodylocation.
+
+Can also contain multiple subItems blocks which act as random clothing items that could be spawned instead of the main item.
+|-
+| style="text-align: center;"| subItems
+|Defines a clothing item inside of an [[m_items]] block which can be chosen randomly.
+Multiple can be defined inside of an [[m_items]] or another subitems block for many random variations of the same outfit.
+|-
+| style="text-align: center;"| [[GUID|itemGUID]]
+| The [[GUID]] of the clothing item. 
+Must be defined inside of an [[m_items]] or subItems block
+|-
+|-
+| style="text-align: center;"| probability
+| The chance that the parent [[m_items]] block will be chosen to spawn.
+|-
 |}
+
+== Examples ==
+This code shows how to add a basic item to an outfit:
+{{CodeSnip
+| lang = xml
+| code =
+<m_items>
+	<itemGUID>ebea15c8-99b3-4e20-905b-d22cf82b8217</itemGUID>
+</m_items>
+}}
+
+
+This code adds an item with a 30% chance of appearing:
+{{CodeSnip
+| lang = xml
+| code =
+<m_items>
+	<probability>0.3</probability>
+	<itemGUID>1be7cae9-82bd-473f-8de9-23a8d9ca3117</itemGUID>
+</m_items>
+}}
+
+
+This code will pick from 3 different items randomly:
+{{CodeSnip
+| lang = xml
+| code =
+<m_items>
+	<itemGUID>6d702d88-4ca0-4bcb-9aee-d88f2be29e69</itemGUID>
+	<subItems>
+		<itemGUID>825f5380-d6ef-4cf8-8d77-d3a115724f4a</itemGUID>
+	</subItems>
+	<subItems>
+		<itemGUID>6b01e5b3-860d-4361-b43f-7b8ea152f1bf</itemGUID>
+	</subItems>
+</m_items>
+}}
+
+
+This item has a 70% chance of appearing and also has branching subItems to control how the random items are picked:
+{{CodeSnip
+| lang = xml
+| code =
+<m_items>
+	<probability>0.7</probability>
+	<itemGUID>52acd769-424a-4cbb-b02a-441cb723b747</itemGUID>
+	
+	<subItems>
+		<itemGUID>dbb37ca8-c745-4457-a50e-1645b0e7942e</itemGUID>
+
+		<subItems>
+			<itemGUID>bc9773d7-e020-4051-848e-aefd88d11d1d</itemGUID>
+		</subItems>
+
+		<subItems>
+			<itemGUID>497a8849-6914-40fb-b3a6-9e01629e3e8b</itemGUID>
+		</subItems>
+	</subItems>
+
+	<subItems>
+		<itemGUID>560a4435-e634-4e40-85e9-6104ece6b056</itemGUID>
+	</subItems>
+</m_items>
+}}
 
 == See also ==
 *[[Outfit XML Converter]]

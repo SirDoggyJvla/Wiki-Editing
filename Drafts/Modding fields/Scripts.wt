@@ -1,10 +1,11 @@
-{{Header|Modding}}
-{{Page version|42.11.0}}
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.1}}
 '''Scripts''', also refered as ''zedscripts'', are a form of modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
 
 {{Note|type=warn|Scripts are not a programming language, but mostly a custom format to define data for game elements which are parsed and cached inside the Java.}}
 
-==Folder structure==
+== Folder structure ==
 {{Main|Mod structure}}
 '''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the [[Lua (API)|Lua]]. The only rule is that the script files must end with the extension <code>.txt</code>. Various script types can be used and spread across multiple script files in different subfolders.
 {{CodeSnip
@@ -17,18 +18,18 @@ media/
     └── ...
 }}
 
-==Typing syntax==
+== Typing syntax ==
 The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script types as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.
 
-Comments follow the Java multiline comment syntax, starting with {{Code|/*}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks.
+Comments follow the Java multiline comment syntax, starting with {{Code|/*}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks. Single line {{Code|//}} comments do not work and should not be used.
 
 Key value pairs are used to define the parameters of the script elements, with the syntax {{Code|1=Key = Value,}}. The comma at the end of each key value pair line is mandatory, even for the last line in a block. Some parameters do not need to be present for a script block to work.
 
 {{Note|type=warn|Scripts can be inconsistent in some cases and some syntax rules which are present in this section may not apply to all script types. Refer to the specific script type documentation for more details.}}
 {{Note|type=error|Make sure to not forget commas at the end of each key value pair lines, as this will cause the script to not be parsed correctly.}}
 
-===Module block===
-A module block needs to be defined at the start of the script files, unless it is a [[sandbox options]] script. The base game module is {{Code|Base}}, which means most entries will have the full ID {{Code|Base.ItemName}}. It can be used for your own scripts: 
+=== Module block ===
+A module block needs to be defined at the start of the script files, unless it is a [[sandbox options]] script. The base game module is {{Code|Base}}, which means most entries will have the full ID {{Code|Base.ItemName}}. It can be used for your own scripts:
 {{CodeSnip
 | lang = Java
 | code =
@@ -40,7 +41,7 @@ module Base {
 | lang = Java
 | code =
 // alternative syntax
-module Base 
+module Base
 {
     ...
 }
@@ -66,7 +67,7 @@ To reference a script object, it is suggested to always use the module prefix, w
 
 {{Note|type=error|This behavior is inconsistent in the various script types and as such it is recommended to always use the module prefix when referencing script objects. If you are having problems, try to put your script in the {{Code|Base}} module instead of a custom one.}}
 
-===Imports block===
+=== Imports block ===
 By importing the Base module or any other module, you give your scripts direct access to the elements from these modules, and you can use item IDs directly without the module prefix (for example, you can use {{Code|Nails}} instead of {{Code|Base.Nails}}).
 {{CodeSnip
 | lang = Java
@@ -81,7 +82,7 @@ module MyModule {
 
 {{Note|type=warn|It is overall suggested to not use the imports blocks, but to directly use the module prefix when referencing script objects.}}
 
-==Script types==
+== Script types ==
 Script types are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters.
 
 {| class="wikitable theme-blue"
@@ -124,11 +125,36 @@ Script types are the different kind of elements that can be defined in scripts. 
 | style="padding: 10px;text-align: center;"| [[Sandbox options]]
 | style="padding: 5px; max-width: 500px;"| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
 |-
-| style="padding: 10px;text-align: center;"| [[Mannequin (scripts)|Mannequin]]
+| style="padding: 10px;text-align: center;"| [[Mannequin (scripts)|mannequin]]
 | style="padding: 5px; max-width: 500px;"| Used to define a mannequin type, notably used in [[Mapping]] to create custom mannequins in the world.
+|-
+| style="padding: 10px;text-align: center;"| [[perk (scripts)|perk]]
+| style="padding: 5px; max-width: 500px;"| Used to implement the basic of a new perk with its name, category and XP values. It needs to be defined inside a specific file in the [[Mod structure#Media folder]] {{Code|media/perks.txt}}.
+|-
+| style="padding: 10px;text-align: center;"| [[character_trait_definition|character_trait_definition]]
+| style="padding: 5px; max-width: 500px;"| Used to define a new character trait using this script type.
+|-
+| style="padding: 10px;text-align: center;"| [[character_profession_definition|character_profession_definition]]
+| style="padding: 5px; max-width: 500px;"| Used to define a new character profession using this script type.
+|-
+| style="padding: 10px;text-align: center;"| [[ragdoll]]
+| style="padding: 5px; max-width: 500px;"| Used to define the ragdoll properties of a bone.
+|-
+| style="padding: 10px;text-align: center;"| [[template]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+|-
+| style="padding: 10px;text-align: center;"| [[physicsHitReaction]]
+| style="padding: 5px; max-width: 500px;"| Used to define the physics reaction a bullet or bomb imposes to objects.
+|-
+| style="padding: 10px;text-align: center;"| [[energy (scripts)|energy]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+|-
+| style="padding: 10px;text-align: center;"| [[animation (scripts)|animation]]
+| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
 |}
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Scripts|&#32;}}
+{{ll|Category:Modding}}

@@ -1,7 +1,11 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.12.3}}
+{{Page version|42.13.1}}
 '''Mod data''' tables are used to persistently store Lua data. Mod data tables are regular Lua tables; they do not have any special semantics or functionality. Only plain old data (strings, booleans, numbers, and tables) can be stored persistently.
+
+In other games, to have persistent data it is often required that you manually save your data when the save gets closed, but in Project Zomboid, you '''should not do that''' because the game handles the saving of the mod data. You should simply use the mod data as a [[Lua (language)#Tables|table]] that will persist between sessions. If data you are using doesn't need to be persistent, you can simply use a [[Lua (language)#Modules|module]].
+
+{{Note|type=error|Accessing mod data during the event [[OnSave]] will not access the save mod data but the next session mod data. This means if you store anything during the [[OnSave]] event, these data will possibly be there in the next session, as long as you don't close the game.}}
 
 == Object Mod Data ==
 Any IsoObject has mod data, typically referred to as ''object mod data'' for disambiguation. Object mod data belongs to an instance of an object, such as a specific player or tile. Object mod data can be retrieved using {{Code|object:getModData()|lang=lua}}.
@@ -45,8 +49,8 @@ Events.OnWeaponHitCharacter.Add(function(attacker, target, weapon, damage)
 end)
 }}
 
-=== Networking ===
-Global mod data is '''not''' automatically synchronized between server and clients in multiplayer games. This is actually a good thing, as it allows for more control over what data is sent over the network by allowing for network optimization, as well as client-side persistent data. This can however be a source of potential cheating if important data is only stored in client-side global mod data, and thus you need [[networking]] solutions.
+== Networking ==
+Global and object mod data is '''not''' automatically synchronized between server and clients in multiplayer games. This is actually a good thing, as it allows for more control over what data is sent over the network by allowing for network optimization, as well as client-side persistent data. This can however be a source of potential cheating if important data is only stored in client-side global mod data, and thus you need [[networking]] solutions.
 
 The [[networking]] page covers part of the solutions available, but there exists an native solution for mod data, which however has some limitations. {{JavaObject|ModData|package=zombie/world/moddata}} has a function {{Code|transmit}}, which can be used to send the entire mod data table for a specific {{Code|"MyModDataID"}} from the client to the server, or vice versa. However, you have to manually intercept the transmited data with the use of [[OnReceiveGlobalModData]]. This networking solution is limited to small amounts of data, as the entire table is serialized and sent over the network at once, which was shown to be problematic and costly. Instead, use other [[networking]] solutions for larger amounts of data.
 
