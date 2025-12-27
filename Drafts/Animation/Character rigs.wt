@@ -1,0 +1,50 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.1}}
+Character rigs are tools used in 3D animation softwares to facilitate the animation process by providing a structured framework for manipulating character models. This usually involves different technics such as Inverse Kinematics (IK) and Forward Kinematics (FK) to control the movement of character limbs and joints, more commonly refered as bones.
+
+== Available rigs ==
+These rigs are rigs which can be used to create animations or directly used in renders, which are provided by the modding community.
+
+{| class="wikitable theme-blue sortable"
+|+ style="white-space:nowrap" | List of available rigs
+! Rig !! Software !! Main purpose !! Description !! Last updated
+|-
+| style="text-align: center;" | [[Paddlefruit rig]]
+| style="text-align: center;" | [[wikipedia:Blender|Blender]]
+| style="text-align: center;" | [[Animation]]
+| A modern rig which is designed to be used in Blender 4.0 and above, with IK and FK controls available.
+| style="text-align: center;" | {{#dateformat:2025-12-24|ymd}}
+|-
+| style="text-align: center;" | [[Expression rig]]
+| style="text-align: center;" | [[wikipedia:Blender|Blender]]
+| style="text-align: center;" | [[Rendering]]
+| A Blender IK and FK rig specialized in rendering with facial expressions, fingers and extra bones for more detailed poses.
+| style="text-align: center;" | {{#dateformat:2025-12-25|ymd}}
+|-
+| style="text-align: center;" | [[Mystery rig]]
+| style="text-align: center;" | [[wikipedia:Blender|Blender]]
+| style="text-align: center;" | [[Animation]]
+| A Blender IK animation rig.
+| style="text-align: center;" | {{#dateformat:2024-02-29|ymd}}
+|-
+| style="text-align: center;" | [[Dislaik rig]]
+| style="text-align: center;" | [[wikipedia:Blender|Blender]]
+| style="text-align: center;" | [[Animation]]
+| Less sophisticated rig. With and without IK available.
+| style="text-align: center;" | {{#dateformat:2023-10-02|ymd}}
+|-
+| style="text-align: center;" | [[Throttlekitty rig]]
+| style="text-align: center;" | [[wikipedia:Autodesk Maya|Maya]]
+| style="text-align: center;" | [[Animation]]
+| A Maya animation rig.
+| style="text-align: center;" | {{#dateformat:2022-02-04|ymd}}
+|}
+
+== See also ==
+*[[Animation]]
+*[[Rendering]]
+
+{{Navbox modding}}
+
+{{ll|Category:Animation}}
