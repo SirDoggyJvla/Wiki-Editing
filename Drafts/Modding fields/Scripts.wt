@@ -82,6 +82,9 @@ module MyModule {
 
 {{Note|type=warn|It is overall suggested to not use the imports blocks, but to directly use the module prefix when referencing script objects.}}
 
+=== VSCode syntax highlighting ===
+To have syntax highlighting for Project Zomboid scripts in [[Visual Studio Code]], which will help in reading script files, you can install the extension [[Project Zomboid Script Support]].
+
 == Script types ==
 Script types are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters.
 

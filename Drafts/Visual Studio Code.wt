@@ -46,9 +46,12 @@ VSCode can have extensions installed to enhance its functionality. These extensi
 *[[Project Zomboid Script Support]] – an extension for Visual Studio Code that provides syntax highlighting for [[scripts]].
 *[[Zed Script]] – an extension for Visual Studio Code that provides syntax highlighting for [[scripts]].
 
-=== LuaLs ===
-{{Main|LuaLs}}
-LuaLs is a language server pack which provides typings via the use of addons. This is greatly used in [[Modding]], and can be used on the wiki too. [[Umbrella (modding)]] notably depends on it.
+=== Lua ===
+Two extensions are available to help with Lua programming for [[modding]]:
+*[[EmmyLua]]
+*[[LuaLs]]
+
+EmmyLua is the suggested extension for creating [[Lua (API)|Lua mods]].
 
 === Wikitext ===
 For editing wikitext files, you can install the [https://marketplace.visualstudio.com/items?itemName=RoweWilsonFrederiskHolme.wikitext Wikitext] extension. This extension provides syntax highlighting and preview of pages directly in VSCode. This will highlight with wikitext files which have the custom extension <code>.wt</code>.
