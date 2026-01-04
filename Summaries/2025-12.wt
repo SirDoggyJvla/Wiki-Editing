@@ -1,0 +1,46 @@
+Hello hello, new modding wiki summary time! Happy new year everyone! Managed to get some time this month to do some community work.
+
+Here is the number of people who joined via the wiki Discord invites:
+
+[[File:Plot modding communities join count.png|600px|class=skin-invert-image]]
+
+This month saw the release of [[multiplayer|unstable multiplayer]] for [[Build 42]] with the version [[Build 42.13.0]]. This update brings major changes in how some aspects are handled of [[scripts]], with the use of [[registries]] for [[ItemTag]]s and other aspects. Some function names related to tile properties were also updated to be more consistent. The Indie Stone released official documentation for ''some'' of the API changes, which can be found on the new [[TIS Modding Guides]] page. This page will list all the official TIS modding guides, including the [[mapping]] official guides.
+
+[[User:Albion|Albion]] created a new page to explain how to add traits in the game, as the method from before no longer works and depends on the new [[registries]] system. The page is called [[Creating a trait mod]] and should help new modders wanting to create traits for their mods or to update their mods.
+
+The big project of the month for me was to update the [[Project Zomboid Script Support]] extension for [[Visual Studio Code]]. Some of you might already use it as it provides some syntax highlighting and diagnostics to script files, however it was very limited and outdated. So I've put myself to work on it and ended up rewriting the majority of it to provide a much better experience. The extension now uses a [[Scripts Data]] repository I created so anyone can contribute to its data and improve the experience for everyone when using the extension. Currently the extension doesn't automatically update its data from the repository, but I plan on adding this in the future so users can always have the latest data without needing to update the entire extension.
+
+I plan on making a video guide on how to use [[EmmyLua]] with [[Umbrella (modding)|Umbrella]] soon, as well as using [[typing]]s. This has proved to be a bit tricky to explain however, mostly for the typing part since it requires some knowledge of how code overall works and what it means to have defined types. I have some idea however on how to approach this.
+
+The [[EmmyLua]] page was created and installation instructions were updated to reflect the change from [[LuaLs]] to [[EmmyLua]] for [[Umbrella (modding)|Umbrella]]. It should improve the [[typing]]s experience.
+
+A new image to showcase the [[Mod structure]] was created:
+
+[[File:Mod structure.png|600px|class=logo-light]]
+
+Some parameters for [[Scripts]] were removed or renamed:
+* Removed [[DisplayName]]
+* Renamed [[Tags]] to [[ItemTag]]
+* Renamed [[Type]] to [[ItemType]]
+
+Some new [[Scripts]] types were also added and listed on this page, however no page documenting those exist yet. [[CraftRecipe]]s currently have a bug where they can't have a [[Scripts#Module block|Module]] with a custom ID, they should be in <code>Base</code> or they won't work in [[multiplayer]]. This is likely to get fixed (please for dear god TIS don't take months to fix this I beg you). I also added some documentation on how to [[CraftRecipe#Adding new inputs|add new inputs]] for recipes.
+
+Regarding [[Java]] modding, the project [[Leaf]] could appreciate some help from the community. It is a potential solution to providing proper Java modding with mods loaded from the [[Steam Workshop]] directly. An installer already is available for the tool for users and example mods are provided. Its page got some updated this month to clean it up and improve the information available.
+
+A new community rig specialized in [[rendering]] is now documented and every rigs previously listed in the [[Animation]] page have been moved to their own page called [[Character rigs]] to list both [[Animation]] and [[Rendering]] rigs. A rig specifically made to create clothing was already made and listed there. Those two new rigs are [[Expression rig]] and [[Nik rig]].
+
+[[User:Lazyspongie]] created a script [[Outfit XML Converter]] to more easily work on outfits by converting their [[clothing.xml]] [[GUID]]s to the human readable names used in [[FileGuidTable.xml]].
+
+The [[Unofficial PZ Mapping Discord]] held up a new [[Community Architect]] edition for 2025, with a few new 800 buildings for this edition. A list of [[Mapping#Tile packs|tile packs]] was added to the main mapping wiki page.
+
+Some smaller works:
+* Update [[Mod data]] to clarify you should not manually save mod data, they are natively saved by the game.
+* [[itemMapper]] can actually have multiple mapped inputs and outputs.
+* Added a [[Scripts#Trivia|trivia]] about the origin of Scripts via a document which was archived about using scripts back in older versions of the game.
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Albion|Albion]] - created the [[Creating a trait mod]] page.
+*[[User:Omar|Omar]] - some fixes here and there. Reported a mistake about the [[Mod structure#Common and versioning folders|versioning folder]] which can't actually have minor versions in it.
+*[[User:Aoqia|Aoqia]] - some clarifications here and there.
+*[[User:Beathoven|Beathoven]] - some fixes here and there.
+*[[User:Snuggles|Snuggles]] - added some missing information to [[Sandbox options]] (a page which needs an update sweep).

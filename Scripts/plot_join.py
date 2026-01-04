@@ -8,8 +8,8 @@ from datetime import datetime
 # Get the directory where this script is located
 csv = os.path.join(os.path.abspath("./Data/member_join.csv"))
 
-# Read the CSV file with proper delimiter (space-separated)
-df = pd.read_csv(csv, sep=r'\s+', engine='python')
+# Read the CSV file with proper delimiter (comma)
+df = pd.read_csv(csv, sep=r',', engine='python')
 
 # Create a proper date column for plotting
 df['date'] = pd.to_datetime(df[['year', 'month']].assign(day=1))

@@ -1,6 +1,7 @@
 {{Title|mod.info}}
-{{Header|Modding}}
-{{Page version|42.5.1}}
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.1}}
 This page explains the <code>mod.info</code> file which is defined by mods to be detected by the game and define other different aspects when loading the mod.
 
 The file needs to be placed in the [[File structure#Mod folder|mod folder]] and is a simple text file with the <code>.info</code> file extension. It is the root of your mod and you can edit it with any text editor.
@@ -9,7 +10,7 @@ This file, while working in both common and versioning folders, should be kept o
 
 {{Note|type=warn|Make sure to name the file in full lowercase for Linux and macOS compatibility.}}
 
-==Parameters==
+== Parameters ==
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of parameters
 ! Parameter name !! Description
@@ -19,6 +20,8 @@ This file, while working in both common and versioning folders, should be kept o
 |-
 | style="padding: 10px;"| <big><code>id</code></big>
 | style="padding: 5px;" | The mod ID is used in a mod list of the user or servers to activate your mod. Make sure to use something unique which isn't shared between mods.
+
+{{Note|type=warn|This is not the same ID as the [[Workshop ID]].}}
 |-
 | style="padding: 10px;"| <big><code>author</code></big>
 | style="padding: 5px;" | Name of the author(s) of the mod, which, if the mod is originally yours, should be your username.
@@ -28,6 +31,8 @@ This file, while working in both common and versioning folders, should be kept o
 |-
 | style="padding: 10px;"| <big><code>url</code></big>
 | style="padding: 5px;" | Show a URL link in the mod manager on the page of your mod for users to click on to open in browser. This can be used for donation links for example.
+
+{{Note|type=warn|This parameter doesn't work currently.}}
 |-
 | style="padding: 10px;"| <big><code>poster</code></big>
 | style="padding: 5px;" | Image which will show up in the mod manager as the mod image. Multiple posters can actually be used to show multiple images, but the first one will be used as the main poster in the mod manager. The rest will be in a list of images of the mod that users can click on to view.
@@ -40,9 +45,20 @@ poster=showcase.png
 poster=flying_chickens.png
 poster=credits.png
 }}
+If you have multiple versions of your mod e.g., 42.12 and 42.13 and don't want to copy your images you can leave them in the common folder and
+use the following,
+'''but''' use '''unique''' names for these images since it will use the pool of all mods and their images in the common folder.
+{{CodeSnip
+| code =
+poster=../common/mymodname_poster.png
+poster=../common/mymodname_showcase.png
+poster=../common/mymodname_flying_chickens.png
+poster=../common/mymodname_credits.png
+}}
 |-
 | style="padding: 10px;"| <big><code>icon</code></big>
 | style="padding: 5px;" | Image which will be used in the mod manager to put next to the name of the mod in the list of available mods. This image will be small and while you can use a full image size, you do not need it. You can set your poster as the icon too to not use two images.
+{{BugBox|Using the exact filename "icon.png" results in an orange placeholder ball being shown while other filenames work. (Tested on Linux).|version=42.12.3|link=87861-42123-rev31595-a-modinfo-icon-file-named-iconpng-doesnt-work}}
 |-
 | style="padding: 10px;"| <big><code>modversion</code></big>
 | style="padding: 5px;" | Version of the mod.
@@ -61,22 +77,22 @@ require=\theNeededMod,\theOtherOne
 incompatible=\theUnwantedMod,\theOtherOne
 }}
 |-
-| style="padding: 10px;"| <big><code>loadModAfter</code></big>{{sup|Unused|orange}}
+| style="padding: 10px;"| <big><code>loadModAfter</code></big>
 | style="padding: 5px;" | Loads the mod only after the set of mods listed. {{Note|type=warn|Needs more information.}}
 {{CodeSnip
 | code =
 loadModAfter=\someMod,\anotherMod
 }}
 |-
-| style="padding: 10px;"| <big><code>loadModBefore</code></big>{{sup|Unused|orange}}
+| style="padding: 10px;"| <big><code>loadModBefore</code></big>
 | style="padding: 5px;" | Loads the mod before the set of mods listed. {{Note|type=warn|Needs more information.}}
 {{CodeSnip
 | code =
 loadModBefore=\someMod,\anotherMod
 }}
 |-
-| style="padding: 10px;"| <big><code>category</code></big>{{sup|Unused|orange}}
-| style="padding: 5px;" | {{Note|type=warn|Needs more information.}}
+| style="padding: 10px;"| <big><code>category</code></big>
+| style="padding: 5px;" | Category is used for filtering mods in the ingame ModManager. Known categories are "map,vehicle,features,modpack". Using other terms will not generate a new filtercategory. It is unknown how to implement new categories for now.
 |-
 | style="padding: 10px;"| <big><code>pack</code></big>
 | style="padding: 5px;" | Name of packs that need to be loaded by the game.
@@ -94,14 +110,36 @@ tiledef=Excavation 2112
 To see which tiledef ID is available to be used for your mod, you can refer to [[Tiledefs used by mods]]. If you upload your mod with a new tiledef ID, you can update this list to reduce the chance of incompatibility with other mods adding tile packs.
 |-
 | style="padding: 10px;"| <big><code>versionMin</code> and <code>versionMax</code></big>
-| style="padding: 5px;" | The minimum and maximum version of the game the mod can be used on.
+| style="padding: 5px;" | The minimum and maximum version of the game the mod can be used on. This number needs to be in the format <code>build.major</code> at the very least, and not <code>build</code> or it won't work.
+
+For example:
+{{CodeSnip
+| code =
+versionMin=42.0
+versionMax=42.12
+}}
 |}
 
 {{Note|The <code>poster</code> and <code>icon</code> can be within a subfolder instead of in the same folder as the <code>mod.info</code> file. For example, it can take in the media folder: <code>media/image.png</code>. This is useful to not have to make copies of assets you want to use directly in your mod assets while still using them in the mod info.}}
 
-==See also==
-*[[Game files]]
-*[[Mod structure]]
-*[[workshop.txt]]
+== Example ==
+{{CodeSnip
+| code =
+name=My amazing mod !
+id=myAmazingModID
+author=an amazing modder!
+description=Hello World !
+poster=preview.png
+icon=icon.png
+require=\otherModID,\anotherModID
+}}
 
+== See also ==
+* [[Game files]]
+* [[Mod structure]]
+* [[workshop.txt]]
+
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding}}

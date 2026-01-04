@@ -1,0 +1,25 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Infobox
+| title = Script Data
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/SirDoggyJvla/pz-scripts-data
+        | Repository
+        }}
+    }}
+}}
+'''Script Data''' aims to provide data related to the various [[Scripts]] blocks, their parameters (required or not), parent blocks, IDs, descriptions etc. It is used by the [[Project Zomboid Script Support]] extension fork for [[Visual Studio Code]] to provide better syntax highlighting and diagnostics for script files.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

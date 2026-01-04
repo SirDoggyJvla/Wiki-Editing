@@ -156,6 +156,9 @@ Script types are the different kind of elements that can be defined in scripts. 
 | style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
 |}
 
+== Trivia ==
+The reason scripts exist in the form they are in and not as json or other data formats is because they were originally created to be a scripting language, allowing modders to create more complex behaviors. It was then replaced by [[Lua (API)|Lua]] but stayed as a data definition format. You can find early references of its scripting capabilities in this archived guide [https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/Scripts/Origins_of_scripts here] (this guide is useless and outdated, do not follow it!).
+
 == Navigation ==
 {{Navbox modding}}
 
