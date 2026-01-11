@@ -1,0 +1,3 @@
+# MutuallyExclusiveTraits (character_trait_definition parameter)
+
+A list of trait IDs that are mutually exclusive with this trait. If one is selected, the others cannot be selected.

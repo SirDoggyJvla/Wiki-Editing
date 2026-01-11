@@ -1,0 +1,3 @@
+# UIName (character_trait_definition parameter)
+
+The translation key for the trait's name. The translation key needs to be in the UI translation file. See the wiki page about [translations](https://pzwiki.net/wiki/Translations) for more information.

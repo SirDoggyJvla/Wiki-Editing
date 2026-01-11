@@ -1,0 +1,3 @@
+# DisplayName (item parameter)
+
+This parameter was removed in Build 42.13, naming an item should be done with a translation entry. See the [wiki](https://pzwiki.net/wiki/DisplayName) page for more information.

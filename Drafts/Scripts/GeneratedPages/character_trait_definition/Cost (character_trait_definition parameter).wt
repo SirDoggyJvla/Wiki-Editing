@@ -1,0 +1,3 @@
+# Cost (character_trait_definition parameter)
+
+The cost of the trait when selecting a character. Negative values give points, positive values take points.

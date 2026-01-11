@@ -1,0 +1,3 @@
+# timedAction (craftRecipe parameter)
+
+The timed action script to trigger during crafting. Used to trigger animations and/or sounds.
