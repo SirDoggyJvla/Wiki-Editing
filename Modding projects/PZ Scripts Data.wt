@@ -1,0 +1,25 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Infobox
+| title = PZ Scripts Data
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | link=https://github.com/SirDoggyJvla/pz-scripts-data
+        | Repository
+        }}
+    }}
+}}
+'''PZ Scripts Data''' is a repository which provides data regarding the [[Scripts]] syntax, script blocks and parameters. It is notably used by the [[ZedScripts]] extension for [[Visual Studio Code]].
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

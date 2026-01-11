@@ -1,13 +1,16 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.3.0}}
-{{About|a [[Visual Studio Code]] extension for Project Zomboid modding|script modding|Scripts}}
+{{Page version|42.13.1}}
+{{About|a [[Visual Studio Code]] extension for Project Zomboid modding|a more up-to-date extension|ZedScripts|script modding|Scripts}}
 {{Infobox
 | title = Zed Script
 | class = theme-blue
 | 
     {{Infobox/image
-    | p1 = [[File:ZedScript - preview.png|link=]]
+    | p1 = [[File:ZedScript - preview.png]]
+    | 1 = [[File:ZedScript - preview.png|link=]]
+    | p2 = [[File:VSCode_exampleZedScript.png]]
+    | 2 = [[File:VSCode_exampleZedScript.png|link=]]
     }}
 
     {{Infobox/section
@@ -25,13 +28,10 @@
         }}
     }}
 }}
+{{Outdated|This project is not fully up-to-date. A more up-to-date extension is available called [[ZedScripts]].}}
 '''Zed Script''' is an extension for [[Visual Studio Code]] that provides syntax highlighting for [[scripts]].
 
 To use Zed Script, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=asledgehammer.zedscript-vscode “ZedScript” by asledgehammer]. After activating it, while in a script file, you can press {{Key|CTRL}}+{{Key|SHIFT}}+{{Key|P}} and choose “Change Language Mode”, then search for “Zed Script (zed)” and activate it.
-
-{{Note|type=warn|Known problem – currently the extension is not perfect and not fully up-to-date. This means that while it will greatly help to develop [[scripts]], it still has flaws and won't always properly detect typing mistakes.}}
-
-[[File:VSCode_exampleZedScript.png|center|800px]]
 
 == Navigation ==
 {{Navbox modding}}

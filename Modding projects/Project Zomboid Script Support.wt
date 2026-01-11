@@ -6,32 +6,17 @@
 | class = theme-blue
 | 
     {{Infobox/image
-    | p1 = [[File:Project Zomboid Scripts - icon.png]]
+    | p1 = [[File:Project Zomboid Script Support - icon.png]]
     | p2 = [[File:VSCode_examplePZScriptSupport.png]]
     | p3 = [[File:VSCode_exampleInspectElements.png]]
-    | 1 = [[File:Project Zomboid Scripts - icon.png|link=]]
+    | 1 = [[File:Project Zomboid Script Support - icon.png|link=]]
     | 2 = [[File:VSCode_examplePZScriptSupport.png|link=]]
     | 3 = [[File:VSCode_exampleInspectElements.png|link=]]
     }}
 
     {{Infobox/section
     | id = 1
-    | 1 = Continued project
-    | 2 = 
-        {{Infobox/socials
-        | link=https://marketplace.visualstudio.com/items?itemName=SimKDT.project-zomboid-scripts
-        | Visual Studio marketplace
-        }}
-        {{Infobox/socials
-        | type = github
-        | link=https://github.com/SirDoggyJvla/pz-syntax-extension
-        | Repository
-        }}
-    }}
-
-    {{Infobox/section
-    | id = 1
-    | 1 = Original project
+    | 1 = Link
     | 2 = 
         {{Infobox/socials
         | link=https://marketplace.visualstudio.com/items?itemName=cyberbobjr.pz-syntax-extension
@@ -44,10 +29,11 @@
         }}
     }}
 }}
-'''Project Zomboid Script Support''' is an extension for [[Visual Studio Code]] that provides syntax highlighting for [[scripts]]. The project was originally made by ''cyberbobjr'' but is now maintained by ''SimKDT''.
+{{Outdated|This project is inactive and now continued with [[ZedScripts]].}}
+'''Project Zomboid Script Support''' is an extension for [[Visual Studio Code]] that provides syntax highlighting for [[scripts]].
 
 == Installation ==
-To use the Project Zomboid Scripts extension, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=SimKDT.project-zomboid-scripts “Project Zomboid Scripts” by SimKDT]. Install it and it should detect automatically the [[Scripts#Module block|module block]] of script files to enable itself. If it does not, you can manually set the language module by clicking on the language mode button in the bottom right corner of Visual Studio Code and selecting ''Project Zomboid Scripts''.
+To use the Project Zomboid Scripts extension, simply search in the Visual Studio Code extension menu for [https://marketplace.visualstudio.com/items?itemName=cyberbobjr.pz-syntax-extension “Project Zomboid Script Support by cyberbobjr]. Install it and it should detect automatically the [[Scripts#Module block|module block]] of script files to enable itself. If it does not, you can manually set the language module by clicking on the language mode button in the bottom right corner of Visual Studio Code and selecting ''Project Zomboid Scripts''.
 
 == Navigation ==
 {{Navbox modding}}

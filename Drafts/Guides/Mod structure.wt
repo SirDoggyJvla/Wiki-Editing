@@ -1,5 +1,5 @@
 {{LangSwitch}}
-{{Navbar_modding}}
+{{Navbar modding}}
 {{Page version|42.13.1}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
 [[File:Mod structure.png|thumb|class=logo-light]]
@@ -159,6 +159,22 @@ Contents/
 }}
 
 {{Note|Multiple mods can be present in a single uploaded mod (inside <code>Contents/mods/</code>). This can be used for optional mods or different versions of the same mod.}}
+
+=== Mixing build 41 and 42 ===
+It is possible to mix both [[Build 41]] and [[Build 42]] modding structures in the same mod folder. Since the Build 42 structure is one folder deeper than the Build 41 one, they won't clash together and both will be properly isolated from each other.
+
+{{CodeSnip
+| code =
+Contents/
+└── mods/
+    └── MyMod1/
+        ├── media/        <--- Build 41 folder
+        │   └── ...
+        ├── common/       <--- Build 42 folder
+        │   └── ...
+        └── 42/           <--- Build 42 folder
+            └── ...
+}}
 
 == Common and versioning folders ==
 Common and versioning folders, introduced in [[Build 42]], help manage different mod versions per game version.
