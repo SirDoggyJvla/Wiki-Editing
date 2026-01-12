@@ -1,8 +1,0 @@
-# XPBoosts (character_trait_definition parameter)
-
-A list of experience boosts granted by this trait. Each entry should contain a skill name and the corresponding boost amount.
-
-For example:
-```cpp
-XPBoosts = Axe=1;Blunt=1,
-```

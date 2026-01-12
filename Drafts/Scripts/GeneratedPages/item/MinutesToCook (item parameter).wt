@@ -1,3 +1,0 @@
-# MinutesToCook (item parameter)
-
-How many in-game minutes it takes to cook the food. This value must be smaller than `MinutesToBurn`.
