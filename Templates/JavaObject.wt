@@ -9,13 +9,14 @@ This template is used to link [[Java object]]s wiki pages if they exist or redir
 
 ===Parameters===
 ;<code>1</code>: The Java object name, as seen in the documentation, which should link to the wiki page of the object if it exists.
-;<code>package</code>: The package of the Java object as seen in the documentation with <code>:</code> sepearators. It is usually what follows <code>https://projectzomboid.com/modding/</code> in the documentation link without the object name in it.
+;<code>package</code>: The package of the Java object as seen in the documentation with <code>/</code> separators. It is usually what follows <code>https://projectzomboid.com/modding/</code> in the documentation link without the object name in it.
 ;<code>customDoc</code>: Link to a different Java documentation than the official one.
 
 ==Examples==
 ===Linking to official documentation or wiki page if exists===
-{{JavaObject|BaseSoundBank|package=zombie/audio}}<BR>
-{{JavaObject|IsoZombie|package=zombie/character}}
+{{JavaObject|BaseSoundBank|package=zombie/audio}}<br>
+{{JavaObject|IsoZombie|package=zombie/character}}<br>
+{{JavaObject|ModData|package=zombie/world/moddata}}
 
 ===Linking to an unofficial documentation===
 {{JavaObject|BaseSoundBank|package=zombie/audio|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}

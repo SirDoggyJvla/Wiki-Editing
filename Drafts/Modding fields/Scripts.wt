@@ -1,5 +1,5 @@
 {{LangSwitch}}
-{{Navbar_modding}}
+{{Navbar modding}}
 {{Page version|42.13.1}}
 '''Scripts''', also refered as ''zedscripts'', are a form of modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
 
@@ -29,6 +29,7 @@ Key value pairs are used to define the parameters of the script elements, with t
 {{Note|type=error|Make sure to not forget commas at the end of each key value pair lines, as this will cause the script to not be parsed correctly.}}
 
 === Module block ===
+{{Main|module (scripts)}}
 A module block needs to be defined at the start of the script files, unless it is a [[sandbox options]] script. The base game module is {{Code|Base}}, which means most entries will have the full ID {{Code|Base.ItemName}}. It can be used for your own scripts:
 {{CodeSnip
 | lang = Java
@@ -68,6 +69,7 @@ To reference a script object, it is suggested to always use the module prefix, w
 {{Note|type=error|This behavior is inconsistent in the various script types and as such it is recommended to always use the module prefix when referencing script objects. If you are having problems, try to put your script in the {{Code|Base}} module instead of a custom one.}}
 
 === Imports block ===
+{{Main|imports (scripts)}}
 By importing the Base module or any other module, you give your scripts direct access to the elements from these modules, and you can use item IDs directly without the module prefix (for example, you can use {{Code|Nails}} instead of {{Code|Base.Nails}}).
 {{CodeSnip
 | lang = Java
@@ -80,80 +82,144 @@ module MyModule {
 }
 }}
 
-{{Note|type=warn|It is overall suggested to not use the imports blocks, but to directly use the module prefix when referencing script objects.}}
+{{Note|type=warn|It is suggested to not use the imports blocks, but to directly use the module prefix when referencing script objects.}}
 
 === VSCode syntax highlighting ===
-To have syntax highlighting for Project Zomboid scripts in [[Visual Studio Code]], which will help in reading script files, you can install the extension [[Project Zomboid Script Support]].
+To have syntax highlighting and diagnostics for Project Zomboid scripts in [[Visual Studio Code]], which will help in reading and writing script files, you can install the extension [[ZedScripts]].
+
+== Properties ==
+{{Note|type=warn|This is new and not every script blocks are fully documented yet both in the [[Scripts Data]] and on the Wiki.}}
+Script blocks can have specific sets of properties depending on their type. A property defines syntax rules and conditions for the script block as well as how the game should handle it.
+
+=== Parent blocks ===
+Some script blocks need to be defined inside specific parent blocks, most commonly the {{Code|module}} block.
+
+==== Example ====
+A [[craftRecipe|craftRecipe]] block must be defined inside a {{Code|module}} block and and [[inputs (scripts)|inputs]] block must have a craftRecipe block as parent:
+{{CodeSnip
+| lang = Java
+| code =
+module MyModule { // parent of craftRecipe block
+    craftRecipe MyRecipe { // parent of inputs block
+        inputs {
+            ...
+        }
+    }
+}
+}}
+
+=== Children blocks ===
+Some script blocks can contain other script blocks inside them, called children blocks. These children blocks can be mandatory or optional depending on the script type.
+
+=== ID ===
+Some script blocks require an ID to be defined, usually mandatory, but sometimes optional based on the parent block. The ID is used to reference the script block in other scripts or in the [[Lua (API)|Lua]]. For example, [[item (scripts)|items]] use what is called a ''full type'' or full ID, which is composed of the module name and the item ID separated by a dot ({{Code|MyModule.MyItem}}).
+{{CodeSnip
+| lang = Java
+| code =
+module MyModule {
+    item MyItem {
+        ...
+    }
+}
+}}
+
+=== Soft overrides ===
+When defining a script block which already exists, such as an [[item (scripts)|item]] or a [[craftRecipe]], based on the type of script, the game will either override the whole block, or merge the new definition with the existing one. This process is called a ''soft override''. Script blocks which support soft overrides will be marked as such on their specific documentation page.
+
+==== Example ====
+Take an item definition with fake parameters as an example <code>Parameter1</code>, <code>Parameter2</code> and <code>Parameter3</code>:
+{{CodeSnip
+| lang = Java
+| code =
+module Base {
+    item MyItem {
+        Parameter1 = Value1,
+        Parameter2 = Value2,
+        Parameter3 = Value3,
+    }
+}
+}}
+
+[[item (scripts)|Item]] scripts will support soft overrides, so if you define the same item again with only <code>Parameter2</code> changed, the other parameters will be kept and that specific parameter will be updated:
+{{CodeSnip
+| lang = Java
+| code =
+module MyMod {
+    item MyItem {
+        Parameter2 = NewValue2,
+    }
+}
+}}
 
 == Script types ==
 Script types are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters.
 
-{| class="wikitable theme-blue"
+{| class="wikitable sortable theme-blue"
 |+ style="white-space:nowrap" | List of Script types
 ! Parameter name !! Description
 |-
-| style="padding: 10px;text-align: center;"| [[Item (scripts)|Item]]
-| style="padding: 5px; max-width: 500px;"| Used to define items, such as [[weapon]]s, [[clothing]], [[food]] and more.
+| [[animation (scripts)|animation]]
+| {{Stub|section=true}}
 |-
-| style="padding: 10px;text-align: center;"| [[Fixing (scripts)|Fixing]]
-| style="padding: 5px; max-width: 500px;"| Used to define how items can be repaired or fixed.
+| [[character_profession_definition|character_profession_definition]]
+| Used to define a new character profession.
 |-
-| style="padding: 10px;text-align: center;"| [[Recipe (scripts)|Recipe]]
-| style="padding: 5px; max-width: 500px;"| Used to define recipes in [[Build 41]].
+| [[character_trait_definition|character_trait_definition]]
+| Used to define a new character trait.
 |-
-| style="padding: 10px;text-align: center;"| [[craftRecipe]]
-| style="padding: 5px; max-width: 500px;"| Used to define how items can be crafted in [[Build 42]].
+| [[craftRecipe]]
+| Used to define a [[Crafting|recipe]] in [[Build 42]].
 |-
-| style="padding: 10px;text-align: center;"| [[Evolvedrecipe (scripts)|Evolved Recipe]]
-| style="padding: 5px; max-width: 500px;"| Used to define recipes which can have a different set of ingredients and adapt the resulting item based on the ingredients used. Usually used for food recipes.
+| [[energy (scripts)|energy]]
+| {{Stub|section=true}}
 |-
-| style="padding: 10px;text-align: center;"| [[Sound (scripts)|Sound]]
-| style="padding: 5px; max-width: 500px;"| Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the [[Lua (API)|Lua API]].
+| [[entity]]
+| Used to define a buildable in [[Build 42]], like walls, fences, furnitures and more. It is composed of different sub-blocks.
 |-
-| style="padding: 10px;text-align: center;"| [[Model (scripts)|Model]]
-| style="padding: 5px; max-width: 500px;"| Used to define a model, such as its 3D model, texture, animations and more. These models can then be used in other scripts.
+| [[Evolvedrecipe (scripts)|Evolved Recipe]]
+| Used to define recipes which can have a different set of ingredients and adapt the resulting item based on the ingredients used. Usually used for food recipes.
 |-
-| style="padding: 10px;text-align: center;"| [[Vehicle (scripts)|Vehicle]]
-| style="padding: 5px; max-width: 500px;"| Used to define a vehicle, which consists of a complex set of different scripts.
+| [[Fixing (scripts)|Fixing]]
+| Used to define how items can be repaired or fixed.
 |-
-| style="padding: 10px;text-align: center;"| [[Multistagebuild (scripts)|Multistage build]]
-| style="padding: 5px; max-width: 500px;"| Used to define a multistage building in [[Build 41]], which is a building that can be built in multiple stages, such as a wall or a fence.
+| [[Fluid (scripts)|Fluid]]
+| Used to define a fluid in [[Build 42]].
 |-
-| style="padding: 10px;text-align: center;"| [[Fluid (scripts)|Fluid]]
-| style="padding: 5px; max-width: 500px;"| Used to define a fluid in [[Build 42]].
+| [[Item (scripts)|item]]
+| Used to define items, such as [[weapon]]s, [[clothing]], [[food]] and more.
 |-
-| style="padding: 10px;text-align: center;"| [[entity]]
-| style="padding: 5px; max-width: 500px;"| Used to define a buildable in [[Build 42]], like walls, fences, furnitures and more. It is composed of different sub-blocks.
+| [[Mannequin (scripts)|mannequin]]
+| Used to define a mannequin type, notably used in [[Mapping]] to create custom mannequins in the world.
 |-
-| style="padding: 10px;text-align: center;"| [[Sandbox options]]
-| style="padding: 5px; max-width: 500px;"| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
+| [[Model (scripts)|model]]
+| Used to define a model, such as its 3D model, texture, animations and more. These models can then be used in other scripts.
 |-
-| style="padding: 10px;text-align: center;"| [[Mannequin (scripts)|mannequin]]
-| style="padding: 5px; max-width: 500px;"| Used to define a mannequin type, notably used in [[Mapping]] to create custom mannequins in the world.
+| [[Multistagebuild (scripts)|Multistage build]]
+| Used to define a multistage building in [[Build 41]], which is a building that can be built in multiple stages, such as a wall or a fence.
 |-
-| style="padding: 10px;text-align: center;"| [[perk (scripts)|perk]]
-| style="padding: 5px; max-width: 500px;"| Used to implement the basic of a new perk with its name, category and XP values. It needs to be defined inside a specific file in the [[Mod structure#Media folder]] {{Code|media/perks.txt}}.
+| [[perk (scripts)|perk]]
+| Used to implement the basic of a new perk with its name, category and XP values. It needs to be defined inside a specific file in the [[Mod structure#Media folder]] {{Code|media/perks.txt}}.
 |-
-| style="padding: 10px;text-align: center;"| [[character_trait_definition|character_trait_definition]]
-| style="padding: 5px; max-width: 500px;"| Used to define a new character trait using this script type.
+| [[physicsHitReaction]]
+| Used to define the physics reaction a bullet or bomb imposes to objects.
 |-
-| style="padding: 10px;text-align: center;"| [[character_profession_definition|character_profession_definition]]
-| style="padding: 5px; max-width: 500px;"| Used to define a new character profession using this script type.
+| [[ragdoll]]
+| Used to define the ragdoll properties of a bone.
 |-
-| style="padding: 10px;text-align: center;"| [[ragdoll]]
-| style="padding: 5px; max-width: 500px;"| Used to define the ragdoll properties of a bone.
+| [[Recipe (scripts)|Recipe]]
+| Used to define recipes in [[Build 41]].
 |-
-| style="padding: 10px;text-align: center;"| [[template]]
-| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+| [[Sandbox options]]
+| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
 |-
-| style="padding: 10px;text-align: center;"| [[physicsHitReaction]]
-| style="padding: 5px; max-width: 500px;"| Used to define the physics reaction a bullet or bomb imposes to objects.
+| [[Sound (scripts)|Sound]]
+| Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the [[Lua (API)|Lua API]].
 |-
-| style="padding: 10px;text-align: center;"| [[energy (scripts)|energy]]
-| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+| [[template]]
+| {{Stub|section=true}}
 |-
-| style="padding: 10px;text-align: center;"| [[animation (scripts)|animation]]
-| style="padding: 5px; max-width: 500px;"| {{Stub|section=true}}
+| [[Vehicle (scripts)|Vehicle]]
+| Used to define a vehicle, which consists of a complex set of different scripts.
 |}
 
 == Trivia ==

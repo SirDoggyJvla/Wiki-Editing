@@ -1,0 +1,36 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
+{{Infobox
+| title = Project Zomboid Studio
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/escapepz/project-zomboid-studio
+        | Continued project repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Konijima/project-zomboid-studio
+        | Original project repository
+        }}
+    }}
+}}
+'''Project Zomboid Studio''' is a tool to easily create, delete, build and manage your mods. Below is a list of its main features:
+* Create a new project
+* Add, rename or delete mods
+* Add a new [[Translations|translation]] or copy an existing one
+* Build your mods
+
+The project was originally created by ''Konijima'' and is now continued by ''eScape''.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}

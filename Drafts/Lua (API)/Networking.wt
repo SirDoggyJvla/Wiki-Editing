@@ -1,8 +1,11 @@
-{{Header|Modding|Lua (API)}}
-{{Page version|41.78.16}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.1}}
 '''Networking''' is a process needed to handle client/server interactions, allowing for the exchange of data and commands between the two to properly sync. This guide will not explain when networking should be used, but rather how to implement it.
 
-==Client/Server only code==
+Since [[Build 42.13.1]] release, server side handles most of the logic for player damage, item stats etc. This means you need to set any of these from the server side instead of the client side and then use sync functions to sync specifically what you changed.
+
+== Client/Server only code ==
 When writing code that should only run on the client or server, you can use the following checks:
 {{CodeSnip
 | lang = lua
@@ -29,6 +32,19 @@ These methods can be used to have client/server or singleplayer only specific Lu
 {{CodeSnip
 | lang = lua
 | code =
+-- most commonly used: file should load only on the server side or in singleplayer
+if isClient() then return end
+}}
+{{CodeSnip
+| lang = lua
+| code =
+-- file should load only on the client side or in singleplayer
+-- you can also accomplish this by placing your file in the lua/client/ directory
+if isServer() then return end
+}}
+{{CodeSnip
+| lang = lua
+| code =
 -- file should load only on the client side and not in singleplayer
 if not isClient() then return end
 }}
@@ -47,7 +63,7 @@ if isClient() or isServer() then return end
 
 Use these to skip loading functions or variables in an environment that does not need them.
 
-===Client status===
+=== Client status ===
 To check if the client is an admin, you can use {{Code|lang=lua|isAdmin()}} from client side, and from server side you can use {{Code|lang=Java|IsoPlayer.getAccessLevel()}}:
 {{CodeSnip
 | lang = lua
@@ -60,12 +76,14 @@ local function checkClientIsAdmin()
 end
 }}
 
-==Commands==
+== Commands ==
 The main method used for networking is the ''command'' system. Commands are sent from one side (client or server) to the other, and are handled by a function on the receiving side. Commands can be sent with or without parameters, and can be sent to all clients, a specific client, or the server and intercepted by the use of specific [[Lua event]]s.
 
 Commands can be identified with the use a {{Code|lang=lua|module}}, which is suggested to be your mod name, and {{Code|lang=lua|command}} name. The transmitted data can only hold plain old data (strings, booleans, numbers, and tables), so no [[Java object]] instances such as the player ({{JavaObject|IsoPlayer|package=zombie/characters}}) or an inventory ({{JavaObject|InventoryContainer|package=zombie/inventory/types}}).
 
-===Client to server===
+[[File:Networking.png|center|800px|class=logo-light]]
+
+=== Client to server ===
 The client sends commands to the server with the use of the following:
 {{CodeSnip
 | lang = lua
@@ -90,7 +108,7 @@ end
 Events.OnClientCommand.Add(onClientCommand)
 }}
 
-===Server to client===
+=== Server to client ===
 The server sends commands to every clients with the use of the following:
 {{CodeSnip
 | lang = lua
@@ -123,7 +141,7 @@ end
 Events.OnServerCommand.Add(onServerCommand)
 }}
 
-===Passing a player object===
+=== Passing a player object ===
 Since you can't send an {{JavaObject|IsoPlayer|package=zombie/characters}} instance directly, you need to utilize what is called the ''onlineID'' which is a simple unique identifier associated to the player. This ID also exists for zombies but doesn't have a dedicated function to retrieve the zombie object from the server side compared to IsoPlayer.
 
 When sending a command from the client to the server, the command caller IsoPlayer instance is passed to the [[OnClientCommand]] event, thus it is usually not needed to pass the onlineID of the player client from client to server.
@@ -173,12 +191,26 @@ Events.OnServerCommand.Add(onServerCommand)
 
 {{Note|type=warn|The onlineID is '''not persistent''' so it cannot be used for identification of players or zombies after loading or unloading them. For zombies, see [[PersistentOutfitID]].}}
 
-==See also==
-*[[Mod data]] - methods for storing data.
-*[[Lua (API)#Folder structure]] - details which files are loaded on client/server/singleplayer.
-*[[https://discord.com/channels/908422782554107904/908459714248048730/927057055246868490|Konijima command guide]] - a guide on Discord on commands by Konijima.
+== Syncing functions ==
+{{Undercounstruction|}}
+Syncing functions are defined as global methods for the [[Lua (API)|Lua API]] to call to update stats, items etc. Below is a list of them:
+{| class="wikitable sortable theme-blue"
+|+ style="white-space:nowrap" | List of Script types
+! function !! Description
+|-
+| {{Code|lang=java|syncPlayerStats(IsoPlayer player, int syncParams}}
+| Syncs various player stats, need to pass an integer in {{Code|syncParams}} which can be easily found using {{JavaObject|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+|}
 
-==Navigation==
+== See also ==
+*[[Mod data]] – methods for storing data.
+*[[Lua (API)#Folder structure]] – details which files are loaded on client/server/singleplayer.
+
+== External links ==
+*[https://discord.com/channels/908422782554107904/908459714248048730/927057055246868490|Konijima command guide] – a guide on Discord on commands by Konijima.
+
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Modding guides}}
+{{ll|Category:Lua (API)}}
