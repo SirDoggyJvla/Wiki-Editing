@@ -1,7 +1,7 @@
 {{LangSwitch}}
-{{Navbar_modding}}
+{{Navbar modding}}
 {{Page version|42.13.1}}
-'''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]]. Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
+'''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]] but it's very inconsistent on which one the game uses, as it tends to mix both. Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
 
 You can access a full view render of the [[Knox Country]] map via the [[Project Zomboid Map Project]].
 
@@ -48,32 +48,32 @@ media/
 |-
 ! File !! Description
 |-
-| style="padding: 10px;text-align: center;"| <code>.lotheader</code> files
-| style="padding: 5px;"| Defines the location/cell of your map.
+| <code>.lotheader</code> files
+| Defines the location/cell of your map.
 |-
-| style="padding: 10px;text-align: center;"| <code>chunkdata.bin</code>
-| style="padding: 5px;"| {{Stub|section=true}}
+| <code>chunkdata.bin</code>
+| {{Stub|section=true}}
 |-
-| style="padding: 10px;text-align: center;"| [[map.info]]
-| style="padding: 5px;"| Contains the informations about your map, such as its name, description, location...
+| [[map.info]]
+| Contains the informations about your map, such as its name, description, location...
 |-
-| style="padding: 10px;text-align: center;"| <code>objects.lua</code>
-| style="padding: 5px;"| Defines car spawns and navigation meshes.
+| <code>objects.lua</code>
+| Defines car spawns and navigation meshes.
 |-
-| style="padding: 10px;text-align: center;"| <code>spawnpoints.lua</code>
-| style="padding: 5px;"| Defines the spawnpoints XYZ coordinates for specific occupations for your map.
+| [[spawnpoints.lua]]
+| Defines the spawnpoints XYZ coordinates for specific occupations for your map.
 |-
-| style="padding: 10px;text-align: center;"| <code>thumb.png</code>
-| style="padding: 5px;"| Image used as a thumbnail for the spawnpoints of your map.
+| <code>thumb.png</code>
+| Image used as a thumbnail for the spawnpoints of your map.
 |-
-| style="padding: 10px;text-align: center;"| <code>worldmap-forest.xml</code>
-| style="padding: 5px;"| {{Stub|section=true}}
+| <code>worldmap-forest.xml</code>
+| {{Stub|section=true}}
 |-
-| style="padding: 10px;text-align: center;"| <code>worldmap.xml</code>
-| style="padding: 5px;"| {{Stub|section=true}}
+| <code>worldmap.xml</code>
+| {{Stub|section=true}}
 |-
-| style="padding: 10px;text-align: center;"| <code>world.lotpack</code>
-| style="padding: 5px;"| {{Stub|section=true}}
+| <code>world.lotpack</code>
+| {{Stub|section=true}}
 |}
 
 == Building pools ==
@@ -152,8 +152,8 @@ Some maps created by the community had their files made public for other mappers
 | PentyT
 | {{#dateformat:2025-01-05|ymd}}
 |-
-| [https://www.youtube.com/playlist?list=PL9c7w_YTJlV_R0mgP-Rwb1i56SudS30XV Zomboid Map Making Quick Guide]
-| A playlist of video tutorials regarding mapping.
+| [https://www.youtube.com/playlist?list=PL9c7w_YTJlV_R0mgP-Rwb1i56SudS30XV Zomboid Map Making Quick Guide] <span style="color: orange;">(recommended)</span>
+| A playlist of video tutorials regarding mapping like Daddy Dirkie Dirk's tutorials which goes in detail.
 | DystopianOutcasts_Rax
 | {{#dateformat:2024-12-17|ymd}}
 |-
@@ -211,7 +211,7 @@ It was made for [[Build 41]] mapping, but is still very relevant to [[Build 42]]
 | {{#dateformat:2019-08-24|ymd}}
 |}
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Modding}}

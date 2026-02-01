@@ -1,0 +1,27 @@
+Hello hello, new modding wiki summary time! I have been very busy on the horse mod this month, so not much happened from my end, but I did notice some activity from other users, notably new ones!
+
+Here is the number of people who joined via the wiki Discord invites:
+
+[[File:Plot modding communities join count.png|600px|class=skin-invert-image]]
+
+Like I highlighted in the introduction, I have been very occupied with our upcoming Horse Mod, which is the conclusion (or the start) of 9 months of work from 7 different people. We're introducing important systems for animals in the game, and plan on releasing a standalone library for a big chunk of these features. We also plan on releasing documentation and full access to the source code of the mod for anyone interested in learning how to do similar things.
+
+I continued work on the [[Project Zomboid Script Support]] extension fork for [[Scripts]] syntax highlight and diagnostics, but it became so much it's own thing that I dissociated it from the original extension and renamed it to [[ZedScripts]], I also pushed an important update which will allow the extension to automatically update its database about scripts from [[PZ Scripts Data]], caching the information for a day, or allowing users to manually update it. This is one step to improve support for updates to not be required anytime new scripts information are documented. As such, anyone can help document scripts in [[PZ Scripts Data]] repository to improve the experience for everyone using the extension.
+
+Some clarifications were made on the mix of [[Build 41]] and [[Build 42]] [[mod structure]] which was a bit unclear for new modders. I still want to play with JavaScript to improve how paths are displayed, to remove visual clutter on pages that shows paths.
+
+A small note on [[craftRecipe#Modifying existing recipes]] was created to maybe get some extra attention of modders and eventually TIS on the limitations of modifying existing recipes which TIS needs to fix. Currently modifying recipes require weird workarounds for a majority of the stuff, and there's a bunch of awkward limitations.
+
+Some bugs were reported and were linked on relevant pages, one related with [[OnZombieDead]] where holding then dropping a corpse would trigger the event once more and one about [[ModOptions]] where you need to feed already translated names for options, instead of just the translation key, or keybind changing won't work.
+
+Some smaller works:
+*A method was found to [[Creating a trait mod|create a trait]] direcly from Lua, if that's something needed. [[User:Integer404|Integer404]] also added some information on how to add a trait icon.
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Ahatius|Ahatius]] - updated the [[ISBaseTimedAction]] page with the new [[Build 42.13.0]] changes or [[multiplayer]]
+*[[User:ChuckleberryFinn|Chuck]] - updated [[PZ Modding Community]] page of missing or outdated information.
+*[[User:Lazyspongie|Spongie]] - continued some work on the [[clothing.xml]] page.
+*[[User:BaQstein|BaQstein]] - fixed a mistake on paths for [[Umbrella (modding)|Umbrella]]'s EmmyLua configuration.
+*[[User:Omar|Omar]] - updated outdated information and added some new ones to [[Translations]], as well as some tweaks to [[Scripts]].
+*[[User:AlexeyMin|AlexeyMin]] - added a note regarding Global [[Mod data]] not being saved client-side in [[multiplayer]]. Also expanded on the example to downloading mods in [[SteamCMD]].
+*[[User:Sativ|Sativ]] - fixed some mistakes in the guide of [[Lua (language)]].

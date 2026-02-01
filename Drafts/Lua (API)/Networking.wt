@@ -192,14 +192,14 @@ Events.OnServerCommand.Add(onServerCommand)
 {{Note|type=warn|The onlineID is '''not persistent''' so it cannot be used for identification of players or zombies after loading or unloading them. For zombies, see [[PersistentOutfitID]].}}
 
 == Syncing functions ==
-{{Undercounstruction|}}
+{{Stub}}
 Syncing functions are defined as global methods for the [[Lua (API)|Lua API]] to call to update stats, items etc. Below is a list of them:
 {| class="wikitable sortable theme-blue"
 |+ style="white-space:nowrap" | List of Script types
 ! function !! Description
 |-
 | {{Code|lang=java|syncPlayerStats(IsoPlayer player, int syncParams}}
-| Syncs various player stats, need to pass an integer in {{Code|syncParams}} which can be easily found using {{JavaObject|customDoc=https://demiurgequantified.github.io/ProjectZomboidJavaDocs/}}
+| Syncs various player stats, need to pass an integer in {{Code|syncParams}} which can be easily found using {{JavaObject|CharacterStat|package=zombie/characters}}.
 |}
 
 == See also ==

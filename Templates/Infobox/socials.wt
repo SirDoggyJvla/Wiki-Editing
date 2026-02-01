@@ -1,6 +1,5 @@
 <noinclude>
 {{Documentation|doc = 
-{{Note|type=warn|This template received a major rework which completely changes its usage, however for compatibility reasons, the previous usage ([[Special:PermanentLink/1222485|old version]]) is still supported but should not be used for new content.}}
 This template is used to create a row in the infobox with social media links. It is used in the {{tll|Infobox}} template.
 
 This template relies on the Lua module: {{ll|Module:Socials}}. You can add new socials associated to their icon in {{ll|Module:Socials/data}}.
