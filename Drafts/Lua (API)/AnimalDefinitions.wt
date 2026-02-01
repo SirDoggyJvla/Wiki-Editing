@@ -1,0 +1,412 @@
+{{Header|Modding|Lua (API)}}
+{{Page version|42.13.2}}
+{{Code|AnimalDefinitions}} is a global Lua table that contains definitions and properties for various animals in Project Zomboid. This table is used to manage animal behavior, characteristics, and interactions within the game world.
+
+To define a new animal, first chose a unique animal ID, in this page it will be {{Code|yourAnimalID}}. This ID is used in the various animal definitions to easily associate data to your animal.
+
+== Animal definition ==
+
+
+== Stages ==
+When creating a new animal, you need to define its stages which are usually simply equivalents to "baby", "adult male" and "adult female". While not confirmed, it is likely that you can make as many stages as you want for an animal, and have them evolve to many different stages.
+
+The syntax of stages needs to be as follows:
+{{CodeSnip
+| lang = Lua
+| code =
+AnimalDefinitions.stages['yourAnimalID'] = {
+    stages = {
+        ["stage1"] = {
+            parameter1 = value1,
+            parameter2 = value2,
+            parameter3 = value3,
+            ...
+        },
+
+        -- not every parameters have to be used
+        ["stage2"] = {
+            parameter2 = value2,
+            ...
+        },
+        ["stage3"] = {
+            parameter1 = value1,
+            parameter3 = value3,
+            ...
+        },
+        ...
+    }
+}
+}}
+
+The following parameters can be used to define a stage:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for <code>stages</code> entries
+! Parameter name !! Description
+|- id="stage_ageToGrow"
+| <code>ageToGrow</code> {{sup|mandatory|red}} || 
+The time for this stage to grow up fully. 
+
+If it has a [[#gene_nextStage]], it will grow up to it. Unit is unknown. it is impacted by the [[#gene_ageToGrow|ageToGrow]] gene.
+|- id="stage_nextStage"
+| <code>nextStage</code> || 
+The next stage the female animal will grow into when it reaches the age defined in [[#stage_ageToGrow|ageToGrow]].
+|- id="stage_nextStageMale"
+| <code>nextStageMale</code> || 
+The next stage the male animal will grow into when it reaches the age defined in [[#stage_ageToGrow|ageToGrow]].
+|- id="stage_minWeight"
+| <code>minWeight</code> || 
+Looks unused since it is never parsed, the game seems to use the [[#def_minWeight|minWeight]] from the animal definition instead.
+|- id="stage_maxWeight"
+| <code>maxWeight</code> || 
+Looks unused since it is never parsed, the game seems to use the [[#def_maxWeight|maxWeight]] from the animal definition instead.
+|}
+
+=== Example ===
+{{CodeBox|title=Example|class=blue|id=stages|
+{{CodeSnip
+| lang = lua
+| code =
+AnimalDefinitions.stages["horse"] = {
+    stages = {
+        ["filly"] = {
+            ageToGrow = 2 * 30,
+            nextStage = "mare",
+            nextStageMale = "stallion",
+            minWeight = 0.1,
+            maxWeight = 0.25
+        },
+        ["mare"] = {
+            ageToGrow = 2 * 30,
+            minWeight = 0.25,
+            maxWeight = 0.5
+        },
+        ["stallion"] = {
+            ageToGrow = 2 * 30,
+            minWeight = 0.25,
+            maxWeight = 0.5
+        }
+    }
+}
+}}
+}}
+
+== Breeds ==
+Breeds can be defined for a specific animal and are stored in <code>AnimalDefinitions.breeds</code>. The breed can be made to impact the appearance of animals and its genes.
+
+The syntax of breeds needs to be as follows:
+{{CodeSnip
+| lang = Lua
+| code =
+AnimalDefinitions.breeds['yourAnimalID'] = {
+    breeds = {
+        ["breed1"] = {
+            parameter1 = value1,
+            parameter2 = value2,
+            parameter3 = value3,
+            ...
+        },
+        ["breed2"] = {
+            parameter1 = value1,
+            parameter2 = value2,
+            parameter3 = value3,
+            ...
+        },
+        ...
+    }
+}}
+
+The breed ID (<code>breed1</code>, <code>breed2</code>...) is used to identify the breed and needs to be unique. 
+
+The following parameters can be used to define a breed:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for <code>breeds</code> entries
+! Parameter name !! Description
+|- id="breed_name"
+| <code>name</code> || 
+The name of the breed, or more specifically its ID.
+|- id="breed_textureBaby"
+| <code>textureBaby</code> || 
+The texture used for baby animals of this breed.
+|- id="breed_texture"
+| <code>texture</code> || 
+The texture used for adult animals of this breed.
+|- id="breed_textureMale"
+| <code>textureMale</code> || 
+The texture used for adult male animals of this breed.
+|- id="breed_rottenTexture"
+| <code>rottenTexture</code> || 
+The texture used for rotten animals of this breed.
+|- id="breed_invIconMale"
+| <code>invIconMale</code> || 
+The inventory icon for male animals of this breed.
+|- id="breed_invIconFemale"
+| <code>invIconFemale</code> || 
+The inventory icon for female animals of this breed.
+|- id="breed_invIconBaby"
+| <code>invIconBaby</code> || 
+The inventory icon for baby animals of this breed.
+|- id="breed_invIconMaleDead"
+| <code>invIconMaleDead</code> || 
+The inventory icon for dead male animals of this breed.
+|- id="breed_invIconFemaleDead"
+| <code>invIconFemaleDead</code> || 
+The inventory icon for dead female animals of this breed.
+|- id="breed_invIconBabyDead"
+| <code>invIconBabyDead</code> || 
+The inventory icon for dead baby animals of this breed.
+|- id="breed_invIconMaleSkel"
+| <code>invIconMaleSkel</code> || 
+The inventory icon for male animal skeletons of this breed.
+|- id="breed_invIconFemaleSkel"
+| <code>invIconFemaleSkel</code> || 
+The inventory icon for female animal skeletons of this breed.
+|- id="breed_invIconBabySkel"
+| <code>invIconBabySkel</code> || 
+The inventory icon for baby animal skeletons of this breed.
+|- id="breed_featherItem"
+| <code>featherItem</code> || 
+The item given when plucking feathers from this breed, needs to be the full type.
+|- id="breed_maxFeather"
+| <code>maxFeather</code> || 
+The maximum number of feathers this breed can provide.
+|- id="breed_milkType"
+| <code>milkType</code> || 
+The [[fluid (scripts)|fluid script]] used as milk for this breed. The milk quantity is impacted by the genes [[#gene_maxMilk|maxMilk]] and [[#gene_milkInc|milkInc]].
+|- id="breed_woolType"
+| <code>woolType</code> || 
+The item given when shearing wool from this breed, needs to be the [[item (scripts)|full type]]. The wool quantity is impacted by the genes [[#gene_maxWool|maxWool]] and [[#gene_woolInc|woolInc]].
+|- id="breed_forcedGenes"
+| <code>forcedGenes</code> ||
+Used to force specific gene values to this breed. The syntax uses the gene IDs explained in the [[#Genome|genome]] section and allow you to define the min and max values for specific genes:
+{{CodeSnip
+| lang = Lua
+| code =
+forcedGenes = {
+    maxMilk = { minValue = 0.5, maxValue = 1.0 },
+}
+}}
+|- id="breed_sounds"
+| <code>sounds</code> || 
+A table defining the sounds used by this breed. See the [[#Sounds|sounds]] section for more information.
+|}
+
+{{Note|Textures need to be located in the folder <code>media/textures/Body</code>. They can also be located in subfolders inside this folder, in that case the path needs to be specified (e.g., <code>YourSubFolder/YourTexture</code>).}}
+
+== Genome ==
+Animals can have genes, stored in <code>AnimalDefinitions.genome</code>, those impact different aspects and it is possible to define your own custom genes to impact the animal in custom code.
+
+The syntax of the genome needs to be as follows:
+{{CodeSnip
+| lang = Lua
+| code =
+AnimalDefinitions.genome['yourAnimalID'] = {
+    genes = {
+        gene1 = name1,
+        gene2 = name2,
+        gene3 = name3,
+        ...
+    }
+}
+}}
+
+{{Unverified|section=true|The keys of the genes (<code>gene1</code>, <code>gene2</code>, <code>gene3</code>) are named the same as the names (<code>name1</code>, <code>name2</code>, <code>name3</code>).}}
+
+=== Available genes ===
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of available genes in the game
+! Gene ID !! Description
+|- id="gene_ageToGrow"
+| <code>ageToGrow</code> || 
+This gene will impact the time it takes for the animal to [[#stage_ageToGrow|grow]].
+|- id="gene_maxMilk" 
+| <code>maxMilk</code> ||
+This gene will impact the maximum amount of [[#breed_milkType|milk]] the animal can produce.
+|- id="gene_milkInc"
+| <code>milkInc</code> ||
+This gene will impact the rate at which the animal produces [[#breed_milkType|milk]].
+|- id="gene_maxWool"
+| <code>maxWool</code> ||
+This gene will impact the maximum amount of [[#breed_woolType|wool]] the animal can produce.
+|- id="gene_woolInc"
+| <code>woolInc</code> ||
+This gene will impact the rate at which the animal produces [[#breed_woolType|wool]].
+|- id="gene_maxSize"
+| <code>maxSize</code> ||
+|- id="gene_meatRatio"
+| <code>meatRatio</code> ||
+|- id="gene_maxWeight"
+| <code>maxWeight</code> ||
+|- id="gene_lifeExpectancy"
+| <code>lifeExpectancy</code> ||
+|- id="gene_resistance"
+| <code>resistance</code> ||
+|- id="gene_strength"
+| <code>strength</code> ||
+|- id="gene_hungerResistance"
+| <code>hungerResistance</code> ||
+|- id="gene_thirstResistance"
+| <code>thirstResistance</code> ||
+|- id="gene_aggressiveness"
+| <code>aggressiveness</code> ||
+|- id="gene_fertility"
+| <code>fertility</code> ||
+|- id="gene_eggSize"
+| <code>eggSize</code> ||
+|- id="gene_stress"
+| <code>stress</code> ||
+|- id="gene_eggClutch"
+| <code>eggClutch</code> ||
+|}
+
+=== Example ===
+{{CodeBox|title=Example|class=blue|id=genome|
+{{CodeSnip
+| lang = lua
+| code =
+AnimalDefinitions.genome["horse"] = {
+    genes = {
+        meatRatio = "meatRatio",
+        maxWeight = "maxWeight",
+        lifeExpectancy = "lifeExpectancy",
+        resistance = "resistance",
+        strength = "strength",
+        hungerResistance = "hungerResistance",
+        thirstResistance = "thirstResistance",
+        aggressiveness = "aggressiveness",
+        ageToGrow = "ageToGrow",
+        fertility = "fertility",
+        stress = "stress",
+        speed = "speed", -- custom gene
+        stamina = "stamina", -- custom gene
+        carryWeight = "carryWeight" -- custom gene
+    }
+}
+}}
+}}
+
+== Sounds ==
+Sounds can be defined for a specific animal breed and are stored in <code>AnimalDefinitions.breeds[animalID].sounds</code>. Sounds are used to define the audio effects for various animal actions and states.
+
+The syntax of sounds needs to be as follows:
+{{CodeSnip
+| lang = Lua
+| code =
+AnimalDefinitions.breeds['yourAnimalID'].breeds["breed1"].sound = {
+    soundID1 = {
+        parameter1 = value1,
+        parameter2 = value2,
+        ...
+    },
+    soundID2 = {
+        parameter1 = value1,
+        parameter2 = value2,
+        ...
+    },
+    ...
+}
+}}
+
+The sound ID (<code>soundID1</code>, <code>soundID2</code>...) is used to identify the sound event and needs to be unique within the breed.
+
+The following parameters can be used to define a sound:
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of parameters for <code>sounds</code> entries
+! Parameter name !! Description
+|- id="sound_name"
+| <code>name</code> {{sup|mandatory|red}} ||
+Refers to the [[sound (scripts)|sound script]] ID that will be played for this sound event.
+|- id="sound_slot"
+| <code>slot</code> ||
+Example: <code>voice</code>
+|- id="sound_priority"
+| <code>priority</code> || 
+|- id="sound_intervalMin"
+| <code>intervalMin</code> || 
+|- id="sound_intervalMax"
+| <code>intervalMax</code> || 
+|}
+
+=== Available sound IDs ===
+{| class="wikitable theme-blue"
+|+ style="white-space:nowrap" | List of available sound IDs
+! Sound ID !! Description
+|- id="sound_attack"
+| <code>attack</code> || 
+The sound played when the animal attacks.
+|- id="sound_death"
+| <code>death</code> || 
+The sound played when the animal dies.
+|- id="sound_fallover"
+| <code>fallover</code> || 
+The sound played when the animal falls over.
+|- id="sound_idle"
+| <code>idle</code> || 
+The sound played when the animal is idle. Typically uses <code>intervalMin</code> and <code>intervalMax</code>.
+|- id="sound_pain"
+| <code>pain</code> || 
+The sound played when the animal is in pain.
+|- id="sound_petting"
+| <code>petting</code> || 
+The sound played when the animal is being petted.
+|- id="sound_pick_up"
+| <code>pick_up</code> || 
+The sound played when the animal is picked up.
+|- id="sound_pick_up_corpse"
+| <code>pick_up_corpse</code> || 
+The sound played when a dead animal is picked up.
+|- id="sound_put_down"
+| <code>put_down</code> || 
+The sound played when the animal is put down.
+|- id="sound_put_down_corpse"
+| <code>put_down_corpse</code> || 
+The sound played when a dead animal is put down.
+|- id="sound_run"
+| <code>run</code> || 
+The sound played when the animal is running.
+|- id="sound_stressed"
+| <code>stressed</code> || 
+The sound played when the animal is stressed. Typically uses <code>intervalMin</code> and <code>intervalMax</code>.
+|- id="sound_walkBack"
+| <code>walkBack</code> || 
+The sound played when the animal walks backwards.
+|- id="sound_walkFront"
+| <code>walkFront</code> || 
+The sound played when the animal walks forwards.
+|}
+
+=== Example ===
+{{CodeBox|title=Example|class=blue|id=sounds|
+{{CodeSnip
+| lang = lua
+| code =
+AnimalDefinitions.breeds["bull"] = {
+    breeds = {
+        ["bull"] = {
+            sounds = {
+                attack = { name = "AnimalVoiceBullAttack", slot = "voice", priority = 50 },
+                death = { name = "AnimalVoiceBullDeath", slot = "voice", priority = 100 },
+                fallover = { name = "AnimalFoleyBullBodyfall" },
+                idle = { name = "AnimalVoiceBullIdle", intervalMin = 15, intervalMax = 30, slot = "voice" },
+                pain = { name = "AnimalVoiceBullPain", slot = "voice", priority = 50 },
+                petting = { name = "PetAnimalBull" },
+                pick_up = { name = "PickUpAnimalCow", slot = "voice", priority = 1 },
+                pick_up_corpse = { name = "PickUpAnimalDeadCow" },
+                put_down = { name = "PutDownAnimalCow", slot = "voice", priority = 1 },
+                put_down_corpse = { name = "PutDownAnimalDeadCow" },
+                run = { name = "AnimalFootstepsBullRun" },
+                stressed = { name = "AnimalVoiceBullStressed", intervalMin = 5, intervalMax = 10, slot = "voice" },
+                walkBack = { name = "AnimalFootstepsBullWalkBack" },
+                walkFront = { name = "AnimalFootstepsBullWalkFront" },
+            }
+        }
+    }
+}
+}}
+}}
+
+== See also ==
+*[[AnimalAvatarDefinition]]
+*[[AnimalPartsDefinitions]]
+
+== Navigation ==
+{{Navbox modding}}
