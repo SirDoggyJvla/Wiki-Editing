@@ -5,7 +5,351 @@
 To define a new animal, first chose a unique animal ID, in this page it will be {{Code|yourAnimalID}}. This ID is used in the various animal definitions to easily associate data to your animal.
 
 == Animal definition ==
+An animal definition is stored in <code>AnimalDefinitions.animals</code> using the [[#Stages|stage ID]] to identify which animal stage to apply the stats to.
 
+The syntax of an animal definition needs to be as follows:
+{{CodeSnip
+| lang = Lua
+| code =
+AnimalDefinitions.animals['stageID'] = {
+    parameter1 = value1,
+    parameter2 = value2,
+    parameter3 = value3,
+    ...
+}
+}}
+
+The following parameters can be used to define an animal:
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
+|+ style="white-space:nowrap" | List of parameters for <code>animals</code> entries
+! Parameter name !! Description
+|- id="def_bodyModel"
+| <code>bodyModel</code> ||
+|- id="def_bodyModelSkel"
+| <code>bodyModelSkel</code> ||
+|- id="def_textureSkeleton"
+| <code>textureSkeleton</code> ||
+|- id="def_textureSkeletonBloody"
+| <code>textureSkeletonBloody</code> ||
+|- id="def_bodyModelSkelNoHead"
+| <code>bodyModelSkelNoHead</code> ||
+|- id="def_animset"
+| <code>animset</code> ||
+|- id="def_shadoww"
+| <code>shadoww</code> ||
+|- id="def_shadowfm"
+| <code>shadowfm</code> ||
+|- id="def_shadowbm"
+| <code>shadowbm</code> ||
+|- id="def_turnDelta"
+| <code>turnDelta</code> ||
+|- id="def_animalSize"
+| <code>animalSize</code> ||
+|- id="def_minSize"
+| <code>minSize</code> ||
+|- id="def_maxSize"
+| <code>maxSize</code> ||
+|- id="def_sitRandomly"
+| <code>sitRandomly</code> ||
+|- id="def_genes"
+| <code>genes</code> ||
+|- id="def_stages"
+| <code>stages</code> ||
+|- id="def_breeds"
+| <code>breeds</code> ||
+|- id="def_alwaysFleeHumans"
+| <code>alwaysFleeHumans</code> ||
+|- id="def_canBePicked"
+| <code>canBePicked</code> ||
+|- id="def_canBeKilledWithoutWeapon"
+| <code>canBeKilledWithoutWeapon</code> ||
+|- id="def_minEnclosureSize"
+| <code>minEnclosureSize</code> ||
+|- id="def_wanderMul"
+| <code>wanderMul</code> ||
+|- id="def_hutches"
+| <code>hutches</code> ||
+|- id="def_enterHutchTime"
+| <code>enterHutchTime</code> ||
+|- id="def_exitHutchTime"
+| <code>exitHutchTime</code> ||
+|- id="def_attackDist"
+| <code>attackDist</code> ||
+|- id="def_attackTimer"
+| <code>attackTimer</code> ||
+|- id="def_hungerMultiplier"
+| <code>hungerMultiplier</code> ||
+|- id="def_thirstMultiplier"
+| <code>thirstMultiplier</code> ||
+|- id="def_idleTypeNbr"
+| <code>idleTypeNbr</code> ||
+|- id="def_sittingTypeNbr"
+| <code>sittingTypeNbr</code> ||
+|- id="def_eatingTypeNbr"
+| <code>eatingTypeNbr</code> ||
+|- id="def_eatTypeTrough"
+| <code>eatTypeTrough</code> ||
+|- id="def_healthLossMultiplier"
+| <code>healthLossMultiplier</code> ||
+|- id="def_idleEmoteChance"
+| <code>idleEmoteChance</code> ||
+|- id="def_trailerBaseSize"
+| <code>trailerBaseSize</code> ||
+|- id="def_collisionSize"
+| <code>collisionSize</code> ||
+|- id="def_baseEncumbrance"
+| <code>baseEncumbrance</code> ||
+|- id="def_canBePet"
+| <code>canBePet</code> ||
+|- id="def_collidable"
+| <code>collidable</code> ||
+|- id="def_minWeight"
+| <code>minWeight</code> ||
+|- id="def_maxWeight"
+| <code>maxWeight</code> ||
+|- id="def_canThump"
+| <code>canThump</code> ||
+|- id="def_group"
+| <code>group</code> ||
+|- id="def_dung"
+| <code>dung</code> ||
+|- id="def_needMom"
+| <code>needMom</code> ||
+|- id="def_hungerBoost"
+| <code>hungerBoost</code> ||
+|- id="def_thirstBoost"
+| <code>thirstBoost</code> ||
+|- id="def_distToEat"
+| <code>distToEat</code> ||
+|- id="def_corpseSize"
+| <code>corpseSize</code> ||
+|- id="def_minAge"
+| <code>minAge</code> ||
+|- id="def_babyType"
+| <code>babyType</code> ||
+|- id="def_eggsPerDay"
+| <code>eggsPerDay</code> ||
+|- id="def_fertilizedTimeMax"
+| <code>fertilizedTimeMax</code> ||
+|- id="def_eggType"
+| <code>eggType</code> ||
+|- id="def_timeToHatch"
+| <code>timeToHatch</code> ||
+|- id="def_minAgeForBaby"
+| <code>minAgeForBaby</code> ||
+|- id="def_maxAgeGeriatric"
+| <code>maxAgeGeriatric</code> ||
+|- id="def_female"
+| <code>female</code> ||
+|- id="def_baseDmg"
+| <code>baseDmg</code> ||
+|- id="def_idleSoundRadius"
+| <code>idleSoundRadius</code> ||
+|- id="def_idleSoundVolume"
+| <code>idleSoundVolume</code> ||
+|- id="def_male"
+| <code>male</code> ||
+|- id="def_mate"
+| <code>mate</code> ||
+|- id="def_fleeHumansMod"
+| <code>fleeHumansMod</code> ||
+|- id="def_dontAttackOtherMale"
+| <code>dontAttackOtherMale</code> ||
+|- id="def_attackIfStressed"
+| <code>attackIfStressed</code> ||
+|- id="def_attackBack"
+| <code>attackBack</code> ||
+|- id="def_minBodyPart"
+| <code>minBodyPart</code> ||
+|- id="def_modelscript"
+| <code>modelscript</code> ||
+|- id="def_bodyModelHeadless"
+| <code>bodyModelHeadless</code> ||
+|- id="def_textureSkinned"
+| <code>textureSkinned</code> ||
+|- id="def_canBeAttached"
+| <code>canBeAttached</code> ||
+|- id="def_eatFromMother"
+| <code>eatFromMother</code> ||
+|- id="def_periodicRun"
+| <code>periodicRun</code> ||
+|- id="def_carcassItem"
+| <code>carcassItem</code> ||
+|- id="def_luredPossibleItems"
+| <code>luredPossibleItems</code> ||
+|- id="def_ropeBone"
+| <code>ropeBone</code> ||
+|- id="def_stressAboveGround"
+| <code>stressAboveGround</code> ||
+|- id="def_dungChancePerDay"
+| <code>dungChancePerDay</code> ||
+|- id="def_minBlood"
+| <code>minBlood</code> ||
+|- id="def_maxBlood"
+| <code>maxBlood</code> ||
+|- id="def_thirstHungerTrigger"
+| <code>thirstHungerTrigger</code> ||
+|- id="def_udder"
+| <code>udder</code> ||
+|- id="def_eatGrass"
+| <code>eatGrass</code> ||
+|- id="def_pregnantPeriod"
+| <code>pregnantPeriod</code> ||
+|- id="def_canBeMilked"
+| <code>canBeMilked</code> ||
+Whenever the animal can be milked, if true the animal will produce milk based on the genes [[#gene_maxMilk|maxMilk]] and [[#gene_milkInc|milkInc]]. The milk item is defined in the breed using [[#breed_milkType|milkType]].
+|- id="def_minMilk"
+| <code>minMilk</code> ||
+|- id="def_maxMilk"
+| <code>maxMilk</code> ||
+|- id="def_milkAnimPreset"
+| <code>milkAnimPreset</code> ||
+|- id="def_timeBeforeNextPregnancy"
+| <code>timeBeforeNextPregnancy</code> ||
+|- id="def_knockdownAttack"
+| <code>knockdownAttack</code> ||
+|- id="def_canDoLaceration"
+| <code>canDoLaceration</code> ||
+|- id="def_wild"
+| <code>wild</code> ||
+|- id="def_spottingDist"
+| <code>spottingDist</code> ||
+|- id="def_canBeAlerted"
+| <code>canBeAlerted</code> ||
+|- id="def_canBeDomesticated"
+| <code>canBeDomesticated</code> ||
+|- id="def_wildFleeTimeUntilDeadTimer"
+| <code>wildFleeTimeUntilDeadTimer</code> ||
+|- id="def_canClimbStairs"
+| <code>canClimbStairs</code> ||
+|- id="def_babyNbr"
+| <code>babyNbr</code> ||
+|- id="def_stressUnderRain"
+| <code>stressUnderRain</code> ||
+|- id="def_litterEatTogether"
+| <code>litterEatTogether</code> ||
+|- id="def_matingPeriodStart"
+| <code>matingPeriodStart</code> ||
+|- id="def_matingPeriodEnd"
+| <code>matingPeriodEnd</code> ||
+|- id="def_addTrackingXp"
+| <code>addTrackingXp</code> ||
+|- id="def_canBeFeedByHand"
+| <code>canBeFeedByHand</code> ||
+|- id="def_feedByHandType"
+| <code>feedByHandType</code> ||
+|- id="def_happyAnim"
+| <code>happyAnim</code> ||
+|- id="def_bodyModelFleece"
+| <code>bodyModelFleece</code> ||
+|- id="def_maxWool"
+| <code>maxWool</code> ||
+|- id="def_minClutchSize"
+| <code>minClutchSize</code> ||
+|- id="def_maxClutchSize"
+| <code>maxClutchSize</code> ||
+|- id="def_layEggPeriodStart"
+| <code>layEggPeriodStart</code> ||
+|}
+
+=== Example ===
+{{CodeBox|title=Example|class=blue|id=animals|
+{{CodeSnip
+| lang = lua
+| code =
+AnimalDefinitions.animals["cowcalf"] = {
+    bodyModel = "CowCalf_Body",
+    bodyModelSkel = "CowCalf_Skeleton",
+    textureSkeleton = "Bull_Skeleton",
+    textureSkeletonBloody = "CowBull_Skeleton_Butchered",
+    animset = "cowcalf",
+    modelscript = "CowCalf_Body",
+    shadoww = 0.5,
+    shadowfm = 1,
+    shadowbm = 1,
+    animalSize = 0.1,
+    minSize = 0.9,
+    maxSize = 1.2,
+    genes = AnimalDefinitions.genome["cow"].genes,
+    stages = AnimalDefinitions.stages["cow"].stages,
+    breeds = copyTable(AnimalDefinitions.breeds["cow"].breeds),
+    minWeight = 60,
+    maxWeight = 350,
+    minEnclosureSize = 40,
+    hungerMultiplier = 0.001,
+    thirstMultiplier = 0.002,
+    canBePet = true,
+    canBePicked = true,
+    carcassItem = "Base.CorpseCalf",
+    dung = "Dung_Cow",
+    corpseSize = 2.5,
+    idleSoundRadius = 20,
+    idleSoundVolume = 10,
+}
+
+AnimalDefinitions.animals["cow"] = {
+    bodyModel = "CowBody",
+    bodyModelSkel = "Cow_Skeleton",
+    textureSkeleton = "Bull_Skeleton",
+    animset = "cow",
+    modelscript = "CowBody",
+    shadoww = 1,
+    shadowfm = 3,
+    shadowbm = 2,
+    animalSize = 0.3,
+    minSize = 0.9,
+    maxSize = 1.1,
+    genes = AnimalDefinitions.genome["cow"].genes,
+    stages = AnimalDefinitions.stages["cow"].stages,
+    breeds = AnimalDefinitions.breeds["cow"].breeds,
+    babyType = "cowcalf",
+    sitRandomly = true,
+    minAgeForBaby = 12 * 30,
+    maxAgeGeriatric = 12 * 12 * 30,
+    female = true,
+    udder = true,
+    minWeight = 360,
+    maxWeight = 950,
+    hungerMultiplier = 0.0035,
+    thirstMultiplier = 0.0065,
+    eatGrass = true,
+    pregnantPeriod = (9 * 30) + 10,
+    canBeMilked = true,
+    minMilk = 10,
+    maxMilk = 50,
+    carcassItem = "Base.CorpseCow",
+    attackDist = 2,
+    baseDmg = 0.3,
+    dung = "Dung_Cow",
+    corpseSize = 7,
+    idleSoundRadius = 50,
+    idleSoundVolume = 30,
+}
+
+AnimalDefinitions.animals["bull"] = {
+    bodyModel = "Bull_Body",
+    bodyModelSkel = "Bull_Skeleton",
+    animset = "cow",
+    modelscript = "Bull_Body",
+    male = true,
+    mate = "cow",
+    genes = AnimalDefinitions.genome["cow"].genes,
+    stages = AnimalDefinitions.stages["cow"].stages,
+    breeds = copyTable(AnimalDefinitions.breeds["cow"].breeds),
+    babyType = "cowcalf",
+    maxWeight = 1300,
+    carcassItem = "Base.CorpseCow",
+    attackBack = true,
+    attackIfStressed = true,
+    knockdownAttack = true,
+    canDoLaceration = true,
+    minBlood = 1000,
+    maxBlood = 3500,
+    idleSoundRadius = 50,
+    idleSoundVolume = 30,
+}
+}}
+}}
 
 == Stages ==
 When creating a new animal, you need to define its stages which are usually simply equivalents to "baby", "adult male" and "adult female". While not confirmed, it is likely that you can make as many stages as you want for an animal, and have them evolve to many different stages.
@@ -39,7 +383,7 @@ AnimalDefinitions.stages['yourAnimalID'] = {
 }}
 
 The following parameters can be used to define a stage:
-{| class="wikitable theme-blue"
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | List of parameters for <code>stages</code> entries
 ! Parameter name !! Description
 |- id="stage_ageToGrow"
@@ -113,12 +457,13 @@ AnimalDefinitions.breeds['yourAnimalID'] = {
         },
         ...
     }
+}
 }}
 
 The breed ID (<code>breed1</code>, <code>breed2</code>...) is used to identify the breed and needs to be unique. 
 
 The following parameters can be used to define a breed:
-{| class="wikitable theme-blue"
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | List of parameters for <code>breeds</code> entries
 ! Parameter name !! Description
 |- id="breed_name"
@@ -171,10 +516,10 @@ The item given when plucking feathers from this breed, needs to be the full type
 The maximum number of feathers this breed can provide.
 |- id="breed_milkType"
 | <code>milkType</code> || 
-The [[fluid (scripts)|fluid script]] used as milk for this breed. The milk quantity is impacted by the genes [[#gene_maxMilk|maxMilk]] and [[#gene_milkInc|milkInc]].
+The [[fluid (scripts)|fluid script]] used as milk for this breed. The milk quantity is impacted by the genes [[#gene_maxMilk|maxMilk]] and [[#gene_milkInc|milkInc]]. The minimum and maximum quantity of milk can be defined in the animal definition using [[#def_minMilk|minMilk]] and [[#def_maxMilk|maxMilk]].
 |- id="breed_woolType"
 | <code>woolType</code> || 
-The item given when shearing wool from this breed, needs to be the [[item (scripts)|full type]]. The wool quantity is impacted by the genes [[#gene_maxWool|maxWool]] and [[#gene_woolInc|woolInc]].
+The item given when shearing wool from this breed, needs to be the [[item (scripts)|full type]]. The wool quantity is impacted by the genes [[#gene_maxWool|maxWool]] and [[#gene_woolInc|woolInc]]. The maximum quantity of wool can be defined in the animal definition using [[#def_maxWool|maxWool]].
 |- id="breed_forcedGenes"
 | <code>forcedGenes</code> ||
 Used to force specific gene values to this breed. The syntax uses the gene IDs explained in the [[#Genome|genome]] section and allow you to define the min and max values for specific genes:
@@ -191,6 +536,60 @@ A table defining the sounds used by this breed. See the [[#Sounds|sounds]] secti
 |}
 
 {{Note|Textures need to be located in the folder <code>media/textures/Body</code>. They can also be located in subfolders inside this folder, in that case the path needs to be specified (e.g., <code>YourSubFolder/YourTexture</code>).}}
+
+=== Example ===
+{{CodeBox|title=Example|class=blue|id=breeds|
+{{CodeSnip
+| lang = lua
+| code =
+AnimalDefinitions.breeds["cow"] = {
+    breeds = {
+        ["angus"] = {
+            name = "angus",
+            texture = "Cow_Black",
+            textureMale = "Bull_Black",
+            rottenTexture = "CowBlack_Rotting",
+            milkType = "CowMilk",
+            invIconMale = "Item_CowBlack_Calf",
+            invIconFemale = "Item_CowBlack_Calf",
+            invIconBaby = "Item_CowBlack_Calf",
+            invIconMaleDead = "Item_CowBlackMale_Dead",
+            invIconFemaleDead = "Item_CowBlack_Dead",
+            invIconBabyDead = "Item_CowBlack_Calf_Dead",
+            invIconMaleSkel = "Item_Skeleton_Cow_Bull",
+            invIconFemaleSkel = "Item_Skeleton_Cow",
+            invIconBabySkel = "Item_Skeleton_Cow_Calf",
+            forcedGenes = {
+                maxMilk = { minValue = 0.05, maxValue = 0.2 },
+                meatRatio = { minValue = 0.75, maxValue = 0.95 },
+                maxWeight = { minValue = 0.45, maxValue = 0.65 }
+            }
+        },
+        ["holstein"] = {
+            name = "holstein",
+            texture = "Cow_BW_01,Cow_BW_02,Cow_BW_03",
+            textureMale = "Bull_BW_01",
+            rottenTexture = "CowBW_Rotting",
+            milkType = "CowMilk",
+            invIconMale = "Item_CowSpotted_Calf",
+            invIconFemale = "Item_CowSpotted_Calf",
+            invIconBaby = "Item_CowSpotted_Calf",
+            invIconMaleDead = "Item_CowBlackWhiteMale_Dead",
+            invIconFemaleDead = "Item_CowBlackWhite_Dead",
+            invIconBabyDead = "Item_CowSpotted_Calf_Dead",
+            invIconMaleSkel = "Item_Skeleton_Cow_Bull",
+            invIconFemaleSkel = "Item_Skeleton_Cow",
+            invIconBabySkel = "Item_Skeleton_Cow_Calf",
+            forcedGenes = {
+                maxMilk = { minValue = 0.60, maxValue = 0.75 },
+                meatRatio = { minValue = 0.35, maxValue = 0.55 },
+                maxWeight = { minValue = 0.6, maxValue = 0.8 }
+            }
+        }
+    }
+}
+}}
+}}
 
 == Genome ==
 Animals can have genes, stored in <code>AnimalDefinitions.genome</code>, those impact different aspects and it is possible to define your own custom genes to impact the animal in custom code.
@@ -212,7 +611,7 @@ AnimalDefinitions.genome['yourAnimalID'] = {
 {{Unverified|section=true|The keys of the genes (<code>gene1</code>, <code>gene2</code>, <code>gene3</code>) are named the same as the names (<code>name1</code>, <code>name2</code>, <code>name3</code>).}}
 
 === Available genes ===
-{| class="wikitable theme-blue"
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | List of available genes in the game
 ! Gene ID !! Description
 |- id="gene_ageToGrow"
@@ -309,7 +708,7 @@ AnimalDefinitions.breeds['yourAnimalID'].breeds["breed1"].sound = {
 The sound ID (<code>soundID1</code>, <code>soundID2</code>...) is used to identify the sound event and needs to be unique within the breed.
 
 The following parameters can be used to define a sound:
-{| class="wikitable theme-blue"
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | List of parameters for <code>sounds</code> entries
 ! Parameter name !! Description
 |- id="sound_name"
@@ -327,7 +726,7 @@ Example: <code>voice</code>
 |}
 
 === Available sound IDs ===
-{| class="wikitable theme-blue"
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
 |+ style="white-space:nowrap" | List of available sound IDs
 ! Sound ID !! Description
 |- id="sound_attack"

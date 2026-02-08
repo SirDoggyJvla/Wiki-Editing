@@ -54,14 +54,24 @@ with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
 # for gene in uniques.keys():
 #     print(gene)
 
-# list breed parameters
+# # list breed parameters
+# uniques = {}
+# for details in data["breeds"].values():
+#     for details2 in details.values():
+#         for details3 in details2.values():
+#             for param in details3.keys():
+#                 if param not in uniques:
+#                     uniques[param] = True
+
+# for param in uniques.keys():
+#     print(param)
+
+# list animal def parameters
 uniques = {}
-for details in data["breeds"].values():
-    for details2 in details.values():
-        for details3 in details2.values():
-            for param in details3.keys():
-                if param not in uniques:
-                    uniques[param] = True
+for details in data["animals"].values():
+    for param in details.keys():
+        if param not in uniques:
+            uniques[param] = True
 
 for param in uniques.keys():
     print(param)
