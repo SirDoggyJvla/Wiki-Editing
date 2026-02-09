@@ -1,0 +1,148 @@
+{{Header|Modding|Lua (API)}}
+{{Page version|42.13.2}}
+Ranch zones are a specific type of zone which is used to define where animals can spawn on the map. It is possible to create new zone definitions to control the spawn of the animals, or to create these zones on world creation. They are mostly used for [[mapping]] and [[animal]] modding to spawn animals on the map.
+
+== Available ranch zones ==
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
+|+ style="white-space:nowrap" | List of parameters for <code>animals</code> entries
+! Animal !! Zones
+|-
+| [[Chicken]] ||
+*<code>chicken</code>
+*<code>chickensmall</code>
+*<code>chickenbig</code>
+|-
+| [[Pig]] ||
+*<code>pig</code>
+*<code>pigsmall</code>
+*<code>piglarge</code>
+*<code>pigonlyone</code> (source code comment: ''"only one pig, intended for one pig in a backyard"'')
+|-
+| [[Sheep]] ||
+*<code>sheep</code>
+*<code>sheepsmall</code>
+*<code>sheeplarge</code>
+|-
+| [[Cow]] ||
+*<code>cow</code>
+*<code>cowlarge</code>
+|-
+| [[Turkey]] ||
+*<code>turkey</code>
+*<code>turkeysmall</code>
+*<code>turkeylarge</code>
+|-
+| [[Rabbit]] ||
+*<code>rabbit</code>
+*<code>rabbitsmall</code>
+|}
+
+There also exists some zones which use the [[#def_possibleDef|possibleDef]] parameter to spawn multiple types of animals, such as:
+*<code>notchicken</code> - spawns sheep, cow or pig.
+*<code>notchickenlarge</code> - spawns a large amount of sheep, cow or pig.
+*<code>poultry</code> - spawns chicken or turkey.
+*<code>poultrylarge</code> - spawns a large amount of chicken or turkey.
+
+== Creating a ranch zone ==
+{{Note|type=warn|If a zone is too big, the ranch zone will not be created and the animals won't spawn.}}
+
+=== Mapping ===
+{{Unverified|section=true|Some claims from the original guide might need to be verified.}}
+Using the [[Unofficial Mapping Tools]], you can create a ranch zone on your map. To do so:
+# Open the world cell you want to edit.
+# Select the <code>Ranch</code> object group. You can also move the added objects to the Ranch group later.
+# Add a zone using the <code>Create Object (O)</code> ('''Rectangle''') or <code>Create Object</code> ('''Polygon''') action.
+# Indicate which ranch zone this will use. Can be one of the available [[#Available ranch zones|vanilla ranch zone]] definition, or a [[#RanchZoneDefinitions|custom one]].
+
+*No properties are needed.
+*It appears that farm animals do not spawn if the zone is too close to another ranch zone.
+*The zones and animal spawning also work on levels other than the ground floor (0F).
+
+=== Lua ===
+[[Lua (API)|Lua]] provides the ability for modders to add ranch zones on world creation, by using the [[OnLoadMapZones]] event.
+{{CodeSnip
+| lang = lua
+| code =
+local zones = {
+    {x=1350, y=8563, z=0, width=10, height=10, name="cow"},
+    {x=3247, y=4315, z=0, width=10, height=10, name="chicken"},
+    ... -- and so on for each ranch zone you want to add
+}
+
+local function addRanchZones()
+    local world = getWorld()
+    for i = 1, #zones do
+        local zone = zones[i]
+        world:registerZone(
+            zone.name, "Ranch",
+            zone.x, zone.y, zone.z,
+            zone.width, zone.height
+        )
+    end
+end
+
+Events.OnLoadMapZones.Add(addRanchZones)
+}}
+
+{{Note|You can use [[B42 Map]] to find coordinates on the world map and determine the size of the ranch zone you want to add.}}
+
+== RanchZoneDefinitions ==
+{{Code|RanchZoneDefinitions}} is a table which contains ranch zones definitions to spawn on the map. Different parameters need to be set to define which animal animal spawn in that zone, and how many of them and their characteristics.
+
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
+|+ style="white-space:nowrap" | List of parameters for <code>animals</code> entries
+! Parameter name !! Description
+|- id="def_type"
+| <code>type</code> || Holds the ID of the definition.
+|- id="def_globalName"
+| <code>globalName</code> || 
+The ID of the animal, refered to as the <code>yourAnimalID</code> in the [[AnimalDefinitions|animal definition]].
+|- id="def_chance"
+| <code>chance</code> || 
+It is unclear what this parameter actually does, it is a weight value but since a ranch zone can only hold one animal, what does it roll for?
+|- id="def_femaleType"
+| <code>femaleType</code> ||
+The growth stage for the female variant of this animal to spawn in that ranch zone.
+|- id="def_maleType"
+| <code>maleType</code> ||
+The growth stage for the male variant of this animal to spawn in that ranch zone.
+|- id="def_minFemaleNb"
+| <code>minFemaleNb</code> ||
+The minimum number of female animals to spawn in that ranch zone.
+|- id="def_maxFemaleNb"
+| <code>maxFemaleNb</code> ||
+The maximum number of female animals to spawn in that ranch zone.
+|- id="def_minMaleNb"
+| <code>minMaleNb</code> ||
+The minimum number of male animals to spawn in that ranch zone.
+|- id="def_maxMaleNb"
+| <code>maxMaleNb</code> ||
+The maximum number of male animals to spawn in that ranch zone.
+|- id="def_chanceForBaby"
+| <code>chanceForBaby</code> ||
+The chance for the animal to spawn as a baby, instead of an adult.
+|- id="def_maleChance"
+| <code>maleChance</code> ||
+The chance for the animal to spawn as a male. `50` is 50% chance.
+|- id="def_possibleDef"
+| <code>possibleDef</code> ||
+This parameter is a list of possible ranch zones for this zone. Other parameters will ''probably'' be ignored. This is used when a zone should spawn multiple types of animals.
+
+Example from the vanilla game:
+{{CodeSnip
+| lang = lua
+| code =
+RanchZoneDefinitions.type["notchickenlarge"] = {};
+RanchZoneDefinitions.type["notchickenlarge"].type = "notchickenlarge";
+RanchZoneDefinitions.type["notchickenlarge"].possibleDef = {"sheeplarge","cowlarge","piglarge"};
+}}
+|}
+
+== See also ==
+*[[AnimalAvatarDefinition]]
+*[[AnimalPartsDefinitions]]
+*[[AnimalDefinitions]]
+*[https://discord.com/channels/1002947509670400071/1361696212277006570/1412135882777170013 Guide from the Mapping community about Farm and wild animals]
+
+== Navigation ==
+{{Navbox modding}}
