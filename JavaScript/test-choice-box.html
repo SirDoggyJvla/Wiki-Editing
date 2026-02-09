@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choice Box Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #0645ad;
+            padding-bottom: 10px;
+        }
+        
+        .test-section {
+            margin-bottom: 40px;
+        }
+        
+        .choice-box {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .choice-selector {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .choice-selector button {
+            padding: 8px 12px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: 0.2s;
+            font-size: 14px;
+        }
+        
+        .choice-selector button:hover {
+            background-color: #e8e8e8;
+        }
+        
+        .choice-selector button.active {
+            background-color: #0645ad;
+            color: white;
+            border-color: #0645ad;
+            font-weight: bold;
+        }
+        
+        /* MediaWiki button styling for choice selector */
+        .choice-selector .mw-ui-button {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: 0.2s;
+            font-size: 14px;
+            text-decoration: none;
+            color: #000;
+        }
+        
+        .choice-selector .mw-ui-button:hover {
+            background-color: #e8e8e8;
+        }
+        
+        .choice-selector .mw-ui-button.active {
+            background-color: #0645ad;
+            color: white;
+            border-color: #0645ad;
+            font-weight: bold;
+        }
+        
+        .choice-content {
+            display: none;
+            padding: 10px 0;
+            animation: fadeIn 0.3s;
+        }
+        
+        .choice-content.show {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .choice-content h3 {
+            margin-top: 0;
+            color: #0645ad;
+        }
+        
+        .choice-content p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .info {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0645ad;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choice Box Feature Test</h1>
+    
+    <div class="info">
+        <strong>Instructions:</strong> Click the buttons above each box to switch between different content sections. 
+        This is what the choice-box feature will do on your wiki!
+    </div>
+
+    <!-- Test 1: Weapons Categories (using MediaWiki button style) -->
+    <div class="test-section">
+        <h2>Test 1: Weapons Categories (MediaWiki Style)</h2>
+        <div class="choice-box">
+            <div class="choice-selector">
+                <span class="mw-ui-button" role="button" tabindex="0">Melee Weapons</span>
+                <span class="mw-ui-button" role="button" tabindex="0">Ranged Weapons</span>
+                <span class="mw-ui-button" role="button" tabindex="0">Tools</span>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Melee Weapons</h3>
+                <p>Axes, bats, machetes, and sledgehammers are excellent for close combat. Good for clearing zombies in tight spaces.</p>
+                <p>Advantages: No ammunition needed, always available</p>
+                <p>Disadvantages: Requires you to be close to danger</p>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Ranged Weapons</h3>
+                <p>Pistols, shotguns, and rifles let you deal damage from a distance. Ammunition is limited, so use carefully.</p>
+                <p>Advantages: Safe distance, high damage potential</p>
+                <p>Disadvantages: Limited ammunition, loud noise</p>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Tools</h3>
+                <p>Hammers, screwdrivers, and crowbars are useful for construction and looting. Not ideal for combat.</p>
+                <p>Advantages: Versatile for other tasks</p>
+                <p>Disadvantages: Poor combat effectiveness</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test 2: Skill Trees -->
+    <div class="test-section">
+        <h2>Test 2: Character Skills</h2>
+        <div class="choice-box">
+            <div class="choice-selector">
+                <button>Combat</button>
+                <button>Crafting</button>
+                <button>Survival</button>
+                <button>Social</button>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Combat Skills</h3>
+                <p><strong>Aiming:</strong> Improves accuracy with ranged weapons</p>
+                <p><strong>Melee:</strong> Increases damage and critical hit chance</p>
+                <p><strong>Dodge:</strong> Chance to avoid incoming damage</p>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Crafting Skills</h3>
+                <p><strong>Carpentry:</strong> Build structures and furniture</p>
+                <p><strong>Tailoring:</strong> Create and repair clothing</p>
+                <p><strong>Cooking:</strong> Prepare food to restore health</p>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Survival Skills</h3>
+                <p><strong>Foraging:</strong> Find edible plants and resources</p>
+                <p><strong>Fishing:</strong> Catch fish for food</p>
+                <p><strong>Farming:</strong> Grow crops for long-term sustenance</p>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Social Skills</h3>
+                <p><strong>Charisma:</strong> Influence other survivors</p>
+                <p><strong>Leadership:</strong> Manage larger groups</p>
+                <p><strong>Trading:</strong> Negotiate better deals</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test 3: Building Materials -->
+    <div class="test-section">
+        <h2>Test 3: Building Materials</h2>
+        <div class="choice-box">
+            <div class="choice-selector">
+                <button>Wood</button>
+                <button>Metal</button>
+                <button>Stone</button>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Wood</h3>
+                <p>Easy to find and work with. Good for quick structures.</p>
+                <p><strong>Durability:</strong> ⭐⭐⭐</p>
+                <p><strong>Cost:</strong> ⭐⭐ (cheap)</p>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Metal</h3>
+                <p>Strong and fire-resistant. Takes longer to break down.</p>
+                <p><strong>Durability:</strong> ⭐⭐⭐⭐⭐</p>
+                <p><strong>Cost:</strong> ⭐⭐⭐⭐ (expensive)</p>
+            </div>
+            
+            <div class="choice-content">
+                <h3>Stone</h3>
+                <p>Very durable but difficult to work with.</p>
+                <p><strong>Durability:</strong> ⭐⭐⭐⭐</p>
+                <p><strong>Cost:</strong> ⭐⭐⭐ (moderate)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Choice selector box - show/hide content based on user selection
+        $(document).ready(function() {
+            $('.choice-box').each(function() {
+                var box = $(this);
+                var choices = box.find('.choice-selector [role="button"], .choice-selector button');
+                var contents = box.find('.choice-content');
+                
+                // Hide all content except the first one
+                contents.hide();
+                contents.eq(0).show().addClass('show');
+                
+                // Mark first button as active
+                choices.eq(0).addClass('active');
+                
+                // Add click and keyboard handlers to choice buttons
+                choices.on('click keypress', function(e) {
+                    // Only respond to clicks or Enter/Space keys
+                    if (e.type === 'keypress' && e.which !== 13 && e.which !== 32) {
+                        return;
+                    }
+                    
+                    var index = choices.index($(this));
+                    
+                    // Update active button
+                    choices.removeClass('active');
+                    $(this).addClass('active');
+                    
+                    // Show corresponding content, hide others
+                    contents.removeClass('show').hide();
+                    contents.eq(index).addClass('show').show();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

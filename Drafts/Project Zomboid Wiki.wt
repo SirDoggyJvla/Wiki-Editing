@@ -1,0 +1,378 @@
+__NOTOC__
+{{LangSwitch}}
+<div style="border-radius: 1em; background-color: #000000; color: #ffffff; text-align: center; margin-bottom: 0.5em;">
+  <div class="res-img">
+  [[File:PzLogo BloodSplatter.png|center|link=Project Zomboid{{lcs}}]]
+  </div>
+  <div style="font: 27px Times New Roman, serif; text-shadow: 0 0 14px #ff0000;">Welcome to the Official Project Zomboid Wiki</div>
+  <div>[[Special:ActiveUsers|{{NUMBEROFACTIVEUSERS}}&nbsp;active editors]] maintaining [[Special:Statistics|{{NUMBEROFARTICLES}} articles]] ({{PAGESINCATEGORY:en|pages}} in English) since {{#dateformat:2011-04-07|mdy}}.<br>Please contribute by [[Help:Creating a new page|creating a new article]] or [[Help:Contents|expanding upon an existing one]].</div>
+  <div style="display: flex; justify-content: center; gap: 1em; padding: 0.5em 0;">[[File:Logo Discord 25px.png|link=https://discord.gg/theindiestone|Project Zomboid on Discord]][[File:Logo Reddit 25px.png|link=https://www.reddit.com/r/projectzomboid|Project Zomboid on Reddit]][[File:Logo X 25px.png|link=https://x.com/theindiestone|Project Zomboid on X]][[File:Logo YouTube 25px.png|link=https://www.youtube.com/user/theindiestone|Project Zomboid on YouTube]][[File:Logo Twitch 25px.png|link=https://www.twitch.tv/directory/game/Project%20Zomboid|Project Zomboid on Twitch]]</div>
+</div>
+{{Section
+| Quick links
+| 2 =
+  <div class="media-bump" style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; font-weight: bold;">
+    <div>[[File:Quick links Locations.png|link=Locations{{lcs}}]]<br>{{ll|Locations}}</div>
+    <div>[[File:Quick links Crafting.png|link=Crafting{{lcs}}]]<br>{{ll|Crafting}}</div>
+    <div>[[File:Quick links Items.png|link=Item{{lcs}}]]<br>{{ll|Item|Items}}</div>
+    <div>[[File:Quick links Tiles.png|link=Furniture{{lcs}}]]<br>{{ll|Furniture}}</div>
+    <div>[[File:Quick links Vehicles.png|link=Vehicle{{lcs}}]]<br>{{ll|Vehicle|Vehicles}}</div>
+    <div>[[File:Quick links Modding.png|link=Modding{{lcs}}]]<br>{{ll|Modding}}</div>
+  </div>
+| style = margin-bottom: 0.5em;
+}}
+<div class="pz-container">
+  <div>
+    {{Section
+    | Game mechanics
+    | 2=
+===[[File:AxeStone.png|link=Crafting{{lcs}}]] {{ll|Crafting}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Armor (crafting)|Armor}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Assembly (crafting)|Assembly}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Blacksmithing (crafting)|Blacksmithing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Blade (crafting)|Blade}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Carpentry (crafting)|Carpentry}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Carving (crafting)|Carving}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Cooking (crafting)|Cooking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Cookware (crafting)|Cookware}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Electrical (crafting)|Electrical}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Farming (crafting)|Farming}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fishing (crafting)|Fishing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Glassmaking (crafting)|Glassmaking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Knapping (crafting)|Knapping}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Masonry (crafting)|Masonry}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Medical (crafting)|Medical}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Metalworking (crafting)|Metalworking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Packing (crafting)|Packing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Pottery (crafting)|Pottery}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Repair (crafting)|Repair}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Tailoring (crafting)|Tailoring}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Tools (crafting)|Tools}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weaponry (crafting)|Weaponry}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Other (crafting)|Other}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Miscellaneous (crafting)|Miscellaneous}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+===[[File:Container DeadPerson Female.png|link=Player{{lcs}}]] {{ll|Player}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Inventory}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Skill}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Moodle}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Occupation}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Trait}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Health}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Nutrition}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Exercise}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Sleep}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Map}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Knox Infection}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Condition}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Starting location}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Quick tips}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+===[[File:WaterDrop.png|link=Knox Country{{lcs}}]] {{ll|Knox Country|Environment}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Vehicle}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weather}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Erosion}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fire}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Noise}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Electricity}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+===[[File:Raccoon.png|link=AI{{lcs}}]] {{ll|AI}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Zombie}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Animal}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Survivor}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Randomized stories}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Metagame}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+    }}
+    {{Section
+    | World
+    | 2=
+===[[File:PlushSpiffo.png|link=]] {{ll|Knox Event|Lore}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Knox Event}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Raleigh Outbreak}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Easter eggs}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Street names}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Phone numbers}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Adverts}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Broadcasts}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Radio}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Television}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+===[[File:Map.png|link=Locations]] {{ll|Locations}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Muldraugh}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|West Point}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Valley Station}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|March Ridge}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Riverside}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Rosewood}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Louisville}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Doe Valley}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fallas Lake}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Abandoned town}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Echo Creek}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Coalfield}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Brandenburg}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Irvington}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fort Knox}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Basement}}s</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Tutorial}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|House In The Woods}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|You Have One Day|Knox County remake}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Kingsmouth}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Studio}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+
+===[[File:BusinessCard.png|link=Businesses]] {{ll|Businesses}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Army barracks}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Army surplus store}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Auto shop}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Church}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Construction site}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fire department}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Gas station}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Gated community}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Grocery store}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Gun store}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Hardware store}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Laundromat}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Liquor store}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Police station}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Produce warehouses}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Self storage}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Wrecking yard}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+    }}
+    {{Section
+    | {{ll|Item|Items}}
+    |
+===[[File:Axe.png|link=Weapon{{lcs}}]] {{ll|Weapon|Weapons}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon|Axes|#=Axes}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon|Long blunts|#=Long blunts}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon|Short blunts|#=Short blunts}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon|Long blades|#=Long blades}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon|Short blades|#=Short blades}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon|Spears|#=Spears}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon|Improvised|#=Improvised}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Firearm|Firearms}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Ammo}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weapon part|Weapon parts}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Explosive|Explosives}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:TshirtGeneric.png|link=Clothing{{lcs}}]] {{ll|Clothing}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Clothing|#=Clothing|Clothing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Clothing|#=Accessory|Accessories}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Clothing|#=Armor|Armor}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:Beans.png|link=Food{{lcs}}]] {{ll|Food}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Food|#=Canned food|Canned food}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Food|#=Protein|Protein}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Food|#=Fruits|Fruits}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Food|#=Vegetables|Vegetables}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Food|#=Evolved recipes|Evolved recipes}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:Cassette3.png|link=Entertainment{{lcs}}]] {{ll|Entertainment}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Skill book|Skill books}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Recipe magazine|Recipe magazines}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Literature|#=Cartography|Maps}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Literature|#=Leisure|Leisure}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|VHS}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|CD}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px; 
+}}
+
+===[[File:Hammer.png|link=]] Equipment===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Medical}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Tool|Tools}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Container|Containers}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fluid container|Fluid containers}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Trap|Traps}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Communication}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Household}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Cooking (item)|Cooking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fishing (item)|Fishing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Camping}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fire source}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Light source}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Security}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:EngineParts.png|link=]] Other===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Vehicle maintenance}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Animal part|Animal parts}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Appearance}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Material}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Electronics}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Gardening}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fuel}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Junk}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Memento}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Corpse}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Instrument|Instruments}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Sports}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Debug}}</div>
+    |class=list-columns media-bump list-plain
+    |style=max-width:1200px; column-width: 150px;
+    }}
+    }}
+    {{Section
+    | {{ll|Furniture}}
+    |
+===[[File:Generator.png|32px|link=Appliances{{lcs}}]] {{ll|Appliances}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Generator|Generators}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Appliances|#=Communication|Communication}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Appliances|#=Cooking appliances|Cooking appliances}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Appliances|#=Fridges|Fridges}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:Build RainCollectorBarrel2.png|32px|link=Plumbing{{lcs}}]] {{ll|Plumbing}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Plumbing|#=Sinks|Sinks}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Plumbing|#=Baths and showers|Baths and showers}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Plumbing|#=Toilets|Toilets}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Plumbing|#=Other|Other}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:Build Bed.png|32px|link=Comfort{{lcs}}]] {{ll|Comfort}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Comfort|#=Beds|Beds}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Comfort|#=Couches|Couches}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Comfort|#=Chairs|Chairs}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Comfort|#=Benches|Benches}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Comfort|#=Stools|Stools}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Comfort|#=Seats|Seats}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Comfort|#=Camping|Camping}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:Build CrateWood.png|32px|link=Storage{{lcs}}]] {{ll|Storage}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Counters|Counters}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Shelves|Shelves}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Cabinets|Cabinets}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Desks|Desks}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Dressers|Dressers}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Locker|Locker}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Crates|Crates}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Displays|Displays}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Mail boxes|Mail boxes}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Mannequins|Mannequins}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Bins|Bins}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Storage|#=Other|Other}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+}}
+
+===[[File:Build Grindstone.png|32px|link=Miscellaneous]] {{ll|Miscellaneous}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Tables}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Workstations}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Floors}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Decorations}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Signs}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Plants}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Trash}}</div>
+|class=list-columns media-bump list-plain
+|style=max-width:1200px; column-width: 150px;
+    }}
+    }}
+  </div>
+  <div>
+    {{Section
+    | About
+    | 2 = {{ll|Project Zomboid}} is an open world sandbox survival game currently in early access and being developed by independent developer, {{ll|The Indie Stone}}. The game is set in a post apocalyptic {{ll|zombie}} infested world where the player is challenged to survive for as long as possible before inevitably dying.
+*'''{{ll|Frequently Asked Questions}}'''
+*'''{{ll|Multiplayer FAQ}}'''
+*'''{{ll|Survival Guide}}'''
+*'''{{ll|Controls}}'''
+*'''{{ll|Options}}'''
+*'''{{ll|Game modes}}'''
+*'''{{ll|Dedicated server}}'''
+*'''{{ll|Server settings}}'''
+
+===Play the game===
+*'''Stable:''' {{ll|Build {{Current version|stable}}}} <small>({{Current version|date=stable}})</small>
+*'''Unstable:''' {{ll|Build {{Current version|unstable}}}} <small>({{Current version|date=unstable}})</small>
+*'''{{ll|Version history}}'''
+      <div style="display: flex; justify-content: center; gap: 1em;">[[File:Logo Steam 32px.png|link=https://store.steampowered.com/app/108600/|Steam]][[File:Logo GOG 32px.png|link=https://www.gog.com/game/project_zomboid|GOG.com|class=logo-dark]][[File:Logo Humble 32px.png|link=https://www.humblebundle.com/store/project-zomboid|Humble]]</div>
+      <h3 class="plainlinks">[https://theindiestone.com/forums/index.php/forum/35-pz-updates/ Patch notes]</h3>
+{{News|release}}
+      <h3 class="plainlinks">[https://projectzomboid.com/blog/news/ Blog posts]</h3>
+{{News|blog}}
+    }}
+    {{Section
+    | Wiki community
+    | 2 = <div style="text-align: center;">[[Special:RecentChanges|Recent changes]] {{!}} [[Special:NewPages|New pages]] {{!}} [[Special:WantedPages|Missing pages]]</div>
+;[[Special:UserLogin|Register]]
+:Register an account to start contributing to the Project Zomboid wiki.
+;{{ll|Help:Contents|How to help}}
+:Take an introduction to wikitext to learn how you can help.
+;{{ll|PZwiki:Community portal|Community portal}}
+:See what the wiki community is up to or discuss any changes.
+;{{ll|PZwiki:Rules|Wiki rules}}
+:Please try to follow these simple rules when contributing to the wiki.
+;[[Wiki That!]]
+:The PZwiki in game companion!
+;{{ll|PZwiki:Indie_Wiki_Buddy|Indie Wiki Buddy}}
+:Get the Indie Wiki Buddy extension to help support independent wikis like PZwiki!
+      <h3>[[PZwiki:News|Wiki news]]</h3>
+{{News|wiki}}
+    }}
+    {{Section
+    | Modding
+    | 2=
+===={{ll|Modding}}====
+* {{ll|Getting started with modding}}
+* {{ll|Mod structure}}
+* {{ll|Mods}}
+* {{ll|Debug mode}}
+* {{ll|Startup parameters}}</div><div style="break-inside: avoid;">
+    }}    
+  </div>
+</div>
+<div style="margin: 1em; text-align: right; font-style: italic; font-size: 85%;">Changes to the main page can be proposed in the [[Project Zomboid Wiki/sandbox|main page sandbox]].</div>
+{{ll|Category:PZwiki}}

@@ -1,21 +1,88 @@
-{{Infobox/image
-| p1 = [[File:Community Modding Projects - preview.png]]
-}}
-
-
-
-{{Infobox
-| title = Unknown
-| {{Infobox/row
-  | key
-  | value
-  }}
-  {{Infobox/row
-  | key[[File:Image.png|link=]]
-  | tooltip = tooltip
-  | value
-  }}
-}}
-
-
-[[File:Discord-Logo-Color.png]]
+<div>
+    {{Section
+    | class = blue
+    | Game mechanics
+    | 2=
+===[[File:AxeStone.png|link=Lua (API){{lcs}}]] {{ll|Lua (API)}}===
+<div style="display: flex; gap: 20px;">
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|EmmyLua}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|JavaDocs}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Keyboard}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Lua event}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Mod data}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Networking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Typing}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=flex: 1; max-width:1200px; column-width: 150px;
+    }}
+    {{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Armor (crafting)|Armor}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Assembly (crafting)|Assembly}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Blacksmithing (crafting)|Blacksmithing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Blade (crafting)|Blade}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Carpentry (crafting)|Carpentry}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Carving (crafting)|Carving}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Cooking (crafting)|Cooking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Cookware (crafting)|Cookware}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Electrical (crafting)|Electrical}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Farming (crafting)|Farming}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fishing (crafting)|Fishing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Glassmaking (crafting)|Glassmaking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Knapping (crafting)|Knapping}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Masonry (crafting)|Masonry}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Medical (crafting)|Medical}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Metalworking (crafting)|Metalworking}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Packing (crafting)|Packing}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Pottery (crafting)|Pottery}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Repair (crafting)|Repair}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Tailoring (crafting)|Tailoring}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Tools (crafting)|Tools}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weaponry (crafting)|Weaponry}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Other (crafting)|Other}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Miscellaneous (crafting)|Miscellaneous}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=flex: 1; max-width:1200px; column-width: 150px;
+    }}
+</div>
+===[[File:Container DeadPerson Female.png|link=Player{{lcs}}]] {{ll|Player}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Inventory}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Skill}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Moodle}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Occupation}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Trait}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Health}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Nutrition}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Exercise}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Sleep}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Map}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Knox Infection}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Condition}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Starting location}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Quick tips}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+===[[File:WaterDrop.png|link=Knox Country{{lcs}}]] {{ll|Knox Country|Environment}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Vehicle}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Weather}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Erosion}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Fire}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Noise}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Electricity}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+===[[File:Raccoon.png|link=AI{{lcs}}]] {{ll|AI}}===
+{{#tag:div|
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Zombie}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Animal}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Survivor}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Randomized stories}}</div>
+*<div style="text-align:center; margin: 5px 0; break-inside: avoid;">{{ll|Metagame}}</div>
+    |class=list-columns list-plain break-inside: avoid
+    |style=max-width:1200px; column-width: 150px;
+    }}
+    }}
