@@ -1,0 +1,73 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.14.0}}
+This guide will teach step by step how to create custom [[animation]]s for the game. The rig used in this guide is the [[Paddlefruit rig|Paddlefruit Rig]] in Blender 5, but [[Character rigs|other options]] also exist.
+[[File:Paddlefruit's rig - preview.png|thumb]]
+
+{{Note|It is suggested to read the [[Paddlefruit rig]] page to familiarize yourself with the rig and its functionalities before following this guide.}}
+
+== Action Setup ==
+[[File:ActionEditor.png|left|thumb|442x442px]]
+In the Dope Sheet, open the Action Editor. It's as simple as clicking 'New' to create a new action, which is where you will be storing your keyframes.
+
+For action naming convention, it is HIGHLY encouraged that your action name begins with 'Bob_', as that is the base game animation naming convention for human animations and will help with the custom export script.
+
+{{Note|You can make multiple actions per Blender file without issue.}}
+
+== Exporting ==
+This rig is set up specifically for exporting animations as individual GLB files. To help with exporting headache in this regard, a custom script has been written that will do pretty much all of the work for you.
+
+First, make sure that these objects are visible in the scene:
+[[File:Selection.png|left|thumb|446x446px]]
+Make sure that the rig has the EXACT names as shown here. Not Dummy02, Dummy01.001, or anything else. 
+{{Clear}}
+Then, in the Text Editor, open the Python script <code>PY-BobBatchExportGLB.py</code> and run it.
+[[File:ExportScript.png|left|thumb|508x508px]]
+This will open a file explorer window where you will open the location of the folder you want the animation files to be stored in (see the next section).
+
+There are two options, 'Export All Animations' and 'Animation Filter'. By default, the script will export every animation as an individual GLB file if that action has 'Bob_' in the name. If you would rather just have the script export the active animation on Bip01, uncheck 'Export All Animations'.
+
+Don't bother with inputting a name at the bottom, the script will automatically name the file after the action. Then, click 'Select Folder'.
+{{Clear}}
+== File structure and XML structure ==
+{{Main|Mod structure}}
+File structure and XML structure advice and notes.
+
+=== Animation File Location ===
+When moving your animation files into your mod's file structure, you will keep the files under the following folder:
+{{CodeSnip
+| code =
+📁 media/
+    📁 anims_X/
+        ...
+}}
+
+Place the animation files within the <code>anims_X</code> folder in your mod's file structure. In [[Build 42]], only subfolders set by the model's animationsMesh will be scanned for animations. These are further filtered by the animation set. This means that the same animation node can have different animations for each model. For the human models, only the folders <code>Bob/</code> and <code>Kate/</code> will be scanned, and file names must be prefixed with <code>Bob_</code> or <code>Kate_</code>. For example:
+{{CodeSnip
+| code =
+📁 ModName
+    📁 Contents
+        📁 mods
+            📁 subModname
+                📁 media
+                    📁 anims_X
+                        📁 Bob
+                            📄 Bob_*.fbx    <-- name your file accordingly
+                            ...
+}}
+
+=== Animation nodes ===
+{{Main|AnimNode}}
+Animation nodes, defined with XML files, (in the <code>AnimSets/</code> folder) control how your animations trigger, how fast they run etc.
+
+{{Note|Reference vanilla animation XML files (idle, emote, actions, etc) to determine optimal parameters for your animations. Studying how The Indie Stone configures their XML files can provide insights into effective parameter settings.}}
+
+== See also ==
+You can refer to these for more detail on animations.
+*[[AnimNode]] - explains the XML structure of animation nodes and their parameters.
+*[[Animation Viewer]] - a tool to view animations in-game.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Modding guides}}

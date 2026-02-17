@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.1}}
+{{Page version|42.14.0}}
 {{About|modding structure of Project Zomboid|game files of Project Zomboid|Game files|explanations of file formats|File formats}}
 [[File:Mod structure.png|thumb|class=logo-light]]
 
@@ -26,31 +26,31 @@ Example default mod structures are provided by the community to directly use:
 Using the <code>Workshop</code> folder is needed to use the [[Uploading mods#In-game uploader|in-game uploader]] meaning if you use the <code>mods</code> folder you will inevitably end up having to make a copy of your mod in the <code>Workshop</code> folder to upload it to the Steam Workshop. This is still an issue when using an external uploader like the [[Steam Uploader]] modding project, as you need to upload the <code>mods</code> folder which would upload all the extra folders. Take this for example, the folder structure of the cache folder:
 {{CodeSnip
 | code =
-~/
-└── Zomboid/
-    ├── Crafting/
-    ├── joypads/
-    ├── logs/
-    ├── Lua/
-    ├── messaging/
-    ├── mods/
-    │   ├── MyMod1/
-    │   │   └── ...
-    │   └── MyMod2/
-    │       └── ...
-    ├── Recording/
-    ├── Sandbox Presets/
-    ├── Saves/
-    ├── Workshop/
-    │   └── MyModWorkshop/
-    │       └── Contents/
-    │           └── mods/
-    │               ├── MyMod1/
-    │               │   └── ...
-    │               └── MyMod2/
-    │                   └── ...
-    ├── console.txt
-    └── ...
+📁 ~/
+    📁 Zomboid/
+        📁 Crafting/
+        📁 joypads/
+        📁 logs/
+        📁 Lua/
+        📁 messaging/
+        📁 mods/
+            📁 MyMod1/
+                ...
+            📁 MyMod2/
+                ...
+        📁 Recording/
+        📁 Sandbox Presets/
+        📁 Saves/
+        📁 Workshop/
+            📁 MyModWorkshop/
+                📁 Contents/
+                    📁 mods/
+                        📁 MyMod1/
+                            ...
+                        📁 MyMod2/
+                            ...
+        📄 console.txt
+        ...
 }}
 
 In the case where you use the <code>mods</code> folder, to upload with an external tool you would have to indicate the application to upload the content of the folder <code>~/Zomboid</code> since the <code>mods</code> folder needs to be uploaded. This will also upload all the folders around it and will upload other mods you are developing inside the <code>mods</code> folder.
@@ -67,12 +67,12 @@ Another benefit of using the <code>Workshop</code> folder is that it allows you 
 When accessing the [[game files]], if you go in a few folders above in <code>Steam/steamapps/</code>, you can access the folder <code>workshop/content/</code> which stores every mods from all of your games. Project Zomboid has the Steam ID <code>108600</code> which can be seen in the URL of the Steam market page of the game. The mods are stored in the following folder:
 {{CodeSnip
 |code =
-Steam/
-└── steamapps/
-    └── workshop/
-        └── content/
-            └── 108600/
-                └── ...
+📁 Steam/
+    📁 steamapps/
+        📁 workshop/
+            📁 content/
+                📁 108600/
+                    ...
 }}
 
 The folder of the mod will be named after its [[Workshop ID]].
@@ -81,17 +81,17 @@ The folder of the mod will be named after its [[Workshop ID]].
 The Workshop folder will use the following structure:
 {{CodeSnip
 |code =
-Zomboid/
-└── Workshop/
-    └── MyExampleMod/
-        ├── Contents/
-        │   └── mods/
-        │       ├── MyMod1/
-        │       │   └── ...
-        │       └── MyMod2/
-        │           └── ...
-        ├── workshop.txt
-        └── preview.png
+📁 Zomboid/
+    📁 Workshop/
+        📁 MyExampleMod/
+            📁 Contents/
+                📁 mods/
+                    📁 MyMod1/
+                        ...
+                    📁 MyMod2/
+                        ...
+            📄 workshop.txt
+            📄 preview.png
 }}
 
 *<code>Contents/</code>: The folder will only have the <code>mods/</code> folder.
@@ -110,20 +110,20 @@ The files of your mods are placed in the folder <code>Contents/mods/</code> alon
 [[Build 41]] uses the following modding structure.
 {{CodeSnip
 | code =
-Contents/
-└── mods/
-    ├── MyMod1/
-    │   ├── media/
-    │   │   └── ...
-    │   ├── mod.info
-    │   ├── poster.png
-    │   └── ...
-    └── MyMod2/             <--- for extra mods, simply add a new mod folder
-        ├── media/
-        │   └── ...
-        ├── mod.info
-        ├── poster.png
-        └── ...
+📁 Contents/
+    📁 mods/
+        📁 MyMod1/
+            📁 media/
+                ...
+            📄 mod.info
+            📄 poster.png
+            ...
+        📁 MyMod2/             <--- for extra mods, simply add a new mod folder
+            📁 media/
+                ...
+            📄 mod.info
+            📄 poster.png
+            ...
 }}
 
 {{Note|type=warn|The [[#Build 42|Build 42 modding structure]] is considered for the rest of the page. The main difference is the position of the [[#Media folder|media folder]] and the lack of versioning and common folders for Build 41.}}
@@ -132,30 +132,30 @@ Contents/
 [[Build 42]] uses the following modding structure.
 {{CodeSnip
 | code =
-Contents/
-└── mods/
-    ├── MyMod1/
-    │   ├── common/         <--- common folder is mandatory, even if empty !
-    │   │   └── media/
-    │   │       └── ...
-    │   ├── 42/
-    │   │   ├── media/
-    │   │   │   └── ...
-    │   │   ├── mod.info
-    │   │   └── poster.png
-    │   ├── 42.1/           <--- for extra versions, simply add a new version folder
-    │   │   ├── media/
-    │   │   │   └── ...
-    │   │   ├── mod.info
-    │   │   └── poster.png
-    │   ├── 42.1.5/         <--- same here, another different version
-    │   │   ├── media/
-    │   │   │   └── ...
-    │   │   ├── mod.info
-    │   │   └── poster.png
-    │   └── ...
-    └── MyMod2/            <--- for extra mods, simply add a new differently named mod folder
-        └── ...
+📁 Contents/
+    📁 mods/
+        📁 MyMod1/
+            📁 common/         <--- common folder is mandatory, even if empty !
+                📁 media/
+                    ...
+            📁 42/
+                📁 media/
+                    ...
+                📄 mod.info
+                📄 poster.png
+            📁 42.1/           <--- for extra versions, simply add a new version folder
+                📁 media/
+                    ...
+                📄 mod.info
+                📄 poster.png
+            📁 42.1.5/         <--- same here, another different version
+                📁 media/
+                    ...
+                📄 mod.info
+                📄 poster.png
+            ...
+        📁 MyMod2/             <--- for extra mods, simply add a new differently named mod folder
+            ...
 }}
 
 {{Note|Multiple mods can be present in a single uploaded mod (inside <code>Contents/mods/</code>). This can be used for optional mods or different versions of the same mod.}}
@@ -165,15 +165,15 @@ It is possible to mix both [[Build 41]] and [[Build 42]] modding structures in t
 
 {{CodeSnip
 | code =
-Contents/
-└── mods/
-    └── MyMod1/
-        ├── media/        <--- Build 41 folder
-        │   └── ...
-        ├── common/       <--- Build 42 folder
-        │   └── ...
-        └── 42/           <--- Build 42 folder
-            └── ...
+📁 Contents/
+    📁 mods/
+        📁 MyMod1/
+            📁 media/        <--- Build 41 folder
+                ...
+            📁 common/       <--- Build 42 folder
+                ...
+            📁 42/           <--- Build 42 folder
+                ...
 }}
 
 == Common and versioning folders ==
@@ -271,76 +271,75 @@ The <code>sound</code> folder is used to store sound files. The files need to be
 Below is a full example of a mod structure in Windows.
 {{CodeSnip
 | code =
-%UserProfile%/
-└── Zomboid/
-    └── Workshop/
-        └── MyMod/
-            ├── Contents/
-            │   └── mods/
-            │       ├── MyMod1/
-            │       │   ├── 42.0.0/                 <--- will be loaded for versions above 42.0.0
-            │       │   │   ├── media/
-            │       │   │   │   ├── AnimSets/
-            │       │   │   │   │   └── ...
-            │       │   │   │   ├── lua/
-            │       │   │   │   │   ├── client/
-            │       │   │   │   │   │   └── ...
-            │       │   │   │   │   ├── server/
-            │       │   │   │   │   │   └── ...
-            │       │   │   │   │   └── shared/
-            │       │   │   │   │       └── ...
-            │       │   │   │   ├── scripts/
-            │       │   │   │   │   └── ...
-            │       │   │   │   └── ...
-            │       │   │   ├── mod.info
-            │       │   │   ├── poster.png
-            │       │   │   └── icon.png
-            │       │   ├── 42.X.Y/                 <--- will be loaded instead of older versions (42.0.0 for example will not load), for game versions compatibility if needed
-            │       │   │   └── ...
-            │       │   ├── common/                 <--- mandatory, mod won't be detected without it
-            │       │   │   └── media/
-            │       │   │       ├── anims_X/
-            │       │   │       │   └── ...
-            │       │   │       ├── models_X/
-            │       │   │       │   └── ...
-            │       │   │       └── ...
-            │       │   ├── media/                  <--- Build 41 only folder, not used in Build 42
-            │       │   │   ├── anims_X/
-            │       │   │   │   └── ...
-            │       │   │   ├── AnimSets/
-            │       │   │   │   └── ...
-            │       │   │   ├── lua/
-            │       │   │   │   ├── client/
-            │       │   │   │   │   └── ...
-            │       │   │   │   ├── server/
-            │       │   │   │   │   └── ...
-            │       │   │   │   └── shared/
-            │       │   │   │       └── ...
-            │       │   │   ├── models_X/
-            │       │   │   │   └── ...
-            │       │   │   └── scripts/
-            │       │   │       └── ...
-            │       │   ├── mod.info
-            │       │   ├── poster.png
-            │       │   └── icon.png
-            │       └── MyMod2/                     <--- secondary mod, optional if needed
-            │           ├── 42.0.0/
-            │           │   ├── mod.info
-            │           │   ├── poster.png
-            │           │   ├── icon.png
-            │           │   └── ...
-            │           ├── 42.X.Y/
-            │           │   └── ...
-            │           ├── common/
-            │           │   └── ...
-            │           ├── media/
-            │           │   └── ...
-            │           ├── mod.info
-            │           ├── poster.png
-            │           ├── icon.png
-            │           └── ...
-            ├── workshop.txt                        <--- automatically generated when uploading
-            └── preview.png                         <--- 256x256 image
+📁 %UserProfile%/
+    📁 Zomboid/
+        📁 Workshop/
+            📁 MyMod/
+                📄 workshop.txt                        <--- automatically generated when uploading
+                📄 preview.png                         <--- 256x256 image
+                📁 Contents/
+                    📁 mods/
+                        📁 MyMod1/
+                        │   📄 mod.info
+                        │   📄 poster.png
+                        │   📄 icon.png
+                        │   📁 42.0.0/                 <--- will be loaded for versions above 42.0.0
+                        │   │   📁 media/
+                        │   │       📁 AnimSets/
+                        │   │           ...
+                        │   │       📁 lua/
+                        │   │           📁 client/
+                        │   │               ...
+                        │   │           📁 server/
+                        │   │               ...
+                        │   │           📁 shared/
+                        │   │               ...
+                        │   │       📁 scripts/
+                        │   │           ...
+                        │   │       ...
+                        │   │   📄 mod.info
+                        │   │   📄 poster.png
+                        │   │   📄 icon.png
+                        │   📁 42.X.Y/                 <--- will be loaded instead of older versions (42.0.0 for example will not load), for game versions compatibility if needed
+                        │   │   ...
+                        │   📁 common/                 <--- mandatory, mod won't be detected without it
+                        │   │   📁 media/
+                        │   │       📁 anims_X/
+                        │   │           ...
+                        │   │       📁 models_X/
+                        │   │           ...
+                        │   │       ...
+                        │   📁 media/                  <--- Build 41 only folder, not used in Build 42
+                        │       📁 anims_X/
+                        │           ...
+                        │       📁 AnimSets/
+                        │           ...
+                        │       📁 lua/
+                        │           📁 client/
+                        │               ...
+                        │           📁 server/
+                        │               ...
+                        │           📁 shared/
+                        │               ...
+                        │       📁 models_X/
+                        │           ...
+                        │       📁 scripts/
+                        │           ...
+                        📁 MyMod2/                     <--- secondary mod, optional if needed
+                            📄 mod.info
+                            📄 poster.png
+                            📄 icon.png
+                            📁 42.0.0/
+                                📄 mod.info
+                                📄 poster.png
+                                📄 icon.png
+                                ...
+                            📁 42.X.Y/
+                                ...
+                            📁 common/
+                                ...
+                            📁 media/
+                                ...
 }}
 
 == See also ==

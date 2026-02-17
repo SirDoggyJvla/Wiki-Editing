@@ -1,60 +1,46 @@
-{{Header|Modding|Modding guides}}
-{{Page version|42.10.0}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.14.0}}
 {{About|file formats used in Project Zomboid|the file structure of the game|File structure}}
 Project Zomboid uses different '''file formats''' for within its files to use models, textures, images but also to write codes and scripts. This page will list the different formats used in the game and their specificity.
 
-==Programming==
-===Lua===
+== Programming ==
+
+=== Lua ===
 {{Main|Lua (language)}}
 Project Zomboid allows modders to program functionalities via a Java implementation of '''Lua''' called Kahlua (see [[Lua (API)]] which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods.
 
-===XML===
-This format is mostly used for clothing items and defining animations by using AnimSets.
+=== XML ===
+This format is mostly used for [[Creating a clothing mod|clothing]] items and defining animations by using [[AnimSets]].
 
-===Text files===
+=== Text files ===
 The <code>.txt</code> format is commonly used, notably for [[Scripts]]. Different files may require different types of formating inside the text file to be usable.
 
 [[Scripts]] and [[Translations]] can be written easier by using [[Visual Studio Code#Zed Script|Zed Script]], an addon developped for [[Visual Studio Code]].
 
-==Texture and modeling formats==
+== Texture and modeling formats ==
 Texture formats are used either to create items or to create the world. The formats are different for each type of texture, and the formats are outlined below. The model formats are used to create the 3D models to implement in the game, and are also outlined below.
 
-===Image formats===
+=== Image formats ===
 {{Stub|section=true}}
 The game uses 8bit PNGs (16bits is not accepted) for its textures and images, so you'll be dealing with those. A lot of the icons and some other images are not stored inside classic image textures but in [[#TexturePacks (.pack files)|.pack files]].
 
-===Modeling and animation formats===
+=== Modeling and animation formats ===
+{{Main|Animation#File types|Modeling#File types}}
 The model formats which can be used are :
-*[[Wikipedia:DirectX|DirectX]] (<code>.x</code>)
+*[[Wikipedia:DirectX|DirectX]] (<code>.x</code>) {{Sup|Not recommended|red}}
 *[[Wikipedia:FBX|Filmbox FBX]] (<code>.fbx</code>)
-*[[Wikipedia:GlTF#GLB|Graphics Library Transmission Format]] (<code>.glb</code>) - allows for animations to be stored in model files, to animate clothing and other models.
+*[[Wikipedia:GlTF#GLB|Graphics Library Transmission Format]] (<code>.glb</code>)
 
-Most vanilla game assets use DirectX for most of its models, with some Filmbox model such as WorldItem as well as the [[vehicle]]s.
+==== Importing assets ====
+{{Main|Importing assets}}
 
-{{Note|type=warn|It is recommended to use the Filmbox format for modding, as it is more widely supported by modern 3D modeling software. There is no point to using the DirectX format.}}
-{{Note|type=error|If you are having issues with implementing custom models in the game, switching to DirectX will '''never''' be the solution to fix those.}}
-
-====Importing assets====
 Due to DirectX being a mostly outdated format, most 3D modeling software do not support it natively. However, there are tools and addons that allow you to import DirectX files into software like [[Wikipedia:Blender|Blender]] or other 3D modeling software.
 
-{| class="wikitable theme-blue sortable" style="text-align: center;
-|+ style="white-space:nowrap" | Model and animation import tools
-|-
-! Tool !! Description !! Model import !! Animation import
-|-
-| [https://github.com/poikilos/io_import_x IO X Importer] || Blender addon. Works for older versions of Blender but also more recent versions such as confirmed working in 4.1 and 4.2. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
-|-
-| [https://github.com/oguna/Blender-XFileImporter X File Importer] || Blender addon. Should work for newer Blender versions but '''the imported models can have problems'''. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
-|-
-| [[ZomboidAssetConverter]] || A project which aimed to provide a proper tool to convert Project Zomboid assets into a usable modern format. || [[File:UI Tick.png]] || [[File:UI Tick.png]]
-|-
-| [https://3d-convert.com/en/ 3D convert] || General website to converting models. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
-|}
-
-===TexturePacks (.pack files)===
+=== TexturePacks (.pack files) ===
 Pack files are used to store image files in a very efficient way. The format requires you to use the [[Pack Viewer]] to be able to open the format.
 
-====Technicality====
+==== Technicality ====
 These are the files located in <code>/media/texturepacks/</code>, Characters.pack, Tiles.pack, and UI.pack. Reading them is simple, the implementation will probably be 20 or 30 lines long.
 
 Each file contains a number of 'pages' which are basically PNG images with an associated array of offset coordinates, widths, heights, and names, that are specify smaller rectangles on the PNG file that are to be copied into their own individual images. This is called a [https://en.wikipedia.org/wiki/Texture_atlas texture atlas] and is a common practice in game development.
@@ -99,8 +85,7 @@ For example, the Apple inventory item entry on the page 'ninventory0' has the fo
 So to get this image, we'd load the PNG data following these entries into memory, use some method to cut a 28x32 subtexture out of the PNG at (184, 274), and then write those pixels into a 32x32 image beginning at (3, 0).<br><br>
 [[File:Pack_file_structure.png]]
 
-
-===Icon files===
+=== Icon files ===
 Icon files are used in [[Item scripts]] to define the icon of an item appearing in the inventory. Vanilla icons are most of the time located in a texture pack:
 {{CodeSnip
 | code =
@@ -157,13 +142,13 @@ ProjectZomboid/
             └── MyItemIcon.png
 }}
 
-===Video format===
+=== Video format ===
 {{Stub|section=True}}
 Videos in the game use the <code>.bik</code> format. Currently they can only be installed manually.
 
-==Map formats==
+== Map formats ==
 
-===map_sand.bin===
+=== map_sand.bin ===
 [https://gist.github.com/Fuebar/7495914 Simple big-endian BinaryReader override written in C#.]
 
 A simple contiguous array of big-endian 32-bit integers. On loading, each integer is stored in a specific global option variable used to control things like zombie attributes and game speed, when the power will go out, etc. All the options you can set at the creation of a Sandbox game. Useful for tweaking options after you've already created your game.
@@ -196,7 +181,7 @@ Example file contents:
     etc., total of six lines of this length
 </pre>
 
-===.lotheader files===
+=== .lotheader files ===
 These files contain information relevant to each .lotpack file in /media/maps/[map name]/. They are found in the same directory at .lotpack files and have the same naming format as well. Each <code>world_[int]_[int].lotpack</code> file has a corresponding <code>[int]_[int].lotheader</code> file that goes with it. The variables <code>wX</code> and <code>wY</code> denote world coordinates and represent the [int]_[int] part of the file name. They will be used as such to represent these in the format code below. All integers are little-endian.
 
 I feel these aren't very practical explanations of the formats, and so I'm linking to a GitHub gist that contains some classes and methods, written in C#, that can read .lotheader files. They don't actually ''do'' anything with the data, however.
@@ -240,5 +225,7 @@ Room format, iterate over it the number of times indicated by the <code>int32</c
     [end of object format]
 </pre>
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Modding guides}}

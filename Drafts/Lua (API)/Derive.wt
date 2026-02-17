@@ -1,0 +1,32 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.2}}
+The process of '''deriving''' is used in the [[Lua (API)|Lua API]] to create a new object based on an existing one. This is done using the <code>derive</code> method from [[ISBaseObject#Object inheritance|ISBaseObject]], which creates a completely new object with the same properties as the original object which it's derived from. This can not only be used on the <code>ISBaseObject</code> class but also on any other class that inherits from it so you can derive an object which already derived from <code>ISBaseObject</code>. This effectively allows you to create classes and sub-classes in Lua.
+
+The parameter of the derive function, the <code>Type</code>, is used to register the "class name" of the new object. This variable is stored in the <code>Type</code> member of the new class.
+
+== Example ==
+
+{{CodeSnip
+| lang = lua
+| code =
+-- Example of deriving a new object from ISBaseObject
+local MyCustomObject = ISBaseObject:derive("MyCustomObject")
+
+function MyCustomObject:new()
+    local o = {}
+    setmetatable(o, self)
+    self.__index = self
+    return o
+end
+
+function MyCustomObject:someMethod()
+    -- Custom method implementation
+end
+}}
+
+== Navigation ==
+{{Navbox Lua objects}}
+
+{{ll|Category:Lua (API)}}
+{{ll|Modding guides}}

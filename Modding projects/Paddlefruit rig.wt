@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.1}}
+{{Page version|42.14.0}}
 {{Infobox
 | title = Paddlefruit rig
 | class = theme-blue
@@ -27,6 +27,26 @@
 }}
 '''Paddlefruit rig''' is a Blender [[animation]] IK and FK rig for the Project Zomboid character model named after its creator. The rig was designed for the version 4 of Blender. See its GitHub repository for more informations as well as instructions on how to use it.
 
+== Using the Rig ==
+A comprehensive guide can be found on the [https://github.com/Paddlefruit/ProjectZomboid_CommunityRig Paddlefruit Rig GitHub ReadMe], but the broad functionalities are as follows:
+
+=== Rig Properties ===
+The various properties of the rig can be switched by selecting the control bone 'CTRL_Root' (the white square around the character's feet) while in pose mode. Then, open up the sidebar (N, by default), select the 'Item' tab, then expand 'Properties'. It is recommended to keyframe these values if you have multiple animations in the same Blender project that have differing properties.
+[[File:Rig Properties.png|left|thumb]]
+
+==== IK/FK Switching ====
+Each limb can switch between using forward kinematics or inverse kinematics, and is toggled by a slider (0 for FK, 1 for IK). By default the legs are in IK and the arms are in FK. The different controls for each context will appear based on whatever context is actively contributing to the end result.
+
+==== Head Look Point ====
+If you would rather have the head look towards a dedicated object rather than rotating the head manually, you can switch the 'Head_UseLookPoint' to 1. By default, it is disabled. The look point bone will reveal itself whenever this value is not 0. You can also change whether the look point bone follows the root control bone with the 'LookPoint_FollowRoot' property.
+
+==== Prop Follow Hands ====
+The prop control bones (the white axis bones connected to the hands) automatically follow the hands and are rotated by default to not require additional input from the animator. However, if you want the prop bones to be detached from the hands, you can set the 'Prop_FollowHand' properties to 0 for either prop bone.
+[[File:TrnslationData.png|left|thumb|399x399px]]
+
+==== Translation Data ====
+The 'CTRL_TranslationData' bone is used to move the 'Translation_Data' object, which is used by Project Zomboid to move the character in gameplay. Note that this is different from moving the 'CTRL_Root' bone, which would move your character visually, but NOT move the players actual position. So, if you want your animation to move the player, animate the 'CTRL_TranslationData' bone.
+{{Clear}}
 == Navigation ==
 {{Navbox modding}}
 

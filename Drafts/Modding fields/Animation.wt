@@ -1,13 +1,13 @@
 {{LangSwitch}}
-{{Navbar_modding}}
-{{Page version|42.13.1}}
+{{Navbar modding}}
+{{Page version|42.14.0}}
 '''Animation''' in Project Zomboid consist in the creation of custom animations and adding them to the game or replacing existing ones. The process involves both animating a skeleton of the character model, usually called a ''rig'', exporting it to a [[File formats#Modeling and animation formats|format]] that the game can read (preferably Filmbox {{Code|.fbx}}) and defining an [[AnimNodes|AnimNode]] which will be used to play the animation in-game and define its properties.
 
-You can find a list of available rigs for animating on the page [[Animation rigs]].
+You can find a list of available rigs for animating on the page [[Character rigs]].
 
 == Folder structure ==
 {{Main|Mod structure}}
-The <code>anims_X</code> folder is used to store animation files. The files need to be either in the DirectX format (<code>.x</code>) or Filmbox format (<code>.fbx</code>). They can be put in subfolders for organization and can replace files with the same relative path. See the page [[File formats#Modeling and animation formats|file formats]] for more details.
+The <code>anims_X</code> folder is used to store animation files. They can be put in subfolders for organization and can replace files with the same relative path. See the page [[File formats#Modeling and animation formats|file formats]] for more details.
 
 '''AnimSets''' are put inside the <code>AnimSets</code> folder. An [[AnimSet]] is a collection of [[AnimState]]s and are usually associated to an entity such as the player, a zombie or an animal. [[AnimState]]s define a specific state the entity can be in, such as walking, running, or idle. For an AnimState, [[AnimNodes]] are used to define the animations that can be played in that state, and for which conditions like the current speed of the entity playing a different animation, or the player being injured having a different stance.
 
@@ -91,10 +91,28 @@ media/
     }}
 }}
 
+== File types ==
+The animation formats which can be used are:
+{| class="wikitable theme-blue sortable" style="text-align: center;
+|+ style="white-space:nowrap" | Animation formats
+|-
+! Format !! Description
+|-
+| [[Wikipedia:GlTF#GLB|Graphics Library Transmission Format]] (<code>.glb</code>) {{Sup|recommended|green}} ||
+Allows for lighter file sizes in general when properly exported. [[Paddlefruit rig]] uses it for exports.
+|-
+| [[Wikipedia:FBX|Filmbox FBX]] (<code>.fbx</code>) || 
+The most commonly used format for animations and models, and can be [[Hot reloading|hot-reloaded]] in-game automatically when the file is updated. Can be useful for adjustments and testing before finalizing an animation.
+|-
+| [[Wikipedia:DirectX|DirectX]] (<code>.x</code>) {{Sup|not recommended|red}} ||
+The format used for most vanilla game assets, but is widely unsupported in modern animation software. It is highly recommended to not use this format for modding, as it can cause more issues than it solves, and there is no point to using it when the other formats are available and more widely supported.
+|}
+
 == See also ==
 *[[Creating custom animations]] – a step-by-step guide on how to create animations.
 *[[Game files]] – accessing game files, including animations.
 *[[Mod structure]] – explanation of the structure of a mod.
+*[[Importing assets]] - a guide on how to import in-game assets such as animations and models into Blender.
 
 {| class="wikitable theme-blue sortable" style="text-align: center;
 |+ style="white-space:nowrap" | External tutorials

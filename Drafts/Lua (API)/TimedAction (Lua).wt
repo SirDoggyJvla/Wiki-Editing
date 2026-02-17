@@ -1,0 +1,36 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.13.2}}
+Timed actions in the [[Lua (API)|Lua API]] are used to create actions that the player can perform, defining different stages of the action such as the start, the end and during the action. It's a fairly flexible system, albeit with lots of redundancy when defining a timed action. Timed actions are use <code>ISBaseTimedAction</code> as a base, which is a subclass of [[ISBaseObject]]. Those timed actions once instanced with a <code>new</code> function can be added to the queue of actions [[ISTimedActionQueue]] to be fully handled by the game one after the other. When a timed action is instanced, it also creates a [[LuaTimedActionNew]] java object which is used by the game java side to handle the timed action. The timed action <code>update</code> method is notably called from the java every ticks.
+
+For a full list of default functions in the <code>ISBaseTimedAction</code> class and different [[Derive|derived]] timed actions, see the [https://demiurgequantified.github.io/ProjectZomboidLuaDocs/classISBaseTimedAction.html LuaDocs].
+
+== Multiplayer ==
+Since [[Build 42.13.0]], timed actions need to be stored globally to work in [[multiplayer]], however this tends to cause issues with pollution of the global namespace and can cause conflicts between mods. To avoid this, you can do the following:
+{{CodeSnip
+| lang = lua
+| code =
+-- here the Type will have a prefix of "MyMod_" to reduce conflict
+local MyCustomTimedAction = ISBaseTimedAction:derive("MyMod_MyCustomTimedAction")
+
+--- define the various elements of the timed action
+...
+
+--- define your new function
+function MyCustomTimedAction:new(...)
+    ...
+end
+
+--- this will store your timed action in the global namespace but with a prefix to reduce conflict
+_G[MyCustomTimedAction.Type] = MyCustomTimedAction
+
+--- this will allow you to import your timed action via `require`
+return MyCustomTimedAction
+}}
+
+For more details, see the [[TIS Modding Guides]].
+
+== Navigation ==
+{{Navbox Lua objects}}
+
+{{ll|Category:Lua (API)}}

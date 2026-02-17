@@ -1,0 +1,416 @@
+{{LangSwitch}}
+{{Navbar_modding}}
+{{Page version|42.13.2}}
+{{Main|AnimNodes}}
+The {{Code|m_Events}} parameter is used to trigger different events during the animation at specific moments. This can be used to play sounds, set variables, and more.
+
+The syntax of this block needs to be as follows:
+{{CodeSnip
+| lang = xml
+| code =
+<m_Events>
+    <m_EventName>...</m_EventName>
+    <m_Time>...</m_Time>
+    <m_ParameterValue>...</m_ParameterValue>
+</m_Events>
+}}
+
+With the following parameters:
+{| class="wikitable theme-blue sortable"
+|+ style="white-space:nowrap" | List of parameters
+! Event !! Description
+|-
+| <code>m_EventName</code>
+| The name of the event to trigger. See [[#Available events]] for a list of available events.
+|-
+| <code>m_Time</code> {{Sup|Mutual exclusive|orange}}
+| The moment during the animation when the event will be triggered. This can be set to ''Start'' or ''End''.
+|-
+| <code>m_TimePc</code> {{Sup|Mutual exclusive|orange}}
+| The moment during the animation when the event will be triggered. This uses a normalized time, so <code>0</code> is the start and <code>1</code> is the end. In comparison to <code>m_Time</code>, this allows for more precision of when to trigger the event.
+|-
+| <code>m_ParameterValue</code>
+| The value to pass to the event when it is triggered. This can be used to specify which sound to play, which variable to set, and more, depending on the event being triggered.
+|}
+
+== Available events ==
+{| class="wikitable theme-blue sortable mw-collapsible mw-collapsed"
+|+ style="white-space:nowrap" | List of available events
+! Event !! Description
+|-
+| <code></code>
+| Only used when extending another AnimNode, the event name is removed since it references the extended file original event from the placement of the tag in the file.
+|-
+| <code>AttackAnim</code>
+|
+|-
+| <code>AttackCollisionCheck</code>
+|
+|-
+| <code>AttackConnect</code>
+|
+|-
+| <code>BlockMovement</code>
+|
+|-
+| <code>BlockTurn</code>
+|
+|-
+| <code>CancelKnockDown</code>
+|
+|-
+| <code>CheckAttack</code>
+|
+|-
+| <code>Chop</code>
+|
+|-
+| <code>ChopTree</code>
+|
+|-
+| <code>ClimbDone</code>
+|
+|-
+| <code>ClimbWindowObstacle</code>
+|
+|-
+| <code>Climbed</code>
+|
+|-
+| <code>Collide</code>
+|
+|-
+| <code>DamageWhileInTrees</code>
+|
+|-
+| <code>Death</code>
+|
+|-
+| <code>DeathSound</code>
+|
+|-
+| <code>Defend</code>
+|
+|-
+| <code>DepositInContainer</code>
+|
+|-
+| <code>DoDeath</code>
+|
+|-
+| <code>EatBody</code>
+|
+|-
+| <code>EmoteFinishing</code>
+|
+|-
+| <code>EmoteLooped</code>
+|
+|-
+| <code>ExtFinishing</code>
+|
+|-
+| <code>FallOnBack</code>
+|
+|-
+| <code>FallOnFront</code>
+|
+|-
+| <code>FallenOnKnees</code>
+|
+|-
+| <code>FlagWhileAlive</code>
+|
+|-
+| <code>Footstep</code>
+|
+|-
+| <code>GrappleGrabCollisionCheck</code>
+|
+|-
+| <code>GrapplerLetGo</code>
+|
+|-
+| <code>GrapplerRandomGrunt</code>
+|
+|-
+| <code>InsertBullet</code>
+|
+|-
+| <code>InsertBulletSound</code>
+|
+|-
+| <code>IsAlmostUp</code>
+|
+|-
+| <code>KilledByAttacker</code>
+|
+|-
+| <code>KnockDown</code>
+|
+|-
+| <code>OnBedStarted</code>
+|
+|-
+| <code>OnFloor</code>
+|
+|-
+| <code>PageFlip</code>
+|
+|-
+| <code>PistolWhipAnim</code>
+|
+|-
+| <code>PlayBreedSound</code>
+|
+|-
+| <code>PlayCollideSound</code>
+|
+|-
+| <code>PlayDeathSound</code>
+|
+|-
+| <code>PlayFenceSound</code>
+|
+|-
+| <code>PlayHitSound</code>
+|
+|-
+| <code>PlayNotchedPlankSound</code>
+|
+|-
+| <code>PlayShaveSound</code>
+|
+|-
+| <code>PlaySitDownSound</code>
+|
+|-
+| <code>PlaySound</code>
+| Used to play a specific [[sound (scripts)|sound script]].
+|-
+| <code>PlaySoundNoBlend</code>
+|
+|-
+| <code>PlaySwingSound</code>
+|
+|-
+| <code>PlayTripSound</code>
+|
+|-
+| <code>PlayWindowSound</code>
+|
+|-
+| <code>PlayerVoiceSound</code>
+| Plays a character sound using the voice system which allows users to customize voices on character creation.
+
+Below is a list of player voices retrieved from the game files, but there might be more available:
+<div class="list-columns" style="column-width:180px; max-width:900px;">
+* <code>ApplyBandage</code>
+* <code>ClimbWindow</code>
+* <code>CorpseDragging</code>
+* <code>CorpseHighEffort</code>
+* <code>CorpseLowEffort</code>
+* <code>Cough</code>
+* <code>DeathAlone</code>
+* <code>DeathEaten</code>
+* <code>DeathEaten</code>
+* <code>DeathFall</code>
+* <code>Exercise</code>
+* <code>FreezeShiver</code>
+* <code>JumpHigh</code>
+* <code>JumpLow</code>
+* <code>LureCmon</code>
+* <code>LureTsk</code>
+* <code>MeleeAttack</code>
+* <code>MeleeAttackHeavy</code>
+* <code>MeleeShove</code>
+* <code>MeleeStab</code>
+* <code>MeleeStomp</code>
+* <code>MuffledCough</code>
+* <code>PainFromBite</code>
+* <code>PainFromFallHigh</code>
+* <code>PainFromFallLow</code>
+* <code>PainFromGlassCut</code>
+* <code>PainFromRunIntoWall</code>
+* <code>PainFromScratch</code>
+* <code>PainMoodle</code>
+* <code>PainfromLacerate</code>
+* <code>SighBored</code>
+* <code>SighReliefed</code>
+* <code>SighSad</code>
+* <code>Smoke</code>
+* <code>SneezeHeavy</code>
+* <code>SneezeHeavy</code>
+* <code>SneezeLight</code>
+</div>
+|-
+| <code>PushAwayZombie</code>
+|
+|-
+| <code>ReanimateAnimFinishing</code>
+|
+|-
+| <code>RemoveBullet</code>
+|
+|-
+| <code>RemoveBulletSound</code>
+|
+|-
+| <code>ResetSitOnGroundAnim</code>
+|
+|-
+| <code>SetAttackOutcome</code>
+|
+|-
+| <code>SetCollidable</code>
+|
+|-
+| <code>SetMeleeDelay</code>
+|
+|-
+| <code>SetOnFloor</code>
+|
+|-
+| <code>SetSharedGrappleType</code>
+|
+|-
+| <code>SetState</code>
+|
+|-
+| <code>SetVariable</code>
+|
+|-
+| <code>ShoveAnim</code>
+|
+|-
+| <code>SitGroundStarted</code>
+|
+|-
+| <code>SitOnFurnitureStarted</code>
+|
+|-
+| <code>SplatBlood</code>
+|
+|-
+| <code>StartActionAnim</code>
+|
+|-
+| <code>StartCrawling</code>
+|
+|-
+| <code>StompAnim</code>
+|
+|-
+| <code>ThumpFrame</code>
+|
+|-
+| <code>TurnAround_FlipSkeleton</code>
+|
+|-
+| <code>TurnComplete</code>
+|
+|-
+| <code>TurnSome</code>
+|
+|-
+| <code>VaultOverStarted</code>
+|
+|-
+| <code>VaultSprintFallLanded</code>
+|
+|-
+| <code>WeaponEmptyCheck</code>
+|
+|-
+| <code>WindowAnimLooped</code>
+|
+|-
+| <code>WindowCloseAttempt</code>
+|
+|-
+| <code>WindowCloseSuccess</code>
+|
+|-
+| <code>WindowOpenAttempt</code>
+|
+|-
+| <code>WindowOpenSuccess</code>
+|
+|-
+| <code>WindowStruggleSound</code>
+|
+|-
+| <code>attachConnect</code>
+|
+|-
+| <code>changeWeaponSprite</code>
+|
+|-
+| <code>detachConnect</code>
+|
+|-
+| <code>footstep</code>
+|
+|-
+| <code>idleActionEnd</code>
+|
+|-
+| <code>loadFinished</code>
+|
+|-
+| <code>pettingFinished</code>
+|
+|-
+| <code>playClickSound</code>
+|
+|-
+| <code>playReloadSound</code>
+|
+|-
+| <code>rackBullet</code>
+|
+|-
+| <code>rackingFinished</code>
+|
+|-
+| <code>setSitOnGround</code>
+|
+|-
+| <code>unloadFinished</code>
+|
+
+|}
+
+== Timed Actions integration ==
+[[Timed Action (Lua)|Timed actions]] can catch on animation events and trigger code based on those received events. This is done with the use of an <code>animEvent</code> function defined in the timed action, which will be called whenever an animation event is triggered.
+
+For example:
+{{CodeSnip
+| lang = lua
+| code =
+function YourCustomTimedAction:animEvent(event, parameter)
+    if event == "DoThat" then
+        if parameter == "Something" then
+            -- Do something
+        elseif parameter == "SomethingElse" then
+            -- Do something else
+        end
+    end
+end
+}}
+
+== Example ==
+{{CodeSnip
+| lang = xml
+| code =
+<m_Events>
+    <m_EventName>PlayerVoiceSound</m_EventName>
+    <m_Time>Start</m_Time>
+    <m_ParameterValue>CorpseHighEffort</m_ParameterValue>
+</m_Events>
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:AnimNodes parameters}}

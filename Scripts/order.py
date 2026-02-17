@@ -1,0 +1,45 @@
+l = [
+"PainFromGlassCut",
+"DeathFall",
+"DeathEaten",
+"PainFromScratch",
+"PainfromLacerate",
+"PainFromBite",
+"SneezeHeavy",
+"Cough",
+"SneezeLight",
+"MuffledCough",
+"SneezeHeavy",
+"DeathAlone",
+"PainFromFallHigh",
+"PainFromFallLow",
+"PainMoodle",
+"DeathEaten",
+"ApplyBandage",
+"LureCmon",
+"LureTsk",
+"SighSad",
+"SighReliefed",
+"SighBored",
+"MeleeShove",
+"Smoke",
+"JumpHigh",
+"JumpLow",
+"ClimbWindow",
+"PainFromRunIntoWall",
+"CorpseDragging",
+"FreezeShiver",
+"Exercise",
+"CorpseHighEffort",
+"CorpseLowEffort",
+"MeleeAttack",
+"MeleeStab",
+"MeleeAttackHeavy",
+"MeleeStomp",
+
+]
+
+l.sort()
+
+for x in l:
+    print(f"* <code>{x}</code>")

@@ -1,15 +1,34 @@
-{{Header|Modding}}
-{{Page version|42.12.0}}
-{{Stub}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.14.0}}
 '''Modeling''' is the process of creating 3D models using specialized software, to directly implement in-game in the form of items or vehicles, or to create [[rendering|renders]]. The most common software in the Project Zomboid community for any 3D work is [[Wikipedia:Blender|Blender]], but there are many others available.
 
 It is possible to import game assets to use in your own project, see [[File formats#Importing assets]].
 
-==See also==
+== File types ==
+The modeling formats which can be used are:
+{| class="wikitable theme-blue sortable" style="text-align: center;
+|+ style="white-space:nowrap" | Modeling formats
+|-
+! Format !! Description
+|-
+| [[Wikipedia:FBX|Filmbox FBX]] (<code>.fbx</code>) || 
+The most commonly used format for animations and models, and can be [[Hot reloading|hot-reloaded]] in-game automatically when the file is updated.
+|-
+| [[Wikipedia:GlTF#GLB|Graphics Library Transmission Format]] (<code>.glb</code>) ||
+A format which allows for animations to be stored in the model file, which can be useful for niche applications to animate clothing or tiles.
+|-
+| [[Wikipedia:DirectX|DirectX]] (<code>.x</code>) {{Sup|not recommended|red}} ||
+The format used for most vanilla game assets, but is widely unsupported in modern 3D software. It is highly recommended to not use this format for modding, as it can cause more issues than it solves, and there is no point to using it when the other formats are available and more widely supported.
+|}
+
+== See also ==
 *[[Animation]] - a guide on creating custom animations for the game.
 *[[Scripts]] - a guide on creating scripts to add new items, vehicles etc.
+*[[Importing assets]] - a guide on how to import in-game assets such as animations and models into Blender.
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
 
 {{ll|Category:Modding guides}}
+{{ll|Category:Modding}}
