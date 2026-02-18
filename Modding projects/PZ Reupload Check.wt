@@ -1,0 +1,30 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.14.0}}
+{{Infobox
+| title = PZ Reupload Check
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Chuckleberry-Finn/PZ-reupload-check/releases
+        | Download
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Chuckleberry-Finn/PZ-reupload-check
+        | GitHub repository
+        }}
+    }}
+}}
+'''PZ Reupload Check''' is a tool used to find and report unauthorized copies of your mods on the Steam Workshop. It automatically finds reuploads and determines a similarity score between the original mod and the reupload. It also automatically fills DMCA takedown forms for you to submit to Steam.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

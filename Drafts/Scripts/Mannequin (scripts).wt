@@ -1,12 +1,12 @@
 {{Title|mannequin (scripts)}}
-{{Header|Modding|Scripts}}
-{{Page version|42.10.0}}
-{{Main|Scripts}}
-{{About|custom mannequin [[scripts]]|mannequin objects|Mannequin}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.14.0}}
+{{About|custom mannequin [[scripts]]|mannequin objects|mannequin}}
 [[File:mannequin - mapping guide.png|thumb]]
 {{Code|mannequin}} scripts are used to define custom [[mannequin]] types in Project Zomboid, which can be used in [[mapping]] to create mannequins in the world.
 
-==mannequin parameters==
+== mannequin parameters ==
 The {{Code|mannequin}} block can have the following parameters:
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of parameters for the <code>mannequin</code> block
@@ -42,7 +42,7 @@ The {{Code|mannequin}} block can have the following parameters:
 
 {{Note|Animal models and textures can be used in mannequins ! For the [[outfit]] parameter, you can use the {{Code|Naked}} outfit but some clothing items can be used by animals such as hats.}}
 
-==Available mannequins==
+== Available mannequins ==
 Below is the list of available mannequins in the vanilla game:
 <div class="list-columns" style="column-width:200px; max-width:900px;">
 *<code>FemaleBlack01</code>
@@ -76,5 +76,7 @@ Below is the list of available mannequins in the vanilla game:
 *<code>MaleLeather</code>
 </div>
 
-==Navigation==
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Scripts}}

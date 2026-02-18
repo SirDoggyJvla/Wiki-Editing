@@ -1,0 +1,29 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.14.0}}
+{{Infobox
+| title = Zomboid Script Generator
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Zomboid Script Generator - preview.png]]
+    }}
+    
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/Gustavo-Gomberg/Zomboid-Script-Generator
+        | GitHub repository
+        }}
+    }}
+}}
+'''Zomboid Script Generator''' is a simple Python tool used to generate [[Scripts]] via a user-friendly interface. It is designed to help modders create scripts without needing to write code manually, making the process more accessible.
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

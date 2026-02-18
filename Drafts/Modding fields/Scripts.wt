@@ -1,7 +1,7 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.1}}
-'''Scripts''', also refered as ''zedscripts'', are a form of modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
+{{Page version|42.14.0}}
+'''Scripts''', also referred to as ''zedscripts'', are a format for modding in Project Zomboid which is used to implement new items, recipes, sounds, vehicles and more. Scripts do not follow a normalized typing format and are a fully custom syntax with rules of their own, even varying between the different types of scripts. The script files are usually located in the folder {{Code|media/scripts}} in the [[game files]] or the [[Mod structure|mod folder]].
 
 {{Note|type=warn|Scripts are not a programming language, but mostly a custom format to define data for game elements which are parsed and cached inside the Java.}}
 
@@ -10,15 +10,15 @@
 '''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the [[Lua (API)|Lua]]. The only rule is that the script files must end with the extension <code>.txt</code>. Various script types can be used and spread across multiple script files in different subfolders.
 {{CodeSnip
 | code =
-media/
-└── scripts/
-    ├── subFolder/
-    │   └── anotherScript.txt
-    ├── this_is_a_script.txt
-    └── ...
+📁 media/
+    📁 scripts/
+        📁 subFolder/
+            📄 anotherScript.txt
+        📄 this_is_a_script.txt
+        ...
 }}
 
-== Typing syntax ==
+== Scripts syntax ==
 The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script types as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.
 
 Comments follow the Java multiline comment syntax, starting with {{Code|/*}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks. Single line {{Code|//}} comments do not work and should not be used.
@@ -123,6 +123,9 @@ module MyModule {
 }
 }}
 
+=== File overrides ===
+Naming a file with the same relative path as another will override all script definitions of the original file. This is usually not a good solution as most vanilla scripts are now in huge script files together, so you can't override a single script and have other mods also do it.
+
 === Soft overrides ===
 When defining a script block which already exists, such as an [[item (scripts)|item]] or a [[craftRecipe]], based on the type of script, the game will either override the whole block, or merge the new definition with the existing one. This process is called a ''soft override''. Script blocks which support soft overrides will be marked as such on their specific documentation page.
 
@@ -158,72 +161,76 @@ Script types are the different kind of elements that can be defined in scripts. 
 |+ style="white-space:nowrap" | List of Script types
 ! Parameter name !! Description
 |-
-| [[animation (scripts)|animation]]
-| {{Stub|section=true}}
+| [[animation (scripts)|animation]] || 
+{{Stub|section=true}}
 |-
-| [[character_profession_definition|character_profession_definition]]
-| Used to define a new character profession.
+| [[character_profession_definition|character_profession_definition]] || 
+Used to define a new character profession.
 |-
-| [[character_trait_definition|character_trait_definition]]
-| Used to define a new character trait.
+| [[character_trait_definition|character_trait_definition]] || 
+Used to define a new character trait.
 |-
-| [[craftRecipe]]
-| Used to define a [[Crafting|recipe]] in [[Build 42]].
+| [[craftRecipe]] || 
+Used to define a [[Crafting|recipe]] in [[Build 42]].
 |-
-| [[energy (scripts)|energy]]
-| {{Stub|section=true}}
+| [[energy (scripts)|energy]] || 
+{{Stub|section=true}}
 |-
-| [[entity]]
-| Used to define a buildable in [[Build 42]], like walls, fences, furnitures and more. It is composed of different sub-blocks.
+| [[entity]] ||
+Used to define a buildable in [[Build 42]], like walls, fences, furnitures and more. It is composed of different sub-blocks.
 |-
-| [[Evolvedrecipe (scripts)|Evolved Recipe]]
-| Used to define recipes which can have a different set of ingredients and adapt the resulting item based on the ingredients used. Usually used for food recipes.
+| [[Evolvedrecipe (scripts)|Evolved Recipe]] ||
+Used to define recipes which can have a different set of ingredients and adapt the resulting item based on the ingredients used. Usually used for food recipes.
 |-
-| [[Fixing (scripts)|Fixing]]
-| Used to define how items can be repaired or fixed.
+| [[Fixing (scripts)|Fixing]] ||
+Used to define how items can be repaired or fixed.
 |-
-| [[Fluid (scripts)|Fluid]]
-| Used to define a fluid in [[Build 42]].
+| [[Fluid (scripts)|Fluid]] ||
+Used to define a fluid in [[Build 42]].
 |-
-| [[Item (scripts)|item]]
-| Used to define items, such as [[weapon]]s, [[clothing]], [[food]] and more.
+| [[Item (scripts)|item]] ||
+Used to define items, such as [[weapon]]s, [[clothing]], [[food]] and more.
 |-
-| [[Mannequin (scripts)|mannequin]]
-| Used to define a mannequin type, notably used in [[Mapping]] to create custom mannequins in the world.
+| [[Mannequin (scripts)|mannequin]] ||
+Used to define a mannequin type, notably used in [[Mapping]] to create custom mannequins in the world.
 |-
-| [[Model (scripts)|model]]
-| Used to define a model, such as its 3D model, texture, animations and more. These models can then be used in other scripts.
+| [[Model (scripts)|model]] ||
+Used to define a model, such as its 3D model, texture, animations and more. These models can then be used in other scripts.
 |-
-| [[Multistagebuild (scripts)|Multistage build]]
-| Used to define a multistage building in [[Build 41]], which is a building that can be built in multiple stages, such as a wall or a fence.
+| [[Multistagebuild (scripts)|Multistage build]] ||
+Used to define a multistage building in [[Build 41]], which is a building that can be built in multiple stages, such as a wall or a fence.
 |-
-| [[perk (scripts)|perk]]
-| Used to implement the basic of a new perk with its name, category and XP values. It needs to be defined inside a specific file in the [[Mod structure#Media folder]] {{Code|media/perks.txt}}.
+| [[perk (scripts)|perk]] ||
+Used to implement the basic of a new perk with its name, category and XP values. It needs to be defined inside a specific file in the [[Mod structure#Media folder]] {{Code|media/perks.txt}}.
 |-
-| [[physicsHitReaction]]
-| Used to define the physics reaction a bullet or bomb imposes to objects.
+| [[physicsHitReaction]] ||
+Used to define the physics reaction a bullet or bomb imposes to objects.
 |-
-| [[ragdoll]]
-| Used to define the ragdoll properties of a bone.
+| [[ragdoll]] ||
+Used to define the ragdoll properties of a bone.
 |-
-| [[Recipe (scripts)|Recipe]]
-| Used to define recipes in [[Build 41]].
+| [[Recipe (scripts)|Recipe]] ||
+Used to define recipes in [[Build 41]].
 |-
-| [[Sandbox options]]
-| Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
+| [[Sandbox options]] ||
+Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
 |-
-| [[Sound (scripts)|Sound]]
-| Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the [[Lua (API)|Lua API]].
+| [[Sound (scripts)|Sound]] ||
+Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the [[Lua (API)|Lua API]].
 |-
-| [[template]]
-| {{Stub|section=true}}
+| [[template]] || 
+Used to create repeatable script definitions which can then be referenced to in script blocks of the same type. Currently only used to create [[vehicle (scripts)|vehicle scripts]] templates.
 |-
-| [[Vehicle (scripts)|Vehicle]]
-| Used to define a vehicle, which consists of a complex set of different scripts.
+| [[Vehicle (scripts)|Vehicle]] ||
+Used to define a vehicle, which consists of a complex set of different scripts.
 |}
 
 == Trivia ==
 The reason scripts exist in the form they are in and not as json or other data formats is because they were originally created to be a scripting language, allowing modders to create more complex behaviors. It was then replaced by [[Lua (API)|Lua]] but stayed as a data definition format. You can find early references of its scripting capabilities in this archived guide [https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/Scripts/Origins_of_scripts here] (this guide is useless and outdated, do not follow it!).
+
+== See also ==
+* [[ZedScripts]]
+* [[Zomboid Script Generator]]
 
 == Navigation ==
 {{Navbox modding}}
