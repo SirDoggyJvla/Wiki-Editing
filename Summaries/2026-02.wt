@@ -10,7 +10,7 @@ I've also experimented with JavaScripts on the Wiki to introduce new UI elements
 
 [[User:Paddlefruit|Paddlefruit]] updated the [[Animation]] and [[Creating custom animations]] pages with up-to-date information as well as describing the process of making animations using [[Paddlefruit rig|his rig]]. His rig received a large amount of feedback from animators and plenty of updates which are pushing the rig to the perfection in comparison to previously available ones.
 
-One of the changes he made was to document the file formats for animation files. This was previously done in the [[File formats]] page, but it was too hard to miss the information there, so it is now properly fully moved out of this page, into the relevant pages [[Animations]] and [[Modeling]]. It notably documents the GLB format which is slowly appearing in modding due to the file size saving it allows, straight up removing a megabyte of file size in some cases. For animation files, such a change makes a huge difference as it allowed Paddlefruit to reduce the mod size from 106MB to 38MB. The main limitation however is that GLB cannot be [[Hot reloading|hot reloaded]] (for now?).
+One of the changes he made was to document the file formats for animation files. This was previously done in the [[File formats]] page, but it was too hard to miss the information there, so it is now properly fully moved out of this page, into the relevant pages [[Animation]] and [[Modeling]]. It notably documents the GLB format which is slowly appearing in modding due to the file size saving it allows, straight up removing a megabyte of file size in some cases. For animation files, such a change makes a huge difference as it allowed Paddlefruit to reduce the mod size from 106MB to 38MB. The main limitation however is that GLB cannot be [[Hot reloading|hot reloaded]] (for now?).
 
 The presentation of paths in the modding Wiki is taking a step forward, with the use of emotes to replace the classic lines which were used to show a tree like structure of paths. This is quite a drastic improvement in readability. You can see the difference between this [https://pzwiki.net/w/index.php?title=Mod_structure&oldid=1311199#Online_workshop_folder old version] and the [[Mod structure#Online workshop folder|current one]].
 
@@ -21,13 +21,13 @@ The [[Template:Navbar modding|navigation bar for modding]] which you can see at 
 [[User:RegularPlayer|RegularPlayer]] documented the process of [[Java#Recompiling the Java code|recompiling the Java code]]
 
 Some major bugs were fixed by TIS, previously documented on the wiki:
-*[[AnimSets]] no longer need a duplicate in the [[Mod structure#Build 41|Build 41 mod structure]].
+*[[AnimNode]]s no longer need a duplicate in the [[Mod structure#Build 41|Build 41 mod structure]].
 *[[ModOptions#Text entry|ModOptions text entries]] no longer brick the game if left empty.
 
 Smaller works:
 *Added a method on how to stop a TimedAction [[ISTimedActionQueue#Stop an action from being canceled|from being canceled]]
 *Made a page about the process of [[Derive|deriving]] a [[Lua (API)#Lua objects|Lua object]].
-*Made a page about [[Hot reloading]], which is available for Lua, [[animations]] and [[modeling]]. It needs more detail and examples to be fully useful.
+*Made a page about [[Hot reloading]], which is available for Lua, [[animation]] and [[modeling]]. It needs more detail and examples to be fully useful.
 
 New modding projects documented:
 *[[ZombieBuddy]]
