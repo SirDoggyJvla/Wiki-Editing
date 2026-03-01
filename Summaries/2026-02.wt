@@ -1,0 +1,45 @@
+Hello, new modding wiki summary. Lots of work from new users in the Wiki.
+
+[[ZedScripts]] now has proper syntax highlight and diagnostics for [[translations|translation]] files. Better integration could be introduced in the future, notably with [[DisplayName#Using translation|item scripts names]] to verify if you've defined one, or even automatically create a template entry when creating a new item block or if you defined a name for a non-existing item. It is also now available on Open VSX.
+
+With the release of the Horse mod, our team hope to create documentation and guides on how to create proper custom animals, as such the page [[AnimalDefinitions]] and [[Ranch zone]] were created and detailed. A lot of parameters are available for animals, and need extra information to expand the AnimalDefinitions page.
+
+I created a documentation of the [[Events]] system of [[AnimNode]]s, which is quite powerful. Hopefully more documentation of other elements are made.
+
+I've also experimented with JavaScripts on the Wiki to introduce new UI elements to ease information display, most notably for Windows / Linux / Mac path differences. However I've not yet managed to make it work as Wiki text doesn't seem to follow all the classic rules of HTML/JavaScripts and my knowledge of JavaScript is very limited, so if anyone has experience with that and want to help, feel free to reach out. The problem being that I managed to make it work locally in raw HTML but it just doesn't work the same way on the Wiki for some reasons.
+
+[[User:Paddlefruit|Paddlefruit]] updated the [[Animation]] and [[Creating custom animations]] pages with up-to-date information as well as describing the process of making animations using [[Paddlefruit rig|his rig]]. His rig received a large amount of feedback from animators and plenty of updates which are pushing the rig to the perfection in comparison to previously available ones.
+
+One of the changes he made was to document the file formats for animation files. This was previously done in the [[File formats]] page, but it was too hard to miss the information there, so it is now properly fully moved out of this page, into the relevant pages [[Animations]] and [[Modeling]]. It notably documents the GLB format which is slowly appearing in modding due to the file size saving it allows, straight up removing a megabyte of file size in some cases. For animation files, such a change makes a huge difference as it allowed Paddlefruit to reduce the mod size from 106MB to 38MB. The main limitation however is that GLB cannot be [[Hot reloading|hot reloaded]] (for now?).
+
+The presentation of paths in the modding Wiki is taking a step forward, with the use of emotes to replace the classic lines which were used to show a tree like structure of paths. This is quite a drastic improvement in readability. You can see the difference between this [https://pzwiki.net/w/index.php?title=Mod_structure&oldid=1311199#Online_workshop_folder old version] and the [[Mod structure#Online workshop folder|current one]].
+
+I finally made the guide on [[User Interface]] making. It is a bit hard to document however, because it often requires huge code to make a simple UI, so I need to be creative in how I present the information to not make it overwhelming. There's also a lot of useful UI methods and elements that are not well documented.
+
+The [[Template:Navbar modding|navigation bar for modding]] which you can see at the top of the modding pages is now updated to properly link to central pages. It now notably links to the modding category, which is necessary to use to properly find some of the important pages. Of course, finding useful pages is still quite a challenge to improve on the wiki. For more detail pages, the bottom navigation box is available.
+
+[[User:RegularPlayer|RegularPlayer]] documented the process of [[Java#Recompiling the Java code|recompiling the Java code]]
+
+Some major bugs were fixed by TIS, previously documented on the wiki:
+*[[AnimSets]] no longer need a duplicate in the [[Mod structure#Build 41|Build 41 mod structure]].
+*[[ModOptions#Text entry|ModOptions text entries]] no longer brick the game if left empty.
+
+Smaller works:
+*Added a method on how to stop a TimedAction [[ISTimedActionQueue#Stop an action from being canceled|from being canceled]]
+*Made a page about the process of [[Derive|deriving]] a [[Lua (API)#Lua objects|Lua object]].
+*Made a page about [[Hot reloading]], which is available for Lua, [[animations]] and [[modeling]]. It needs more detail and examples to be fully useful.
+
+New modding projects documented:
+*[[ZombieBuddy]]
+*[[PZ Reupload Check]]
+*[[Zomboid Script Generator]]
+*[[Lua Digital Watch Framework]]
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Zed.0xff|Zed.0xff]] - detailed his Java mod loader, [[ZombieBuddy]], on the [[Java]] page. If someone has a contact with this person, I'm interested to get in touch with them to push discussion with other modders to possibly make his tool more widely known and used, and confront it to other visions to improve it.
+*[[User:Xantji|Xantji]] - fixed some mistakes in [[inputs]].
+*[[User:Tchernobill|Tchernobill]] - added explanation about activating mods from the [[Mods#Changing mods in the main menu|main menu]].
+*[[User:ChuckleberryFinn|Chuck]] - added more technical details on his [[PZ Reupload Check]] tool.
+*[[User:AlexeyMin|AlexeyMin]] - documented how to add loot to zombie corpses during [[OnZombieDead]].
+*[[User:Xhr1s|Xhr1s]] and [[User:Curiousbookshelf|Curiousbookshelf]] - fixed some small mistakes in [[Modding]].
+*[[User:Chepchel|Chepchel]] - fixed some spelling here and there.
