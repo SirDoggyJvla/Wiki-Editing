@@ -1,207 +1,122 @@
 {{LangSwitch}}
-{{Navbar_modding}}
-{{Page version|42.13.1|2=559029}}
+{{Navbar modding}}
+{{Page version|42.15.0|2=559029}}
 {{About|translating the game or a mod|a guide to translating the wiki|Help:Translations}}
-
-Official translations used to be done on [https://github.com/TheIndieStone/ProjectZomboidTranslations ProjectZomboidTranslations GitHub], however starting with [[Build 42]] a professional studio was hired for translations.
-
-Information about the game's translation system. Translations need to be saved in the encoding of the language used by the game. Files also need to follow the naming conventions and format of the translation types.
+'''Translations''' a modding field that involves translating the game or a mod to a different language. This can be done by creating translation files for the game or mod, which are then read by the game which automatically retrieves the text via keys associated to translation values. It is also possible to create a new translation language for the game.
 
 == Translation types ==
+Different translation types exist, used for different purposes. A translation type is associated to a specific file which needs to hold the translations for that type, sometimes requiring a prefix for the keys.
 
-=== Commonly used files ===
-These files follow the same naming convention <code>Translate/{language}/{File}_{language}.txt</code> and use the same format.
+As of [[Build 42.15.0]], the translation files are <code>.json</code> files and should no longer have the language code in their name.
+
 {| class="wikitable theme-blue mw-collapsible" style="text-align: center;
 |+ List of translation files
 |- style="font-weight:bold;"
-! File
-! Entries prefix
-! Function
-! Notes
+! File !! Key prefix !! Function !! Notes
 |-
-| Challenge
-| <code>Challenge_</code>
-| <code>getText</code>
-| Challenge maps.
+| Moveables ||  || <code>Translator.getMoveableDisplayName</code> ||
+Moveable tiles as items translations.
 |-
-| ContextMenu
-| <code>ContextMenu_</code>
-| <code>getText</code>
-| [[ISContextMenu]] - in-game context menus.
+| Entity || <code>EC_</code> || <code>getText</code> ||
+Translations for entity scripts.
 |-
-| DynamicRadio
-| <code>AEBS_</code> (optional)
-| <code>getRadioText</code>
-| Dynamic radio, e.g. weather and helicopter.
+| Farming || <code>Farming_</code> || <code>getText</code> ||
+Translations for farming menus.
 |-
-| Entity
-| <code>EC_</code>
-|
-| Workstations.
+| GameSound || <code>GameSound_</code> || <code>getText</code> ||
+Game sounds and categories translations.
 |-
-| EvolvedRecipeName
-| <code>EvolvedRecipeName_</code> (optional)
-| <code>Translator.getItemEvolvedRecipeName</code>
-| Ingredient names due for change for evolved recipe UI ("Can of tomatoes" becomes "Tomato").
+| Recipes ||  || <code>getRecipeDisplayName</code> ||
+Translations for the craftRecipe scripts. The key needs to be the ID of the craftRecipe block.
 |-
-| Farming
-| <code>Farming_</code>
-| <code>getText</code>
-| Farming menus.
+| Sandbox || <code>Sandbox_</code> || <code>getText</code> ||
+Sandbox options translations.
 |-
-| Fluids
-| <code>Fluid_Name_</code>
-|
-| [[Fluid (scripts)|Fluids]].
+| BodyParts ||  || <code>getText</code> ||
+
 |-
-| GameSound
-| <code>GameSound_</code>
-| <code>getText</code>
-| Sound categories for options, debuging and descriptions of sounds.
+| IG_UI || <code>IGUI_</code> || <code>getText</code> ||
+Translations for in-game user interface elements.
 |-
-| IG_UI
-| <code>IGUI_</code>
-| <code>getText</code>
-| In-game UI elements.
+| Stash || <code>Stash_</code> || <code>getText</code> ||
+Survivor maps translations.
 |-
-| ItemName
-| <code>ItemName_</code> (optional)
-| <code>getItemNameFromFullType</code>
-| Item display names.
+| MakeUp ||  || <code>getText</code> ||
+Translations for make up.
 |-
-| MakeUp
-| <code>MakeUpType_</code> or <code>MakeUpCategory_</code>
-| <code>getText</code>
-| Make up names.
+| Moodles || <code>Moodles_</code> || <code>getText</code> ||
+Moodles status and descriptions translations
 |-
-| Moodles
-| <code>Moodles_</code>
-| <code>getText</code>
-| Moodles descriptions.
+| ContextMenu || <code>ContextMenu_</code> || <code>getText</code> ||
+Translations used in the context menus of the game.
 |-
-| Moveables
-|
-| <code>Translator.getMoveableDisplayName</code>
-| Names of tiles - sprites.
+| Attributes ||  || <code>getText</code> ||
+
 |-
-| MultiStageBuild
-| <code>MultiStageBuild_</code>
-| <code>Translator.getMultiStageBuild</code>
-| Automatically appends the prefix when you get the translation.
+| ItemName ||  || <code>getItemNameFromFullType</code> ||
+Translations for item scripts. The key needs to be the full type of the item.
 |-
-| Print_Media
-| <code>Print_Media_</code>
-|
-| [[Flier]] picture.
+| Tooltip || <code>Tooltip_</code> || <code>getText</code> ||
+Tooltips used for UIs.
 |-
-| Print_Text
-| <code>Print_Text_</code>
-|
-| [[Flier]] failback text of content and description.
+| RadioData || <code>RD_</code> || <code>getText</code> ||
+Radio translations with the key being a GUID of the radio text.
 |-
-| RadioData
-| <code>RD_</code>
-|
-| Radio media content. Key is prefix + GUID.
+| SurvivorNames ||  || <code>getText</code> ||
+All possible automatic character names. Used for random name generation of the player character or for zombies.
 |-
-| Recipes
-| <code>Recipe_</code> (optional)
-| <code>getRecipeDisplayName</code>
-| Crafting recipe names.
+| DynamicRadio || <code>AEBS_</code> || <code>getRadioText</code> ||
+Dynamic radio translations.
 |-
-| RecordedMedia
-| <code>RM_</code>
-| <code>getText</code>
-| Television media content. Key is prefix + GUID.
+| EvolvedRecipeName ||  || <code>Translator.getItemEvolvedRecipeName</code> ||
+Translations for evolved recipe scripts.
 |-
-| Sandbox
-| <code>Sandbox_</code>
-| <code>getText</code>
-| Sandbox options names, enumerate choices and tooltips. Sandbox option categories and buttons.
+| Challenge || <code>Challenge_</code> || <code>getText</code> ||
+
 |-
-| Stash
-| <code>Stash_</code>
-| <code>getText</code>
-| Map annotations.
+| SurvivalGuide || <code>SurvivalGuide_</code> || <code>getText</code> ||
+Survival guide translations.
 |-
-| SurvivalGuide
-| <code>SurvivalGuide_</code>
-| <code>getText</code>
-| Tutorial guides.
+| Fluids || <code>Fluid_Name_</code> || <code>getText</code> ||
+Translations for fluid related UI elements and fluid containers.
 |-
-| SurvivorNames
-| <code>SurvivorSurname_</code> or <code>SurvivorName_</code>
-|
-| Random character names.
+| RecipeGroups || <code>RecipeGroup_</code> || <code>Translator.getRecipeGroupName</code> ||
+
 |-
-| Tooltip
-| <code>Tooltip_</code>
-| <code>getText</code>
-|
+| UI || <code>UI_</code> || <code>getText</code> ||
+Translation file for user interface elements.
 |-
-| UI
-| <code>UI_</code>
-| <code>getText</code>
-| Main menu and option UI elements.
+| Mod ||  ||  ||
+Translations for the mod.info file. Possible keys are "name" and "description".
+|-
+| MultiStageBuild || <code>MultiStageBuild_</code> || <code>Translator.getMultiStageBuild</code> ||
+Translations for multi stage build.
+|-
+| Print_Text || <code>Print_Text_</code> || <code>getText</code> ||
+Raw text content for media items such as newspapers, describing their content.
+|-
+| MapLabel || <code>MapLabel_</code> || <code>getText</code> ||
+
+|-
+| Print_Media || <code>Print_Media_</code> || <code>getText</code> ||
+Text content for media items such as newspapers, describing their content.
+|-
+| Recorded_Media || <code>RM_</code> || <code>getText</code> ||
+Recorded media translations with the key being a GUID of the media text.
+
 |}
-*Prefixes can be handled differently; they can be optional, removed from key maps or not used at all.
-*Use the full type where type is used as key.
-*Moveables use '''Group Name Custom Name''' for names and keys. These characters <code> </code>, <code>-</code>, <code>'</code>, <code>.</code> are converted.
 
-==== Examples ====
-Example of ContextMenu:
+=== Examples ===
 {{CodeSnip
-| lang = lua
-| source = ContextMenu_EN.txt
-| path = media\lua\shared\Translate
+| lang = json
 | code =
-ContextMenu_EN = {
-    ContextMenu_Destroy = "Destroy ",
+{
+    "UI_mainscreen_continue": "CONTINUE (Duck ¼)",
+    "UI_mainscreen_tutorial": "TUTORIAL (Duck ½)",
+    "UI_mainscreen_solo": "SOLO (Duck ¾)",
+    "UI_mainscreen_mods": "MODS (Duck ¿)"
 }
 }}
-
-Example of text split in multiple lines.
-{{CodeSnip
-| lang = lua
-| code =
-SurvivalGuide_EN = {
-    SurvivalGuide_entrie11moreinfo = " <H1> FORAGING / SEARCH SYSTEM <BR> " ..
-                                     " ..." ..
-                                     " For example, trash can be found in trash piles, chipped stones are often found in cracks and potholes on roads. <LINE> <LINE> ",
-}
-}}
-
-{{Note|content=The translation parser skips the first line, then breaks the line into key - text format. Required characters: <code>=</code> and <code>"</code>.
-{{CodeSnip
-| code =
-line 1: skipped
-key = "text",
-}}
-}}
-
-==== Recipes ====
-{{Outdated|section=True}}
-Script parser uses `replace("recipe","")` to make original name, sets translated recipe name. Translator populates recipe maps (normal and 'dot' maps) and uses *replace("Recipe_","")*, *replace("_"," ")* for the keys.
-
-<pre>
-Examples A, both translation lines work.
-
-script: 'recipe Convert A B {...}'
-original name: 'Convert A B'
-translation line: 'Recipe_Convert_A_B = "Convert Item to Weapon"'
-translation line: 'Convert A B = "Convert Item to Weapon"'
-translation key: 'Convert A B'
-
-Example B, no match for translation, do not use `_` in recipe scripts
-
-script: 'recipe Convert_A_B'
-original name: 'Convert_A_B'
-translation key: 'Convert A B'
-</pre>
-
-=== News ===
-{{Stub|section=True}}
-The news file uses separate format.
 
 === Map information ===
 Map translations use the following files:
@@ -216,26 +131,31 @@ media/
     └── shared/
         └── Translate/
             └── <language code>/
-                └── <map folder>/
-                    ├── description.txt
-                    └── title.txt
+                └── <map>.json
 }}
 
-*[[map.info]] - contains informations about the map.
-*<code>description.txt</code> - description of the map.
-*<code>title.txt</code> - title of the map.
+The file needs to have the following format:
+{{CodeSnip
+| lang = json
+| code =
+{
+    "title": "Your map name",
+    "description": "Your map description"
+}
+}}
 
 Example Riverside description:
 {{CodeSnip
-| lang = lua
-| source = description.txt
-| path = Translate\EN\Riverside, KY
+| lang = json
+| source = Riverside, KY.json
+| path = Translate\EN
 | retrieved = true
-| version = 42.7.0
+| version = 42.15.0
 | code =
-<CENTRE> <SIZE:medium> RIVERSIDE <LINE> <LINE>
-<LEFT> <SIZE:small> A colorful town tightly hugging the banks of the mighty Ohio: exploring Riverside is a rich and diverse experience! To the west you'll find the older parts of town, while out east is where wealthier residents work, rest, and play. <LINE> <LINE>
-If you're considering a stay with us, why not check out the nearby West Maple Country Club? The ultimate in comfort and relaxation, members have access to an 18-hole golf course, tennis courts, swimming pool, and fantastic bars and lounges. Come join today!
+{
+    "title": "Riverside, KY",
+    "description": "<CENTRE> <SIZE:medium> RIVERSIDE <LINE> <LINE><LEFT> <SIZE:small> A colorful town tightly hugging the banks of the mighty Ohio: exploring Riverside is a rich and diverse experience! To the west you'll find the older parts of town, while out east is where wealthier residents work, rest, and play. <LINE> <LINE>If you're considering a stay with us, why not check out the nearby West Maple Country Club? The ultimate in comfort and relaxation, members have access to an 18-hole golf course, tennis courts, swimming pool, and fantastic bars and lounges. Come join today!"
+}
 }}
 
 === Radio data ===
@@ -245,178 +165,174 @@ Radio Data is read from <code>media/radio/</code>. Radio sources are <code>xml</
 == Languages ==
 The game uses languages added to the <code>media/lua/shared/Translate</code> folder, information about the language is stored in the <code>language.txt</code> file of each language directory.
 
-For [[Build 41]], most language use different encodings. But for [[Build 42]], almost all languages use the UTF-8 encoding, except for KO which uses UTF-16, CS which uses cp1250, CA uses ISO-8859-15 and AR uses cp1252.
+For [[Build 41]], most language use different encodings. Since [[Build 42.15.0]], all languages use UTF-8 encoding.
 
 {| class="wikitable theme-blue sortable mw-collapsible" style="text-align: center;
 |+ Languages in game
 |- style="font-weight:bold;"
-! Code
-! Language
-! Build 41 encoding
-! Build 42 encoding
-! Category
+! Code !! Language !! Build 41 encoding !! Pre Build 42.15.0 encoding !! Post Build 42.15.0 encoding
 |-
 | AR
 | Espanol (AR) - Argentina Spanish
 | Cp1252
 | Cp1252
-| Western
+| UTF-8
 |-
 | CA
 | Catalan
 | ISO-8859-15
 | ISO-8859-15
-| Western
+| UTF-8
 |-
 | CH
 | Traditional Chinese
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | CN
 | Simplified Chinese
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | CS
 | Czech
 | Cp1250
 | Cp1250
-| Central European
+| UTF-8
 |-
 | DA
 | Danish
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | DE
 | Deutsch - German
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | EN
 | English
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | ES
 | Espanol (ES) - Spanish
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | FI
 | Finnish
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | FR
 | Francais - French
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | HU
 | Hungarian
 | Cp1250
 | UTF-8
-|
+| UTF-8
 |-
 | ID
 | Indonesia
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | IT
 | Italiano
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | JP
 | Japanese
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | KO
 | Korean
 | UTF-16
 | UTF-8
-|
+| UTF-8
 |-
 | NL
 | Nederlands - Dutch
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | NO
 | Norsk - Norwegian
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | PH
 | Tagalog - Filipino
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | PL
 | Polish
 | Cp1250
 | UTF-8
-|
+| UTF-8
 |-
 | PT
 | Portuguese
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | PTBR
 | Brazilian Portuguese
 | Cp1252
 | UTF-8
-|
+| UTF-8
 |-
 | RO
 | Romanian
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | RU
 | Russian
 | Cp1251
 | UTF-8
-|
+| UTF-8
 |-
 | TH
 | Thai
 | UTF-8
 | UTF-8
-|
+| UTF-8
 |-
 | TR
 | Turkish
 | Cp1254
 | UTF-8
-|
+| UTF-8
 |-
 | UA
 | Ukrainian
 | Cp1251
 | UTF-8
-|
+| UTF-8
 |}
 
 === Adding new languages ===
@@ -426,15 +342,15 @@ For [[Build 41]], most language use different encodings. But for [[Build 42]], a
 *Add fonts if neccessary
 *Add translations
 
-== Translation tools ==
-Below are tools which can be used to translate the game or mods:
-*[https://github.com/Chuckleberry-Finn/pz-translator/ PZ Translator (forked)] - a tool to translate the game and mods automatically, bases itself on Google Translate.
+== Trivia ==
+Official translations used to be done on [https://github.com/TheIndieStone/ProjectZomboidTranslations ProjectZomboidTranslations GitHub], however starting with [[Build 42]] a professional studio was hired for translations.
 
 == See also ==
 *[https://github.com/TheIndieStone/ProjectZomboidTranslations GitHub repository for the game translations (outdated)]
 *[https://github.com/timbaker/translatoid/releases Releases of TranslationZed tool]
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3006690572 Steam guide by '''''Matrioshka''''', '''''Riko Prushka''''']
-*[https://github.com/Poltergeist-PZ-Modding/pz-translator PZ Translator (original)] - a tool to translate the game and mods automatically, bases itself on Google Translate.
+*[https://github.com/Poltergeist-PZ-Modding/pz-translator PZ Translator (original)] - a tool to translate the game and mods automatically, bases itself on Google Translate. (outdated)
+*[https://github.com/Chuckleberry-Finn/pz-translator/ PZ Translator (forked)] - a tool to translate the game and mods automatically, bases itself on Google Translate. (outdated)
 
 == Navigation ==
 {{Navbox modding}}
