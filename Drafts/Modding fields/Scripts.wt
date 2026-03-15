@@ -5,9 +5,16 @@
 
 {{Note|type=warn|Scripts are not a programming language, but mostly a custom format to define data for game elements which are parsed and cached inside the Java.}}
 
+== Video guide ==
+{{Video
+|id=KErJoD9GuRc
+|image=PZ Modding Guides - Introduction to Scripts.png
+|name=PZ Modding Guides - Introduction to Scripts
+}}
+
 == Folder structure ==
 {{Main|Mod structure}}
-'''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the [[Lua (API)|Lua]]. The only rule is that the script files must end with the extension <code>.txt</code>. Various script types can be used and spread across multiple script files in different subfolders.
+'''Scripts''' are put inside the <code>scripts</code> folder and are used to define items, models, vehicles etc. There is no specific organization of scripts compared to the [[Lua (API)|Lua]]. The only rule is that the script files must end with the extension <code>.txt</code>. Various script blocks can be used and spread across multiple script files in different subfolders.
 {{CodeSnip
 | code =
 📁 media/
@@ -19,13 +26,13 @@
 }}
 
 == Scripts syntax ==
-The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script types as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.
+The files need to be saved with the {{Code|.txt}} extension and follow a set of rules which should be the same for every script blocks as of [[Build 42]]. Script entries follow a block structure, similar to [[Lua (language)#Tables|Lua tables]], usually defined by the characters {{Code|{ }} and {{Code|} }}.
 
 Comments follow the Java multiline comment syntax, starting with {{Code|/*}} and ending with {{Code|*/}}. Comments can be placed anywhere in the script, even inside blocks. Single line {{Code|//}} comments do not work and should not be used.
 
 Key value pairs are used to define the parameters of the script elements, with the syntax {{Code|1=Key = Value,}}. The comma at the end of each key value pair line is mandatory, even for the last line in a block. Some parameters do not need to be present for a script block to work.
 
-{{Note|type=warn|Scripts can be inconsistent in some cases and some syntax rules which are present in this section may not apply to all script types. Refer to the specific script type documentation for more details.}}
+{{Note|type=warn|Scripts can be inconsistent in some cases and some syntax rules which are present in this section may not apply to all script blocks. Refer to the specific script block documentation for more details.}}
 {{Note|type=error|Make sure to not forget commas at the end of each key value pair lines, as this will cause the script to not be parsed correctly.}}
 
 === Module block ===
@@ -154,11 +161,12 @@ module MyMod {
 }
 }}
 
-== Script types ==
-Script types are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters.
+== Script blocks ==
+{{Note|You can find a complete updated API reference for all the script blocks, their parameters and properties in the [[PZ Scripts Data|ScriptsDocs]] website.}}
+Script blocks are the different kind of elements that can be defined in scripts. Each type has its own block structure name, and its own set of parameters.
 
 {| class="wikitable sortable theme-blue"
-|+ style="white-space:nowrap" | List of Script types
+|+ style="white-space:nowrap" | List of Script blocks
 ! Parameter name !! Description
 |-
 | [[animation (scripts)|animation]] || 
@@ -213,7 +221,7 @@ Used to define the ragdoll properties of a bone.
 Used to define recipes in [[Build 41]].
 |-
 | [[Sandbox options]] ||
-Sandbox options are different from the other script types as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
+Sandbox options are different from the other script blocks as they should not have a module block. They are used to define custom sandbox options which can be used in the [[Lua (API)]].
 |-
 | [[Sound (scripts)|Sound]] ||
 Used to define sound parameters, such as volume, pitch and more. These sounds can then be used in other scripts or called from the [[Lua (API)|Lua API]].
@@ -231,6 +239,7 @@ The reason scripts exist in the form they are in and not as json or other data f
 == See also ==
 * [[ZedScripts]]
 * [[Zomboid Script Generator]]
+* [[PZ Scripts Data]]
 
 == Navigation ==
 {{Navbox modding}}

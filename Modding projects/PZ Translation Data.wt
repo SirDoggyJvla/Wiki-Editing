@@ -1,0 +1,33 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.15.2}}
+{{Infobox
+| title = PZ Translation Data
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type = github
+        | link=https://github.com/SirDoggyJvla/pz-translation-data/releases/latest
+        | Download
+        }}
+        {{Infobox/socials
+        | type = github
+        | link=https://github.com/SirDoggyJvla/pz-translation-data
+        | Repository
+        }}
+    }}
+}}
+'''PZ Translation Data''' is a repository which provides data regarding the [[translation]] files and syntax. It is notably used to provide schemas for validation of translation files.
+
+== See also ==
+*[[PZ Scripts Data]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

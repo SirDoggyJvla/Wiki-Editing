@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.15.0|2=559029}}
+{{Page version|42.15.2|2=559029}}
 {{About|translating the game or a mod|a guide to translating the wiki|Help:Translations}}
 '''Translations''' a modding field that involves translating the game or a mod to a different language. This can be done by creating translation files for the game or mod, which are then read by the game which automatically retrieves the text via keys associated to translation values. It is also possible to create a new translation language for the game.
 
@@ -10,113 +10,104 @@ Different translation types exist, used for different purposes. A translation ty
 As of [[Build 42.15.0]], the translation files are <code>.json</code> files and should no longer have the language code in their name.
 
 {| class="wikitable theme-blue mw-collapsible" style="text-align: center;
-|+ List of translation files
+|+ List of translation types
 |- style="font-weight:bold;"
-! File !! Key prefix !! Function !! Notes
+! Translation type !! Filename !! Key prefix !! Function !! Notes
 |-
-| Moveables ||  || <code>Translator.getMoveableDisplayName</code> ||
-Moveable tiles as items translations.
-|-
-| Entity || <code>EC_</code> || <code>getText</code> ||
-Translations for entity scripts.
-|-
-| Farming || <code>Farming_</code> || <code>getText</code> ||
-Translations for farming menus.
-|-
-| GameSound || <code>GameSound_</code> || <code>getText</code> ||
-Game sounds and categories translations.
-|-
-| Recipes ||  || <code>getRecipeDisplayName</code> ||
-Translations for the craftRecipe scripts. The key needs to be the ID of the craftRecipe block.
-|-
-| Sandbox || <code>Sandbox_</code> || <code>getText</code> ||
-Sandbox options translations.
-|-
-| BodyParts ||  || <code>getText</code> ||
+| Attributes || <code>Attributes</code> ||  || <code>getText</code> ||
 
 |-
-| IG_UI || <code>IGUI_</code> || <code>getText</code> ||
-Translations for in-game user interface elements.
+| BodyParts || <code>BodyParts</code> ||  || <code>getText</code> ||
+
 |-
-| Stash || <code>Stash_</code> || <code>getText</code> ||
-Survivor maps translations.
+| Challenge || <code>Challenge</code> || <code>Challenge_</code> || <code>getText</code> ||
+
 |-
-| MakeUp ||  || <code>getText</code> ||
-Translations for make up.
-|-
-| Moodles || <code>Moodles_</code> || <code>getText</code> ||
-Moodles status and descriptions translations
-|-
-| ContextMenu || <code>ContextMenu_</code> || <code>getText</code> ||
+| ContextMenu || <code>ContextMenu</code> || <code>ContextMenu_</code> || <code>getText</code> ||
 Translations used in the context menus of the game.
 |-
-| Attributes ||  || <code>getText</code> ||
-
-|-
-| ItemName ||  || <code>getItemNameFromFullType</code> ||
-Translations for item scripts. The key needs to be the full type of the item.
-|-
-| Tooltip || <code>Tooltip_</code> || <code>getText</code> ||
-Tooltips used for UIs.
-|-
-| RadioData || <code>RD_</code> || <code>getText</code> ||
-Radio translations with the key being a GUID of the radio text.
-|-
-| SurvivorNames ||  || <code>getText</code> ||
-All possible automatic character names. Used for random name generation of the player character or for zombies.
-|-
-| DynamicRadio || <code>AEBS_</code> || <code>getRadioText</code> ||
+| DynamicRadio || <code>DynamicRadio</code> || <code>AEBS_</code> || <code>getRadioText</code> ||
 Dynamic radio translations.
 |-
-| EvolvedRecipeName ||  || <code>Translator.getItemEvolvedRecipeName</code> ||
+| Entity || <code>Entity</code> || <code>EC_</code> || <code>getText</code> ||
+Translations for entity scripts.
+|-
+| EvolvedRecipeName || <code>EvolvedRecipeName</code> ||  || <code>Translator.getItemEvolvedRecipeName</code> ||
 Translations for evolved recipe scripts.
 |-
-| Challenge || <code>Challenge_</code> || <code>getText</code> ||
-
+| Farming || <code>Farming</code> || <code>Farming_</code> || <code>getText</code> ||
+Translations for farming menus.
 |-
-| SurvivalGuide || <code>SurvivalGuide_</code> || <code>getText</code> ||
-Survival guide translations.
-|-
-| Fluids || <code>Fluid_Name_</code> || <code>getText</code> ||
+| Fluids || <code>Fluids</code> || <code>Fluid_Name_</code> || <code>getText</code> ||
 Translations for fluid related UI elements and fluid containers.
 |-
-| RecipeGroups || <code>RecipeGroup_</code> || <code>Translator.getRecipeGroupName</code> ||
+| GameSound || <code>GameSound</code> || <code>GameSound_</code> || <code>getText</code> ||
+Game sounds and categories translations.
+|-
+| IGUI || <code>IG_UI</code> || <code>IGUI_</code> || <code>getText</code> ||
+Translations for in-game user interface elements.
+|-
+| ItemName || <code>ItemName</code> ||  || <code>getItemNameFromFullType</code> ||
+Translations for item scripts. The key needs to be the full type of the item.
+|-
+| Location_Generic ||  ||  ||  ||
+A translation file for the map. The filename needs to refer the file "map.info" in the mod's media folder.
+|-
+| MakeUp || <code>MakeUp</code> ||  || <code>getText</code> ||
+Translations for make up.
+|-
+| MapLabel || <code>MapLabel</code> || <code>MapLabel_</code> || <code>getText</code> ||
 
 |-
-| UI || <code>UI_</code> || <code>getText</code> ||
-Translation file for user interface elements.
-|-
-| Mod ||  ||  ||
+| Mod || <code>Mod</code> ||  ||  ||
 Translations for the mod.info file. Possible keys are "name" and "description".
 |-
-| MultiStageBuild || <code>MultiStageBuild_</code> || <code>Translator.getMultiStageBuild</code> ||
+| Moodles || <code>Moodles</code> || <code>Moodles_</code> || <code>getText</code> ||
+Moodles status and descriptions translations
+|-
+| Moveables || <code>Moveables</code> ||  || <code>Translator.getMoveableDisplayName</code> ||
+Moveable tiles as items translations.
+|-
+| MultiStageBuild || <code>MultiStageBuild</code> || <code>MultiStageBuild_</code> || <code>Translator.getMultiStageBuild</code> ||
 Translations for multi stage build.
 |-
-| Print_Text || <code>Print_Text_</code> || <code>getText</code> ||
-Raw text content for media items such as newspapers, describing their content.
-|-
-| MapLabel || <code>MapLabel_</code> || <code>getText</code> ||
-
-|-
-| Print_Media || <code>Print_Media_</code> || <code>getText</code> ||
+| Print_Media || <code>Print_Media</code> || <code>Print_Media_</code> || <code>getText</code> ||
 Text content for media items such as newspapers, describing their content.
 |-
-| Recorded_Media || <code>RM_</code> || <code>getText</code> ||
+| Print_Text || <code>Print_Text</code> || <code>Print_Text_</code> || <code>getText</code> ||
+Raw text content for media items such as newspapers, describing their content.
+|-
+| RadioData || <code>RadioData</code> || <code>RD_</code> || <code>getText</code> ||
+Radio translations with the key being a GUID of the radio text.
+|-
+| RecipeGroups || <code>RecipeGroups</code> || <code>RecipeGroup_</code> || <code>Translator.getRecipeGroupName</code> ||
+
+|-
+| Recipes || <code>Recipes</code> ||  || <code>getRecipeDisplayName</code> ||
+Translations for the craftRecipe scripts. The key needs to be the ID of the craftRecipe block.
+|-
+| Recorded_Media || <code>Recorded_Media</code> || <code>RM_</code> || <code>getText</code> ||
 Recorded media translations with the key being a GUID of the media text.
+|-
+| Sandbox || <code>Sandbox</code> || <code>Sandbox_</code> || <code>getText</code> ||
+Sandbox options translations.
+|-
+| Stash || <code>Stash</code> || <code>Stash_</code> || <code>getText</code> ||
+Survivor maps translations.
+|-
+| SurvivalGuide || <code>SurvivalGuide</code> || <code>SurvivalGuide_</code> || <code>getText</code> ||
+Survival guide translations.
+|-
+| SurvivorNames || <code>SurvivorNames</code> ||  || <code>getText</code> ||
+All possible automatic character names. Used for random name generation of the player character or for zombies.
+|-
+| Tooltip || <code>Tooltip</code> || <code>Tooltip_</code> || <code>getText</code> ||
+Tooltips used for UIs.
+|-
+| UI || <code>UI</code> || <code>UI_</code> || <code>getText</code> ||
+Translation file for user interface elements.
 
 |}
-
-=== Examples ===
-{{CodeSnip
-| lang = json
-| code =
-{
-    "UI_mainscreen_continue": "CONTINUE (Duck ¼)",
-    "UI_mainscreen_tutorial": "TUTORIAL (Duck ½)",
-    "UI_mainscreen_solo": "SOLO (Duck ¾)",
-    "UI_mainscreen_mods": "MODS (Duck ¿)"
-}
-}}
 
 === Map information ===
 Map translations use the following files:
@@ -158,9 +149,50 @@ Example Riverside description:
 }
 }}
 
-=== Radio data ===
-{{Outdated|section=True}}
-Radio Data is read from <code>media/radio/</code>. Radio sources are <code>xml</code> files, translations are <code>txt</code> files. The recommended way to translate these can be found on the translation GitHub, however you can also edit them just like any other txt file.
+=== JSON Schemas ===
+JSON schemas are used to validate the format of JSON files, ensuring they meet the required structure. For translations, those were made to validate the key prefixes and required fields for each translation type. 
+
+To use those schemas, you have different methods, the one described in this guide bases itself on the widely used [[Visual Studio Code]] in the modding community.
+
+The schemas are provided in the [[PZ Translation Data]] repository for download or direct cloning. Once downloaded, you can directly refer to them with a custom key <code>$schema</code> as follows:
+{{CodeSnip
+| lang = json
+| code =
+{
+    "$schema": "link/to/schema.json",
+    ...
+}
+}}
+
+The <code>link/to/schema.json</code> needs to link to the schema for the specific translation type schema which follows the link format {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/<translationType>.schema.json}}. You need to replace {{Code|lang=html|<translationType>}} with the translation type listed in the table above, for example <code>Moveables</code> will be {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json}}.
+
+To use online schemas, you need to add a new trusted domain to your Visual Studio Code setting <code>json.schemaDownload.trustedDomains</code>, either in your global settings or workspace settings:
+
+{{CodeSnip
+| lang = json
+| path = .vscode
+| source= settings.json
+| code =
+{
+    "json.schemaDownload.trustedDomains": {
+        "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data": true
+    }
+}
+}}
+
+For example, the setup for a schema will be as follows:
+{{CodeSnip
+| lang = json
+| path = media\lua\shared\Translate\EN
+| source = UI.json
+| code =
+{
+    "$schema": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/UI.schema.json",
+    ...
+}
+}}
+
+{{Note|Alternatively, you can use local schemas by downloading them, then using the path to the schema instead of the online link.}}
 
 == Languages ==
 The game uses languages added to the <code>media/lua/shared/Translate</code> folder, information about the language is stored in the <code>language.txt</code> file of each language directory.
@@ -172,167 +204,59 @@ For [[Build 41]], most language use different encodings. Since [[Build 42.15.0]]
 |- style="font-weight:bold;"
 ! Code !! Language !! Build 41 encoding !! Pre Build 42.15.0 encoding !! Post Build 42.15.0 encoding
 |-
-| AR
-| Espanol (AR) - Argentina Spanish
-| Cp1252
-| Cp1252
-| UTF-8
+| AR || Espanol (AR) - Argentina Spanish || Cp1252 || Cp1252 || UTF-8
 |-
-| CA
-| Catalan
-| ISO-8859-15
-| ISO-8859-15
-| UTF-8
+| CA || Catalan || ISO-8859-15 || ISO-8859-15 || UTF-8
 |-
-| CH
-| Traditional Chinese
-| UTF-8
-| UTF-8
-| UTF-8
+| CH || Traditional Chinese || UTF-8 || UTF-8 || UTF-8
 |-
-| CN
-| Simplified Chinese
-| UTF-8
-| UTF-8
-| UTF-8
+| CN || Simplified Chinese || UTF-8 || UTF-8 || UTF-8
 |-
-| CS
-| Czech
-| Cp1250
-| Cp1250
-| UTF-8
+| CS || Czech || Cp1250 || Cp1250 || UTF-8
 |-
-| DA
-| Danish
-| Cp1252
-| UTF-8
-| UTF-8
+| DA || Danish || Cp1252 || UTF-8 || UTF-8
 |-
-| DE
-| Deutsch - German
-| Cp1252
-| UTF-8
-| UTF-8
+| DE || Deutsch - German || Cp1252 || UTF-8 || UTF-8
 |-
-| EN
-| English
-| UTF-8
-| UTF-8
-| UTF-8
+| EN || English || UTF-8 || UTF-8 || UTF-8
 |-
-| ES
-| Espanol (ES) - Spanish
-| Cp1252
-| UTF-8
-| UTF-8
+| ES || Espanol (ES) - Spanish || Cp1252 || UTF-8 || UTF-8
 |-
-| FI
-| Finnish
-| Cp1252
-| UTF-8
-| UTF-8
+| FI || Finnish || Cp1252 || UTF-8 || UTF-8
 |-
-| FR
-| Francais - French
-| Cp1252
-| UTF-8
-| UTF-8
+| FR || Francais - French || Cp1252 || UTF-8 || UTF-8
 |-
-| HU
-| Hungarian
-| Cp1250
-| UTF-8
-| UTF-8
+| HU || Hungarian || Cp1250 || UTF-8 || UTF-8
 |-
-| ID
-| Indonesia
-| UTF-8
-| UTF-8
-| UTF-8
+| ID || Indonesia || UTF-8 || UTF-8 || UTF-8
 |-
-| IT
-| Italiano
-| Cp1252
-| UTF-8
-| UTF-8
+| IT || Italiano || Cp1252 || UTF-8 || UTF-8
 |-
-| JP
-| Japanese
-| UTF-8
-| UTF-8
-| UTF-8
+| JP || Japanese || UTF-8 || UTF-8 || UTF-8
 |-
-| KO
-| Korean
-| UTF-16
-| UTF-8
-| UTF-8
+| KO || Korean || UTF-16 || UTF-8 || UTF-8
 |-
-| NL
-| Nederlands - Dutch
-| Cp1252
-| UTF-8
-| UTF-8
+| NL || Nederlands - Dutch || Cp1252 || UTF-8 || UTF-8
 |-
-| NO
-| Norsk - Norwegian
-| Cp1252
-| UTF-8
-| UTF-8
+| NO || Norsk - Norwegian || Cp1252 || UTF-8 || UTF-8
 |-
-| PH
-| Tagalog - Filipino
-| UTF-8
-| UTF-8
-| UTF-8
+| PH || Tagalog - Filipino || UTF-8 || UTF-8 || UTF-8
 |-
-| PL
-| Polish
-| Cp1250
-| UTF-8
-| UTF-8
+| PL || Polish || Cp1250 || UTF-8 || UTF-8
 |-
-| PT
-| Portuguese
-| Cp1252
-| UTF-8
-| UTF-8
+| PT || Portuguese || Cp1252 || UTF-8 || UTF-8
 |-
-| PTBR
-| Brazilian Portuguese
-| Cp1252
-| UTF-8
-| UTF-8
+| PTBR || Brazilian Portuguese || Cp1252 || UTF-8 || UTF-8
 |-
-| RO
-| Romanian
-| UTF-8
-| UTF-8
-| UTF-8
+| RO || Romanian || UTF-8 || UTF-8 || UTF-8
 |-
-| RU
-| Russian
-| Cp1251
-| UTF-8
-| UTF-8
+| RU || Russian || Cp1251 || UTF-8 || UTF-8
 |-
-| TH
-| Thai
-| UTF-8
-| UTF-8
-| UTF-8
+| TH || Thai || UTF-8 || UTF-8 || UTF-8
 |-
-| TR
-| Turkish
-| Cp1254
-| UTF-8
-| UTF-8
+| TR || Turkish || Cp1254 || UTF-8 || UTF-8
 |-
-| UA
-| Ukrainian
-| Cp1251
-| UTF-8
-| UTF-8
+| UA || Ukrainian || Cp1251 || UTF-8 || UTF-8
 |}
 
 === Adding new languages ===
@@ -342,6 +266,22 @@ For [[Build 41]], most language use different encodings. Since [[Build 42.15.0]]
 *Add fonts if neccessary
 *Add translations
 
+== Example ==
+Examples were provided in the [[TIS Modding Guides#Build 42.15.0|official documentation]].
+
+{{CodeSnip
+| lang = json
+| path = media/lua/shared/Translate/EN
+| source = UI.json
+| code =
+{
+    "UI_mainscreen_continue": "CONTINUE (Duck ¼)",
+    "UI_mainscreen_tutorial": "TUTORIAL (Duck ½)",
+    "UI_mainscreen_solo": "SOLO (Duck ¾)",
+    "UI_mainscreen_mods": "MODS (Duck ¿)"
+}
+}}
+
 == Trivia ==
 Official translations used to be done on [https://github.com/TheIndieStone/ProjectZomboidTranslations ProjectZomboidTranslations GitHub], however starting with [[Build 42]] a professional studio was hired for translations.
 
@@ -349,6 +289,7 @@ Official translations used to be done on [https://github.com/TheIndieStone/Proje
 *[https://github.com/TheIndieStone/ProjectZomboidTranslations GitHub repository for the game translations (outdated)]
 *[https://github.com/timbaker/translatoid/releases Releases of TranslationZed tool]
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3006690572 Steam guide by '''''Matrioshka''''', '''''Riko Prushka''''']
+*[https://github.com/escapepz/pz_translation_json_schema/tree/main?tab=readme-ov-file#quick-ide-setup-vs-code Project Zomboid Translation JSON Schema]
 *[https://github.com/Poltergeist-PZ-Modding/pz-translator PZ Translator (original)] - a tool to translate the game and mods automatically, bases itself on Google Translate. (outdated)
 *[https://github.com/Chuckleberry-Finn/pz-translator/ PZ Translator (forked)] - a tool to translate the game and mods automatically, bases itself on Google Translate. (outdated)
 

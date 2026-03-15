@@ -1,6 +1,6 @@
 {{Title|mod.info}}
 {{LangSwitch}}
-{{Navbar_modding}}
+{{Navbar modding}}
 {{Page version|42.13.1}}
 This page explains the <code>mod.info</code> file which is defined by mods to be detected by the game and define other different aspects when loading the mod.
 

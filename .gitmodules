@@ -1,3 +1,6 @@
 [submodule "pz-scripts-data"]
 	path = pz-scripts-data
 	url = https://github.com/SirDoggyJvla/pz-scripts-data
+[submodule "pz-translation-data"]
+	path = pz-translation-data
+	url = https://github.com/SirDoggyJvla/pz-translation-data
