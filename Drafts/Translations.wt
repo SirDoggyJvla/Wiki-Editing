@@ -109,6 +109,81 @@ Translation file for user interface elements.
 
 |}
 
+=== JSON Schemas ===
+JSON schemas are used to validate the format of JSON files, ensuring they meet the required structure. For translations, those were made to validate the key prefixes and required fields for each translation type. 
+
+To use those schemas, you have different methods, the one described in this guide bases itself on the widely used [[Visual Studio Code]] in the modding community.
+
+The schemas are provided in the [[PZ Translation Data]] repository for download or direct cloning but the best way is to directly link to their online version from the repository, which will allow you to always have the last updated versions.
+
+To use the online schemas, you need to add a new trusted domain to your Visual Studio Code setting <code>json.schemaDownload.trustedDomains</code>, either in your global settings or workspace settings:
+
+{{CodeSnip
+| lang = json
+| path = .vscode
+| source= settings.json
+| code =
+{
+    "json.schemaDownload.trustedDomains": {
+        "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data": true
+    }
+}
+}}
+
+{{Note|Alternatively, you can use local schemas by downloading them from [[PZ Translation Data]] releases, then using the path to the schema instead of the online link.}}
+
+==== Linking to schemas via Visual Studio Code settings ====
+You can link to the schemas via the Visual Studio Code setting <code>json.schemas</code>, either in your global settings or workspace settings. For example, linking to the Moveables schema will be as follows:
+{{CodeSnip
+| lang = json
+| path = .vscode
+| source= settings.json
+| code =
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "**/media/lua/shared/Translate/*/Moveables.json"
+      ],
+      "url": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json",
+      "name": "PZ Moveables translation schema"
+    }
+  ]
+}
+}}
+
+You can find a full configuration file in the [[PZ Translation Data]] repository, which you can either download in the [https://github.com/SirDoggyJvla/pz-translation-data/releases releases] or [https://github.com/SirDoggyJvla/pz-translation-data/blob/main/settings.json download from the repository].
+
+{{Note|type=warn|The map schemas (<code>Location_Generic</code>) are not available for Visual Studio Code settings due to no specific pattern being usable to target them, so you will need to link to them manually in the translation files as explained in the next section.}}
+
+==== Manually linking to the schemas in the translation files ====
+You can directly refer to the schemas with a custom key <code>$schema</code> as follows inside your translation files:
+{{CodeSnip
+| lang = json
+| code =
+{
+    "$schema": "link/to/schema.json",
+    ...
+}
+}}
+
+The <code>link/to/schema.json</code> needs to link to the schema for the specific translation type schema which follows the link format {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/<translationType>.schema.json}}. You need to replace {{Code|lang=html|<translationType>}} with the translation type listed in the table above, for example <code>Moveables</code> will be {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json}}.
+
+For example, the setup for a schema will be as follows:
+{{CodeSnip
+| lang = json
+| path = media\lua\shared\Translate\EN
+| source = UI.json
+| code =
+{
+    "$schema": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/UI.schema.json",
+    ...
+}
+}}
+
+==== Using old game versions schemas ====
+If you are working on a mod for an older version of the game (post [[Build 42.15.0]]) and want to use the old schemas, you can find them in the [[PZ Translation Data]] releases, either by downloading the whole repository, or you can also use the online links to those specific releases schemas. To do so, for the latest versions, the link was {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/<translationType>.schema.json}}, but to use specific game version ones, use the link format {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/tags/<releaseTag>/PZ_Translation_Schemas/<translationType>.schema.json}}. You need to replace {{Code|lang=html|<releaseTag>}} with the tag of the release which corresponds to the game version you want, for example for {{Code|42.15.2}}.
+
 === Map information ===
 Map translations use the following files:
 {{CodeSnip
@@ -125,11 +200,12 @@ media/
                 └── <map>.json
 }}
 
-The file needs to have the following format:
+The file needs to have a title and description field, and alternatively a [[#JSON Schemas|JSON schema field]] can be added for validation:
 {{CodeSnip
 | lang = json
 | code =
 {
+    "$schema": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Location_Generic.schema.json",
     "title": "Your map name",
     "description": "Your map description"
 }
@@ -148,51 +224,6 @@ Example Riverside description:
     "description": "<CENTRE> <SIZE:medium> RIVERSIDE <LINE> <LINE><LEFT> <SIZE:small> A colorful town tightly hugging the banks of the mighty Ohio: exploring Riverside is a rich and diverse experience! To the west you'll find the older parts of town, while out east is where wealthier residents work, rest, and play. <LINE> <LINE>If you're considering a stay with us, why not check out the nearby West Maple Country Club? The ultimate in comfort and relaxation, members have access to an 18-hole golf course, tennis courts, swimming pool, and fantastic bars and lounges. Come join today!"
 }
 }}
-
-=== JSON Schemas ===
-JSON schemas are used to validate the format of JSON files, ensuring they meet the required structure. For translations, those were made to validate the key prefixes and required fields for each translation type. 
-
-To use those schemas, you have different methods, the one described in this guide bases itself on the widely used [[Visual Studio Code]] in the modding community.
-
-The schemas are provided in the [[PZ Translation Data]] repository for download or direct cloning. Once downloaded, you can directly refer to them with a custom key <code>$schema</code> as follows:
-{{CodeSnip
-| lang = json
-| code =
-{
-    "$schema": "link/to/schema.json",
-    ...
-}
-}}
-
-The <code>link/to/schema.json</code> needs to link to the schema for the specific translation type schema which follows the link format {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/<translationType>.schema.json}}. You need to replace {{Code|lang=html|<translationType>}} with the translation type listed in the table above, for example <code>Moveables</code> will be {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json}}.
-
-To use online schemas, you need to add a new trusted domain to your Visual Studio Code setting <code>json.schemaDownload.trustedDomains</code>, either in your global settings or workspace settings:
-
-{{CodeSnip
-| lang = json
-| path = .vscode
-| source= settings.json
-| code =
-{
-    "json.schemaDownload.trustedDomains": {
-        "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data": true
-    }
-}
-}}
-
-For example, the setup for a schema will be as follows:
-{{CodeSnip
-| lang = json
-| path = media\lua\shared\Translate\EN
-| source = UI.json
-| code =
-{
-    "$schema": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/UI.schema.json",
-    ...
-}
-}}
-
-{{Note|Alternatively, you can use local schemas by downloading them, then using the path to the schema instead of the online link.}}
 
 == Languages ==
 The game uses languages added to the <code>media/lua/shared/Translate</code> folder, information about the language is stored in the <code>language.txt</code> file of each language directory.
