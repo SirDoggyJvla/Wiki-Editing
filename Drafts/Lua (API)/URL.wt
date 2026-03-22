@@ -1,0 +1,72 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.15.3}}
+Opening a URL through the [[Lua (API)|Lua API]] can be done through two different means, either with the <code>openUrl</code> global method or with the <code>activateSteamOverlayToWebPage</code> global method. For the first one, it will open the URL in the default web browser of the user, while the second one will open the URL in the [[Steam]] overlay. It is preferable to chose one or the other depending on the user settings, if they have the Steam overlay activated, to open it there, or they don't, to open in the browser. You can check if the user has the Steam overlay activated with the <code>isSteamOverlayEnabled</code> global method.
+
+You can use the following helper function to open a URL in the best way for the user:
+{{CodeSnip
+| lang = lua
+| code =
+local function openUrlBestWay(url)
+    if isSteamOverlayEnabled() then
+        activateSteamOverlayToWebPage(url)
+    else
+        openUrl(url)
+    end
+end
+}}
+
+{{BugBox|link=92995-42153-luamanagerglobalobjectopenurl-doesnt-open-links-for-some-users/|
+version=42.15.3|Some users report that the <code>openUrl</code> global method doesn't open links for them. The reason is currently unknown but it may be more present on Linux.
+}}
+
+== Valid URLs ==
+Only specific URLs will be accepted by the game for obvious security reasons. The valid URLs are listed in the <code>isIndieStoneUrl</code> global method.
+
+{{CodeSnip|
+| lang = java
+| retrieved = 42.15.3
+| path = zombie\lua
+| source = LuaManager.java
+| line = true
+| start = 1250
+| code =
+    public static boolean isIndieStoneUrl(String url) {
+        return url != null
+            && (
+                url.equals("https://steamcommunity.com")
+                    {{!}}{{!}} url.startsWith("https://steamcommunity.com/")
+                    {{!}}{{!}} url.equals("https://projectzomboid.com")
+                    {{!}}{{!}} url.startsWith("https://projectzomboid.com/")
+                    {{!}}{{!}} url.equals("https://theindiestone.com")
+                    {{!}}{{!}} url.startsWith("https://theindiestone.com/")
+                    {{!}}{{!}} url.equals("https://pzwiki.net")
+                    {{!}}{{!}} url.startsWith("https://pzwiki.net/")
+            );
+    }
+}}
+
+As such the valid links are:
+* https://steamcommunity.com
+* https://projectzomboid.com
+* https://theindiestone.com
+* https://pzwiki.net
+
+It is possible to use any links by passing them through the Steam redirect link. Simply add <code>https://steamcommunity.com/linkfilter/?u=</code> in front of the URL you want to open.
+
+You can use the following helper function to patch any provided URL to make it valid for the game:
+{{CodeSnip
+| lang = lua
+| code =
+local function patchUrl(url)
+    if not isIndieStoneUrl(url) then
+        url = "https://steamcommunity.com/linkfilter/?u=" .. url
+    end
+    return url
+end
+}}
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Lua (API)}}

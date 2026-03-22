@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.1}}
+{{Page version|42.15.3}}
 '''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]] but it's very inconsistent on which one the game uses, as it tends to mix both. Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
 
 You can access a full view render of the [[Knox Country]] map via the [[Project Zomboid Map Project]].
@@ -193,6 +193,11 @@ It was made for [[Build 41]] mapping, but is still very relevant to [[Build 42]]
 |+ style="white-space:nowrap" | External resources
 |-
 ! Resource !! Description !! Author !! Last updated
+|-
+| [https://lordikol.github.io/PZ_MapCleaner/ Zomboid Map Cleaner]
+| A tool to clean up the map of saves from [[Build 41]] by resetting specific cells.
+| LordIkol
+| {{#dateformat:2022-03-29|ymd}}
 |-
 | [https://drive.google.com/drive/folders/12jQxlDlyC-fACV45oCWshZb60QHoQ6kf Build 41 base and vegetation maps]
 | Base and vegetation image maps for [[Build 41]].
