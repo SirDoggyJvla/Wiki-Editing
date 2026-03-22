@@ -7,7 +7,7 @@ You can use the following helper function to open a URL in the best way for the 
 {{CodeSnip
 | lang = lua
 | code =
-local function openUrlBestWay(url)
+local function openUrlForUser(url)
     if isSteamOverlayEnabled() then
         activateSteamOverlayToWebPage(url)
     else
