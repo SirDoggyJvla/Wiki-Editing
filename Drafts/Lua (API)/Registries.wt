@@ -1,9 +1,8 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.0|1254627}}
+{{Page version|42.15.3}}
 {{About|the parameter used in [[Item (scripts)|item scripts]] to assign tags to items.|a list of tags in the base game|Item tag}}
-{{Stub|Registries were introduced in [[Build 42.13.0]] as a new system to manage various script elements. This page is a stub and needs to be expanded to document the registries system.}}
-Registries are a new system introduced in [[Build 42.13.0]] to manage various script elements in a more structured way. They are used to define the following ''identifiers'':
+'''Registries''' are a new system introduced in [[Build 42.13.0]] to manage various script elements in a more structured way. They are used to define the following ''identifiers'':
 *CharacterTrait
 *CharacterProfession
 *ItemTag
@@ -19,16 +18,44 @@ Registries are a new system introduced in [[Build 42.13.0]] to manage various sc
 Adding these identifiers is done in a file that should be located in {{Code|media/registries.lua}} within a [[mod structure]]. This Lua file is [[Lua (API)#Load order|loaded]] before all Lua files and [[scripts]].
 {{CodeSnip
 | code =
-MyMod/
-└── media/
-    ├── lua/
-    │   └── ...
-    ├── scripts/
-    │   └── ...
-    └── registries.lua
+📁 media
+    📁 lua
+        ...
+    📁 scripts
+        ...
+    📄 registries.lua
 }}
 
 This file doesn't clash with other mod files and must have this exact name to be recognized by the game.
+
+== Accessing identifiers ==
+When defining a new identifier, you may want or need to access it in the [[Lua (API)|Lua API]]. Most registry functions return an identifier object that can be stored in a variable for future use. For example, you can create a new item tag and store its reference like this:
+{{CodeSnip
+| lang = lua
+| code =
+MyModName = {}
+
+MyModName.ItemTag = {}
+MyModName.ItemTag.MY_TAG = ItemTag.register("mymodname:my_tag")
+}}
+
+{{Note|type=warn|In [[Scripts]] you still need to reference the string ID of the tag, not the variable.}}
+
+You can then easily retrieve every items with that tag for example the following way:
+{{CodeSnip
+| lang = lua
+| code =
+local items = getScriptManager():getAllItems()
+local itemsWithTag = {}
+
+for i = 0, items:size() - 1 do
+    local item = items:get(i)
+
+    if item:hasTag(MyModName.ItemTag.MY_TAG) then
+        itemsWithTag[#itemsWithTag + 1] = item
+    end
+end
+}}
 
 == Example ==
 {{CodeSnip
@@ -108,4 +135,7 @@ item HandmadeBobbyPin
 
 {{Note|These examples were retrieved from the [[TIS Modding Guides#Build 42 MP unstable release|official guide]] provided by The Indie Stone for the registries system.}}
 
-{{ll|Category:Item scripts parameters}}
+
+{{ll|Category:Modding}}
+{{ll|Category:Lua (API)}}
+{{ll|Category:Scripts}}
