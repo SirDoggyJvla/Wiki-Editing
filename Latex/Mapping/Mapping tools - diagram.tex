@@ -1,0 +1,69 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage[sfdefault]{roboto}
+\usepackage[T1]{fontenc}
+\usetikzlibrary{shapes.misc, positioning, arrows.meta, fit, calc, backgrounds}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    node distance=0.3cm,
+    box/.style={rectangle, draw, thick, minimum width=5cm, inner sep=0.5cm},
+    func/.style={font=\ttfamily\small, inner sep=0.15cm},
+    arrow/.style={-{Latex[length=6pt, width=4pt]}, thick},
+]
+
+    \node[func] (ext_tileed) {TileEd/TileD (original)};
+    \node[func, below of=ext_tileed] (ext_tileed_link) {https://github.com/mapeditor/tiled};
+
+    \begin{scope}[on background layer]
+    \node[box, draw=blue!100, fit=(ext_tileed) (ext_tileed_link), label={above:\textbf{Original Tools}}] (external_box) {};
+    \end{scope}
+
+    \node[func, below=3cm of ext_tileed] (tilezed) {TileZed};
+    \node[func, below of=tilezed] (tilezed_link) {https://github.com/timbaker/tiled};
+
+    \node[func, left=5cm of tilezed] (buildinged) {BuildingEd};
+    \node[func, below of=buildinged] (buildinged_link) {https://github.com/timbaker/buildinged};
+
+    \node[func, right=5cm of tilezed] (worlded) {WorldEd};
+    \node[func, below of=worlded] (worlded_link) {https://github.com/timbaker/pzworlded};
+
+    \node[func, right=6cm of worlded] (worlded_b42) {WorldEd (B42 branch)};
+    \node[func, below of=worlded_b42] (worlded_b42_link) {https://github.com/timbaker/pzworlded/tree/basement};
+    
+    \begin{scope}[on background layer]
+    \node[box, draw=red!100, fit=(tilezed) (tilezed_link) (buildinged) (buildinged_link) (worlded) (worlded_link) (worlded_b42) (worlded_b42_link), label={above:\textbf{Official tools}}] (tools_box) {};
+    \end{scope}
+
+
+    \node[func, below=3cm of tilezed] (tilezed_unofficial) {TileZed (unofficial)};
+    \node[func, below of=tilezed_unofficial] (tilezed_unofficial_link) {https://github.com/Unjammer/TileZed};
+
+    \node[func, below=3cm of worlded] (worlded_unofficial) {WorldEd (unofficial)};
+    \node[func, below of=worlded_unofficial] (worlded_unofficial_link) {https://github.com/Unjammer/WorldEd};
+
+    \node[func, below=2cm of tilezed_unofficial, xshift=3cm] (unofficial_tools) {Unofficial Mapping Tools};
+    \node[func, below of=unofficial_tools] (unofficial_tools_link) {https://github.com/Unjammer/WorldEd/releases};
+
+    \begin{scope}[on background layer]
+    \node[box, draw=green!100, fit=(tilezed_unofficial) (tilezed_unofficial_link) (worlded_unofficial) (worlded_unofficial_link) (unofficial_tools) (unofficial_tools_link), label={above:\textbf{Unofficial tools}}] (unofficial_box) {};
+    \end{scope}
+
+    \draw[arrow] (ext_tileed_link.south) -- node[left, font=\small] {\textit{forked}} (tilezed.north);
+
+    \draw[arrow] (buildinged.east) -- node[above, font=\small] {\textit{fusion}} (tilezed.west);
+
+    \draw[arrow] (tilezed_link.south) -- node[left, font=\small] {\textit{forked}} (tilezed_unofficial.north);
+    \draw[arrow] (worlded_link.south) -- node[left, font=\small] {\textit{forked}} (worlded_unofficial.north);
+    \draw[arrow] (worlded_b42_link.south) |- node[below, font=\small] {\textit{merged parts}} (worlded_unofficial.east);
+
+    \node[func, below=1cm of tilezed_unofficial] (corner1) {};
+    \node[func, below=1cm of worlded_unofficial] (corner2) {};
+
+    \draw[arrow] (tilezed_unofficial_link.south) |- (corner1.north) node[below, font=\small] {\textit{packaged}} -| (unofficial_tools.north);
+    \draw[arrow] (worlded_unofficial_link.south) |- (corner2.north) node[below, font=\small] {\textit{packaged}} -| (unofficial_tools.north);
+
+\end{tikzpicture}
+
+\end{document}

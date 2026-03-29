@@ -1,6 +1,6 @@
 \documentclass[tikz, border=10pt]{standalone}
 \usepackage{tikz}
-\usepackage[sfdefault]{ClearSans}
+\usepackage[sfdefault]{roboto}
 \usepackage[T1]{fontenc}
 \usetikzlibrary{shapes.misc, positioning, arrows.meta, fit, calc}
 
@@ -10,6 +10,7 @@
     node distance=0.3cm,
     box/.style={rectangle, draw, thick, minimum width=5cm, inner sep=0.5cm},
     func/.style={font=\ttfamily\small, inner sep=0.15cm},
+    arrow/.style={-{Latex[length=6pt, width=4pt]}, thick},
 ]
 
     % Client 1 functions
@@ -51,16 +52,16 @@
 
     % Draw arrows
     % Client 1 sendClientCommand -> Server onClientCommand
-    \draw[-{Latex[length=6pt, width=4pt]}] (c1_send.east) -- (s_recv.west);
+    \draw[arrow] (c1_send.east) -- (s_recv.west);
     
     % Server sendServerCommand -> Client 1 onServerCommand
-    \draw[-{Latex[length=6pt, width=4pt]}] (s_send1.west) -- (c1_recv.east);
+    \draw[arrow] (s_send1.west) -- (c1_recv.east);
 
     % Client 2 sendClientCommand -> Server onClientCommand
-    \draw[-{Latex[length=6pt, width=4pt]}] (c2_send.east) -- (s_recv.west);
+    \draw[arrow] (c2_send.east) -- (s_recv.west);
     
     % Server sendServerCommand(playerObj, ...) -> Client 2 onServerCommand
-    \draw[-{Latex[length=6pt, width=4pt]}] (s_send2.west) -- (c2_recv.east);
+    \draw[arrow] (s_send2.west) -- (c2_recv.east);
 
 \end{tikzpicture}
 

@@ -9,13 +9,13 @@ from PIL import Image
 import os
 import sys
 
-def remove_white_background(image, threshold=200):
+def remove_white_background(image, threshold=240):
     """
-    Convert white background to transparent, including anti-aliased edges.
+    Convert white background to transparent, preserving colored pixels.
     
     Args:
         image (PIL.Image): PIL Image object
-        threshold (int): RGB threshold for white color (0-255, default: 200)
+        threshold (int): RGB threshold for white color (0-255, default: 240)
     
     Returns:
         PIL.Image: Image with transparent background
@@ -28,8 +28,9 @@ def remove_white_background(image, threshold=200):
     new_data = []
     
     for item in data:
-        # If R, G, B are all above threshold (close to white), make transparent
-        if item[0] > threshold and item[1] > threshold and item[2] > threshold:
+        r, g, b = item[0], item[1], item[2]
+        # Only make transparent if all RGB values are close to each other and above threshold (pure white)
+        if r > threshold and g > threshold and b > threshold and abs(r - g) < 10 and abs(r - b) < 10:
             new_data.append((255, 255, 255, 0))  # Transparent
         else:
             new_data.append(item)
