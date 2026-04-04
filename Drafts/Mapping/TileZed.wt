@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|41.78.16}}
+{{Page version|41.78.18}}
 {{Infobox
 | title = TileZed
 | class = theme-blue
@@ -30,7 +30,7 @@
     }}
 }}
 {{Stub|This page could appreciate more informations and more details on how to use TileZed.}}
-'''TileZed''' is an official Project Zomboid mapping tool which allows you to create and edit tilesets for the game as well as edit maps. It is part of the [[Project Zomboid Modding Tools|official mapping tools]], which also includes [[WorldEd]]. It was previously an unofficial tool but was later adopted by the developers as an official tool.
+'''TileZed''', also sometimes refered as its old forked project ''TilEd'', is an official Project Zomboid mapping tool which allows you to create and edit tilesets for the game as well as edit maps. It is part of the [[Project Zomboid Modding Tools|official mapping tools]], which also includes [[WorldEd]]. It was previously an unofficial tool but was later adopted by the developers as an official tool.
 
 == See also ==
 *[[WorldEd]]

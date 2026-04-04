@@ -1,6 +1,6 @@
 {{LangSwitch}}
-{{Navbar_modding}}
-{{Page version|42.9.0}}
+{{Navbar modding}}
+{{Page version|41.78.18}}
 {{Infobox
 | title = Project Zomboid Modding Tools
 | class = theme-blue
@@ -20,15 +20,16 @@
         }}
     }}
 }}
-{{Note|type=warn|The tools available might not the most recent ones. Check the tools' individual pages for the links to the most recent version of them.}}
-'''Project Zomboid Modding Tools''' are the official modding tools released by [[The Indie Stone]]. Although they individually can be downloaded for free, they require owning a game on [[Steam]] to download. They can be found by simply searching for them in your library when owning [[Project Zomboid]].
+The '''Mapping tools''' are the official tools released by [[The Indie Stone]] to create maps for [[Project Zomboid]]. They are distributed for free on the forums. On [[Steam]], an outdated version of the tools can be accessed by searching for ''Project Zomboid Modding Tools'' in the library when owning [[Project Zomboid]].
 
-The modding tools are currently not available for [[GOG]] owners, and only the Windows versions of tools are currently offered.
-
-The modding tools currently include two tools:
+The mapping tools currently include two tools:
 *[[TileZed]]
 *[[WorldEd]]
 as well as tiles in the PNG format, required for TileZed to run properly. Other officially released tools are not available with this package.
+
+== See also ==
+*[[Mapping tools (Alree)]]
+*[[Mapping tools (Crater)]]
 
 == Navigation ==
 {{Navbox modding}}

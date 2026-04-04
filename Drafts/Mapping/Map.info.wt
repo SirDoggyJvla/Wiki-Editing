@@ -1,19 +1,20 @@
 {{Title|map.info}}
-{{Header|Modding|Mapping}}
-{{Page version|42.7.0}}
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.16.0}}
 This page explains the <code>map.info</code> file which is used to define the map's information. It is used by the game to display the map in the map selection screen and to load the map into the world.
 
-==Location==
+== Location ==
 The file is located in the following directory:
 {{CodeSnip
 | code =
-media
-  maps
-    <map folder>
-      map.info
+📁 media
+    📁 maps
+        📁 <map folder>
+            📄 map.info
 }}
 
-==Parameters==
+== Parameters ==
 {| class="wikitable theme-blue"
 |+ style="white-space:nowrap" | List of parameters
 ! Parameter name !! Description
@@ -46,9 +47,12 @@ media
 
 {{Note|<code>title</code> and <code>description</code> can be directly defined in a [[Translations|translation]] file without the need to put anything special in these parameters.}}
 
-==See also==
+== See also ==
 *[[File structure]]
 *[[mod.info]]
 *[[workshop.txt]]
 
+== Navigation ==
 {{Navbox modding}}
+
+{{ll|Category:Mapping}}

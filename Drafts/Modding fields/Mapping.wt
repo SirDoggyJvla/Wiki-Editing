@@ -8,7 +8,6 @@ You can access a full view render of the [[Knox Country]] map via the [[Project 
 == Mapping tools ==
 Official tools exist for mapping but at the moment are not available for [[Build 42]] yet. They are available in the [[Project Zomboid Modding Tools]] on Steam but are outdated. You can access them from the latest uploaded version on the [https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ Project Zomboid forum]. Below are each mapping tools available for Project Zomboid:
 *[[WorldEd]] - The main tool for creating maps.
-*[[TileZed]] - Included in WorldEd, used to create and edit tilesets as well as edit maps.
 
 The [[Unofficial Mapping Tools]] aims to provide the updated mapping tools for [[Build 42]], allowing the creation of basements. The picture below details the mapping tools hierarchy:
 
