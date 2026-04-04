@@ -1,0 +1,9 @@
+items:
+  - files:
+      input: Latex/Networking/Networking.pdf
+      output: Latex/Networking/Networking.png
+    dpi: 200
+  - files:
+      input: Latex/Mapping/Mapping tools - diagram.pdf
+      output: Latex/Mapping/Mapping tools - diagram.png
+    dpi: 100

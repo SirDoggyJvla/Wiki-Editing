@@ -6,8 +6,7 @@ Recursively finds all PDF files in the script's directory and subdirectories.
 
 from pdf2image import convert_from_path
 from PIL import Image
-import os
-import sys
+import os, sys, yaml
 
 def remove_white_background(image, threshold=240):
     """
@@ -38,7 +37,7 @@ def remove_white_background(image, threshold=240):
     image.putdata(new_data)
     return image
 
-def pdf_to_png(pdf_path, output_dir=None, dpi=200):
+def pdf_to_png(pdf_path, output_dir=None, dpi=100):
     """
     Convert a PDF file to PNG image(s).
     
@@ -109,9 +108,13 @@ if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     print(f"Searching for PDF files in: {script_dir}\n")
+
+    with open(os.path.join(script_dir, 'convert.yaml'), 'r') as f:
+        config = yaml.safe_load(f)
     
     # Find all PDF files
-    pdf_files = find_pdf_files(script_dir)
+    # pdf_files = find_pdf_files(script_dir)
+    pdf_files = config['items']
     
     if not pdf_files:
         print("No PDF files found.")
@@ -122,8 +125,12 @@ if __name__ == "__main__":
     total_output_files = []
     
     try:
-        for pdf_file in pdf_files:
-            output_files = pdf_to_png(pdf_file)
+        for cfg in pdf_files:
+            input_file = cfg['files']['input']
+            output_file = cfg['files']['output']
+            dpi = cfg.get('dpi', 100)
+            
+            output_files = pdf_to_png(input_file, output_dir=os.path.dirname(output_file), dpi=dpi)
             total_output_files.extend(output_files)
             print()
         
