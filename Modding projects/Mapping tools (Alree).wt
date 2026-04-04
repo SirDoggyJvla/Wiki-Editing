@@ -1,12 +1,12 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.11.0}}
+{{Page version|42.16.1}}
 {{Infobox
-| title = Unofficial Mapping Tools
+| title = Mapping tools (Alree)
 | class = theme-blue
 | 
     {{Infobox/image
-    | p1 = [[File:WorldEd (unofficial) - preview.png|link=]]
+    | p1 = [[File:WorldEd (unofficial) - preview.png]]
     }}
     {{Infobox/section
     | color = var(--color-blue)
@@ -46,7 +46,7 @@
         }}
     }}
 }}
-The '''Unofficial Mapping Tools''' is a project by Unjammer which aims to provide an alternative to the official Project Zomboid mapping tools as well as providing features needed for [[Build 42]] mapping. The tools are packaged from a fork of [[TileZed]] and [[WorldEd]]. One key feature is that it doesn't rely on Windows registry or a folder in {{Code|%userprofile%}}, allowing multiple versions of the tools on the same computer. A version of the tools for [[Build 41]] is also available.
+The '''Mapping Tools''' by Unjammer, also known as Alree, aims to provide an alternative to the official Project Zomboid mapping tools as well as providing features needed for [[Build 42]] mapping. The tools are packaged from a fork of [[TileZed]] and [[WorldEd]]. One key feature is that it doesn't rely on Windows registry or a folder in {{Code|%userprofile%}}, allowing multiple versions of the tools on the same computer. A version of the tools for [[Build 41]] is also available.
 
 Other features include:
 *A dark mode by default alongside a new theme management system, to create your own themes with the use of QSS themes.
@@ -58,6 +58,10 @@ Other features include:
 *Support for [[Build 42]] features such as basements, animals, WorldGen etc.
 *Includes the game tilesheets.
 *And more...
+
+== See also ==
+*[[Mapping tools (official)]]
+*[[Mapping tools (Crater)]]
 
 == Navigation ==
 {{Navbox modding}}

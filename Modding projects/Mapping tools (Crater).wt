@@ -1,0 +1,43 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.16.1}}
+{{Infobox
+| title = Mapping tools (Crater)
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:WorldEd (Crater) - icon.png]]
+    }}
+    {{Infobox/socials
+    | type=github
+    | link=https://github.com/gruxor/pz-tools-ce/releases
+    | Download
+    }}
+    {{Infobox/socials
+    | type=github
+    | link=https://github.com/gruxor/pz-tools-ce
+    | Repository
+    }}
+    {{Infobox/socials
+    | type=github
+    | link=https://github.com/gruxor/pzworlded/tree/6da9d9da466ba15364ce227eca71e16b77f07adc
+    | WorldEd fork
+    }}
+    {{Infobox/socials
+    | type=github
+    | link=https://github.com/gruxor/tiled/tree/cd86f8417c78a2c53b79f1f0a1551b08b88fd30b
+    | TileZed fork
+    }}
+}}
+The '''Mapping Tools''' by Gruxor, also known as Crater, aims to provide an updated version of the [[Mapping tools (Alree)|Alree's Mapping Tools]] which merges elements of the "Community Edition" of the official tools for [[Build 42]]. This build of the tools notably includes [[Build 42]] support, UI improvements, more theme options and a number of fixes across [[TileZed]], [[WorldEd]] and [[BuildingEd]].
+
+== See also ==
+*[[Mapping tools (official)]]
+*[[Mapping tools (Alree)]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping projects}}
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}
