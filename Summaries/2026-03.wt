@@ -1,0 +1,79 @@
+Hello, SimKDT here for a new modding wiki summary. Lots of exciting things this month happened so let's go right into it.
+
+==== Game updates ====
+Project Zomboid received two major updates. [[Build 42.15.0]] broke a bunch of mods with its new [[translation]] system, replacing the old translation files format that used <code>.txt</code> files, similar to [[Scripts]], to a JSON based format. This notably allows for schemas to be used for [[Translation#JSON Schemas|validation]] but also native syntax highlight in the majority of [[Visual Studio Code|code editors]]. At the same time, they added mod translations for the name and the description. They released a new guide and examples on the occasion ([[TIS Modding Guides#Build 42.15.0]]).
+
+The [[Mod ID]] and [[Workshop ID]] previously had problems where the mod ID needed to be refered to with a <code>\</code> in front of it to properly identify mods, and the workshop ID was not possible to retrieve. This was due to TIS changing their system so mods needed to refer to mods with their workshop ID but they scrapped that as it would make development of mods hellish for various reasons.
+
+The <code>.glb</code> format for animation and model files is fairly new like mentioned in the previous modding summary for april 2026, which allows for lighter files (we reduced the Horse mod size from 106MB to 38MB for example by switching to it). In the previous summary, I mentioned that GLB could not be [[Hot reloading|hot reloaded]] for now, and I can now say that this is no longer true as that update added support for hot reloading GLB files, which is a huge improvement for modders using this format. There's basically no reason to not use it anymore.
+
+The game now only requires a [[Mod structure#Common and versioning folders|versioning or common folder]], instead of both. You can still use both of course. 
+
+[[Build 42.16.0]] on the other hand wasn't significant for modding, but in the blog post which came with the update ([[zomboidweb:blog/news/2026/03/balancing-time|Balancing time]]), TIS expressed their desire for modders to provide feedback, suggestions and reports in the new <code>#mod_portal</code> channel in the [[Discord#Official server|official Discord]].
+
+{{Quote
+| author=The Indie Stone in [[zomboidweb:blog/news/2026/03/balancing-time|Balancing time]]
+| text=For modders, we are actively working to improve your workflow and the information available to you. For modding support requests, please use our [https://discord.com/channels/136501320340209664/1476602902607954043 #mod_portal] channel in our Discord.
+}}
+
+==== ZedScripts, PZ Scripts Data and ScriptsDocs ====
+One of the major things I've worked on this past month are three things:
+[[ZedScripts]] received plenty of updates, tackling on some issues and improving the extension further.
+*The extension can be downloaded in the VSCode marketplace, and Open VSX like we mentioned in the previous summary, but it is now also available on the GitHub releases of the project.
+*The autodetection of script files have been improved
+*Now has settings to enable or disable specific diagnostics
+
+[[PZ Scripts Data]] also received a lot of new data, description for parameters, new block structure etc.
+**The translation data was moved to its own repository [[PZ Translation Data]] for easier management. It notably provides schemas for validation and native syntax highlight in code editors.
+**A new system is used to associate files to a "ROOT block", which represents a file structure. This allows for more precise links of specific blocks to specific files, for example of [[mod.info]].
+
+[[PZ Scripts Data|ScriptsDocs]] is a new form of documentation for [[Scripts]], similar to [[JavaDocs]] for the [[Java]], and [[LuaDocs]] for the [[Lua (API)]]. It directly takes on the PZ Scripts Data that [[ZedScripts]] uses to provide a documentation which can be explored and searched to do specific things. Anytime new data is added to PZ Scripts Data, it will automatically be added to the documentation. Feedback is very welcome on the format and presentation of the documentation, as well as the content of course.
+
+The primary reason I created the ScriptsDocs is that the current documentation for Scripts is done on the wiki, which has a few problems:
+*The wiki is not well suited for API documentation
+*Bulk updating of the data is not possible without botting help, which I don't have and don't want to impose constantly on someone else
+
+The advantage of the wiki is that anyone can contribute to it, and as such anyone can update the Scripts documentation, something I've been pushing for a long time. My current argument on why I accept to lose this advantage is that other API documentations are not on the wiki and work well. How the documentation works currently means anyone could technically fork the original repository and make a new documentation from the previously documented data.
+
+==== Mapping ====
+A new version of the mapping tool was released by Crater which he named the [[Mapping tools (Community Edition)|Community Edition]] mapping tools. Previously, the [[Mapping tools (Alree)|tools by Alree]], also known as the Unofficial Mapping Tools, were forked from the [[Mapping tools (official)|Build 41 official tools]] and later were merged the Build 42 official tools available on the GitHub repository in a branch called "basements". He added many features and improvements to the tools, but the intention of Crater on those new tools was to instead directly fork the Build 42 official tools as well as directly link WorldEd and TileZed together in a common repository by using submodules, to more easily manage them. He merged improvements from the Alree tools and added his own improvements on top of that. His goal is for these tools to be supported by the community in the future instead of being alone on it.
+
+As such, the current hierarchy of the mapping tools is as follow:
+[[File:Mapping tools - diagram.png|center|600px|class=logo-dark]]
+
+The [[Mapping]] page was updated accordingly and the mapping tools are now better documented on similar pages:
+*[[WorldEd]] and [[TileZed]] pages document the individual tools which are part of the mapping tools.
+*[[Mapping tools (official)]] documents the official tools.
+*[[Mapping tools (Alree)]] documents the tools made by Alree.
+*[[Mapping tools (Community Edition)]] documents the Community Edition tools by Crater.
+
+==== Modding wiki AI documentations ====
+I figured making a small section about it would be useful as we had multiple cases of it this month. The modding wiki is entirely written by hand, AI usage is not permitted on the wiki when it comes to writing content. The work behind it receives feedback from other modders in the community, and the information I gather are often fact checked, and received feedback and improvements.
+
+In the last month, we have noticed multiple cases of people ripping the modding wiki articles, feeding them through AI and generating documentations that they then share in GitHub repositories, claiming they have made some modding documentation. This practice while it is morally debatable, is just an horrible thing to do because the majority of the time this is done by "modders" that do not provide the critical feedback needed to judge the AI output. This leads to blatently wrong documentation which serves no one, not even the "creator" of these, and provides misinformation to new modders who can't properly judge the provided information.
+
+One of those documentation was even linked in the modding wiki, which I hadn't noticed had AI generated documentation at first. The person even contributed to the JSON schemas for [[translation]]s, and yet provided this kind of documentation which rips directly from the modding wiki, adding some wrong informations on top of it.
+
+Be careful what documentation you might find when they are shared around, and please just stop doing that. It's useless, serves no one and lacks proper knowledge.
+
+==== Other changes ====
+Like you have seen in the image which shows the mapping tools hierarchy, the images which I had previously made using the Canvas tool from [[Wikipedia:Obsidian (software)]] are slowly being remade using Tikz, which is a LaTeX package to create vector graphics. This allows for better quality and normalized styling across all the images. This notably includes the [[Networking]] figure too:
+[[File:Networking.png|center|600px|class=logo-dark]].
+
+Animal modding hasn't gotten many breakthroughs since the [[Build 42]] unstable release. One of the main difficulty is making all the animal animations and understanding how they work. In a way to possibly push it forward, I documented our Horse mod rig on the [[Character rigs]] alongside the humanoid rigs. If anyone has a rig for an animal mod and wants to share it, please don't hesitate to reach out to me or to add it yourself on the relevant page.
+
+Other smaller works:
+*I released a new video guide which provides an introduction to [[Scripts]].
+*An old tool was documented on the [[Mapping]] page.
+*A new page was created, documenting the [[URL]]s supported by the game, as well as how to open an URL from the Lua.
+*[[Registries]] got some extra bit of information.
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Paddlefruit|Paddlefruit]] - did some tweaks on the [[Animation]] page.
+*[[User:Albion|Albion]] - bumped the [[Unofficial JavaDocs (Build 42)]] and [[Umbrella (modding)]] pages.
+*[[User:Geromet|Geromet]] - created a new [[JavaDocs]]. Has yet to be used by modders actively but uses a different format than the usual Oracle JavaDocs.
+*[[User:Jab|Jab]] - uploaded the new version of the logo of [[Umbrella (modding)|Umbrella]].
+*[[User:Tchernobill|Tchernobill]] - flagged his [[Decompiling game code|decompiling guide]] as obsolete (works up to [[Build 42.12.0|Build 42.12.X]]).
+*[[User:Chepchel|Chepchel]] - added more information to [[EmmyLua]].
+*[[User:Bass|Bass]] - documented the Tiledefs he uses in his mods on the [[Tiledefs used by mods]] page.
+[[User:Udarmolota|Udarmolota]] - bumped their [[Zomdroid]] page and updated the turkish translation they had made to fit the main page.
