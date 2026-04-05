@@ -11,6 +11,7 @@
     box/.style={rectangle, draw, thick, minimum width=5cm, inner sep=0.5cm},
     func/.style={font=\ttfamily, inner sep=0.15cm},
     arrow/.style={-{Latex[length=6pt, width=4pt]}, thick},
+    dashed_arrow/.style={-{Latex[length=6pt, width=4pt]}, thick, dashed},
     line/.style={thick},
 ]
 
@@ -57,11 +58,11 @@
     % B42 tools -> Community Edition tools
     \draw[arrow] (b42_box) -- node[left, font=\ttfamily\small] {\textit{fork}} (community_box);
 
-    % B41 tools -> Community Edition tools
-    \draw[arrow] (alree_box) -- node[above, font=\ttfamily\small] {\textit{merge parts}} (community_box);
+    % Alree's tools -> Community Edition tools
+    \draw[dashed_arrow] (alree_box) -- node[above, font=\ttfamily\small] {\textit{merge parts}} (community_box);
 
     % B42 tools -> Alree's tools
-    \draw[arrow] (b42_box) -- node[left, font=\ttfamily\small] {\textit{merge parts}} (alree_box);
+    \draw[dashed_arrow] (b42_box) -- node[left, font=\ttfamily\small] {\textit{April 2025 Build}} (alree_box);
 
 \end{tikzpicture}
 

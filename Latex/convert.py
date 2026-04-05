@@ -37,7 +37,7 @@ def remove_white_background(image, threshold=240):
     image.putdata(new_data)
     return image
 
-def pdf_to_png(pdf_path, output_dir=None, dpi=100):
+def pdf_to_png(pdf_path, output_file=None, dpi=100):
     """
     Convert a PDF file to PNG image(s).
     
@@ -53,11 +53,11 @@ def pdf_to_png(pdf_path, output_dir=None, dpi=100):
         print(f"Error: PDF file '{pdf_path}' not found")
         return []
     
-    if output_dir is None:
-        output_dir = os.path.dirname(pdf_path)
+    if output_file is None:
+        output_file = os.path.splitext(pdf_path)[0] + ".png"
     
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir, exist_ok=True)
+    output_dir = os.path.dirname(output_file)
+    os.makedirs(output_dir, exist_ok=True)
     
     print(f"Converting {os.path.basename(pdf_path)} to PNG...")
     
@@ -71,10 +71,10 @@ def pdf_to_png(pdf_path, output_dir=None, dpi=100):
         
         for i, image in enumerate(images):
             if len(images) == 1:
-                output_file = os.path.join(output_dir, f"{pdf_name}.png")
+                output_file = output_file
             else:
                 output_file = os.path.join(output_dir, f"{pdf_name}_page{i+1}.png")
-            
+
             # Remove white background and make transparent
             image = remove_white_background(image)
             image.save(output_file, "PNG")
@@ -130,7 +130,7 @@ if __name__ == "__main__":
             output_file = cfg['files']['output']
             dpi = cfg.get('dpi', 100)
             
-            output_files = pdf_to_png(input_file, output_dir=os.path.dirname(output_file), dpi=dpi)
+            output_files = pdf_to_png(input_file, output_file=output_file, dpi=dpi)
             total_output_files.extend(output_files)
             print()
         
