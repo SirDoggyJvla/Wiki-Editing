@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|41.78.18}}
+{{Page version|42.16.1}}
 {{Infobox
 | title = Mapping tools (official)
 | class = theme-blue
@@ -18,9 +18,14 @@
         | link=https://steamdb.info/app/380880/
         | SteamDB entry
         }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/timbaker/pzworlded
+        | Repository
+        }}
     }}
 }}
-The '''Mapping tools''' are the official tools released by [[The Indie Stone]] to create maps for [[Project Zomboid]]. They are distributed for free on the forums. On [[Steam]], an outdated version of the tools can be accessed by searching for ''Project Zomboid Modding Tools'' in the library when owning [[Project Zomboid]].
+The '''Mapping tools''' are the official tools released by [[The Indie Stone]] to create maps for [[Project Zomboid]]. They are distributed for free on the forums. On [[Steam]], an outdated version of the [[Build 41]] tools can be accessed by searching for ''Project Zomboid Modding Tools'' in the library when owning [[Project Zomboid]].
 
 The mapping tools currently include two tools:
 *[[TileZed]]

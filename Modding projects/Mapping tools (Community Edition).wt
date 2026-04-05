@@ -20,16 +20,16 @@
     }}
     {{Infobox/socials
     | type=github
-    | link=https://github.com/gruxor/pzworlded/tree/6da9d9da466ba15364ce227eca71e16b77f07adc
+    | link=https://github.com/gruxor/pzworlded
     | WorldEd fork
     }}
     {{Infobox/socials
     | type=github
-    | link=https://github.com/gruxor/tiled/tree/cd86f8417c78a2c53b79f1f0a1551b08b88fd30b
+    | link=https://github.com/gruxor/tiled
     | TileZed fork
     }}
 }}
-The '''Mapping Tools''' by Gruxor, also known as Crater, aims to provide an updated version of the [[Mapping tools (Alree)|Alree's Mapping Tools]] which merges elements of the "Community Edition" of the official tools for [[Build 42]]. This build of the tools notably includes [[Build 42]] support, UI improvements, more theme options and a number of fixes across [[TileZed]], [[WorldEd]] and [[BuildingEd]].
+The '''Mapping Tools''' by Gruxor, also known as Crater, aims to provide a ''Community Edition'' of the tools which forks the [[Build 42]] official mapping tools and merging parts from [[Mapping tools (Alree)|Alree's Mapping Tools]] and adding their own changes on top of it. One flaw it aims to correct is the lack of git history with the official tools as Alree's version lacked direct link to the original repository, making it difficult to track changes and merge updates from the official tools.
 
 == See also ==
 *[[Mapping tools (official)]]
