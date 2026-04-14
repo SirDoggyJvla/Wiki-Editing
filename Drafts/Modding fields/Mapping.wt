@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.15.3}}
+{{Page version|42.16.1}}
 '''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]] but it's very inconsistent on which one the game uses, as it tends to mix both. Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
 
 You can access a full view render of the [[Knox Country]] map via the [[Project Zomboid Map Project]].
@@ -9,12 +9,12 @@ You can access a full view render of the [[Knox Country]] map via the [[Project 
 Official tools exist for mapping but at the moment are not available for [[Build 42]] yet. Below are each mapping tools available for Project Zomboid:
 *[[Mapping tools (official)]] - The main tool for creating maps.
 *[[Mapping tools (Alree)]] - The first unofficial updated tool for [[Build 42]] mapping, created by Alree.
-*[[Mapping tools (Crater)]] - An update to Alree's tools by Crater, which includes some features such as a new UI and a new theme.
+*[[Mapping tools (Community Edition)]] - By Crater, forks the Build 42 official tools and merges some elements from Alree's tools while also adding improvements on top of that.
 
 Erika from [[The Indie Stone]] stated work is being done to update the official mapping tools for [[Build 42]] and will be released on stable:
 {{Quote|author=Erika in [https://discord.com/channels/136501320340209664/279303619277488128/1423997542009405451 the official Discord] - October 2025|text=Hello 🙂 Just wanted to give you a small update about the tools. We are currently at work on B42 unstable. The official B42 tools will be released when we release B42 stable. We will share them as soon as we can, right now I can't give a timeline for when it's ready.}}
 
-[[File:Mapping tools - diagram.png|center|1000px|class=logo-dark]]
+[[File:Mapping tools - diagram.png|center|800px|class=logo-dark]]
 
 == Folder structure ==
 {{Main|Mod structure}}
@@ -22,21 +22,21 @@ Erika from [[The Indie Stone]] stated work is being done to update the official 
 The <code>maps</code> folder in <code>media</code> is used to store map files. It's subfolder will correspond to a map and its associated files which are obtained by exporting a map from the mapping tools.
 {{CodeSnip
 | code =
-media/
-└── maps/
-    └── MyMap/
-        ├── maps/
-        │   └── ...
-        ├── X_Y.lotheader
-        ├── chunkdata_X_Y.bin
-        ├── map.info
-        ├── objects.lua
-        ├── spawnpoints.lua
-        ├── thumb.png
-        ├── worldmap-forest.xml
-        ├── worldmap.xml
-        ├── world_X_Y.lotpack
-        └── ...
+📁 media
+    📁 maps
+        📁 MyMap
+            📁 maps
+                ...
+            📄 X_Y.lotheader
+            📄 chunkdata_X_Y.bin
+            📄 map.info
+            📄 objects.lua
+            📄 spawnpoints.lua
+            📄 thumb.png
+            📄 worldmap-forest.xml
+            📄 worldmap.xml
+            📄 world_X_Y.lotpack
+            ...
 }}
 
 <code>MyMap</code> will need to be a unique name associated with your map but the map informations are mostly defined the [[map.info]] file. Other files are used to define spawnpoints as well as the biomes, chunks, streetnames etc.
@@ -82,6 +82,7 @@ media/
 *[[Building Pool (okkydoo)]]
 *[[Building Pool (Dylan)]]
 *[[Community Architect]]
+*[[B42 Vanilla Map Building Exports]]
 
 == Tile packs ==
 Below is a list containing references to tilepacks which are available for the mappers to use directly in their map mods. Those usually come in the form of [[Steam Workshop]] items that you can directly use as an addon to your map mod.

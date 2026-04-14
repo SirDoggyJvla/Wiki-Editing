@@ -18,7 +18,7 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
 {{ll|Category:Navbar}}
 }}
 </noinclude><includeonly>{{Navbar/sandbox
-|title={{ll|Modding}}
+|title={{ll|Modding}}<BR><span style="font-size: large; color: #ff00e6;"><b>Give your feedback on the Modding Wiki [https://docs.google.com/forms/d/e/1FAIpQLSdxBWwKUcNP_KbzmmWo1eNc2QkpWk5dTj4PMhuNLY9_dc4IEw/viewform?usp=header here]!</b></span>
 |links={{#invoke:Join|join|sep=&#32;&bull;&#32;
   |{{ll|:Category:Modding}}
   |{{ll|Scripts}}
@@ -30,6 +30,6 @@ This is a [[Template:Navbar|navbar]] used at the top of modding pages to assist 
   |{{ll|Texturing}}
   |{{ll|Mapping}}
   |{{ll|Rendering}}
-  |{{ll|Translations}}
+  |{{ll|Translation}}
   }}
 }}<includeonly/>

@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.15.2|2=559029}}
+{{Page version|42.16.3|2=559029}}
 {{About|translating the game or a mod|a guide to translating the wiki|Help:Translations}}
 '''Translations''' a modding field that involves translating the game or a mod to a different language. This can be done by creating translation files for the game or mod, which are then read by the game which automatically retrieves the text via keys associated to translation values. It is also possible to create a new translation language for the game.
 
@@ -188,16 +188,16 @@ If you are working on a mod for an older version of the game (post [[Build 42.15
 Map translations use the following files:
 {{CodeSnip
 | code =
-media/
-├── maps/
-│   └── <map folder>/
-│       ├── map.info
-│       └── ...
-└── lua/
-    └── shared/
-        └── Translate/
-            └── <language code>/
-                └── <map>.json
+📁 media
+    📁 maps
+        📁 <map folder>/
+            📄 map.info
+            ...
+    📁 lua
+        📁 shared
+            📁 Translate
+                📁 <language code>
+                    📄 <map>.json
 }}
 
 The file needs to have a title and description field, and alternatively a [[#JSON Schemas|JSON schema field]] can be added for validation:
@@ -320,7 +320,6 @@ Official translations used to be done on [https://github.com/TheIndieStone/Proje
 *[https://github.com/TheIndieStone/ProjectZomboidTranslations GitHub repository for the game translations (outdated)]
 *[https://github.com/timbaker/translatoid/releases Releases of TranslationZed tool]
 *[https://steamcommunity.com/sharedfiles/filedetails/?id=3006690572 Steam guide by '''''Matrioshka''''', '''''Riko Prushka''''']
-*[https://github.com/escapepz/pz_translation_json_schema/tree/main?tab=readme-ov-file#quick-ide-setup-vs-code Project Zomboid Translation JSON Schema]
 *[https://github.com/Poltergeist-PZ-Modding/pz-translator PZ Translator (original)] - a tool to translate the game and mods automatically, bases itself on Google Translate. (outdated)
 *[https://github.com/Chuckleberry-Finn/pz-translator/ PZ Translator (forked)] - a tool to translate the game and mods automatically, bases itself on Google Translate. (outdated)
 
