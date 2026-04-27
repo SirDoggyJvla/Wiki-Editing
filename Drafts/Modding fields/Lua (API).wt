@@ -1,12 +1,19 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.14.0}}
+{{Page version|42.17.0}}
 {{About|the Lua API|a guide to learn how to code with Lua|Lua (language)}}
-Project Zomboid allows modders to program functionalities via a [[Java]] implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and basically allows the use of exposed Java class and methods from Lua scripts.
+Project Zomboid allows modders to program functionalities via a [[Java]] implementation of '''[[Lua (language)|Lua]]''' called Kahlua, which enables Lua scripts to run within Java programs. It bases itself on [https://www.lua.org/manual/5.1/ Lua 5.1] with a few differences and allows the use of exposed Java class and methods from Lua scripts.
 
 It is highly suggested to take note of the [[JavaDocs]] and possibly [[Decompiling game code|decompiling the game code]] to make your life easier when it comes to finding functions and understanding their inner working to more easily manipulate the game's Lua. Alternatively, an unofficial project called [[LuaDocs]] acts like a JavaDocs but for the Lua API.
 
 [[Java]] modding also exists and is a more powerful way to mod the game, by reducing the limitations to the minimum. However, it is more complex and has its own major drawbacks.
+
+== Video guide ==
+{{Video
+|id=FGbyLGLmxes
+|image=PZ Modding Guides - Lua API, Java-Lua interface - thumbnail.png
+|name=PZ Modding Guides - Lua API, Java-Lua interface
+}}
 
 == How do Java classes work in the Lua API ==
 Lua acts as a bridge to the Java, thanks to Project Zomboid's API. Every time you try to run functions on a Java object from Lua, there are more operations happening than simply running a Lua function on a Lua object, which is also the source of performance impacts (see [[Mod optimization]]).
@@ -142,6 +149,21 @@ local moveSpeed = player:getMoveSpeed() -- instance method, notice the ":"
 local players = IsoPlayer.getPlayers() -- static method, notice the "."
 }}
 
+=== Hooking to Java methods ===
+It is possible to hook to Java methods, which means to run Lua code when a specific Java method **is called Lua side**. This has the disadvantage that your hook will not be called if the method is called Java side, but it can have niche uses in some cases:
+{{CodeSnip
+| lang = lua
+| code =
+local index = __classmetatables[ClassName.class].__index
+
+local old_method = index.method
+function index:method(...)
+    old_method(self, ...)
+end
+}}
+
+{{Note|type=warn|You cannot hook to Java methods which are called Java side!}}
+
 == Lua objects ==
 Lua objects are widely used in the Lua API and natively defined in it. They utilize the [[ISBaseObject]] class and [[derive]] from it to define new classes which can themselves be derived from. They are usually global and can be accessed from anywhere but in some cases where they are locked behind a local scope to a file, you can utilize the [[DOME]] library to access them.
 
@@ -216,7 +238,7 @@ The server subfolder is actually loaded only when launching a save, so anytime L
 </ol>
 
 {{Note|Translation files are also put inside the <code>lua</code> folder but are not Lua files. See the [[Translations]] page for more detail.}}
-{{Note|type=warn|It is not recommended to overwrite existing files if not needed for compatibility reasons. Instead, overwrite specific functions or [[Lua (language)#Decoration|hook]] to them when possible.}}
+{{Note|type=warn|It is not recommended to overwrite existing files if not needed for compatibility reasons. Instead, overwrite specific functions or [[Lua (language)#Decoration|hook]] them when possible.}}
 
 == See also ==
 * [[Java]] - explains things related to
