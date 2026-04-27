@@ -1,0 +1,42 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.17.0}}
+{{Infobox
+| title = dane's Library
+| class = theme-blue
+| 
+    {{Infobox/image
+    | 1 = [[File:dane's Library - preview.jpeg]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=steam
+        | link=https://steamcommunity.com/sharedfiles/filedetails/?id=3715021740
+        | Workshop page
+        }}
+    }}
+}}
+'''dane's Library''' is a library for modders which notably provides the ability to hide recipes. To use it, simply do:
+{{CodeSnip
+| lang = lua
+| code =
+require "daneLibrary_Recipes"
+
+daneLibrary.Recipes.hide("CraftRecipeID")
+
+daneLibrary.Recipes.hideMany(
+    "CraftRecipeID",
+    "AnotherCraftRecipeID"
+)
+}}
+
+With the provided recipe IDs corresponding to the ID of the [[craftRecipe]] block.
+
+{{Navbox modding}}
+
+{{ll|Category:Libraries}}
+{{ll|Category:Modding projects}}
