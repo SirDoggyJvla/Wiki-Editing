@@ -125,7 +125,7 @@ To use the online schemas, you need to add a new trusted domain to your Visual S
 | code =
 {
     "json.schemaDownload.trustedDomains": {
-        "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data": true
+        "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data": true
     }
 }
 }}
@@ -145,14 +145,14 @@ You can link to the schemas via the Visual Studio Code setting <code>json.schema
       "fileMatch": [
         "**/media/lua/shared/Translate/*/Moveables.json"
       ],
-      "url": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json",
+      "url": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json",
       "name": "PZ Moveables translation schema"
     }
   ]
 }
 }}
 
-You can find a full configuration file in the [[PZ Translation Data]] repository, which you can either download in the [https://github.com/SirDoggyJvla/pz-translation-data/releases releases] or [https://github.com/SirDoggyJvla/pz-translation-data/blob/main/settings.json download from the repository].
+You can find a full configuration file in the [[PZ Translation Data]] repository, which you can either download in the [https://github.com/pz-wiki-modding/pz-translation-data/releases releases] or [https://github.com/pz-wiki-modding/pz-translation-data/blob/main/settings.json download from the repository].
 
 {{Note|type=warn|The map schemas (<code>Location_Generic</code>) are not available for Visual Studio Code settings due to no specific pattern being usable to target them, so you will need to link to them manually in the translation files as explained in the next section.}}
 
@@ -167,7 +167,7 @@ You can directly refer to the schemas with a custom key <code>$schema</code> as 
 }
 }}
 
-The <code>link/to/schema.json</code> needs to link to the schema for the specific translation type schema which follows the link format {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/<translationType>.schema.json}}. You need to replace {{Code|lang=html|<translationType>}} with the translation type listed in the table above, for example <code>Moveables</code> will be {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json}}.
+The <code>link/to/schema.json</code> needs to link to the schema for the specific translation type schema which follows the link format {{Code|lang=html|https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/<translationType>.schema.json}}. You need to replace {{Code|lang=html|<translationType>}} with the translation type listed in the table above, for example <code>Moveables</code> will be {{Code|lang=html|https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Moveables.schema.json}}.
 
 For example, the setup for a schema will be as follows:
 {{CodeSnip
@@ -176,13 +176,10 @@ For example, the setup for a schema will be as follows:
 | source = UI.json
 | code =
 {
-    "$schema": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/UI.schema.json",
+    "$schema": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/UI.schema.json",
     ...
 }
 }}
-
-==== Using old game versions schemas ====
-If you are working on a mod for an older version of the game (post [[Build 42.15.0]]) and want to use the old schemas, you can find them in the [[PZ Translation Data]] releases, either by downloading the whole repository, or you can also use the online links to those specific releases schemas. To do so, for the latest versions, the link was {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/<translationType>.schema.json}}, but to use specific game version ones, use the link format {{Code|lang=html|https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/tags/<releaseTag>/PZ_Translation_Schemas/<translationType>.schema.json}}. You need to replace {{Code|lang=html|<releaseTag>}} with the tag of the release which corresponds to the game version you want, for example for {{Code|42.15.2}}.
 
 === Map information ===
 Map translations use the following files:
@@ -205,7 +202,7 @@ The file needs to have a title and description field, and alternatively a [[#JSO
 | lang = json
 | code =
 {
-    "$schema": "https://raw.githubusercontent.com/SirDoggyJvla/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Location_Generic.schema.json",
+    "$schema": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Location_Generic.schema.json",
     "title": "Your map name",
     "description": "Your map description"
 }
