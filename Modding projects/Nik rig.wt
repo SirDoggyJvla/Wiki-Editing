@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.13.1}}
+{{Page version|42.17.0}}
 {{Infobox
 | title = Nik rig
 | class = theme-blue
@@ -15,7 +15,7 @@
     | 2 = 
         {{Infobox/socials
         | type=github
-        | link=https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/Animation/Nik's%20rig
+        | link=https://github.com/pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/Animation/Nik's%20rig
         | Archive
         }}
         {{Infobox/socials
@@ -26,7 +26,15 @@
     }}
 }}
 '''Nik rig''' is a Blender rig used to create [[Creating a clothing mod|clothing]] for Project Zomboid. The rig only works for [[wikipedia:Blender|Blender 5.0]] and isn't meant to be used for [[animation]]s.
-{{Clear}}
+
+== See also ==
+*[[Character rigs]]
+*[[Paddlefruit rig]]
+*[[Expression rig]]
+*[[Mystery rig]]
+*[[Dislaik rig]]
+*[[Throttlekitty rig]]
+
 == Navigation ==
 {{Navbox modding}}
 

@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.9.0}}
+{{Page version|41.78.19}}
 {{Infobox
 | title = Dislaik rig
 | class = theme-blue
@@ -38,6 +38,16 @@ Two versions of the rig are available:
 *A version with IK controls or each limbs.
 
 The animation guide that came with it gives more informations on how to export the rig.
+
+{{Note|type=warn|We suggested checking out [[Paddlefruit rig]] instead as it is more up to date and has more features.}}
+
+== See also ==
+*[[Character rigs]]
+*[[Paddlefruit rig]]
+*[[Nik rig]]
+*[[Expression rig]]
+*[[Mystery rig]]
+*[[Throttlekitty rig]]
 
 == Navigation ==
 {{Navbox modding}}

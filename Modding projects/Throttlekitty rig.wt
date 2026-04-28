@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|41.78.16}}
+{{Page version|41.78.19}}
 {{Infobox
 | title = Throttlekitty rig
 | class = theme-blue
@@ -25,6 +25,16 @@
     }}
 }}
 '''Throttlekitty rig''' is an [[animation]] rig made for [[Wikipedia:Autodesk Maya|Maya]] for the Project Zomboid character model named after its creator. It was originally posted in the Project Zomboid Discord server.
+
+{{Note|type=warn|We suggested checking out [[Paddlefruit rig]] instead as it is more up to date and has more features.}}
+
+== See also ==
+*[[Character rigs]]
+*[[Paddlefruit rig]]
+*[[Nik rig]]
+*[[Expression rig]]
+*[[Mystery rig]]
+*[[Dislaik rig]]
 
 == Navigation ==
 {{Navbox modding}}

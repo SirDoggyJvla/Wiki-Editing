@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.10.0}}
+{{Page version|42.17.0}}
 {{Infobox
 | title = Mystery rig
 | class = theme-blue
@@ -15,7 +15,7 @@
     | 2 = 
         {{Infobox/socials
         | type=github
-        | link=https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/Animation/Mystery's%20Rig
+        | link=https://github.com/pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/Animation/Mystery's%20Rig
         | Archive
         }}
         {{Infobox/socials
@@ -25,6 +25,8 @@
     }}
 }}
 '''Mystery rig''' is a Blender [[animation]] IK rig for the Project Zomboid character model named after its creator.
+
+{{Note|type=warn|We suggested checking out [[Paddlefruit rig]] instead as it is more up to date and has more features.}}
 
 == Export instructions ==
 To export the rig, you need to follow these steps:
@@ -39,6 +41,14 @@ To export the rig, you need to follow these steps:
 **Leaf Bones = False
 **NO change in primary secondary bones in armature
 **Scale = 0.01 (not needed if player animation usually, but required for zombie animations)
+
+== See also ==
+*[[Character rigs]]
+*[[Paddlefruit rig]]
+*[[Nik rig]]
+*[[Expression rig]]
+*[[Dislaik rig]]
+*[[Throttlekitty rig]]
 
 == Navigation ==
 {{Navbox modding}}

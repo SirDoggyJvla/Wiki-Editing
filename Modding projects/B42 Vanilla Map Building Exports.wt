@@ -11,7 +11,7 @@
     | 2 = 
         {{Infobox/socials
         | type=github
-        | link=https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/Mapping/B42%20Vanilla%20Map%20Building%20Exports
+        | link=https://github.com/pz-wiki-modding/Archive.Project-Zomboid-Modding/tree/main/Mapping/B42%20Vanilla%20Map%20Building%20Exports
         | Archived Building Pool
         }}
         {{Infobox/socials
@@ -21,7 +21,7 @@
         }}
     }}
 }}
-This '''Building Pool''' was created from exports of the official map in [[Build 42.14.1]] done by Crater. It countains almost 9000 buildings to chose from.
+This '''Building Pool''' was created from exports of the official map in [[Build 42.14.1]] done by Crater. It contains almost 9000 buildings to choose from.
 
 == See also ==
 *[[Building Pool (official)]] - a bank of vanilla building files provided by [[The Indie Stone]].

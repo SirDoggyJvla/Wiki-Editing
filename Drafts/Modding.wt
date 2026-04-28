@@ -1,15 +1,9 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.14.0}}
+{{Page version|42.17.0}}
 {{About|an overview about modding|PZwiki project|PZwiki:Project Modding}}
 [[File:SpiffosWorkshop.png|link=https://steamcommunity.com/app/108600/workshop/|frame|right|Spiffo's Workshop is the home of [[Project Zomboid]] mods on [[Steam]]]]
 Modding is the process of creating new content by creating [[mods]] for a game. For Project Zomboid, modding is a natively integrated part of the game with a mod manager and an API to allow modders to create a various quantity of content, from simple items to complex systems. Mods are usually uploaded to the [[Spiffo's Workshop]] which serves as the official method for sharing mods with the community.
-
-== Last informations regarding MP unstable release ==
-{{Main|TIS Modding Guides#Build 42 MP unstable release}}
-''Last updated: 11th of December 2025''
-
-The Indie Stone has recently released an ''unstable'' version of Project Zomboid which adds back multiplayer in the game. They provided the modding community with modding instructions to applying the new networking changes to existing mods that you can find [https://theindiestone.com/forums/index.php?/topic/88499-modding-migration-guide-4213/ here]. If you don't have a TIS Forum account to download them, you find copies of these files [https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding/tree/main/TIS%20guides/B42%20unstable%20MP here].
 
 == Terms & Conditions ==
 By playing Project Zomboid, you agree to the '''[https://projectzomboid.com/blog/support/terms-conditions/ Terms & Conditions]'''.
@@ -18,7 +12,7 @@ By modding Project Zomboid, you also agree with the '''[https://projectzomboid.c
 
 === Key restrictions ===
 *The Indie Stone reserves the right to implement any features in the game, irrespective of whether mods exist that accomplish the same goal.
-*Modders are solely responsible for their mod, including (but not limited to compliance with any hosting platforms (such as Steam Workshop). They are also responsible for obtaining third party consents for any third party materials in the mod. Legally, we have to ask that modders to ‘represent and warrant’ (i.e., promise legally) that their mod is their own original work and any third party contents are fully and properly licensed by the modder.
+*Modders are solely responsible for their mod, including (but not limited to) compliance with any hosting platforms (such as Steam Workshop). They are also responsible for obtaining third party consents for any third party materials in the mod. Legally, we have to ask that modders to ‘represent and warrant’ (i.e., promise legally) that their mod is their own original work and any third party contents are fully and properly licensed by the modder.
 *Creation of mods is subject to our [https://projectzomboid.com/blog/modding-policy/ modding policy], which may be updated from time to time with any technical requirements regarding how PZ mods must work.
 *Project Zomboid modders are free to receive monetary/gift donations from the players who use their releases, and appreciate the time and effort put into them. However, having mods created exclusively for those who choose to donate (or separate ‘in-mod’ content and bonuses) is not allowed. Mod creators cannot sell modifications to Project Zomboid.
 
@@ -56,7 +50,7 @@ Modding is split in different fields, each with their own tools and creation pro
 *[[Debug mode]] - Explanations of how to run the game in the debug (developer) mode and how to use it.
 *[[Startup parameters]] - Startup parameters to launch the game with.
 *[[Mod optimization]] - Learn various tips, tricks and good habits that will improve your mods performances.
-*[[Procedural distributions]] - List and exlanations of procedural distributions.
+*[[Procedural distributions]] - List and explanations of procedural distributions.
 
 Below is a list of all the modding fields with a brief description of what they involve and links to the relevant pages:
 {| class="wikitable theme-blue sortable" style="text-align: center;
@@ -92,7 +86,7 @@ Below is a list of all the modding fields with a brief description of what they 
 *[[Creating a hair mod]]
 *[[Creating a clothing mod]]
 |-
-| Texturing
+| [[Texturing]]
 | Creating textures to be applied on 3D models or to create 2D tiles.
 |
 |-

@@ -28,7 +28,7 @@ Other minor additions or changes that don't warrant full paragraphs:
 
 *New [[Modding projects]] pages not yet mentioned — [[Pythoid]], [[Real Life Map]], [[Moodle Framework]], [[Moodles in lua]], [[Map Mover]], [[Zombie Layer Replacer]], [[PZTools]], [[Azakaela's Modding Tools]].
 *[[Azakaela's Modding Tools]] — a suite of tools by Azakaela that were previously lost due to broken download links — have been recovered. After contacting the author and receiving permission, I created an [https://github.com/SirDoggyJvla/Archive.Azakaela-s-Modding-Tools archive] of them. However the source code of those was lost.
-*Similarly, as part of the resource reorganization on [[Modding]], I archived several modding resources that were previously scattered across Discord via this [https://github.com/SirDoggyJvla/Archive.Project-Zomboid-Modding archive].
+*Similarly, as part of the resource reorganization on [[Modding]], I archived several modding resources that were previously scattered across Discord via this [https://github.com/pz-wiki-modding/Archive.Project-Zomboid-Modding archive].
 *Discussions with the mapping community were held to find better archiving solutions for their resources. While no solution has been finalized yet, I hope proper long-term preservation methods will be adopted.
 *Due to a persistent issue, I've been unable to move pages myself and had to rely on wiki admins to handle renames. As of last week, the problem still persists.
 
