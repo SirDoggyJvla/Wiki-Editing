@@ -1,6 +1,6 @@
 {{LangSwitch}}
-{{Navbar_modding}}
-{{Page version|42.12.3|2=791137}}
+{{Navbar modding}}
+{{Page version|42.17.0|2=791137}}
 Project Zomboid has customizable '''startup parameters''' that are used to override the default options of the launcher, JVM, and game. JVM arguments must be provided first and end with <code>--</code> even if there are no game arguments. Game arguments can be passed to the launcher because they are forwarded to the game itself.
 
 == Usage ==
@@ -14,7 +14,7 @@ Project Zomboid has customizable '''startup parameters''' that are used to overr
 ==== Example ====
 {{CodeSnip
 | code=
--Xmx8192m -Xms4096m -- -nosteam
+-Xmx8192m -Xms8192m -- -debug
 }}
 
 === From a game shortcut ===
@@ -25,7 +25,7 @@ Project Zomboid has customizable '''startup parameters''' that are used to overr
 ==== Example ====
 {{CodeSnip
 | code=
-"C:\ProjectZomboid64.exe" -Xmx8192m -Xms4096m -- -nosteam
+"C:\ProjectZomboid64.exe" -Xmx8192m -Xms8192m -- -debug
 }}
 
 === From the StartServer64.bat parameters ===
@@ -48,10 +48,10 @@ This method is only for dedicated servers.
 
 == Common use cases ==
 === Increasing allocated memory ===
-To increase the maximum allocated memory to 8 GB and the minimum to 4 GB, add the following to the launch options:
+To increase the maximum allocated memory to 8 GB and the minimum to 8 GB, add the following to the launch options:
 {{CodeSnip
 | code=
--Xmx8192m -Xms4096m --
+-Xmx8192m -Xms8192m --
 }}
 
 === Opening the game in debug mode ===
@@ -197,7 +197,7 @@ To disable Steam integration, add the following to the launch options:
 |}
 
 == JVM arguments ==
-{{Note|type=warn|JVM arguments must be provided first and end with {{Code|--}} even if there are no game arguments.}}
+{{Note|type=warn|JVM arguments must be provided first before client/server arguments and ending with {{Code|--}} even if there are no game arguments. {{Code|--}} must be included at the ending if Java arguments are used.}}
 
 === Client & server ===
 {| class="wikitable theme-blue"
@@ -206,11 +206,15 @@ To disable Steam integration, add the following to the launch options:
 |-
 | style="white-space: nowrap" | <code>-Xms{int <span style="color: #c21d1d;">size</span>}{char <span style="color: #00881d;">unit</span>}</code>
 |  The minimum amount of memory to allocate to the JVM. The game will not start if there is not enough memory available on the system to allocate. The unit can be <code>g</code> or <code>m</code>.
-| style="white-space: nowrap" | <code>-Xms<span style="color: #c21d1d;">4096</span><span style="color: #00881d;">m</span></code>
+| style="white-space: nowrap" | <code>-Xms8192<span style="color: #00881d;">m</span></code>
 |-
 | style="white-space: nowrap" | <code>-Xmx{int <span style="color: #c21d1d;">size</span>}{char <span style="color: #00881d;">unit</span>}</code>
 | The maximum amount of memory to allocate to the JVM. Setting this above the physical RAM amount of the system will end up using virtual memory. The unit can be <code>g</code> or <code>m</code>.
 | style="white-space: nowrap" | <code>-Xmx<span style="color: #c21d1d;">8192</span><span style="color: #00881d;">m</span></code>
+|-
+| style="white-space: nowrap" | <code>-XX:+AlwaysPreTouch</code>
+| Requests the VM to touch every page on the Java heap after requesting it from the operating system and before handing memory out to the application.  If you are using ZGC it is officially recommended that one enables this option as of Java 21. <ref>[https://docs.oracle.com/en/java/javase/25/gctuning/z-garbage-collector.html HotSpot Virtual Machine Garbage Collection Tuning Guide]</ref>
+| style="white-space: nowrap" | 
 |-
 | style="white-space: nowrap" | <code>-Dzomboid.ConsoleDotTxtSizeKB={int <span style="color: #c21d1d;">size</span>}</code>
 | Sets the maximum console.txt file size in kilobytes.

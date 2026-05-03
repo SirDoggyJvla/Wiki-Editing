@@ -4,6 +4,10 @@
 | title = Steam Uploader
 | class = theme-blue
 |     
+    {{Infobox/image
+    | p1 = [[File:SteamUploader - CLI preview.png]]
+    }}
+
     {{Infobox/section
     | id = 1
     | 1 = Main tool
@@ -35,9 +39,15 @@
         }}
     }}
 }}
-'''Steam Uploader''' is an external uploader for Steam Workshop items that can be used for Project Zomboid to bypass the [[Uploading mods#In-game uploader|in-game uploader]] limitations, such as the preview size and file type limits. Since the Rust rework of the tool, it depends 
+'''Steam Uploader''' is an external uploader for Steam Workshop items that can be used for Project Zomboid to bypass the [[Uploading mods#In-game uploader|in-game uploader]] limitations, such as the preview size and file type limits. Since the Rust rework of the tool, it depends on a manifest file for your mod that contains the title, description, tags, etc. of your mod, which makes it easier to manage your mods and upload them.
 
 It uses simple command-line arguments to control what needs to be updated, with the ability to directly provide a text file for the description and patch note. This requires the Steam client to be opened when using the tool.
+
+{{Video
+|id=TQOQ_4qlsvc
+|image=SteamUploader - demonstration thumbnail.png
+|name=Steam Uploader - quick demonstration 
+}}
 
 == Navigation ==
 {{Navbox modding}}

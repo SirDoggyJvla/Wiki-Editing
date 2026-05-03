@@ -1,0 +1,26 @@
+Hello, welcome to this new modding summary for April 2026. Not much this month so this should be a shorter summary than last month where I had literally had to use sections because of how much content there was.
+
+I created a feedback form for the Modding Wiki that you can find in the main header for the modding pages, but also [https://docs.google.com/forms/d/e/1FAIpQLSdxBWwKUcNP_KbzmmWo1eNc2QkpWk5dTj4PMhuNLY9_dc4IEw/viewform?usp=header here]. Currently I have 14 answers, which is a good start, but I would like to get more feedback to know what you think about the wiki and how we can improve it, so if you haven't already, please consider filling it out, it only takes a few minutes and it would be a great help.
+
+I created a new GitHub organization which will hold many of the resources made for the modding wiki. These include but are not limited to:
+*[[PZ Scripts Data]] (and the ScriptsDocs at the same time)
+*[[PZ Translation Data]]
+
+[[ZombieBuddy]] is picking up on a lot of traction and might become a tool used by many modders to implement Java mods using a Java mod loader. The tool is up-to-date and in active development and as such it is marked as "Recommended" in the [[Java]] page.
+
+[[Mapping]] wise, the main page got the new format for the file tree, and a new building pool was added to the page, [[B42 Vanilla Map Building Exports]], which contains exports of the vanilla map buildings to reuse in your own maps.
+
+I reworked my tool [[Steam Uploader]] which was previously made in C++ using the Steamworks SDK, to a Rust application using a Steamworks SDK Rust binding. This new version is way easier to use which a whole new CLI interface to easily manage your mods from anywhere. The upload process is way easier to understand and manage in general with the use of manifest files for your mods which contain the title of the mod, tags, the description etc. As a small reminder, the goal of this tool is not depend on the [[Uploading mods#In-game uploader|in-game uploader]] to upload your mods, which has a few limitations. Due to some problems modders are having with the new in-game uploader which has a confirmation dialog, this can be a good way to go around it.
+
+Smaller changes:
+*Added a note to [[EmmyLua]] that you need to restart the extension when modifying or adding a config file.
+*Fixed the [[Translation]] page which I had accidentally reverted to an older version.
+*Added explanations on how to hook to a Java method being called Lua side ([[Lua (API)#Hooking to Java methods]]).
+*Hiding recipes tools in [[Dane's Library]] documented on the [[craftRecipe]] page.
+*Added a page to document [[Conditions]] from [[AnimNode]]s.
+*Marked [[Unofficial JavaDocs (Build 42)]] as "Recommended" in the [[JavaDocs]] page.
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Albion|Albion]] - version bumped the [[Unofficial JavaDocs (Build 42)]] page.
+*[[User:Sycholic|Sycholic]] - reviewed the [[Startup parameters]] page and added a missing parameter.
+*[[User:Rexxmt|Rexxmt]] - added new [[tiledefs used by mods]].
