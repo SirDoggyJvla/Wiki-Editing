@@ -1,16 +1,17 @@
-{{Header|Modding|Scripts|Item script parameters}}
+{{LangSwitch}}
+{{Navbar modding}}
 {{Page version|42.12.1}}
 {{Main|item (scripts)}}
 {{About|icons for [[item (scripts)|item scripts]]|icons for [[craftRecipe (scripts)|craftRecipe scripts]]|icon (craftRecipe)}}
 '''{{Code|icon}}''' specifies the Icon for an item, usually used in the inventory and crafting menus. The icon needs to be located inside the {{Code|media/textures/}} folder and must start with {{Code|Item_}} and be of the extension [[File formats#Image formats|<code>.png</code>]]:
 {{CodeSnip|code =
-media/
-└── textures/
-    └── Item_iconName.png
+📁 media
+    📁 textures
+        📄 Item_iconName.png
 }}
 
 Then reference the icon in the item script with:
-{{CodeSnip|code = 
+{{CodeSnip|code =
 Icon = iconName,
 }}
 
@@ -23,20 +24,20 @@ To sum it up, follow these rules to set an icon for an item:
 
 {{Note|type=warn|A common mistake when an icon is not showing up is to forget the {{Code|Item_}} prefix.}}
 
-==Subfolders==
+== Subfolders ==
 Subfolders are not directly supported, but you can use some tricks to have one by doing:
-{{CodeSnip|code = 
+{{CodeSnip|code =
 Icon = subFolder/iconName,
 }}
 With the following file structure:
 {{CodeSnip|code =
-media/
-└── textures/
-    └── Item_subFolder/
-        └── iconName.png
+📁 media
+    📁 textures
+        📁 Item_subFolder
+            📄 iconName.png
 }}
 
-==Food icons==
+== Food icons ==
 Icons can be specified for rotten, cooked, and burned food by adding these suffix to the icon files:
 ;{{Code|Rotten}} or {{Code|Spoiled}}
 :Food that has rotten, meaning has passed the [[DaysTotallyRotten]] value.
@@ -47,18 +48,20 @@ Icons can be specified for rotten, cooked, and burned food by adding these suffi
 
 Food condition icons that do not exist will use the default icon value.
 
-===Example===
+=== Example ===
 Take a food item with the icon file defined as such:
-{{CodeSnip|code = 
+{{CodeSnip|code =
 Icon = iconName,
 }}
 
 To add variants based on food condition, you would have the following file structure:
 {{CodeSnip|code =
-media/
-└── textures/
-    ├── Item_iconName.png
-    ├── Item_iconNameCooked.png
-    ├── Item_iconNameRotten.png
-    └── Item_iconNameBurnt.png
+📁 media
+    📁 textures
+        📄 Item_iconName.png
+        📄 Item_iconNameCooked.png
+        📄 Item_iconNameRotten.png
+        📄 Item_iconNameBurnt.png
 }}
+
+{{ll|Category:Item scripts parameters}}

@@ -1,0 +1,27 @@
+{{Header|Modding|Animation|AnimNodes parameters}}
+{{Page version|42.17.0}}
+{{Main|AnimNodes}}
+'''m_Conditions''' is used to specify conditions that will allow an animation node to be chosen. If the conditions are not met, the node will not be chosen. These are often combined with the function <code>setVariable</code> (which exists in many forms, see the [[JavaDocs]]) to set a specific condition. The most common syntax is as follows:
+{{CodeSnip
+| lang = xml
+| code =
+<m_Conditions>
+    <m_Name>VariableName</m_Name>
+    <m_Type>STRING</m_Type>
+    <m_Value>value</m_Value>
+</m_Conditions>
+}}
+
+== Example ==
+In this example, the variable `WeaponReloadType` is set by the game, using the variable of the same name in the [https://pz-wiki-modding.github.io/pz-scripts-data/blocks/item.html#item-weaponreloadtype item script].
+{{CodeSnip
+| lang = xml
+| code =
+<m_Conditions>
+    <m_Name>WeaponReloadType</m_Name>
+    <m_Type>STRING</m_Type>
+    <m_Value>revolver</m_Value>
+</m_Conditions>
+}}
+
+{{Navbox modding}}

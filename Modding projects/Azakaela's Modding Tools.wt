@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|41.78.16}}
+{{Page version|41.78.19}}
 {{Infobox
 | title = <div></div>
 | 
@@ -25,7 +25,7 @@
     }}
     {{Infobox/socials
     | type=github
-    | link=https://github.com/SirDoggyJvla/Archive.Azakaela-s-Modding-Tools
+    | link=https://github.com/pz-wiki-modding/Archive.Azakaela-s-Modding-Tools
     | Archive
     }}
     {{Infobox/socials
