@@ -7,3 +7,7 @@ items:
       input: Latex/Mapping/Mapping tools - diagram_simple.pdf
       output: Latex/Mapping/Mapping tools - diagram.png
     dpi: 200
+  - files:
+      input: Latex/Mod structure/Mod structure.pdf
+      output: Latex/Mod structure/Mod structure.png
+    dpi: 200

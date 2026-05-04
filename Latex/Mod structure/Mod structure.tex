@@ -1,0 +1,65 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage[sfdefault]{roboto}
+\usepackage[T1]{fontenc}
+\usetikzlibrary{shapes.misc, positioning, arrows.meta, fit, calc, backgrounds}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    node distance=0.3cm,
+    box/.style={rectangle, draw, thick, minimum width=5cm, inner sep=0.5cm},
+    func/.style={font=\ttfamily\small, inner sep=0.15cm},
+    arrow/.style={-{Latex[length=6pt, width=4pt]}, thick},
+    line/.style={thick},
+]
+
+%% NODES
+    % local mods
+    \node[func] (cache_folder) {Zomboid \textit{(cache folder)}};
+
+    \node[func, below=0.5cm of cache_folder] (workshop_folder) {Workshop};
+    \node[func, below=0.5cm of workshop_folder] (that_mod_folder) {MyModFolder};
+    \node[func, below=0.5cm of that_mod_folder] (content_folder) {Contents};
+    \node[func, below=0.5cm of content_folder] (mods_folder_workshop) {mods};
+
+
+    \node[func, right=1.5cm of mods_folder_workshop] (mods_folder_cache) {mods};
+    
+    \node[box, draw=red!100, fit=(cache_folder) (workshop_folder) (that_mod_folder) (content_folder) (mods_folder_workshop) (mods_folder_cache), label={above:\textbf{Local mods}}] (tools_box) {};
+
+    % steam workshop
+    \node[func, right=3.3cm of cache_folder] (steamapps) {steamapps};
+    \node[func, below=-0.3cm of steamapps] (steamapps2) {\textit{(Steam installation folder)}};
+    \node[func, below=0.3cm of steamapps] (workshop_steam) {workshop};
+    \node[func, below=0.3cm of workshop_steam] (content_steam) {content};
+    \node[func, below=0.3cm of content_steam] (appid_steam) {108600};
+    \node[func, below=0.3cm of appid_steam] (workshopid) {\textit{workshopID}};
+    \node[func, below=0.3cm of workshopid] (mods_folder_steam) {mods};
+
+    \node[box, draw=blue!100, fit=(steamapps) (workshop_steam) (content_steam) (appid_steam) (workshopid) (mods_folder_steam), label={above:\textbf{Steam Workshop}}] (steam_box) {};
+
+    % my mod
+    \node[func, below=1.5cm of mods_folder_cache, xshift=1.5cm] (myMod) {MyMod};
+
+%% CONNECTIONS
+    \draw[arrow] (cache_folder.south) -- (workshop_folder.north);
+    \draw[arrow] (workshop_folder) -- (that_mod_folder);
+    \draw[arrow] (that_mod_folder) -- (content_folder);
+    \draw[arrow] (content_folder) -- (mods_folder_workshop);
+    \draw[arrow] (cache_folder.east) -| (mods_folder_cache.north);
+
+    \draw[arrow] (steamapps.south) -- (workshop_steam.north);
+    \draw[arrow] (workshop_steam) -- (content_steam);
+    \draw[arrow] (content_steam) -- (appid_steam);
+    \draw[arrow] (appid_steam) -- (workshopid);
+    \draw[arrow] (workshopid) -- (mods_folder_steam);
+
+    \draw[arrow] (mods_folder_steam) |- ($(mods_folder_steam)!0.6!(myMod)$) -| (myMod);
+    \draw[arrow] (mods_folder_cache) |- ($(mods_folder_cache)!0.594!(myMod)$) -| (myMod);
+    \draw[arrow] (mods_folder_workshop) |- ($(mods_folder_workshop)!0.594!(myMod)$) -| (myMod);
+    
+
+\end{tikzpicture}
+
+\end{document}
