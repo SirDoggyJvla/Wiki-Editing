@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.15.2}}
+{{Page version|42.17.0}}
 {{Infobox
 | title = PZ Scripts Data
 | class = theme-blue
@@ -10,12 +10,12 @@
     | 1 = Links
     | 2 = 
         {{Infobox/socials
-        | link=https://sirdoggyjvla.github.io/pz-scripts-data/
+        | link=https://pz-wiki-modding.github.io/pz-scripts-data
         | ScriptsDocs
         }}
         {{Infobox/socials
         | type = github
-        | link=https://github.com/SirDoggyJvla/pz-scripts-data
+        | link=https://github.com/PZ-Wiki-Modding/pz-scripts-data
         | Repository
         }}
     }}

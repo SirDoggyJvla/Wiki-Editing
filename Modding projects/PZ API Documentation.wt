@@ -1,0 +1,37 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.17.0}}
+{{Infobox
+| title = PZ API Documentation
+| class = theme-blue
+| 
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | link=https://pz-wiki-modding.github.io/PZ-API-Docs/
+        | Documentation
+        }}
+        {{Infobox/socials
+        | type = github
+        | link=https://github.com/PZ-Wiki-Modding/PZ-API-Docs
+        | Repository
+        }}
+    }}
+}}
+The '''PZ API Documentation''' aims to provide multiple documentation which list elements of the game. These are:
+*[[PZ Scripts Data|ScriptsDocs]]
+*[[Procedural distributions|Distribution]]
+
+It also links to other external documentations such as the [[JavaDocs]] and the [[LuaDocs]].
+
+== See also ==
+*[[PZ Scripts Data]]
+*[[PZ Translation Data]]
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

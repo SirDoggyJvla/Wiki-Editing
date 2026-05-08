@@ -13,7 +13,7 @@
 }}
 
 == Example ==
-In this example, the variable `WeaponReloadType` is set by the game, using the variable of the same name in the [https://pz-wiki-modding.github.io/pz-scripts-data/blocks/item.html#item-weaponreloadtype item script].
+In this example, the variable `WeaponReloadType` is set by the game, using the variable of the same name in the [https://pz-wiki-modding.github.io/PZ-API-Docs/blocks/item.html#item-weaponreloadtype item script].
 {{CodeSnip
 | lang = xml
 | code =
