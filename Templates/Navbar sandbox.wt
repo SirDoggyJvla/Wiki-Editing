@@ -1,0 +1,87 @@
+<noinclude>
+{{Documentation|doc=
+{{Css}}
+{{Underconstruction}}
+
+== Usage ==
+<syntaxhighlight lang="wikitext" inline>{{Navbar/sandbox|title=<title>|links=<links>}}</syntaxhighlight>
+
+=== Parameters ===
+; <code>title</code>
+: Title to be displayed.
+; <code>links</code>
+: Links to be listed beneath the title. Use [[Module:Join]] to concatenate links.
+: Example: <syntaxhighlight lang="wikitext" inline>{{#invoke:Join|join|sep=&#32;&bull;&#32;|[[Axe]]|[[Shotgun]]}}</syntaxhighlight>
+; <code>content</code>
+: Optional content to be displayed at the bottom of the navbar, left-aligned.
+
+== Examples ==
+=== Without content ===
+<syntaxhighlight lang="wikitext">
+{{Navbar/sandbox
+|title={{ll|item|Items}}
+|links={{#invoke:Join|join|sep=&#32;&bull;&#32;
+  |{{ll|Ammo}}
+  |{{ll|Animal part}}
+  |{{ll|Appearance}}
+  |{{ll|Camping}}
+  |{{ll|Clothing}}
+  }}
+}}
+</syntaxhighlight>
+;Produces:
+{{Navbar/sandbox
+|title={{ll|item|Items}}
+|links={{#invoke:Join|join|sep=&#32;&bull;&#32;
+  |{{ll|Ammo}}
+  |{{ll|Animal part}}
+  |{{ll|Appearance}}
+  |{{ll|Camping}}
+  |{{ll|Clothing}}
+  }}
+}}
+
+=== With content ===
+<syntaxhighlight lang="wikitext">
+{{Navbar/sandbox
+|title={{ll|item|Items}}
+|links={{#invoke:Join|join|sep=&#32;&bull;&#32;
+  |{{ll|Ammo}}
+  |{{ll|Animal part}}
+  |{{ll|Appearance}}
+  |{{ll|Camping}}
+  |{{ll|Clothing}}
+  }}
+}}
+</syntaxhighlight>
+;Produces:
+{{Navbar/sandbox
+|title={{ll|item|Items}}
+|links={{#invoke:Join|join|sep=&#32;&bull;&#32;
+  |{{ll|Ammo}}
+  |{{ll|Animal part}}
+  |{{ll|Appearance}}
+  |{{ll|Camping}}
+  |{{ll|Clothing}}
+  }}
+|content=
+* test1
+* test2
+* test3
+}}
+
+<!--{{Translation guide|}}-->
+== How to translate ==
+{{Note|type=error|Translations have not yet been added. Please wait until the template is moved out of the sandbox.}}
+}}
+</noinclude><includeonly><div class="navbar2">
+<div>{{#if: {{{title_page|}}} | {{ll|{{{title_page}}}|{{{title|}}}}} | {{{title}}} }}</div>
+<div><!--
+-->
+<hr>
+{{{links}}}
+</div>{{#if: {{{content|}}} | <div style="text-align: left;">
+<hr>
+{{{content}}}
+</div> | }}
+</div></includeonly>

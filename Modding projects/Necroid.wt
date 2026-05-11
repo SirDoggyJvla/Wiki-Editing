@@ -1,0 +1,38 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.18.0}}
+{{Infobox
+| title = Necroid
+| class = theme-blue
+| 
+    {{Infobox/image
+    | p1 = [[File:Necroid - icon.png]]
+    | 1 = [[File:Necroid - icon.png|link=]]
+    | p2 = [[File:Necroid - preview.png]]
+    | 2 = [[File:Necroid - preview.png|link=]]
+    }}
+
+    {{Infobox/section
+    | id = 1
+    | 1 = Links
+    | 2 = 
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/mrkmg/necroid
+        | GitHub repository
+        }}
+        {{Infobox/socials
+        | type=github
+        | link=https://github.com/mrkmg/necroid/releases
+        | Download
+        }}
+    }}
+}}
+'''Necroid''' can be identified as an external [[Java|Java mod loader]]. It ships a bunch of Java mods to easily activate via the software, but allows external mods to also be loaded by the software. Its primary advantage is that it will compile the mods on the fly, meaning whenever the game updates, the mod will be recompiled to the new version. As such, as long as this mod doesn't involved changed API, it will still work without needing an update. The tool also provides a CLI for terminal needs.
+{{Clear}}
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Java}}
+{{ll|Category:External tools}}
+{{ll|Category:Modding projects}}

@@ -1,22 +1,40 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.14.0}}
+{{Page version|42.17.0}}
 '''Importing assets''' is a process needed to directly edit existing game assets to readapt them, or to use them in external projects such as [[Rendering|renders]] in Blender. Due to most model and animation assets using DirectX, an outdated format, most 3D modeling software do not support it natively. Tools exist and were made specifically for Project Zomboid in some cases to allow you to import DirectX files into softwares like [[Wikipedia:Blender|Blender]].
 
 {| class="wikitable theme-blue sortable" style="text-align: center;
 |+ style="white-space:nowrap" | Model and animation import tools
 |-
-! Tool !! Description !! Model import !! Animation import
+! Tool !! Description !! Model import !! Animation import !! Last updated
 |-
-| [[ZomboidAssetConverter]] {{Sup|Recommended|green}} || A project which aimed to provide a proper tool to convert Project Zomboid assets into a usable modern format. || [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| [[ZomboidAssetConverter]] {{Sup|Recommended|green}} 
+| A project which aimed to provide a proper tool to convert Project Zomboid assets into a usable modern format. 
+| [[File:UI Tick.png]] || [[File:UI Tick.png]]
+| {{#dateformat:2026-05-04|ymd}}
 |-
-| [https://github.com/poikilos/io_import_x IO X Importer] || Blender addon. Works for older versions of Blender but also more recent versions such as confirmed working in 4.1 and 4.2. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| [https://github.com/SaintBaron/io_directx_x DirectX X Importer]
+| A Blender addon to import DirectX files. It is available directly from the online extensions inside Blender and is being actively worked on. Currently it doesn't support animations import but the developer is working on it.
+| [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| {{#dateformat:2026-05-06|ymd}}
 |-
-| [https://github.com/oguna/Blender-XFileImporter X File Importer] || Blender addon. Should work for newer Blender versions but '''the imported models can have problems'''. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| [https://github.com/oguna/Blender-XFileImporter X File Importer] 
+| Blender addon. Should work for newer Blender versions but '''the imported models can have problems'''. 
+| [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| {{#dateformat:2025-08-17|ymd}}
 |-
-| [https://3d-convert.com/en/ 3D convert] || General website to converting models. || [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| [https://github.com/poikilos/io_import_x IO X Importer] 
+| Blender addon. Works for older versions of Blender but also more recent versions such as confirmed working in 4.1 and 4.2. 
+| [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| {{#dateformat:2022-12-31|ymd}}
+|-
+| [https://3d-convert.com/en/ 3D convert] 
+| General website to converting models. 
+| [[File:UI Tick.png]] || [[File:UI Cross.png]]
+| Unknown
 |}
 
+== Video ==
 {{Video
 |id=zXVM6Rwp9qo
 |image=PZ Modding Guides - Converting DirectX assets.png

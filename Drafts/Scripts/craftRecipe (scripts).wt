@@ -56,8 +56,6 @@ Recipes_EN = {
 }
 }}
 
-{{BugBox|The <code>module</code> cannot be a custom one or your mod will not work on [[multiplayer]]. In the meantime, use <code>module Base</code>, but you should be able to easily swap it when this gets fixed.|version=42.13.0}}
-
 == craftRecipe parameters ==
 Different parameters can be used in the <code>craftRecipe</code> block to define the recipe. The following table lists the available parameters and the mandatory ones:
 {| class="wikitable theme-blue"
@@ -265,6 +263,26 @@ Below will be a list of known methods to modify specific elements of existing re
 
 {{Note|type=error|The new craftRecipe from [[Build 42]] is very limited when it comes to modifying existing recipes from the Lua compared to the previous [[recipe (scripts)|recipe scripts]] from [[Build 41]]. It often requires the use of tricks to access recipe data and is often suboptimal.<br>
 Want this to change ? Push for TIS to implement proper modification methods for modders [https://theindiestone.com/forums/index.php?/topic/86011-allow-lua-to-edit-recipes-in-b42/#comment-441055 here]!}}
+
+=== Overriding simple recipe key-value parameter ===
+Say for example you want to speed up the specific recipe crafting time. This is possible to achieve by (ab)using <code>craftRecipe:Load()</code> in a similar way to how using <code>item:DoParam()</code> works for overriding item properties. The only thing to watch out for is you ''have to'' enclose clode block in <code>{ ... }</code> brackets, otherwise game engine's script parser errors out with <code>IndexOutOfBoundsException</code> while trying to find first script block in script parser. And don't forget the comma after parameter value, comma is extremely important for script parser.
+
+Example code:
+{{CodeSnip
+| lang = lua
+| code =
+function AdjustRecipe(recipeName, propertyName, propertyValue)
+    local recipe = ScriptManager.instance:getCraftRecipe(recipeName)
+    if not recipe then return end
+    local scriptCode = "{ " .. tostring(propertyName) .. " = " .. tostring(propertyValue) .. ", }"
+    recipe:Load(recipeName, scriptCode)
+end
+
+AdjustRecipe("SawLogs", "time", 50) -- speed up sawing logs
+}}
+It is not easily possible to use this to override values that contain lists (such as Tags or xpAward). And do not use this to override sub-blocks like inputs or outputs.
+
+Patch 42.18 added <code>getModTags()</code>, <code>setTags()</code> for CraftRecipe. It may be possible to use those now.
 
 === Adding a new output mapper output ===
 Below are listed methods to modify an existing craftRecipe [[itemMapper]]s.
