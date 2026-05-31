@@ -47,12 +47,12 @@ module yourModule /* or Base */
 }
 }}
 
-The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipes_{language}.txt</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for English needs to have:
+The <code><RecipeID></code> is a unique identifier for the recipe, and '''should not have spaces in it'''. It is used to define the name of the recipe in the [[Translations|translation files]], in <code>Recipes.json</code>. For example, if the <code><RecipeID></code> is <code>MyRecipe</code>, the translation file for English needs to have:
 {{CodeSnip
 | lang = lua
 | code =
-Recipes_EN = {
-    Recipe_MyRecipe = "My Recipe Name",
+{
+    "MyRecipe" = "My recipe name"
 }
 }}
 

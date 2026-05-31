@@ -4,3 +4,6 @@
 [submodule "pz-translation-data"]
 	path = pz-translation-data
 	url = https://github.com/PZ-Wiki-Modding/pz-translation-data
+[submodule "PZ_Vanilla_map_b42"]
+	path = PZ_Vanilla_map_b42
+	url = https://github.com/Unjammer/PZ_Vanilla_map_b42

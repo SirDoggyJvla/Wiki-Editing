@@ -1,15 +1,16 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.16.1}}
-'''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]] but it's very inconsistent on which one the game uses, as it tends to mix both. Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
+{{Page version|42.18.0}}
+'''Mapping''' in Project Zomboid consist of creating new maps which are either standalone to the vanilla [[Knox Country]] or directly inserted inside it. This is done by creating a new map cell, which is a 300x300 tile area in [[Build 41]] and 256x256 in [[Build 42]] (see [[#Cells]] for more information). Replacing an existing cell is done by overriding the existing one, which means that the entire cell must be replaced, including its terrain data and any structures within it. This means it is not possible to simply place a single building in an existing cell without remaking all the surrounding buildings as well.
 
 You can access a full view render of the [[Knox Country]] map via the [[Project Zomboid Map Project]].
 
 == Mapping tools ==
-Official tools exist for mapping but at the moment are not available for [[Build 42]] yet. Below are each mapping tools available for Project Zomboid:
-*[[Mapping tools (official)]] - The main tool for creating maps.
-*[[Mapping tools (Alree)]] - The first unofficial updated tool for [[Build 42]] mapping, created by Alree.
-*[[Mapping tools (Community Edition)]] - By Crater, forks the Build 42 official tools and merges some elements from Alree's tools while also adding improvements on top of that.
+No releases of the [[Mapping tools (official)|official mapping tools]] have been made for [[Build 42]] but these tools are a public project on GitHub which can be compiled by anyone and are fully usable to make maps. The best is to use one of the available community made tools which are based more or less on the official Build 42 mapping tools:
+* [[Mapping tools (Alree)]] - Created by Alree, they are a fork of the [[Build 41]] official mapping tools and implemented changes from before the April 2025 build of the official Build 42 tools. While a good option, its parent project not being the Build 42 official tools means it may miss some of the latest changes and improvements made to the official tools, but it is still a good and widely used option for mapping in Build 42.
+* [[Mapping tools (Community Edition)]] - Created by Crater, it is a direct fork of the Build 42 official tools and merges some elements from Alree's tools while also adding improvements on top of that.
+
+{{Note|While the official mapping tools for Build 42 are not yet released, the community tools still provide a reliable way to create maps for Build 42, without any serious problems that could arise when moving to the official tools in the future.}}
 
 Erika from [[The Indie Stone]] stated work is being done to update the official mapping tools for [[Build 42]] and will be released on stable:
 {{Quote|author=Erika in [https://discord.com/channels/136501320340209664/279303619277488128/1423997542009405451 the official Discord] - October 2025|text=Hello 🙂 Just wanted to give you a small update about the tools. We are currently at work on B42 unstable. The official B42 tools will be released when we release B42 stable. We will share them as soon as we can, right now I can't give a timeline for when it's ready.}}
@@ -75,33 +76,47 @@ The <code>maps</code> folder in <code>media</code> is used to store map files. I
 | {{Stub|section=true}}
 |}
 
+== Cells ==
+The cells are the main building blocks of a map, as you will fill those with buildings, roads, vegetation and other map elements. Previously in [[Build 41]], cells were 300x300 tiles big, but in [[Build 42]] they are now 256x256 tiles big. However when you create your map, you still work with 300x300 cells, but the mapping tools will export them as 256x256 cells, which means that the exported map will have some empty tiles around the borders of the exported cells.
+
+The following image shows the difference of the cell sizes with in yellow the 300x300 cells and in magenta the 256x256 cells:
+[[File:Cell grid - placement comparison.png|center|500px]]
+
+If we create a map for the Build 41 cell ID (31, 23) in cyan on the image below, the exported cells from the mapping tools will be (36, 26), (37, 26), (36, 27), (37, 27), (36, 28) and (37, 28) in Build 42 cell IDs, which are shown in green:
+[[File:Cell grid - exported cells.png|center|500px]]
+
+The resulting exported cells will have active and inactive areas as shown in the image below with the green area corresponding to the 300x300 cell which contains your map elements, and in red the area which is empty in the exported map:
+[[File:Cell grid - active vs inactive areas.png|center|500px]]
+
+Only the active areas will clash with other maps which export on the same Build 42 cell IDs, while the inactive areas will be empty and won't cause any conflict.
+
 == Building pools ==
 [[The Indie Stone]] and the community have created several building pools, which are collections of buildings that can be used in custom maps. These pools can be used as a reference or directly in your own maps, as long as you credit the original authors when asked for credit. Below is the list of available building pools:
-*[[Building Pool (official)]]
-*[[Building Pool (Blackbeard)]]
-*[[Building Pool (okkydoo)]]
-*[[Building Pool (Dylan)]]
-*[[Community Architect]]
-*[[B42 Vanilla Map Building Exports]]
+* [[Building Pool (official)]]
+* [[Building Pool (Blackbeard)]]
+* [[Building Pool (okkydoo)]]
+* [[Building Pool (Dylan)]]
+* [[Community Architect]]
+* [[B42 Vanilla Map Building Exports]]
 
 == Tile packs ==
 Below is a list containing references to tilepacks which are available for the mappers to use directly in their map mods. Those usually come in the form of [[Steam Workshop]] items that you can directly use as an addon to your map mod.
 <div style="column-count: 2;">
-*[[Asian Style Builds]]
-*[[Community Tile Pack]]
-*[[Tile pack (BigZombieMonkeys)]]
-*[[Tile pack (Daddy Dirkie Dirks)]]
-*[[Tile pack (Dylan)]]
-*[[Tile pack (ExtraNoise's Newburbs)]]
-*[[Tile pack (Fear's Funky)]]
-*[[Tile pack (Ivery)]]
-*[[Tile pack (Loolie)]]
-*[[Tile pack (Pertominus)]]
-*[[Tile pack (Simon MDs)]]
-*[[Tile pack (Skizot)]]
-*[[Tile pack (throttlekitty)]]
-*[[Tile pack (TryHonesty)]]
-*[[Tile pack (Melos)]]
+* [[Asian Style Builds]]
+* [[Community Tile Pack]]
+* [[Tile pack (BigZombieMonkeys)]]
+* [[Tile pack (Daddy Dirkie Dirks)]]
+* [[Tile pack (Dylan)]]
+* [[Tile pack (ExtraNoise's Newburbs)]]
+* [[Tile pack (Fear's Funky)]]
+* [[Tile pack (Ivery)]]
+* [[Tile pack (Loolie)]]
+* [[Tile pack (Pertominus)]]
+* [[Tile pack (Simon MDs)]]
+* [[Tile pack (Skizot)]]
+* [[Tile pack (throttlekitty)]]
+* [[Tile pack (TryHonesty)]]
+* [[Tile pack (Melos)]]
 </div>
 
 == Public maps ==
@@ -134,7 +149,7 @@ Some maps created by the community had their files made public for other mappers
 *[https://theindiestone.com/forums/index.php?/topic/59675-latest-tilezed-worlded-and-tilesets-september-8-2022/ The Indie Stone forum post with the latest mapping tools]
 *[[Room definitions and item spawns]]
 *[[Vehicle zones]]
-*[[Generator#Spawn locations for custom maps|Defining generator spawns]]
+*[[Generator#Custom maps|Defining generator spawns]]
 *[[Unofficial Mapping Discord]]
 
 {| class="wikitable theme-blue sortable" style="text-align: center;
