@@ -88,7 +88,8 @@ If we create a map for the Build 41 cell ID (31, 23) in cyan on the image below,
 The resulting exported cells will have active and inactive areas as shown in the image below with the green area corresponding to the 300x300 cell which contains your map elements, and in red the area which is empty in the exported map:
 [[File:Cell grid - active vs inactive areas.png|center|500px]]
 
-Only the active areas will clash with other maps which export on the same Build 42 cell IDs, while the inactive areas will be empty and won't cause any conflict.
+The active areas will replace the vanilla map, but the inactive areas will use the vanilla map. When it comes to other mod maps however, those that share the same adjacent 256x256 cells will clash together and one will not be loaded in. This was the conclusion from a test which you can find more information on in the [[Talk:Mapping#Cell clashes tests|talk page]].
+
 
 == Building pools ==
 [[The Indie Stone]] and the community have created several building pools, which are collections of buildings that can be used in custom maps. These pools can be used as a reference or directly in your own maps, as long as you credit the original authors when asked for credit. Below is the list of available building pools:
