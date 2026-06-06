@@ -1,0 +1,16 @@
+{{LangSwitch}}
+{{Navbar modding}}
+{{Page version|42.19.0}}
+Tile depths are used to provide an equivalent of a normal map to a tile, telling the game how to render each pixel of the tile. This allows the game to have rules between tiles on how to render each others when colliding in comparison to the old layer system that the previous versions of the game used, but also how to render items and objects that collide with the tile.
+
+The tile depth is created by first applying geometries on top of the tile, by using the tile depth editor tool in [[debug mode]]. 3 types of geometries are available:
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/box.html box]
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/cylinder.html cylinder]
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/polygon.html polygon]
+
+All the geometries of tiles are stored inside the [[scripts]] file [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/root-tilegeometry.html tileGeometry.txt].
+
+== Navigation ==
+{{Navbox modding}}
+
+{{ll|Category:Mapping}}
