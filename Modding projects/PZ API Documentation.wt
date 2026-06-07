@@ -1,6 +1,6 @@
 {{LangSwitch}}
 {{Navbar modding}}
-{{Page version|42.17.0}}
+{{Page version|42.19.0}}
 {{Infobox
 | title = PZ API Documentation
 | class = theme-blue
@@ -9,6 +9,10 @@
     | id = 1
     | 1 = Links
     | 2 = 
+        {{Infobox/image
+        | p1 = [[File:PZ API Documentation - preview.png]]
+        }}
+
         {{Infobox/socials
         | link=https://pz-wiki-modding.github.io/PZ-API-Docs/
         | Documentation
@@ -21,14 +25,17 @@
     }}
 }}
 The '''PZ API Documentation''' aims to provide multiple documentation which list elements of the game. These are:
-*[[PZ Scripts Data|ScriptsDocs]]
-*[[Procedural distributions|Distribution]]
+* [[PZ Scripts Data|ScriptsDocs]]
+* [[Procedural distributions|Distribution]]
+* [[Java|Java parsed data]]
+* [[Tile properties]]
+* [[Translation]]s
 
 It also links to other external documentations such as the [[JavaDocs]] and the [[LuaDocs]].
 
 == See also ==
-*[[PZ Scripts Data]]
-*[[PZ Translation Data]]
+* [[PZ Scripts Data]]
+* [[PZ Translation Data]]
 
 == Navigation ==
 {{Navbox modding}}

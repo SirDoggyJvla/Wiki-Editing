@@ -1,11 +1,11 @@
 {{LangSwitch}}
 {{Navbar modding}}
 {{Infobox
-| title = Unofficial PZ Animation Discord
+| title = Unofficial PZ Cinematic Animation Discord
 | class = theme-blue
 | 
     {{Infobox/image
-    | p1 = [[File:Unofficial PZ Animation Discord - preview.png]]
+    | p1 = [[File:Unofficial PZ Cinematic Animation Discord - preview.png]]
     }}
 
     {{Infobox/section
@@ -15,11 +15,11 @@
         {{Infobox/socials
         | type=discord
         | link=https://discord.gg/8f2R7SCyT2
-        | Unofficial PZ Animation Discord
+        | Unofficial PZ Cinematic Animation Discord
         }}
     }}
 }}
-The '''Unofficial PZ Animation Discord''' is a community-driven Discord server dedicated to cinematic animations, often refered to as [[Rendering|renders]] made in [[wikipedia:Blender|Blender]].
+The '''Unofficial PZ Cinematic Animation Discord''' is a community-driven Discord server dedicated to cinematic animations, often refered to as [[Rendering|renders]] made in [[wikipedia:Blender|Blender]].
 
 == See also ==
 *[[Unofficial Mapping Discord]] - a more suitable place to discuss about [[mapping]].

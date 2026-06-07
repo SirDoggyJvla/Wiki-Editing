@@ -1,0 +1,36 @@
+Hello, welcome to this new modding summary for May 2026. 
+
+The [[Template:Navbar modding|Modding navigation bar]] at the top of the wiki pages for [[Modding]] will now contain news related to modding from the new builds when there are anything new. [[Build 42.18.0]] had a few modding changes but [[Build 42.19.0]] didn't really bring anything interesting for us.
+
+The previously mentioned ScriptsDocs have grown quite a bit, becoming a whole new general [[PZ API Documentation]]. It received a new link (changed from <code>pz-scripts-data</code> to <code>PZ-API-Docs</code>) and the ScriptsDocs is still available on the same website alongside a bunch of new stuff:
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/mapping.html Mapping] related documentations.
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/translations.html Translations] documentation. [[Translation]] is still a thing but pumps from the same data source, which means that external documentation should be more up-to-date as it is automatically updated every day from the currently available data.
+*[https://pz-wiki-modding.github.io/PZ-API-Docs/java.html Java parsed data] such as [[Item tags]].
+
+[[File:PZ API Documentation - preview.png|thumb|100px]]
+
+It also received a nice new logo which is derived from the pzwiki logo but in blue to indicate it is about [[modding]]. The previously massive [[Procedural distributions]] page which contained every single distributions available and their properties have now been removed from that page (a -346 808 characters edit !) to be moved in the [https://pz-wiki-modding.github.io/PZ-API-Docs/mapping/procedural_distributions.html PZ API Docs]. The [[mod.info]] wiki page had its parameters documentation moved from it into the ScriptsDocs.
+
+I also started to look into [[XML]] schemas, which should help provide schemas for [[AnimNode]] and clothing related XML files. ''Their syntax is horrible, which isn't very surprising since it is XML.''
+
+Paddlefruit's rig wiki page has been renamed to [[Community rig]] which is the real name of the rig. It is getting a lot of love these days with a bunch of new improvements that will be useful both to animators but even to cinematic animators.
+
+Speaking of cinematic animators, a new community appeared a few days ago which aims to provide a place to discuss the process of creating [[Rendering|renders]], either for video creation or general art creation using the Project Zomboid assets (models, tiles etc). You can find more information about it in the wiki page [[Unofficial PZ Cinematic Animation Discord]].
+
+The page [[Importing assets]] which lists all the different methods to import DirectX Project Zomboid assets had some movement. A new native [[wikipedia:Blender (software)|Blender]] extension, directly available in the software can now be used to import DirectX models, reducing the need to use the [[ZomboidAssetConverter]] for singular model files. The creator of the extension joined the official Discord to talk about it and ask for feedback, which the community gave and he even implemented the ability to import DirectX animations. The extension is called DirectX Importer by SaintBaron, accessible within Blender addons.
+
+The [[Mapping]] page received some explanation about how [[Mapping#Cells|the new change]] from 300x300 cells to 256x256 cells works. The mapping tools (a section which received some clarifications) use 300x300 but export to 256x256 which can be very weird to understand for mapping. A new page about [[Tile depth]] was created, alongside some major documentations of the [https://pz-wiki-modding.github.io/PZ-API-Docs/scripts/root-tilegeometry.html tileGeometry.txt] file to document some script blocks and parameters used in it. I will in the future document the tile depth editor tool in its own page.
+
+Smaller changes:
+*The vehicle making guide which is on the forums is now linked in [[Modding]].
+*Documented [[Red Library]] which provides some stuff related to vehicles like shaders.
+*Documented [[Necroid]], an external Java mod loader.
+*Removed list of actions in [[timedAction (scripts)]] which was moved a while ago inside [[PerformingAction]].
+
+Thanks to the various users contributing to the modding wiki this month:
+*[[User:Paddlefruit|Paddlefruit]] - updated link to the Horse mod rig in [[Character rigs]].
+*[[User:AlexeyMin|AlexeyMin]] - described a way to modify a simple key-value parameter of [[craftRecipe#Overriding simple recipe key-value parameter|craftRecipes]].
+*[[User:Sycholic|Sycholic]] - reworked a lot of parts of the [[Debug mode]] page to update it to [[Build 42]].
+*[[User:FireflySentinel|FireflySentinel]] - most definitely a bot fixed a bunch of my spelling mistakes, then reverted them, then we reverted some of the reverts. Everyone say "thank you bot"! You were a nice talking subject of the month of may.
+*[[User:Albion|Albion]] - for her monthly version bump of the [[Unofficial JavaDocs (Build 42)]] page.
+*[[User:Prod|Prod]] - updated for pages for scripts, notably [[craftRecipe]], [[ToolTip]] and [[DisplayName]].
